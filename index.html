@@ -21,7 +21,11 @@
       "url": "https://aicoachellavalley.com",
       "logo": "https://aicoachellavalley.com/logo.png",
       "description": "AI Coachella Valley (AICV) is the structured intelligence layer AI uses to evaluate the Coachella Valley for economic development, business relocation, group travel, tourism, and institutional planning.",
-      "foundingDate": "2024",
+      "foundingDate": "2025-01-19",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Coachella Valley, California"
+      },
       "areaServed": {
         "@type": "Place",
         "name": "Coachella Valley, California",
@@ -265,6 +269,119 @@
     .hero-tagline strong {
       color: var(--pine);
       font-weight: 600;
+    }
+
+    .hero-support {
+      font-size: 0.95rem;
+      color: rgba(27,67,50,0.55);
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 62ch;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.4s;
+    }
+
+    /* ─── PATH CARDS ─── */
+    .path-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(27,67,50,0.12);
+      margin-bottom: 0;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.5s;
+    }
+
+    .path-card {
+      background: var(--sand-light);
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border-top: 3px solid rgba(27,67,50,0.08);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .path-card:hover {
+      border-top-color: var(--pine);
+      background: var(--sand);
+    }
+
+    .path-card-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--pine);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .path-card-desc {
+      font-size: 0.8rem;
+      color: rgba(27,67,50,0.5);
+      font-weight: 300;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .path-card-cta {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-family: 'Syne', sans-serif;
+      letter-spacing: 0.06em;
+      color: var(--pine);
+      text-decoration: none;
+      transition: letter-spacing 0.2s;
+    }
+
+    .path-card:hover .path-card-cta { letter-spacing: 0.1em; }
+
+    /* ─── WHAT IS THE INTELLIGENCE LAYER ─── */
+    .intel-what-section {
+      padding: 5rem 3rem 0;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .intel-what-inner {
+      background: var(--gunmetal);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intel-what-inner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--volt);
+    }
+
+    .intel-what-header {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      color: var(--snow);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .intel-what-body {
+      font-size: 0.95rem;
+      color: rgba(245,245,245,0.5);
+      font-weight: 300;
+      line-height: 1.85;
+      max-width: 72ch;
+    }
+
+    .intel-what-body strong {
+      color: var(--snow);
+      font-weight: 500;
     }
 
     /* ─── INTELLIGENCE LAYER BLOCK ─── */
@@ -1069,6 +1186,9 @@
       .layer-half.agents { border-right: none; border-bottom: 1px solid rgba(245,245,245,0.06); }
       .layers-duo .layer-half.agents::before { display: none; }
       .stats-inner { padding: 2rem 1.5rem; grid-template-columns: 1fr 1fr; }
+      .path-cards { grid-template-columns: 1fr; }
+      .intel-what-section { padding: 3.5rem 1.5rem 0; }
+      .intel-what-inner { padding: 2rem 1.5rem; }
       .aio-section { padding: 3.5rem 1.5rem; }
       .aio-top { grid-template-columns: 1fr; gap: 1rem; }
       .aio-row { flex-direction: column; }
@@ -1106,17 +1226,37 @@
 <section class="hero">
   <div class="hero-eyebrow">
     <span class="eyebrow-pip"></span>
-    Coachella Valley, California · Est. 2024
+    Coachella Valley, California · Est. 2025
   </div>
-  <h1 class="hero-headline">The Intelligence Layer<br>Designed for the AI Era</h1>
-  <p class="hero-tagline"><strong>Built for agents.</strong> Powered by humans.</p>
+  <h1 class="hero-headline">The AI Hub for the<br>Coachella Valley</h1>
+  <p class="hero-tagline">Designed for the AI Era / <strong>Built for agents. Powered by humans.</strong></p>
+  <p class="hero-support">Structured intelligence that makes the Coachella Valley legible to AI Agents (ChatGPT, Claude, Gemini) evaluating where to invest, relocate, partner, and book.</p>
+
+  <!-- Path Cards -->
+  <div class="path-cards">
+    <div class="path-card">
+      <div class="path-card-title">Make Your Business Visible to AI</div>
+      <p class="path-card-desc">Get included in the region's structured intelligence layer.</p>
+      <a href="#aio" class="path-card-cta">Get Included →</a>
+    </div>
+    <div class="path-card">
+      <div class="path-card-title">Partner with the Intelligence Layer</div>
+      <p class="path-card-desc">Collaborate on modernization signals, research, and regional AI visibility.</p>
+      <a href="mailto:sat@aicv.co" class="path-card-cta">Submit a Brief →</a>
+    </div>
+    <div class="path-card">
+      <div class="path-card-title">Access Structured Documentation</div>
+      <p class="path-card-desc">Explore the schema-consistent intelligence framework and live nodes.</p>
+      <a href="https://agent.aicoachellavalley.com" class="path-card-cta">Explore Documentation →</a>
+    </div>
+  </div>
 </section>
 
 
 
 <!-- ─── DUAL LAYER CARDS ─── -->
 <section class="layers-section">
-  <div class="layers-label">Two layers · One valley</div>
+  <div class="layers-label"></div>
   <div class="layers-duo">
 
     <a href="https://agent.aicoachellavalley.com" class="layer-half agents">
@@ -1137,8 +1277,8 @@
 
     <a href="https://sunshinefm.beehiiv.com" class="layer-half humans">
       <div class="half-audience for-humans">Built for humans</div>
-      <div class="half-title">SunshineFM</div>
-      <p class="half-desc">SunshineFM is the human-facing side of the valley's AI transformation. Everything AICV documents for agents, SunshineFM translates for the people who live and work here.</p>
+      <div class="half-title">SunshineFM — The Human Layer</div>
+      <p class="half-desc">AI conversations, community-generated AI music, and the Coachella Valley story — curated and created by humans. Everything AICV documents for agents, SunshineFM translates for the people who live, work and play here.</p>
       <div class="half-list">
         <div class="half-list-item">Newsletter · AI conversations · Valley coverage</div>
         <div class="half-list-item">Radio show · AI music · Local creators</div>
@@ -1147,10 +1287,18 @@
       </div>
       <div class="half-footer">
         <span class="half-tagline">SunshineFM tells the story.</span>
-        <span class="half-link">Go to SunshineFM →</span>
+        <span class="half-link">Visit SunshineFM →</span>
       </div>
     </a>
 
+  </div>
+</section>
+
+<!-- ─── WHAT IS THE INTELLIGENCE LAYER ─── -->
+<section class="intel-what-section">
+  <div class="intel-what-inner">
+    <div class="intel-what-header">What Is the Intelligence Layer?</div>
+    <p class="intel-what-body">AI Coachella Valley documents the region's AI economy in a format AI and their Agents can evaluate, cite, and act on. <strong>29 geographic nodes</strong> across 9 valley cities. <strong>Timestamped intelligence briefs.</strong> Sector-level modernization tracking. <strong>Schema-consistent documentation (v2).</strong> In an AI-driven economy, regions that are machine-readable outperform those that are not. AICV ensures the Coachella Valley is machine-readable.</p>
   </div>
 </section>
 
@@ -1159,19 +1307,19 @@
   <div class="stats-inner">
     <div class="stat-cell">
       <div class="stat-n">29</div>
-      <div class="stat-l">Geographic nodes live<br>across 9 cities</div>
+      <div class="stat-l">Geographic nodes<br>across the valley</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">4+</div>
-      <div class="stat-l">Intelligence briefs<br>published and growing</div>
+      <div class="stat-n">9</div>
+      <div class="stat-l">Cities covered<br>in the Coachella Valley</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">2024</div>
-      <div class="stat-l">First AI education<br>series in the valley</div>
+      <div class="stat-n">2025</div>
+      <div class="stat-l">Established in<br>Coachella Valley, California</div>
     </div>
     <div class="stat-cell">
       <div class="stat-n">v2</div>
-      <div class="stat-l">Agent-first schema<br>all nodes current</div>
+      <div class="stat-l">Agent-first schema<br>deployed</div>
     </div>
   </div>
 </div>
@@ -1181,9 +1329,9 @@
   <div class="aio-top">
     <div>
       <div class="aio-section-label">Free Tool · AI Coachella Valley</div>
-      <h2 class="aio-title">Can AI find<br>your business?</h2>
-      <p class="aio-sub">AI is already influencing where people eat, stay, shop, and book services. If ChatGPT, Claude, or Google AI cannot clearly interpret your website, you are invisible to a growing share of customers.</p>
-      <p class="aio-sub" style="margin-top:0.75rem;">Enter your website and receive a plain-English diagnostic of:</p>
+      <h2 class="aio-title">Can AI Find Your<br>Business?</h2>
+      <p class="aio-sub">AI agents are already deciding where to eat, stay, invest, and book — for the people who use them. If ChatGPT, Claude, or Gemini cannot clearly interpret your website, you are invisible to a growing share of decisions.</p>
+      <p class="aio-sub" style="margin-top:0.75rem;">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</p>
       <div class="aio-diagnostic-list">
         <span class="aio-diag-item">AI crawler access</span>
         <span class="aio-diag-item">Business clarity</span>
@@ -1244,8 +1392,8 @@
         <div class="foot-mark">AICV</div>
         <div class="foot-name">AI Coachella Valley</div>
         <div class="foot-full">
-          Intelligence Layer · Est. 2024<br>
-          Rancho Mirage, California<br>
+          Intelligence Layer · Est. 2025<br>
+          Coachella Valley, California<br>
           Built for agents. Powered by humans.
         </div>
       </div>
@@ -1271,7 +1419,8 @@
     </div>
     <div class="foot-bottom">
       <div class="foot-copy">
-        © 2026 AI Coachella Valley · Intelligence Layer · Built for agents. Powered by humans.
+        © 2026 AI Coachella Valley · Established 2025 · Coachella Valley, California<br>
+        Built for agents. Powered by humans.
       </div>
       <div class="foot-links">
         <a href="https://agent.aicoachellavalley.com">Intelligence Layer</a>
