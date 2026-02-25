@@ -572,7 +572,7 @@
     }
 
     .layers-section {
-      padding: 0 3rem 5rem;
+      padding: 4rem 3rem 5rem;
       max-width: 1060px;
       margin: 0 auto;
     }
@@ -590,28 +590,31 @@
     .layers-duo {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
-      background: var(--gunmetal);
+      gap: 1px;
+      background: rgba(27,67,50,0.1);
+      align-items: stretch;
     }
 
     .layer-half {
       padding: 2.75rem;
       text-decoration: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
       position: relative;
       transition: background 0.25s ease;
       overflow: hidden;
+      background: var(--sand-light);
     }
 
     /* Dividing line between the two halves */
     .layer-half.agents {
-      border-right: 1px solid rgba(232,226,208,0.08);
+      border-right: none;
     }
 
     .layer-half::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      top: 0; left: 0; right: 0;
       height: 3px;
       background: var(--half-accent, var(--volt));
       transform: scaleX(0);
@@ -619,22 +622,14 @@
       transition: transform 0.4s ease;
     }
 
-    .layer-half:hover { background: #232323; }
+    .layer-half:hover { background: var(--sand); }
     .layer-half:hover::after { transform: scaleX(1); }
-    .layer-half.agents { --half-accent: var(--volt); }
-    .layer-half.humans { --half-accent: var(--volt); }
+    .layer-half.agents { --half-accent: var(--pine); }
+    .layer-half.humans { --half-accent: var(--pine); }
 
-    /* Central divider ornament */
+    /* Central divider ornament — hidden on light bg */
     .layers-duo .layer-half.agents::before {
-      content: '|';
-      position: absolute;
-      right: -1px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: rgba(232,226,208,0.08);
-      font-size: 2rem;
-      font-weight: 100;
-      pointer-events: none;
+      display: none;
     }
 
     .half-audience {
@@ -650,30 +645,30 @@
     }
 
     .half-audience.for-agents {
-      background: rgba(216,255,0,0.1);
-      color: var(--volt);
-      border: 1px solid rgba(216,255,0,0.2);
+      background: rgba(27,67,50,0.07);
+      color: var(--pine);
+      border: 1px solid rgba(27,67,50,0.15);
     }
 
     .half-audience.for-humans {
-      background: rgba(216,255,0,0.1);
-      color: var(--volt);
-      border: 1px solid rgba(216,255,0,0.2);
+      background: rgba(27,67,50,0.07);
+      color: var(--pine);
+      border: 1px solid rgba(27,67,50,0.15);
     }
 
     .half-title {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
       font-size: 1.25rem;
-      color: var(--sand);
+      color: var(--pine);
       margin-bottom: 0.75rem;
       letter-spacing: -0.02em;
       line-height: 1.2;
     }
 
     .half-desc {
-      font-size: 0.83rem;
-      color: rgba(232,226,208,0.75);
+      font-size: 0.95rem;
+      color: var(--pine-dark);
       line-height: 1.7;
       font-weight: 300;
       margin-bottom: 1.25rem;
@@ -687,8 +682,8 @@
     }
 
     .half-list-item {
-      font-size: 0.78rem;
-      color: rgba(232,226,208,0.65);
+      font-size: 0.82rem;
+      color: var(--pine-light);
       font-weight: 300;
       display: flex;
       align-items: center;
@@ -699,43 +694,36 @@
       content: '';
       width: 3px;
       height: 3px;
-      background: rgba(232,226,208,0.3);
+      background: rgba(27,67,50,0.3);
       border-radius: 50%;
       flex-shrink: 0;
     }
 
     .half-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(232,226,208,0.08);
+      margin-top: auto;
+      padding-top: 1.75rem;
     }
 
     .half-tagline {
-      font-size: 0.75rem;
-      color: rgba(232,226,208,0.5);
-      font-style: italic;
-      font-weight: 300;
-      line-height: 1.5;
+      display: none;
     }
 
     .half-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--volt);
-      white-space: nowrap;
-      transition: gap 0.2s;
-      flex-shrink: 0;
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.875rem;
+      background: var(--volt);
+      color: var(--pine);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: background 0.2s;
     }
 
-    .layer-half:hover .half-link { gap: 0.6rem; }
+    .layer-half:hover .half-link { background: #e8ff33; }
 
     /* ─── STATS ─── */
     .stats-wrap {
@@ -843,23 +831,36 @@
     }
 
     .aio-badge {
-      background: rgba(27,67,50,0.07);
-      border: 1px solid rgba(27,67,50,0.2);
-      color: var(--pine);
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.4rem 0.9rem;
+      display: none;
+    }
+
+    .aio-callout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: rgba(27,67,50,0.06);
+      border: 1px solid rgba(27,67,50,0.15);
+      padding: 0.75rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .aio-callout-item {
+      font-size: 0.78rem;
       font-weight: 600;
-      white-space: nowrap;
-      align-self: flex-start;
-      line-height: 1.5;
-      text-align: center;
+      color: var(--pine);
+      letter-spacing: 0.04em;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .aio-callout-divider {
+      color: rgba(27,67,50,0.3);
+      font-size: 0.9rem;
     }
 
     .aio-card {
-      background: #ffffff;
-      border: 1px solid var(--pine);
+      background: var(--gunmetal);
+      border: none;
       padding: 2.5rem;
       position: relative;
     }
@@ -873,13 +874,14 @@
     }
 
     .aio-input-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--pine-light);
-      margin-bottom: 0.875rem;
+      font-size: 0.82rem;
+      color: rgba(232,226,208,0.75);
+      margin-bottom: 1rem;
       display: block;
-      font-weight: 500;
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: 0;
+      text-transform: none;
     }
 
     .aio-row {
@@ -889,19 +891,19 @@
 
     .aio-input {
       flex: 1;
-      background: #ffffff;
-      border: 1px solid var(--pine);
+      background: var(--gunmetal);
+      border: 1px solid rgba(232,226,208,0.25);
       border-right: none;
       padding: 0.9rem 1.25rem;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.9rem;
-      color: var(--pine);
+      color: var(--sand);
       outline: none;
       transition: border-color 0.2s;
     }
 
-    .aio-input::placeholder { color: rgba(27,67,50,0.35); }
-    .aio-input:focus { border-color: var(--pine-light); }
+    .aio-input::placeholder { color: rgba(232,226,208,0.3); }
+    .aio-input:focus { border-color: rgba(232,226,208,0.6); }
 
     .aio-submit {
       background: var(--volt);
@@ -923,7 +925,7 @@
 
     .aio-note {
       font-size: 0.7rem;
-      color: var(--pine-light);
+      color: rgba(232,226,208,0.4);
       font-weight: 300;
     }
 
@@ -963,11 +965,11 @@
       margin: 0 auto 0.875rem;
     }
 
-    .loading-txt { font-size: 0.82rem; color: var(--pine-light); font-weight: 300; }
-    .loading-step { font-size: 0.72rem; color: var(--pine); margin-top: 0.35rem; opacity: 0.7; }
+    .loading-txt { font-size: 0.82rem; color: rgba(232,226,208,0.55); font-weight: 300; }
+    .loading-step { font-size: 0.72rem; color: var(--volt); margin-top: 0.35rem; opacity: 0.7; }
 
     /* results */
-    .aio-results { display: none; margin-top: 2.25rem; padding-top: 2.25rem; border-top: 1px solid rgba(27,67,50,0.12); }
+    .aio-results { display: none; margin-top: 2.25rem; padding-top: 2.25rem; border-top: 1px solid rgba(232,226,208,0.08); }
     .aio-results.on { display: block; }
 
     .result-top {
@@ -988,7 +990,7 @@
       letter-spacing: -0.05em;
     }
 
-    .score-num.hi { color: var(--pine); }
+    .score-num.hi { color: var(--volt); }
     .score-num.mid { color: var(--warning); }
     .score-num.lo { color: var(--danger); }
 
@@ -996,28 +998,28 @@
       font-size: 0.6rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--pine-light);
+      color: rgba(232,226,208,0.4);
       margin-top: 0.2rem;
     }
 
     .verdict {
       font-size: 0.9rem;
-      color: var(--pine-light);
+      color: rgba(232,226,208,0.7);
       line-height: 1.75;
       font-weight: 300;
     }
 
-    .verdict strong { color: var(--pine); font-weight: 500; }
+    .verdict strong { color: var(--snow); font-weight: 500; }
 
     .result-checks {
       display: grid;
       gap: 1px;
-      background: rgba(27,67,50,0.08);
+      background: rgba(232,226,208,0.06);
       margin-bottom: 1.5rem;
     }
 
     .r-check {
-      background: #ffffff;
+      background: #252525;
       padding: 1rem 1.25rem;
       display: flex;
       gap: 0.875rem;
@@ -1035,20 +1037,20 @@
     .r-dot.warn { background: var(--warning); }
     .r-dot.fail { background: var(--danger); }
 
-    .r-name { font-size: 0.82rem; font-weight: 500; color: var(--pine); margin-bottom: 0.2rem; }
-    .r-detail { font-size: 0.77rem; color: var(--pine-light); font-weight: 300; line-height: 1.55; }
+    .r-name { font-size: 0.82rem; font-weight: 500; color: var(--snow); margin-bottom: 0.2rem; }
+    .r-detail { font-size: 0.77rem; color: rgba(232,226,208,0.55); font-weight: 300; line-height: 1.55; }
 
     .fixes-label {
       font-size: 0.62rem; letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--pine-light);
+      color: rgba(232,226,208,0.35);
       margin-bottom: 0.875rem;
     }
 
     .fix {
       display: flex; gap: 1rem; align-items: flex-start;
       padding: 1.1rem 1.25rem;
-      background: rgba(27,67,50,0.03);
+      background: rgba(232,226,208,0.03);
       border-left: 2px solid transparent;
       margin-bottom: 1px;
     }
@@ -1067,14 +1069,14 @@
     .fix-p.med  { background: rgba(251,191,36,0.08);  color: var(--warning); }
     .fix-p.low  { background: rgba(74,222,128,0.12);  color: #166534; }
 
-    .fix-t { font-size: 0.83rem; color: var(--pine-light); line-height: 1.6; font-weight: 300; }
-    .fix-t strong { color: var(--pine); font-weight: 500; }
+    .fix-t { font-size: 0.83rem; color: rgba(232,226,208,0.65); line-height: 1.6; font-weight: 300; }
+    .fix-t strong { color: var(--snow); font-weight: 500; }
 
     .aio-reset {
       margin-top: 1.5rem;
       background: transparent;
-      border: 1px solid rgba(27,67,50,0.2);
-      color: var(--pine-light);
+      border: 1px solid rgba(232,226,208,0.15);
+      color: rgba(232,226,208,0.4);
       padding: 0.6rem 1.2rem;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.77rem;
@@ -1082,14 +1084,14 @@
       transition: all 0.2s;
     }
 
-    .aio-reset:hover { border-color: var(--pine); color: var(--pine); }
+    .aio-reset:hover { border-color: var(--volt); color: var(--volt); }
 
     .aio-err {
       display: none; margin-top: 1rem;
       padding: 0.875rem 1.1rem;
       background: rgba(248,113,113,0.06);
       border-left: 2px solid var(--danger);
-      font-size: 0.8rem; color: var(--pine-light);
+      font-size: 0.8rem; color: rgba(232,226,208,0.6);
     }
 
     .aio-err.on { display: block; }
@@ -1188,12 +1190,13 @@
     }
 
     .partners-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(232,226,208,0.4);
-      margin-bottom: 0.75rem;
-      font-weight: 500;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      color: var(--volt);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
     }
 
     .partners-sub {
@@ -1239,7 +1242,7 @@
       .intel-grid { grid-template-columns: 1fr; }
       .layers-section { padding: 0 1.5rem 3.5rem; }
       .layers-duo { grid-template-columns: 1fr; }
-      .layer-half.agents { border-right: none; border-bottom: 1px solid rgba(232,226,208,0.08); }
+      .layer-half.agents { border-right: none; border-bottom: 1px solid rgba(27,67,50,0.1); }
       .layers-duo .layer-half.agents::before { display: none; }
       .stats-inner { padding: 2rem 1.5rem; grid-template-columns: 1fr 1fr; }
       .path-cards { grid-template-columns: 1fr; padding: 0 1.5rem; background: transparent; }
@@ -1249,7 +1252,7 @@
       .aio-section { padding: 3.5rem 1.5rem; }
       .aio-top { grid-template-columns: 1fr; gap: 1rem; }
       .aio-row { flex-direction: column; }
-      .aio-input { border-right: 1px solid var(--pine); }
+      .aio-input { border-right: 1px solid rgba(232,226,208,0.25); }
       .aio-checks { grid-template-columns: repeat(3, 1fr); }
       .result-top { grid-template-columns: 1fr; }
       .partners-section { padding: 3rem 1.5rem; }
@@ -1318,7 +1321,12 @@
   <section class="intel-what-section">
     <div class="intel-what-inner">
       <div class="intel-what-header">What Is the Intelligence Layer?</div>
-      <p class="intel-what-body">AI Coachella Valley documents the region's AI economy in a format AI and their Agents can evaluate, cite, and act on. <strong>29 geographic nodes</strong> across 9 valley cities. <strong>Timestamped intelligence briefs.</strong> Sector-level modernization tracking. <strong>Schema-consistent documentation (v2).</strong> In an AI-driven economy, regions that are machine-readable outperform those that are not. AICV ensures the Coachella Valley is machine-readable.</p>
+      <p class="intel-what-body">Search has changed. Discovery has changed. Economic decision-making is changing.</p>
+      <p class="intel-what-body" style="margin-top:1rem;">AI systems increasingly sit between regions and opportunity.</p>
+      <p class="intel-what-body" style="margin-top:1rem;">The Intelligence Layer ensures the Coachella Valley is represented clearly in that new interface.</p>
+      <p class="intel-what-body" style="margin-top:1rem;">It documents the Valley's businesses, institutions, and modernization signals as living intelligence — continuously updated, structured for Foundational LLMs and agentic AI systems, and grounded in real economic activity.</p>
+      <p class="intel-what-body" style="margin-top:1rem;">All 9 valley cities and adjacent communities represented. Live intelligence briefs. Curated regional network. Version 2 framework — evolving with the technology.</p>
+      <p class="intel-what-body" style="margin-top:1.5rem;"><strong>We're not waiting for the future of AI. We're building for it — now.</strong></p>
     </div>
   </section>
 </div>
@@ -1350,23 +1358,23 @@
   <div class="aio-top">
     <div>
       <div class="aio-section-label">Free Tool · AI Coachella Valley</div>
-      <h2 class="aio-title">Can AI Find Your<br>Business?</h2>
-      <p class="aio-sub">AI agents are already deciding where to eat, stay, invest, and book — for the people who use them. If ChatGPT, Claude, or Gemini cannot clearly interpret your website, you are invisible to a growing share of decisions.</p>
-      <p class="aio-sub" style="margin-top:0.75rem;">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</p>
-      <div class="aio-diagnostic-list">
-        <span class="aio-diag-item">AI crawler access</span>
-        <span class="aio-diag-item">Business clarity</span>
-        <span class="aio-diag-item">Structured data</span>
-        <span class="aio-diag-item">Content comprehension</span>
-        <span class="aio-diag-item">Local signals</span>
-        <span class="aio-diag-item">Page performance</span>
-      </div>
+      <h2 class="aio-title">Can AI See Your<br>Business?</h2>
+      <p class="aio-sub">Foundational LLMs and AI agents now act as intermediaries between customers and companies.</p>
+      <p class="aio-sub" style="margin-top:0.75rem;">If they cannot interpret your business clearly, you don't exist in that layer.</p>
+      <p class="aio-sub" style="margin-top:0.75rem;">This free diagnostic reveals how leading AI systems evaluate your website — across structure, semantics, and local signals.</p>
     </div>
-    <div class="aio-badge">Free<br>No signup<br>No stored data</div>
+  </div>
+
+  <div class="aio-callout">
+    <div class="aio-callout-item">Free.</div>
+    <div class="aio-callout-divider">·</div>
+    <div class="aio-callout-item">No signup.</div>
+    <div class="aio-callout-divider">·</div>
+    <div class="aio-callout-item">No data stored.</div>
   </div>
 
   <div class="aio-card">
-    <label class="aio-input-label" for="urlInput">Your website address</label>
+    <label class="aio-input-label" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
     <div class="aio-row">
       <input
         type="url"
@@ -1414,8 +1422,8 @@
       <span class="partner-name">College of the Desert</span>
       <span class="partner-name">UC Riverside Extension</span>
       <span class="partner-name">CSUSB School of Entrepreneurship</span>
-      <span class="partner-name">Palm Desert Chamber of Commerce</span>
-      <span class="partner-name">Palm Springs Chamber of Commerce</span>
+      <span class="partner-name">City of Palm Desert</span>
+      <span class="partner-name">City of Palm Springs</span>
       <span class="partner-name">Riverside County Economic Development</span>
       <span class="partner-name">Entrepreneurship Resource Center</span>
     </div>
