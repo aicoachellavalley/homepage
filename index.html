@@ -109,8 +109,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.25rem 3rem;
-      background: var(--sand);
-      border-bottom: 1px solid rgba(27,67,50,0.1);
+      background: var(--gunmetal);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -126,14 +125,14 @@
     .nav-logo-mark {
       width: 36px;
       height: 36px;
-      background: var(--pine);
+      background: var(--volt);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Syne', sans-serif;
       font-weight: 800;
       font-size: 11px;
-      color: var(--volt);
+      color: var(--pine);
       letter-spacing: 0.02em;
       flex-shrink: 0;
     }
@@ -149,14 +148,14 @@
       font-family: 'Syne', sans-serif;
       font-weight: 800;
       font-size: 0.9rem;
-      color: var(--pine);
+      color: var(--sand);
       letter-spacing: 0.04em;
     }
 
     .nav-logo-sub {
       font-size: 0.6rem;
       font-weight: 300;
-      color: rgba(27,67,50,0.4);
+      color: rgba(232,226,208,0.4);
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -175,19 +174,19 @@
 
     .nav-links a {
       font-size: 0.78rem;
-      color: rgba(27,67,50,0.5);
+      color: var(--sand);
       text-decoration: none;
       letter-spacing: 0.03em;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--pine); }
+    .nav-links a:hover { color: var(--volt); }
 
     .nav-aio-btn {
       font-size: 0.72rem;
-      color: var(--pine);
+      color: var(--sand);
       text-decoration: none;
-      border: 1px solid rgba(27,67,50,0.2);
+      border: 1px solid rgba(232,226,208,0.25);
       padding: 0.4rem 0.9rem;
       letter-spacing: 0.04em;
       transition: all 0.2s;
@@ -195,14 +194,14 @@
     }
 
     .nav-aio-btn:hover {
-      background: var(--pine);
-      color: var(--volt);
-      border-color: var(--pine);
+      background: var(--volt);
+      color: var(--pine);
+      border-color: var(--volt);
     }
 
     .nav-docs-btn {
-      background: var(--pine);
-      color: var(--volt);
+      background: var(--volt);
+      color: var(--pine);
       padding: 0.45rem 1.1rem;
       font-family: 'Syne', sans-serif;
       font-size: 0.72rem;
@@ -212,7 +211,7 @@
       transition: background 0.2s;
     }
 
-    .nav-docs-btn:hover { background: var(--pine-light); }
+    .nav-docs-btn:hover { background: #e8ff33; }
 
     /* ─── HERO ─── */
     .hero {
@@ -259,9 +258,9 @@
       font-family: 'Syne', sans-serif;
       font-size: clamp(1rem, 2vw, 1.3rem);
       font-weight: 400;
-      color: rgba(27,67,50,0.5);
+      color: var(--pine-light);
       letter-spacing: 0.01em;
-      margin-bottom: 4rem;
+      margin-bottom: 1.25rem;
       opacity: 0;
       animation: fadeUp 0.7s ease forwards 0.3s;
     }
@@ -273,7 +272,7 @@
 
     .hero-support {
       font-size: 0.95rem;
-      color: rgba(27,67,50,0.55);
+      color: var(--pine-light);
       font-weight: 300;
       line-height: 1.75;
       max-width: 62ch;
@@ -283,43 +282,50 @@
     }
 
     /* ─── PATH CARDS ─── */
+    .path-cards-wrap {
+      background: var(--pine);
+    }
+
     .path-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: rgba(27,67,50,0.12);
+      background: rgba(232,226,208,0.08);
       margin-bottom: 0;
+      max-width: 1060px;
+      margin-left: auto;
+      margin-right: auto;
       opacity: 0;
       animation: fadeUp 0.7s ease forwards 0.5s;
     }
 
     .path-card {
-      background: var(--sand-light);
+      background: var(--pine);
       padding: 1.75rem 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      border-top: 3px solid rgba(27,67,50,0.08);
+      border-top: 3px solid rgba(232,226,208,0.12);
       transition: border-color 0.2s, background 0.2s;
     }
 
     .path-card:hover {
-      border-top-color: var(--pine);
-      background: var(--sand);
+      border-top-color: var(--volt);
+      background: var(--pine-light);
     }
 
     .path-card-title {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
       font-size: 0.9rem;
-      color: var(--pine);
+      color: var(--sand);
       letter-spacing: -0.01em;
       line-height: 1.3;
     }
 
     .path-card-desc {
       font-size: 0.8rem;
-      color: rgba(27,67,50,0.5);
+      color: rgba(232,226,208,0.75);
       font-weight: 300;
       line-height: 1.6;
       flex: 1;
@@ -327,45 +333,44 @@
 
     .path-card-cta {
       display: inline-block;
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
       font-size: 0.72rem;
       font-weight: 700;
       font-family: 'Syne', sans-serif;
       letter-spacing: 0.06em;
+      background: var(--volt);
       color: var(--pine);
+      padding: 0.45rem 0.9rem;
       text-decoration: none;
-      transition: letter-spacing 0.2s;
+      transition: background 0.2s, letter-spacing 0.2s;
+      align-self: flex-start;
     }
 
-    .path-card:hover .path-card-cta { letter-spacing: 0.1em; }
+    .path-card:hover .path-card-cta { background: #e8ff33; letter-spacing: 0.1em; }
 
     /* ─── WHAT IS THE INTELLIGENCE LAYER ─── */
+    .intel-what-wrap {
+      background: var(--sand);
+    }
+
     .intel-what-section {
-      padding: 5rem 3rem 0;
+      padding: 5rem 3rem 4rem;
       max-width: 1060px;
       margin: 0 auto;
     }
 
     .intel-what-inner {
-      background: var(--gunmetal);
-      padding: 3rem;
+      background: var(--sand);
+      padding: 0;
       position: relative;
       overflow: hidden;
-    }
-
-    .intel-what-inner::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--volt);
     }
 
     .intel-what-header {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
       font-size: clamp(1.3rem, 2.5vw, 2rem);
-      color: var(--snow);
+      color: var(--pine);
       letter-spacing: -0.025em;
       line-height: 1.1;
       margin-bottom: 1.5rem;
@@ -373,15 +378,15 @@
 
     .intel-what-body {
       font-size: 0.95rem;
-      color: rgba(245,245,245,0.5);
+      color: var(--pine-dark);
       font-weight: 300;
       line-height: 1.85;
       max-width: 72ch;
     }
 
     .intel-what-body strong {
-      color: var(--snow);
-      font-weight: 500;
+      color: var(--pine);
+      font-weight: 600;
     }
 
     /* ─── INTELLIGENCE LAYER BLOCK ─── */
@@ -562,6 +567,10 @@
     .intel-cta:hover { background: #e8ff33; gap: 0.75rem; }
 
     /* ─── DUAL LAYER CARDS ─── */
+    .layers-wrap {
+      background: var(--pine);
+    }
+
     .layers-section {
       padding: 0 3rem 5rem;
       max-width: 1060px;
@@ -572,7 +581,7 @@
       font-size: 0.62rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(27,67,50,0.3);
+      color: rgba(232,226,208,0.3);
       margin-bottom: 1.25rem;
       font-weight: 500;
     }
@@ -582,7 +591,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
-      background: var(--gunmetal);
+      background: var(--pine);
     }
 
     .layer-half {
@@ -596,7 +605,7 @@
 
     /* Dividing line between the two halves */
     .layer-half.agents {
-      border-right: 1px solid rgba(245,245,245,0.06);
+      border-right: 1px solid rgba(232,226,208,0.08);
     }
 
     .layer-half::after {
@@ -610,10 +619,10 @@
       transition: transform 0.4s ease;
     }
 
-    .layer-half:hover { background: #232323; }
+    .layer-half:hover { background: var(--pine-light); }
     .layer-half:hover::after { transform: scaleX(1); }
     .layer-half.agents { --half-accent: var(--volt); }
-    .layer-half.humans { --half-accent: var(--sky); }
+    .layer-half.humans { --half-accent: var(--volt); }
 
     /* Central divider ornament */
     .layers-duo .layer-half.agents::before {
@@ -622,7 +631,7 @@
       right: -1px;
       top: 50%;
       transform: translateY(-50%);
-      color: rgba(245,245,245,0.08);
+      color: rgba(232,226,208,0.08);
       font-size: 2rem;
       font-weight: 100;
       pointer-events: none;
@@ -641,22 +650,22 @@
     }
 
     .half-audience.for-agents {
-      background: rgba(216,255,0,0.07);
+      background: rgba(216,255,0,0.1);
       color: var(--volt);
-      border: 1px solid rgba(216,255,0,0.15);
+      border: 1px solid rgba(216,255,0,0.2);
     }
 
     .half-audience.for-humans {
-      background: rgba(126,212,230,0.07);
-      color: var(--sky);
-      border: 1px solid rgba(126,212,230,0.15);
+      background: rgba(216,255,0,0.1);
+      color: var(--volt);
+      border: 1px solid rgba(216,255,0,0.2);
     }
 
     .half-title {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
       font-size: 1.25rem;
-      color: var(--snow);
+      color: var(--sand);
       margin-bottom: 0.75rem;
       letter-spacing: -0.02em;
       line-height: 1.2;
@@ -664,7 +673,7 @@
 
     .half-desc {
       font-size: 0.83rem;
-      color: rgba(245,245,245,0.4);
+      color: rgba(232,226,208,0.75);
       line-height: 1.7;
       font-weight: 300;
       margin-bottom: 1.25rem;
@@ -679,7 +688,7 @@
 
     .half-list-item {
       font-size: 0.78rem;
-      color: rgba(245,245,245,0.3);
+      color: rgba(232,226,208,0.65);
       font-weight: 300;
       display: flex;
       align-items: center;
@@ -690,7 +699,7 @@
       content: '';
       width: 3px;
       height: 3px;
-      background: rgba(245,245,245,0.18);
+      background: rgba(232,226,208,0.3);
       border-radius: 50%;
       flex-shrink: 0;
     }
@@ -701,12 +710,12 @@
       justify-content: space-between;
       gap: 1rem;
       padding-top: 1.25rem;
-      border-top: 1px solid rgba(245,245,245,0.05);
+      border-top: 1px solid rgba(232,226,208,0.08);
     }
 
     .half-tagline {
       font-size: 0.75rem;
-      color: rgba(245,245,245,0.2);
+      color: rgba(232,226,208,0.5);
       font-style: italic;
       font-weight: 300;
       line-height: 1.5;
@@ -720,7 +729,7 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--half-accent, var(--volt));
+      color: var(--volt);
       white-space: nowrap;
       transition: gap 0.2s;
       flex-shrink: 0;
@@ -760,7 +769,7 @@
 
     .stat-l {
       font-size: 0.78rem;
-      color: rgba(245,245,245,0.35);
+      color: rgba(232,226,208,0.75);
       font-weight: 300;
       line-height: 1.45;
     }
@@ -784,7 +793,7 @@
       font-size: 0.62rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(27,67,50,0.3);
+      color: var(--pine-light);
       margin-bottom: 0.6rem;
       font-weight: 500;
     }
@@ -802,7 +811,7 @@
     .aio-sub {
       font-size: 0.95rem;
       font-weight: 300;
-      color: rgba(27,67,50,0.55);
+      color: var(--pine-light);
       line-height: 1.75;
       max-width: 54ch;
     }
@@ -816,7 +825,7 @@
 
     .aio-diag-item {
       font-size: 0.8rem;
-      color: rgba(27,67,50,0.5);
+      color: var(--pine-light);
       font-weight: 300;
       display: flex;
       align-items: center;
@@ -829,13 +838,13 @@
       height: 4px;
       background: var(--pine);
       border-radius: 50%;
-      opacity: 0.3;
+      opacity: 0.5;
       flex-shrink: 0;
     }
 
     .aio-badge {
       background: rgba(27,67,50,0.07);
-      border: 1px solid rgba(27,67,50,0.14);
+      border: 1px solid rgba(27,67,50,0.2);
       color: var(--pine);
       font-size: 0.62rem;
       letter-spacing: 0.14em;
@@ -849,7 +858,8 @@
     }
 
     .aio-card {
-      background: var(--gunmetal);
+      background: #ffffff;
+      border: 1px solid var(--pine);
       padding: 2.5rem;
       position: relative;
     }
@@ -866,7 +876,7 @@
       font-size: 0.68rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(245,245,245,0.3);
+      color: var(--pine-light);
       margin-bottom: 0.875rem;
       display: block;
       font-weight: 500;
@@ -879,19 +889,19 @@
 
     .aio-input {
       flex: 1;
-      background: rgba(245,245,245,0.05);
-      border: 1px solid rgba(245,245,245,0.1);
+      background: #ffffff;
+      border: 1px solid var(--pine);
       border-right: none;
       padding: 0.9rem 1.25rem;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.9rem;
-      color: var(--snow);
+      color: var(--pine);
       outline: none;
       transition: border-color 0.2s;
     }
 
-    .aio-input::placeholder { color: rgba(245,245,245,0.18); }
-    .aio-input:focus { border-color: rgba(216,255,0,0.3); }
+    .aio-input::placeholder { color: rgba(27,67,50,0.35); }
+    .aio-input:focus { border-color: var(--pine-light); }
 
     .aio-submit {
       background: var(--volt);
@@ -909,11 +919,11 @@
 
     .aio-submit:hover { background: #e8ff33; }
     .aio-submit:active { transform: scale(0.98); }
-    .aio-submit:disabled { background: rgba(216,255,0,0.18); color: rgba(27,67,50,0.3); cursor: not-allowed; }
+    .aio-submit:disabled { background: rgba(216,255,0,0.3); color: rgba(27,67,50,0.4); cursor: not-allowed; }
 
     .aio-note {
       font-size: 0.7rem;
-      color: rgba(245,245,245,0.18);
+      color: var(--pine-light);
       font-weight: 300;
     }
 
@@ -921,12 +931,12 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 1px;
-      background: rgba(245,245,245,0.04);
+      background: rgba(27,67,50,0.08);
       margin-top: 1.75rem;
     }
 
     .aio-check {
-      background: rgba(245,245,245,0.02);
+      background: rgba(27,67,50,0.03);
       padding: 1rem 0.75rem;
       text-align: center;
     }
@@ -935,7 +945,7 @@
 
     .aio-check-lbl {
       font-size: 0.65rem;
-      color: rgba(245,245,245,0.25);
+      color: var(--pine-light);
       line-height: 1.35;
       font-weight: 300;
     }
@@ -946,18 +956,18 @@
 
     .spin {
       width: 30px; height: 30px;
-      border: 2px solid rgba(216,255,0,0.1);
-      border-top-color: var(--volt);
+      border: 2px solid rgba(27,67,50,0.1);
+      border-top-color: var(--pine);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
       margin: 0 auto 0.875rem;
     }
 
-    .loading-txt { font-size: 0.82rem; color: rgba(245,245,245,0.35); font-weight: 300; }
-    .loading-step { font-size: 0.72rem; color: var(--volt); margin-top: 0.35rem; opacity: 0.7; }
+    .loading-txt { font-size: 0.82rem; color: var(--pine-light); font-weight: 300; }
+    .loading-step { font-size: 0.72rem; color: var(--pine); margin-top: 0.35rem; opacity: 0.7; }
 
     /* results */
-    .aio-results { display: none; margin-top: 2.25rem; padding-top: 2.25rem; border-top: 1px solid rgba(245,245,245,0.06); }
+    .aio-results { display: none; margin-top: 2.25rem; padding-top: 2.25rem; border-top: 1px solid rgba(27,67,50,0.12); }
     .aio-results.on { display: block; }
 
     .result-top {
@@ -978,7 +988,7 @@
       letter-spacing: -0.05em;
     }
 
-    .score-num.hi { color: var(--volt); }
+    .score-num.hi { color: var(--pine); }
     .score-num.mid { color: var(--warning); }
     .score-num.lo { color: var(--danger); }
 
@@ -986,28 +996,28 @@
       font-size: 0.6rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(245,245,245,0.2);
+      color: var(--pine-light);
       margin-top: 0.2rem;
     }
 
     .verdict {
       font-size: 0.9rem;
-      color: rgba(245,245,245,0.6);
+      color: var(--pine-light);
       line-height: 1.75;
       font-weight: 300;
     }
 
-    .verdict strong { color: var(--snow); font-weight: 500; }
+    .verdict strong { color: var(--pine); font-weight: 500; }
 
     .result-checks {
       display: grid;
       gap: 1px;
-      background: rgba(245,245,245,0.04);
+      background: rgba(27,67,50,0.08);
       margin-bottom: 1.5rem;
     }
 
     .r-check {
-      background: var(--gunmetal);
+      background: #ffffff;
       padding: 1rem 1.25rem;
       display: flex;
       gap: 0.875rem;
@@ -1025,20 +1035,20 @@
     .r-dot.warn { background: var(--warning); }
     .r-dot.fail { background: var(--danger); }
 
-    .r-name { font-size: 0.82rem; font-weight: 500; color: var(--snow); margin-bottom: 0.2rem; }
-    .r-detail { font-size: 0.77rem; color: rgba(245,245,245,0.38); font-weight: 300; line-height: 1.55; }
+    .r-name { font-size: 0.82rem; font-weight: 500; color: var(--pine); margin-bottom: 0.2rem; }
+    .r-detail { font-size: 0.77rem; color: var(--pine-light); font-weight: 300; line-height: 1.55; }
 
     .fixes-label {
       font-size: 0.62rem; letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(245,245,245,0.22);
+      color: var(--pine-light);
       margin-bottom: 0.875rem;
     }
 
     .fix {
       display: flex; gap: 1rem; align-items: flex-start;
       padding: 1.1rem 1.25rem;
-      background: rgba(245,245,245,0.02);
+      background: rgba(27,67,50,0.03);
       border-left: 2px solid transparent;
       margin-bottom: 1px;
     }
@@ -1055,16 +1065,16 @@
 
     .fix-p.high { background: rgba(248,113,113,0.08); color: var(--danger); }
     .fix-p.med  { background: rgba(251,191,36,0.08);  color: var(--warning); }
-    .fix-p.low  { background: rgba(74,222,128,0.08);  color: var(--success); }
+    .fix-p.low  { background: rgba(74,222,128,0.12);  color: #166534; }
 
-    .fix-t { font-size: 0.83rem; color: rgba(245,245,245,0.55); line-height: 1.6; font-weight: 300; }
-    .fix-t strong { color: var(--snow); font-weight: 500; }
+    .fix-t { font-size: 0.83rem; color: var(--pine-light); line-height: 1.6; font-weight: 300; }
+    .fix-t strong { color: var(--pine); font-weight: 500; }
 
     .aio-reset {
       margin-top: 1.5rem;
       background: transparent;
-      border: 1px solid rgba(245,245,245,0.1);
-      color: rgba(245,245,245,0.3);
+      border: 1px solid rgba(27,67,50,0.2);
+      color: var(--pine-light);
       padding: 0.6rem 1.2rem;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.77rem;
@@ -1072,14 +1082,14 @@
       transition: all 0.2s;
     }
 
-    .aio-reset:hover { border-color: var(--volt); color: var(--volt); }
+    .aio-reset:hover { border-color: var(--pine); color: var(--pine); }
 
     .aio-err {
       display: none; margin-top: 1rem;
       padding: 0.875rem 1.1rem;
-      background: rgba(248,113,113,0.05);
+      background: rgba(248,113,113,0.06);
       border-left: 2px solid var(--danger);
-      font-size: 0.8rem; color: rgba(245,245,245,0.45);
+      font-size: 0.8rem; color: var(--pine-light);
     }
 
     .aio-err.on { display: block; }
@@ -1097,7 +1107,7 @@
       grid-template-columns: 220px 1fr;
       gap: 4rem;
       padding-bottom: 2.5rem;
-      border-bottom: 1px solid rgba(245,245,245,0.06);
+      border-bottom: 1px solid rgba(232,226,208,0.08);
       margin-bottom: 2rem;
     }
 
@@ -1105,41 +1115,41 @@
 
     .foot-mark {
       width: 38px; height: 38px;
-      background: rgba(245,245,245,0.04);
-      border: 1px solid rgba(216,255,0,0.15);
+      background: var(--volt);
+      border: none;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Syne', sans-serif;
       font-weight: 800; font-size: 11px;
-      color: var(--volt);
+      color: var(--pine);
       margin-bottom: 0.875rem;
     }
 
     .foot-name {
       font-family: 'Syne', sans-serif;
       font-weight: 700; font-size: 0.88rem;
-      color: var(--snow); margin-bottom: 0.3rem;
+      color: var(--sand); margin-bottom: 0.3rem;
     }
 
     .foot-full {
-      font-size: 0.7rem; color: rgba(245,245,245,0.22);
+      font-size: 0.7rem; color: rgba(232,226,208,0.6);
       font-weight: 300; line-height: 1.6;
     }
 
     .foot-cities-label {
       font-size: 0.6rem; letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(245,245,245,0.22);
+      color: rgba(232,226,208,0.6);
       margin-bottom: 1rem; font-weight: 500;
     }
 
     .foot-cities {
       font-size: 0.8rem;
-      color: rgba(245,245,245,0.28);
+      color: rgba(232,226,208,0.4);
       font-weight: 300;
       line-height: 2;
     }
 
-    .foot-sep { color: rgba(245,245,245,0.1); margin: 0 0.4rem; }
+    .foot-sep { color: rgba(232,226,208,0.15); margin: 0 0.4rem; }
 
     .foot-bottom {
       display: flex; align-items: center;
@@ -1148,7 +1158,7 @@
 
     .foot-copy {
       font-size: 0.72rem;
-      color: rgba(245,245,245,0.18);
+      color: rgba(232,226,208,0.6);
       font-weight: 300;
       line-height: 1.6;
     }
@@ -1157,7 +1167,7 @@
 
     .foot-links a {
       font-size: 0.72rem;
-      color: rgba(245,245,245,0.22);
+      color: rgba(232,226,208,0.6);
       text-decoration: none;
       transition: color 0.2s;
       letter-spacing: 0.02em;
@@ -1183,16 +1193,17 @@
       .intel-grid { grid-template-columns: 1fr; }
       .layers-section { padding: 0 1.5rem 3.5rem; }
       .layers-duo { grid-template-columns: 1fr; }
-      .layer-half.agents { border-right: none; border-bottom: 1px solid rgba(245,245,245,0.06); }
+      .layer-half.agents { border-right: none; border-bottom: 1px solid rgba(232,226,208,0.08); }
       .layers-duo .layer-half.agents::before { display: none; }
       .stats-inner { padding: 2rem 1.5rem; grid-template-columns: 1fr 1fr; }
-      .path-cards { grid-template-columns: 1fr; }
+      .path-cards { grid-template-columns: 1fr; padding: 0 1.5rem; background: transparent; }
+      .path-cards-wrap { padding: 0; }
       .intel-what-section { padding: 3.5rem 1.5rem 0; }
       .intel-what-inner { padding: 2rem 1.5rem; }
       .aio-section { padding: 3.5rem 1.5rem; }
       .aio-top { grid-template-columns: 1fr; gap: 1rem; }
       .aio-row { flex-direction: column; }
-      .aio-input { border-right: 1px solid rgba(245,245,245,0.1); }
+      .aio-input { border-right: 1px solid var(--pine); }
       .aio-checks { grid-template-columns: repeat(3, 1fr); }
       .result-top { grid-template-columns: 1fr; }
       footer { padding: 2.5rem 1.5rem 2rem; }
@@ -1232,7 +1243,10 @@
   <p class="hero-tagline">Designed for the AI Era / <strong>Built for agents. Powered by humans.</strong></p>
   <p class="hero-support">Structured intelligence that makes the Coachella Valley legible to AI Agents (ChatGPT, Claude, Gemini) evaluating where to invest, relocate, partner, and book.</p>
 
-  <!-- Path Cards -->
+</section>
+
+<!-- ─── PATH CARDS ─── -->
+<div class="path-cards-wrap">
   <div class="path-cards">
     <div class="path-card">
       <div class="path-card-title">Make Your Business Visible to AI</div>
@@ -1250,11 +1264,12 @@
       <a href="https://agent.aicoachellavalley.com" class="path-card-cta">Explore Documentation →</a>
     </div>
   </div>
-</section>
+</div>
 
 
 
 <!-- ─── DUAL LAYER CARDS ─── -->
+<div class="layers-wrap">
 <section class="layers-section">
   <div class="layers-label"></div>
   <div class="layers-duo">
@@ -1293,14 +1308,17 @@
 
   </div>
 </section>
+</div>
 
 <!-- ─── WHAT IS THE INTELLIGENCE LAYER ─── -->
-<section class="intel-what-section">
-  <div class="intel-what-inner">
-    <div class="intel-what-header">What Is the Intelligence Layer?</div>
-    <p class="intel-what-body">AI Coachella Valley documents the region's AI economy in a format AI and their Agents can evaluate, cite, and act on. <strong>29 geographic nodes</strong> across 9 valley cities. <strong>Timestamped intelligence briefs.</strong> Sector-level modernization tracking. <strong>Schema-consistent documentation (v2).</strong> In an AI-driven economy, regions that are machine-readable outperform those that are not. AICV ensures the Coachella Valley is machine-readable.</p>
-  </div>
-</section>
+<div class="intel-what-wrap">
+  <section class="intel-what-section">
+    <div class="intel-what-inner">
+      <div class="intel-what-header">What Is the Intelligence Layer?</div>
+      <p class="intel-what-body">AI Coachella Valley documents the region's AI economy in a format AI and their Agents can evaluate, cite, and act on. <strong>29 geographic nodes</strong> across 9 valley cities. <strong>Timestamped intelligence briefs.</strong> Sector-level modernization tracking. <strong>Schema-consistent documentation (v2).</strong> In an AI-driven economy, regions that are machine-readable outperform those that are not. AICV ensures the Coachella Valley is machine-readable.</p>
+    </div>
+  </section>
+</div>
 
 <!-- ─── STATS ─── -->
 <div class="stats-wrap">
