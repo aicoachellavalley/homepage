@@ -270,15 +270,21 @@
       font-weight: 600;
     }
 
+    .hero-support-block {
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+      max-width: 62ch;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.4s;
+    }
+
     .hero-support {
       font-size: 0.95rem;
       color: var(--pine-light);
       font-weight: 300;
       line-height: 1.75;
-      max-width: 62ch;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards 0.4s;
+      margin: 0;
+      display: block;
     }
 
     /* ─── PATH CARDS ─── */
@@ -1281,9 +1287,11 @@
   </div>
   <h1 class="hero-headline">The AI Hub for the<br>Coachella Valley</h1>
   <p class="hero-tagline">Designed for the AI Era / <strong>Built for agents. Powered by humans.</strong></p>
-  <p class="hero-support">The next economic interface isn't a website. It's an AI.</p>
-  <p class="hero-support" style="margin-top:0.25rem;">Foundational models like ChatGPT, Claude, and Gemini increasingly shape where capital flows and where people go.</p>
-  <p class="hero-support" style="margin-top:0.25rem;">AICV builds the intelligence layer that ensures this region is part of that future.</p>
+  <div class="hero-support-block">
+    <p class="hero-support">The next economic interface isn't a website. It's an AI.</p>
+    <p class="hero-support">Foundational models like ChatGPT, Claude, and Gemini increasingly shape where capital flows and where people go.</p>
+    <p class="hero-support">AICV builds the intelligence layer that ensures this region is part of that future.</p>
+  </div>
 
 </section>
 
