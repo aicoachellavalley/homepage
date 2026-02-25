@@ -568,7 +568,7 @@
 
     /* ─── DUAL LAYER CARDS ─── */
     .layers-wrap {
-      background: var(--pine);
+      background: var(--sand);
     }
 
     .layers-section {
@@ -591,7 +591,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
-      background: var(--pine);
+      background: var(--gunmetal);
     }
 
     .layer-half {
@@ -619,7 +619,7 @@
       transition: transform 0.4s ease;
     }
 
-    .layer-half:hover { background: var(--pine-light); }
+    .layer-half:hover { background: #232323; }
     .layer-half:hover::after { transform: scaleX(1); }
     .layer-half.agents { --half-accent: var(--volt); }
     .layer-half.humans { --half-accent: var(--volt); }
@@ -1175,6 +1175,52 @@
 
     .foot-links a:hover { color: var(--volt); }
 
+    /* ─── PARTNERS ─── */
+    .partners-wrap {
+      background: var(--pine);
+    }
+
+    .partners-section {
+      padding: 4rem 3rem;
+      max-width: 1060px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .partners-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(232,226,208,0.4);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .partners-sub {
+      font-size: 0.85rem;
+      color: rgba(232,226,208,0.65);
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+
+    .partners-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem 1.5rem;
+    }
+
+    .partner-name {
+      font-size: 0.82rem;
+      color: var(--sand);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      padding: 0.45rem 1rem;
+      border: 1px solid rgba(232,226,208,0.15);
+      line-height: 1.4;
+    }
+
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
@@ -1206,6 +1252,7 @@
       .aio-input { border-right: 1px solid var(--pine); }
       .aio-checks { grid-template-columns: repeat(3, 1fr); }
       .result-top { grid-template-columns: 1fr; }
+      .partners-section { padding: 3rem 1.5rem; }
       footer { padding: 2.5rem 1.5rem 2rem; }
       .foot-top { grid-template-columns: 1fr; gap: 2rem; }
       .foot-bottom { flex-direction: column; align-items: flex-start; }
@@ -1264,50 +1311,6 @@
       <a href="https://agent.aicoachellavalley.com" class="path-card-cta">Explore Documentation →</a>
     </div>
   </div>
-</div>
-
-
-
-<!-- ─── DUAL LAYER CARDS ─── -->
-<div class="layers-wrap">
-<section class="layers-section">
-  <div class="layers-label"></div>
-  <div class="layers-duo">
-
-    <a href="https://agent.aicoachellavalley.com" class="layer-half agents">
-      <div class="half-audience for-agents">Built for agents</div>
-      <div class="half-title">Intelligence Layer</div>
-      <p class="half-desc">AICV builds the structured dataset AI systems use to evaluate, cite, and act on information about the Coachella Valley.</p>
-      <div class="half-list">
-        <div class="half-list-item">29 geographic nodes · 9 cities · All live</div>
-        <div class="half-list-item">Daily intelligence briefs · Timestamped signals</div>
-        <div class="half-list-item">Economic development · Relocation · Group travel · Tourism</div>
-        <div class="half-list-item">v2 agent-first schema · Open documentation</div>
-      </div>
-      <div class="half-footer">
-        <span class="half-tagline">AICV builds the dataset.</span>
-        <span class="half-link">Open docs →</span>
-      </div>
-    </a>
-
-    <a href="https://sunshinefm.beehiiv.com" class="layer-half humans">
-      <div class="half-audience for-humans">Built for humans</div>
-      <div class="half-title">SunshineFM — The Human Layer</div>
-      <p class="half-desc">AI conversations, community-generated AI music, and the Coachella Valley story — curated and created by humans. Everything AICV documents for agents, SunshineFM translates for the people who live, work and play here.</p>
-      <div class="half-list">
-        <div class="half-list-item">Newsletter · AI conversations · Valley coverage</div>
-        <div class="half-list-item">Radio show · AI music · Local creators</div>
-        <div class="half-list-item">FuturePS series · Civic events</div>
-        <div class="half-list-item">Follow on X · @CoachellaAI</div>
-      </div>
-      <div class="half-footer">
-        <span class="half-tagline">SunshineFM tells the story.</span>
-        <span class="half-link">Visit SunshineFM →</span>
-      </div>
-    </a>
-
-  </div>
-</section>
 </div>
 
 <!-- ─── WHAT IS THE INTELLIGENCE LAYER ─── -->
@@ -1401,6 +1404,65 @@
     </div>
   </div>
 </section>
+
+<!-- ─── PARTNERS ─── -->
+<div class="partners-wrap">
+  <section class="partners-section">
+    <div class="partners-label">Trusted Partners &amp; Collaborators</div>
+    <p class="partners-sub">Working together to advance AI education and adoption in the Coachella Valley.</p>
+    <div class="partners-list">
+      <span class="partner-name">College of the Desert</span>
+      <span class="partner-name">UC Riverside Extension</span>
+      <span class="partner-name">CSUSB School of Entrepreneurship</span>
+      <span class="partner-name">Palm Desert Chamber of Commerce</span>
+      <span class="partner-name">Palm Springs Chamber of Commerce</span>
+      <span class="partner-name">Riverside County Economic Development</span>
+      <span class="partner-name">Entrepreneurship Resource Center</span>
+    </div>
+  </section>
+</div>
+
+<!-- ─── DUAL LAYER CARDS ─── -->
+<div class="layers-wrap">
+<section class="layers-section">
+  <div class="layers-label"></div>
+  <div class="layers-duo">
+
+    <a href="https://agent.aicoachellavalley.com" class="layer-half agents">
+      <div class="half-audience for-agents">Built for agents</div>
+      <div class="half-title">Intelligence Layer</div>
+      <p class="half-desc">AICV builds the structured dataset AI systems use to evaluate, cite, and act on information about the Coachella Valley.</p>
+      <div class="half-list">
+        <div class="half-list-item">29 geographic nodes · 9 cities · All live</div>
+        <div class="half-list-item">Daily intelligence briefs · Timestamped signals</div>
+        <div class="half-list-item">Economic development · Relocation · Group travel · Tourism</div>
+        <div class="half-list-item">v2 agent-first schema · Open documentation</div>
+      </div>
+      <div class="half-footer">
+        <span class="half-tagline">AICV builds the dataset.</span>
+        <span class="half-link">Open docs →</span>
+      </div>
+    </a>
+
+    <a href="https://sunshinefm.beehiiv.com" class="layer-half humans">
+      <div class="half-audience for-humans">Built for humans</div>
+      <div class="half-title">SunshineFM — The Human Layer</div>
+      <p class="half-desc">AI conversations, community-generated AI music, and the Coachella Valley story — curated and created by humans. Everything AICV documents for agents, SunshineFM translates for the people who live, work and play here.</p>
+      <div class="half-list">
+        <div class="half-list-item">Newsletter · AI conversations · Valley coverage</div>
+        <div class="half-list-item">Radio show · AI music · Local creators</div>
+        <div class="half-list-item">FuturePS series · Civic events</div>
+        <div class="half-list-item">Follow on X · @CoachellaAI</div>
+      </div>
+      <div class="half-footer">
+        <span class="half-tagline">SunshineFM tells the story.</span>
+        <span class="half-link">Visit SunshineFM →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+</div>
 
 <!-- ─── FOOTER ─── -->
 <footer>
