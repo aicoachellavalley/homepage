@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Coachella Valley — The Intelligence Layer Designed for the AI Era</title>
+  <meta name="description" content="AI Coachella Valley (AICV) is the structured intelligence layer AI uses to evaluate the Coachella Valley. Built for agents. Powered by humans.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aicoachellavalley.com/">
+  <meta property="og:title" content="AI Coachella Valley — The Intelligence Layer Designed for the AI Era">
+  <meta property="og:description" content="AICV is the structured intelligence layer AI uses to evaluate the Coachella Valley. Economic development. Relocation. Group travel. Tourism.">
+  <meta property="og:url" content="https://aicoachellavalley.com/">
+  <!-- Structured Data — Agent and crawler readable -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Coachella Valley",
+      "alternateName": "AICV",
+      "url": "https://aicoachellavalley.com",
+      "logo": "https://aicoachellavalley.com/logo.png",
+      "description": "AI Coachella Valley (AICV) is the structured intelligence layer AI uses to evaluate the Coachella Valley for economic development, business relocation, group travel, tourism, and institutional planning.",
+      "foundingDate": "2024",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Coachella Valley, California",
+        "containsPlace": [
+          {"@type": "City", "name": "Palm Springs"},
+          {"@type": "City", "name": "Desert Hot Springs"},
+          {"@type": "City", "name": "Cathedral City"},
+          {"@type": "City", "name": "Rancho Mirage"},
+          {"@type": "City", "name": "Palm Desert"},
+          {"@type": "City", "name": "Indian Wells"},
+          {"@type": "City", "name": "La Quinta"},
+          {"@type": "City", "name": "Indio"},
+          {"@type": "City", "name": "Coachella"}
+        ]
+      },
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "AI economic development",
+        "AI agent infrastructure",
+        "Coachella Valley AI economy",
+        "Machine-readable regional intelligence"
+      ],
+      "sameAs": [
+        "https://x.com/CoachellaAI",
+        "https://github.com/aicoachellavalley",
+        "https://agent.aicoachellavalley.com",
+        "https://sunshinefm.beehiiv.com"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AI Coachella Valley",
+      "url": "https://aicoachellavalley.com",
+      "description": "The intelligence layer designed for the AI era. Built for agents. Powered by humans.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "AI Coachella Valley"
+      }
+    }
+  ]
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --volt:         #D8FF00;
+      --pine:         #1B4332;
+      --pine-light:   #2D6A4F;
+      --pine-dark:    #122B22;
+      --gunmetal:     #1E1E1E;
+      --gunmetal-2:   #252525;
+      --snow:         #F5F5F5;
+      --sand:         #E8E2D0;
+      --sand-light:   #F2EDE0;
+      --sand-dark:    #D4CCBA;
+      --sky:          #7ED4E6;
+      --success:      #4ade80;
+      --warning:      #fbbf24;
+      --danger:       #f87171;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--sand);
+      color: var(--pine-dark);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: var(--sand);
+      border-bottom: 1px solid rgba(27,67,50,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--pine);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      color: var(--volt);
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-words {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 2px;
+    }
+
+    .nav-logo-aicv {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--pine);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-logo-sub {
+      font-size: 0.6rem;
+      font-weight: 300;
+      color: rgba(27,67,50,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      color: rgba(27,67,50,0.5);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--pine); }
+
+    .nav-aio-btn {
+      font-size: 0.72rem;
+      color: var(--pine);
+      text-decoration: none;
+      border: 1px solid rgba(27,67,50,0.2);
+      padding: 0.4rem 0.9rem;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .nav-aio-btn:hover {
+      background: var(--pine);
+      color: var(--volt);
+      border-color: var(--pine);
+    }
+
+    .nav-docs-btn {
+      background: var(--pine);
+      color: var(--volt);
+      padding: 0.45rem 1.1rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-docs-btn:hover { background: var(--pine-light); }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 7rem 3rem 5rem;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.67rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      font-weight: 500;
+      margin-bottom: 2.25rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.1s;
+    }
+
+    .eyebrow-pip {
+      width: 6px;
+      height: 6px;
+      background: var(--volt);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero-headline {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5.5vw, 4.75rem);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      color: var(--pine);
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.2s;
+    }
+
+    .hero-tagline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 400;
+      color: rgba(27,67,50,0.5);
+      letter-spacing: 0.01em;
+      margin-bottom: 4rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.3s;
+    }
+
+    .hero-tagline strong {
+      color: var(--pine);
+      font-weight: 600;
+    }
+
+    /* ─── INTELLIGENCE LAYER BLOCK ─── */
+    .intel-block {
+      padding: 0 3rem 5rem;
+      max-width: 1060px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.45s;
+    }
+
+    .intel-inner {
+      background: var(--gunmetal);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intel-inner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--volt);
+    }
+
+    .intel-audience-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(216,255,0,0.08);
+      border: 1px solid rgba(216,255,0,0.18);
+      color: var(--volt);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.3rem 0.7rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .intel-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.4rem, 3vw, 2.25rem);
+      color: var(--snow);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .intel-lead {
+      font-size: 1rem;
+      color: rgba(245,245,245,0.55);
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 68ch;
+      margin-bottom: 1.75rem;
+    }
+
+    .intel-lead strong { color: var(--snow); font-weight: 500; }
+
+    .intel-use-cases {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .intel-use-case {
+      font-size: 0.82rem;
+      color: rgba(245,245,245,0.4);
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .intel-use-case::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--volt);
+      border-radius: 50%;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .intel-statement {
+      font-size: 0.9rem;
+      color: rgba(245,245,245,0.35);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      border-left: 2px solid rgba(216,255,0,0.2);
+      padding-left: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .intel-statement strong {
+      color: rgba(245,245,245,0.6);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .intel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(245,245,245,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .intel-feature {
+      background: var(--gunmetal);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .intel-feature-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--volt);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+      opacity: 0.7;
+    }
+
+    .intel-feature-text {
+      font-size: 0.82rem;
+      color: rgba(245,245,245,0.4);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .intel-schema-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .schema-badge {
+      background: rgba(216,255,0,0.06);
+      border: 1px solid rgba(216,255,0,0.12);
+      color: rgba(216,255,0,0.5);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      font-weight: 600;
+    }
+
+    .schema-text {
+      font-size: 0.75rem;
+      color: rgba(245,245,245,0.2);
+      font-weight: 300;
+    }
+
+    .intel-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--volt);
+      color: var(--pine);
+      padding: 0.875rem 2rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: background 0.2s, gap 0.2s;
+    }
+
+    .intel-cta:hover { background: #e8ff33; gap: 0.75rem; }
+
+    /* ─── DUAL LAYER CARDS ─── */
+    .layers-section {
+      padding: 0 3rem 5rem;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .layers-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(27,67,50,0.3);
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+
+    /* Side by side — equal halves, facing each other */
+    .layers-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--gunmetal);
+    }
+
+    .layer-half {
+      padding: 2.75rem;
+      text-decoration: none;
+      display: block;
+      position: relative;
+      transition: background 0.25s ease;
+      overflow: hidden;
+    }
+
+    /* Dividing line between the two halves */
+    .layer-half.agents {
+      border-right: 1px solid rgba(245,245,245,0.06);
+    }
+
+    .layer-half::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--half-accent, var(--volt));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .layer-half:hover { background: #232323; }
+    .layer-half:hover::after { transform: scaleX(1); }
+    .layer-half.agents { --half-accent: var(--volt); }
+    .layer-half.humans { --half-accent: var(--sky); }
+
+    /* Central divider ornament */
+    .layers-duo .layer-half.agents::before {
+      content: '|';
+      position: absolute;
+      right: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(245,245,245,0.08);
+      font-size: 2rem;
+      font-weight: 100;
+      pointer-events: none;
+    }
+
+    .half-audience {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.28rem 0.65rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .half-audience.for-agents {
+      background: rgba(216,255,0,0.07);
+      color: var(--volt);
+      border: 1px solid rgba(216,255,0,0.15);
+    }
+
+    .half-audience.for-humans {
+      background: rgba(126,212,230,0.07);
+      color: var(--sky);
+      border: 1px solid rgba(126,212,230,0.15);
+    }
+
+    .half-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--snow);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .half-desc {
+      font-size: 0.83rem;
+      color: rgba(245,245,245,0.4);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+    }
+
+    .half-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .half-list-item {
+      font-size: 0.78rem;
+      color: rgba(245,245,245,0.3);
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .half-list-item::before {
+      content: '';
+      width: 3px;
+      height: 3px;
+      background: rgba(245,245,245,0.18);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .half-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(245,245,245,0.05);
+    }
+
+    .half-tagline {
+      font-size: 0.75rem;
+      color: rgba(245,245,245,0.2);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .half-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--half-accent, var(--volt));
+      white-space: nowrap;
+      transition: gap 0.2s;
+      flex-shrink: 0;
+    }
+
+    .layer-half:hover .half-link { gap: 0.6rem; }
+
+    /* ─── STATS ─── */
+    .stats-wrap {
+      background: var(--pine);
+    }
+
+    .stats-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 3.5rem 3rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(245,245,245,0.06);
+    }
+
+    .stat-cell {
+      background: var(--pine);
+      padding: 2rem 2.25rem;
+    }
+
+    .stat-n {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--volt);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-l {
+      font-size: 0.78rem;
+      color: rgba(245,245,245,0.35);
+      font-weight: 300;
+      line-height: 1.45;
+    }
+
+    /* ─── AIO TOOL ─── */
+    .aio-section {
+      padding: 5.5rem 3rem 5rem;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .aio-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+
+    .aio-section-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(27,67,50,0.3);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    .aio-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      color: var(--pine);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.875rem;
+    }
+
+    .aio-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(27,67,50,0.55);
+      line-height: 1.75;
+      max-width: 54ch;
+    }
+
+    .aio-diagnostic-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .aio-diag-item {
+      font-size: 0.8rem;
+      color: rgba(27,67,50,0.5);
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .aio-diag-item::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--pine);
+      border-radius: 50%;
+      opacity: 0.3;
+      flex-shrink: 0;
+    }
+
+    .aio-badge {
+      background: rgba(27,67,50,0.07);
+      border: 1px solid rgba(27,67,50,0.14);
+      color: var(--pine);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      align-self: flex-start;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .aio-card {
+      background: var(--gunmetal);
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .aio-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--volt);
+    }
+
+    .aio-input-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.3);
+      margin-bottom: 0.875rem;
+      display: block;
+      font-weight: 500;
+    }
+
+    .aio-row {
+      display: flex;
+      margin-bottom: 0.75rem;
+    }
+
+    .aio-input {
+      flex: 1;
+      background: rgba(245,245,245,0.05);
+      border: 1px solid rgba(245,245,245,0.1);
+      border-right: none;
+      padding: 0.9rem 1.25rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--snow);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .aio-input::placeholder { color: rgba(245,245,245,0.18); }
+    .aio-input:focus { border-color: rgba(216,255,0,0.3); }
+
+    .aio-submit {
+      background: var(--volt);
+      color: var(--pine);
+      border: none;
+      padding: 0.9rem 2.25rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+    }
+
+    .aio-submit:hover { background: #e8ff33; }
+    .aio-submit:active { transform: scale(0.98); }
+    .aio-submit:disabled { background: rgba(216,255,0,0.18); color: rgba(27,67,50,0.3); cursor: not-allowed; }
+
+    .aio-note {
+      font-size: 0.7rem;
+      color: rgba(245,245,245,0.18);
+      font-weight: 300;
+    }
+
+    .aio-checks {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1px;
+      background: rgba(245,245,245,0.04);
+      margin-top: 1.75rem;
+    }
+
+    .aio-check {
+      background: rgba(245,245,245,0.02);
+      padding: 1rem 0.75rem;
+      text-align: center;
+    }
+
+    .aio-check-ico { font-size: 1rem; display: block; margin-bottom: 0.4rem; }
+
+    .aio-check-lbl {
+      font-size: 0.65rem;
+      color: rgba(245,245,245,0.25);
+      line-height: 1.35;
+      font-weight: 300;
+    }
+
+    /* loading */
+    .aio-loading { display: none; text-align: center; padding: 2.5rem 0 1rem; }
+    .aio-loading.on { display: block; }
+
+    .spin {
+      width: 30px; height: 30px;
+      border: 2px solid rgba(216,255,0,0.1);
+      border-top-color: var(--volt);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 0.875rem;
+    }
+
+    .loading-txt { font-size: 0.82rem; color: rgba(245,245,245,0.35); font-weight: 300; }
+    .loading-step { font-size: 0.72rem; color: var(--volt); margin-top: 0.35rem; opacity: 0.7; }
+
+    /* results */
+    .aio-results { display: none; margin-top: 2.25rem; padding-top: 2.25rem; border-top: 1px solid rgba(245,245,245,0.06); }
+    .aio-results.on { display: block; }
+
+    .result-top {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 2rem;
+      margin-bottom: 1.75rem;
+      align-items: start;
+    }
+
+    .score-block { text-align: center; }
+
+    .score-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .score-num.hi { color: var(--volt); }
+    .score-num.mid { color: var(--warning); }
+    .score-num.lo { color: var(--danger); }
+
+    .score-tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.2);
+      margin-top: 0.2rem;
+    }
+
+    .verdict {
+      font-size: 0.9rem;
+      color: rgba(245,245,245,0.6);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .verdict strong { color: var(--snow); font-weight: 500; }
+
+    .result-checks {
+      display: grid;
+      gap: 1px;
+      background: rgba(245,245,245,0.04);
+      margin-bottom: 1.5rem;
+    }
+
+    .r-check {
+      background: var(--gunmetal);
+      padding: 1rem 1.25rem;
+      display: flex;
+      gap: 0.875rem;
+      align-items: flex-start;
+    }
+
+    .r-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .r-dot.pass { background: var(--success); }
+    .r-dot.warn { background: var(--warning); }
+    .r-dot.fail { background: var(--danger); }
+
+    .r-name { font-size: 0.82rem; font-weight: 500; color: var(--snow); margin-bottom: 0.2rem; }
+    .r-detail { font-size: 0.77rem; color: rgba(245,245,245,0.38); font-weight: 300; line-height: 1.55; }
+
+    .fixes-label {
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.22);
+      margin-bottom: 0.875rem;
+    }
+
+    .fix {
+      display: flex; gap: 1rem; align-items: flex-start;
+      padding: 1.1rem 1.25rem;
+      background: rgba(245,245,245,0.02);
+      border-left: 2px solid transparent;
+      margin-bottom: 1px;
+    }
+
+    .fix.high { border-left-color: var(--danger); }
+    .fix.med  { border-left-color: var(--warning); }
+    .fix.low  { border-left-color: var(--success); }
+
+    .fix-p {
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.2rem 0.5rem; flex-shrink: 0; margin-top: 2px;
+    }
+
+    .fix-p.high { background: rgba(248,113,113,0.08); color: var(--danger); }
+    .fix-p.med  { background: rgba(251,191,36,0.08);  color: var(--warning); }
+    .fix-p.low  { background: rgba(74,222,128,0.08);  color: var(--success); }
+
+    .fix-t { font-size: 0.83rem; color: rgba(245,245,245,0.55); line-height: 1.6; font-weight: 300; }
+    .fix-t strong { color: var(--snow); font-weight: 500; }
+
+    .aio-reset {
+      margin-top: 1.5rem;
+      background: transparent;
+      border: 1px solid rgba(245,245,245,0.1);
+      color: rgba(245,245,245,0.3);
+      padding: 0.6rem 1.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.77rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .aio-reset:hover { border-color: var(--volt); color: var(--volt); }
+
+    .aio-err {
+      display: none; margin-top: 1rem;
+      padding: 0.875rem 1.1rem;
+      background: rgba(248,113,113,0.05);
+      border-left: 2px solid var(--danger);
+      font-size: 0.8rem; color: rgba(245,245,245,0.45);
+    }
+
+    .aio-err.on { display: block; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--pine-dark);
+      padding: 4rem 3rem 2.5rem;
+    }
+
+    .foot-inner { max-width: 1060px; margin: 0 auto; }
+
+    .foot-top {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 4rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(245,245,245,0.06);
+      margin-bottom: 2rem;
+    }
+
+    .foot-brand {}
+
+    .foot-mark {
+      width: 38px; height: 38px;
+      background: rgba(245,245,245,0.04);
+      border: 1px solid rgba(216,255,0,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 11px;
+      color: var(--volt);
+      margin-bottom: 0.875rem;
+    }
+
+    .foot-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700; font-size: 0.88rem;
+      color: var(--snow); margin-bottom: 0.3rem;
+    }
+
+    .foot-full {
+      font-size: 0.7rem; color: rgba(245,245,245,0.22);
+      font-weight: 300; line-height: 1.6;
+    }
+
+    .foot-cities-label {
+      font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,245,245,0.22);
+      margin-bottom: 1rem; font-weight: 500;
+    }
+
+    .foot-cities {
+      font-size: 0.8rem;
+      color: rgba(245,245,245,0.28);
+      font-weight: 300;
+      line-height: 2;
+    }
+
+    .foot-sep { color: rgba(245,245,245,0.1); margin: 0 0.4rem; }
+
+    .foot-bottom {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem;
+    }
+
+    .foot-copy {
+      font-size: 0.72rem;
+      color: rgba(245,245,245,0.18);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .foot-links { display: flex; gap: 1.75rem; align-items: center; }
+
+    .foot-links a {
+      font-size: 0.72rem;
+      color: rgba(245,245,245,0.22);
+      text-decoration: none;
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .foot-links a:hover { color: var(--volt); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 860px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 4rem 1.5rem 3rem; }
+      .intel-block { padding: 0 1.5rem 3.5rem; }
+      .intel-inner { padding: 2rem 1.5rem; }
+      .intel-grid { grid-template-columns: 1fr; }
+      .layers-section { padding: 0 1.5rem 3.5rem; }
+      .layers-duo { grid-template-columns: 1fr; }
+      .layer-half.agents { border-right: none; border-bottom: 1px solid rgba(245,245,245,0.06); }
+      .layers-duo .layer-half.agents::before { display: none; }
+      .stats-inner { padding: 2rem 1.5rem; grid-template-columns: 1fr 1fr; }
+      .aio-section { padding: 3.5rem 1.5rem; }
+      .aio-top { grid-template-columns: 1fr; gap: 1rem; }
+      .aio-row { flex-direction: column; }
+      .aio-input { border-right: 1px solid rgba(245,245,245,0.1); }
+      .aio-checks { grid-template-columns: repeat(3, 1fr); }
+      .result-top { grid-template-columns: 1fr; }
+      footer { padding: 2.5rem 1.5rem 2rem; }
+      .foot-top { grid-template-columns: 1fr; gap: 2rem; }
+      .foot-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">AICV</div>
+    <div class="nav-logo-words">
+      <span class="nav-logo-aicv">AI Coachella Valley</span>
+      <span class="nav-logo-sub">Intelligence Layer · Coachella Valley</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="https://agent.aicoachellavalley.com">Intelligence Layer</a>
+      <a href="https://sunshinefm.beehiiv.com">SunshineFM</a>
+    </div>
+    <a href="#aio" class="nav-aio-btn">Free AIO Tool ↓</a>
+    <a href="https://agent.aicoachellavalley.com" class="nav-docs-btn">Open Docs →</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="eyebrow-pip"></span>
+    Coachella Valley, California · Est. 2024
+  </div>
+  <h1 class="hero-headline">The Intelligence Layer<br>Designed for the AI Era</h1>
+  <p class="hero-tagline"><strong>Built for agents.</strong> Powered by humans.</p>
+</section>
+
+
+
+<!-- ─── DUAL LAYER CARDS ─── -->
+<section class="layers-section">
+  <div class="layers-label">Two layers · One valley</div>
+  <div class="layers-duo">
+
+    <a href="https://agent.aicoachellavalley.com" class="layer-half agents">
+      <div class="half-audience for-agents">Built for agents</div>
+      <div class="half-title">Intelligence Layer</div>
+      <p class="half-desc">AICV builds the structured dataset AI systems use to evaluate, cite, and act on information about the Coachella Valley.</p>
+      <div class="half-list">
+        <div class="half-list-item">29 geographic nodes · 9 cities · All live</div>
+        <div class="half-list-item">Daily intelligence briefs · Timestamped signals</div>
+        <div class="half-list-item">Economic development · Relocation · Group travel · Tourism</div>
+        <div class="half-list-item">v2 agent-first schema · Open documentation</div>
+      </div>
+      <div class="half-footer">
+        <span class="half-tagline">AICV builds the dataset.</span>
+        <span class="half-link">Open docs →</span>
+      </div>
+    </a>
+
+    <a href="https://sunshinefm.beehiiv.com" class="layer-half humans">
+      <div class="half-audience for-humans">Built for humans</div>
+      <div class="half-title">SunshineFM</div>
+      <p class="half-desc">SunshineFM is the human-facing side of the valley's AI transformation. Everything AICV documents for agents, SunshineFM translates for the people who live and work here.</p>
+      <div class="half-list">
+        <div class="half-list-item">Newsletter · AI conversations · Valley coverage</div>
+        <div class="half-list-item">Radio show · AI music · Local creators</div>
+        <div class="half-list-item">FuturePS series · Civic events</div>
+        <div class="half-list-item">Follow on X · @CoachellaAI</div>
+      </div>
+      <div class="half-footer">
+        <span class="half-tagline">SunshineFM tells the story.</span>
+        <span class="half-link">Go to SunshineFM →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ─── STATS ─── -->
+<div class="stats-wrap">
+  <div class="stats-inner">
+    <div class="stat-cell">
+      <div class="stat-n">29</div>
+      <div class="stat-l">Geographic nodes live<br>across 9 cities</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">4+</div>
+      <div class="stat-l">Intelligence briefs<br>published and growing</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">2024</div>
+      <div class="stat-l">First AI education<br>series in the valley</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">v2</div>
+      <div class="stat-l">Agent-first schema<br>all nodes current</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── AIO TOOL ─── -->
+<section class="aio-section" id="aio">
+  <div class="aio-top">
+    <div>
+      <div class="aio-section-label">Free Tool · AI Coachella Valley</div>
+      <h2 class="aio-title">Can AI find<br>your business?</h2>
+      <p class="aio-sub">AI is already influencing where people eat, stay, shop, and book services. If ChatGPT, Claude, or Google AI cannot clearly interpret your website, you are invisible to a growing share of customers.</p>
+      <p class="aio-sub" style="margin-top:0.75rem;">Enter your website and receive a plain-English diagnostic of:</p>
+      <div class="aio-diagnostic-list">
+        <span class="aio-diag-item">AI crawler access</span>
+        <span class="aio-diag-item">Business clarity</span>
+        <span class="aio-diag-item">Structured data</span>
+        <span class="aio-diag-item">Content comprehension</span>
+        <span class="aio-diag-item">Local signals</span>
+        <span class="aio-diag-item">Page performance</span>
+      </div>
+    </div>
+    <div class="aio-badge">Free<br>No signup<br>No stored data</div>
+  </div>
+
+  <div class="aio-card">
+    <label class="aio-input-label" for="urlInput">Your website address</label>
+    <div class="aio-row">
+      <input
+        type="url"
+        id="urlInput"
+        class="aio-input"
+        placeholder="yourrestaurant.com or https://yourbusiness.com"
+        autocomplete="off"
+        autocapitalize="off"
+      >
+      <button class="aio-submit" id="analyzeBtn" onclick="runAnalysis()">Analyze My Site →</button>
+    </div>
+    <div class="aio-note">Results delivered in plain English — no SEO jargon.</div>
+
+
+
+    <div class="aio-err" id="aioErr"></div>
+
+    <div class="aio-loading" id="aioLoading">
+      <div class="spin"></div>
+      <div class="loading-txt">Analyzing your site the way AI systems would…</div>
+      <div class="loading-step" id="loadingStep">Checking crawler access…</div>
+    </div>
+
+    <div class="aio-results" id="aioResults">
+      <div class="result-top">
+        <div class="score-block">
+          <div class="score-num" id="scoreNum">—</div>
+          <div class="score-tag">AI Score</div>
+        </div>
+        <div class="verdict" id="verdictText"></div>
+      </div>
+      <div class="result-checks" id="resultChecks"></div>
+      <div id="fixesWrap"></div>
+      <button class="aio-reset" onclick="resetTool()">← Analyze another site</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="foot-mark">AICV</div>
+        <div class="foot-name">AI Coachella Valley</div>
+        <div class="foot-full">
+          Intelligence Layer · Est. 2024<br>
+          Rancho Mirage, California<br>
+          Built for agents. Powered by humans.
+        </div>
+      </div>
+      <div>
+        <div class="foot-cities-label">Serving the Coachella Valley</div>
+        <div class="foot-cities">
+          Palm Springs<span class="foot-sep">·</span>
+          Desert Hot Springs<span class="foot-sep">·</span>
+          Cathedral City<span class="foot-sep">·</span>
+          Rancho Mirage<span class="foot-sep">·</span>
+          Palm Desert<span class="foot-sep">·</span>
+          Indian Wells<span class="foot-sep">·</span>
+          La Quinta<span class="foot-sep">·</span>
+          Indio<span class="foot-sep">·</span>
+          Coachella<span class="foot-sep">·</span>
+          Bermuda Dunes<span class="foot-sep">·</span>
+          Thousand Palms<span class="foot-sep">·</span>
+          Mecca<span class="foot-sep">·</span>
+          Thermal<span class="foot-sep">·</span>
+          Desert Center
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-copy">
+        © 2026 AI Coachella Valley · Intelligence Layer · Built for agents. Powered by humans.
+      </div>
+      <div class="foot-links">
+        <a href="https://agent.aicoachellavalley.com">Intelligence Layer</a>
+        <a href="https://sunshinefm.beehiiv.com">SunshineFM</a>
+        <a href="#aio">AIO Tool</a>
+        <a href="https://x.com/CoachellaAI">@CoachellaAI</a>
+        <a href="https://github.com/aicoachellavalley">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const STEPS = [
+    "Checking if AI crawlers can access your site…",
+    "Reading your page content…",
+    "Looking for business information…",
+    "Checking structured data…",
+    "Analyzing local signals…",
+    "Generating your plain-English report…"
+  ];
+
+  let ticker;
+
+  function norm(s) {
+    s = s.trim();
+    if (!s) return null;
+    if (!/^https?:\/\//i.test(s)) s = 'https://' + s;
+    try { return new URL(s).href; } catch { return null; }
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function resetTool() {
+    document.getElementById('aioResults').classList.remove('on');
+    document.getElementById('aioLoading').classList.remove('on');
+    document.getElementById('aioErr').classList.remove('on');
+    document.getElementById('urlInput').value = '';
+    document.getElementById('analyzeBtn').disabled = false;
+    clearInterval(ticker);
+  }
+
+  function showErr(msg) {
+    const el = document.getElementById('aioErr');
+    el.textContent = msg;
+    el.classList.add('on');
+    document.getElementById('aioLoading').classList.remove('on');
+    document.getElementById('analyzeBtn').disabled = false;
+    clearInterval(ticker);
+  }
+
+  async function runAnalysis() {
+    const url = norm(document.getElementById('urlInput').value);
+    if (!url) { showErr('Please enter a valid website address, like yourrestaurant.com'); return; }
+
+    document.getElementById('aioErr').classList.remove('on');
+    document.getElementById('aioResults').classList.remove('on');
+    document.getElementById('aioLoading').classList.add('on');
+    document.getElementById('analyzeBtn').disabled = true;
+
+    let i = 0;
+    const stepEl = document.getElementById('loadingStep');
+    stepEl.textContent = STEPS[0];
+    ticker = setInterval(() => { stepEl.textContent = STEPS[++i % STEPS.length]; }, 1800);
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: `You are an AI visibility analyzer for small businesses in the Coachella Valley, California. Help non-technical owners understand if ChatGPT, Claude, and Google AI can find and recommend their business.
+
+Return ONLY valid JSON with no preamble and no markdown fences:
+{
+  "score": <0-100>,
+  "verdict": "<2-3 plain English sentences. No jargon. Written for a restaurant or boutique owner in Palm Desert or Palm Springs. Be specific and honest.>",
+  "checks": [
+    {"name": "AI Crawler Access", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
+    {"name": "Business Clarity", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
+    {"name": "Content Comprehension", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
+    {"name": "Page Performance", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
+    {"name": "Structured Data", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
+    {"name": "Local Signals", "status": "pass|warn|fail", "detail": "<one plain English sentence>"}
+  ],
+  "fixes": [
+    {"priority": "high|med|low", "text": "<specific actionable fix starting with a verb. Plain English. Reference their business type if you can infer it.>"},
+    {"priority": "high|med|low", "text": "<second fix>"},
+    {"priority": "high|med|low", "text": "<third fix>"}
+  ]
+}
+Scoring: 0-30 significant issues · 31-60 average small business · 61-80 good · 81-100 excellent. Most score 25-55.`,
+          messages: [{ role: 'user', content: `Analyze this website for AI visibility: ${url}` }]
+        })
+      });
+
+      if (!res.ok) throw new Error('Analysis service unavailable. Please try again in a moment.');
+
+      const data = await res.json();
+      const raw = (data.content?.[0]?.text || '').replace(/```json|```/g, '').trim();
+      let r;
+      try { r = JSON.parse(raw); } catch { throw new Error('Could not read results. Please try again.'); }
+
+      clearInterval(ticker);
+      document.getElementById('aioLoading').classList.remove('on');
+
+      const score = Math.max(0, Math.min(100, Math.round(r.score)));
+      const sEl = document.getElementById('scoreNum');
+      sEl.textContent = score;
+      sEl.className = 'score-num ' + (score >= 70 ? 'hi' : score >= 40 ? 'mid' : 'lo');
+
+      document.getElementById('verdictText').innerHTML = esc(r.verdict || '');
+
+      document.getElementById('resultChecks').innerHTML = (r.checks || []).map(c => `
+        <div class="r-check">
+          <div class="r-dot ${c.status}"></div>
+          <div>
+            <div class="r-name">${esc(c.name)}</div>
+            <div class="r-detail">${esc(c.detail)}</div>
+          </div>
+        </div>
+      `).join('');
+
+      const fixes = r.fixes || [];
+      document.getElementById('fixesWrap').innerHTML = fixes.length ? `
+        <div class="fixes-label" style="margin-top:1.5rem;">Your top fixes</div>
+        ${fixes.map(f => `
+          <div class="fix ${f.priority}">
+            <span class="fix-p ${f.priority}">${f.priority}</span>
+            <div class="fix-t">${esc(f.text)}</div>
+          </div>
+        `).join('')}
+      ` : '';
+
+      document.getElementById('aioResults').classList.add('on');
+      document.getElementById('analyzeBtn').disabled = false;
+      document.getElementById('aioResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    } catch(err) {
+      showErr(err.message || 'Something went wrong. Please try again.');
+    }
+  }
+
+  document.getElementById('urlInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') runAnalysis();
+  });
+</script>
+
+</body>
+</html>
