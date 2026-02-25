@@ -591,7 +591,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
-      background: rgba(27,67,50,0.1);
+      background: rgba(27,67,50,0.12);
       align-items: stretch;
     }
 
@@ -603,7 +603,7 @@
       position: relative;
       transition: background 0.25s ease;
       overflow: hidden;
-      background: var(--sand-light);
+      background: var(--sand-light) !important;
     }
 
     /* Dividing line between the two halves */
@@ -611,23 +611,14 @@
       border-right: none;
     }
 
+    /* No hover accent line */
     .layer-half::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--half-accent, var(--volt));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
+      display: none;
     }
 
-    .layer-half:hover { background: var(--sand); }
-    .layer-half:hover::after { transform: scaleX(1); }
-    .layer-half.agents { --half-accent: var(--pine); }
-    .layer-half.humans { --half-accent: var(--pine); }
+    .layer-half:hover { background: var(--sand) !important; }
 
-    /* Central divider ornament — hidden on light bg */
+    /* Central divider ornament — hidden */
     .layers-duo .layer-half.agents::before {
       display: none;
     }
@@ -645,15 +636,15 @@
     }
 
     .half-audience.for-agents {
-      background: rgba(27,67,50,0.07);
+      background: transparent;
       color: var(--pine);
-      border: 1px solid rgba(27,67,50,0.15);
+      border: 1px solid var(--pine);
     }
 
     .half-audience.for-humans {
-      background: rgba(27,67,50,0.07);
+      background: transparent;
       color: var(--pine);
-      border: 1px solid rgba(27,67,50,0.15);
+      border: 1px solid var(--pine);
     }
 
     .half-title {
@@ -712,14 +703,15 @@
       display: block;
       width: 100%;
       text-align: center;
-      padding: 0.875rem;
+      padding: 1rem;
       background: var(--volt);
       color: var(--pine);
       font-family: 'Syne', sans-serif;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.05em;
       text-decoration: none;
+      border-radius: 0;
       transition: background 0.2s;
     }
 
@@ -789,10 +781,10 @@
     .aio-title {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       color: var(--pine);
       letter-spacing: -0.03em;
-      line-height: 1.1;
+      line-height: 1.05;
       margin-bottom: 0.875rem;
     }
 
@@ -812,8 +804,8 @@
     }
 
     .aio-diag-item {
-      font-size: 0.8rem;
-      color: var(--pine-light);
+      font-size: 0.9rem;
+      color: var(--pine);
       font-weight: 300;
       display: flex;
       align-items: center;
@@ -839,38 +831,35 @@
       align-items: center;
       justify-content: center;
       gap: 0.75rem;
-      background: rgba(27,67,50,0.06);
-      border: 1px solid rgba(27,67,50,0.15);
-      padding: 0.75rem 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 0;
+      padding: 0;
+      background: none;
+      border: none;
     }
 
     .aio-callout-item {
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: var(--pine);
+      color: var(--volt);
       letter-spacing: 0.04em;
       font-family: 'Syne', sans-serif;
     }
 
     .aio-callout-divider {
-      color: rgba(27,67,50,0.3);
+      color: rgba(216,255,0,0.4);
       font-size: 0.9rem;
     }
 
     .aio-card {
       background: var(--gunmetal);
-      border: none;
+      border: 2px solid var(--volt);
       padding: 2.5rem;
       position: relative;
     }
 
     .aio-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--volt);
+      display: none;
     }
 
     .aio-input-label {
@@ -892,24 +881,25 @@
     .aio-input {
       flex: 1;
       background: var(--gunmetal);
-      border: 1px solid rgba(232,226,208,0.25);
+      border: 1px solid var(--sand);
       border-right: none;
-      padding: 0.9rem 1.25rem;
+      padding: 1rem 1.25rem;
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: var(--sand);
       outline: none;
       transition: border-color 0.2s;
     }
 
-    .aio-input::placeholder { color: rgba(232,226,208,0.3); }
-    .aio-input:focus { border-color: rgba(232,226,208,0.6); }
+    .aio-input::placeholder { color: rgba(232,226,208,0.35); }
+    .aio-input:focus { border-color: var(--volt); }
 
     .aio-submit {
       background: var(--volt);
       color: var(--pine);
       border: none;
-      padding: 0.9rem 2.25rem;
+      border-radius: 0;
+      padding: 1rem 2rem;
       font-family: 'Syne', sans-serif;
       font-size: 0.82rem;
       font-weight: 700;
@@ -1192,9 +1182,9 @@
     .partners-label {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
       color: var(--volt);
-      letter-spacing: -0.025em;
+      letter-spacing: -0.03em;
       line-height: 1.1;
       margin-bottom: 1rem;
     }
@@ -1252,7 +1242,7 @@
       .aio-section { padding: 3.5rem 1.5rem; }
       .aio-top { grid-template-columns: 1fr; gap: 1rem; }
       .aio-row { flex-direction: column; }
-      .aio-input { border-right: 1px solid rgba(232,226,208,0.25); }
+      .aio-input { border-right: 1px solid var(--sand); }
       .aio-checks { grid-template-columns: repeat(3, 1fr); }
       .result-top { grid-template-columns: 1fr; }
       .partners-section { padding: 3rem 1.5rem; }
@@ -1291,7 +1281,9 @@
   </div>
   <h1 class="hero-headline">The AI Hub for the<br>Coachella Valley</h1>
   <p class="hero-tagline">Designed for the AI Era / <strong>Built for agents. Powered by humans.</strong></p>
-  <p class="hero-support">Structured intelligence that makes the Coachella Valley legible to AI Agents (ChatGPT, Claude, Gemini) evaluating where to invest, relocate, partner, and book.</p>
+  <p class="hero-support">The next economic interface isn't a website. It's an AI.</p>
+  <p class="hero-support" style="margin-top:0.75rem;">Foundational models like ChatGPT, Claude, and Gemini increasingly shape where capital flows and where people go.</p>
+  <p class="hero-support" style="margin-top:0.75rem;">AICV builds the intelligence layer that ensures this region is part of that future.</p>
 
 </section>
 
@@ -1365,14 +1357,6 @@
     </div>
   </div>
 
-  <div class="aio-callout">
-    <div class="aio-callout-item">Free.</div>
-    <div class="aio-callout-divider">·</div>
-    <div class="aio-callout-item">No signup.</div>
-    <div class="aio-callout-divider">·</div>
-    <div class="aio-callout-item">No data stored.</div>
-  </div>
-
   <div class="aio-card">
     <label class="aio-input-label" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
     <div class="aio-row">
@@ -1386,7 +1370,14 @@
       >
       <button class="aio-submit" id="analyzeBtn" onclick="runAnalysis()">Analyze My Site →</button>
     </div>
-    <div class="aio-note">Results delivered in plain English — no SEO jargon.</div>
+    <div class="aio-callout">
+      <div class="aio-callout-item">Free.</div>
+      <div class="aio-callout-divider">·</div>
+      <div class="aio-callout-item">No signup.</div>
+      <div class="aio-callout-divider">·</div>
+      <div class="aio-callout-item">No data stored.</div>
+    </div>
+    <div class="aio-note" style="display:none;">Results delivered in plain English — no SEO jargon.</div>
 
 
 
