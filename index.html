@@ -1785,7 +1785,7 @@
     navigator.clipboard.writeText(output).then(() => {
       const btns = document.querySelectorAll('.aio-copy');
       btns.forEach(b => {
-        if (b.textContent.toLowerCase().includes(format)) {
+        if (b.textContent.toLowerCase().includes(format === 'md' ? 'markdown' : format)) {
           b.textContent = 'Copied ✓';
           setTimeout(() => {
             b.textContent = format === 'md' ? 'Copy Markdown' : format === 'json' ? 'Copy JSON' : 'Copy Text';
