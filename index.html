@@ -1335,20 +1335,20 @@
 <div class="stats-wrap">
   <div class="stats-inner">
     <div class="stat-cell">
-      <div class="stat-n">29</div>
+      <div class="stat-n" id="stat-nodes">33</div>
       <div class="stat-l">Geographic nodes<br>across the valley</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">9</div>
-      <div class="stat-l">Cities covered<br>in the Coachella Valley</div>
+      <div class="stat-n" id="stat-briefs">11</div>
+      <div class="stat-l">Intelligence briefs<br>published</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">2025</div>
-      <div class="stat-l">Established in<br>Coachella Valley, California</div>
+      <div class="stat-n" id="stat-commits">—</div>
+      <div class="stat-l">Platform commits<br>since launch</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">v2</div>
-      <div class="stat-l">Agent-first schema<br>deployed</div>
+      <div class="stat-n" id="stat-loc">—</div>
+      <div class="stat-l">Lines of code<br>written to date</div>
     </div>
   </div>
 </div>
@@ -1521,6 +1521,8 @@
 </footer>
 
 <script>
+  const WORKER_BASE = 'https://api.aicoachellavalley.com';
+
   const STEPS = [
     "Checking if AI crawlers can access your site…",
     "Reading your page content…",
@@ -1541,6 +1543,26 @@
 
   function esc(s) {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function fmt(n) {
+    if (n == null) return '—';
+    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+    return String(n);
+  }
+
+  async function loadStats() {
+    try {
+      const res = await fetch(WORKER_BASE + '/stats');
+      if (!res.ok) return;
+      const s = await res.json();
+      if (s.nodes != null) document.getElementById('stat-nodes').textContent = s.nodes;
+      if (s.briefs != null) document.getElementById('stat-briefs').textContent = s.briefs;
+      document.getElementById('stat-commits').textContent = fmt(s.commits);
+      document.getElementById('stat-loc').textContent = fmt(s.linesOfCode);
+    } catch (e) {
+      // Silently fail — hardcoded fallback values stay in place
+    }
   }
 
   function resetTool() {
@@ -1576,35 +1598,10 @@
     ticker = setInterval(() => { stepEl.textContent = STEPS[++i % STEPS.length]; }, 1800);
 
     try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      const res = await fetch(WORKER_BASE + '/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: `You are an AI visibility analyzer for small businesses in the Coachella Valley, California. Help non-technical owners understand if ChatGPT, Claude, and Google AI can find and recommend their business.
-
-Return ONLY valid JSON with no preamble and no markdown fences:
-{
-  "score": <0-100>,
-  "verdict": "<2-3 plain English sentences. No jargon. Written for a restaurant or boutique owner in Palm Desert or Palm Springs. Be specific and honest.>",
-  "checks": [
-    {"name": "AI Crawler Access", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
-    {"name": "Business Clarity", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
-    {"name": "Content Comprehension", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
-    {"name": "Page Performance", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
-    {"name": "Structured Data", "status": "pass|warn|fail", "detail": "<one plain English sentence>"},
-    {"name": "Local Signals", "status": "pass|warn|fail", "detail": "<one plain English sentence>"}
-  ],
-  "fixes": [
-    {"priority": "high|med|low", "text": "<specific actionable fix starting with a verb. Plain English. Reference their business type if you can infer it.>"},
-    {"priority": "high|med|low", "text": "<second fix>"},
-    {"priority": "high|med|low", "text": "<third fix>"}
-  ]
-}
-Scoring: 0-30 significant issues · 31-60 average small business · 61-80 good · 81-100 excellent. Most score 25-55.`,
-          messages: [{ role: 'user', content: `Analyze this website for AI visibility: ${url}` }]
-        })
+        body: JSON.stringify({ url })
       });
 
       if (!res.ok) throw new Error('Analysis service unavailable. Please try again in a moment.');
@@ -1657,6 +1654,8 @@ Scoring: 0-30 significant issues · 31-60 average small business · 61-80 good �
   document.getElementById('urlInput').addEventListener('keydown', e => {
     if (e.key === 'Enter') runAnalysis();
   });
+
+  loadStats();
 </script>
 
 </body>
