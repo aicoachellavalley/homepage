@@ -1388,8 +1388,8 @@
       <div class="stat-l">Platform commits<br>since launch</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n" id="stat-loc">—</div>
-      <div class="stat-l">Lines of code<br>written to date</div>
+      <div class="stat-n" id="stat-words">10k</div>
+      <div class="stat-l">Words analyzed<br>from local businesses</div>
     </div>
   </div>
 </div>
@@ -1614,7 +1614,7 @@
       if (s.nodes != null) document.getElementById('stat-nodes').textContent = s.nodes;
       if (s.briefs != null) document.getElementById('stat-briefs').textContent = s.briefs;
       document.getElementById('stat-commits').textContent = fmt(s.commits);
-      document.getElementById('stat-loc').textContent = fmt(s.linesOfCode);
+      if (s.wordsAnalyzed != null) document.getElementById('stat-words').textContent = fmt(s.wordsAnalyzed);
     } catch (e) {
       // Silently fail — hardcoded fallback values stay in place
     }
