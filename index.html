@@ -1693,7 +1693,7 @@
         : `<div class="result-biz-name result-biz-unknown">AI could not confirm a business name from your homepage.</div>`;
 
       // Strip any "AI read your business as:" prefix the model may have included in the verdict
-      const cleanVerdict = (r.verdict || '').replace(/^AI read your business as:\s*[^\n.]+[.\n]?\s*/i, '').trim();
+      const cleanVerdict = (r.verdict || '').replace(/^AI read your business as:\s*.+?(?=[A-Z][a-z]|$)/s, '').trim();
       document.getElementById('verdictText').innerHTML = bizName + esc(cleanVerdict);
 
       document.getElementById('resultChecks').innerHTML = (r.checks || []).map(c => `
@@ -1720,7 +1720,7 @@
       document.getElementById('aioCta').innerHTML = `
   <div class="aio-network-cta">
     <div class="aio-network-cta-text">Is your business visible to AI? <strong>Join the AICV network</strong> — we're building the intelligence layer for the Coachella Valley.</div>
-    <a href="mailto:sat@aicv.co" class="aio-network-cta-btn">Get Included →</a>
+    <a href="mailto:sat@aicv.co?subject=AICV%20Network%20—%20Get%20Included&body=Hi%20Sat%2C%0A%0AI%20ran%20my%20site%20through%20the%20AICV%20AIO%20tool%20and%20would%20like%20to%20learn%20more%20about%20getting%20included%20in%20the%20intelligence%20layer.%0A%0AMy%20site%3A%20" class="aio-network-cta-btn">Get Included →</a>
   </div>
 `;
       document.getElementById('aioResults').classList.add('on');
