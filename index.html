@@ -1691,7 +1691,10 @@
       const bizName = r.business_name && r.business_name !== 'Not confirmed'
         ? `<div class="result-biz-name">AI read your business as: <strong>${esc(r.business_name)}</strong></div>`
         : `<div class="result-biz-name result-biz-unknown">AI could not confirm a business name from your homepage.</div>`;
-      document.getElementById('verdictText').innerHTML = bizName + esc(r.verdict || '');
+
+      // Strip any "AI read your business as:" prefix the model may have included in the verdict
+      const cleanVerdict = (r.verdict || '').replace(/^AI read your business as:\s*[^\n.]+[.\n]?\s*/i, '').trim();
+      document.getElementById('verdictText').innerHTML = bizName + esc(cleanVerdict);
 
       document.getElementById('resultChecks').innerHTML = (r.checks || []).map(c => `
         <div class="r-check">
