@@ -53,7 +53,12 @@
         "https://github.com/aicoachellavalley",
         "https://agent.aicoachellavalley.com",
         "https://sunshinefm.beehiiv.com"
-      ]
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "sat@aicv.co",
+        "contactType": "general inquiry"
+      }
     },
     {
       "@context": "https://schema.org",
@@ -1329,6 +1334,7 @@
   <h1 class="hero-headline">The AI Hub for the<br>Coachella Valley</h1>
   <p class="hero-tagline">Designed for the AI Era / <strong>Built for agents. Powered by humans.</strong></p>
   <div class="hero-support-block">
+    <p class="hero-support">AICV is how Coachella Valley businesses get found when people ask ChatGPT, Claude, or Google AI for recommendations.</p>
     <p class="hero-support">The next economic interface isn't a website. It's an AI.</p>
     <p class="hero-support">Foundational models like ChatGPT, Claude, and Gemini increasingly shape where capital flows and where people go.</p>
     <p class="hero-support">AICV builds the intelligence layer that ensures this region is part of that future.</p>
@@ -1504,19 +1510,19 @@
       </a>
 
       <div class="eco-tile soon">
-        <div class="eco-audience">Coming soon</div>
+        <div class="eco-audience">In development · 2026</div>
         <div class="eco-title">Marketplace</div>
         <div class="eco-desc">AI tools and services for Coachella Valley businesses.</div>
       </div>
 
       <div class="eco-tile soon">
-        <div class="eco-audience">Coming soon</div>
+        <div class="eco-audience">In development · 2026</div>
         <div class="eco-title">Events</div>
         <div class="eco-desc">AI workshops, meetups, and community programming.</div>
       </div>
 
       <div class="eco-tile soon">
-        <div class="eco-audience">Coming soon</div>
+        <div class="eco-audience">In development · 2026</div>
         <div class="eco-title">Talent</div>
         <div class="eco-desc">AI practitioners and specialists serving the valley.</div>
       </div>
@@ -1535,7 +1541,8 @@
         <div class="foot-full">
           Intelligence Layer · Est. 2025<br>
           Coachella Valley, California<br>
-          Built for agents. Powered by humans.
+          Built for agents. Powered by humans.<br>
+          <a href="mailto:sat@aicv.co" style="color: rgba(232,226,208,0.5); text-decoration: none; font-size: 0.7rem;">sat@aicv.co</a>
         </div>
       </div>
       <div>
@@ -1693,7 +1700,7 @@
         : `<div class="result-biz-name result-biz-unknown">AI could not confirm a business name from your homepage.</div>`;
 
       // Strip any "AI read your business as:" prefix the model may have included in the verdict
-      const cleanVerdict = (r.verdict || '').replace(/^AI read your business as:\s*.+?(?=[A-Z][a-z]|$)/s, '').trim();
+      const cleanVerdict = (r.verdict || '').replace(/^AI read your business as:\s*[^\n]+\n?/i, '').trim();
       document.getElementById('verdictText').innerHTML = bizName + esc(cleanVerdict);
 
       document.getElementById('resultChecks').innerHTML = (r.checks || []).map(c => `
