@@ -1133,8 +1133,9 @@
     .aio-network-email {
       font-size: 0.85em;
       color: #888;
-      margin-left: 8px;
     }
+
+    .aio-network-email a { color: var(--volt); }
 
     .aio-err {
       display: none; margin-top: 1rem;
@@ -1733,7 +1734,7 @@
       document.getElementById('aioCta').innerHTML = `
   <div class="aio-network-cta">
     <div class="aio-network-cta-text">Is your business visible to AI? <strong>Join the AICV network</strong> — we're building the intelligence layer for the Coachella Valley.</div>
-    <a href="mailto:sat@aicv.co?subject=AICV%20Network%20—%20Get%20Included&body=Hi%20Sat%2C%0A%0AHere%27s%20my%20AIO%20report%3A%0A%0A%5BPaste%20report%20here%5D%0A%0AMy%20site%3A%20" class="aio-network-cta-btn" target="_blank">Get Included →</a> <span class="aio-network-email">or email <a href="mailto:sat@aicv.co">sat@aicv.co</a></span>
+    <div style="display:inline-flex;align-items:center;gap:12px;"><a href="mailto:sat@aicv.co?subject=AICV%20Network%20—%20Get%20Included&body=Hi%20Sat%2C%0A%0AHere%27s%20my%20AIO%20report%3A%0A%0A%5BPaste%20report%20here%5D%0A%0AMy%20site%3A%20" class="aio-network-cta-btn">Get Included →</a> <span class="aio-network-email">or email <a href="mailto:sat@aicv.co">sat@aicv.co</a></span></div>
   </div>
 `;
       document.getElementById('aioResults').classList.add('on');
