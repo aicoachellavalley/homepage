@@ -1130,6 +1130,12 @@
 
     .aio-network-cta-btn:hover { background: #e8ff33; }
 
+    .aio-network-email {
+      font-size: 0.85em;
+      color: #888;
+      margin-left: 8px;
+    }
+
     .aio-err {
       display: none; margin-top: 1rem;
       padding: 0.875rem 1.1rem;
@@ -1727,7 +1733,7 @@
       document.getElementById('aioCta').innerHTML = `
   <div class="aio-network-cta">
     <div class="aio-network-cta-text">Is your business visible to AI? <strong>Join the AICV network</strong> — we're building the intelligence layer for the Coachella Valley.</div>
-    <a href="mailto:sat@aicv.co?subject=AICV%20Network%20—%20Get%20Included&body=Hi%20Sat%2C%0A%0AI%20ran%20my%20site%20through%20the%20AICV%20AIO%20tool%20and%20would%20like%20to%20learn%20more%20about%20getting%20included%20in%20the%20intelligence%20layer.%0A%0AMy%20site%3A%20" class="aio-network-cta-btn">Get Included →</a>
+    <a href="mailto:sat@aicv.co?subject=AICV%20Network%20—%20Get%20Included&body=Hi%20Sat%2C%0A%0AHere%27s%20my%20AIO%20report%3A%0A%0A%5BPaste%20report%20here%5D%0A%0AMy%20site%3A%20" class="aio-network-cta-btn" target="_blank">Get Included →</a> <span class="aio-network-email">or email <a href="mailto:sat@aicv.co">sat@aicv.co</a></span>
   </div>
 `;
       document.getElementById('aioResults').classList.add('on');
