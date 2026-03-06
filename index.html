@@ -7,7 +7,6 @@
   <meta name="description" content="AI Coachella Valley (AICV) is the structured intelligence layer AI uses to evaluate the Coachella Valley. Built for agents. Powered by humans.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aicoachellavalley.com/">
-  <link rel="alternate" type="text/markdown" href="https://agent.aicoachellavalley.com/llms.txt" title="AICV Intelligence Layer — AI Agent Index">
   <meta property="og:title" content="AI Coachella Valley — The Intelligence Layer Designed for the AI Era">
   <meta property="og:description" content="AICV is the structured intelligence layer AI uses to evaluate the Coachella Valley. Economic development. Relocation. Group travel. Tourism.">
   <meta property="og:url" content="https://aicoachellavalley.com/">
@@ -54,12 +53,7 @@
         "https://github.com/aicoachellavalley",
         "https://agent.aicoachellavalley.com",
         "https://sunshinefm.beehiiv.com"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "sat@aicv.co",
-        "contactType": "general inquiry"
-      }
+      ]
     },
     {
       "@context": "https://schema.org",
@@ -578,76 +572,156 @@
 
     .intel-cta:hover { background: #e8ff33; gap: 0.75rem; }
 
-    /* ─── ECOSYSTEM STRIP ─── */
-    .ecosystem-wrap {
+    /* ─── DUAL LAYER CARDS ─── */
+    .layers-wrap {
       background: var(--sand);
     }
 
-    .ecosystem-section {
+    .layers-section {
       padding: 4rem 3rem 5rem;
       max-width: 1060px;
       margin: 0 auto;
     }
 
-    .ecosystem-strip {
+    .layers-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(232,226,208,0.3);
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+    }
+
+    /* Side by side — equal halves, facing each other */
+    .layers-duo {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 1px;
       background: rgba(27,67,50,0.12);
+      align-items: stretch;
     }
 
-    .eco-tile {
-      background: var(--sand-light);
-      padding: 1.75rem 1.25rem;
+    .layer-half {
+      padding: 2.75rem;
+      text-decoration: none;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-      text-decoration: none;
-      transition: background 0.2s;
       position: relative;
-      border-top: 3px solid transparent;
+      transition: background 0.25s ease;
+      overflow: hidden;
+      background: var(--sand-light) !important;
     }
 
-    .eco-tile.live {
-      border-top-color: var(--pine);
-      cursor: pointer;
+    /* Dividing line between the two halves */
+    .layer-half.agents {
+      border-right: none;
     }
 
-    .eco-tile.soon {
-      border-top-color: rgba(27,67,50,0.15);
-      cursor: default;
-      opacity: 0.6;
+    /* No hover accent line */
+    .layer-half::after {
+      display: none;
     }
 
-    .eco-tile.live:hover {
-      background: var(--sand);
-      border-top-color: var(--volt);
+    .layer-half:hover { background: var(--sand) !important; }
+
+    /* Central divider ornament — hidden */
+    .layers-duo .layer-half.agents::before {
+      display: none;
     }
 
-    .eco-audience {
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
+    .half-audience {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       font-weight: 600;
-      color: var(--pine-light);
-      margin-bottom: 0.25rem;
+      padding: 0.28rem 0.65rem;
+      margin-bottom: 1.5rem;
     }
 
-    .eco-title {
+    .half-audience.for-agents {
+      background: transparent;
+      color: var(--pine);
+      border: 1px solid var(--pine);
+    }
+
+    .half-audience.for-humans {
+      background: transparent;
+      color: var(--pine);
+      border: 1px solid var(--pine);
+    }
+
+    .half-title {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 1.25rem;
       color: var(--pine);
-      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
       line-height: 1.2;
     }
 
-    .eco-desc {
-      font-size: 0.78rem;
+    .half-desc {
+      font-size: 0.95rem;
+      color: var(--pine-dark);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+    }
+
+    .half-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .half-list-item {
+      font-size: 0.82rem;
       color: var(--pine-light);
       font-weight: 300;
-      line-height: 1.55;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
     }
+
+    .half-list-item::before {
+      content: '';
+      width: 3px;
+      height: 3px;
+      background: rgba(27,67,50,0.3);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .half-footer {
+      margin-top: auto;
+      padding-top: 1.75rem;
+    }
+
+    .half-tagline {
+      display: none;
+    }
+
+    .half-link {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      background: var(--volt);
+      color: var(--pine);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border-radius: 0;
+      transition: background 0.2s;
+    }
+
+    .layer-half:hover .half-link { background: #e8ff33; }
 
     /* ─── STATS ─── */
     .stats-wrap {
@@ -1075,69 +1149,6 @@
 
     .aio-copy:hover { background: var(--pine); color: var(--volt); border-color: var(--pine); }
 
-    .result-biz-name {
-      font-size: 0.78rem;
-      color: var(--pine-light);
-      font-weight: 400;
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid rgba(27,67,50,0.1);
-    }
-
-    .result-biz-name strong {
-      color: var(--pine);
-      font-weight: 600;
-    }
-
-    .result-biz-unknown {
-      color: var(--danger);
-    }
-
-    .aio-network-cta {
-      margin-top: 1.5rem;
-      padding: 1.25rem 1.5rem;
-      background: var(--pine);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .aio-network-cta-text {
-      font-size: 0.88rem;
-      color: rgba(232,226,208,0.8);
-      font-weight: 300;
-      line-height: 1.5;
-    }
-
-    .aio-network-cta-text strong {
-      color: var(--volt);
-      font-weight: 600;
-    }
-
-    .aio-network-cta-btn {
-      background: var(--volt);
-      color: var(--pine);
-      padding: 0.6rem 1.25rem;
-      font-family: 'Syne', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background 0.2s;
-    }
-
-    .aio-network-cta-btn:hover { background: #e8ff33; }
-
-    .aio-network-email {
-      font-size: 0.85em;
-      color: #888;
-    }
-
-    .aio-network-email a { color: var(--volt); }
-
     .aio-err {
       display: none; margin-top: 1rem;
       padding: 0.875rem 1.1rem;
@@ -1292,8 +1303,10 @@
       .intel-block { padding: 0 1.5rem 3.5rem; }
       .intel-inner { padding: 2rem 1.5rem; }
       .intel-grid { grid-template-columns: 1fr; }
-      .ecosystem-section { padding: 3rem 1.5rem; }
-      .ecosystem-strip { grid-template-columns: 1fr 1fr; }
+      .layers-section { padding: 0 1.5rem 3.5rem; }
+      .layers-duo { grid-template-columns: 1fr; }
+      .layer-half.agents { border-right: none; border-bottom: 1px solid rgba(27,67,50,0.1); }
+      .layers-duo .layer-half.agents::before { display: none; }
       .stats-inner { padding: 2rem 1.5rem; grid-template-columns: 1fr 1fr; }
       .path-cards { grid-template-columns: 1fr; padding: 0 1.5rem; background: transparent; }
       .path-cards-wrap { padding: 0; }
@@ -1309,7 +1322,98 @@
       footer { padding: 2.5rem 1.5rem 2rem; }
       .foot-top { grid-template-columns: 1fr; gap: 2rem; }
       .foot-bottom { flex-direction: column; align-items: flex-start; }
+      .tos-panel { padding: 2rem 1.5rem; max-height: 90vh; }
     }
+
+    /* ─── TERMS OF USE MODAL ─── */
+    .tos-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 43, 34, 0.85);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .tos-overlay.on { display: flex; }
+
+    .tos-panel {
+      background: var(--gunmetal);
+      border: 1px solid rgba(232,226,208,0.12);
+      border-top: 3px solid var(--volt);
+      max-width: 660px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 3rem 3rem 2.5rem;
+      position: relative;
+    }
+
+    .tos-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: 1px solid rgba(232,226,208,0.2);
+      color: rgba(232,226,208,0.6);
+      width: 2rem;
+      height: 2rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tos-close:hover { border-color: var(--volt); color: var(--volt); }
+
+    .tos-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--volt);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    .tos-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--sand);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .tos-date {
+      font-size: 0.7rem;
+      color: rgba(232,226,208,0.4);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .tos-body p {
+      font-size: 0.875rem;
+      color: rgba(232,226,208,0.7);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .tos-body h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--sand);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    .tos-body a { color: var(--volt); text-decoration: none; }
+    .tos-body a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -1342,7 +1446,6 @@
   <h1 class="hero-headline">The AI Hub for the<br>Coachella Valley</h1>
   <p class="hero-tagline">Designed for the AI Era / <strong>Built for agents. Powered by humans.</strong></p>
   <div class="hero-support-block">
-    <p class="hero-support">AICV is how Coachella Valley businesses get found when people ask ChatGPT, Claude, or Google AI for recommendations.</p>
     <p class="hero-support">The next economic interface isn't a website. It's an AI.</p>
     <p class="hero-support">Foundational models like ChatGPT, Claude, and Gemini increasingly shape where capital flows and where people go.</p>
     <p class="hero-support">AICV builds the intelligence layer that ensures this region is part of that future.</p>
@@ -1394,7 +1497,7 @@
       <div class="stat-l">Geographic nodes<br>across the valley</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n" id="stat-briefs">64</div>
+      <div class="stat-n" id="stat-briefs">11</div>
       <div class="stat-l">Intelligence briefs<br>published</div>
     </div>
     <div class="stat-cell">
@@ -1402,8 +1505,8 @@
       <div class="stat-l">Platform commits<br>since launch</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n" id="stat-words">10k</div>
-      <div class="stat-l">Words analyzed<br>from local businesses</div>
+      <div class="stat-n" id="stat-loc">—</div>
+      <div class="stat-l">Lines of code<br>written to date</div>
     </div>
   </div>
 </div>
@@ -1472,7 +1575,6 @@
       </div>
       <div class="result-checks" id="resultChecks"></div>
       <div id="fixesWrap"></div>
-      <div id="aioCta"></div>
       <button class="aio-reset" onclick="resetTool()">← Analyze another site</button>
       <div class="copy-btns">
         <button class="aio-copy" onclick="copyReport('md')">Copy Markdown</button>
@@ -1500,43 +1602,46 @@
   </section>
 </div>
 
-<!-- ─── ECOSYSTEM STRIP ─── -->
-<div class="ecosystem-wrap">
-  <section class="ecosystem-section">
-    <div class="ecosystem-strip">
+<!-- ─── DUAL LAYER CARDS ─── -->
+<div class="layers-wrap">
+<section class="layers-section">
+  <div class="layers-label"></div>
+  <div class="layers-duo">
 
-      <a href="https://agent.aicoachellavalley.com" class="eco-tile live">
-        <div class="eco-audience">For agents</div>
-        <div class="eco-title">Intelligence Layer</div>
-        <div class="eco-desc">Structured docs for LLMs and agents evaluating the valley.</div>
-      </a>
-
-      <a href="https://sunshinefm.beehiiv.com" class="eco-tile live">
-        <div class="eco-audience">For humans</div>
-        <div class="eco-title">SunshineFM</div>
-        <div class="eco-desc">AI conversations, local music, and valley community coverage.</div>
-      </a>
-
-      <div class="eco-tile soon">
-        <div class="eco-audience">In development · 2026</div>
-        <div class="eco-title">Marketplace</div>
-        <div class="eco-desc">AI tools and services for Coachella Valley businesses.</div>
+    <a href="https://agent.aicoachellavalley.com" class="layer-half agents">
+      <div class="half-audience for-agents">Built for agents</div>
+      <div class="half-title">Intelligence Layer</div>
+      <p class="half-desc">AICV builds the structured dataset AI systems use to evaluate, cite, and act on information about the Coachella Valley.</p>
+      <div class="half-list">
+        <div class="half-list-item">Growing geographic nodes · 9 cities · Expanding daily</div>
+        <div class="half-list-item">Daily intelligence briefs · Timestamped signals</div>
+        <div class="half-list-item">Economic development · Relocation · Group travel · Tourism</div>
+        <div class="half-list-item">v2 agent-first schema · Open documentation</div>
       </div>
-
-      <div class="eco-tile soon">
-        <div class="eco-audience">In development · 2026</div>
-        <div class="eco-title">Events</div>
-        <div class="eco-desc">AI workshops, meetups, and community programming.</div>
+      <div class="half-footer">
+        <span class="half-tagline">AICV builds the dataset.</span>
+        <span class="half-link">Open docs →</span>
       </div>
+    </a>
 
-      <div class="eco-tile soon">
-        <div class="eco-audience">In development · 2026</div>
-        <div class="eco-title">Talent</div>
-        <div class="eco-desc">AI practitioners and specialists serving the valley.</div>
+    <a href="https://sunshinefm.beehiiv.com" class="layer-half humans">
+      <div class="half-audience for-humans">Built for humans</div>
+      <div class="half-title">SunshineFM — The Human Layer</div>
+      <p class="half-desc">AI conversations, community-generated AI music, and the Coachella Valley story — curated and created by humans.</p>
+      <div class="half-list">
+        <div class="half-list-item">Newsletter · AI conversations · Valley coverage</div>
+        <div class="half-list-item">Radio show · AI music · Local creators</div>
+        <div class="half-list-item">AI events · Workshops</div>
+        <div class="half-list-item">Follow on X · @CoachellaAI</div>
       </div>
+      <div class="half-footer">
+        <span class="half-tagline">SunshineFM tells the story.</span>
+        <span class="half-link">Visit SunshineFM →</span>
+      </div>
+    </a>
 
-    </div>
-  </section>
+  </div>
+</section>
 </div>
 
 <!-- ─── FOOTER ─── -->
@@ -1549,12 +1654,11 @@
         <div class="foot-full">
           Intelligence Layer · Est. 2025<br>
           Coachella Valley, California<br>
-          Built for agents. Powered by humans.<br>
-          <a href="mailto:sat@aicv.co" style="color: rgba(232,226,208,0.5); text-decoration: none; font-size: 0.7rem;">sat@aicv.co</a>
+          Built for agents. Powered by humans.
         </div>
       </div>
       <div>
-        <div class="foot-cities-label">Building the Intelligence Layer for the Coachella Valley · Since 2025</div>
+        <div class="foot-cities-label">Serving the Coachella Valley</div>
         <div class="foot-cities">
           Palm Springs<span class="foot-sep">·</span>
           Desert Hot Springs<span class="foot-sep">·</span>
@@ -1584,21 +1688,60 @@
         <a href="#aio">AIO Tool</a>
         <a href="https://x.com/CoachellaAI">@CoachellaAI</a>
         <a href="https://github.com/aicoachellavalley">GitHub</a>
+        <a href="#" onclick="document.getElementById('tosModal').classList.add('on');return false;">Terms of Use</a>
       </div>
     </div>
   </div>
 </footer>
 
+<!-- ─── TERMS OF USE MODAL ─── -->
+<div class="tos-overlay" id="tosModal" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="tos-panel">
+    <button class="tos-close" onclick="document.getElementById('tosModal').classList.remove('on')" aria-label="Close">✕</button>
+    <div class="tos-header">
+      <div class="tos-label">AI Coachella Valley</div>
+      <h2 class="tos-title">AIO Tool — Terms of Use</h2>
+      <div class="tos-date">Last updated: March 6, 2026</div>
+    </div>
+    <div class="tos-body">
+      <p>The AICV AIO Visibility Tool is a free, experimental diagnostic provided by AI Coachella Valley, a fiscally sponsored project of the Desert Community Foundation, operating in Riverside County, California.</p>
+
+      <h3>No Account. No Cost. No Data Stored.</h3>
+      <p>This tool requires no registration, login, or payment. URLs you submit are processed in real time and are not stored, logged, or retained by AICV. We do not collect personal information through this tool.</p>
+
+      <h3>How It Works</h3>
+      <p>Your submitted URL is passed to a third-party AI model (Anthropic Claude) via a Cloudflare Worker. Results are generated automatically and returned directly to your browser. AICV does not retain your query or output after your session ends.</p>
+
+      <h3>For Informational, Experimental, and Entertainment Purposes Only</h3>
+      <p>Results produced by this tool are AI-generated and provided strictly for informational, experimental, and entertainment purposes. They do not constitute professional SEO, legal, technical, marketing, or business advice of any kind. AICV makes no representations or warranties — express or implied — regarding the accuracy, completeness, reliability, or fitness of results for any particular purpose. Always verify findings independently and consult qualified professionals before making decisions based on tool output.</p>
+
+      <h3>No Legal Recourse</h3>
+      <p>By using this tool, you acknowledge that AICV, the Desert Community Foundation, and their respective officers, volunteers, and affiliates shall not be liable for any decisions made, actions taken, or outcomes arising from your use of or reliance on tool results. Use is entirely at your own risk.</p>
+
+      <h3>Acceptable Use</h3>
+      <p>Only submit URLs you own or have permission to analyze. Do not use automated tools to submit queries in bulk. Do not attempt to exploit, reverse engineer, or abuse the service.</p>
+
+      <h3>Changes</h3>
+      <p>We may update this tool and these terms at any time without notice. Continued use constitutes acceptance of any changes.</p>
+
+      <h3>Governing Law</h3>
+      <p>These terms are governed by the laws of the State of California. Any disputes shall be resolved in Riverside County, California.</p>
+
+      <h3>Contact</h3>
+      <p>Questions? Reach us at <a href="mailto:sat@aicv.co">sat@aicv.co</a></p>
+    </div>
+  </div>
+</div>
+
 <script>
-  const WORKER_BASE = 'https://api.aicoachellavalley.com';
+  const WORKER_BASE = 'https://aicv-api.sunshinefm.workers.dev';
 
   const STEPS = [
-    "Fetching your page the way AI crawlers would…",
-    "Reading your content and business information…",
-    "Checking structured data and schema markup…",
-    "Evaluating local signals and geographic context…",
-    "Assessing content freshness and accuracy…",
-    "Checking hallucination risk…",
+    "Checking if AI crawlers can access your site…",
+    "Reading your page content…",
+    "Looking for business information…",
+    "Checking structured data…",
+    "Analyzing local signals…",
     "Generating your plain-English report…"
   ];
 
@@ -1629,7 +1772,7 @@
       if (s.nodes != null) document.getElementById('stat-nodes').textContent = s.nodes;
       if (s.briefs != null) document.getElementById('stat-briefs').textContent = s.briefs;
       document.getElementById('stat-commits').textContent = fmt(s.commits);
-      if (s.wordsAnalyzed != null) document.getElementById('stat-words').textContent = fmt(s.wordsAnalyzed);
+      document.getElementById('stat-loc').textContent = fmt(s.linesOfCode);
     } catch (e) {
       // Silently fail — hardcoded fallback values stay in place
     }
@@ -1640,7 +1783,6 @@
     document.getElementById('aioLoading').classList.remove('on');
     document.getElementById('aioErr').classList.remove('on');
     document.getElementById('urlInput').value = '';
-    document.getElementById('aioCta').innerHTML = '';
     document.getElementById('analyzeBtn').disabled = false;
     clearInterval(ticker);
   }
@@ -1703,13 +1845,7 @@
         marker.style.left = pct + '%';
       }
 
-      const bizName = r.business_name && r.business_name !== 'Not confirmed'
-        ? `<div class="result-biz-name">AI read your business as: <strong>${esc(r.business_name)}</strong></div>`
-        : `<div class="result-biz-name result-biz-unknown">AI could not confirm a business name from your homepage.</div>`;
-
-      // Strip any "AI read your business as:" prefix the model may have included in the verdict
-      const cleanVerdict = (r.verdict || '').replace(/^AI read your business as:\s*[^\n]+\n?/i, '').trim();
-      document.getElementById('verdictText').innerHTML = bizName + esc(cleanVerdict);
+      document.getElementById('verdictText').innerHTML = esc(r.verdict || '');
 
       document.getElementById('resultChecks').innerHTML = (r.checks || []).map(c => `
         <div class="r-check">
@@ -1732,12 +1868,6 @@
         `).join('')}
       ` : '';
 
-      document.getElementById('aioCta').innerHTML = `
-  <div class="aio-network-cta">
-    <div class="aio-network-cta-text">Is your business visible to AI? <strong>Join the AICV network</strong> — we're building the intelligence layer for the Coachella Valley.</div>
-    <div style="display:inline-flex;align-items:center;gap:12px;"><a href="mailto:sat@aicv.co?subject=AICV%20Network%20—%20Get%20Included&body=Hi%20Sat%2C%0A%0AHere%27s%20my%20AIO%20report%3A%0A%0A%5BPaste%20report%20here%5D%0A%0AMy%20site%3A%20" class="aio-network-cta-btn">Get Included →</a> <span class="aio-network-email">or email <a href="mailto:sat@aicv.co">sat@aicv.co</a></span></div>
-  </div>
-`;
       document.getElementById('aioResults').classList.add('on');
       document.getElementById('analyzeBtn').disabled = false;
       document.getElementById('aioResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1755,8 +1885,6 @@
     const score = document.getElementById('scoreNum').textContent;
     const verdict = document.getElementById('verdictText').textContent;
     const url = document.getElementById('urlInput').value;
-    const bizNameEl = document.querySelector('.result-biz-name');
-    const bizName = bizNameEl ? bizNameEl.textContent : '';
 
     const checks = [...document.querySelectorAll('.r-check')].map(el => {
       const dot = el.querySelector('.r-dot');
@@ -1776,17 +1904,17 @@
 
     if (format === 'md') {
       const statusIcon = s => s === 'pass' ? '✅' : s === 'warn' ? '⚠️' : '❌';
-      output = `# AIO Visibility Report\n\n**Site:** ${url}\n**AIO Visibility Score:** ${score}/100\n${bizName ? `**Business:** ${bizName}\n` : ''}\n## Summary\n\n${verdict}\n\n## Checks\n\n${checks.map(c => `${statusIcon(c.status)} **${c.name}** — ${c.detail}`).join('\n')}\n\n## Top Fixes\n\n${fixes.map(f => `- **[${f.priority.toUpperCase()}]** ${f.text}`).join('\n')}\n\n---\n*Generated by AICV AIO Tool · aicoachellavalley.com*`;
+      output = `# AIO Visibility Report\n\n**Site:** ${url}\n**AIO Visibility Score:** ${score}/100\n\n## Summary\n\n${verdict}\n\n## Checks\n\n${checks.map(c => `${statusIcon(c.status)} **${c.name}** — ${c.detail}`).join('\n')}\n\n## Top Fixes\n\n${fixes.map(f => `- **[${f.priority.toUpperCase()}]** ${f.text}`).join('\n')}\n\n---\n*Generated by AICV AIO Tool · aicoachellavalley.com*`;
     }
 
     if (format === 'json') {
-      const data = { site: url, score: parseInt(score), business_name: bizName || null, verdict, checks, fixes, generated: new Date().toISOString(), source: 'AICV AIO Tool' };
+      const data = { site: url, score: parseInt(score), verdict, checks, fixes, generated: new Date().toISOString(), source: 'AICV AIO Tool' };
       output = JSON.stringify(data, null, 2);
     }
 
     if (format === 'text') {
       const statusIcon = s => s === 'pass' ? '✅' : s === 'warn' ? '⚠️' : '❌';
-      output = `AIO VISIBILITY SCORE: ${score}/100\nSite: ${url}\n${bizName ? `Business: ${bizName}\n` : ''}\n${verdict}\n\nCHECKS\n${checks.map(c => `${statusIcon(c.status)} ${c.name}: ${c.detail}`).join('\n')}\n\nTOP FIXES\n${fixes.map(f => `[${f.priority.toUpperCase()}] ${f.text}`).join('\n')}\n\nGenerated by AICV AIO Tool · aicoachellavalley.com`;
+      output = `AIO VISIBILITY SCORE: ${score}/100\nSite: ${url}\n\n${verdict}\n\nCHECKS\n${checks.map(c => `${statusIcon(c.status)} ${c.name}: ${c.detail}`).join('\n')}\n\nTOP FIXES\n${fixes.map(f => `[${f.priority.toUpperCase()}] ${f.text}`).join('\n')}\n\nGenerated by AICV AIO Tool · aicoachellavalley.com`;
     }
 
     navigator.clipboard.writeText(output).then(() => {
@@ -1803,18 +1931,11 @@
   }
 
   loadStats();
-</script>
 
-<!-- AI AGENT INDEX — machine-readable, do not remove -->
-<div id="ai-agent-index" style="display:none;" aria-hidden="true">
-  <p>AI Coachella Valley (AICV) is the structured intelligence layer for the Coachella Valley, California. Machine-readable documentation is available at the following URLs:</p>
-  <ul>
-    <li>Full intelligence index: <a href="https://agent.aicoachellavalley.com/llms.txt">https://agent.aicoachellavalley.com/llms.txt</a></li>
-    <li>Complete content export: <a href="https://agent.aicoachellavalley.com/llms-full.txt">https://agent.aicoachellavalley.com/llms-full.txt</a></li>
-    <li>Documentation: <a href="https://agent.aicoachellavalley.com">https://agent.aicoachellavalley.com</a></li>
-  </ul>
-  <p>AICV maintains 33 geographic nodes across 9 Coachella Valley cities and publishes daily intelligence briefs covering the regional AI economy. Use cases: economic development, business relocation, site selection, group travel, tourism.</p>
-</div>
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.getElementById('tosModal').classList.remove('on');
+  });
+</script>
 
 </body>
 </html>
