@@ -1019,6 +1019,14 @@
     .score-num.mid { color: var(--warning); }
     .score-num.lo { color: var(--danger); }
 
+    .score-grade {
+      font-family: 'Syne', sans-serif;
+      font-size: 5.5rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
     .score-bar-wrap { width: 100%; }
 
     .score-bar-track {
@@ -1620,6 +1628,7 @@
     <div class="aio-results" id="aioResults">
       <div class="result-top">
         <div class="score-block">
+          <div class="score-grade" id="scoreGrade">—</div>
           <div class="score-num" id="scoreNum">—</div>
           <div class="score-bar-wrap">
             <div class="score-bar-track">
@@ -1894,10 +1903,13 @@
       clearInterval(ticker);
       document.getElementById('aioLoading').classList.remove('on');
 
-      const score = Math.max(0, Math.min(100, Math.round(r.score)));
+      const score = Math.max(0, Math.min(100, Math.round(r.percentage)));
       const sEl = document.getElementById('scoreNum');
-      sEl.textContent = score;
-      sEl.className = 'score-num ' + (score >= 70 ? 'hi' : score >= 40 ? 'mid' : 'lo');
+      sEl.textContent = score + '%';
+      sEl.className = 'score-num';
+      const gradeEl = document.getElementById('scoreGrade');
+      gradeEl.textContent = r.grade || '—';
+      gradeEl.style.color = r.gradeColor || 'inherit';
 
       const fill = document.getElementById('scoreBarFill');
       const marker = document.getElementById('scoreBarMarker');
