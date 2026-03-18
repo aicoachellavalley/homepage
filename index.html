@@ -1896,9 +1896,11 @@
         showErr(data.error);
         return;
       }
-      const raw = (data.content?.[0]?.text || '').replace(/```json|```/g, '').trim();
       let r;
-      try { r = JSON.parse(raw); } catch { throw new Error('Could not read results. Please try again.'); }
+      try {
+        r = data;
+        if (!r.percentage || !r.grade) throw new Error('Could not read results. Please try again.');
+      } catch { throw new Error('Could not read results. Please try again.'); }
 
       clearInterval(ticker);
       document.getElementById('aioLoading').classList.remove('on');
