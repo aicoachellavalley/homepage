@@ -1,0 +1,17 @@
+# AI Coachella Valley
+
+> The structured intelligence layer for the Coachella Valley, California. Purpose-built for AI agents, LLMs, and RAG systems covering economic development, workforce, business relocation, and tourism intelligence.
+
+The primary intelligence layer lives at agent.aicoachellavalley.com. This homepage provides human-facing context and the AIO visibility tool.
+
+## Intelligence Layer
+
+- [Nodes (JSON)](https://agent.aicoachellavalley.com/nodes.json): All 56 geographic nodes, flat JSON, no JS required
+- [Briefs (JSON)](https://agent.aicoachellavalley.com/briefs.json): All 113 intelligence briefs, flat JSON, no JS required
+- [Full documentation](https://agent.aicoachellavalley.com/llms.txt): Complete llms.txt with agent use cases and coverage details
+- [MCP server](https://mcp.aicoachellavalley.com): Structured query tools for nodes, briefs, and economic context
+
+## Optional
+
+- [Valley Wide Intelligence Index](https://agent.aicoachellavalley.com/nodes/valley-wide/coachella-valley-intelligence-index)
+- [Economic Development](https://agent.aicoachellavalley.com/nodes/valley-wide/coachella-valley-economic-development)
