@@ -1571,12 +1571,8 @@
       <div class="stat-l">Intelligence briefs<br>published</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n" id="stat-commits">—</div>
-      <div class="stat-l">Platform commits<br>since launch</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-n" id="stat-words">10k</div>
-      <div class="stat-l">Words analyzed<br>from local businesses</div>
+      <div class="stat-n" id="stat-reviews">1</div>
+      <div class="stat-l">Business reviews<br>completed</div>
     </div>
   </div>
 </div>
@@ -1843,8 +1839,7 @@
       const s = await res.json();
       if (s.nodes != null) document.getElementById('stat-nodes').textContent = s.nodes;
       if (s.briefs != null) document.getElementById('stat-briefs').textContent = s.briefs;
-      document.getElementById('stat-commits').textContent = fmt(s.commits);
-      if (s.wordsAnalyzed != null) document.getElementById('stat-words').textContent = fmt(s.wordsAnalyzed);
+      if (s.reviewsCompleted != null) document.getElementById('stat-reviews').textContent = s.reviewsCompleted;
     } catch (e) {
       // Silently fail — hardcoded fallback values stay in place
     }
