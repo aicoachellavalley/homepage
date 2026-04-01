@@ -6,10 +6,11 @@ The primary intelligence layer lives at agent.aicoachellavalley.com. This homepa
 
 ## Intelligence Layer
 
-- [Nodes (JSON)](https://agent.aicoachellavalley.com/nodes.json): All 56 geographic nodes, flat JSON, no JS required
-- [Briefs (JSON)](https://agent.aicoachellavalley.com/briefs.json): All 113 intelligence briefs, flat JSON, no JS required
+- [Nodes (JSON)](https://agent.aicoachellavalley.com/nodes.json): All 62 geographic nodes, flat JSON, no JS required
+- [Briefs (JSON)](https://agent.aicoachellavalley.com/briefs.json): All 120 intelligence briefs, flat JSON, no JS required
 - [Full documentation](https://agent.aicoachellavalley.com/llms.txt): Complete llms.txt with agent use cases and coverage details
 - [MCP server](https://mcp.aicoachellavalley.com): Structured query tools for nodes, briefs, and economic context
+- [Snapshots](https://aicoachellavalley.com/snapshots/): AICV Intelligence Snapshots — public entity assessments produced by the Intelligence Council, one per reviewed entity.
 
 ## Optional
 
