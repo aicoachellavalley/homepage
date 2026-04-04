@@ -53,7 +53,7 @@
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -83,8 +83,8 @@
     }
 
     body {
-      background-color: var(--gunmetal);
-      color: var(--snow);
+      background-color: var(--sand-light);
+      color: var(--pine);
       font-family: 'DM Sans', sans-serif;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
@@ -114,10 +114,11 @@
     }
 
     .entity-name {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--snow);
-      letter-spacing: -0.02em;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--sand-light);
+      letter-spacing: -0.01em;
       line-height: 1.2;
       margin-bottom: 10px;
     }
@@ -127,13 +128,13 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--sand-dark);
+      color: var(--pine-light);
     }
 
     /* DIVIDER */
     .divider {
       border: none;
-      border-top: 1px solid var(--pine-light);
+      border-top: 1px solid var(--sand-dark);
       margin: 40px 0;
     }
 
@@ -152,21 +153,32 @@
       padding-top: 48px;
     }
 
+    .opener p:first-child {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--pine-dark);
+      padding-left: 16px;
+      border-left: 3px solid var(--pine-light);
+      margin-bottom: 20px;
+    }
+
     .opener p {
       font-size: 1.05rem;
-      color: var(--snow);
+      color: var(--pine);
       margin-bottom: 16px;
     }
 
     .bridge {
       font-size: 0.9rem;
-      color: var(--sand);
+      color: var(--pine-light);
       line-height: 1.7;
     }
 
     /* METHODOLOGY */
     .methodology {
-      background-color: var(--gunmetal-2);
+      background-color: var(--snow);
       border-left: 3px solid var(--pine-light);
       padding: 20px 24px;
       border-radius: 2px;
@@ -174,7 +186,7 @@
 
     .methodology p {
       font-size: 0.875rem;
-      color: var(--sand);
+      color: var(--pine);
       line-height: 1.7;
     }
 
@@ -205,65 +217,77 @@
       line-height: 1.4;
     }
 
-    .grade-a  { background: rgba(74,222,128,0.15); color: #4ade80; border-left: 3px solid #4ade80; }
-    .grade-b  { background: rgba(45,106,79,0.20); color: #F5F5F5; border-left: 3px solid #2D6A4F; }
-    .grade-c  { background: rgba(216,255,0,0.10); color: #D8FF00; border-left: 3px solid #D8FF00; }
-    .grade-d  { background: rgba(251,191,36,0.12); color: #fbbf24; border-left: 3px solid #fbbf24; }
-    .grade-f  { background: rgba(30,30,30,0.60); color: rgba(245,245,245,0.75); border-left: 3px solid rgba(245,245,245,0.25); }
+    .grade-a  { background: rgba(27,67,50,0.12); color: var(--pine-dark); border-left: 3px solid var(--pine); }
+    .grade-b  { background: rgba(45,106,79,0.12); color: var(--pine); border-left: 3px solid var(--pine-light); }
+    .grade-c  { background: rgba(216,255,0,0.18); color: var(--pine-dark); border-left: 3px solid #B8D900; }
+    .grade-d  { background: var(--sand); color: var(--pine); border-left: 3px solid var(--sand-dark); }
+    .grade-f  { background: rgba(30,30,30,0.06); color: var(--pine-light); border-left: 3px solid var(--sand-dark); }
 
-    /* FINDINGS */
+    /* FINDINGS — three-column grid */
+    .findings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
     .finding {
-      margin-bottom: 4px;
-      border-radius: 2px;
+      border-radius: 6px;
       overflow: hidden;
+      border: 1px solid var(--sand-dark);
+      margin-bottom: 0;
     }
 
     .finding-header {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 20px;
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px 18px 12px;
     }
 
     .finding-title {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--sand-dark);
+      color: var(--pine-light);
     }
 
     .grade-badge {
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.05em;
-      padding: 3px 10px;
-      border-radius: 2px;
+      padding: 4px 10px;
+      border-radius: 3px;
       white-space: nowrap;
+      align-self: flex-start;
     }
 
-    .badge-c { background: rgba(216,255,0,0.10); color: #D8FF00; border: 1px solid rgba(216,255,0,0.25); }
-    .badge-d { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+    .badge-a { background: var(--pine); color: var(--volt); border: 1px solid var(--pine); }
+    .badge-b { background: var(--pine-light); color: var(--snow); border: 1px solid var(--pine-light); }
+    .badge-c { background: var(--volt); color: var(--pine-dark); border: 1px solid #B8D900; }
+    .badge-d { background: var(--sand); color: var(--pine); border: 1px solid var(--sand-dark); }
+    .badge-f { background: var(--gunmetal); color: var(--snow); border: 1px solid var(--gunmetal); }
 
     .finding-body {
-      padding: 0 20px 20px;
-      background-color: var(--gunmetal-2);
+      padding: 12px 18px 18px;
+      background-color: var(--snow);
     }
 
     .finding-body p {
-      font-size: 0.9rem;
-      color: var(--sand);
+      font-size: 0.875rem;
+      color: var(--pine);
       line-height: 1.75;
     }
 
-    .finding-header-c { background-color: var(--gunmetal-2); border-left: 3px solid #D8FF00; }
-    .finding-header-d { background-color: var(--gunmetal-2); border-left: 3px solid #fbbf24; }
+    .finding-header-c { background-color: rgba(216,255,0,0.12); border-bottom: 1px solid rgba(180,210,0,0.3); }
+    .finding-header-d { background-color: var(--sand-light); border-bottom: 1px solid var(--sand-dark); }
+    .finding-header-f { background-color: rgba(30,30,30,0.05); border-bottom: 1px solid var(--sand-dark); }
 
     /* THREE THINGS */
     .action-block {
       border-left: 3px solid var(--pine-light);
       padding: 20px 24px;
-      background-color: var(--gunmetal-2);
+      background-color: var(--snow);
       border-radius: 2px;
       margin-bottom: 4px;
     }
@@ -273,42 +297,42 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--sky);
+      color: var(--pine-light);
       margin-bottom: 6px;
     }
 
     .action-title {
       font-size: 1rem;
       font-weight: 600;
-      color: var(--snow);
+      color: var(--pine-dark);
       margin-bottom: 10px;
     }
 
     .action-body {
       font-size: 0.875rem;
-      color: var(--sand);
+      color: var(--pine);
       line-height: 1.7;
     }
 
     .action-block.ongoing {
-      border-left-color: var(--volt);
+      border-left-color: var(--pine);
     }
 
     .action-block.ongoing .action-timing {
-      color: var(--volt);
+      color: var(--pine);
     }
 
     /* CTA */
     .cta-block {
-      background-color: var(--pine-dark);
-      border: 1px solid var(--pine-light);
+      background-color: var(--sand);
+      border: 1px solid var(--sand-dark);
       border-radius: 2px;
       padding: 32px 28px;
     }
 
     .cta-block p {
       font-size: 0.9rem;
-      color: var(--sand);
+      color: var(--pine);
       line-height: 1.75;
     }
 
@@ -316,18 +340,18 @@
     .site-footer {
       margin-top: 60px;
       padding-top: 28px;
-      border-top: 1px solid var(--pine-light);
+      border-top: 1px solid var(--sand-dark);
       text-align: center;
     }
 
     .site-footer p {
       font-size: 0.8rem;
-      color: var(--sand-dark);
+      color: var(--pine-light);
       line-height: 1.8;
     }
 
     .site-footer a {
-      color: var(--sky);
+      color: var(--pine);
       text-decoration: none;
     }
 
@@ -346,9 +370,9 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .entity-name {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
 
       .site-header {
@@ -360,8 +384,8 @@
         gap: 4px;
       }
 
-      .finding-header {
-        flex-wrap: wrap;
+      .findings-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -428,6 +452,8 @@
     <section>
       <p class="section-heading">The Findings</p>
 
+      <div class="findings-grid">
+
       <div class="finding">
         <div class="finding-header finding-header-c">
           <span class="finding-title">Buyer Readiness</span>
@@ -456,6 +482,8 @@
         <div class="finding-body">
           <p>The domain redirect from thegardensonelpaseo.com to simon.com/mall placed this property inside a national portfolio CMS serving 200 properties identically. Every AI system now reads this as a mall. The open-air, palm-lined, flagship-brand reality is invisible to the layer where the buyer's decision is already being made.</p>
         </div>
+      </div>
+
       </div>
     </section>
 
