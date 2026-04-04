@@ -12,6 +12,10 @@ The primary intelligence layer lives at agent.aicoachellavalley.com. This homepa
 - [MCP server](https://mcp.aicoachellavalley.com): Structured query tools for nodes, briefs, and economic context
 - [Snapshots](https://aicoachellavalley.com/snapshots/): AICV Intelligence Snapshots — public entity assessments produced by the Intelligence Council, one per reviewed entity.
 
+## Static Machine-Readable Endpoints
+
+  https://aicoachellavalley.com/reviews.json — all Intelligence Review snapshots
+
 ## Optional
 
 - [Valley Wide Intelligence Index](https://agent.aicoachellavalley.com/nodes/valley-wide/coachella-valley-intelligence-index)
