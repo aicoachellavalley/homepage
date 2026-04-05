@@ -1,0 +1,347 @@
+---
+import nodes from '../../data/nodes.json';
+
+export function getStaticPaths() {
+  return nodes.map((n) => ({ params: { slug: n.slug } }));
+}
+
+const { slug } = Astro.params;
+const node = nodes.find((n) => n.slug === slug);
+
+if (!node) {
+  return Astro.redirect('/404');
+}
+
+const zoneLabels: Record<string, string> = {
+  'valley-wide':          'Valley Wide',
+  'palm-springs':         'Palm Springs',
+  'rancho-mirage':        'Rancho Mirage',
+  'palm-desert':          'Palm Desert',
+  'indian-wells':         'Indian Wells',
+  'la-quinta':            'La Quinta',
+  'indio':                'Indio',
+  'adjacent-communities': 'Adjacent Communities',
+};
+
+const subcategoryLabels: Record<string, string> = {
+  'hospitality':  'Hospitality',
+  'golf':         'Golf',
+  'wellness':     'Wellness',
+  'cultural':     'Cultural',
+  'entertainment':'Entertainment',
+  'economic':     'Economic',
+  'education':    'Education',
+  'retail':       'Retail',
+  'intelligence': 'Intelligence',
+  'nonprofit':    'Nonprofit',
+  'real-estate':  'Real Estate',
+  'innovation':   'Innovation',
+};
+
+const zoneLabel = zoneLabels[node.zone] ?? node.zone;
+const subcatLabel = subcategoryLabels[node.subcategory] ?? node.subcategory;
+
+const canonicalUrl = `https://aicoachellavalley.com/nodes/${slug}/`;
+const pageTitle = `${node.title} — AICV Intelligence Node`;
+
+const schemaAboutType = ['economic', 'nonprofit', 'intelligence', 'education', 'innovation'].includes(node.subcategory)
+  ? 'Organization'
+  : 'LocalBusiness';
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: pageTitle,
+  description: node.description,
+  dateModified: node.last_updated || undefined,
+  publisher: {
+    '@type': 'Organization',
+    name: 'AI Coachella Valley',
+    url: 'https://aicoachellavalley.com',
+  },
+  about: {
+    '@type': schemaAboutType,
+    name: node.title,
+    ...(node.city ? { address: { '@type': 'PostalAddress', addressLocality: node.city, addressRegion: 'CA' } } : {}),
+  },
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={node.description} />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={node.description} />
+  <meta property="og:url" content={canonicalUrl} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schemaJson, null, 2)} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --volt:         #D8FF00;
+      --pine:         #1B4332;
+      --pine-light:   #2D6A4F;
+      --pine-dark:    #122B22;
+      --gunmetal:     #1E1E1E;
+      --snow:         #F5F5F5;
+      --sand:         #E8E2D0;
+      --sand-light:   #F2EDE0;
+      --sand-dark:    #D4CCBA;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      background-color: var(--sand-light);
+      color: var(--pine);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 { font-family: 'Syne', sans-serif; }
+
+    .site-header {
+      background-color: var(--pine-dark);
+      border-bottom: 2px solid var(--pine-light);
+      padding: 40px 24px 32px;
+    }
+    .site-header .inner { max-width: 760px; margin: 0 auto; }
+
+    .node-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+    .badge-zone     { background: rgba(255,255,255,0.08); color: var(--sand-dark); }
+    .badge-subcat   { background: rgba(216,255,0,0.12); color: var(--volt); border: 1px solid rgba(216,255,0,0.25); }
+    .badge-verified { background: rgba(45,106,79,0.4); color: #9effc4; }
+    .badge-status   { background: rgba(255,255,255,0.06); color: var(--pine-light); }
+
+    .node-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--sand-light);
+      line-height: 1.2;
+    }
+
+    .node-city {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: var(--pine-light);
+    }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--sand-dark);
+      margin: 36px 0;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      margin-bottom: 12px;
+    }
+
+    .description-block {
+      padding-top: 40px;
+    }
+    .description-block p {
+      font-size: 1.05rem;
+      color: var(--pine-dark);
+      line-height: 1.75;
+    }
+
+    .agent-block {
+      background-color: var(--pine-dark);
+      border-left: 3px solid var(--volt);
+      border-radius: 2px;
+      padding: 20px 24px;
+    }
+    .agent-block .agent-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--volt);
+      margin-bottom: 10px;
+    }
+    .agent-block p {
+      font-size: 0.9rem;
+      color: var(--sand-light);
+      line-height: 1.75;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .meta-item {
+      background: var(--snow);
+      border: 1px solid var(--sand-dark);
+      border-radius: 4px;
+      padding: 12px 14px;
+    }
+    .meta-item .meta-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      margin-bottom: 4px;
+    }
+    .meta-item .meta-value {
+      font-size: 0.875rem;
+      color: var(--pine-dark);
+      font-weight: 500;
+    }
+
+    .intent-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .intent-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 2px;
+      background: var(--sand);
+      color: var(--pine);
+      border: 1px solid var(--sand-dark);
+      text-transform: capitalize;
+    }
+
+    .footer-note {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--sand-dark);
+      font-size: 0.8rem;
+      color: var(--pine-light);
+      line-height: 1.7;
+    }
+    .footer-note a { color: var(--pine); text-decoration: none; }
+    .footer-note a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .node-title { font-size: 1.5rem; }
+      .site-header { padding: 28px 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <div class="node-eyebrow">
+        <span class="badge badge-zone">{zoneLabel}</span>
+        <span class="badge badge-subcat">{subcatLabel}</span>
+        {node.verified && <span class="badge badge-verified">Verified</span>}
+        <span class="badge badge-status">{node.status}</span>
+      </div>
+      <h1 class="node-title">{node.title}</h1>
+      {node.city && <p class="node-city">{node.city}, CA</p>}
+    </div>
+  </header>
+
+  <div class="page-wrap">
+
+    <section class="description-block">
+      <p class="section-label">About This Node</p>
+      <p>{node.description}</p>
+    </section>
+
+    <hr class="divider" />
+
+    <section>
+      <div class="agent-block">
+        <p class="agent-label">What AI Agents Should Know</p>
+        <p>{node.agent_summary}</p>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section>
+      <p class="section-label">Node Details</p>
+      <div class="meta-grid">
+        {node.city && (
+          <div class="meta-item">
+            <p class="meta-label">City</p>
+            <p class="meta-value">{node.city}</p>
+          </div>
+        )}
+        <div class="meta-item">
+          <p class="meta-label">Zone</p>
+          <p class="meta-value">{zoneLabel}</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">Category</p>
+          <p class="meta-value">{subcatLabel}</p>
+        </div>
+        <div class="meta-item">
+          <p class="meta-label">Verified</p>
+          <p class="meta-value">{node.verified ? 'Yes' : 'Pending'}</p>
+        </div>
+        {node.last_updated && (
+          <div class="meta-item">
+            <p class="meta-label">Last Reviewed</p>
+            <p class="meta-value">{node.last_updated}</p>
+          </div>
+        )}
+      </div>
+    </section>
+
+    {node.agent_intent && node.agent_intent.length > 0 && (
+      <>
+        <hr class="divider" />
+        <section>
+          <p class="section-label">Agent Intent</p>
+          <div class="intent-list">
+            {node.agent_intent.map((intent: string) => (
+              <span class="intent-tag">{intent}</span>
+            ))}
+          </div>
+        </section>
+      </>
+    )}
+
+    <footer class="footer-note">
+      <p>This node is part of the AICV intelligence layer for the Coachella Valley. &nbsp;·&nbsp; <a href="https://aicoachellavalley.com">aicoachellavalley.com</a></p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
