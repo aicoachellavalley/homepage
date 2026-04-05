@@ -1,0 +1,513 @@
+---
+import snapshots from '../../data/snapshots.json';
+
+export function getStaticPaths() {
+  return snapshots.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const snapshot = snapshots.find((s) => s.slug === slug);
+
+if (!snapshot) {
+  return Astro.redirect('/404');
+}
+
+const {
+  entityName,
+  metaTitle,
+  metaDescription,
+  datePublished,
+  dateModified,
+  snapshotLocation,
+  snapshotPeriod,
+  schema,
+  grades,
+  opener,
+  methodology,
+  findings,
+  actions,
+  cta,
+  passphrase,
+} = snapshot;
+
+function gradeClass(g: string) {
+  return `grade-${g.toLowerCase()}`;
+}
+function badgeClass(g: string) {
+  return `badge-${g.toLowerCase()}`;
+}
+function gradeBadgeLabel(g: string) {
+  const labels: Record<string, string> = {
+    A: 'A — A-Tier',
+    B: 'B — Boss Mode',
+    C: 'C — Credible',
+    D: 'D — Draft Mode',
+    F: 'F — Foundational',
+  };
+  return labels[g] ?? g;
+}
+function findingHeaderClass(g: string) {
+  const map: Record<string, string> = {
+    A: 'finding-header-a',
+    B: 'finding-header-b',
+    C: 'finding-header-c',
+    D: 'finding-header-d',
+    F: 'finding-header-f',
+  };
+  return map[g] ?? 'finding-header-d';
+}
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: metaTitle,
+  description: metaDescription,
+  datePublished,
+  dateModified,
+  publisher: {
+    '@type': 'Organization',
+    name: 'AI Coachella Valley',
+    url: 'https://aicoachellavalley.com',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'AI Coachella Valley',
+  },
+  about: {
+    '@type': schema.aboutType,
+    name: schema.aboutName,
+    ...(schema.aboutUrl ? { url: schema.aboutUrl } : {}),
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: schema.addressLocality,
+      addressRegion: schema.addressRegion,
+    },
+  },
+  additionalProperty: [
+    { '@type': 'PropertyValue', name: 'buyerReadinessGrade', value: grades.buyerReadiness },
+    { '@type': 'PropertyValue', name: 'competitivePositioningGrade', value: grades.competitivePositioning },
+    { '@type': 'PropertyValue', name: 'aiReadinessGrade', value: grades.aiReadiness },
+  ],
+};
+
+const ctaHref = `mailto:sat@aicv.co?subject=${encodeURIComponent(cta.emailSubject)}&body=${encodeURIComponent(cta.emailBody)}`;
+
+const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{metaTitle}</title>
+  <meta name="description" content={metaDescription} />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schemaJson, null, 2)} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --volt:         #D8FF00;
+      --pine:         #1B4332;
+      --pine-light:   #2D6A4F;
+      --pine-dark:    #122B22;
+      --gunmetal:     #1E1E1E;
+      --gunmetal-2:   #252525;
+      --snow:         #F5F5F5;
+      --sand:         #E8E2D0;
+      --sand-light:   #F2EDE0;
+      --sand-dark:    #D4CCBA;
+      --sky:          #7ED4E6;
+      --success:      #4ade80;
+      --warning:      #fbbf24;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+
+    body {
+      background-color: var(--sand-light);
+      color: var(--pine);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* HEADER */
+    .site-header {
+      background-color: var(--pine-dark);
+      border-bottom: 2px solid var(--pine-light);
+      padding: 48px 24px 40px;
+      text-align: left;
+    }
+    .site-header .inner { max-width: 760px; margin: 0 auto; }
+
+    h1, h2, h3 { font-family: 'Syne', sans-serif; }
+
+    .entity-name {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--sand-light);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .snapshot-meta {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+    }
+
+    /* DIVIDER */
+    .divider { border: none; border-top: 1px solid var(--sand-dark); margin: 40px 0; }
+
+    /* OPENER */
+    .opener { padding-top: 48px; }
+    .opener p:first-child {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--pine-dark);
+      padding-left: 16px;
+      border-left: 3px solid var(--pine-light);
+      margin-bottom: 20px;
+    }
+    .opener p { font-size: 1.05rem; color: var(--pine); margin-bottom: 16px; }
+    .bridge { font-size: 0.9rem; color: var(--pine-light); line-height: 1.7; }
+
+    /* METHODOLOGY */
+    .methodology {
+      background-color: var(--snow);
+      border-left: 3px solid var(--pine-light);
+      padding: 20px 24px;
+      border-radius: 2px;
+    }
+    .methodology p { font-size: 0.875rem; color: var(--pine); line-height: 1.7; }
+
+    /* SECTION HEADING */
+    .section-heading {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      margin-bottom: 16px;
+    }
+
+    /* GRADING FRAMEWORK */
+    .grade-blocks { display: flex; flex-direction: column; gap: 4px; }
+    .grade-block {
+      padding: 14px 20px;
+      border-radius: 2px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .grade-block .grade-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; white-space: nowrap; }
+    .grade-block .grade-desc { font-size: 0.875rem; line-height: 1.4; }
+    .grade-a { background: rgba(27,67,50,0.12); color: var(--pine-dark); border-left: 3px solid var(--pine); }
+    .grade-b { background: rgba(45,106,79,0.12); color: var(--pine); border-left: 3px solid var(--pine-light); }
+    .grade-c { background: rgba(216,255,0,0.18); color: var(--pine-dark); border-left: 3px solid #B8D900; }
+    .grade-d { background: var(--sand); color: var(--pine); border-left: 3px solid var(--sand-dark); }
+    .grade-f { background: rgba(30,30,30,0.06); color: var(--pine-light); border-left: 3px solid var(--sand-dark); }
+
+    /* FINDINGS */
+    .findings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .finding { border-radius: 6px; overflow: hidden; border: 1px solid var(--sand-dark); }
+    .finding-header { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 12px; }
+    .finding-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pine-light); }
+    .grade-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 3px;
+      white-space: nowrap;
+      align-self: flex-start;
+    }
+    .badge-a { background: var(--pine); color: var(--volt); border: 1px solid var(--pine); }
+    .badge-b { background: var(--pine-light); color: var(--snow); border: 1px solid var(--pine-light); }
+    .badge-c { background: var(--volt); color: var(--pine-dark); border: 1px solid #B8D900; }
+    .badge-d { background: var(--sand); color: var(--pine); border: 1px solid var(--sand-dark); }
+    .badge-f { background: var(--gunmetal); color: var(--snow); border: 1px solid var(--gunmetal); }
+    .finding-body { padding: 12px 18px 18px; background-color: var(--snow); }
+    .finding-body p { font-size: 0.875rem; color: var(--pine); line-height: 1.75; }
+    .finding-header-a { background-color: rgba(27,67,50,0.12); border-bottom: 1px solid rgba(27,67,50,0.2); }
+    .finding-header-b { background-color: rgba(45,106,79,0.12); border-bottom: 1px solid rgba(45,106,79,0.2); }
+    .finding-header-c { background-color: rgba(216,255,0,0.12); border-bottom: 1px solid rgba(180,210,0,0.3); }
+    .finding-header-d { background-color: var(--sand-light); border-bottom: 1px solid var(--sand-dark); }
+    .finding-header-f { background-color: rgba(30,30,30,0.05); border-bottom: 1px solid var(--sand-dark); }
+
+    /* ACTIONS */
+    .action-block {
+      border-left: 3px solid var(--pine-light);
+      padding: 20px 24px;
+      background-color: var(--snow);
+      border-radius: 2px;
+      margin-bottom: 4px;
+    }
+    .action-block.ongoing { border-left-color: var(--pine); }
+    .action-timing {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      margin-bottom: 6px;
+    }
+    .action-block.ongoing .action-timing { color: var(--pine); }
+    .action-title { font-size: 1rem; font-weight: 600; color: var(--pine-dark); margin-bottom: 10px; }
+    .action-body { font-size: 0.875rem; color: var(--pine); line-height: 1.7; }
+
+    /* CTA */
+    .cta-block {
+      background-color: var(--sand);
+      border: 1px solid var(--sand-dark);
+      border-radius: 2px;
+      padding: 32px 28px;
+    }
+    .cta-block p { font-size: 0.9rem; color: var(--pine); line-height: 1.75; }
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: var(--pine-dark);
+      color: var(--sand-light);
+      padding: 12px 24px;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background-color 0.15s;
+    }
+    .cta-button:hover { background-color: var(--pine); }
+
+    /* PASSPHRASE GATE */
+    .gate-wrap {
+      margin-top: 32px;
+      background-color: var(--snow);
+      border: 1px solid var(--sand-dark);
+      border-radius: 4px;
+      padding: 28px 24px;
+    }
+    .gate-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      margin-bottom: 12px;
+    }
+    .gate-input-row { display: flex; gap: 8px; }
+    .gate-input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid var(--sand-dark);
+      border-radius: 3px;
+      font-size: 0.9rem;
+      background: white;
+      color: var(--pine-dark);
+    }
+    .gate-input:focus { outline: 2px solid var(--pine-light); }
+    .gate-submit {
+      padding: 10px 20px;
+      background-color: var(--pine-dark);
+      color: var(--sand-light);
+      border: none;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .gate-error { font-size: 0.8rem; color: #c0392b; margin-top: 8px; display: none; }
+    .gated-content { display: none; }
+    .gated-content.unlocked { display: block; }
+
+    /* FOOTER */
+    .site-footer {
+      margin-top: 60px;
+      padding-top: 28px;
+      border-top: 1px solid var(--sand-dark);
+      text-align: center;
+    }
+    .site-footer p { font-size: 0.8rem; color: var(--pine-light); line-height: 1.8; }
+    .site-footer a { color: var(--pine); text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 700px) {
+      .entity-name { font-size: 1.6rem; }
+      .site-header { padding: 36px 20px 28px; }
+      .grade-block { flex-direction: column; gap: 4px; }
+      .findings-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <h1 class="entity-name">{entityName}</h1>
+      <p class="snapshot-meta">AICV Intelligence Snapshot &nbsp;·&nbsp; {snapshotLocation} &nbsp;·&nbsp; {snapshotPeriod}</p>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+
+    <!-- OPENER -->
+    <section class="opener">
+      <p>{opener.lead}</p>
+      <p class="bridge">{opener.bridge}</p>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- METHODOLOGY -->
+    <section>
+      <p class="section-heading">Methodology</p>
+      <div class="methodology">
+        <p>{methodology}</p>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- GRADING FRAMEWORK -->
+    <section>
+      <p class="section-heading">The Grading Framework</p>
+      <div class="grade-blocks">
+        <div class="grade-block grade-a">
+          <span class="grade-label">A — A-Tier</span>
+          <span class="grade-desc">Leading your category. Buyers find you and choose you.</span>
+        </div>
+        <div class="grade-block grade-b">
+          <span class="grade-label">B — Boss Mode</span>
+          <span class="grade-desc">Strong. Minor gaps. You're in the conversation.</span>
+        </div>
+        <div class="grade-block grade-c">
+          <span class="grade-label">C — Credible</span>
+          <span class="grade-desc">Present. Not yet distinct enough to pull buyers from alternatives.</span>
+        </div>
+        <div class="grade-block grade-d">
+          <span class="grade-label">D — Draft Mode</span>
+          <span class="grade-desc">The work exists. It hasn't been published in the language agents read.</span>
+        </div>
+        <div class="grade-block grade-f">
+          <span class="grade-label">F — Foundational</span>
+          <span class="grade-desc">A starting line, not a judgment.</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- THE FINDINGS -->
+    <section>
+      <p class="section-heading">The Findings</p>
+      <div class="findings-grid">
+        {findings.map((f) => (
+          <div class="finding">
+            <div class={`finding-header ${findingHeaderClass(f.grade)}`}>
+              <span class="finding-title">{f.dimension}</span>
+              <span class={`grade-badge ${badgeClass(f.grade)}`}>{gradeBadgeLabel(f.grade)}</span>
+            </div>
+            <div class="finding-body">
+              <p>{f.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {actions && actions.length > 0 && (
+      <>
+        <hr class="divider" />
+        <section>
+          <p class="section-heading">Three Things Worth Doing</p>
+          {actions.map((a) => (
+            <div class={`action-block${a.ongoing ? ' ongoing' : ''}`}>
+              <p class="action-timing">{a.timing}</p>
+              <p class="action-title">{a.title}</p>
+              <p class="action-body">{a.body}</p>
+            </div>
+          ))}
+        </section>
+      </>
+    )}
+
+    <hr class="divider" />
+
+    <!-- CTA -->
+    <section>
+      <p class="section-heading">What the Full Intelligence Review Adds</p>
+      <div class="cta-block">
+        <p>{cta.body}</p>
+
+        {passphrase ? (
+          <>
+            <div class="gate-wrap">
+              <p class="gate-label">Enter passphrase to unlock the Intelligence Review</p>
+              <div class="gate-input-row">
+                <input class="gate-input" type="password" id="gate-input" placeholder="Passphrase" autocomplete="off" />
+                <button class="gate-submit" id="gate-submit">Unlock</button>
+              </div>
+              <p class="gate-error" id="gate-error">Incorrect passphrase.</p>
+            </div>
+            <div class="gated-content" id="gated-content">
+              <a class="cta-button" href={ctaHref}>Unlock the Intelligence Review</a>
+            </div>
+            <script define:vars={{ passphrase }}>
+              document.getElementById('gate-submit').addEventListener('click', function () {
+                const input = document.getElementById('gate-input').value.trim();
+                const error = document.getElementById('gate-error');
+                const content = document.getElementById('gated-content');
+                if (input === passphrase) {
+                  content.classList.add('unlocked');
+                  document.querySelector('.gate-wrap').style.display = 'none';
+                  error.style.display = 'none';
+                } else {
+                  error.style.display = 'block';
+                }
+              });
+              document.getElementById('gate-input').addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') document.getElementById('gate-submit').click();
+              });
+            </script>
+          </>
+        ) : (
+          <a class="cta-button" href={ctaHref}>Unlock the Intelligence Review</a>
+        )}
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>AI Coachella Valley &nbsp;·&nbsp; <a href="https://aicoachellavalley.com">aicoachellavalley.com</a></p>
+      <p>Building the intelligence layer for the Coachella Valley.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

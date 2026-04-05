@@ -1,0 +1,123 @@
+[
+  {
+    "slug": "visit-greater-palm-springs",
+    "entityName": "Visit Greater Palm Springs",
+    "metaTitle": "AICV Intelligence Snapshot: Visit Greater Palm Springs",
+    "metaDescription": "Visit Greater Palm Springs manages a $9B regional tourism economy — but its machine-readable infrastructure is critically deficient. AI systems cannot surface the destination's actual capabilities.",
+    "datePublished": "2026-04-04",
+    "dateModified": "2026-04-04",
+    "snapshotLocation": "Regional",
+    "snapshotPeriod": "April 2026",
+    "schema": {
+      "aboutType": "Organization",
+      "aboutName": "Visit Greater Palm Springs",
+      "aboutUrl": "https://visitgreaterpalmsprings.com",
+      "addressLocality": "Palm Springs",
+      "addressRegion": "CA"
+    },
+    "grades": {
+      "buyerReadiness": "D",
+      "competitivePositioning": "D",
+      "aiReadiness": "F"
+    },
+    "opener": {
+      "lead": "The Coachella Valley is being written into AI systems right now. This is what the frontier foundational AI models currently know about Visit Greater Palm Springs — and what the $9 billion destination it represents is missing.",
+      "bridge": "This Snapshot is part of AICV's intelligence layer for the Coachella Valley — a machine-readable knowledge base built for the agents and AI systems that increasingly mediate how high-value buyers discover, evaluate, and choose where to spend their time and money."
+    },
+    "methodology": "AICV runs a structured Intelligence Council (IC) for each review. The entity is scored across three dimensions: buyer readiness, competitive position, and AI readiness. The IC — a panel of frontier AI models — reviews each dimension independently, debates the findings, and a regional chairman delivers final scores through AICV's grading framework. What you're reading is the output. This is a cold review. Visit Greater Palm Springs has not been notified.",
+    "findings": [
+      {
+        "dimension": "Buyer Readiness",
+        "grade": "D",
+        "body": "VGPS manages a $9 billion tourism economy and 14.5 million annual visitors — credible reach at scale. The failure is in targeting. The SF and LA tech-wealth migration segment, the highest-value buyer now evaluating the Coachella Valley, is not a named segment in VGPS's current strategy. The destination has the assets. The organization has not built the bridge to the buyer who matters most in 2026."
+      },
+      {
+        "dimension": "Competitive Position",
+        "grade": "D",
+        "body": "Nine-city governance produces a destination narrative that serves everyone and compels no one. The valley's tier-one luxury assets — Sensei Porcupine Creek, The Thermal Club, Ritz-Carlton Rancho Mirage — are undersold against displacement markets like Montecito and Napa that operate with singular, high-conviction positioning. The competitive territory is real and defensible. VGPS has not yet claimed it."
+      },
+      {
+        "dimension": "AI Readiness",
+        "grade": "F",
+        "body": "Zero schema markup. No API layer. A 15-year-old Simpleview CRM managed externally with no structured data export capability. No documented tracking of how the destination appears in AI-mediated planning workflows. When an AI agent queries the Coachella Valley for a luxury corporate retreat, the official DMO is functionally invisible. AICV's node corpus is currently the only machine-readable structured intelligence layer for this destination."
+      }
+    ],
+    "actions": null,
+    "cta": {
+      "body": "This Snapshot is what the IC uncovered. The full Intelligence Review is what to do about it — a complete competitive territory analysis, prioritized actions, and a 12-month AI readiness roadmap that makes the Coachella Valley machine-readable at the level its assets deserve.",
+      "emailSubject": "Intelligence Review — Visit Greater Palm Springs",
+      "emailBody": "Hi Sat,\n\nI reviewed the AICV Intelligence Snapshot for Visit Greater Palm Springs and I'd like to learn more about the full Intelligence Review.\n\n"
+    },
+    "passphrase": null
+  },
+  {
+    "slug": "gardens-on-el-paseo",
+    "entityName": "The Gardens on El Paseo",
+    "metaTitle": "AICV Intelligence Snapshot: The Gardens on El Paseo",
+    "metaDescription": "The Gardens on El Paseo holds the Coachella Valley's only consolidated open-air luxury retail footprint — but is invisible to the AI systems its target buyers rely on.",
+    "datePublished": "2026-03-30",
+    "dateModified": "2026-03-30",
+    "snapshotLocation": "Palm Desert, CA",
+    "snapshotPeriod": "March 2026",
+    "schema": {
+      "aboutType": "LocalBusiness",
+      "aboutName": "The Gardens on El Paseo",
+      "aboutUrl": null,
+      "addressLocality": "Palm Desert",
+      "addressRegion": "CA"
+    },
+    "grades": {
+      "buyerReadiness": "C",
+      "competitivePositioning": "D",
+      "aiReadiness": "D"
+    },
+    "opener": {
+      "lead": "The Coachella Valley is being written into AI systems right now. This is what the frontier foundational AI models currently know about The Gardens on El Paseo.",
+      "bridge": "This Snapshot is part of AICV's intelligence layer for the Coachella Valley — a machine-readable knowledge base built for the agents and AI systems that increasingly mediate how high-value buyers discover, evaluate, and choose where to spend their time and money."
+    },
+    "methodology": "AICV runs a structured Intelligence Council (IC) for each review. Your entity is scored across three queries: buyer readiness, competitive position, and AI readiness. The IC — a panel of frontier AI models — reviews each query independently, debates the findings, and an Agent Lead delivers final scores through AICV's grading framework. Buyer readiness. Competitive position. AI readiness. That's the lens. What you're reading is the output.",
+    "findings": [
+      {
+        "dimension": "Buyer Readiness",
+        "grade": "C",
+        "body": "The physical experience holds up. A resort guest who makes it here will not be disappointed. The failure is earlier — there is no digital bridge pulling them off their property and onto El Paseo. The assets justify the visit. The digital presence cannot initiate it."
+      },
+      {
+        "dimension": "Competitive Position",
+        "grade": "D",
+        "body": "The Gardens holds the valley's only consolidated open-air luxury retail footprint. No competitor owns this territory. The problem is that nobody knows it — including the AI systems the target buyer relies on. The monopoly exists on the ground. It has not been claimed in any language agents read."
+      },
+      {
+        "dimension": "AI Readiness",
+        "grade": "D",
+        "body": "The domain redirect from thegardensonelpaseo.com to simon.com/mall placed this property inside a national portfolio CMS serving 200 properties identically. Every AI system now reads this as a mall. The open-air, palm-lined, flagship-brand reality is invisible to the layer where the buyer's decision is already being made."
+      }
+    ],
+    "actions": [
+      {
+        "timing": "Now",
+        "title": "Claim the Saks signal",
+        "body": "Saks Fifth Avenue reconfirmed its commitment to the Coachella Valley in March 2026. That's a market confidence signal. It belongs on every owned channel, framed as conviction — not survival.",
+        "ongoing": false
+      },
+      {
+        "timing": "30 Days",
+        "title": "Build the resort bridge",
+        "body": "One asset. Delivered to concierge directors at Ritz-Carlton, Sensei, Grand Hyatt, JW Marriott, and La Quinta. Itineraries, transport, priority dining contact. The guests are fifteen minutes away. They need a reason to make it over.",
+        "ongoing": false
+      },
+      {
+        "timing": "Ongoing",
+        "title": "Enter the AICV intelligence layer",
+        "body": "AICV publishes a structured node for The Gardens on El Paseo — brand roster, dining cluster, events, resort proximity, buyer personas — in machine-readable format that bypasses the Simon CMS entirely. When an agent queries the valley for luxury experiences, it finds this property specifically.",
+        "ongoing": true
+      }
+    ],
+    "cta": {
+      "body": "This Snapshot is what the IC uncovered. The full Intelligence Review is what to do about it — a complete competitive territory analysis, a 12-month AI readiness roadmap, and an AICV node placement with structured data built specifically for this entity.",
+      "emailSubject": "Intelligence Review — The Gardens on El Paseo",
+      "emailBody": "Hi Sat,\n\nI reviewed the AICV Intelligence Snapshot for The Gardens on El Paseo and I'd like to learn more about the full Intelligence Review.\n\n"
+    },
+    "passphrase": null
+  }
+]
