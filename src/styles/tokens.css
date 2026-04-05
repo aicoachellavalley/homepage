@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  --volt:         #D8FF00;
+  --pine:         #1B4332;
+  --pine-light:   #2D6A4F;
+  --pine-dark:    #122B22;
+  --gunmetal:     #1E1E1E;
+  --gunmetal-2:   #252525;
+  --snow:         #F5F5F5;
+  --sand:         #E8E2D0;
+  --sand-light:   #F2EDE0;
+  --sand-dark:    #D4CCBA;
+  --sky:          #7ED4E6;
+  --success:      #4ade80;
+  --warning:      #fbbf24;
+  --danger:       #f87171;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sand);
+  color: var(--pine-dark);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
