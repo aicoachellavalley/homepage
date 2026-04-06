@@ -19,6 +19,13 @@ if (!snapshot) {
   return Astro.redirect('/404');
 }
 
+let node = null;
+try {
+  node = (await import(`../../data/nodes/${slug}.json`)).default;
+} catch {
+  node = null;
+}
+
 const {
   entityName,
   metaTitle,
@@ -37,31 +44,65 @@ const {
   passphrase,
 } = snapshot;
 
-function gradeClass(g: string) {
-  return `grade-${g.toLowerCase()}`;
-}
-function badgeClass(g: string) {
-  return `badge-${g.toLowerCase()}`;
-}
-function gradeBadgeLabel(g: string) {
-  const labels: Record<string, string> = {
-    A: 'A — A-Tier',
-    B: 'B — Boss Mode',
-    C: 'C — Credible',
-    D: 'D — Draft Mode',
-    F: 'F — Foundational',
-  };
-  return labels[g] ?? g;
-}
-function findingHeaderClass(g: string) {
+function gradeBg(g: string) {
   const map: Record<string, string> = {
-    A: 'finding-header-a',
-    B: 'finding-header-b',
-    C: 'finding-header-c',
-    D: 'finding-header-d',
-    F: 'finding-header-f',
+    A: '#1B4332',
+    B: '#2D6A4F',
+    C: '#D8FF00',
+    D: '#E8E2D0',
+    F: '#1E1E1E',
   };
-  return map[g] ?? 'finding-header-d';
+  return map[g] ?? '#E8E2D0';
+}
+function gradeColor(g: string) {
+  const map: Record<string, string> = {
+    A: '#D8FF00',
+    B: '#F5F5F5',
+    C: '#122B22',
+    D: '#1B4332',
+    F: '#F5F5F5',
+  };
+  return map[g] ?? '#1B4332';
+}
+function gradeBorder(g: string) {
+  const map: Record<string, string> = {
+    A: '#1B4332',
+    B: '#2D6A4F',
+    C: '#D8FF00',
+    D: '#D4CCBA',
+    F: '#D4CCBA',
+  };
+  return map[g] ?? '#D4CCBA';
+}
+function gradeLightBg(g: string) {
+  const map: Record<string, string> = {
+    A: 'rgba(27,67,50,0.12)',
+    B: 'rgba(45,106,79,0.12)',
+    C: 'rgba(216,255,0,0.15)',
+    D: '#F2EDE0',
+    F: 'rgba(30,30,30,0.08)',
+  };
+  return map[g] ?? '#F2EDE0';
+}
+function gradeLabel(g: string) {
+  const map: Record<string, string> = {
+    A: 'A-Tier',
+    B: 'Boss Mode',
+    C: 'Credible',
+    D: 'Draft Mode',
+    F: 'Foundational',
+  };
+  return map[g] ?? g;
+}
+function findingHeaderBorderColor(g: string) {
+  const map: Record<string, string> = {
+    A: 'rgba(27,67,50,0.2)',
+    B: 'rgba(45,106,79,0.2)',
+    C: 'rgba(180,210,0,0.3)',
+    D: '#D4CCBA',
+    F: '#D4CCBA',
+  };
+  return map[g] ?? '#D4CCBA';
 }
 
 const schemaJson = {
@@ -98,8 +139,19 @@ const schemaJson = {
 };
 
 const ctaHref = `mailto:sat@aicv.co?subject=${encodeURIComponent(cta.emailSubject)}&body=${encodeURIComponent(cta.emailBody)}`;
-
 const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
+
+const brBg    = gradeBg(grades.buyerReadiness);
+const brColor = gradeColor(grades.buyerReadiness);
+const brBdr   = gradeBorder(grades.buyerReadiness);
+
+const cpBg    = gradeBg(grades.competitivePositioning);
+const cpColor = gradeColor(grades.competitivePositioning);
+const cpBdr   = gradeBorder(grades.competitivePositioning);
+
+const arBg    = gradeBg(grades.aiReadiness);
+const arColor = gradeColor(grades.aiReadiness);
+const arBdr   = gradeBorder(grades.aiReadiness);
 ---
 
 <!DOCTYPE html>
@@ -117,7 +169,7 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 
-  <style>
+  <style is:global>
     :root {
       --volt:         #D8FF00;
       --pine:         #1B4332;
@@ -132,6 +184,7 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
       --sky:          #7ED4E6;
       --success:      #4ade80;
       --warning:      #fbbf24;
+      --danger:       #f87171;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -146,7 +199,7 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
     }
 
     .page-wrap {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
       padding: 0 24px 80px;
     }
@@ -156,9 +209,8 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
       background-color: var(--pine-dark);
       border-bottom: 2px solid var(--pine-light);
       padding: 48px 24px 40px;
-      text-align: left;
     }
-    .site-header .inner { max-width: 760px; margin: 0 auto; }
+    .site-header .inner { max-width: 780px; margin: 0 auto; }
 
     h1, h2, h3 { font-family: 'Syne', sans-serif; }
 
@@ -180,32 +232,73 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
       color: var(--pine-light);
     }
 
+    /* GRADE BOXES IN HEADER */
+    .header-grades {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .header-grade-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .header-grade-tile {
+      width: 46px;
+      height: 46px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+    }
+    .header-grade-tile span {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .header-grade-label {
+      font-size: 9px;
+      color: var(--pine-light);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
     /* DIVIDER */
-    .divider { border: none; border-top: 1px solid var(--sand-dark); margin: 40px 0; }
+    .divider { border: none; border-top: 1px solid var(--sand-dark); margin: 32px 0; }
 
-    /* OPENER */
-    .opener { padding-top: 48px; }
-    .opener p:first-child {
-      font-family: 'EB Garamond', Georgia, serif;
-      font-size: 1.25rem;
-      font-style: italic;
-      line-height: 1.5;
+    /* TAB BAR */
+    .tab-bar {
+      display: flex;
+      border-bottom: 2px solid var(--sand-dark);
+      margin-bottom: 32px;
+      margin-top: 32px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 10px 18px;
+      font-size: 13px;
+      color: var(--pine-light);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      font-family: 'DM Sans', inherit;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .tab-btn.active {
       color: var(--pine-dark);
-      padding-left: 16px;
-      border-left: 3px solid var(--pine-light);
-      margin-bottom: 20px;
+      border-bottom-color: var(--pine-light);
+      font-weight: 700;
     }
-    .opener p { font-size: 1.05rem; color: var(--pine); margin-bottom: 16px; }
-    .bridge { font-size: 0.9rem; color: var(--pine-light); line-height: 1.7; }
+    .tab-btn:hover { color: var(--pine-dark); }
 
-    /* METHODOLOGY */
-    .methodology {
-      background-color: var(--snow);
-      border-left: 3px solid var(--pine-light);
-      padding: 20px 24px;
-      border-radius: 2px;
-    }
-    .methodology p { font-size: 0.875rem; color: var(--pine); line-height: 1.7; }
+    /* TAB PANELS */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
 
     /* SECTION HEADING */
     .section-heading {
@@ -217,22 +310,67 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
       margin-bottom: 16px;
     }
 
-    /* GRADING FRAMEWORK */
-    .grade-blocks { display: flex; flex-direction: column; gap: 4px; }
-    .grade-block {
-      padding: 14px 20px;
-      border-radius: 2px;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
+    /* OPENER */
+    .opener-lead {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--pine-dark);
+      padding-left: 16px;
+      border-left: 3px solid var(--pine-light);
+      margin-bottom: 20px;
     }
-    .grade-block .grade-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; white-space: nowrap; }
-    .grade-block .grade-desc { font-size: 0.875rem; line-height: 1.4; }
-    .grade-a { background: rgba(27,67,50,0.12); color: var(--pine-dark); border-left: 3px solid var(--pine); }
-    .grade-b { background: rgba(45,106,79,0.12); color: var(--pine); border-left: 3px solid var(--pine-light); }
-    .grade-c { background: rgba(216,255,0,0.18); color: var(--pine-dark); border-left: 3px solid #B8D900; }
-    .grade-d { background: var(--sand); color: var(--pine); border-left: 3px solid var(--sand-dark); }
-    .grade-f { background: rgba(30,30,30,0.06); color: var(--pine-light); border-left: 3px solid var(--sand-dark); }
+    .opener-bridge {
+      font-size: 0.9rem;
+      color: var(--pine-light);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* GRADE BADGE ROW */
+    .grade-badge-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 0;
+      flex-wrap: wrap;
+    }
+    .grade-badge-card {
+      flex: 1;
+      min-width: 160px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--sand-dark);
+    }
+    .grade-badge-card-header {
+      padding: 12px 14px 10px;
+    }
+    .grade-badge-card-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      margin-bottom: 8px;
+    }
+    .grade-badge-tile {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+    }
+    .grade-badge-tile .grade-letter {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .grade-badge-tile .grade-name {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
 
     /* FINDINGS */
     .findings-grid {
@@ -240,38 +378,99 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
     }
-    .finding { border-radius: 6px; overflow: hidden; border: 1px solid var(--sand-dark); }
-    .finding-header { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 12px; }
-    .finding-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pine-light); }
-    .grade-badge {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      padding: 4px 10px;
-      border-radius: 3px;
-      white-space: nowrap;
-      align-self: flex-start;
+    .finding {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--sand-dark);
     }
-    .badge-a { background: var(--pine); color: var(--volt); border: 1px solid var(--pine); }
-    .badge-b { background: var(--pine-light); color: var(--snow); border: 1px solid var(--pine-light); }
-    .badge-c { background: var(--volt); color: var(--pine-dark); border: 1px solid #B8D900; }
-    .badge-d { background: var(--sand); color: var(--pine); border: 1px solid var(--sand-dark); }
-    .badge-f { background: var(--gunmetal); color: var(--snow); border: 1px solid var(--gunmetal); }
-    .finding-body { padding: 12px 18px 18px; background-color: var(--snow); }
-    .finding-body p { font-size: 0.875rem; color: var(--pine); line-height: 1.75; }
-    .finding-header-a { background-color: rgba(27,67,50,0.12); border-bottom: 1px solid rgba(27,67,50,0.2); }
-    .finding-header-b { background-color: rgba(45,106,79,0.12); border-bottom: 1px solid rgba(45,106,79,0.2); }
-    .finding-header-c { background-color: rgba(216,255,0,0.12); border-bottom: 1px solid rgba(180,210,0,0.3); }
-    .finding-header-d { background-color: var(--sand-light); border-bottom: 1px solid var(--sand-dark); }
-    .finding-header-f { background-color: rgba(30,30,30,0.05); border-bottom: 1px solid var(--sand-dark); }
+    .finding-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 14px 16px 12px;
+      border-bottom: 1px solid transparent;
+    }
+    .finding-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+    }
+    .finding-grade-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+    }
+    .finding-grade-badge span {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .finding-body {
+      padding: 12px 16px 16px;
+      background-color: var(--snow);
+    }
+    .finding-body p {
+      font-size: 0.875rem;
+      color: var(--pine);
+      line-height: 1.75;
+    }
+
+    /* METHODOLOGY */
+    .methodology-block {
+      background-color: var(--snow);
+      border-left: 3px solid var(--pine-light);
+      padding: 20px 24px;
+      border-radius: 2px;
+    }
+    .methodology-block p { font-size: 0.875rem; color: var(--pine); line-height: 1.7; }
+
+    /* GRADING FRAMEWORK */
+    .grade-key-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      background: var(--snow);
+      border: 1px solid var(--sand-dark);
+      border-radius: 4px;
+      padding: 14px 16px;
+    }
+    .grade-key-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .grade-key-tile {
+      width: 26px;
+      height: 26px;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid transparent;
+    }
+    .grade-key-tile span {
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .grade-key-text { font-size: 11px; color: var(--pine); line-height: 1.4; }
+    .grade-key-text strong { font-weight: 700; }
 
     /* ACTIONS */
     .action-block {
       border-left: 3px solid var(--pine-light);
-      padding: 20px 24px;
+      padding: 18px 22px;
       background-color: var(--snow);
       border-radius: 2px;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
     .action-block.ongoing { border-left-color: var(--pine); }
     .action-timing {
@@ -283,21 +482,126 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
       margin-bottom: 6px;
     }
     .action-block.ongoing .action-timing { color: var(--pine); }
-    .action-title { font-size: 1rem; font-weight: 600; color: var(--pine-dark); margin-bottom: 10px; }
+    .action-title { font-size: 1rem; font-weight: 600; color: var(--pine-dark); margin-bottom: 8px; }
     .action-body { font-size: 0.875rem; color: var(--pine); line-height: 1.7; }
 
-    /* CTA */
-    .cta-block {
-      background-color: var(--sand);
-      border: 1px solid var(--sand-dark);
-      border-radius: 2px;
-      padding: 32px 28px;
+    /* INTELLIGENCE REVIEW — GATED */
+    .ir-gated-wrap {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
     }
-    .cta-block p { font-size: 0.9rem; color: var(--pine); line-height: 1.75; }
-    .cta-button {
+    .ir-blur-preview {
+      filter: blur(3px);
+      pointer-events: none;
+      user-select: none;
+      opacity: 0.3;
+      max-height: 260px;
+      overflow: hidden;
+    }
+    .ir-gate-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 32px;
+      text-align: center;
+      background: rgba(242,237,224,0.93);
+      border: 1px solid var(--sand-dark);
+      border-radius: 6px;
+    }
+    .ir-gate-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .ir-gate-headline {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--pine-dark);
+      line-height: 1.5;
+      margin-bottom: 10px;
+      max-width: 440px;
+    }
+    .ir-gate-body {
+      font-size: 13px;
+      color: var(--pine-light);
+      line-height: 1.65;
+      max-width: 400px;
+      margin-bottom: 28px;
+    }
+    .ir-cta-button {
+      display: inline-block;
+      background: var(--pine-dark);
+      color: var(--sand-light);
+      padding: 12px 28px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.15s;
+    }
+    .ir-cta-button:hover { background: var(--pine); }
+    .ir-passphrase-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+      align-items: center;
+    }
+    .ir-pass-input {
+      padding: 8px 12px;
+      border: 1.5px solid var(--sand-dark);
+      border-radius: 3px;
+      font-size: 12px;
+      font-family: 'DM Sans', sans-serif;
+      background: white;
+      color: var(--pine-dark);
+      width: 180px;
+    }
+    .ir-pass-input:focus { outline: 2px solid var(--pine-light); }
+    .ir-pass-btn {
+      background: var(--pine);
+      color: var(--sand-light);
+      border: none;
+      padding: 9px 16px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .ir-pass-err {
+      display: none;
+      font-size: 11px;
+      color: #C8552A;
+      margin-top: 8px;
+    }
+
+    /* IR UNLOCKED */
+    .ir-unlocked { display: none; }
+    .ir-unlocked.visible { display: block; }
+    .ir-teaser-block {
+      background: var(--sand);
+      border: 1px solid var(--sand-dark);
+      border-radius: 6px;
+      padding: 28px 24px;
+    }
+    .ir-teaser-block p { font-size: 0.9rem; color: var(--pine); line-height: 1.75; }
+    .ir-cta-standalone {
       display: inline-block;
       margin-top: 20px;
-      background-color: var(--pine-dark);
+      background: var(--pine-dark);
       color: var(--sand-light);
       padding: 12px 24px;
       border-radius: 3px;
@@ -306,52 +610,99 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       text-decoration: none;
-      transition: background-color 0.15s;
+      transition: background 0.15s;
     }
-    .cta-button:hover { background-color: var(--pine); }
+    .ir-cta-standalone:hover { background: var(--pine); }
 
-    /* PASSPHRASE GATE */
-    .gate-wrap {
-      margin-top: 32px;
-      background-color: var(--snow);
-      border: 1px solid var(--sand-dark);
-      border-radius: 4px;
-      padding: 28px 24px;
-    }
-    .gate-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--pine-light);
+    /* NODE TAB */
+    .node-field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
       margin-bottom: 12px;
     }
-    .gate-input-row { display: flex; gap: 8px; }
-    .gate-input {
-      flex: 1;
-      padding: 10px 14px;
+    .node-field {
+      background: var(--sand);
       border: 1px solid var(--sand-dark);
-      border-radius: 3px;
-      font-size: 0.9rem;
-      background: white;
+      border-radius: 4px;
+      padding: 11px 13px;
+    }
+    .node-field-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      margin-bottom: 3px;
+    }
+    .node-field-value {
+      font-size: 13px;
+      font-weight: 700;
       color: var(--pine-dark);
     }
-    .gate-input:focus { outline: 2px solid var(--pine-light); }
-    .gate-submit {
-      padding: 10px 20px;
-      background-color: var(--pine-dark);
-      color: var(--sand-light);
-      border: none;
-      border-radius: 3px;
-      font-size: 0.8rem;
+    .node-desc-block {
+      background: var(--snow);
+      border: 1px solid var(--sand-dark);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .node-desc-block p { font-size: 14px; line-height: 1.7; color: var(--pine-dark); }
+    .node-verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #EDF7EE;
+      color: #1B5E20;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
+      padding: 3px 10px;
+      border-radius: 2px;
     }
-    .gate-error { font-size: 0.8rem; color: #c0392b; margin-top: 8px; display: none; }
-    .gated-content { display: none; }
-    .gated-content.unlocked { display: block; }
+    .node-intent-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .node-intent-tag {
+      background: rgba(255,255,255,0.1);
+      color: var(--pine-light);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 2px;
+      border: 1px solid var(--sand-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .node-agent-summary {
+      background: var(--pine-dark);
+      border: 1px solid var(--pine-light);
+      border-radius: 4px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .node-agent-summary p { font-size: 13px; color: var(--sand-light); line-height: 1.65; }
+    .node-view-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--pine);
+      text-decoration: none;
+      border-bottom: 1px solid var(--pine-light);
+      padding-bottom: 1px;
+    }
+    .node-view-link:hover { color: var(--pine-dark); }
+    .node-null-msg {
+      background: var(--snow);
+      border: 1px solid var(--sand-dark);
+      border-radius: 4px;
+      padding: 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--pine-light);
+    }
 
     /* FOOTER */
     .site-footer {
@@ -367,8 +718,10 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
     @media (max-width: 700px) {
       .entity-name { font-size: 1.6rem; }
       .site-header { padding: 36px 20px 28px; }
-      .grade-block { flex-direction: column; gap: 4px; }
       .findings-grid { grid-template-columns: 1fr; }
+      .grade-badge-row { flex-direction: column; }
+      .node-field-row { grid-template-columns: 1fr; }
+      .grade-key-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -378,143 +731,374 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
     <div class="inner">
       <h1 class="entity-name">{entityName}</h1>
       <p class="snapshot-meta">AICV Intelligence Snapshot &nbsp;·&nbsp; {snapshotLocation} &nbsp;·&nbsp; {snapshotPeriod}</p>
+
+      <!-- Three grade tiles in header, matching IC chair output -->
+      <div class="header-grades">
+        <div class="header-grade-box">
+          <div class="header-grade-tile" style={`background:${brBg};border-color:${brBdr};`}>
+            <span style={`color:${brColor};`}>{grades.buyerReadiness}</span>
+          </div>
+          <div class="header-grade-label">Buyer</div>
+        </div>
+        <div class="header-grade-box">
+          <div class="header-grade-tile" style={`background:${cpBg};border-color:${cpBdr};`}>
+            <span style={`color:${cpColor};`}>{grades.competitivePositioning}</span>
+          </div>
+          <div class="header-grade-label">Comp</div>
+        </div>
+        <div class="header-grade-box">
+          <div class="header-grade-tile" style={`background:${arBg};border-color:${arBdr};`}>
+            <span style={`color:${arColor};`}>{grades.aiReadiness}</span>
+          </div>
+          <div class="header-grade-label">AI</div>
+        </div>
+      </div>
     </div>
   </header>
 
   <div class="page-wrap">
 
-    <!-- OPENER -->
-    <section class="opener">
-      <p>{opener.lead}</p>
-      <p class="bridge">{opener.bridge}</p>
-    </section>
+    <!-- TAB BAR -->
+    <nav class="tab-bar">
+      <button class="tab-btn active" id="tab-btn-snapshot" onclick="showTab('snapshot')">Snapshot</button>
+      <button class="tab-btn" id="tab-btn-ir" onclick="showTab('ir')">Intelligence Review</button>
+      <button class="tab-btn" id="tab-btn-node" onclick="showTab('node')">Node</button>
+    </nav>
 
-    <hr class="divider" />
+    <!-- ============================================================ -->
+    <!-- TAB 1: SNAPSHOT                                              -->
+    <!-- ============================================================ -->
+    <div class="tab-panel active" id="tab-snapshot">
 
-    <!-- METHODOLOGY -->
-    <section>
-      <p class="section-heading">Methodology</p>
-      <div class="methodology">
-        <p>{methodology}</p>
-      </div>
-    </section>
+      <!-- OPENER -->
+      <section style="margin-bottom: 32px;">
+        <p class="opener-lead">{opener.lead}</p>
+        <p class="opener-bridge">{opener.bridge}</p>
+      </section>
 
-    <hr class="divider" />
+      <hr class="divider" />
 
-    <!-- GRADING FRAMEWORK -->
-    <section>
-      <p class="section-heading">The Grading Framework</p>
-      <div class="grade-blocks">
-        <div class="grade-block grade-a">
-          <span class="grade-label">A — A-Tier</span>
-          <span class="grade-desc">Leading your category. Buyers find you and choose you.</span>
-        </div>
-        <div class="grade-block grade-b">
-          <span class="grade-label">B — Boss Mode</span>
-          <span class="grade-desc">Strong. Minor gaps. You're in the conversation.</span>
-        </div>
-        <div class="grade-block grade-c">
-          <span class="grade-label">C — Credible</span>
-          <span class="grade-desc">Present. Not yet distinct enough to pull buyers from alternatives.</span>
-        </div>
-        <div class="grade-block grade-d">
-          <span class="grade-label">D — Draft Mode</span>
-          <span class="grade-desc">The work exists. It hasn't been published in the language agents read.</span>
-        </div>
-        <div class="grade-block grade-f">
-          <span class="grade-label">F — Foundational</span>
-          <span class="grade-desc">A starting line, not a judgment.</span>
-        </div>
-      </div>
-    </section>
-
-    <hr class="divider" />
-
-    <!-- THE FINDINGS -->
-    <section>
-      <p class="section-heading">The Findings</p>
-      <div class="findings-grid">
-        {findings.map((f) => (
-          <div class="finding">
-            <div class={`finding-header ${findingHeaderClass(f.grade)}`}>
-              <span class="finding-title">{f.dimension}</span>
-              <span class={`grade-badge ${badgeClass(f.grade)}`}>{gradeBadgeLabel(f.grade)}</span>
-            </div>
-            <div class="finding-body">
-              <p>{f.body}</p>
+      <!-- THREE GRADE BADGES -->
+      <section style="margin-bottom: 32px;">
+        <p class="section-heading">IC Grades</p>
+        <div class="grade-badge-row">
+          <!-- Buyer Readiness -->
+          <div class="grade-badge-card">
+            <div class="grade-badge-card-header" style={`background:${gradeLightBg(grades.buyerReadiness)};border-bottom:1px solid ${findingHeaderBorderColor(grades.buyerReadiness)};`}>
+              <div class="grade-badge-card-label">Buyer Readiness</div>
+              <div class="grade-badge-tile" style={`background:${gradeBg(grades.buyerReadiness)};border-color:${gradeBorder(grades.buyerReadiness)};`}>
+                <span class="grade-letter" style={`color:${gradeColor(grades.buyerReadiness)};`}>{grades.buyerReadiness}</span>
+                <span class="grade-name" style={`color:${gradeColor(grades.buyerReadiness)};`}>{gradeLabel(grades.buyerReadiness)}</span>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
+          <!-- Competitive Positioning -->
+          <div class="grade-badge-card">
+            <div class="grade-badge-card-header" style={`background:${gradeLightBg(grades.competitivePositioning)};border-bottom:1px solid ${findingHeaderBorderColor(grades.competitivePositioning)};`}>
+              <div class="grade-badge-card-label">Competitive Positioning</div>
+              <div class="grade-badge-tile" style={`background:${gradeBg(grades.competitivePositioning)};border-color:${gradeBorder(grades.competitivePositioning)};`}>
+                <span class="grade-letter" style={`color:${gradeColor(grades.competitivePositioning)};`}>{grades.competitivePositioning}</span>
+                <span class="grade-name" style={`color:${gradeColor(grades.competitivePositioning)};`}>{gradeLabel(grades.competitivePositioning)}</span>
+              </div>
+            </div>
+          </div>
+          <!-- AI Readiness -->
+          <div class="grade-badge-card">
+            <div class="grade-badge-card-header" style={`background:${gradeLightBg(grades.aiReadiness)};border-bottom:1px solid ${findingHeaderBorderColor(grades.aiReadiness)};`}>
+              <div class="grade-badge-card-label">AI Readiness</div>
+              <div class="grade-badge-tile" style={`background:${gradeBg(grades.aiReadiness)};border-color:${gradeBorder(grades.aiReadiness)};`}>
+                <span class="grade-letter" style={`color:${gradeColor(grades.aiReadiness)};`}>{grades.aiReadiness}</span>
+                <span class="grade-name" style={`color:${gradeColor(grades.aiReadiness)};`}>{gradeLabel(grades.aiReadiness)}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    {actions && actions.length > 0 && (
-      <>
-        <hr class="divider" />
-        <section>
-          <p class="section-heading">Three Things Worth Doing</p>
-          {actions.map((a) => (
-            <div class={`action-block${a.ongoing ? ' ongoing' : ''}`}>
-              <p class="action-timing">{a.timing}</p>
-              <p class="action-title">{a.title}</p>
-              <p class="action-body">{a.body}</p>
+      <hr class="divider" />
+
+      <!-- GRADE KEY -->
+      <section style="margin-bottom: 32px;">
+        <p class="section-heading">Grade Key</p>
+        <div class="grade-key-grid">
+          <div>
+            {(['A', 'B', 'C'] as const).map((k) => (
+              <div class="grade-key-item">
+                <div class="grade-key-tile" style={`background:${gradeBg(k)};border-color:${gradeBorder(k)};`}>
+                  <span style={`color:${gradeColor(k)};`}>{k}</span>
+                </div>
+                <span class="grade-key-text"><strong>{gradeLabel(k)}:</strong> {k === 'A' ? 'Leading your category. Buyers find you and choose you.' : k === 'B' ? 'Strong. Minor gaps. You\'re in the conversation.' : 'Present. Not yet distinct enough to pull buyers from alternatives.'}</span>
+              </div>
+            ))}
+          </div>
+          <div>
+            {(['D', 'F'] as const).map((k) => (
+              <div class="grade-key-item">
+                <div class="grade-key-tile" style={`background:${gradeBg(k)};border-color:${gradeBorder(k)};`}>
+                  <span style={`color:${gradeColor(k)};`}>{k}</span>
+                </div>
+                <span class="grade-key-text"><strong>{gradeLabel(k)}:</strong> {k === 'D' ? 'The work exists. It hasn\'t been published in the language agents read.' : 'A starting line, not a judgment.'}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- FINDINGS -->
+      <section style="margin-bottom: 32px;">
+        <p class="section-heading">The Findings</p>
+        <div class="findings-grid">
+          {findings.map((f) => (
+            <div class="finding">
+              <div class="finding-header" style={`background:${gradeLightBg(f.grade)};border-bottom-color:${findingHeaderBorderColor(f.grade)};`}>
+                <span class="finding-title">{f.dimension}</span>
+                <div class="finding-grade-badge" style={`background:${gradeBg(f.grade)};border-color:${gradeBorder(f.grade)};`}>
+                  <span style={`color:${gradeColor(f.grade)};`}>{f.grade}</span>
+                </div>
+              </div>
+              <div class="finding-body">
+                <p>{f.body}</p>
+              </div>
             </div>
           ))}
-        </section>
-      </>
-    )}
+        </div>
+      </section>
 
-    <hr class="divider" />
-
-    <!-- CTA -->
-    <section>
-      <p class="section-heading">What the Full Intelligence Review Adds</p>
-      <div class="cta-block">
-        <p>{cta.body}</p>
-
-        {passphrase ? (
-          <>
-            <div class="gate-wrap">
-              <p class="gate-label">Enter passphrase to unlock the Intelligence Review</p>
-              <div class="gate-input-row">
-                <input class="gate-input" type="password" id="gate-input" placeholder="Passphrase" autocomplete="off" />
-                <button class="gate-submit" id="gate-submit">Unlock</button>
+      {actions && actions.length > 0 && (
+        <>
+          <hr class="divider" />
+          <section style="margin-bottom: 32px;">
+            <p class="section-heading">Three Things Worth Doing</p>
+            {actions.map((a) => (
+              <div class={`action-block${a.ongoing ? ' ongoing' : ''}`}>
+                <p class="action-timing">{a.timing}</p>
+                <p class="action-title">{a.title}</p>
+                <p class="action-body">{a.body}</p>
               </div>
-              <p class="gate-error" id="gate-error">Incorrect passphrase.</p>
+            ))}
+          </section>
+        </>
+      )}
+
+      <hr class="divider" />
+
+      <!-- METHODOLOGY -->
+      <section style="margin-bottom: 0;">
+        <p class="section-heading">Methodology</p>
+        <div class="methodology-block">
+          <p>{methodology}</p>
+        </div>
+      </section>
+
+    </div><!-- /tab-snapshot -->
+
+    <!-- ============================================================ -->
+    <!-- TAB 2: INTELLIGENCE REVIEW                                   -->
+    <!-- ============================================================ -->
+    <div class="tab-panel" id="tab-ir">
+
+      {passphrase ? (
+        <>
+          <!-- GATED STATE: blurred preview + overlay -->
+          <div class="ir-gated-wrap" id="ir-gated-wrap">
+            <!-- Blurred teaser behind overlay -->
+            <div class="ir-blur-preview">
+              <div style="background:var(--sand);border:1px solid var(--sand-dark);border-radius:6px;padding:18px 22px;margin-bottom:16px;">
+                <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--pine-light);font-weight:700;margin-bottom:8px;">Executive Summary</div>
+                <p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.75;color:var(--pine-dark);">{cta.body}</p>
+              </div>
+              <div style="background:var(--snow);border:1px solid var(--sand-dark);border-radius:6px;padding:16px 18px;margin-bottom:16px;">
+                <p style="font-size:13px;line-height:1.65;color:var(--pine-dark);">Full competitive territory analysis, prioritized actions, and 12-month AI readiness roadmap available to AICV clients.</p>
+              </div>
             </div>
-            <div class="gated-content" id="gated-content">
-              <a class="cta-button" href={ctaHref}>Unlock the Intelligence Review</a>
+            <!-- Gate overlay -->
+            <div class="ir-gate-overlay" id="ir-gate-overlay">
+              <div class="ir-gate-eyebrow">Intelligence Review</div>
+              <p class="ir-gate-headline">The Intelligence Review is available to AICV clients.</p>
+              <p class="ir-gate-body">{cta.body}</p>
+              <a class="ir-cta-button" href={ctaHref}>Request Intelligence Review →</a>
+              <div class="ir-passphrase-row">
+                <input class="ir-pass-input" type="password" id="ir-pass-input" placeholder="Enter passphrase" autocomplete="off" />
+                <button class="ir-pass-btn" id="ir-pass-btn">Unlock</button>
+              </div>
+              <p class="ir-pass-err" id="ir-pass-err">Invalid passphrase</p>
             </div>
-            <script define:vars={{ passphrase }}>
-              document.getElementById('gate-submit').addEventListener('click', function () {
-                const input = document.getElementById('gate-input').value.trim();
-                const error = document.getElementById('gate-error');
-                const content = document.getElementById('gated-content');
-                if (input === passphrase) {
-                  content.classList.add('unlocked');
-                  document.querySelector('.gate-wrap').style.display = 'none';
-                  error.style.display = 'none';
-                } else {
-                  error.style.display = 'block';
-                }
-              });
-              document.getElementById('gate-input').addEventListener('keydown', function (e) {
-                if (e.key === 'Enter') document.getElementById('gate-submit').click();
-              });
-            </script>
-          </>
-        ) : (
-          <a class="cta-button" href={ctaHref}>Unlock the Intelligence Review</a>
-        )}
-      </div>
-    </section>
+          </div>
+
+          <!-- UNLOCKED CONTENT (hidden until passphrase correct) -->
+          <div class="ir-unlocked" id="ir-unlocked">
+            <section style="margin-bottom: 24px;">
+              <p class="section-heading">What the Full Intelligence Review Adds</p>
+              <div class="ir-teaser-block">
+                <p>{cta.body}</p>
+                <a class="ir-cta-standalone" href={ctaHref}>Request Intelligence Review →</a>
+              </div>
+            </section>
+          </div>
+
+          <script define:vars={{ passphrase }} is:inline>
+            document.getElementById('ir-pass-btn').addEventListener('click', function () {
+              const input = document.getElementById('ir-pass-input').value.trim();
+              const err = document.getElementById('ir-pass-err');
+              if (input === passphrase) {
+                document.getElementById('ir-gated-wrap').style.display = 'none';
+                const unlocked = document.getElementById('ir-unlocked');
+                unlocked.classList.add('visible');
+                err.style.display = 'none';
+              } else {
+                err.style.display = 'block';
+              }
+            });
+            document.getElementById('ir-pass-input').addEventListener('keydown', function (e) {
+              if (e.key === 'Enter') document.getElementById('ir-pass-btn').click();
+            });
+          </script>
+        </>
+      ) : (
+        /* UNLOCKED STATE: passphrase is null — show full IR content */
+        <section style="margin-bottom: 0;">
+          <p class="section-heading">What the Full Intelligence Review Adds</p>
+          <div class="ir-teaser-block">
+            <p>{cta.body}</p>
+            <a class="ir-cta-standalone" href={ctaHref}>Request Intelligence Review →</a>
+          </div>
+          {actions && actions.length > 0 && (
+            <>
+              <hr class="divider" />
+              <p class="section-heading">Three Things Worth Doing</p>
+              {actions.map((a) => (
+                <div class={`action-block${a.ongoing ? ' ongoing' : ''}`}>
+                  <p class="action-timing">{a.timing}</p>
+                  <p class="action-title">{a.title}</p>
+                  <p class="action-body">{a.body}</p>
+                </div>
+              ))}
+            </>
+          )}
+        </section>
+      )}
+
+    </div><!-- /tab-ir -->
+
+    <!-- ============================================================ -->
+    <!-- TAB 3: NODE                                                  -->
+    <!-- ============================================================ -->
+    <div class="tab-panel" id="tab-node">
+
+      {node ? (
+        <>
+          <!-- Description -->
+          <section style="margin-bottom: 16px;">
+            <p class="section-heading">Description</p>
+            <div class="node-desc-block">
+              <p>{node.description}</p>
+            </div>
+          </section>
+
+          <!-- Verified + Status -->
+          <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap;">
+            {node.verified && (
+              <span class="node-verified-badge">&#10003; Verified</span>
+            )}
+            <span class="node-intent-tag" style="background:var(--pine-dark);color:var(--volt);border-color:var(--pine-light);">{node.status}</span>
+          </div>
+
+          <!-- Key fields grid -->
+          <section style="margin-bottom: 16px;">
+            <p class="section-heading">Node Fields</p>
+            <div class="node-field-row">
+              <div class="node-field">
+                <div class="node-field-label">City</div>
+                <div class="node-field-value">{node.city}</div>
+              </div>
+              <div class="node-field">
+                <div class="node-field-label">Zone</div>
+                <div class="node-field-value">{node.zone}</div>
+              </div>
+            </div>
+            <div class="node-field-row">
+              <div class="node-field">
+                <div class="node-field-label">Category</div>
+                <div class="node-field-value">{node.category}</div>
+              </div>
+              <div class="node-field">
+                <div class="node-field-label">Subcategory</div>
+                <div class="node-field-value">{node.subcategory}</div>
+              </div>
+            </div>
+            <div class="node-field-row">
+              <div class="node-field">
+                <div class="node-field-label">Slug</div>
+                <div class="node-field-value" style="font-family:monospace;font-size:11px;">{node.slug}</div>
+              </div>
+              <div class="node-field">
+                <div class="node-field-label">Last Updated</div>
+                <div class="node-field-value">{node.last_updated}</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Agent Intent tags -->
+          <section style="margin-bottom: 16px;">
+            <p class="section-heading">Agent Intent</p>
+            <div class="node-intent-tags">
+              {(Array.isArray(node.agent_intent) ? node.agent_intent : [node.agent_intent]).map((intent: string) => (
+                <span class="node-intent-tag">{intent}</span>
+              ))}
+            </div>
+          </section>
+
+          <!-- Agent Summary -->
+          <section style="margin-bottom: 16px;">
+            <p class="section-heading">Agent Summary</p>
+            <div class="node-agent-summary">
+              <p>{node.agent_summary}</p>
+            </div>
+          </section>
+
+          <!-- Link to node -->
+          <a class="node-view-link" href={`/nodes/${node.slug}/`}>View full node →</a>
+        </>
+      ) : (
+        <div class="node-null-msg">
+          <p>Node data not yet available for this entity.</p>
+        </div>
+      )}
+
+    </div><!-- /tab-node -->
 
     <footer class="site-footer">
       <p>AI Coachella Valley &nbsp;·&nbsp; <a href="https://aicoachellavalley.com">aicoachellavalley.com</a></p>
       <p>Building the intelligence layer for the Coachella Valley.</p>
     </footer>
 
-  </div>
+  </div><!-- /page-wrap -->
+
+  <script is:inline>
+    function showTab(name) {
+      // Hide all panels
+      document.querySelectorAll('.tab-panel').forEach(function(p) {
+        p.classList.remove('active');
+      });
+      // Deactivate all buttons
+      document.querySelectorAll('.tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      // Show selected panel
+      var panel = document.getElementById('tab-' + name);
+      if (panel) panel.classList.add('active');
+      // Activate selected button
+      var btn = document.getElementById('tab-btn-' + name);
+      if (btn) btn.classList.add('active');
+    }
+
+    // Initialize first tab on load
+    document.addEventListener('DOMContentLoaded', function() {
+      showTab('snapshot');
+    });
+  </script>
 
 </body>
 </html>
