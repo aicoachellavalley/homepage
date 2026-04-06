@@ -119,5 +119,75 @@
       "emailBody": "Hi Sat,\n\nI reviewed the AICV Intelligence Snapshot for The Gardens on El Paseo and I'd like to learn more about the full Intelligence Review.\n\n"
     },
     "passphrase": null
+  },
+  {
+    "slug": "visit-greater-palm-springs-vgps---april-5",
+    "entityName": "Visit Greater Palm Springs (VGPS) - April 5",
+    "metaTitle": "AICV Intelligence Snapshot: Visit Greater Palm Springs (VGPS) - April 5",
+    "metaDescription": "Visit Greater Palm Springs operates a world-class luxury ecosystem but lacks the data infrastructure and segment focus to capture tech-wealth incentive business from San Francisco and Los Angeles.",
+    "datePublished": "2026-04-06",
+    "dateModified": "2026-04-06",
+    "snapshotLocation": "Regional (Nine Cities), CA",
+    "snapshotPeriod": "April 2026",
+    "schema": {
+      "aboutType": "LocalBusiness",
+      "aboutName": "Visit Greater Palm Springs (VGPS) - April 5",
+      "aboutUrl": null,
+      "addressLocality": "Regional (Nine Cities)",
+      "addressRegion": "CA"
+    },
+    "grades": {
+      "buyerReadiness": "D",
+      "competitivePositioning": "D",
+      "aiReadiness": "F"
+    },
+    "opener": {
+      "lead": "The Coachella Valley is being written into AI systems right now. This is what the frontier foundational AI models currently know about Visit Greater Palm Springs (VGPS) - April 5.",
+      "bridge": "This Snapshot is part of AICV's intelligence layer for the Coachella Valley — a machine-readable knowledge base built for the agents and AI systems that increasingly mediate how high-value buyers discover, evaluate, and choose where to spend their time and money."
+    },
+    "methodology": "AICV runs a structured Intelligence Council (IC) for each review. The entity is scored across three dimensions: buyer readiness, competitive position, and AI readiness. The IC — a panel of frontier AI models — reviews each dimension independently, debates the findings, and a regional chairman delivers final scores through AICV's grading framework. What you're reading is the output. This is a cold review. Visit Greater Palm Springs (VGPS) - April 5 has not been notified.",
+    "findings": [
+      {
+        "dimension": "Buyer Readiness",
+        "grade": "D",
+        "body": "VGPS possesses world-class physical inventory but lacks segment precision for the tech-wealth opportunity. The council found no targeted strategy for founders, VCs, or executive relocation despite prime positioning between SF and LA liquidity events. The 15-year-old Simpleview CRM chaos blocks modern account-based marketing, lead scoring, and conversion attribution. While VGPS reports 30.8 billion marketing impressions, this broad-reach approach cannot identify or nurture high-value DMC accounts evaluating the valley against Napa or Austin."
+      },
+      {
+        "dimension": "Competitive Position",
+        "grade": "D",
+        "body": "The council identified VGPS's true competition as lifestyle ecosystems — Napa/Sonoma, Santa Barbara/Montecito, Lake Tahoe, Scottsdale, Austin, Miami — not traditional DMOs. VGPS wins on climate, private aviation access (PSP/Thermal), and proximity to LA, but loses on narrative clarity and execution simplicity. Nine-city governance creates 'lowest common denominator' messaging while competitors present unified luxury brands. The valley's exceptional assets (Sensei, Thermal Club, Cotino development) remain underutilized for incentive positioning."
+      },
+      {
+        "dimension": "AI Readiness",
+        "grade": "F",
+        "body": "Critical deficiency across all AI readiness dimensions. VGPS has zero schema markup, no API endpoints, no LLM tracking, and treats AI as performative (chatbots, photo booths) rather than systemic infrastructure. The 15-year database chaos compounds the problem by preventing any structured data export for machine consumption."
+      }
+    ],
+    "actions": [
+      {
+        "timing": "30 Days",
+        "title": "Implement Schema.org markup across all luxury venues for AI discoverability",
+        "body": "Implement Schema.org markup across all luxury venues for AI discoverability",
+        "ongoing": false
+      },
+      {
+        "timing": "90 Days",
+        "title": "Launch targeted founder/VC incentive travel segment with account-based outreach",
+        "body": "Launch targeted founder/VC incentive travel segment with account-based outreach",
+        "ongoing": false
+      },
+      {
+        "timing": "Now",
+        "title": "Create structured venue capacity/buyout matrices for DMC planning tools",
+        "body": "Create structured venue capacity/buyout matrices for DMC planning tools",
+        "ongoing": false
+      }
+    ],
+    "cta": {
+      "body": "a detailed roadmap for capturing tech-wealth incentive business and preventing algorithmic erasure in the AI-driven buyer journey",
+      "emailSubject": "Intelligence Review — Visit Greater Palm Springs (VGPS) - April 5",
+      "emailBody": "Hi Sat,\n\nI reviewed the AICV Intelligence Snapshot for Visit Greater Palm Springs (VGPS) - April 5 and I'd like to learn more about the full Intelligence Review.\n\n"
+    },
+    "passphrase": null
   }
 ]
