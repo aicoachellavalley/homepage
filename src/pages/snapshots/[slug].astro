@@ -593,10 +593,21 @@ const arBdr   = gradeBorder(grades.aiReadiness);
       max-width: 520px;
       margin: 0 auto;
     }
+    .ir-card-rule {
+      border: none;
+      border-top: 1px solid var(--pine);
+      opacity: 0.2;
+      margin-top: 24px;
+      margin-bottom: 0;
+    }
     .ir-plain-email {
       font-size: 13px;
       color: var(--pine-light);
       margin-top: 16px;
+    }
+    .ir-email-address {
+      color: var(--pine);
+      font-weight: 600;
     }
 
     /* IR UNLOCKED */
@@ -956,7 +967,8 @@ const arBdr   = gradeBorder(grades.aiReadiness);
       <div class="ir-static-card">
         <p class="ir-gate-headline">The Full Intelligence Review is available to AICV clients.</p>
         <p class="ir-gate-body">Contact AICV to unlock access to the full competitive analysis, prioritized actions, and 12-month AI readiness roadmap for this entity.</p>
-        <p class="ir-plain-email">Email sat@aicv.co to get started.</p>
+        <hr class="ir-card-rule" />
+        <p class="ir-plain-email">Email <span class="ir-email-address">sat@aicv.co</span> to get started.</p>
       </div>
 
     </div><!-- /tab-ir -->
