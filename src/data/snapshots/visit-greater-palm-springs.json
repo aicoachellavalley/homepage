@@ -23,7 +23,7 @@
     "lead": "The Coachella Valley is being written into AI systems right now. This is what the frontier foundational AI models currently know about Visit Greater Palm Springs — and what the $9 billion destination it represents is missing.",
     "bridge": "This Snapshot is part of AICV's intelligence layer for the Coachella Valley — a machine-readable knowledge base built for the agents and AI systems that increasingly mediate how high-value buyers discover, evaluate, and choose where to spend their time and money."
   },
-  "methodology": "AICV runs a structured Intelligence Council (IC) for each review. The entity is scored across three dimensions: buyer readiness, competitive position, and AI readiness. The IC — a panel of frontier AI models — reviews each dimension independently, debates the findings, and a regional chairman delivers final scores through AICV's grading framework. What you're reading is the output. This is a cold review. Visit Greater Palm Springs has not been notified.",
+  "methodology": "AICV runs a structured Intelligence Council (IC) for each review. The entity is scored across three dimensions: buyer readiness, competitive positioning, and AI readiness. The IC — a panel of 5 randomly selected frontier AI models (from a portfolio of 30) — reviews each dimension independently, debates the findings, and a regional chairman delivers final scores through AICV's evolving grading framework. What you're reading is the output. This is a cold review. Visit Greater Palm Springs has not been notified.",
   "findings": [
     {
       "dimension": "Buyer Readiness",

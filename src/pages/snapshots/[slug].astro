@@ -583,6 +583,22 @@ const arBdr   = gradeBorder(grades.aiReadiness);
       margin-top: 8px;
     }
 
+    /* IR STATIC CARD */
+    .ir-static-card {
+      background: rgba(242,237,224,0.97);
+      border: 1px solid var(--sand-dark);
+      border-radius: 6px;
+      padding: 48px 32px 52px;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .ir-plain-email {
+      font-size: 13px;
+      color: var(--pine-light);
+      margin-top: 16px;
+    }
+
     /* IR UNLOCKED */
     .ir-unlocked { display: none; }
     .ir-unlocked.visible { display: block; }
@@ -937,103 +953,11 @@ const arBdr   = gradeBorder(grades.aiReadiness);
     <!-- ============================================================ -->
     <div class="tab-panel" id="tab-ir">
 
-      {passphrase ? (
-        <>
-          <!-- GATED STATE: blurred preview + overlay -->
-          <div class="ir-gated-wrap" id="ir-gated-wrap">
-            <!-- Blurred teaser behind overlay -->
-            <div class="ir-blur-preview">
-              <div style="background:var(--sand);border:1px solid var(--sand-dark);border-radius:6px;padding:18px 22px;margin-bottom:16px;">
-                <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--pine-light);font-weight:700;margin-bottom:8px;">Executive Summary</div>
-                <p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.75;color:var(--pine-dark);">{cta.body}</p>
-              </div>
-              <div style="background:var(--snow);border:1px solid var(--sand-dark);border-radius:6px;padding:16px 18px;margin-bottom:16px;">
-                <p style="font-size:13px;line-height:1.65;color:var(--pine-dark);">Full competitive territory analysis, prioritized actions, and 12-month AI readiness roadmap available to AICV clients.</p>
-              </div>
-            </div>
-            <!-- Gate overlay -->
-            <div class="ir-gate-overlay" id="ir-gate-overlay">
-              <div class="ir-gate-eyebrow">Intelligence Review</div>
-              <p class="ir-gate-headline">The Full Intelligence Review is available to AICV clients.</p>
-              <p class="ir-gate-body">Contact AICV to unlock access to the full competitive analysis, prioritized actions, and 12-month AI readiness roadmap for this entity.</p>
-              <a class="ir-cta-button" href={ctaHref}>CONTACT AICV TO UNLOCK</a>
-              <div class="ir-passphrase-row">
-                <input class="ir-pass-input" type="password" id="ir-pass-input" placeholder="Enter passphrase" autocomplete="off" />
-                <button class="ir-pass-btn" id="ir-pass-btn">Unlock</button>
-              </div>
-              <p class="ir-pass-err" id="ir-pass-err">Invalid passphrase</p>
-            </div>
-          </div>
-
-          <!-- UNLOCKED CONTENT (hidden until passphrase correct) -->
-          <div class="ir-unlocked" id="ir-unlocked">
-            {topGaps.length > 0 ? (
-              <section style="margin-bottom: 0;">
-                <p class="section-heading">Key Gaps Identified</p>
-                {topGaps.map((gap) => (
-                  <div class="ir-gap-item">
-                    <p class="ir-gap-text">{gap.gap}</p>
-                    <div class="ir-gap-tags">
-                      <span class={`ir-impact-badge impact-${(gap.impact || '').toLowerCase()}`}>Impact: {gap.impact}</span>
-                      {gap.quick_win && <span class="ir-quickwin-badge">Quick Win</span>}
-                    </div>
-                  </div>
-                ))}
-              </section>
-            ) : (
-              <section style="margin-bottom: 0;">
-                <div class="ir-preparing-msg">
-                  <p>The full Intelligence Review for this entity is being prepared.<br />Contact <a href="mailto:sat@aicv.co">sat@aicv.co</a> to discuss.</p>
-                </div>
-              </section>
-            )}
-            <div class="ir-closing-cta">
-              <p class="ir-closing-text">Ready to discuss what this means for your organization?</p>
-              <a class="ir-cta-standalone" href={`mailto:sat@aicv.co?subject=${encodeURIComponent('Intelligence Review — ' + entityName)}`}>REACH OUT TO SAT</a>
-            </div>
-          </div>
-
-          <script define:vars={{ passphrase }} is:inline>
-            document.getElementById('ir-pass-btn').addEventListener('click', function () {
-              const input = document.getElementById('ir-pass-input').value.trim();
-              const err = document.getElementById('ir-pass-err');
-              if (input === passphrase) {
-                document.getElementById('ir-gated-wrap').style.display = 'none';
-                const unlocked = document.getElementById('ir-unlocked');
-                unlocked.classList.add('visible');
-                err.style.display = 'none';
-              } else {
-                err.style.display = 'block';
-              }
-            });
-            document.getElementById('ir-pass-input').addEventListener('keydown', function (e) {
-              if (e.key === 'Enter') document.getElementById('ir-pass-btn').click();
-            });
-          </script>
-        </>
-      ) : (
-        /* UNLOCKED STATE: passphrase is null — show full IR content */
-        <section style="margin-bottom: 0;">
-          <p class="section-heading">What the Full Intelligence Review Adds</p>
-          <div class="ir-teaser-block">
-            <p>{cta.body}</p>
-            <a class="ir-cta-standalone" href={ctaHref}>Request Intelligence Review →</a>
-          </div>
-          {actions && actions.length > 0 && (
-            <>
-              <hr class="divider" />
-              <p class="section-heading">Three Things Worth Doing</p>
-              {actions.map((a) => (
-                <div class={`action-block${a.ongoing ? ' ongoing' : ''}`}>
-                  <p class="action-timing">{a.timing}</p>
-                  <p class="action-title">{a.title}</p>
-                  <p class="action-body">{a.body}</p>
-                </div>
-              ))}
-            </>
-          )}
-        </section>
-      )}
+      <div class="ir-static-card">
+        <p class="ir-gate-headline">The Full Intelligence Review is available to AICV clients.</p>
+        <p class="ir-gate-body">Contact AICV to unlock access to the full competitive analysis, prioritized actions, and 12-month AI readiness roadmap for this entity.</p>
+        <p class="ir-plain-email">Email sat@aicv.co to get started.</p>
+      </div>
 
     </div><!-- /tab-ir -->
 
