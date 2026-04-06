@@ -529,6 +529,9 @@ const arBdr   = gradeBorder(grades.aiReadiness);
       color: var(--pine-light);
       line-height: 1.65;
       max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
       margin-bottom: 28px;
     }
     .ir-cta-button {
@@ -593,22 +596,22 @@ const arBdr   = gradeBorder(grades.aiReadiness);
       max-width: 520px;
       margin: 0 auto;
     }
-    .ir-card-rule {
-      border: none;
-      border-top: 1px solid var(--pine);
-      opacity: 0.2;
-      margin-top: 24px;
-      margin-bottom: 0;
+    .ir-contact-btn {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--pine-dark);
+      color: var(--sand-light);
+      padding: 13px 28px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.15s;
     }
-    .ir-plain-email {
-      font-size: 13px;
-      color: var(--pine-light);
-      margin-top: 16px;
-    }
-    .ir-email-address {
-      color: var(--pine);
-      font-weight: 600;
-    }
+    .ir-contact-btn:hover { background: var(--pine); }
 
     /* IR UNLOCKED */
     .ir-unlocked { display: none; }
@@ -967,8 +970,7 @@ const arBdr   = gradeBorder(grades.aiReadiness);
       <div class="ir-static-card">
         <p class="ir-gate-headline">The Full Intelligence Review is available to AICV clients.</p>
         <p class="ir-gate-body">Contact AICV to unlock access to the full competitive analysis, prioritized actions, and 12-month AI readiness roadmap for this entity.</p>
-        <hr class="ir-card-rule" />
-        <p class="ir-plain-email">Email <span class="ir-email-address">sat@aicv.co</span> to get started.</p>
+        <a class="ir-contact-btn" href="mailto:sat@aicv.co">Email sat@aicv.co to get started</a>
       </div>
 
     </div><!-- /tab-ir -->
