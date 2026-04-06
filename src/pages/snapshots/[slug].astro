@@ -44,6 +44,11 @@ const {
   passphrase,
 } = snapshot;
 
+const topGaps: Array<{ gap: string; impact: string; quick_win?: boolean }> =
+  Array.isArray(snapshot.top_gaps) && snapshot.top_gaps.length > 0
+    ? snapshot.top_gaps
+    : [];
+
 function gradeBg(g: string) {
   const map: Record<string, string> = {
     A: '#1B4332',
@@ -487,28 +492,18 @@ const arBdr   = gradeBorder(grades.aiReadiness);
 
     /* INTELLIGENCE REVIEW — GATED */
     .ir-gated-wrap {
-      position: relative;
       border-radius: 6px;
-      overflow: hidden;
     }
     .ir-blur-preview {
-      filter: blur(3px);
-      pointer-events: none;
-      user-select: none;
-      opacity: 0.3;
-      max-height: 260px;
-      overflow: hidden;
+      display: none;
     }
     .ir-gate-overlay {
-      position: absolute;
-      inset: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 48px 32px;
+      padding: 48px 32px 56px;
       text-align: center;
-      background: rgba(242,237,224,0.93);
+      background: rgba(242,237,224,0.97);
       border: 1px solid var(--sand-dark);
       border-radius: 6px;
     }
@@ -591,6 +586,69 @@ const arBdr   = gradeBorder(grades.aiReadiness);
     /* IR UNLOCKED */
     .ir-unlocked { display: none; }
     .ir-unlocked.visible { display: block; }
+
+    .ir-gap-item {
+      background: var(--snow);
+      border: 1px solid var(--sand-dark);
+      border-radius: 4px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .ir-gap-text {
+      font-size: 14px;
+      color: var(--pine-dark);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+    .ir-gap-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .ir-impact-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .impact-high { background: rgba(200,85,42,0.12); color: #C8552A; }
+    .impact-med  { background: rgba(216,255,0,0.15); color: var(--pine); }
+    .impact-low  { background: var(--sand); color: var(--pine-light); }
+    .ir-quickwin-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+      background: rgba(27,67,50,0.12);
+      color: var(--pine);
+    }
+    .ir-preparing-msg {
+      background: var(--sand);
+      border: 1px solid var(--sand-dark);
+      border-radius: 6px;
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--pine-light);
+      line-height: 1.7;
+    }
+    .ir-preparing-msg a { color: var(--pine); }
+    .ir-closing-cta {
+      background: var(--pine-dark);
+      border-radius: 6px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 24px;
+    }
+    .ir-closing-text {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      font-style: italic;
+      color: var(--sand-light);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
     .ir-teaser-block {
       background: var(--sand);
       border: 1px solid var(--sand-dark);
@@ -909,13 +967,30 @@ const arBdr   = gradeBorder(grades.aiReadiness);
 
           <!-- UNLOCKED CONTENT (hidden until passphrase correct) -->
           <div class="ir-unlocked" id="ir-unlocked">
-            <section style="margin-bottom: 24px;">
-              <p class="section-heading">What the Full Intelligence Review Adds</p>
-              <div class="ir-teaser-block">
-                <p>{cta.body}</p>
-                <a class="ir-cta-standalone" href={ctaHref}>Request Intelligence Review →</a>
-              </div>
-            </section>
+            {topGaps.length > 0 ? (
+              <section style="margin-bottom: 0;">
+                <p class="section-heading">Key Gaps Identified</p>
+                {topGaps.map((gap) => (
+                  <div class="ir-gap-item">
+                    <p class="ir-gap-text">{gap.gap}</p>
+                    <div class="ir-gap-tags">
+                      <span class={`ir-impact-badge impact-${(gap.impact || '').toLowerCase()}`}>Impact: {gap.impact}</span>
+                      {gap.quick_win && <span class="ir-quickwin-badge">Quick Win</span>}
+                    </div>
+                  </div>
+                ))}
+              </section>
+            ) : (
+              <section style="margin-bottom: 0;">
+                <div class="ir-preparing-msg">
+                  <p>The full Intelligence Review for this entity is being prepared.<br />Contact <a href="mailto:sat@aicv.co">sat@aicv.co</a> to discuss.</p>
+                </div>
+              </section>
+            )}
+            <div class="ir-closing-cta">
+              <p class="ir-closing-text">Ready to discuss what this means for your organization?</p>
+              <a class="ir-cta-standalone" href={`mailto:sat@aicv.co?subject=${encodeURIComponent('Intelligence Review — ' + entityName)}`}>REACH OUT TO SAT</a>
+            </div>
           </div>
 
           <script define:vars={{ passphrase }} is:inline>
