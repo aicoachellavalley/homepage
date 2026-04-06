@@ -1,0 +1,12 @@
+{
+  "_note": "Schema reference only — this file is excluded from reports.json output (underscore prefix). Copy structure below for new reports.",
+  "slug": "example-report-slug",
+  "title": "Example Intelligence Report Title",
+  "description": "One-sentence summary of the report — used in meta tags and agent-readable endpoints.",
+  "date": "2026-01-01",
+  "partner": "City of Palm Desert",
+  "topic": "economic-development",
+  "summary": "2–3 sentence executive summary of findings. This is what AI agents and humans read first.",
+  "url": "https://aicoachellavalley.com/reports/example-report-slug",
+  "status": "draft"
+}
