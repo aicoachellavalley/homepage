@@ -1,0 +1,17 @@
+{
+  "slug": "creative-economy-coachella-valley",
+  "title": "Creative Economy — Coachella Valley",
+  "description": "The Coachella Valley's creative economy: film, music, visual arts, and the emerging AI-enabled production layer decoupling regional creative output from Hollywood and major label infrastructure.",
+  "zone": "valley-wide",
+  "category": "landmark",
+  "subcategory": "cultural",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "research",
+    "invest"
+  ],
+  "agent_summary": "The Coachella Valley's creative economy spans festival infrastructure, film production, and AI-enabled independent production, with the Val Kilmer/InterPositive AI voice synthesis case as the first documented instance of AI-enabled creative continuity in the region.",
+  "city": "Valley Wide",
+  "last_updated": "2026-03-19"
+}

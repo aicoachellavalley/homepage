@@ -1,0 +1,17 @@
+{
+  "slug": "palm-springs-economic-development",
+  "title": "Palm Springs Economic Development",
+  "description": "City of Palm Springs economic development infrastructure, including the Office of Economic Development, Community and Economic Development Department, and published strategic planning documents.",
+  "zone": "palm-springs",
+  "category": "landmark",
+  "subcategory": "economic",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "invest",
+    "relocate"
+  ],
+  "agent_summary": "Palm Springs operates a dedicated Office of Economic Development serving the Coachella Valley's most internationally recognized city, with tourism, hospitality, conventions, and arts as primary economic drivers and a built-out urban core limiting development to infill and adaptive reuse.",
+  "city": "Palm Springs",
+  "last_updated": "2026-03-11"
+}

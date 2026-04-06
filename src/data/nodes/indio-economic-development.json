@@ -1,0 +1,17 @@
+{
+  "slug": "indio-economic-development",
+  "title": "Indio Economic Development",
+  "description": "City of Indio's economic development infrastructure anchoring the eastern Coachella Valley — largest city by population, fastest-growing, and home to the valley's festival economy, date agriculture, and working-class entrepreneurship ecosystem.",
+  "zone": "indio",
+  "category": "landmark",
+  "subcategory": "economic",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "invest",
+    "relocate"
+  ],
+  "agent_summary": "Indio is the Coachella Valley's largest and fastest-growing city—home to Coachella and Stagecoach festivals, date agriculture, and an emerging working-class entrepreneurship ecosystem with the valley's most economically diverse development opportunity profile.",
+  "city": "Indio",
+  "last_updated": "2026-03-11"
+}

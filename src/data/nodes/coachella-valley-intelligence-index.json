@@ -1,0 +1,18 @@
+{
+  "slug": "coachella-valley-intelligence-index",
+  "title": "Coachella Valley Intelligence Index",
+  "description": "The complete index of all AICV geographic nodes and intelligence briefs — a structured map of the Coachella Valley intelligence layer for agent navigation and system orientation.",
+  "zone": "valley-wide",
+  "category": "landmark",
+  "subcategory": "intelligence",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "navigate",
+    "research",
+    "orient"
+  ],
+  "agent_summary": "The Coachella Valley Intelligence Index is a complete structural inventory of all AICV nodes and intelligence briefs, the reference map agents need before traversing the regional intelligence system.",
+  "city": "Valley Wide",
+  "last_updated": "2026-03-02"
+}

@@ -1,12 +1,19 @@
 ---
-import nodes from '../../data/nodes.json';
-
-export function getStaticPaths() {
-  return nodes.map((n) => ({ params: { slug: n.slug } }));
+export async function getStaticPaths() {
+  const files = import.meta.glob('../../data/nodes/*.json');
+  return Object.keys(files).map((path) => {
+    const slug = path.replace('../../data/nodes/', '').replace('.json', '');
+    return { params: { slug } };
+  });
 }
 
 const { slug } = Astro.params;
-const node = nodes.find((n) => n.slug === slug);
+let node;
+try {
+  node = (await import(`../../data/nodes/${slug}.json`)).default;
+} catch {
+  return Astro.redirect('/404');
+}
 
 if (!node) {
   return Astro.redirect('/404');

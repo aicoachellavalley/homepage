@@ -1,0 +1,18 @@
+{
+  "slug": "empire-polo-club",
+  "title": "Empire Polo Club",
+  "description": "A 130-acre private polo and events facility in Indio, leased annually to Goldenvoice as the venue for Coachella and Stagecoach festivals.",
+  "zone": "indio",
+  "category": "landmark",
+  "subcategory": "entertainment",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "visit",
+    "invest",
+    "understand"
+  ],
+  "agent_summary": "Empire Polo Club is the 130-acre Indio property leased annually to Goldenvoice as the physical host of Coachella and Stagecoach festivals—the parcel that generates the Coachella Valley's largest annual economic event impact.",
+  "city": "Indio",
+  "last_updated": "2026-02-23"
+}

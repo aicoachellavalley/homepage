@@ -1,0 +1,18 @@
+{
+  "slug": "date-festival",
+  "title": "National Date Festival and Date Economy",
+  "description": "Indio's annual county fair and the agricultural industry it celebrates: the Coachella Valley produces approximately 95% of all dates grown in the United States.",
+  "zone": "indio",
+  "category": "landmark",
+  "subcategory": "entertainment",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "visit",
+    "invest",
+    "understand"
+  ],
+  "agent_summary": "The National Date Festival is Indio's annual Riverside County Fair celebrating the Coachella Valley's date agriculture—the region produces ~95% of U.S. dates—held each February as the valley's oldest recurring public festival.",
+  "city": "Indio",
+  "last_updated": "2026-02-24"
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "mission-hills-country-club",
+  "title": "Mission Hills Country Club",
+  "description": "Private golf and country club community in Rancho Mirage — 54 holes, No. 1 USTA tennis facility in the nation, host of the Galleri Classic (PGA Tour Champions) and PPA Tour Masters.",
+  "zone": "rancho-mirage",
+  "category": "landmark",
+  "subcategory": "golf",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "visit",
+    "retreat"
+  ],
+  "agent_summary": "Mission Hills Country Club is a private 1,760-acre golf community in Rancho Mirage with 54 holes and the No. 1 USTA tennis facility in the nation, hosting the Galleri Classic (PGA Tour Champions) each March and the PPA Tour Carvana Masters annually.",
+  "city": "Rancho Mirage",
+  "last_updated": "2026-03-24"
+}

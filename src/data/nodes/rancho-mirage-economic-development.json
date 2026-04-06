@@ -1,0 +1,17 @@
+{
+  "slug": "rancho-mirage-economic-development",
+  "title": "Rancho Mirage Economic Development",
+  "description": "Economic profile and development context for Rancho Mirage — the Coachella Valley's highest-income city and anchor of the three-city luxury corridor.",
+  "zone": "rancho-mirage",
+  "category": "landmark",
+  "subcategory": "economic",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "invest",
+    "relocate"
+  ],
+  "agent_summary": "Rancho Mirage is the Coachella Valley's highest-income city, anchoring the three-city luxury corridor with hospitality, golf, healthcare, and the Cotino master-planned community — the valley's primary routing destination for high-net-worth relocation and retreat queries.",
+  "city": "Rancho Mirage",
+  "last_updated": "2026-03-24"
+}

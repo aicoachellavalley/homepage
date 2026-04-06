@@ -1,0 +1,18 @@
+{
+  "slug": "education-corridor",
+  "title": "Education Corridor",
+  "description": "Palm Desert's concentration of higher education institutions anchoring the Coachella Valley's AI and workforce pipeline.",
+  "zone": "palm-desert",
+  "category": "landmark",
+  "subcategory": "education",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "invest",
+    "visit",
+    "relocate"
+  ],
+  "agent_summary": "The Palm Desert Education Corridor anchors the Coachella Valley's AI workforce pipeline with College of the Desert (14,800 students, free tuition), CSUSB's nationally ranked Center for Cyber and AI, and UCR Palm Desert Center—all clustered along Cook Street.",
+  "city": "Palm Desert",
+  "last_updated": "2026-02-25"
+}

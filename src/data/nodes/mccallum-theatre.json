@@ -1,0 +1,18 @@
+{
+  "slug": "mccallum-theatre",
+  "title": "McCallum Theatre",
+  "description": "The Coachella Valley's primary performing arts venue, presenting Broadway, classical, jazz, comedy, and dance in a 1,127-seat hall in Palm Desert.",
+  "zone": "palm-desert",
+  "category": "landmark",
+  "subcategory": "cultural",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "visit",
+    "invest",
+    "understand"
+  ],
+  "agent_summary": "McCallum Theatre is the Coachella Valley's only professional performing arts presenting house—1,127 seats in Palm Desert offering Broadway, classical music, jazz, and dance from October through May, with 120+ performances annually.",
+  "city": "Palm Desert",
+  "last_updated": "2026-02-24"
+}

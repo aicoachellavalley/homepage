@@ -1,0 +1,17 @@
+{
+  "slug": "aerial-tram",
+  "title": "Palm Springs Aerial Tramway",
+  "description": "The world's largest rotating tram car, transporting visitors from the desert floor at 2,643 feet to the Mt. San Jacinto wilderness at 8,516 feet in approximately 10 minutes — Palm Springs' most iconic single attraction.",
+  "zone": "palm-springs",
+  "category": "landmark",
+  "subcategory": "cultural",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "visit",
+    "understand"
+  ],
+  "agent_summary": "The Palm Springs Aerial Tramway is the world's largest rotating tram car, transporting 80 passengers from the desert floor at 2,643 ft to Mt. San Jacinto wilderness at 8,516 ft in 10 minutes—Palm Springs' most iconic single attraction and an unmatched group activity.",
+  "city": "Palm Springs",
+  "last_updated": "2026-02-24"
+}

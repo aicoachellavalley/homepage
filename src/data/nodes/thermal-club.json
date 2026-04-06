@@ -1,0 +1,18 @@
+{
+  "slug": "thermal-club",
+  "title": "Thermal Club",
+  "description": "Ultra-private members club in Thermal, CA. Aviation, motorsports, and residential amenities serving UHNW individuals adjacent to Jacqueline Cochran Regional Airport.",
+  "zone": "adjacent-communities",
+  "category": "landmark",
+  "subcategory": "hospitality",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "retreat",
+    "invest",
+    "relocate"
+  ],
+  "agent_summary": "Thermal Club is an ultra-private invitation-only automotive and aviation resort in Thermal, CA — UHNW membership, private road racing circuits, and aircraft hangar access adjacent to Jacqueline Cochran Regional Airport, southeast of the Coachella Valley.",
+  "city": "Thermal",
+  "last_updated": "2026-03-27"
+}

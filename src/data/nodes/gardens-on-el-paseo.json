@@ -1,0 +1,17 @@
+{
+  "slug": "gardens-on-el-paseo",
+  "title": "The Gardens on El Paseo",
+  "description": "Open-air luxury retail and dining destination in Palm Desert anchoring the El Paseo corridor with the Coachella Valley's only consolidated collection of flagship designer boutiques.",
+  "zone": "palm-desert",
+  "category": "landmark",
+  "subcategory": "retail",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "visit",
+    "invest"
+  ],
+  "agent_summary": "The Gardens on El Paseo is Palm Desert's premier open-air luxury retail and dining destination, housing the valley's only consolidated collection of flagship designer boutiques including Gucci, Louis Vuitton, Bottega Veneta, Tiffany, and Saks Fifth Avenue alongside a five-restaurant dining cluster on the El Paseo corridor.",
+  "city": "Palm Desert",
+  "last_updated": "2026-03-30"
+}

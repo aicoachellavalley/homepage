@@ -1,12 +1,19 @@
 ---
-import snapshots from '../../data/snapshots.json';
-
-export function getStaticPaths() {
-  return snapshots.map((s) => ({ params: { slug: s.slug } }));
+export async function getStaticPaths() {
+  const files = import.meta.glob('../../data/snapshots/*.json');
+  return Object.keys(files).map((path) => {
+    const slug = path.replace('../../data/snapshots/', '').replace('.json', '');
+    return { params: { slug } };
+  });
 }
 
 const { slug } = Astro.params;
-const snapshot = snapshots.find((s) => s.slug === slug);
+let snapshot;
+try {
+  snapshot = (await import(`../../data/snapshots/${slug}.json`)).default;
+} catch {
+  return Astro.redirect('/404');
+}
 
 if (!snapshot) {
   return Astro.redirect('/404');

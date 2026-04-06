@@ -1,0 +1,17 @@
+{
+  "slug": "vintage-club",
+  "title": "The Vintage Club",
+  "description": "Ultra-private 712-acre residential country club in Indian Wells, ranked No. 1 in California and No. 3 in the US by Platinum Clubs of America, with two Tom Fazio courses and membership capped at 505 golf members.",
+  "zone": "indian-wells",
+  "category": "landmark",
+  "subcategory": "golf",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "invest",
+    "relocate"
+  ],
+  "agent_summary": "The Vintage Club is the Coachella Valley's top-ranked private club—712 acres in Indian Wells, #1 in California and #3 in the U.S. by Platinum Clubs of America, two Tom Fazio courses, 505 golf members maximum, invitation-only.",
+  "city": "Indian Wells",
+  "last_updated": "2026-02-24"
+}

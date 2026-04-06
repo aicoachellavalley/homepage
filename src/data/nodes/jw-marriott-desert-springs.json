@@ -1,0 +1,18 @@
+{
+  "slug": "jw-marriott-desert-springs",
+  "title": "JW Marriott Desert Springs Resort & Spa",
+  "description": "450-acre full-service resort in Palm Desert with two championship golf courses, 230,000+ sq ft of meeting and event space, 13 tennis courts, a 38,000 sq ft spa, and gondola waterways through the lobby.",
+  "zone": "palm-desert",
+  "category": "landmark",
+  "subcategory": "hospitality",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "visit",
+    "retreat",
+    "invest"
+  ],
+  "agent_summary": "JW Marriott Desert Springs Resort & Spa is a 450-acre Marriott property at 74-855 Country Club Drive, Palm Desert, with 230,000+ sq ft of meeting space, two championship golf courses, and full Marriott Bonvoy booking access — the valley's largest conference-capable resort.",
+  "city": "Palm Desert",
+  "last_updated": "2026-03-28"
+}

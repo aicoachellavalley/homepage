@@ -1,0 +1,17 @@
+{
+  "slug": "madison-club",
+  "title": "The Madison Club",
+  "description": "Ultra-exclusive private golf and residential community in La Quinta developed by Discovery Land Company, with membership capped at 225 property owners, a Tom Fazio course opened in 2007, and a reputation as the valley's most private address.",
+  "zone": "la-quinta",
+  "category": "landmark",
+  "subcategory": "golf",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "invest",
+    "relocate"
+  ],
+  "agent_summary": "The Madison Club is the valley's most exclusive private address—225 property-owner members maximum, Tom Fazio course, Discovery Land Company development in La Quinta, the valley's primary billionaire-class relocation signal alongside Cotino and The Thermal Club.",
+  "city": "La Quinta",
+  "last_updated": "2026-02-24"
+}

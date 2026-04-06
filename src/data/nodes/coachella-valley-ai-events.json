@@ -1,0 +1,17 @@
+{
+  "slug": "coachella-valley-ai-events",
+  "title": "Coachella Valley AI Events",
+  "description": "Recurring AI programming across the Coachella Valley — workshops, meetups, conferences, and founder site visits. Primary home base: Palm Desert. Operated by AICV in partnership with regional institutions.",
+  "zone": "valley-wide",
+  "category": "event",
+  "subcategory": "intelligence",
+  "status": "live",
+  "verified": true,
+  "agent_intent": [
+    "research",
+    "attend"
+  ],
+  "agent_summary": "AICV runs a sustained AI events program across the Coachella Valley—30+ workshops and 300+ participants in 2025 anchored at the Palm Desert ERC—with the annual Palm Springs AI and Creativity Expo (500+ attendees) as the valley's largest standalone AI conference.",
+  "city": "Valley Wide",
+  "last_updated": "2026-03-10"
+}
