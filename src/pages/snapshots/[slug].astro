@@ -732,27 +732,7 @@ const arBdr   = gradeBorder(grades.aiReadiness);
       <h1 class="entity-name">{entityName}</h1>
       <p class="snapshot-meta">AICV Intelligence Snapshot &nbsp;·&nbsp; {snapshotLocation} &nbsp;·&nbsp; {snapshotPeriod}</p>
 
-      <!-- Three grade tiles in header, matching IC chair output -->
-      <div class="header-grades">
-        <div class="header-grade-box">
-          <div class="header-grade-tile" style={`background:${brBg};border-color:${brBdr};`}>
-            <span style={`color:${brColor};`}>{grades.buyerReadiness}</span>
-          </div>
-          <div class="header-grade-label">Buyer</div>
-        </div>
-        <div class="header-grade-box">
-          <div class="header-grade-tile" style={`background:${cpBg};border-color:${cpBdr};`}>
-            <span style={`color:${cpColor};`}>{grades.competitivePositioning}</span>
-          </div>
-          <div class="header-grade-label">Comp</div>
-        </div>
-        <div class="header-grade-box">
-          <div class="header-grade-tile" style={`background:${arBg};border-color:${arBdr};`}>
-            <span style={`color:${arColor};`}>{grades.aiReadiness}</span>
-          </div>
-          <div class="header-grade-label">AI</div>
-        </div>
-      </div>
+
     </div>
   </header>
 
@@ -916,9 +896,9 @@ const arBdr   = gradeBorder(grades.aiReadiness);
             <!-- Gate overlay -->
             <div class="ir-gate-overlay" id="ir-gate-overlay">
               <div class="ir-gate-eyebrow">Intelligence Review</div>
-              <p class="ir-gate-headline">The Intelligence Review is available to AICV clients.</p>
-              <p class="ir-gate-body">{cta.body}</p>
-              <a class="ir-cta-button" href={ctaHref}>Request Intelligence Review →</a>
+              <p class="ir-gate-headline">The Full Intelligence Review is available to AICV clients.</p>
+              <p class="ir-gate-body">Contact AICV to unlock access to the full competitive analysis, prioritized actions, and 12-month AI readiness roadmap for this entity.</p>
+              <a class="ir-cta-button" href={ctaHref}>CONTACT AICV TO UNLOCK</a>
               <div class="ir-passphrase-row">
                 <input class="ir-pass-input" type="password" id="ir-pass-input" placeholder="Enter passphrase" autocomplete="off" />
                 <button class="ir-pass-btn" id="ir-pass-btn">Unlock</button>
