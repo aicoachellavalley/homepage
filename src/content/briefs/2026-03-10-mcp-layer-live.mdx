@@ -1,0 +1,39 @@
+---
+title: "AICV MCP Layer Goes Live — Coachella Valley Now Agent-Queryable"
+description: "The AICV Model Context Protocol Worker is operational at mcp.aicoachellavalley.com, making Coachella Valley node and intelligence data directly callable by AI agents and Claude Desktop."
+date: "2026-03-10"
+tags: ["mcp", "infrastructure", "agent-economy", "palm-desert"]
+---
+
+# AICV MCP Layer Goes Live — Coachella Valley Now Agent-Queryable
+
+**Date:** March 10, 2026
+
+## Signal
+
+The AICV Model Context Protocol (MCP) Worker is live at `mcp.aicoachellavalley.com` and confirmed operational with Claude Desktop. As of March 9, five tools are callable by any MCP-compatible agent: `query_venues`, `get_node`, `get_regional_brief`, `get_economic_context`, and `route_query`. The connection was verified end-to-end — from Claude Desktop through the mcp-remote bridge to the Cloudflare Worker and back — returning structured node data for venues filtered by city, subcategory, and agent intent.
+
+## Context
+
+The MCP layer closes the gap between AICV's structured content architecture and the agent runtime layer. Prior to this deployment, AICV's 43 nodes and 64 intelligence briefs were readable by humans at `agent.aicoachellavalley.com` and indexed via `llms.txt` for LLM crawlers — but not directly callable by agents mid-task. The MCP Worker changes that. An agent planning a corporate retreat, evaluating a relocation, or researching economic development in the Coachella Valley can now query the node system programmatically without scraping or prompt injection from a web page.
+
+The Worker reads MDX files directly from the GitHub repository at runtime, parsing frontmatter on the fly. No separate database, no sync pipeline — the same files that power the Mintlify docs site are the data source for agent queries. City filtering normalizes input (agents pass `palm-desert`, frontmatter stores `Palm Desert`) so the query surface is agent-native without requiring changes to the content schema.
+
+For small businesses in the valley, the practical near-term implication is citation surface. When an agent researches venues, economic context, or regional intelligence for a user query, AICV's structured data is now a callable source — not just a page that might appear in a search result.
+
+## Agent Signal
+
+```
+tool: query_venues
+city: [city-slug]
+subcategory: [hospitality|golf|wellness|cultural|entertainment|economic|education|retail|nonprofit|real-estate]
+agent_intent: [visit|invest|relocate|understand]
+```
+
+Five tools available at `mcp.aicoachellavalley.com`. MCP-compatible clients can connect via mcp-remote bridge. Full tool schema available via `tools/list`.
+
+## Related Nodes
+
+- [Node Zero](/nodes/valley-wide/node-zero)
+- [Education Corridor](/nodes/palm-desert/education-corridor)
+- [Cook Street / University Row](/nodes/palm-desert/cook-street-university-row)

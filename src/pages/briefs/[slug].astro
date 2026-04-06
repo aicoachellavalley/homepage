@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('nodes');
+  const entries = await getCollection('briefs');
   return entries.map((entry) => ({
     params: { slug: entry.id.replace(/\.mdx$/, '') },
     props:  { entry },
@@ -12,47 +12,14 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const slug = entry.id.replace(/\.mdx$/, '');
-const { title, description, city, category, subcategory, last_updated } = entry.data;
+const slug        = entry.id.replace(/\.mdx$/, '');
+const { title, description, date, tags } = entry.data;
 
-const canonicalUrl = `https://aicoachellavalley.com/nodes/${slug}/`;
-const pageTitle    = `${title} — AICV Intelligence Node`;
+const canonicalUrl = `https://aicoachellavalley.com/briefs/${slug}/`;
 
-const subcategoryLabels: Record<string, string> = {
-  'hospitality':   'Hospitality',
-  'golf':          'Golf',
-  'wellness':      'Wellness',
-  'cultural':      'Cultural',
-  'entertainment': 'Entertainment',
-  'economic':      'Economic',
-  'education':     'Education',
-  'retail':        'Retail',
-  'intelligence':  'Intelligence',
-  'nonprofit':     'Nonprofit',
-  'real-estate':   'Real Estate',
-  'innovation':    'Innovation',
-};
-const subcatLabel = subcategoryLabels[subcategory ?? ''] ?? subcategory ?? '';
-
-const schemaJson = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: pageTitle,
-  description,
-  dateModified: last_updated || undefined,
-  publisher: {
-    '@type': 'Organization',
-    name: 'AI Coachella Valley',
-    url: 'https://aicoachellavalley.com',
-  },
-  about: {
-    '@type': ['economic', 'nonprofit', 'intelligence', 'education', 'innovation'].includes(category)
-      ? 'Organization'
-      : 'LocalBusiness',
-    name: title,
-    ...(city ? { address: { '@type': 'PostalAddress', addressLocality: city, addressRegion: 'CA' } } : {}),
-  },
-};
+const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
 ---
 
 <!DOCTYPE html>
@@ -60,15 +27,13 @@ const schemaJson = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{pageTitle}</title>
+  <title>{title} — AICV Intelligence Brief</title>
   <meta name="description" content={description} />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href={canonicalUrl} />
-  <meta property="og:title" content={pageTitle} />
+  <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalUrl} />
-
-  <script type="application/ld+json" set:html={JSON.stringify(schemaJson, null, 2)} />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
@@ -104,30 +69,37 @@ const schemaJson = {
     }
     .site-header .inner { max-width: 760px; margin: 0 auto; }
 
-    .node-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-    .badge {
-      font-size: 10px;
+    .brief-date {
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 2px;
+      color: var(--pine-light);
+      margin-bottom: 10px;
     }
-    .badge-subcat { background: rgba(216,255,0,0.12); color: var(--volt); border: 1px solid rgba(216,255,0,0.25); }
-    .badge-city   { background: rgba(255,255,255,0.08); color: var(--sand-dark); }
-
-    .node-title {
+    .brief-title {
       font-family: 'Syne', sans-serif;
-      font-size: 1.9rem;
+      font-size: 1.75rem;
       font-weight: 700;
       color: var(--sand-light);
       line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag-chip {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 2px;
+      background: rgba(216,255,0,0.1);
+      color: var(--volt);
+      border: 1px solid rgba(216,255,0,0.2);
     }
 
     .page-wrap {
@@ -137,8 +109,8 @@ const schemaJson = {
     }
 
     /* Markdown body styles */
-    .node-body h1 { display: none; } /* title already in header */
-    .node-body h2 {
+    .brief-body h1 { display: none; } /* title already in header */
+    .brief-body h2 {
       font-family: 'Syne', sans-serif;
       font-size: 1rem;
       font-weight: 700;
@@ -146,52 +118,50 @@ const schemaJson = {
       text-transform: uppercase;
       color: var(--pine-light);
       margin: 36px 0 12px;
-      padding-top: 4px;
-      border-top: 1px solid var(--sand-dark);
     }
-    .node-body h3 {
+    .brief-body h3 {
       font-family: 'Syne', sans-serif;
       font-size: 0.95rem;
       font-weight: 600;
       color: var(--pine);
-      margin: 20px 0 6px;
+      margin: 24px 0 8px;
     }
-    .node-body p {
+    .brief-body p {
       font-size: 1rem;
       color: var(--pine-dark);
       line-height: 1.75;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
-    .node-body strong { font-weight: 600; color: var(--pine-dark); }
-    .node-body em { font-style: italic; }
-    .node-body ul, .node-body ol {
+    .brief-body strong { font-weight: 600; color: var(--pine-dark); }
+    .brief-body em { font-style: italic; }
+    .brief-body ul, .brief-body ol {
       margin: 0 0 16px 20px;
     }
-    .node-body li {
+    .brief-body li {
       font-size: 1rem;
       color: var(--pine-dark);
       line-height: 1.7;
       margin-bottom: 6px;
     }
-    .node-body a {
+    .brief-body a {
       color: var(--pine);
       text-decoration: underline;
       text-decoration-color: var(--pine-light);
     }
-    .node-body a:hover { color: var(--pine-dark); }
-    .node-body hr {
+    .brief-body a:hover { color: var(--pine-dark); }
+    .brief-body hr {
       border: none;
       border-top: 1px solid var(--sand-dark);
       margin: 32px 0;
     }
-    .node-body blockquote {
+    .brief-body blockquote {
       border-left: 3px solid var(--volt);
       padding: 8px 0 8px 18px;
-      margin: 20px 0;
+      margin: 24px 0;
       background: var(--sand);
       border-radius: 0 4px 4px 0;
     }
-    .node-body blockquote p { margin-bottom: 0; }
+    .brief-body blockquote p { margin-bottom: 0; }
 
     .site-footer {
       margin-top: 60px;
@@ -205,7 +175,7 @@ const schemaJson = {
     .site-footer a:hover { text-decoration: underline; }
 
     @media (max-width: 640px) {
-      .node-title { font-size: 1.5rem; }
+      .brief-title { font-size: 1.4rem; }
       .site-header { padding: 28px 20px 24px; }
     }
   </style>
@@ -214,22 +184,25 @@ const schemaJson = {
 
   <header class="site-header">
     <div class="inner">
-      <div class="node-eyebrow">
-        {subcatLabel && <span class="badge badge-subcat">{subcatLabel}</span>}
-        {city && <span class="badge badge-city">{city}</span>}
-      </div>
-      <h1 class="node-title">{title}</h1>
+      <p class="brief-date">{formattedDate}</p>
+      <h1 class="brief-title">{title}</h1>
+      {tags && tags.length > 0 && (
+        <div class="tag-row">
+          {tags.map((tag: string) => (
+            <span class="tag-chip">{tag}</span>
+          ))}
+        </div>
+      )}
     </div>
   </header>
 
   <div class="page-wrap">
-    <div class="node-body">
+    <div class="brief-body">
       <Content />
     </div>
 
     <footer class="site-footer">
       <p>AI Coachella Valley &nbsp;·&nbsp; <a href="https://aicoachellavalley.com">aicoachellavalley.com</a></p>
-      {last_updated && <p>Last reviewed: {last_updated}</p>}
     </footer>
   </div>
 
