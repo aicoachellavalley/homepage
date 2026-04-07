@@ -257,7 +257,7 @@ function validate(nodes, briefs) {
   }
 
   for (const brief of briefs) {
-    if (brief.date >= BRIEF_AGENT_SIGNAL_CUTOFF && brief.slug !== 'also-noted') {
+    if (brief.date >= BRIEF_AGENT_SIGNAL_CUTOFF && !brief.slug.includes('also-noted')) {
       if (!brief.agent_signal || brief.agent_signal === '') {
         console.warn(`WARN: ${brief.slug} missing agent_signal`);
         warnings++;
@@ -286,6 +286,46 @@ function updateLlmsTxt(filePath, nodeCount, briefCount) {
   content = content.replace(/All \d+ intelligence briefs/g, `All ${briefCount} intelligence briefs`);
   fs.writeFileSync(filePath, content, 'utf8');
   console.log(`llms.txt updated — ${nodeCount} nodes, ${briefCount} briefs`);
+}
+
+// --- llms-full.txt generator ---
+function generateLlmsFullTxt() {
+  const timestamp = new Date().toISOString();
+
+  // Nodes — sorted alphabetically by slug
+  const nodeFiles = walkMdx(NODES_DIR).sort((a, b) =>
+    path.basename(a).localeCompare(path.basename(b))
+  );
+
+  // Briefs — sorted reverse-chronologically by filename
+  const briefFiles = walkMdx(BRIEFS_DIR).sort((a, b) =>
+    path.basename(b).localeCompare(path.basename(a))
+  );
+
+  const nodeSections = nodeFiles.map(filePath => {
+    const slug = path.basename(filePath, '.mdx');
+    const content = fs.readFileSync(filePath, 'utf8');
+    return `## node: ${slug}\n\n${content.trim()}`;
+  });
+
+  const briefSections = briefFiles.map(filePath => {
+    const slug = path.basename(filePath, '.mdx');
+    const content = fs.readFileSync(filePath, 'utf8');
+    return `## brief: ${slug}\n\n${content.trim()}`;
+  });
+
+  const header = [
+    `# AI Coachella Valley — Full Content Dump`,
+    `# Generated: ${timestamp}`,
+    `# Nodes: ${nodeSections.length} | Briefs: ${briefSections.length}`,
+    `# https://aicoachellavalley.com`,
+  ].join('\n');
+
+  const output = [header, ...nodeSections, ...briefSections].join('\n\n---\n\n');
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), output, 'utf8');
+
+  const sizeKb = (Buffer.byteLength(output, 'utf8') / 1024).toFixed(1);
+  console.log(`llms-full.txt  — ${nodeSections.length} nodes, ${briefSections.length} briefs (${sizeKb} KB)`);
 }
 
 // --- IndexNow submission ---
@@ -346,7 +386,8 @@ async function main() {
 
   validate(nodes, briefs);
 
-  updateLlmsTxt(path.join(COM_ROOT, 'llms.txt'), nodes.length, briefs.length);
+  updateLlmsTxt(path.join(PUBLIC_DIR, 'llms.txt'), nodes.length, briefs.length);
+  generateLlmsFullTxt();
 
   await submitToIndexNow([
     "https://aicoachellavalley.com/nodes.json",
