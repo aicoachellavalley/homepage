@@ -1,0 +1,396 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const pageTitle       = 'Intelligence Briefs — AI Coachella Valley';
+const pageDescription = '120 timestamped intelligence briefs tracking AI economy signals across the Coachella Valley — updated daily.';
+const canonicalUrl    = 'https://aicoachellavalley.com/briefs/';
+
+const MONTH_LABELS: Record<string, string> = {
+  '01': 'January', '02': 'February', '03': 'March',
+  '04': 'April',   '05': 'May',      '06': 'June',
+  '07': 'July',    '08': 'August',   '09': 'September',
+  '10': 'October', '11': 'November', '12': 'December',
+};
+
+const DAY_LABELS: Record<string, string> = {
+  '01': 'Jan', '02': 'Feb', '03': 'Mar', '04': 'Apr',
+  '05': 'May', '06': 'Jun', '07': 'Jul', '08': 'Aug',
+  '09': 'Sep', '10': 'Oct', '11': 'Nov', '12': 'Dec',
+};
+
+function monthLabel(ym: string): string {
+  const [year, month] = ym.split('-');
+  return `${MONTH_LABELS[month] ?? month} ${year}`;
+}
+
+function shortDate(date: string): string {
+  // date: YYYY-MM-DD
+  const parts = date.split('-');
+  if (parts.length < 3) return date;
+  const mon = DAY_LABELS[parts[1]] ?? parts[1];
+  const day = parseInt(parts[2], 10).toString();
+  return `${mon} ${day}`;
+}
+
+const allBriefs = await getCollection('briefs');
+
+// Group by YYYY-MM
+const byMonth: Record<string, typeof allBriefs> = {};
+for (const entry of allBriefs) {
+  const date = entry.data.date || '';
+  const ym = date.slice(0, 7); // YYYY-MM
+  if (!byMonth[ym]) byMonth[ym] = [];
+  byMonth[ym].push(entry);
+}
+
+// Sort within each month: newest first
+for (const ym of Object.keys(byMonth)) {
+  byMonth[ym].sort((a, b) => (b.data.date || '').localeCompare(a.data.date || ''));
+}
+
+// Sort month keys: newest first
+const sortedMonths = Object.keys(byMonth).sort((a, b) => b.localeCompare(a));
+---
+
+<Base
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">AICV</div>
+    <div class="nav-logo-words">
+      <span class="nav-logo-aicv">AI Coachella Valley</span>
+      <span class="nav-logo-sub">Intelligence Layer · Coachella Valley</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <a href="/#aio" class="nav-link">Free AIO Tool</a>
+    <a href="/nodes/node-zero" class="nav-docs-btn">Node Zero →</a>
+  </div>
+</nav>
+
+<!-- ─── HEADER ─── -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">AI Coachella Valley · Intelligence Layer</div>
+    <h1 class="page-title">Intelligence Briefs</h1>
+    <p class="page-desc">120 intelligence briefs tracking AI economy signals across the Coachella Valley — updated daily.</p>
+  </div>
+</header>
+
+<!-- ─── BRIEF GROUPS ─── -->
+<main class="briefs-main">
+  {sortedMonths.map((ym) => {
+    const entries = byMonth[ym];
+    return (
+      <section class="month-group">
+        <div class="month-label">{monthLabel(ym)} <span class="month-count">{entries.length}</span></div>
+        <ul class="brief-list">
+          {entries.map((entry) => {
+            const slug = entry.id.replace(/\.mdx$/, '');
+            const { title, description, date } = entry.data;
+            return (
+              <li class="brief-item">
+                <div class="brief-top">
+                  <span class="brief-date">{shortDate(date)}</span>
+                  <a href={`/briefs/${slug}/`} class="brief-title">{title}</a>
+                </div>
+                {description && <p class="brief-desc">{description}</p>}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    );
+  })}
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-copy">
+      © 2026 AI Coachella Valley · <a href="mailto:sat@aicv.co">sat@aicv.co</a>
+    </div>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/nodes/">Nodes</a>
+      <a href="/nodes/node-zero">Node Zero</a>
+      <a href="https://x.com/CoachellaAI">@CoachellaAI</a>
+    </div>
+  </div>
+</footer>
+
+<style is:global>
+  /* ─── NAV ─── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: var(--gunmetal);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--volt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    color: var(--pine);
+    flex-shrink: 0;
+  }
+
+  .nav-logo-words {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 2px;
+  }
+
+  .nav-logo-aicv {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: var(--sand);
+    letter-spacing: 0.04em;
+  }
+
+  .nav-logo-sub {
+    font-size: 0.6rem;
+    font-weight: 300;
+    color: rgba(232,226,208,0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.78rem;
+    color: var(--sand);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover { color: var(--volt); }
+
+  .nav-docs-btn {
+    background: var(--volt);
+    color: var(--pine);
+    padding: 0.45rem 1.1rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-docs-btn:hover { background: #e8ff33; }
+
+  /* ─── PAGE HEADER ─── */
+  .page-header {
+    background: var(--pine-dark);
+    padding: 4rem 3rem 3.5rem;
+    border-bottom: 2px solid var(--pine-light);
+  }
+
+  .page-header-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  .page-eyebrow {
+    font-size: 0.67rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pine-light);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .page-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    color: var(--sand-light);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .page-desc {
+    font-size: 0.95rem;
+    color: rgba(232,226,208,0.65);
+    font-weight: 300;
+    max-width: 64ch;
+    line-height: 1.7;
+  }
+
+  /* ─── MAIN ─── */
+  .briefs-main {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 4rem 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  /* ─── MONTH GROUP ─── */
+  .month-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pine-light);
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--sand-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .month-count {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--sand-dark);
+    letter-spacing: 0;
+  }
+
+  /* ─── BRIEF LIST ─── */
+  .brief-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .brief-item {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(212,204,186,0.4);
+  }
+
+  .brief-item:last-child {
+    border-bottom: none;
+  }
+
+  .brief-top {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .brief-date {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(27,67,50,0.35);
+    flex-shrink: 0;
+    min-width: 3.5rem;
+  }
+
+  .brief-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--pine);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.15s;
+    line-height: 1.35;
+  }
+
+  .brief-title:hover { color: var(--pine-light); }
+
+  .brief-desc {
+    font-size: 0.82rem;
+    color: var(--pine-light);
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 80ch;
+    padding-left: calc(3.5rem + 0.75rem);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--pine-dark);
+    padding: 2rem 3rem;
+    border-top: 1px solid rgba(232,226,208,0.06);
+  }
+
+  .foot-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .foot-copy {
+    font-size: 0.72rem;
+    color: rgba(232,226,208,0.5);
+    font-weight: 300;
+  }
+
+  .foot-copy a {
+    color: rgba(232,226,208,0.5);
+    text-decoration: none;
+  }
+
+  .foot-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .foot-links a {
+    font-size: 0.72rem;
+    color: rgba(232,226,208,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .foot-links a:hover { color: var(--volt); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    nav { padding: 1rem 1.5rem; }
+    .page-header { padding: 3rem 1.5rem 2.5rem; }
+    .briefs-main { padding: 2.5rem 1.5rem 4rem; }
+    footer { padding: 1.75rem 1.5rem; }
+    .foot-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .brief-desc { padding-left: 0; }
+  }
+</style>
+
+</Base>
