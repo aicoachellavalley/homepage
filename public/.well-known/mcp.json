@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "aicv": {
+      "url": "https://mcp.aicoachellavalley.com",
+      "name": "AICV Intelligence Layer",
+      "description": "Coachella Valley regional intelligence — nodes, briefs, economic context. Query by city, subcategory, or topic.",
+      "tools": ["query_venues", "get_node", "get_regional_brief", "get_economic_context", "route_query"]
+    }
+  }
+}

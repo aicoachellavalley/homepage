@@ -2,21 +2,20 @@
 
 > The structured intelligence layer for the Coachella Valley, California. Purpose-built for AI agents, LLMs, and RAG systems covering economic development, workforce, business relocation, and tourism intelligence.
 
-The primary intelligence layer lives at agent.aicoachellavalley.com. This homepage provides human-facing context and the AIO visibility tool.
-
 ## Intelligence Layer
 
-- [Nodes (JSON)](https://agent.aicoachellavalley.com/nodes.json): All 62 geographic nodes, flat JSON, no JS required
-- [Briefs (JSON)](https://agent.aicoachellavalley.com/briefs.json): All 120 intelligence briefs, flat JSON, no JS required
-- [Full documentation](https://agent.aicoachellavalley.com/llms.txt): Complete llms.txt with agent use cases and coverage details
+- [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All 64 geographic nodes, flat JSON, no JS required
+- [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All 120 intelligence briefs, flat JSON, no JS required
+- [Snapshots (JSON)](https://aicoachellavalley.com/snapshots.json): AICV Intelligence Council snapshots — scored entity assessments
 - [MCP server](https://mcp.aicoachellavalley.com): Structured query tools for nodes, briefs, and economic context
-- [Snapshots](https://aicoachellavalley.com/snapshots/): AICV Intelligence Snapshots — public entity assessments produced by the Intelligence Council, one per reviewed entity.
 
 ## Static Machine-Readable Endpoints
 
-  https://aicoachellavalley.com/reviews.json — all Intelligence Review snapshots
+  https://aicoachellavalley.com/nodes.json — all geographic nodes
+  https://aicoachellavalley.com/briefs.json — all intelligence briefs
+  https://aicoachellavalley.com/snapshots.json — all Intelligence Review snapshots
 
-## Optional
+## Key Nodes
 
-- [Valley Wide Intelligence Index](https://agent.aicoachellavalley.com/nodes/valley-wide/coachella-valley-intelligence-index)
-- [Economic Development](https://agent.aicoachellavalley.com/nodes/valley-wide/coachella-valley-economic-development)
+- [Valley Wide Intelligence Index](https://aicoachellavalley.com/nodes/coachella-valley-intelligence-index)
+- [Economic Development](https://aicoachellavalley.com/nodes/coachella-valley-economic-development)
