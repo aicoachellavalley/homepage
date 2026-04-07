@@ -20,6 +20,39 @@ const canonicalUrl = `https://aicoachellavalley.com/briefs/${slug}/`;
 const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric',
 });
+
+const briefSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  'headline': title,
+  'description': description,
+  'datePublished': date,
+  'dateModified': date,
+  'url': `https://aicoachellavalley.com/briefs/${slug}/`,
+  'author': {
+    '@type': 'Organization',
+    'name': 'AI Coachella Valley',
+    'url': 'https://aicoachellavalley.com',
+    'areaServed': {
+      '@type': 'AdministrativeArea',
+      'name': 'Coachella Valley'
+    }
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'AI Coachella Valley',
+    'url': 'https://aicoachellavalley.com',
+    'areaServed': {
+      '@type': 'AdministrativeArea',
+      'name': 'Coachella Valley'
+    }
+  },
+  'isPartOf': {
+    '@type': 'WebSite',
+    'name': 'AI Coachella Valley',
+    'url': 'https://aicoachellavalley.com'
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -179,6 +212,7 @@ const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
       .site-header { padding: 28px 20px 24px; }
     }
   </style>
+  <script type="application/ld+json" set:html={JSON.stringify(briefSchema, null, 2)} />
 </head>
 <body>
 

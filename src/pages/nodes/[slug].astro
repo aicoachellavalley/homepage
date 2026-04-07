@@ -34,24 +34,46 @@ const subcategoryLabels: Record<string, string> = {
 };
 const subcatLabel = subcategoryLabels[subcategory ?? ''] ?? subcategory ?? '';
 
+const schemaTypeMap: Record<string, string> = {
+  'hospitality': 'LocalBusiness',
+  'golf': 'LocalBusiness',
+  'wellness': 'LocalBusiness',
+  'cultural': 'Organization',
+  'entertainment': 'Organization',
+  'retail': 'LocalBusiness',
+  'economic': 'Organization',
+  'innovation': 'Organization',
+  'education': 'Organization',
+  'nonprofit': 'Organization',
+  'intelligence': 'Organization',
+  'real-estate': 'LocalBusiness',
+};
+
+const schemaType = category === 'event'
+  ? 'Event'
+  : (schemaTypeMap[subcategory ?? ''] ?? 'LocalBusiness');
+
 const schemaJson = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: pageTitle,
-  description,
-  dateModified: last_updated || undefined,
-  publisher: {
+  '@type': schemaType,
+  'name': title,
+  'description': description,
+  'url': canonicalUrl,
+  'address': {
+    '@type': 'PostalAddress',
+    'addressLocality': city,
+    'addressRegion': 'CA',
+    'addressCountry': 'US'
+  },
+  'areaServed': {
+    '@type': 'AdministrativeArea',
+    'name': 'Coachella Valley'
+  },
+  'publisher': {
     '@type': 'Organization',
-    name: 'AI Coachella Valley',
-    url: 'https://aicoachellavalley.com',
-  },
-  about: {
-    '@type': ['economic', 'nonprofit', 'intelligence', 'education', 'innovation'].includes(category)
-      ? 'Organization'
-      : 'LocalBusiness',
-    name: title,
-    ...(city ? { address: { '@type': 'PostalAddress', addressLocality: city, addressRegion: 'CA' } } : {}),
-  },
+    'name': 'AI Coachella Valley',
+    'url': 'https://aicoachellavalley.com'
+  }
 };
 ---
 
