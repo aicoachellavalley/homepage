@@ -24,4 +24,19 @@ const nodes = defineCollection({
   }),
 });
 
-export const collections = { briefs, nodes };
+const reports = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/reports' }),
+  schema: z.object({
+    title:       z.string(),
+    description: z.string(),
+    date:        z.string(),
+    period:      z.string(),
+    report_type: z.string(),
+    status:      z.enum(['published', 'draft']),
+    tags:        z.array(z.string()),
+    sections:    z.array(z.string()),
+    canonical:   z.string(),
+  }),
+});
+
+export const collections = { briefs, nodes, reports };

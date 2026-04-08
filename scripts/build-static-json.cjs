@@ -11,7 +11,7 @@ const COM_ROOT   = path.resolve(__dirname, '..');
 const NODES_DIR  = path.join(COM_ROOT, 'src', 'content', 'nodes');
 const BRIEFS_DIR = path.join(COM_ROOT, 'src', 'content', 'briefs');
 const SNAPS_DIR  = path.join(COM_ROOT, 'src', 'data', 'snapshots');
-const REPORTS_DIR = path.join(COM_ROOT, 'src', 'data', 'reports');
+const REPORTS_DIR = path.join(COM_ROOT, 'src', 'content', 'reports');
 const PUBLIC_DIR = path.join(COM_ROOT, 'public');
 
 // --- Frontmatter parser (no external deps) ---
@@ -212,16 +212,28 @@ function buildSnapshots(nodeSlugs) {
 
 // --- Build reports.json ---
 function buildReports() {
-  if (!fs.existsSync(REPORTS_DIR)) return [];
+  const files = walkMdx(REPORTS_DIR);
   const reports = [];
 
-  for (const fname of fs.readdirSync(REPORTS_DIR)) {
-    if (!fname.endsWith('.json') || fname.startsWith('_')) continue;
-    const raw = fs.readFileSync(path.join(REPORTS_DIR, fname), 'utf8');
-    let data;
-    try { data = JSON.parse(raw); } catch { continue; }
-    if (data.status !== 'published') continue;
-    reports.push(data);
+  for (const filePath of files) {
+    const content = fs.readFileSync(filePath, 'utf8');
+    const fm = parseFrontmatter(content);
+    if (!fm.title) continue;
+    if (fm.status !== 'published') continue;
+
+    const slug = path.basename(filePath, '.mdx');
+
+    reports.push({
+      slug,
+      title:       fm.title       || '',
+      description: fm.description || '',
+      date:        fm.date        || '',
+      period:      fm.period      || '',
+      report_type: fm.report_type || '',
+      tags:        Array.isArray(fm.tags)     ? fm.tags     : [],
+      sections:    Array.isArray(fm.sections) ? fm.sections : [],
+      canonical:   fm.canonical   || '',
+    });
   }
 
   reports.sort((a, b) => {
@@ -277,15 +289,16 @@ function validate(nodes, briefs) {
 }
 
 // --- llms.txt count updater ---
-function updateLlmsTxt(filePath, nodeCount, briefCount) {
+function updateLlmsTxt(filePath, nodeCount, briefCount, reportCount) {
   if (!fs.existsSync(filePath)) return;
   let content = fs.readFileSync(filePath, 'utf8');
-  content = content.replace(/\d+ geographic nodes/g, `${nodeCount} geographic nodes`);
-  content = content.replace(/\d+ intelligence briefs/g, `${briefCount} intelligence briefs`);
-  content = content.replace(/All \d+ geographic nodes/g, `All ${nodeCount} geographic nodes`);
+  content = content.replace(/\d+ geographic nodes/g,        `${nodeCount} geographic nodes`);
+  content = content.replace(/\d+ intelligence briefs/g,     `${briefCount} intelligence briefs`);
+  content = content.replace(/\d+ published reports/g,       `${reportCount} published reports`);
+  content = content.replace(/All \d+ geographic nodes/g,    `All ${nodeCount} geographic nodes`);
   content = content.replace(/All \d+ intelligence briefs/g, `All ${briefCount} intelligence briefs`);
   fs.writeFileSync(filePath, content, 'utf8');
-  console.log(`llms.txt updated — ${nodeCount} nodes, ${briefCount} briefs`);
+  console.log(`llms.txt updated — ${nodeCount} nodes, ${briefCount} briefs, ${reportCount} reports`);
 }
 
 // --- llms-full.txt generator ---
@@ -386,7 +399,7 @@ async function main() {
 
   validate(nodes, briefs);
 
-  updateLlmsTxt(path.join(PUBLIC_DIR, 'llms.txt'), nodes.length, briefs.length);
+  updateLlmsTxt(path.join(PUBLIC_DIR, 'llms.txt'), nodes.length, briefs.length, reports.length);
   generateLlmsFullTxt();
 
   await submitToIndexNow([
