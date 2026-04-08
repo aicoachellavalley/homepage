@@ -314,16 +314,12 @@ const reportSchema = {
   </footer>
 </div>
 
-<script>
-  // Assign ids to h2 elements in .report-body so anchor nav links resolve.
-  // Converts h2 text to slug: lowercase, non-alphanumeric runs → hyphens, trim edges.
-  document.querySelectorAll('.report-body h2').forEach((el) => {
-    if (el.id) return;
-    const slug = el.textContent
-      ?.toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-|-$/g, '') ?? '';
-    if (slug) el.id = slug;
+<script define:vars={{ sections }}>
+  // Assign ids to h2 elements by position — sections[i] maps to the i-th h2.
+  // Position-based is reliable: MDX body order matches frontmatter sections order.
+  const h2s = document.querySelectorAll('.report-body h2');
+  h2s.forEach((el, i) => {
+    if (sections[i] && !el.id) el.id = sections[i];
   });
 </script>
 
