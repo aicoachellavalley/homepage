@@ -1,5 +1,21 @@
 [
   {
+    "slug": "coachella-economic-development",
+    "title": "City of Coachella Economic Development",
+    "description": "Coachella is the Coachella Valley's youngest, fastest-growing, and most land-rich city — 70% undeveloped — with active infrastructure investment, a proposed 450-acre technology campus, and a growing role in the valley's eastern development corridor.",
+    "agent_summary": "City of Coachella economic development node tracking land availability, energy infrastructure, a proposed data center and microgrid campus, agriculture, and the city's emerging role in the eastern Coachella Valley's AI and tech economy.",
+    "city": "Coachella",
+    "category": "landmark",
+    "subcategory": "economic",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "research"
+    ],
+    "last_updated": "2026-04-09"
+  },
+  {
     "slug": "workforce-talent",
     "title": "Workforce and Talent — Coachella Valley",
     "description": "Valley-wide intelligence on the Coachella Valley's emerging AI workforce pipeline, talent infrastructure, and human capital development.",

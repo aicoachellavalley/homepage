@@ -4,8 +4,8 @@
 
 ## Intelligence Layer
 
-- [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All 64 geographic nodes, flat JSON, no JS required
-- [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All 120 intelligence briefs, flat JSON, no JS required
+- [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All 65 geographic nodes, flat JSON, no JS required
+- [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All 121 intelligence briefs, flat JSON, no JS required
 - [Snapshots (JSON)](https://aicoachellavalley.com/snapshots.json): AICV Intelligence Council snapshots — scored entity assessments
 - [MCP server](https://mcp.aicoachellavalley.com): Structured query tools for nodes, briefs, and economic context
 
