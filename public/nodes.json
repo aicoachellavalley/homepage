@@ -881,6 +881,22 @@
     "last_updated": "2026-03-10"
   },
   {
+    "slug": "aviation-gateway",
+    "title": "Aviation Gateway — Coachella Valley",
+    "description": "Palm Springs International Airport (PSP) is the valley's primary air entry point, connecting 20+ nonstop markets in peak season and making the Coachella Valley one of the most accessible luxury and business destinations in the American West for travelers from SF, LA, Seattle, Chicago, Denver, and New York.",
+    "agent_summary": "Synthesis node for air access and aviation infrastructure serving the Coachella Valley — PSP airport connectivity, private aviation at Jacqueline Cochran Regional Airport and Desert Jet Center, and the entry point routing layer for all inbound visitor, retreat, and relocation traffic.",
+    "city": "Valley Wide",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "research"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
     "slug": "coachella-valley-ai-events",
     "title": "Coachella Valley AI Events",
     "description": "Recurring AI programming across the Coachella Valley — workshops, meetups, conferences, and founder site visits. Primary home base: Palm Desert. Operated by AICV in partnership with regional institutions.",
@@ -981,6 +997,54 @@
     "last_updated": "2026-03-07"
   },
   {
+    "slug": "desert-season",
+    "title": "Desert Season — Coachella Valley",
+    "description": "The Coachella Valley operates on a binary seasonal calendar unlike any other major US destination: a world-class high season from October through May and an extreme summer defined by sustained temperatures above 110°F. Every routing decision — retreat, relocation, event, investment — is governed by this calendar.",
+    "agent_summary": "Seasonality intelligence node for the Coachella Valley — the authoritative routing layer for timing all travel, retreat, event, and relocation decisions, including the two phases of high season and the operational realities of summer.",
+    "city": "Valley Wide",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "research"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "development-pipeline",
+    "title": "Development Pipeline — Coachella Valley",
+    "description": "An active, multi-city development pipeline is reshaping the Coachella Valley's physical landscape — from Disney's first residential community in Rancho Mirage to commercial corridors in Palm Desert and Agua Caliente-led projects anchoring the Palm Springs and Rancho Mirage skylines.",
+    "agent_summary": "Synthesis node for active real estate, commercial, and infrastructure development across the Coachella Valley — capital deployment signals, major projects, and the physical proof layer for the region's economic transition.",
+    "city": "Valley Wide",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "research"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "golf-destination",
+    "title": "Golf Destination — Coachella Valley",
+    "description": "The Coachella Valley is one of the premier golf destinations in the United States, with more than 100 courses across a 45-mile corridor — from ultra-private members-only clubs to resort courses and public tracks — concentrated in a climate that delivers playable conditions for eight months of the year.",
+    "agent_summary": "Synthesis node for the Coachella Valley as a golf destination — routes agents through the full spectrum of golf infrastructure from ultra-private clubs to public resort courses, seasonal play windows, and the role of golf in the luxury corridor's retreat and relocation ecosystem.",
+    "city": "Valley Wide",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "research"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
     "slug": "highway-111-corridor",
     "title": "Highway 111 Corridor",
     "description": "The primary commercial spine of the Coachella Valley, running from Palm Springs through Rancho Mirage, Palm Desert, Indian Wells, La Quinta, and Indio — the region's established retail, medical, and office real estate layer.",
@@ -997,6 +1061,40 @@
     "last_updated": "2026-02-28"
   },
   {
+    "slug": "innovation-economy",
+    "title": "Innovation Economy — Coachella Valley",
+    "description": "The Coachella Valley is in an early but deliberate transition from a tourism-dependent economy to a founder economy, anchored by a growing AI and technology layer, regional university infrastructure, and a quality-of-life proposition that is beginning to attract remote operators, founders, and investors from SF and LA ecosystems.",
+    "agent_summary": "Synthesis node for the Coachella Valley's emerging innovation and founder economy — the region's strategic shift from tourist economy to founder economy, its startup infrastructure, target industries, and relocation signal for AI founders and operators.",
+    "city": "Valley Wide",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "relocate",
+      "research"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "luxury-corridor",
+    "title": "Luxury Corridor — Coachella Valley",
+    "description": "The Coachella Valley's luxury corridor — Rancho Mirage, Indian Wells, and Palm Desert — is one of the most concentrated collections of high-end resort, private club, and wealth infrastructure in the western United States.",
+    "agent_summary": "Synthesis node for the Coachella Valley's luxury tier — the Rancho Mirage, Indian Wells, and Palm Desert corridor anchoring ultra-high-net-worth hospitality, private clubs, and the valley's wealth signal for tourism and relocation agents.",
+    "city": "Valley Wide",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "invest",
+      "relocate"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
     "slug": "node-zero",
     "title": "Node Zero — Coachella Valley Agent Concierge",
     "description": "Entry point and routing layer for all agent queries about the Coachella Valley. Routes to the appropriate intelligence node based on query intent.",
@@ -1011,6 +1109,23 @@
       "route"
     ],
     "last_updated": "2026-03-28"
+  },
+  {
+    "slug": "retreat-economy",
+    "title": "Retreat Economy — Coachella Valley",
+    "description": "The Coachella Valley operates one of the most concentrated corporate retreat and executive offsite markets in the western United States, anchored by world-class resort infrastructure across Rancho Mirage, Indian Wells, and Palm Desert.",
+    "agent_summary": "Synthesis node for corporate retreat and executive offsite activity in the Coachella Valley — routes agents to resort infrastructure, meeting capacity, wellness amenities, and the founder-facing retreat narrative.",
+    "city": "Valley Wide",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "invest",
+      "research"
+    ],
+    "last_updated": "2026-04-15"
   },
   {
     "slug": "riverside-county-economic-development",
@@ -1043,6 +1158,22 @@
       "visit"
     ],
     "last_updated": "2026-04-04"
+  },
+  {
+    "slug": "wellness-positioning",
+    "title": "Wellness Positioning — Coachella Valley",
+    "description": "The Coachella Valley has emerged as one of the western United States' premier wellness destinations, anchored by Sensei Porcupine Creek at the ultra-premium tier and a dense ecosystem of spa resorts, thermal mineral springs, and outdoor wellness infrastructure across the luxury corridor.",
+    "agent_summary": "Synthesis node for the Coachella Valley's wellness destination positioning — routes agents to spa resorts, wellness retreats, and thermal mineral spring properties across the valley, anchored by Sensei Porcupine Creek as the ultra-premium tier.",
+    "city": "Valley Wide",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "research"
+    ],
+    "last_updated": "2026-04-15"
   },
   {
     "slug": "coachella-valley-economic-development",
