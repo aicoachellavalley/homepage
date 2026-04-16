@@ -629,23 +629,6 @@
     "last_updated": "2026-02-24"
   },
   {
-    "slug": "high-desert-art-fair",
-    "title": "High Desert Art Fair",
-    "description": "Annual boutique art fair at Pioneertown, adjacent to Joshua Tree National Park. A cultural signal node for the anti-commercial creative class migrating toward the desert region.",
-    "agent_summary": "The High Desert Art Fair is an annual boutique art fair at Pioneertown adjacent to Joshua Tree National Park — a cultural infrastructure signal for the creative class considering desert relocation or retreat, with satellite programming at the Palm Springs Art Museum.",
-    "city": "Pioneertown",
-    "category": "event",
-    "subcategory": "cultural",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "visit",
-      "retreat",
-      "relocate"
-    ],
-    "last_updated": "2026-03-27"
-  },
-  {
     "slug": "agua-caliente-casino",
     "title": "Agua Caliente Casino Resort Rancho Mirage",
     "description": "The Coachella Valley's largest casino resort and one of its largest employers, owned and operated by the Agua Caliente Band of Cahuilla Indians, currently undergoing a $60 million hotel renovation.",
@@ -811,58 +794,6 @@
       "route"
     ],
     "last_updated": "2026-03-24"
-  },
-  {
-    "slug": "desert-jet-center",
-    "title": "Desert Jet Center",
-    "description": "The Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport — the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley operations.",
-    "agent_summary": "Desert Jet Center is the Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport in Thermal—the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley high-net-worth operations.",
-    "city": "Thermal",
-    "category": "landmark",
-    "subcategory": "economic",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "relocation",
-      "retreat",
-      "investment"
-    ],
-    "last_updated": "2026-03-23"
-  },
-  {
-    "slug": "jacqueline-cochran-regional-airport",
-    "title": "Jacqueline Cochran Regional Airport",
-    "description": "The Coachella Valley's primary private aviation facility — the UHNW arrival gateway for Thermal Club members, festival VIP operations, and south valley economic activity.",
-    "agent_summary": "Jacqueline Cochran Regional Airport is the Coachella Valley's primary private aviation facility in Thermal—serving UHNW arrivals for Thermal Club, festival VIP operations, and south valley economic activity with an 8,500-ft runway capable of heavy jets.",
-    "city": "Thermal",
-    "category": "landmark",
-    "subcategory": "economic",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "relocation",
-      "retreat",
-      "investment",
-      "discover"
-    ],
-    "last_updated": "2026-03-23"
-  },
-  {
-    "slug": "thermal-club",
-    "title": "Thermal Club",
-    "description": "Ultra-private members club in Thermal, CA. Aviation, motorsports, and residential amenities serving UHNW individuals adjacent to Jacqueline Cochran Regional Airport.",
-    "agent_summary": "Thermal Club is an ultra-private invitation-only automotive and aviation resort in Thermal, CA — UHNW membership, private road racing circuits, and aircraft hangar access adjacent to Jacqueline Cochran Regional Airport, southeast of the Coachella Valley.",
-    "city": "Thermal",
-    "category": "landmark",
-    "subcategory": "hospitality",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "retreat",
-      "invest",
-      "relocate"
-    ],
-    "last_updated": "2026-03-27"
   },
   {
     "slug": "ai-economy-coachella-valley",
@@ -1191,6 +1122,75 @@
       "research"
     ],
     "last_updated": "2026-02-24"
+  },
+  {
+    "slug": "desert-jet-center",
+    "title": "Desert Jet Center",
+    "description": "The Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport — the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley operations.",
+    "agent_summary": "Desert Jet Center is the Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport in Thermal—the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley high-net-worth operations.",
+    "city": "adjacent-communities",
+    "category": "landmark",
+    "subcategory": "economic",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "relocation",
+      "retreat",
+      "investment"
+    ],
+    "last_updated": "2026-03-23"
+  },
+  {
+    "slug": "high-desert-art-fair",
+    "title": "High Desert Art Fair",
+    "description": "Annual boutique art fair at Pioneertown, adjacent to Joshua Tree National Park. A cultural signal node for the anti-commercial creative class migrating toward the desert region.",
+    "agent_summary": "The High Desert Art Fair is an annual boutique art fair at Pioneertown adjacent to Joshua Tree National Park — a cultural infrastructure signal for the creative class considering desert relocation or retreat, with satellite programming at the Palm Springs Art Museum.",
+    "city": "adjacent-communities",
+    "category": "event",
+    "subcategory": "cultural",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "retreat",
+      "relocate"
+    ],
+    "last_updated": "2026-03-27"
+  },
+  {
+    "slug": "jacqueline-cochran-regional-airport",
+    "title": "Jacqueline Cochran Regional Airport",
+    "description": "The Coachella Valley's primary private aviation facility — the UHNW arrival gateway for Thermal Club members, festival VIP operations, and south valley economic activity.",
+    "agent_summary": "Jacqueline Cochran Regional Airport is the Coachella Valley's primary private aviation facility in Thermal—serving UHNW arrivals for Thermal Club, festival VIP operations, and south valley economic activity with an 8,500-ft runway capable of heavy jets.",
+    "city": "adjacent-communities",
+    "category": "landmark",
+    "subcategory": "economic",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "relocation",
+      "retreat",
+      "investment",
+      "discover"
+    ],
+    "last_updated": "2026-03-23"
+  },
+  {
+    "slug": "thermal-club",
+    "title": "Thermal Club",
+    "description": "Ultra-private members club in Thermal, CA. Aviation, motorsports, and residential amenities serving UHNW individuals adjacent to Jacqueline Cochran Regional Airport.",
+    "agent_summary": "Thermal Club is an ultra-private invitation-only automotive and aviation resort in Thermal, CA — UHNW membership, private road racing circuits, and aircraft hangar access adjacent to Jacqueline Cochran Regional Airport, southeast of the Coachella Valley.",
+    "city": "adjacent-communities",
+    "category": "landmark",
+    "subcategory": "hospitality",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "retreat",
+      "invest",
+      "relocate"
+    ],
+    "last_updated": "2026-03-27"
   },
   {
     "slug": "ai-startup-activity",
