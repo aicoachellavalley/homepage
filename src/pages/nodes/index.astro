@@ -2,22 +2,20 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 
-const pageTitle       = 'Intelligence Nodes — AI Coachella Valley';
-const pageDescription = '64 geographic intelligence nodes covering the Coachella Valley\'s AI economy — venues, institutions, and infrastructure documented for agents and researchers.';
-const canonicalUrl    = 'https://aicoachellavalley.com/nodes/';
-
 const CITY_ORDER = [
-  'Coachella Valley',
+  'Valley Wide',
   'Rancho Mirage',
   'Palm Desert',
   'Indian Wells',
   'La Quinta',
   'Palm Springs',
   'Indio',
+  'Coachella',
   'Adjacent Communities',
 ];
 
 const CITY_LABELS: Record<string, string> = {
+  'Valley Wide':          'Valley Wide',
   'Coachella Valley':     'Valley Wide',
   'Rancho Mirage':        'Rancho Mirage',
   'Palm Desert':          'Palm Desert',
@@ -25,20 +23,50 @@ const CITY_LABELS: Record<string, string> = {
   'La Quinta':            'La Quinta',
   'Palm Springs':         'Palm Springs',
   'Indio':                'Indio',
+  'Coachella':            'Coachella',
   'Adjacent Communities': 'Adjacent Communities',
 };
 
+const CITY_SLUG: Record<string, string> = {
+  'Valley Wide':          'valley-wide',
+  'Coachella Valley':     'valley-wide',
+  'Rancho Mirage':        'rancho-mirage',
+  'Palm Desert':          'palm-desert',
+  'Indian Wells':         'indian-wells',
+  'La Quinta':            'la-quinta',
+  'Palm Springs':         'palm-springs',
+  'Indio':                'indio',
+  'Coachella':            'coachella',
+  'Adjacent Communities': 'adjacent-communities',
+};
+
 const allNodes = await getCollection('nodes');
+const totalNodes = allNodes.length;
+
+// Normalize city values — group "Valley Wide", "Valley-Wide", "valley-wide", "Coachella Valley" together
+function normalizeCity(city: string): string {
+  const s = city.trim().toLowerCase().replace(/-/g, ' ');
+  if (s === 'valley wide' || s === 'coachella valley') return 'Valley Wide';
+  // Title-case lookup
+  for (const k of Object.keys(CITY_LABELS)) {
+    if (k.toLowerCase() === s) return k;
+  }
+  return city;
+}
 
 const byCity: Record<string, typeof allNodes> = {};
 for (const entry of allNodes) {
-  const city = entry.data.city || 'Other';
+  const city = normalizeCity(entry.data.city || 'Other');
   if (!byCity[city]) byCity[city] = [];
   byCity[city].push(entry);
 }
 for (const city of Object.keys(byCity)) {
   byCity[city].sort((a, b) => a.data.title.localeCompare(b.data.title));
 }
+
+const pageTitle       = 'Intelligence Nodes — AI Coachella Valley';
+const pageDescription = `The complete AICV node directory — ${totalNodes} geographic and concept nodes documenting the Coachella Valley's institutions, infrastructure, and intelligence layer for AI agents and search.`;
+const canonicalUrl    = 'https://aicoachellavalley.com/nodes/';
 ---
 
 <Base
@@ -68,18 +96,49 @@ for (const city of Object.keys(byCity)) {
   <div class="page-header-inner">
     <div class="page-eyebrow">AI Coachella Valley · Intelligence Layer</div>
     <h1 class="page-title">Intelligence Nodes</h1>
-    <p class="page-desc">64 intelligence nodes across the Coachella Valley — venues, institutions, and infrastructure documented for AI agents and researchers.</p>
+    <p class="page-desc">{totalNodes} intelligence nodes across the Coachella Valley — venues, institutions, and infrastructure documented for AI agents and researchers.</p>
   </div>
 </header>
+
+<!-- ─── FILTER NAV ─── -->
+<div class="filter-bar">
+  <div class="filter-bar-inner">
+    <span class="filter-label">Browse by city</span>
+    <div class="filter-links">
+      <a href="/nodes/city/valley-wide/">Valley Wide</a>
+      <a href="/nodes/city/rancho-mirage/">Rancho Mirage</a>
+      <a href="/nodes/city/palm-desert/">Palm Desert</a>
+      <a href="/nodes/city/indian-wells/">Indian Wells</a>
+      <a href="/nodes/city/la-quinta/">La Quinta</a>
+      <a href="/nodes/city/palm-springs/">Palm Springs</a>
+      <a href="/nodes/city/indio/">Indio</a>
+    </div>
+    <span class="filter-divider">|</span>
+    <span class="filter-label">By category</span>
+    <div class="filter-links">
+      <a href="/nodes/category/intelligence/">Concept Nodes</a>
+      <a href="/nodes/category/hospitality/">Hospitality</a>
+      <a href="/nodes/category/golf/">Golf</a>
+      <a href="/nodes/category/wellness/">Wellness</a>
+      <a href="/nodes/category/innovation/">Innovation</a>
+      <a href="/nodes/category/economic/">Economic</a>
+    </div>
+  </div>
+</div>
 
 <!-- ─── NODE GROUPS ─── -->
 <main class="nodes-main">
   {CITY_ORDER.map((city) => {
     const entries = byCity[city];
     if (!entries || entries.length === 0) return null;
+    const citySlug = CITY_SLUG[city] ?? city.toLowerCase().replace(/\s+/g, '-');
     return (
       <section class="city-group">
-        <div class="city-label">{CITY_LABELS[city] ?? city} <span class="city-count">{entries.length}</span></div>
+        <div class="city-label">
+          {CITY_LABELS[city] ?? city}
+          <span class="city-count">{entries.length}</span>
+          <a href={`/nodes/city/${citySlug}/`} class="city-browse">Browse all →</a>
+        </div>
         <ul class="node-list">
           {entries.map((entry) => {
             const slug = entry.id.replace(/\.mdx$/, '');
@@ -202,6 +261,57 @@ for (const city of Object.keys(byCity)) {
 
   .nav-docs-btn:hover { background: #e8ff33; }
 
+  /* ─── FILTER BAR ─── */
+  .filter-bar {
+    background: var(--pine-dark);
+    border-bottom: 1px solid rgba(232,226,208,0.06);
+    padding: 0.75rem 3rem;
+  }
+
+  .filter-bar-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--pine-light);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .filter-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-links a {
+    font-size: 0.72rem;
+    color: var(--sand);
+    text-decoration: none;
+    border: 1px solid rgba(232,226,208,0.12);
+    padding: 3px 10px;
+    border-radius: 3px;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .filter-links a:hover {
+    border-color: var(--volt);
+    color: var(--volt);
+  }
+
+  .filter-divider {
+    color: rgba(232,226,208,0.2);
+    font-size: 0.8rem;
+  }
+
   /* ─── PAGE HEADER ─── */
   .page-header {
     background: var(--pine-dark);
@@ -252,8 +362,6 @@ for (const city of Object.keys(byCity)) {
   }
 
   /* ─── CITY GROUP ─── */
-  .city-group {}
-
   .city-label {
     font-family: 'Syne', sans-serif;
     font-size: 0.65rem;
@@ -277,6 +385,20 @@ for (const city of Object.keys(byCity)) {
     letter-spacing: 0;
   }
 
+  .city-browse {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--volt);
+    text-decoration: none;
+    letter-spacing: 0;
+    margin-left: auto;
+    opacity: 0.7;
+    transition: opacity 0.15s;
+  }
+
+  .city-browse:hover { opacity: 1; }
+
   /* ─── NODE LIST ─── */
   .node-list {
     list-style: none;
@@ -290,9 +412,7 @@ for (const city of Object.keys(byCity)) {
     border-bottom: 1px solid rgba(212,204,186,0.4);
   }
 
-  .node-item:last-child {
-    border-bottom: none;
-  }
+  .node-item:last-child { border-bottom: none; }
 
   .node-top {
     display: flex;
@@ -374,6 +494,8 @@ for (const city of Object.keys(byCity)) {
   /* ─── RESPONSIVE ─── */
   @media (max-width: 860px) {
     nav { padding: 1rem 1.5rem; }
+    .filter-bar { padding: 0.75rem 1.5rem; }
+    .filter-divider { display: none; }
     .page-header { padding: 3rem 1.5rem 2.5rem; }
     .nodes-main { padding: 2.5rem 1.5rem 4rem; }
     footer { padding: 1.75rem 1.5rem; }

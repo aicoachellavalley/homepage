@@ -1,0 +1,238 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+
+const CATEGORY_LABELS: Record<string, string> = {
+  'hospitality':   'Hospitality',
+  'golf':          'Golf',
+  'wellness':      'Wellness',
+  'cultural':      'Cultural',
+  'entertainment': 'Entertainment',
+  'economic':      'Economic Development',
+  'education':     'Education',
+  'retail':        'Retail',
+  'intelligence':  'Intelligence & Concept',
+  'nonprofit':     'Nonprofit & Philanthropy',
+  'real-estate':   'Real Estate',
+  'innovation':    'Innovation',
+  'media':         'Media',
+};
+
+const CATEGORY_DESCRIPTIONS: Record<string, string> = {
+  'hospitality':   'Resorts, hotels, and hospitality infrastructure across the Coachella Valley luxury corridor.',
+  'golf':          'Private clubs and resort courses across the valley\'s 100+ course golf destination.',
+  'wellness':      'Spa resorts, wellness retreats, and thermal mineral spring properties.',
+  'cultural':      'Cultural institutions, museums, and arts infrastructure.',
+  'entertainment': 'Entertainment venues, festivals, and events.',
+  'economic':      'City and regional economic development offices and programs.',
+  'education':     'University, college, and workforce development institutions.',
+  'retail':        'Retail corridors and shopping destinations.',
+  'intelligence':  'Concept and synthesis nodes — the AICV knowledge graph routing layer for retreat, innovation, wellness, golf, and seasonal intelligence.',
+  'nonprofit':     'Nonprofit organizations and philanthropic infrastructure.',
+  'real-estate':   'Real estate development and residential communities.',
+  'innovation':    'Innovation ecosystems, startup infrastructure, and tech economy nodes.',
+  'media':         'Local media outlets and journalism organizations.',
+};
+
+export async function getStaticPaths() {
+  const allNodes = await getCollection('nodes');
+  const categories = [...new Set(allNodes.map(n => n.data.subcategory).filter(Boolean))];
+  return categories.map(category => ({
+    params: { category },
+    props: {
+      nodes: allNodes
+        .filter(n => n.data.subcategory === category)
+        .sort((a, b) => a.data.title.localeCompare(b.data.title)),
+      category,
+    },
+  }));
+}
+
+const { nodes, category } = Astro.props;
+const categoryLabel = CATEGORY_LABELS[category] ?? category;
+const categoryDesc  = CATEGORY_DESCRIPTIONS[category] ?? `AICV nodes in the ${categoryLabel} category.`;
+const pageTitle     = `${categoryLabel} — Coachella Valley Nodes · AI Coachella Valley`;
+const pageDescription = `${categoryDesc} ${nodes.length} nodes in the AICV Coachella Valley intelligence layer.`;
+const canonicalUrl  = `https://aicoachellavalley.com/nodes/category/${category}/`;
+---
+
+<Base
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">AICV</div>
+    <div class="nav-logo-words">
+      <span class="nav-logo-aicv">AI Coachella Valley</span>
+      <span class="nav-logo-sub">Intelligence Layer · Coachella Valley</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <a href="/reports/" class="nav-link">Reports</a>
+    <a href="/#aio" class="nav-link">Free AIO Tool</a>
+    <a href="/nodes/node-zero" class="nav-docs-btn">Node Zero →</a>
+  </div>
+</nav>
+
+<!-- ─── HEADER ─── -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">
+      <a href="/nodes/" class="breadcrumb-link">Intelligence Nodes</a>
+      {' → '}
+      {categoryLabel}
+    </div>
+    <h1 class="page-title">{categoryLabel}</h1>
+    <p class="page-desc">{categoryDesc}</p>
+  </div>
+</header>
+
+<!-- ─── NODE LIST ─── -->
+<main class="nodes-main">
+  <div class="node-grid">
+    {nodes.map((node) => {
+      const slug = node.id.replace(/\.mdx$/, '');
+      return (
+        <a href={`/nodes/${slug}/`} class="node-card">
+          <div class="node-card-top">
+            <span class="node-card-title">{node.data.title}</span>
+            {node.data.city && (
+              <span class="node-card-city">{node.data.city}</span>
+            )}
+          </div>
+          {node.data.agent_summary && (
+            <p class="node-card-summary">{node.data.agent_summary}</p>
+          )}
+        </a>
+      );
+    })}
+  </div>
+
+  <!-- ─── CATEGORY NAV ─── -->
+  <div class="cat-nav">
+    <div class="cat-nav-label">Browse all categories</div>
+    <div class="cat-nav-links">
+      {Object.entries(CATEGORY_LABELS).map(([slug, label]) => (
+        <a
+          href={`/nodes/category/${slug}/`}
+          class={slug === category ? 'active' : ''}
+        >{label}</a>
+      ))}
+    </div>
+  </div>
+
+  <div class="back-row">
+    <a href="/nodes/" class="back-link">← All nodes</a>
+  </div>
+</main>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-copy">
+      © 2026 AI Coachella Valley · <a href="mailto:sat@aicv.co">sat@aicv.co</a>
+    </div>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/nodes/">Nodes</a>
+      <a href="/reports/">Reports</a>
+      <a href="https://x.com/CoachellaAI">@CoachellaAI</a>
+    </div>
+  </div>
+</footer>
+
+<style is:global>
+  /* ─── NAV ─── */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem; background: var(--gunmetal); position: sticky; top: 0; z-index: 50;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .nav-logo-mark {
+    width: 36px; height: 36px; background: var(--volt);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 11px;
+    color: var(--pine); flex-shrink: 0;
+  }
+  .nav-logo-words { display: flex; flex-direction: column; line-height: 1; gap: 2px; }
+  .nav-logo-aicv { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.9rem; color: var(--sand); letter-spacing: 0.04em; }
+  .nav-logo-sub { font-size: 0.6rem; font-weight: 300; color: rgba(232,226,208,0.4); letter-spacing: 0.08em; text-transform: uppercase; }
+  .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-link { font-size: 0.78rem; color: var(--sand); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+  .nav-link:hover { color: var(--volt); }
+  .nav-docs-btn {
+    background: var(--volt); color: var(--pine); padding: 0.45rem 1.1rem;
+    font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.08em; text-decoration: none; transition: background 0.2s;
+  }
+  .nav-docs-btn:hover { background: #e8ff33; }
+
+  /* ─── PAGE HEADER ─── */
+  .page-header { background: var(--pine-dark); padding: 4rem 3rem 3.5rem; border-bottom: 2px solid var(--pine-light); }
+  .page-header-inner { max-width: 1060px; margin: 0 auto; }
+  .page-eyebrow { font-size: 0.67rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pine-light); font-weight: 500; margin-bottom: 1rem; }
+  .breadcrumb-link { color: var(--volt); text-decoration: none; }
+  .breadcrumb-link:hover { text-decoration: underline; }
+  .page-title {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3.25rem); color: var(--sand-light);
+    letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 1rem;
+  }
+  .page-desc { font-size: 0.95rem; color: rgba(232,226,208,0.65); font-weight: 300; max-width: 64ch; line-height: 1.7; }
+
+  /* ─── MAIN ─── */
+  .nodes-main { max-width: 1060px; margin: 0 auto; padding: 3rem 3rem 5rem; }
+
+  /* ─── NODE GRID ─── */
+  .node-grid { display: flex; flex-direction: column; gap: 2px; margin-bottom: 3rem; }
+  .node-card {
+    padding: 1.1rem 1.25rem; border: 1px solid rgba(232,226,208,0.06);
+    border-radius: 4px; text-decoration: none; display: block;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .node-card:hover { border-color: rgba(232,226,208,0.18); background: rgba(27,67,50,0.15); }
+  .node-card-top { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.35rem; }
+  .node-card-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--sand); letter-spacing: -0.01em; }
+  .node-card-city { font-size: 0.68rem; color: rgba(232,226,208,0.4); font-weight: 300; }
+  .node-card-summary { font-size: 0.82rem; color: rgba(232,226,208,0.5); font-weight: 300; line-height: 1.55; }
+
+  /* ─── CATEGORY NAV ─── */
+  .cat-nav { margin-bottom: 2rem; padding: 1.5rem; border: 1px solid rgba(232,226,208,0.06); border-radius: 4px; }
+  .cat-nav-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--pine-light); margin-bottom: 0.75rem; }
+  .cat-nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .cat-nav-links a {
+    font-size: 0.75rem; color: rgba(232,226,208,0.6); text-decoration: none;
+    border: 1px solid rgba(232,226,208,0.1); padding: 4px 12px; border-radius: 3px;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .cat-nav-links a:hover { border-color: rgba(232,226,208,0.3); color: var(--sand); }
+  .cat-nav-links a.active { border-color: var(--volt); color: var(--volt); }
+
+  /* ─── BACK ─── */
+  .back-row { padding-top: 0.5rem; }
+  .back-link { font-size: 0.85rem; color: var(--volt); text-decoration: none; opacity: 0.8; }
+  .back-link:hover { opacity: 1; }
+
+  /* ─── FOOTER ─── */
+  footer { background: var(--pine-dark); padding: 2rem 3rem; border-top: 1px solid rgba(232,226,208,0.06); }
+  .foot-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .foot-copy { font-size: 0.72rem; color: rgba(232,226,208,0.5); font-weight: 300; }
+  .foot-copy a { color: rgba(232,226,208,0.5); text-decoration: none; }
+  .foot-links { display: flex; gap: 1.5rem; }
+  .foot-links a { font-size: 0.72rem; color: rgba(232,226,208,0.5); text-decoration: none; transition: color 0.2s; }
+  .foot-links a:hover { color: var(--volt); }
+
+  @media (max-width: 860px) {
+    nav { padding: 1rem 1.5rem; }
+    .page-header { padding: 3rem 1.5rem 2.5rem; }
+    .nodes-main { padding: 2rem 1.5rem 4rem; }
+    footer { padding: 1.75rem 1.5rem; }
+    .foot-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+</style>
+
+</Base>
