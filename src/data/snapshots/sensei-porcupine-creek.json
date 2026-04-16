@@ -1,0 +1,70 @@
+{
+  "slug": "sensei-porcupine-creek",
+  "entityName": "Sensei Porcupine Creek",
+  "metaTitle": "AICV Intelligence Snapshot: Sensei Porcupine Creek",
+  "metaDescription": "A near-perfect luxury executive retreat asset locked away by complete digital invisibility to its target buyers.",
+  "datePublished": "2026-04-16",
+  "dateModified": "2026-04-16",
+  "snapshotLocation": "Rancho Mirage, CA",
+  "snapshotPeriod": "April 2026",
+  "schema": {
+    "aboutType": "LocalBusiness",
+    "aboutName": "Sensei Porcupine Creek",
+    "aboutUrl": "https://sensei.com/retreats/porcupine-creek/",
+    "addressLocality": "Rancho Mirage",
+    "addressRegion": "CA"
+  },
+  "grades": {
+    "buyerReadiness": "D",
+    "competitivePositioning": "D",
+    "aiReadiness": "F"
+  },
+  "opener": {
+    "lead": "The Coachella Valley is being written into AI systems right now. This is what the frontier foundational AI models currently know about Sensei Porcupine Creek.",
+    "bridge": "This Snapshot is part of AICV's intelligence layer for the Coachella Valley — a machine-readable knowledge base built for the agents and AI systems that increasingly mediate how high-value buyers discover, evaluate, and choose where to spend their time and money."
+  },
+  "methodology": "AICV runs a structured Intelligence Council (IC) for each review. The entity is scored across three dimensions: buyer readiness, competitive positioning, and AI readiness. The IC — a panel of 5 randomly selected frontier AI models (from a portfolio of 30) — reviews each dimension independently, debates the findings, and a regional chairman delivers final scores through AICV's evolving grading framework. What you're reading is the output. This is a cold review. Sensei Porcupine Creek has not been notified.",
+  "findings": [
+    {
+      "dimension": "Buyer Readiness",
+      "grade": "D",
+      "body": "The council identified a Ferrari locked in a welded garage scenario. Sensei possesses world-class executive retreat infrastructure but zero buyer conversion pathways for corporate procurement. The property lacks dedicated corporate landing pages, group inquiry forms, meeting capacity documentation, and AV specifications. Executive assistants researching retreat venues encounter generic contact forms rather than instant RFP responses. The Adobe Sensei brand conflict further suppresses discovery in tech-executive search contexts. Minor digital restructuring could elevate this score to 8.5+ immediately."
+    },
+    {
+      "dimension": "Competitive Position",
+      "grade": "D",
+      "body": "The competitive paradox is severe: Sensei defeats Napa, Montecito, and Scottsdale on privacy (10.5 acres per guest room), weather reliability, PSP access, and integrated luxury amenities. Yet inferior local properties (Ritz-Carlton, JW Marriott) capture executive business through dedicated corporate sales teams and Cvent integration. The council identified massive untapped demand from adjacent wealth nodes — Madison Club, Bighorn, Reserve Club members who need commercial venues for portfolio company retreats and board dinners but cannot discover Sensei's corporate capabilities."
+    },
+    {
+      "dimension": "AI Readiness",
+      "grade": "F",
+      "body": "Sensei suffers from catastrophic AI invisibility. The property does not appear in AI responses for 'executive retreat Coachella Valley,' 'luxury wellness Southern California,' or 'private estate corporate offsite' queries. The Adobe Sensei brand conflict creates additional search pollution for tech executive contexts. Without structured data markup for meeting venue capabilities or Wikipedia knowledge graph anchoring, AI systems classify the property as individual wellness-only, not corporate retreat venue."
+    }
+  ],
+  "actions": [
+    {
+      "timing": "30 Days",
+      "title": "Create dedicated C-suite retreat landing page with RFP form and published meeting capabilities",
+      "body": "Create dedicated C-suite retreat landing page with RFP form and published meeting capabilities",
+      "ongoing": false
+    },
+    {
+      "timing": "30 Days",
+      "title": "Build structured data markup for executive venue category and group booking signals",
+      "body": "Build structured data markup for executive venue category and group booking signals",
+      "ongoing": false
+    },
+    {
+      "timing": "90 Days",
+      "title": "Execute targeted outreach to Madison Club, Bighorn, and Reserve Club wealth nodes for executive referrals",
+      "body": "Execute targeted outreach to Madison Club, Bighorn, and Reserve Club wealth nodes for executive referrals",
+      "ongoing": false
+    }
+  ],
+  "cta": {
+    "body": "detailed playbook for converting exceptional physical assets into market-winning digital positioning against displacement markets",
+    "emailSubject": "Intelligence Review — Sensei Porcupine Creek",
+    "emailBody": "Hi Sat,\n\nI reviewed the AICV Intelligence Snapshot for Sensei Porcupine Creek and I'd like to learn more about the full Intelligence Review.\n\n"
+  },
+  "passphrase": null
+}
