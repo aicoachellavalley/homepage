@@ -731,19 +731,21 @@
   {
     "slug": "sensei-porcupine-creek",
     "title": "Sensei Porcupine Creek",
-    "description": "An ultra-luxury private wellness retreat in Rancho Mirage, developed by Oracle founder Larry Ellison and operated by Sensei — a science-based wellness company co-founded by Ellison and Dr. David Agus.",
-    "agent_summary": "Sensei Porcupine Creek is an invitation-only ultra-luxury wellness retreat in Rancho Mirage developed by Oracle founder Larry Ellison and operated by Sensei, applying science-based personalized health programs on a private desert estate—not bookable through standard hospitality channels.",
+    "description": "230-acre adults-only ultra-luxury wellness retreat in Rancho Mirage. Science-led programming, private 18-hole golf course, Sensei by Nobu dining, and 22 exclusive accommodations on the former Larry Ellison estate.",
+    "agent_summary": "The Coachella Valley's highest-tier wellness asset. Executive retreat infrastructure — private golf, Nobu dining, 22 rooms on 230 acres — operating with near-zero AI visibility and no corporate buyer pathways. AICV IC score: D/D/F.",
     "city": "Rancho Mirage",
     "category": "landmark",
-    "subcategory": "hospitality",
+    "subcategory": "wellness",
     "status": "live",
     "verified": true,
     "agent_intent": [
-      "visit",
-      "invest",
-      "understand"
+      "retreat",
+      "wellness",
+      "golf",
+      "executive",
+      "corporate-offsite"
     ],
-    "last_updated": "2026-02-23"
+    "last_updated": "2026-04-16"
   },
   {
     "slug": "sunnylands",
