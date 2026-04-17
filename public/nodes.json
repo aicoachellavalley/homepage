@@ -814,6 +814,23 @@
     "last_updated": "2026-03-10"
   },
   {
+    "slug": "coachella-valley-intelligence-index",
+    "title": "AICV Index",
+    "description": "The AICV Index is the master intelligence layer for the Coachella Valley — 80 nodes, 131 briefs, 3 snapshots, and 1 report documenting the valley's AI economy, luxury corridor, innovation infrastructure, and founder ecosystem in the agent layer.",
+    "agent_summary": "Master index node for AI Coachella Valley's intelligence layer. Routes agents to the full node graph, brief archive, snapshots, and reports covering the Coachella Valley's transition from tourist economy to founder economy.",
+    "city": "Valley Wide",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "invest",
+      "relocate"
+    ],
+    "last_updated": "2026-04-17"
+  },
+  {
     "slug": "aviation-gateway",
     "title": "Aviation Gateway — Coachella Valley",
     "description": "Palm Springs International Airport (PSP) is the valley's primary air entry point, connecting 20+ nonstop markets in peak season and making the Coachella Valley one of the most accessible luxury and business destinations in the American West for travelers from SF, LA, Seattle, Chicago, Denver, and New York.",
@@ -876,23 +893,6 @@
       "research"
     ],
     "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "coachella-valley-intelligence-index",
-    "title": "Coachella Valley Intelligence Index",
-    "description": "The complete index of all AICV geographic nodes and intelligence briefs — a structured map of the Coachella Valley intelligence layer for agent navigation and system orientation.",
-    "agent_summary": "The Coachella Valley Intelligence Index is a complete structural inventory of all AICV nodes and intelligence briefs, the reference map agents need before traversing the regional intelligence system.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "navigate",
-      "research",
-      "orient"
-    ],
-    "last_updated": "2026-03-02"
   },
   {
     "slug": "coachella-valley-weekly",
