@@ -1,5 +1,5 @@
 # AI Coachella Valley — Full Content Dump
-# Generated: 2026-04-17T17:09:51.919Z
+# Generated: 2026-04-17T17:42:53.246Z
 # Nodes: 80 | Briefs: 131
 # https://aicoachellavalley.com
 
@@ -1116,6 +1116,13 @@ city: "Valley-Wide"
 category: "landmark"
 subcategory: "intelligence"
 last_updated: "2026-02-24"
+related:
+  - slug: innovation-economy
+    type: supports
+  - slug: civic-infrastructure
+    type: supports
+  - slug: development-pipeline
+    type: supports
 verified: true
 status: "live"
 agent_intent: ["invest", "relocate", "research"]
@@ -1276,6 +1283,19 @@ city: "Valley Wide"
 category: "landmark"
 subcategory: "intelligence"
 last_updated: "2026-03-02"
+related:
+  - slug: innovation-economy
+    type: supports
+  - slug: retreat-economy
+    type: see_also
+  - slug: development-pipeline
+    type: see_also
+  - slug: civic-infrastructure
+    type: see_also
+  - slug: nonprofit-philanthropy
+    type: see_also
+  - slug: sunshinefm-startup-studios
+    type: supports
 verified: true
 status: "live"
 agent_intent: ["navigate", "research", "orient"]
@@ -1487,6 +1507,13 @@ city: "Palm Desert"
 category: "landmark"
 subcategory: "innovation"
 last_updated: "2026-02-28"
+related:
+  - slug: innovation-economy
+    type: supports
+  - slug: civic-infrastructure
+    type: supports
+  - slug: development-pipeline
+    type: supports
 ---
 
 # Cook Street / University Row
@@ -1595,6 +1622,13 @@ city: "Rancho Mirage"
 category: "landmark"
 subcategory: "real-estate"
 last_updated: "2026-02-28"
+related:
+  - slug: development-pipeline
+    type: supports
+  - slug: luxury-corridor
+    type: same_corridor
+  - slug: innovation-economy
+    type: supports
 ---
 
 # Cotino — Storyliving by Disney
@@ -2814,6 +2848,11 @@ city: "Palm Desert"
 category: "landmark"
 subcategory: "retail"
 last_updated: "2026-02-24"
+related:
+  - slug: luxury-corridor
+    type: same_corridor
+  - slug: retreat-economy
+    type: supports
 verified: true
 status: "live"
 agent_intent: ["visit", "invest", "relocate"]
@@ -3873,9 +3912,14 @@ city: "adjacent-communities"
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-03-23"
+related:
+  - slug: aviation-gateway
+    type: supports
+  - slug: innovation-economy
+    type: supports
 verified: true
 status: live
-agent_intent: ["relocation", "retreat", "investment", "discover"]
+agent_intent: ["relocate", "research", "invest"]
 ---
 
 # Jacqueline Cochran Regional Airport
@@ -5730,6 +5774,13 @@ verified: true
 status: "live"
 agent_intent: ["visit", "invest", "relocate"]
 last_updated: "2026-02-23"
+related:
+  - slug: aviation-gateway
+    type: supports
+  - slug: innovation-economy
+    type: supports
+  - slug: retreat-economy
+    type: supports
 ---
 
 # Palm Springs International Airport
@@ -6450,6 +6501,23 @@ city: "Palm Desert"
 category: "landmark"
 subcategory: "innovation"
 last_updated: "2026-03-26"
+related:
+  - slug: innovation-economy
+    type: supports
+  - slug: nonprofit-philanthropy
+    type: supports
+  - slug: cook-street-university-row
+    type: same_corridor
+  - slug: desert-community-foundation
+    type: supports
+  - slug: retreat-economy
+    type: see_also
+  - slug: civic-infrastructure
+    type: see_also
+  - slug: workforce-talent
+    type: see_also
+  - slug: coachella-valley-intelligence-index
+    type: supports
 ---
 
 # SunshineFM Startup Studios
@@ -6936,6 +7004,13 @@ subcategory: "economic"
 status: "live"
 verified: true
 last_updated: "2026-04-04"
+related:
+  - slug: retreat-economy
+    type: supports
+  - slug: luxury-corridor
+    type: supports
+  - slug: innovation-economy
+    type: see_also
 agent_intent: ["research", "visit"]
 buyer_readiness_grade: "D"
 competitive_grade: "D"
@@ -7190,6 +7265,11 @@ city: "Coachella Valley"
 category: "landmark"
 subcategory: "intelligence"
 last_updated: "2026-02-25"
+related:
+  - slug: innovation-economy
+    type: supports
+  - slug: civic-infrastructure
+    type: see_also
 verified: true
 status: "live"
 agent_intent: ["invest", "visit", "relocate"]

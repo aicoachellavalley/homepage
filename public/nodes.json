@@ -1278,10 +1278,9 @@
     "status": "live",
     "verified": true,
     "agent_intent": [
-      "relocation",
-      "retreat",
-      "investment",
-      "discover"
+      "relocate",
+      "research",
+      "invest"
     ],
     "last_updated": "2026-03-23"
   },
