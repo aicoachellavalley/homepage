@@ -1,9 +1,17 @@
 # AICV — aicoachellavalley.com repo
 
-### CRITICAL: Stack
-Mintlify retired April 2026. Current stack: Astro + Cloudflare Pages.
-Ignore any legacy mint.json, docs/, or .mintlify references anywhere
-in this repo or git history.
+## Canonical workflow reference
+
+The canonical schema, voice rules, and workflow documentation
+for AICV live at ~/Projects/aicv-playbook/. When working on AICV
+content here, that's where the rules come from. Live content
+lives here in src/content/; rules live there.
+
+### Stack
+Astro + Cloudflare Pages. Mintlify as a hosted doc site was retired
+April 2026. The former docs/ folder has been restructured into
+~/Projects/aicv-playbook/ as the canonical workflow/schema store
+(content-free).
 
 ### CRITICAL: Source of Truth
 All schemas, workflows, content type definitions, and strategic
