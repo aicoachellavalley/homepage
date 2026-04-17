@@ -51,6 +51,16 @@ Org site deploy (required after every node addition):
 - NODES.md — full node plan with status
 - VOICE.md — @CoachellaAI tone brief
 
+## MCP discovery
+
+`/.well-known/mcp.json` is served from this site's `public/` directory
+(`public/.well-known/mcp.json`). It advertises
+`https://mcp.aicoachellavalley.com` as AICV's MCP server. The format
+follows the current pre-spec convention (`mcpServers` wrapper) and is
+expected to evolve as SEP-1649 and SEP-1960 land. Also consider
+publishing at `/.well-known/mcp/server.json` for MCP Registry
+auto-indexing.
+
 ## Side effects (required after every session)
 
 Every brief filed → 📡 journal line item in ~/sunshine-fm/journal/index.html
