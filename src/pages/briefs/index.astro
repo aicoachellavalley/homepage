@@ -2,9 +2,8 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 
-const pageTitle       = 'Intelligence Briefs — AI Coachella Valley';
-const pageDescription = '120 timestamped intelligence briefs tracking AI economy signals across the Coachella Valley — updated daily.';
-const canonicalUrl    = 'https://aicoachellavalley.com/briefs/';
+const pageTitle    = 'Intelligence Briefs — AI Coachella Valley';
+const canonicalUrl = 'https://aicoachellavalley.com/briefs/';
 
 const MONTH_LABELS: Record<string, string> = {
   '01': 'January', '02': 'February', '03': 'March',
@@ -34,6 +33,8 @@ function shortDate(date: string): string {
 }
 
 const allBriefs = await getCollection('briefs');
+
+const pageDescription = `${allBriefs.length} timestamped intelligence briefs tracking AI economy signals across the Coachella Valley — updated daily.`;
 
 // Group by YYYY-MM
 const byMonth: Record<string, typeof allBriefs> = {};
@@ -80,7 +81,7 @@ const sortedMonths = Object.keys(byMonth).sort((a, b) => b.localeCompare(a));
   <div class="page-header-inner">
     <div class="page-eyebrow">AI Coachella Valley · Intelligence Layer</div>
     <h1 class="page-title">Intelligence Briefs</h1>
-    <p class="page-desc">120 intelligence briefs tracking AI economy signals across the Coachella Valley — updated daily.</p>
+    <p class="page-desc">{allBriefs.length} intelligence briefs tracking AI economy signals across the Coachella Valley — updated daily.</p>
   </div>
 </header>
 
