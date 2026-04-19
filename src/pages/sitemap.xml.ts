@@ -11,10 +11,10 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/briefs/', changefreq: 'daily',   priority: '0.9' },
   ];
 
-  const snapshots = [
-    'visit-greater-palm-springs',
-    'gardens-on-el-paseo',
-  ];
+  const snapshotFiles = import.meta.glob('../data/snapshots/*.json');
+  const snapshots = Object.keys(snapshotFiles).map((path) =>
+    path.replace('../data/snapshots/', '').replace('.json', '')
+  );
 
   const urlEntries: string[] = [];
 
