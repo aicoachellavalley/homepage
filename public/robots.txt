@@ -34,5 +34,5 @@ Allow: /
 Sitemap: https://aicoachellavalley.com/sitemap.xml
 
 # AI Agent Resources
-# Machine-readable intelligence layer: https://agent.aicoachellavalley.com/llms.txt
-# Full content export: https://agent.aicoachellavalley.com/llms-full.txt
+# Machine-readable intelligence layer: https://aicoachellavalley.com/llms.txt
+# Full content export: https://aicoachellavalley.com/llms-full.txt

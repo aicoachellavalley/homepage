@@ -8,7 +8,7 @@
       "city": "Palm Desert",
       "subcategory": "retail",
       "snapshot_url": "https://aicoachellavalley.com/snapshots/gardens-on-el-paseo",
-      "node_url": "https://agent.aicoachellavalley.com/nodes/palm-desert/gardens-on-el-paseo",
+      "node_url": "https://aicoachellavalley.com/nodes/palm-desert/gardens-on-el-paseo",
       "grades": {
         "buyer_readiness": "C",
         "competitive_positioning": "D",
@@ -23,7 +23,7 @@
       "city": "Regional",
       "subcategory": "economic",
       "snapshot_url": "https://aicoachellavalley.com/snapshots/visit-greater-palm-springs",
-      "node_url": "https://agent.aicoachellavalley.com/nodes/valley-wide/visit-greater-palm-springs",
+      "node_url": "https://aicoachellavalley.com/nodes/valley-wide/visit-greater-palm-springs",
       "grades": {
         "buyer_readiness": "D",
         "competitive_positioning": "D",
