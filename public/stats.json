@@ -1,6 +1,6 @@
 {
   "$schema": "https://aicoachellavalley.com/schemas/stats-v1.json",
-  "generated_at": "2026-04-19T23:43:35.746Z",
+  "generated_at": "2026-04-19T23:54:33.093Z",
   "generator": "scripts/generate-stats.mjs",
   "counts": {
     "nodes": 80,
