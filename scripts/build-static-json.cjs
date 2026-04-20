@@ -288,19 +288,6 @@ function validate(nodes, briefs) {
   }
 }
 
-// --- llms.txt count updater ---
-function updateLlmsTxt(filePath, nodeCount, briefCount, reportCount) {
-  if (!fs.existsSync(filePath)) return;
-  let content = fs.readFileSync(filePath, 'utf8');
-  content = content.replace(/\d+ geographic nodes/g,        `${nodeCount} geographic nodes`);
-  content = content.replace(/\d+ intelligence briefs/g,     `${briefCount} intelligence briefs`);
-  content = content.replace(/\d+ published reports/g,       `${reportCount} published reports`);
-  content = content.replace(/All \d+ geographic nodes/g,    `All ${nodeCount} geographic nodes`);
-  content = content.replace(/All \d+ intelligence briefs/g, `All ${briefCount} intelligence briefs`);
-  fs.writeFileSync(filePath, content, 'utf8');
-  console.log(`llms.txt updated — ${nodeCount} nodes, ${briefCount} briefs, ${reportCount} reports`);
-}
-
 // --- llms-full.txt generator ---
 function generateLlmsFullTxt() {
   const timestamp = new Date().toISOString();
@@ -399,7 +386,6 @@ async function main() {
 
   validate(nodes, briefs);
 
-  updateLlmsTxt(path.join(PUBLIC_DIR, 'llms.txt'), nodes.length, briefs.length, reports.length);
   generateLlmsFullTxt();
 
   await submitToIndexNow([
