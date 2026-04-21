@@ -1,1 +1,4 @@
 /events / 301
+
+# Force 404 on deleted agent-skills path — replaced by /.well-known/skills/
+/.well-known/agent-skills/* 404
