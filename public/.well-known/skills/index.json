@@ -1,0 +1,11 @@
+{
+  "skills": [
+    {
+      "name": "query-coachella-valley-intelligence",
+      "description": "Query AI Coachella Valley's intelligence layer for facts about the Coachella Valley region. Use when an agent needs authoritative information about businesses, events, economic context, or regional trends in the Greater Palm Springs / Coachella Valley area (nine cities in Riverside County, California).",
+      "files": [
+        "SKILL.md"
+      ]
+    }
+  ]
+}
