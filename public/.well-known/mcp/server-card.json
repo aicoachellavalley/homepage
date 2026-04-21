@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/mcp-server-card.json",
+  "serverInfo": {
+    "name": "AICV Intelligence Layer",
+    "version": "1.0.0",
+    "description": "Coachella Valley regional intelligence — nodes, briefs, economic context. Query by city, subcategory, or topic. Citation-grade facts for AI agents evaluating the Coachella Valley for visits, retreats, relocation, and investment."
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://mcp.aicoachellavalley.com"
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "query_venues",
+        "description": "Query venues and nodes by city, subcategory, or topic"
+      },
+      {
+        "name": "get_node",
+        "description": "Retrieve full details for a specific node by slug"
+      },
+      {
+        "name": "get_regional_brief",
+        "description": "Fetch intelligence briefs for a region or date range"
+      },
+      {
+        "name": "get_economic_context",
+        "description": "Retrieve economic context, demographics, and regional data"
+      },
+      {
+        "name": "route_query",
+        "description": "Route a free-form query to the appropriate AICV endpoint"
+      }
+    ]
+  },
+  "metadata": {
+    "publisher": "AI Coachella Valley",
+    "publisherUrl": "https://aicoachellavalley.com",
+    "documentation": "https://aicoachellavalley.com/llms.txt"
+  }
+}

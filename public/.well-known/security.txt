@@ -1,0 +1,5 @@
+# Security contact for AI Coachella Valley
+Contact: mailto:sat@aicv.co
+Expires: 2027-04-21T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://aicoachellavalley.com/.well-known/security.txt

@@ -1,0 +1,65 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://mcp.aicoachellavalley.com",
+      "service-desc": [
+        {
+          "href": "https://aicoachellavalley.com/.well-known/mcp/server-card.json",
+          "type": "application/json",
+          "title": "AICV MCP Server Card"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://aicoachellavalley.com/llms.txt",
+          "type": "text/plain",
+          "title": "AICV machine-readable intelligence layer documentation"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://aicoachellavalley.com/.well-known/mcp.json",
+          "type": "application/json",
+          "title": "MCP configuration (legacy format)"
+        }
+      ]
+    },
+    {
+      "anchor": "https://aicoachellavalley.com",
+      "service-desc": [
+        {
+          "href": "https://aicoachellavalley.com/nodes.json",
+          "type": "application/json",
+          "title": "AICV nodes static index"
+        },
+        {
+          "href": "https://aicoachellavalley.com/briefs.json",
+          "type": "application/json",
+          "title": "AICV briefs static index"
+        },
+        {
+          "href": "https://aicoachellavalley.com/snapshots.json",
+          "type": "application/json",
+          "title": "AICV snapshots static index"
+        },
+        {
+          "href": "https://aicoachellavalley.com/reports.json",
+          "type": "application/json",
+          "title": "AICV reports static index"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://aicoachellavalley.com/llms.txt",
+          "type": "text/plain",
+          "title": "Machine-readable intelligence layer documentation"
+        },
+        {
+          "href": "https://aicoachellavalley.com/llms-full.txt",
+          "type": "text/plain",
+          "title": "Full content export"
+        }
+      ]
+    }
+  ]
+}
