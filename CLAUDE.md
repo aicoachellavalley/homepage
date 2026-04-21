@@ -28,6 +28,12 @@ intelligence documentation site for the Coachella Valley.
 GitHub: https://github.com/aicoachellavalley/homepage
 Live: https://aicoachellavalley.com
 
+**GitHub repo name vs local directory name.** This local directory is named `com/` for ergonomic parity with `org/`, but the GitHub remote is `aicoachellavalley/homepage` — not `aicoachellavalley/com`. Any code or prompt that hardcodes GitHub raw URLs, clones from GitHub, or references the repo by name must use `homepage`.
+
+Verify with: `git remote -v`
+
+Surfaced 2026-04-20 when aicv-mcp's GITHUB_RAW constant pointed at the non-existent `aicoachellavalley/com` repo, causing get_node to fail silently for ~2 weeks. The trap fires anywhere in the codebase that infers the remote name from the local directory.
+
 ## Repo structure
 
 src/content/briefs/   — Intelligence Brief MDX files
