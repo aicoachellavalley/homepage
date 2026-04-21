@@ -1,0 +1,17 @@
+# Agent discovery — Link response headers on homepage
+# Advertises llms.txt, MCP endpoint, API catalog, sitemap
+# per RFC 8288. Registered and common relation types only.
+/
+  Link: </llms.txt>; rel="service-doc"; type="text/plain"
+  Link: </.well-known/mcp/server-card.json>; rel="describedby"; type="application/json"
+  Link: </.well-known/api-catalog>; rel="api-catalog"
+  Link: </sitemap.xml>; rel="sitemap"; type="application/xml"
+
+# Content-Type fix for extension-less API Catalog file
+# RFC 9727 specifies application/linkset+json
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+
+# Content-Type for Agent Skills index (defensive)
+/.well-known/agent-skills/index.json
+  Content-Type: application/json

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/agent-skills-discovery-rfc/main/schema/index.json",
+  "skills": [
+    {
+      "name": "query_venues",
+      "type": "mcp-tool",
+      "description": "Query Coachella Valley venues and nodes by city, subcategory, or topic. Returns citation-grade facts about hospitality, retail, wellness, and cultural assets.",
+      "url": "https://mcp.aicoachellavalley.com",
+      "sha256": "PENDING"
+    },
+    {
+      "name": "get_node",
+      "type": "mcp-tool",
+      "description": "Retrieve full details for a specific Coachella Valley node by slug. Returns persistent entity data: location, category, description, related nodes.",
+      "url": "https://mcp.aicoachellavalley.com",
+      "sha256": "PENDING"
+    },
+    {
+      "name": "get_regional_brief",
+      "type": "mcp-tool",
+      "description": "Fetch Coachella Valley intelligence briefs for a region, date range, or topic. Returns agent-grade signals: news events, development updates, economic indicators.",
+      "url": "https://mcp.aicoachellavalley.com",
+      "sha256": "PENDING"
+    },
+    {
+      "name": "get_economic_context",
+      "type": "mcp-tool",
+      "description": "Retrieve Coachella Valley economic context, demographics, and regional data. Returns structured facts about GDP, population, workforce, industry breakdown.",
+      "url": "https://mcp.aicoachellavalley.com",
+      "sha256": "PENDING"
+    },
+    {
+      "name": "route_query",
+      "type": "mcp-tool",
+      "description": "Route a free-form query about the Coachella Valley to the appropriate AICV endpoint. Agent-to-agent intent routing across venues, briefs, and economic data.",
+      "url": "https://mcp.aicoachellavalley.com",
+      "sha256": "PENDING"
+    }
+  ]
+}
