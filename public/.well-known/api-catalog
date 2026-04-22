@@ -1,63 +1,44 @@
 {
   "linkset": [
     {
-      "anchor": "https://mcp.aicoachellavalley.com",
-      "service-desc": [
-        {
-          "href": "https://aicoachellavalley.com/.well-known/mcp/server-card.json",
-          "type": "application/json",
-          "title": "AICV MCP Server Card"
-        }
-      ],
+      "anchor": "https://aicoachellavalley.com/",
       "service-doc": [
+        {
+          "href": "https://aicoachellavalley.com/",
+          "type": "text/html",
+          "title": "AI Coachella Valley homepage"
+        },
         {
           "href": "https://aicoachellavalley.com/llms.txt",
           "type": "text/plain",
-          "title": "AICV machine-readable intelligence layer documentation"
+          "title": "AICV llms.txt — human-readable content summary"
         }
       ],
-      "service-meta": [
-        {
-          "href": "https://aicoachellavalley.com/.well-known/mcp.json",
-          "type": "application/json",
-          "title": "MCP configuration (legacy format)"
-        }
-      ]
-    },
-    {
-      "anchor": "https://aicoachellavalley.com",
-      "service-desc": [
+      "item": [
         {
           "href": "https://aicoachellavalley.com/nodes.json",
           "type": "application/json",
-          "title": "AICV nodes static index"
+          "title": "AICV Nodes — structured entity dataset for the Coachella Valley"
         },
         {
           "href": "https://aicoachellavalley.com/briefs.json",
           "type": "application/json",
-          "title": "AICV briefs static index"
+          "title": "AICV Intelligence Briefs"
         },
         {
           "href": "https://aicoachellavalley.com/snapshots.json",
           "type": "application/json",
-          "title": "AICV snapshots static index"
+          "title": "AICV Snapshots — public-facing entity assessments"
         },
         {
           "href": "https://aicoachellavalley.com/reports.json",
           "type": "application/json",
-          "title": "AICV reports static index"
-        }
-      ],
-      "service-doc": [
-        {
-          "href": "https://aicoachellavalley.com/llms.txt",
-          "type": "text/plain",
-          "title": "Machine-readable intelligence layer documentation"
+          "title": "AICV Intelligence Reports — regional analyses"
         },
         {
-          "href": "https://aicoachellavalley.com/llms-full.txt",
-          "type": "text/plain",
-          "title": "Full content export"
+          "href": "https://mcp.aicoachellavalley.com/",
+          "type": "application/json",
+          "title": "AICV MCP Server — agent-native access via Model Context Protocol"
         }
       ]
     }

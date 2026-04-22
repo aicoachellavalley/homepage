@@ -15,3 +15,8 @@
 # Content-Type for Agent Skills index (defensive)
 /.well-known/agent-skills/index.json
   Content-Type: application/json
+
+# Advertise API catalog and MCP server card on all pages (RFC 8288)
+/*
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"
+  Link: </.well-known/mcp/server-card.json>; rel="mcp-server"; type="application/json"

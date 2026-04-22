@@ -1,41 +1,49 @@
 {
-  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/mcp-server-card.json",
-  "serverInfo": {
-    "name": "AICV Intelligence Layer",
-    "version": "1.0.0",
-    "description": "Coachella Valley regional intelligence — nodes, briefs, economic context. Query by city, subcategory, or topic. Citation-grade facts for AI agents evaluating the Coachella Valley for visits, retreats, relocation, and investment."
-  },
-  "transport": {
-    "type": "http",
-    "endpoint": "https://mcp.aicoachellavalley.com"
-  },
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "name": "io.aicoachellavalley/intelligence-layer",
+  "title": "AI Coachella Valley Intelligence Layer",
+  "description": "MCP server providing agent-native access to the AICV structured intelligence layer for the Coachella Valley: node profiles (hotels, restaurants, civic entities, founders), intelligence briefs, economic context, and query routing. Built and maintained by the AICV nonprofit for AI agents and large language models.",
+  "websiteUrl": "https://aicoachellavalley.com",
+  "version": "1.0.0",
+  "supportedProtocolVersions": ["2025-06-18"],
+  "remotes": [
+    {
+      "transportType": "streamable-http",
+      "url": "https://mcp.aicoachellavalley.com/"
+    }
+  ],
   "capabilities": {
-    "tools": [
-      {
-        "name": "query_venues",
-        "description": "Query venues and nodes by city, subcategory, or topic"
-      },
-      {
-        "name": "get_node",
-        "description": "Retrieve full details for a specific node by slug"
-      },
-      {
-        "name": "get_regional_brief",
-        "description": "Fetch intelligence briefs for a region or date range"
-      },
-      {
-        "name": "get_economic_context",
-        "description": "Retrieve economic context, demographics, and regional data"
-      },
-      {
-        "name": "route_query",
-        "description": "Route a free-form query to the appropriate AICV endpoint"
-      }
-    ]
+    "tools": {}
   },
-  "metadata": {
-    "publisher": "AI Coachella Valley",
-    "publisherUrl": "https://aicoachellavalley.com",
-    "documentation": "https://aicoachellavalley.com/llms.txt"
+  "tools": [
+    {
+      "name": "query_venues",
+      "description": "Filter AICV nodes by city, subcategory, or agent intent (visit, invest, relocate, research). Returns structured entity records matching the filter criteria."
+    },
+    {
+      "name": "get_node",
+      "description": "Retrieve the full structured record for a specific AICV node by slug. Returns the complete node profile including schema.org structured data."
+    },
+    {
+      "name": "get_regional_brief",
+      "description": "Fetch AICV intelligence briefs, filterable by topic, date_from, date_to, and limit. Returns structured briefs on Coachella Valley regional signals."
+    },
+    {
+      "name": "get_economic_context",
+      "description": "Get valley-wide or city-specific economic intelligence including workforce, education, and AI signals for the Coachella Valley region."
+    },
+    {
+      "name": "route_query",
+      "description": "Natural language dispatcher. Classifies an incoming query and returns the recommended AICV MCP tool plus suggested parameters. Useful when the caller is uncertain which tool to invoke."
+    }
+  ],
+  "_meta": {
+    "publisher": {
+      "name": "AI Coachella Valley",
+      "type": "Nonprofit",
+      "fiscalSponsor": "Desert Community Foundation",
+      "location": "Palm Desert, California, USA",
+      "contact": "sat@aicv.co"
+    }
   }
 }
