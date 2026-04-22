@@ -93,7 +93,7 @@ const webSiteSchema = {
   "@type": "WebSite",
   "name": "AI Coachella Valley",
   "url": "https://aicoachellavalley.com",
-  "description": "The intelligence layer designed for the AI era. Built for agents. Powered by humans.",
+  "description": "The intelligence layer designed for the AI era. Built for agents. Powered by humans. AI Coachella Valley provides a structured dataset of regional entities, publishes intelligence briefs and reports, and offers the AIO Tool — a free diagnostic that grades any website's visibility to AI agents.",
   "publisher": {
     "@type": "Organization",
     "name": "AI Coachella Valley"
@@ -136,13 +136,68 @@ const serviceSchema = {
     }
   ]
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the AIO Tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The AIO Tool is a free diagnostic from AI Coachella Valley that grades any website's visibility to AI agents and large language models. It analyzes entity clarity, crawler access, structured data, content completeness, local signals, content freshness, and hallucination risk, then returns a letter grade (A through F) with specific, actionable fixes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the AIO Tool free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The AIO Tool is free and requires no account. Enter any public URL and receive a full AI Optimization (AIO) visibility report with a grade and prioritized fixes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who built the AIO Tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The AIO Tool was built by AI Coachella Valley (AICV), a nonprofit intelligence initiative fiscally sponsored by the Desert Community Foundation and founded by Sat Singh. AICV is based in Palm Desert and serves the nine cities of the Coachella Valley."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does AI Coachella Valley do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI Coachella Valley publishes a structured, citation-grade dataset of Coachella Valley entities — hotels, restaurants, cultural institutions, civic bodies, and founders — built for AI agents and large language models to read, cite, and recommend. Content is published as regional nodes, intelligence briefs, snapshots, and reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a business get included in the AI Coachella Valley network?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Businesses, institutions, and civic bodies in the Coachella Valley can request inclusion by contacting AI Coachella Valley at sat@aicv.co. There is no fee for standard inclusion. AICV builds regional node profiles that make the entity readable, citable, and discoverable by AI agents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which cities does AI Coachella Valley cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI Coachella Valley covers the nine cities of the Coachella Valley: Palm Springs, Desert Hot Springs, Cathedral City, Rancho Mirage, Palm Desert, Indian Wells, La Quinta, Indio, and Coachella."
+      }
+    }
+  ]
+};
 ---
 
 <Base
   title={pageTitle}
   description={pageDescription}
   canonicalUrl={canonicalUrl}
-  schema={[orgSchema, webSiteSchema, serviceSchema]}
+  schema={[orgSchema, webSiteSchema, serviceSchema, faqSchema]}
 >
 
 <!-- ─── NAV ─── -->
