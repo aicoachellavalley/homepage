@@ -12,9 +12,14 @@
           "href": "https://aicoachellavalley.com/llms.txt",
           "type": "text/plain",
           "title": "AICV llms.txt — human-readable content summary"
+        },
+        {
+          "href": "https://aicoachellavalley.com/llms-full.txt",
+          "type": "text/plain",
+          "title": "AICV llms-full.txt — complete agent-readable export"
         }
       ],
-      "item": [
+      "service-desc": [
         {
           "href": "https://aicoachellavalley.com/nodes.json",
           "type": "application/json",
@@ -34,11 +39,17 @@
           "href": "https://aicoachellavalley.com/reports.json",
           "type": "application/json",
           "title": "AICV Intelligence Reports — regional analyses"
-        },
+        }
+      ],
+      "service-meta": [
         {
           "href": "https://mcp.aicoachellavalley.com/",
+          "title": "AICV MCP Server — agent-native access via Model Context Protocol (JSON-RPC 2.0 over HTTP)"
+        },
+        {
+          "href": "https://aicoachellavalley.com/.well-known/mcp/server-card.json",
           "type": "application/json",
-          "title": "AICV MCP Server — agent-native access via Model Context Protocol"
+          "title": "AICV MCP Server Card — capabilities and tool listing"
         }
       ]
     }

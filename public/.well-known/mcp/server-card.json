@@ -18,7 +18,7 @@
   "tools": [
     {
       "name": "query_venues",
-      "description": "Filter AICV nodes by city, subcategory, or agent intent (visit, invest, relocate, research). Returns structured entity records matching the filter criteria."
+      "description": "Filter AICV nodes by city, subcategory, or agent intent (visit, invest, relocate, research). Returns matching node slugs and summary metadata — use get_node for full records."
     },
     {
       "name": "get_node",
