@@ -7,7 +7,7 @@
 - **Cloudflare Pro** upgrade on aicoachellavalley.com zone
 - **Markdown for Agents** enabled at CDN edge — agents requesting `Accept: text/markdown` get edge-converted markdown with `Content-Signal: ai-train=yes, search=yes, ai-input=yes` response header
 - **aicoachellavalley.com now at Tier 4** of the four-tier agent-readiness framework (see aicv-playbook CLAUDE.md)
-- **80 nodes, 133 briefs, 3 snapshots, 1 report** as of this date
+- **80 nodes, 133 briefs, 3 snapshots, 1 report** as of 2026-04-23
 
 ### Agent discovery endpoints (as of 2026-04-22)
 
@@ -58,3 +58,41 @@ computed counts to `public/stats.json` and `src/data/stats.json`. All
 surfaces that display counts import from those files rather than
 hardcoding values. Cloudflare Pages triggers this chain automatically
 on push to `origin/main`.
+
+---
+
+## Agent-Readiness Baselines — 2026-04-23
+
+Recorded after Cloudflare Pro + Markdown for Agents +
+.well-known discovery deployment (commits 35c1464, 41cc994).
+
+**Cloudflare Agentic Readability** (isitagentready.com):
+- Score: 75 / Level 5 "Agent-Native" (highest tier)
+- Discoverability: 3/3 ✓
+- Content: 1/1 ✓
+- Bot Access Control: 2/2 ✓
+- API, Auth, MCP & Skill Discovery: 3/6
+
+**AICV AIO Tool** (self-grade of aicoachellavalley.com):
+- Grade: B
+- Warning: Entity Clarity — homepage conflates AICV's
+  organizational mission with AIO Tool product narrative.
+  To be addressed via /get-agent-ready page launch (separate
+  session), not via homepage rewrite.
+- All other checks passing.
+
+## Agent-Readiness Items Intentionally Deferred
+
+- **OAuth/OIDC discovery** (/.well-known/openid-configuration)
+  — not applicable. AICV has no protected APIs. All endpoints
+  are public-read by design.
+
+- **OAuth Protected Resource Metadata**
+  (/.well-known/oauth-protected-resource) — same rationale.
+
+- **WebMCP** (navigator.modelContext.provideContext()) —
+  deferred to dedicated session. Worth implementing; mirrors
+  existing MCP server tool set for browser-native agents.
+
+- **Phone number in Organization schema contactPoint** —
+  deferred pending Twilio routing project.

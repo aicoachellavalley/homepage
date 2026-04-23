@@ -191,13 +191,32 @@ const faqSchema = {
     }
   ]
 };
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sat Singh",
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "AI Coachella Valley",
+    "url": "https://aicoachellavalley.com"
+  },
+  "url": "https://aicoachellavalley.com",
+  "email": "sat@aicv.co",
+  "sameAs": [
+    "https://www.linkedin.com/in/satssp/",
+    "https://x.com/CoachellaAI",
+    "https://github.com/aicoachellavalley"
+  ]
+};
 ---
 
 <Base
   title={pageTitle}
   description={pageDescription}
   canonicalUrl={canonicalUrl}
-  schema={[orgSchema, webSiteSchema, serviceSchema, faqSchema]}
+  schema={[orgSchema, webSiteSchema, serviceSchema, faqSchema, personSchema]}
 >
 
 <!-- ─── NAV ─── -->
