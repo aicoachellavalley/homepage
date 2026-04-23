@@ -7,7 +7,7 @@
 - **Cloudflare Pro** upgrade on aicoachellavalley.com zone
 - **Markdown for Agents** enabled at CDN edge — agents requesting `Accept: text/markdown` get edge-converted markdown with `Content-Signal: ai-train=yes, search=yes, ai-input=yes` response header
 - **aicoachellavalley.com now at Tier 4** of the four-tier agent-readiness framework (see aicv-playbook CLAUDE.md)
-- **80 nodes, 132 briefs, 3 snapshots, 1 report** as of this date
+- **80 nodes, 133 briefs, 3 snapshots, 1 report** as of this date
 
 ### Agent discovery endpoints (as of 2026-04-22)
 
