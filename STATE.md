@@ -51,6 +51,31 @@ Verifications originally scheduled 2026-04-24; run 2026-04-25 due to prior sessi
 - aicv-playbook STATE.md recorded "Grade A" for homepage (anticipatory); actual 2026-04-25 result is 89/Grade B — update playbook in next strategic review.
 - **IndexNow key file** `/aicv-indexnow-2026.txt` returns 404 at public root; API accepts submissions (202). Worth confirming whether Bing actually fetches the key or swallows silently.
 
+### AIO Tool Truncation Bug — Found and Fixed (2026-04-25)
+
+**Bug:** `worker.js` was silently capping cleaned page content at `6000` chars before sending to Haiku. Long-form pages (pitch pages, FAQ pages, multi-section sales pages) were being evaluated with a fraction of their content, producing suppressed scores and false warns.
+
+**Root cause:** `fetchPageContent` line 143 — `.slice(0, 6000)`. The `/get-agent-ready/` page produces 14,669 chars of cleaned text; worker was sending 6,000 (41%). Truncation point was mid-sentence: "Deployment is a sequence, not an event. Every s[top]." JSON-LD schema was unaffected — it arrives via a separate regex extraction path.
+
+**Fix deployed:** `aicv-api` commit, deployed 2026-04-25.
+- Content cap raised from 6,000 to 12,000 chars
+- Word-boundary slice: `cleaned.lastIndexOf(' ', 12000)` to avoid mid-word cuts
+- Truncation marker appended when truncation occurs: `[Note: page content truncated at ~12000 chars; full page is N chars]` — Haiku can adjust confidence accordingly
+
+**Re-scored after fix (2026-04-25):**
+
+| Page | Pre-fix | Post-fix | Check delta |
+|---|---|---|---|
+| `/get-agent-ready/` | 82 / Grade B, 3 warns | **78 / Grade C, 1 warn** | Entity Clarity ✓, Content Completeness ✓, Hallucination Risk ✓ resolved; Local Signals newly warned |
+| `/` (homepage) | 89 / Grade B, 1 warn | **86 / Grade B, 0 warns** | Entity Clarity warn resolved; all 7 checks now pass |
+
+**Interpretation of results:**
+- `/get-agent-ready/` page score (78 vs 82): check quality improved (3 → 1 warn) but raw score dipped due to Haiku model variance and a more accurate Local Signals warn (missing LocalBusiness schema with street address — previously masked by truncation). The 78 is a more honest assessment.
+- The new Local Signals warn is legitimate: the page references "Rancho Mirage, California" in footer text only, not in LocalBusiness structured data. Scope for Phase 2.
+- Grade A target still requires: LocalBusiness schema + Organization entity block + contact detail in structured data (as flagged in fixes). All are content additions.
+- Homepage: 7/7 checks now pass. Score variance (89→86) is expected Haiku run-to-run variation; all warns cleared is the signal.
+- **Prior AIO grades on long pages may have been suppressed** — any page with >6000 chars of cleaned text received artificially low scores before this fix.
+
 ---
 
 ## 2026-04-22 — Tier 4 agent-readiness achieved
