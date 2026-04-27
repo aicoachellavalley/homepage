@@ -2,6 +2,14 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-04-27 — TOS modal generalized to AICV Terms of Use
+
+- **Commit:** `a3e0bc4` — chore(homepage): generalize TOS modal to AICV Terms of Use (was AIO Tool — Terms of Use)
+- Title, date, No Legal Recourse, and Changes section generalized; five tool-specific clauses flagged for Sat's legal review (not changed): intro paragraph, "No Account..." data handling, "How It Works" pipeline, "For Informational..." body, "Acceptable Use" URL submission sentences
+- CLAUDE.md (`aicv-playbook`, commit `8969fa2`) updated with TOS modal scope clarification rule
+
+---
+
 ## 2026-04-27 — Homepage AIO Tool section removed; image-CTA bridge
 
 - **Commit:** `472a47c` — refactor(homepage): replace AIO Tool section with image-CTA bridge to /get-agent-ready/
