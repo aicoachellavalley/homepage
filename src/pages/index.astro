@@ -235,7 +235,7 @@ const personSchema = {
       <a href="/reports/">Reports</a>
       <a href="https://sunshine.fm">SunshineFM</a>
     </div>
-    <a href="#aio" class="nav-aio-btn">Free AIO Tool ↓</a>
+    <a href="/get-agent-ready/#diagnostic" class="nav-aio-btn">Get Agent Ready →</a>
     <a href="/nodes/" class="nav-docs-btn">Open Docs →</a>
   </div>
 </nav>
@@ -281,77 +281,15 @@ const personSchema = {
   Updated {lastUpdatedDisplay}
 </p>
 
-<!-- ─── AIO TOOL ─── -->
-<section class="aio-section" id="aio">
-  <div class="aio-top">
-    <div>
-      <div class="aio-section-label">Free Tool · AI Coachella Valley</div>
-      <h2 class="aio-title">Can AI See Your<br>Business?</h2>
-      <p class="aio-sub">Foundational LLMs and AI agents now act as intermediaries between customers and companies.</p>
-      <p class="aio-sub" style="margin-top:0.75rem;">If they cannot interpret your business clearly, you don't exist in that layer.</p>
-      <p class="aio-sub" style="margin-top:0.75rem;">This free diagnostic reveals how leading AI systems evaluate your website — across structure, semantics, and local signals.</p>
-    </div>
-  </div>
-
-  <div class="aio-card">
-    <label class="aio-input-label" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
-    <div class="aio-row">
-      <input
-        type="url"
-        id="urlInput"
-        class="aio-input"
-        placeholder="yourrestaurant.com or https://yourbusiness.com"
-        autocomplete="off"
-        autocapitalize="off"
-      >
-      <button class="aio-submit" id="analyzeBtn" onclick="runAnalysis()">Analyze My Site →</button>
-    </div>
-    <div class="aio-callout">
-      <div class="aio-callout-item">Free.</div>
-      <div class="aio-callout-divider">·</div>
-      <div class="aio-callout-item">No signup.</div>
-      <div class="aio-callout-divider">·</div>
-      <div class="aio-callout-item">No data stored.</div>
-    </div>
-    <div class="aio-note" style="display:none;">Results delivered in plain English — no SEO jargon.</div>
-
-    <div class="aio-err" id="aioErr"></div>
-
-    <div class="aio-loading" id="aioLoading">
-      <div class="spin"></div>
-      <div class="loading-txt">Analyzing your site the way AI systems would…</div>
-      <div class="loading-step" id="loadingStep">Checking crawler access…</div>
-    </div>
-
-    <div class="aio-results" id="aioResults">
-      <div class="result-top">
-        <div class="score-block">
-          <div class="score-grade" id="scoreGrade">—</div>
-          <div class="score-num" id="scoreNum">—</div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-track">
-              <div class="score-bar-fill" id="scoreBarFill"></div>
-              <div class="score-bar-marker" id="scoreBarMarker"></div>
-            </div>
-            <div class="score-bar-labels">
-              <span>0</span>
-              <span>100</span>
-            </div>
-          </div>
-          <div class="score-tag">AIO Visibility Grade</div>
-        </div>
-        <div class="verdict" id="verdictText"></div>
-      </div>
-      <div class="result-checks" id="resultChecks"></div>
-      <div id="fixesWrap"></div>
-      <button class="aio-reset" onclick="resetTool()">← Analyze another site</button>
-      <div class="copy-btns">
-        <button class="aio-copy" onclick="copyReport('md')">Copy Markdown</button>
-        <button class="aio-copy" onclick="copyReport('json')">Copy JSON</button>
-        <button class="aio-copy" onclick="copyReport('text')">Copy Text</button>
-      </div>
-    </div>
-  </div>
+<!-- ─── IMAGE-CTA BRIDGE → /get-agent-ready/ ─── -->
+<section class="img-cta-section">
+  <a href="/get-agent-ready/" aria-label="Learn to Get Agent Ready — link to the AICV agent-readiness page">
+    <img
+      src="/gar-banner.svg"
+      alt="Learn to Get Agent Ready — link to the AICV agent-readiness page. Architectural blueprint graphic."
+      loading="eager"
+    >
+  </a>
 </section>
 
 <!-- ─── PATH CARDS ─── -->
@@ -493,7 +431,7 @@ const personSchema = {
         <a href="/briefs/">Briefs</a>
         <a href="/reports/">Reports</a>
         <a href="https://sunshine.fm">SunshineFM</a>
-        <a href="#aio">AIO Tool</a>
+        <a href="/get-agent-ready/#diagnostic">AIO Tool</a>
         <a href="https://x.com/CoachellaAI">@CoachellaAI</a>
         <a href="https://github.com/aicoachellavalley">GitHub</a>
         <a href="#" onclick="document.getElementById('tosModal').classList.add('on');return false;">Terms of Use</a>
@@ -1196,11 +1134,24 @@ const personSchema = {
     line-height: 1.45;
   }
 
-  /* ─── AIO TOOL ─── */
-  .aio-section {
-    padding: 5.5rem 3rem 5rem;
+  /* ─── IMAGE-CTA BRIDGE ─── */
+  .img-cta-section {
+    background: var(--pine);
+    padding: 0 3rem;
+  }
+  .img-cta-section a {
+    display: block;
     max-width: 1060px;
     margin: 0 auto;
+  }
+  .img-cta-section a:focus-visible {
+    outline: 3px solid var(--volt);
+    outline-offset: 4px;
+  }
+  .img-cta-section img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .aio-top {
@@ -1844,11 +1795,7 @@ const personSchema = {
     .path-cards-wrap { padding: 0; }
     .intel-what-section { padding: 3.5rem 1.5rem 0; }
     .intel-what-inner { padding: 2rem 1.5rem; }
-    .aio-section { padding: 3.5rem 1.5rem; }
-    .aio-top { grid-template-columns: 1fr; gap: 1rem; }
-    .aio-row { flex-direction: column; }
-    .aio-input { border-right: 1px solid var(--sand); }
-    .aio-checks { grid-template-columns: repeat(3, 1fr); }
+    .img-cta-section { padding: 0 1.5rem; }
     .result-top { grid-template-columns: 1fr; }
     .partners-section { padding: 3rem 1.5rem; }
     footer { padding: 2.5rem 1.5rem 2rem; }
