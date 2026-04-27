@@ -2,6 +2,13 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-04-27 — /get-agent-ready FAQ 10th entry (agent-payment)
+
+- **Commit:** `7944eec` — feat(get-agent-ready): add agent-payment FAQ entry (Reviewed-tier roadmap commitment)
+- FAQ now has 10 entries (schema and HTML in sync); new entry covers x402, ACP, agent-payable MCP endpoints as a Reviewed-tier future commitment for hospitality/dining/wellness/retail
+
+---
+
 ## 2026-04-27 — Homepage Get Included CTA fix
 
 - **Commit:** `1126352` — fix(homepage): repoint Get Included CTA to V7.7 diagnostic anchor
