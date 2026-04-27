@@ -2,6 +2,27 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-04-27 — /get-agent-ready Phase 2 schema additions
+
+- **Commit:** `2ccc65a` — feat(get-agent-ready): Phase 2 schema additions (Organization, LocalBusiness, ContactPoint)
+- **Deploy:** Cloudflare Pages auto-deploy on push to main
+- **Scope:** schema-only — no visible copy changes, no AIO widget changes, no TOS modal changes
+- **@graph now contains 7 entries:** WebPage, BreadcrumbList, Service (AICV Ready), Service (AICV Reviewed), FAQPage, Organization, LocalBusiness
+- **Organization schema:** @id `#organization`, founder Sat Singh, parentOrganization Desert Community Foundation (fiscal sponsor), contactPoint (email-only, general inquiries, English), sameAs mirrored from homepage (`x.com/CoachellaAI`, `github.com/aicoachellavalley`, `sunshinefm.beehiiv.com`), logo `logo.png`, foundingDate 2025-01-19
+- **LocalBusiness schema:** @id `#localbusiness`, verified address 37023 Cook Street Palm Desert CA 92211, parentOrganization @id reference, email sat@aicv.co — addresses Local Signals warn from 2026-04-27 AIO analysis
+- **Service ×2 provider:** simplified to `{ "@id": "https://aicoachellavalley.com/#organization" }` @id-only reference — no duplication of Organization properties
+- **dateModified:** 2026-04-26 → 2026-04-27
+- **No phone field added:** AICV operates email-only; phone was AIO LOW-tier generic suggestion, not a content gap
+- **Build check:** 248 pages, no errors, 4.00s
+
+### Deferred verifications — 2026-04-28
+
+- **AIO Tool grade on `/get-agent-ready/`** — Phase 2 directly addresses both MED-tier Top Fixes from 2026-04-27 analysis (Organization entity block, LocalBusiness with street address). Target: Grade A (90+). Note: rate-limit budget consumed on 2026-04-27; do not run today.
+- **Google Rich Results revalidation** — confirm all 7 schema types parse cleanly; verify LocalBusiness and Organization render correctly; confirm no regression on WebPage, BreadcrumbList, Service×2, FAQPage. Note: LocalBusiness and Organization are not Google Rich Result types (no visual enhancement), but must validate without errors.
+- **Cloudflare scan:** not needed — schema additions do not affect API/Auth/MCP/Skill Discovery category; infrastructure score unchanged.
+
+---
+
 ## 2026-04-27 — /get-agent-ready V7.7 copy replacement
 
 - **Commit:** `1e85313` — feat(get-agent-ready): V7.7 final copy — proof strip, streamlined sections, agentic-internet thesis
