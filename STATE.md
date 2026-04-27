@@ -2,6 +2,20 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-04-27 — Homepage AIO Tool section removed; image-CTA bridge
+
+- **Commit:** `472a47c` — refactor(homepage): replace AIO Tool section with image-CTA bridge to /get-agent-ready/
+- AIO Tool embed fully removed from homepage (`id="aio"`, input, results, loading, error divs, submit button)
+- Replaced with `.img-cta-section`: `<a href="/get-agent-ready/">` wrapping `<img src="/gar-banner.svg">` (placeholder — drop file in `public/` to activate)
+- Nav button updated: "Free AIO Tool ↓" `#aio` → "Get Agent Ready →" `/get-agent-ready/#diagnostic`
+- Footer "AIO Tool" link updated: `#aio` → `/get-agent-ready/#diagnostic`
+- **Canonical AIO Tool instance:** `/get-agent-ready/#diagnostic` only
+- **Orphaned JS retained** (not removed — separate decision needed): `WORKER_BASE`, `resetTool`, `showErr`, `gradeFromScore`, `runAnalysis`, `copyReport` — all in `<script is:inline>` block
+- **TOS modal retained** (not removed — separate decision needed): `id="tosModal"`, triggered by footer "Terms of Use" link; title still reads "AIO Tool — Terms of Use"
+- Build: 248 pages, no errors, 4.35s
+
+---
+
 ## 2026-04-27 — /get-agent-ready FAQ 10th entry (agent-payment)
 
 - **Commit:** `7944eec` — feat(get-agent-ready): add agent-payment FAQ entry (Reviewed-tier roadmap commitment)
