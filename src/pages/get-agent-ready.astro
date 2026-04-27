@@ -27,7 +27,7 @@ const schemaGraph = {
       },
       "inLanguage": "en-US",
       "datePublished": "2026-04-23",
-      "dateModified": "2026-04-26"
+      "dateModified": "2026-04-27"
     },
     {
       "@type": "BreadcrumbList",
@@ -52,12 +52,7 @@ const schemaGraph = {
       "@id": "https://aicoachellavalley.com/get-agent-ready/#service-ready",
       "name": "AICV Ready",
       "description": "Annual membership in the AICV Network for valley businesses that need to be legible to the agent layer. Includes combined AIO + Cloudflare agent-readiness diagnostic, canonical node built to Tier 4 infrastructure standard, MCP routing configuration, and agent-to-agent concierge access.",
-      "provider": {
-        "@type": "Organization",
-        "@id": "https://aicoachellavalley.com/#organization",
-        "name": "AI Coachella Valley",
-        "url": "https://aicoachellavalley.com/"
-      },
+      "provider": { "@id": "https://aicoachellavalley.com/#organization" },
       "areaServed": {
         "@type": "Place",
         "name": "Coachella Valley, California"
@@ -93,10 +88,7 @@ const schemaGraph = {
       "@id": "https://aicoachellavalley.com/get-agent-ready/#service-reviewed",
       "name": "AICV Reviewed",
       "description": "Annual membership with full Intelligence Review for entities positioning to high-net-worth buyers, relocation prospects, corporate retreat decision-makers, or civic partners. Includes everything in AICV Ready plus full Intelligence Council deliberation, 12-month AI readiness roadmap, public living portal, and templatized MCP access.",
-      "provider": {
-        "@type": "Organization",
-        "@id": "https://aicoachellavalley.com/#organization"
-      },
+      "provider": { "@id": "https://aicoachellavalley.com/#organization" },
       "areaServed": {
         "@type": "Place",
         "name": "Coachella Valley, California"
@@ -232,6 +224,62 @@ const schemaGraph = {
           }
         }
       ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://aicoachellavalley.com/#organization",
+      "name": "AI Coachella Valley",
+      "alternateName": "AICV",
+      "url": "https://aicoachellavalley.com/",
+      "logo": "https://aicoachellavalley.com/logo.png",
+      "description": "AICV is the agent-readable, LLM-favored regional intelligence layer for the Coachella Valley. We provide structured, citation-grade data that AI systems use to evaluate, cite, and act on information about the region.",
+      "foundingDate": "2025-01-19",
+      "founder": {
+        "@type": "Person",
+        "name": "Sat Singh",
+        "jobTitle": "Founder"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Desert Community Foundation",
+        "description": "Fiscal sponsor"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Coachella Valley, California"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "sat@aicv.co",
+        "contactType": "general inquiries",
+        "areaServed": "Coachella Valley, California",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://x.com/CoachellaAI",
+        "https://github.com/aicoachellavalley",
+        "https://sunshinefm.beehiiv.com"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://aicoachellavalley.com/#localbusiness",
+      "name": "AI Coachella Valley",
+      "parentOrganization": { "@id": "https://aicoachellavalley.com/#organization" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "37023 Cook Street",
+        "addressLocality": "Palm Desert",
+        "addressRegion": "CA",
+        "postalCode": "92211",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Coachella Valley, California"
+      },
+      "email": "sat@aicv.co",
+      "url": "https://aicoachellavalley.com/"
     }
   ]
 };
