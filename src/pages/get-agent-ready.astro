@@ -1,8 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
+import nodesData from '../../public/nodes.json';
+import briefsData from '../../public/briefs.json';
+
+const nodeCount = nodesData.length;
+const briefCount = briefsData.length;
 
 const pageTitle = 'Get Agent Ready — AICV Network Membership';
-const pageDescription = "Deploy to the AICV Network — the regional substrate agents query when they're asked about the Coachella Valley. Two membership tiers, annual billing, no website changes required.";
+const pageDescription = "AICV is building the canonical intelligence layer for the Coachella Valley — structured for LLMs, agents, and the agentic internet. Join the network that AI systems query when they're asked about this region.";
 const canonicalUrl = 'https://aicoachellavalley.com/get-agent-ready/';
 
 const schemaGraph = {
@@ -13,7 +18,7 @@ const schemaGraph = {
       "@id": "https://aicoachellavalley.com/get-agent-ready/#webpage",
       "url": "https://aicoachellavalley.com/get-agent-ready/",
       "name": "Get Agent Ready — AICV Network Membership",
-      "description": "Deploy to the AICV Network — the regional substrate agents query when they're asked about the Coachella Valley. Two membership tiers, annual billing, no website changes required.",
+      "description": "AICV is building the canonical intelligence layer for the Coachella Valley — structured for LLMs, agents, and the agentic internet. Join the network that AI systems query when they're asked about this region.",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://aicoachellavalley.com/#website",
@@ -22,7 +27,7 @@ const schemaGraph = {
       },
       "inLanguage": "en-US",
       "datePublished": "2026-04-23",
-      "dateModified": "2026-04-23"
+      "dateModified": "2026-04-26"
     },
     {
       "@type": "BreadcrumbList",
@@ -265,14 +270,33 @@ const schemaGraph = {
   <div class="gar-hero-inner">
     <div class="gar-eyebrow">
       <span class="eyebrow-pip"></span>
-      AICV · Commercial Tier · April 2026
+      AICV · Intelligence Layer · April 2026
     </div>
     <h1 class="gar-h1">Get Agent Ready.</h1>
-    <p class="gar-sub-h1">Deploy to the AICV Network — the regional substrate agents query when they're asked about the Coachella Valley.</p>
-    <p class="gar-hero-body">AI systems increasingly decide where high-value buyers go, what they buy, and where they relocate. AICV builds the machine-readable layer those systems read when they're asked about the Coachella Valley. This page is how a valley business becomes part of it.</p>
+    <p class="gar-sub-h1">The next internet is being shaped by agents.</p>
+    <p class="gar-hero-body">ChatGPT, Gemini, Claude, executive AI assistants, booking agents, research agents, and machine decision systems are already influencing where people stay, hire, invest, relocate, and do business.</p>
+    <p class="gar-hero-body">If the Coachella Valley remains digitally fragmented, demand will increasingly flow elsewhere.</p>
+    <p class="gar-hero-body"><strong>AICV is building the canonical intelligence layer for the Coachella Valley—structured for LLMs, agents, and the future of discovery.</strong></p>
     <div class="gar-hero-ctas">
-      <a href="#diagnostic" class="gar-cta-primary">Run the free diagnostic ↓</a>
-      <a href="#tiers" class="gar-cta-secondary">See membership tiers ↓</a>
+      <a href="#diagnostic" class="gar-cta-primary">Run Free Readiness Check ↓</a>
+      <a href="#tiers" class="gar-cta-secondary">Join AICV Ready ↓</a>
+    </div>
+    <p class="gar-hero-note">Built here. Designed for agents. Members first.</p>
+  </div>
+</section>
+
+<!-- ─── PROOF STRIP ─── -->
+<section class="gar-proof-strip">
+  <div class="gar-proof-strip-inner">
+    <div class="gar-proof-heading">The corpus is already live.</div>
+    <div class="gar-proof-stats">
+      <span class="gar-proof-num">{nodeCount}+</span> Regional Nodes
+      <span class="gar-proof-sep">·</span>
+      <span class="gar-proof-num">{briefCount}+</span> Intelligence Briefs
+      <span class="gar-proof-sep">·</span>
+      Live in Claude, ChatGPT, Perplexity &amp; Gemini
+      <span class="gar-proof-sep">·</span>
+      Structured for the agentic internet
     </div>
   </div>
 </section>
@@ -352,175 +376,174 @@ const schemaGraph = {
   </div>
 </section>
 
-<!-- ─── SECTION 3 — THE BRIDGE ─── -->
+<!-- ─── SECTION 3 — WHY THIS MATTERS NOW ─── -->
 <section class="gar-bridge-wrap">
   <div class="gar-bridge">
-    <h2 class="gar-h2">Individual Signal. Collective Signal.</h2>
-    <p class="gar-body">The diagnostic you just ran measures one thing: how clearly AI systems can read your website in isolation. That's useful. It's also the smaller half of the problem.</p>
-    <p class="gar-body">The larger half is this: when someone in San Francisco asks ChatGPT where to relocate their family, or an executive in Los Angeles asks Claude where to hold a wellness retreat, the AI doesn't evaluate websites one at a time. It draws from the machine-readable knowledge layer that describes the region. Whoever is canonical in that layer becomes the default answer. Whoever isn't, isn't considered.</p>
-    <p class="gar-body">A valley business optimizing its own website in isolation is competing against websites. A valley business inside the AICV Network is part of a regional cluster signal that ranks above any single site.</p>
-    <p class="gar-body">That's the layer AICV builds. That's what membership is.</p>
-    <blockquote class="gar-pullquote">In the substrate, isolation is invisibility. The businesses ranking above you aren't the ones with better websites. They're the ones inside clusters that outrank websites.</blockquote>
+    <h2 class="gar-h2">Decisions Are Already Being Made Through AI</h2>
+    <p class="gar-body">Right now, AI systems are helping shape:</p>
+    <ul class="gar-light-list">
+      <li>hotel and venue shortlists</li>
+      <li>local business recommendations</li>
+      <li>relocation research</li>
+      <li>executive planning</li>
+      <li>vendor discovery</li>
+      <li>travel decisions</li>
+      <li>investment exploration</li>
+    </ul>
+    <p class="gar-body">Each of these used to start with a search engine. Now they often start with an agent.</p>
+    <blockquote class="gar-pullquote">The question is: who is being discovered as it scales?</blockquote>
   </div>
 </section>
 
-<!-- ─── SECTION 4 — WHAT AICV IS ACTUALLY BUILDING ─── -->
+<!-- ─── SECTION 4 — WHY NETWORKS WIN ─── -->
 <section class="gar-substrate-wrap">
   <div class="gar-substrate">
-    <div class="gar-dark-eyebrow">The substrate</div>
-    <h2 class="gar-h2-dark">The Intelligence Layer Every Agent Queries</h2>
-    <p class="gar-body-dark">AICV is the structured dataset AI systems use to evaluate, cite, and act on information about the Coachella Valley. Eighty nodes. One hundred thirty-three intelligence briefs. A live MCP server callable by any agent. Citation authority already flowing from Perplexity, Claude, Gemini, and ChatGPT.</p>
-    <p class="gar-body-dark">Members of the Network live in four places. Three are live today. One ships this summer.</p>
+    <div class="gar-dark-eyebrow">The network advantage</div>
+    <h2 class="gar-h2-dark">LLMs Prefer Structured Clusters Over Fragmented Signals</h2>
+    <p class="gar-body-dark">Most organizations publish scattered information across websites, social profiles, outdated listings, PDFs, and disconnected pages.</p>
+    <p class="gar-body-dark">Humans can sometimes piece that together. AI systems often cannot.</p>
+    <p class="gar-body-dark">They tend to favor signals that are:</p>
+    <ul class="gar-dark-list">
+      <li>repeated</li>
+      <li>corroborated</li>
+      <li>structured</li>
+      <li>current</li>
+      <li>semantically clear</li>
+      <li>grouped inside trusted contexts</li>
+    </ul>
 
-    <div class="gar-substrate-grid">
-      <div class="gar-substrate-item">
-        <div class="gar-substrate-num">1</div>
-        <div class="gar-substrate-title">Your canonical node page</div>
-        <div class="gar-substrate-url"><em>aicoachellavalley.com/[your-slug]</em></div>
-        <p class="gar-substrate-desc">The authoritative record agents retrieve when they query your entity. Built to AICV's Tier 4 agent-readiness standard.</p>
+    <div class="gar-network-statements">
+      <div class="gar-network-stmt">
+        <div class="gar-network-stmt-text">100 organizations acting alone can create noise.</div>
       </div>
-      <div class="gar-substrate-item">
-        <div class="gar-substrate-num">2</div>
-        <div class="gar-substrate-title">The MCP server</div>
-        <div class="gar-substrate-url"><em>mcp.aicoachellavalley.com</em></div>
-        <p class="gar-substrate-desc">The agent-callable endpoint. When external agents ask the substrate about your category or city, members are what gets returned.</p>
-      </div>
-      <div class="gar-substrate-item">
-        <div class="gar-substrate-num">3</div>
-        <div class="gar-substrate-title">Your Intelligence Review portal <span class="gar-tier-badge">Tier 2</span></div>
-        <div class="gar-substrate-url"><em>aicoachellavalley.com/reviews/[your-slug]</em></div>
-        <p class="gar-substrate-desc">Your living grade trajectory, prioritized actions, and 12-month AI-readiness roadmap. Updates quarterly as the Network grows.</p>
-      </div>
-      <div class="gar-substrate-item">
-        <div class="gar-substrate-num">4</div>
-        <div class="gar-substrate-title">The Network map <span class="gar-summer-badge">Summer 2026</span></div>
-        <div class="gar-substrate-url"><em>aicoachellavalley.com/network</em></div>
-        <p class="gar-substrate-desc">The regional substrate made visible. Every deployed entity, every cluster, every citation link between them. The table of contents agents use when they query the valley.</p>
+      <div class="gar-network-stmt">
+        <div class="gar-network-stmt-text">100 organizations inside a coherent intelligence layer can create signal.</div>
       </div>
     </div>
 
-    <p class="gar-substrate-closer">No widgets. No badges. No certificates. The substrate itself is the product.</p>
+    <p class="gar-body-dark">AICV helps organize fragmented local signals into one stronger regional network.</p>
+    <p class="gar-body-dark">That includes:</p>
+    <ul class="gar-dark-list">
+      <li>structured business profiles</li>
+      <li>entity relationships</li>
+      <li>regional trust surfaces</li>
+      <li>agent-to-agent routing pathways</li>
+    </ul>
+
+    <div style="margin-top: 2.5rem;">
+      <a href="#diagnostic" class="gar-cta-primary">Run Free Readiness Check ↓</a>
+    </div>
   </div>
 </section>
 
-<!-- ─── SECTION 5 — THE TIERS ─── -->
+<!-- ─── SECTION 5 — CHOOSE YOUR FUTURE ─── -->
 <section class="gar-tiers-wrap" id="tiers">
   <div class="gar-tiers">
     <div class="gar-section-eyebrow">Two tiers · One Network</div>
-    <h2 class="gar-h2">AICV Ready. AICV Reviewed.</h2>
-    <p class="gar-body">Every membership is annual. Every membership begins with a one-time Deployment Fee. The Deployment Fee covers the Intelligence Council deliberation, node engineering to Tier 4 infrastructure standard, MCP integration, and — for Reviewed members — the written Review and portal build. Real work, delivered once.</p>
+    <h2 class="gar-h2">Choose Your Future</h2>
 
     <div class="gar-tier-grid">
 
       <!-- AICV Ready -->
       <div class="gar-tier-card tier-ready">
-        <div class="gar-tier-label">AICV Ready</div>
-        <p class="gar-tier-hook">For valley businesses that need to be legible to the agent layer.</p>
+        <div class="gar-tier-label">Get Found — AICV Ready</div>
+        <p class="gar-tier-hook">Open to serious Coachella Valley organizations.</p>
+        <p class="gar-tier-hook">For businesses, hotels, venues, institutions, and operators who want to move early and become easier for AI systems to understand, trust, and surface.</p>
+        <p class="gar-tier-includes" style="color: var(--pine-light);">Membership includes:</p>
         <ul class="gar-tier-list">
-          <li>Combined AIO + Cloudflare agent-readiness diagnostic</li>
-          <li>Canonical node at <em>aicoachellavalley.com/[your-slug]</em>, built to Tier 4 infrastructure standard</li>
-          <li>MCP routing configured — your entity becomes callable by external agents</li>
-          <li>Agent-to-agent tourism concierge and economic-development platform access</li>
-          <li>Annual re-diagnostic</li>
-          <li>Priority consideration for inclusion in relevant AICV briefs</li>
+          <li>Readiness assessment</li>
+          <li>Profile deployment</li>
+          <li>Trust signal improvements</li>
+          <li>Inclusion in the network</li>
+          <li>Members-only strategy session</li>
         </ul>
         <div class="gar-tier-price">
-          <div class="gar-price-line"><strong>$1,000 Deployment Fee</strong> <span class="gar-price-note">(one-time)</span></div>
-          <div class="gar-price-line"><strong>$2,500 annual membership</strong></div>
+          <div class="gar-price-line"><strong>$1,000 Deployment</strong> <span class="gar-price-note">(one-time)</span></div>
+          <div class="gar-price-line"><strong>$2,500 Annual Membership</strong></div>
           <div class="gar-price-summary">Year one: $3,500. Year two onward: $2,500.</div>
         </div>
-        <a href="#book" class="gar-tier-cta">Deploy as AICV Ready →</a>
+        <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-tier-cta">Join AICV Ready →</a>
       </div>
 
       <!-- AICV Reviewed -->
       <div class="gar-tier-card tier-reviewed">
-        <div class="gar-tier-label tier-flagship">AICV Reviewed</div>
-        <p class="gar-tier-hook">For entities positioning to high-net-worth buyers, relocation prospects, corporate retreat decision-makers, or civic partners — where a structured Intelligence Review changes the conversation.</p>
-        <p class="gar-tier-includes">Includes everything in AICV Ready, plus:</p>
+        <div class="gar-tier-label tier-flagship">Go Premium — AICV Reviewed</div>
+        <p class="gar-tier-hook">Editorial. Invitation only.</p>
+        <p class="gar-tier-hook">For standout organizations selected through AICV Snapshot outreach or direct invitation.</p>
+        <p class="gar-tier-includes">Membership includes:</p>
         <ul class="gar-tier-list">
-          <li>Full Intelligence Review — IC deliberation across Buyer Readiness, Competitive Positioning, and AI Readiness</li>
-          <li>Prioritized actions and 12-month AI-readiness roadmap</li>
-          <li>Living client portal at <em>aicoachellavalley.com/reviews/[your-slug]</em> — public</li>
-          <li>Quarterly IC refresh with grade trajectory</li>
-          <li>Templatized MCP access — priority surfacing in your category, richer <code>get_node</code> response, member-specific tools</li>
-          <li>Direct-line notifications on material Network changes affecting your positioning</li>
-          <li>Priority inclusion in relevant briefs with cross-links to your node</li>
+          <li>Full Intelligence Review</li>
+          <li>Premium network positioning</li>
+          <li>Category authority signals</li>
+          <li>Custom MCP opportunities</li>
+          <li>Strategic advisory access</li>
         </ul>
 
         <div class="gar-price-block founding">
-          <div class="gar-price-header">Founding rate — first 10 members only, locked for life:</div>
-          <div class="gar-price-line"><strong>$2,500 Deployment Fee · $5,000 annual</strong></div>
+          <div class="gar-price-header">Founding Circle — first 10 invited entities, locked for life:</div>
+          <div class="gar-price-line"><strong>$2,500 onboarding · $5,000 annual</strong></div>
           <div class="gar-price-summary">Year one: $7,500. Year two onward: $5,000.</div>
         </div>
 
         <div class="gar-price-block standard">
-          <div class="gar-price-header">Standard rate — members 11 onward:</div>
-          <div class="gar-price-line"><strong>$5,000 Deployment Fee · $7,500 annual</strong></div>
+          <div class="gar-price-header">Standard rate begins at member 11:</div>
+          <div class="gar-price-line"><strong>$5,000 onboarding · $7,500 annual</strong></div>
           <div class="gar-price-summary">Year one: $12,500. Year two onward: $7,500.</div>
         </div>
 
         <div class="gar-founding-counter">10 / 10 Founding Spots Remaining</div>
 
-        <a href="#book" class="gar-tier-cta tier-flagship-cta">Deploy as AICV Reviewed →</a>
+        <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-tier-cta tier-flagship-cta">Received a Snapshot? Continue →</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ─── SECTION 6 — DEPLOYMENT ─── -->
+<!-- ─── SECTION 6 — MEMBERS ONLY ─── -->
 <section class="gar-deployment-wrap">
   <div class="gar-deployment">
-    <div class="gar-section-eyebrow">What happens after you pay</div>
-    <h2 class="gar-h2">Seven to Ten Business Days. Start to Finish.</h2>
-    <p class="gar-body">Deployment is a sequence, not an event. Every step produces a real artifact in the substrate. Every step is documented.</p>
+    <h2 class="gar-h2">Included for Members</h2>
+    <p class="gar-members-lede">25 Minutes with Sat Singh</p>
+    <p class="gar-body">Focused on:</p>
+    <ul class="gar-light-list">
+      <li>where AI may reshape your category</li>
+      <li>what to fix first</li>
+      <li>where opportunity is emerging</li>
+      <li>how to strengthen your position now</li>
+    </ul>
+    <p class="gar-members-bespoke">Practical. Specific. Bespoke.</p>
+  </div>
+</section>
 
-    <div class="gar-deploy-grid">
+<!-- ─── SECTION 7 — ABOUT AICV ─── -->
+<section class="gar-about-wrap">
+  <div class="gar-about">
+    <h2 class="gar-h2">Built for Agents. Powered by Humans.</h2>
+    <p class="gar-body">AICV (AI Coachella Valley) is building the intelligence layer for the Coachella Valley—helping the region compete in an economy increasingly influenced by AI systems and agents.</p>
+    <p class="gar-body">Founded by Sat Singh, AICV is fiscally sponsored by Desert Community Foundation and operates from the CSUSB Entrepreneurship Resource Center at 37023 Cook Street, Palm Desert, California.</p>
+    <p class="gar-body">AICV maintains a continuously updated regional intelligence corpus accessible to AI systems through structured endpoints, MCP integration, and editorial review.</p>
+    <p class="gar-body"><strong>Agent-readable. LLM-favored. Building the local intelligence layer since 2025.</strong></p>
+    <p class="gar-body">Contact: <a href="mailto:sat@aicv.co">sat@aicv.co</a></p>
+  </div>
+</section>
 
-      <div class="gar-deploy-col">
-        <h3 class="gar-deploy-title">AICV Ready — Deployment</h3>
-        <ol class="gar-deploy-list">
-          <li><em>Payment received.</em> Confirmation email with a link to schedule a call with Sat.</li>
-          <li><em>Call with Sat.</em> Forty-five minutes. Positioning, category, target audience.</li>
-          <li><em>Diagnostic run.</em> Combined AIO + Cloudflare agent-readiness assessment. Findings shared directly.</li>
-          <li><em>Node built.</em> Canonical record at <em>aicoachellavalley.com/[your-slug]</em>, built to Tier 4 infrastructure standard.</li>
-          <li><em>MCP routing configured.</em> Your entity is callable by external agents.</li>
-          <li><em>Deployment complete.</em> Listed under <em>Recently Deployed</em>.</li>
-        </ol>
-      </div>
-
-      <div class="gar-deploy-col">
-        <h3 class="gar-deploy-title">AICV Reviewed — Deployment</h3>
-        <ol class="gar-deploy-list">
-          <li><em>Payment received.</em> Confirmation email with a link to schedule a call with Sat.</li>
-          <li><em>Call with Sat.</em> Forty-five minutes. Positioning, competitive set, AI-readiness context. The conversation that informs your Review.</li>
-          <li><em>Diagnostic run.</em> Combined AIO + Cloudflare agent-readiness assessment.</li>
-          <li><em>Node built.</em> Canonical record at <em>aicoachellavalley.com/[your-slug]</em>.</li>
-          <li><em>MCP routing configured,</em> including templatized tool access for your category.</li>
-          <li><em>Intelligence Council convenes.</em> Five frontier AI models, three dimensions, structured deliberation.</li>
-          <li><em>Review written.</em> Findings, prioritized actions, 12-month AI-readiness roadmap.</li>
-          <li><em>Portal built</em> at <em>aicoachellavalley.com/reviews/[your-slug]</em>. Public.</li>
-          <li><em>Review walkthrough with Sat.</em> Forty-five minutes. Portal goes live during or after the call.</li>
-          <li><em>Deployment complete.</em> Listed under <em>Recently Deployed</em>. Quarterly IC refresh calendar set.</li>
-        </ol>
-      </div>
-
+<!-- ─── SECTION 8 — FINAL CLOSE ─── -->
+<section class="gar-bet-wrap">
+  <div class="gar-bet">
+    <h2 class="gar-h2-dark">The Coachella Valley Already Has Demand.</h2>
+    <h2 class="gar-h2-dark" style="margin-top: 0.5rem;">Now It Needs Machine Legibility.</h2>
+    <p class="gar-body-dark" style="margin-top: 2rem;">Travel agents. Booking agents. Buying agents. Research agents. Executive AI assistants.</p>
+    <p class="gar-body-dark">The infrastructure being built now will compound.</p>
+    <p class="gar-bet-closer">Joining now has its benefits.</p>
+    <div class="gar-close-ctas">
+      <a href="#diagnostic" class="gar-cta-primary">Run Free Readiness Check ↓</a>
+      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-close-cta-secondary">Join AICV Ready →</a>
     </div>
   </div>
 </section>
 
-<!-- ─── SECTION 7 — THE HONEST BET ─── -->
-<section class="gar-bet-wrap">
-  <div class="gar-bet">
-    <h2 class="gar-h2-dark">What You're Actually Buying</h2>
-    <p class="gar-body-dark">This is a 2026 bet. The substrate is being built right now, and AICV is building it. The members who deploy now are the ones who will be cited when agents become the default layer between buyers and businesses.</p>
-    <p class="gar-body-dark">If that future doesn't arrive, you've paid for a canonical node on a regional intelligence platform and a diagnostic that's genuinely useful on its own terms.</p>
-    <p class="gar-body-dark">If it does arrive, you were early. The entities in the Network now become the default answers agents give. Entities added later are additions to a map that already exists. The window isn't AI adoption. The window is substrate definition.</p>
-    <p class="gar-body-dark gar-bet-closer">AICV believes the future is arriving. AICV isn't the only one.</p>
-  </div>
-</section>
-
-<!-- ─── SECTION 8 — FAQ ─── -->
+<!-- ─── SECTION 9 — FAQ ─── -->
 <section class="gar-faq-wrap">
   <div class="gar-faq">
     <h2 class="gar-h2">Questions Worth Answering</h2>
@@ -570,24 +593,6 @@ const schemaGraph = {
       <p class="gar-faq-a">Three things, together: the public <em>Ask AICV</em> chat interface, the Network map at <em>aicoachellavalley.com/network</em>, and member-scoped query access for deployed members. Members who deploy before summer see themselves appear in all three as they ship.</p>
     </div>
 
-  </div>
-</section>
-
-<!-- ─── SECTION 9 — GET IN TOUCH ─── -->
-<section class="gar-book-wrap" id="book">
-  <div class="gar-book">
-    <h2 class="gar-h2-dark">One Conversation Before You Deploy</h2>
-    <p class="gar-book-lede"><em>One conversation before you deploy. Forty-five minutes with Sat. Response within one business day.</em></p>
-    <p class="gar-body-dark">AICV doesn't sell memberships through checkout pages. Deployment starts with a call. That's when fit is confirmed, positioning is discussed, and the deployment calendar is set.</p>
-
-    <div class="gar-book-cta-wrap">
-      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-book-cta">
-        Book a 45-minute call with Sat →
-      </a>
-      <div class="gar-book-note">Opens Google Calendar scheduling in a new tab.</div>
-    </div>
-
-    <p class="gar-book-fineprint">AI Coachella Valley · Fiscally sponsored by the Desert Community Foundation · Rancho Mirage, California</p>
   </div>
 </section>
 
@@ -798,17 +803,30 @@ const schemaGraph = {
     font-weight: 300;
     line-height: 1.75;
     max-width: 62ch;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.1rem;
     opacity: 0;
     animation: fadeUp 0.7s ease forwards 0.4s;
   }
+
+  .gar-hero-body strong { color: var(--pine); font-weight: 600; }
 
   .gar-hero-ctas {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+    margin-top: 1.5rem;
     opacity: 0;
     animation: fadeUp 0.7s ease forwards 0.5s;
+  }
+
+  .gar-hero-note {
+    font-size: 0.78rem;
+    color: var(--pine-light);
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 1.25rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.6s;
   }
 
   .gar-cta-primary {
@@ -837,6 +855,38 @@ const schemaGraph = {
     transition: background 0.2s, color 0.2s;
   }
   .gar-cta-secondary:hover { background: var(--pine); color: var(--sand); }
+
+  /* ─── PROOF STRIP ─── */
+  .gar-proof-strip {
+    background: var(--pine);
+    border-top: 2px solid rgba(216,255,0,0.12);
+    border-bottom: 1px solid rgba(216,255,0,0.06);
+  }
+  .gar-proof-strip-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 1.75rem 3rem;
+    text-align: center;
+  }
+  .gar-proof-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--volt);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .gar-proof-stats {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(0.8rem, 1.4vw, 0.98rem);
+    font-weight: 600;
+    color: var(--sand);
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+  }
+  .gar-proof-num { color: var(--volt); }
+  .gar-proof-sep { color: rgba(216,255,0,0.4); margin: 0 0.5rem; }
 
   /* ─── SECTION 2 — AIO TOOL (copied verbatim from homepage) ─── */
   .aio-section {
@@ -1155,7 +1205,7 @@ const schemaGraph = {
     font-style: italic;
   }
 
-  /* ─── SECTION 3 — BRIDGE ─── */
+  /* ─── SECTION 3 — WHY THIS MATTERS NOW ─── */
   .gar-bridge-wrap { background: var(--sand-light); }
   .gar-bridge {
     max-width: 1060px;
@@ -1199,7 +1249,34 @@ const schemaGraph = {
     max-width: 64ch;
   }
 
-  /* ─── SECTION 4 — SUBSTRATE ─── */
+  /* Light bullet list */
+  .gar-light-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .gar-light-list li {
+    font-size: 0.92rem;
+    color: var(--pine-dark);
+    font-weight: 300;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .gar-light-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--pine);
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+
+  /* ─── SECTION 4 — WHY NETWORKS WIN ─── */
   .gar-substrate-wrap { background: var(--pine); }
   .gar-substrate {
     max-width: 1060px;
@@ -1237,90 +1314,55 @@ const schemaGraph = {
   .gar-body-dark strong { color: var(--sand); font-weight: 600; }
   .gar-body-dark em { font-style: italic; color: var(--volt); }
 
-  .gar-substrate-grid {
+  /* Dark bullet list */
+  .gar-dark-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .gar-dark-list li {
+    font-size: 0.92rem;
+    color: rgba(232,226,208,0.8);
+    font-weight: 300;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .gar-dark-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--volt);
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+
+  /* Network statements — two-column split quotes */
+  .gar-network-statements {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: rgba(232,226,208,0.08);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    margin: 2rem 0;
   }
-
-  .gar-substrate-item {
-    background: var(--pine);
-    padding: 1.75rem 1.5rem;
-    border-top: 2px solid rgba(216,255,0,0.25);
+  .gar-network-stmt {
+    padding: 1.5rem 1.75rem;
+    background: rgba(216,255,0,0.04);
+    border: 1px solid rgba(216,255,0,0.12);
   }
-
-  .gar-substrate-num {
+  .gar-network-stmt-text {
     font-family: 'Syne', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--volt);
-    letter-spacing: -0.02em;
-    margin-bottom: 0.35rem;
-    line-height: 1;
-  }
-
-  .gar-substrate-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.05rem;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    font-weight: 600;
     color: var(--sand);
     letter-spacing: -0.01em;
-    line-height: 1.3;
-    margin-bottom: 0.45rem;
+    line-height: 1.45;
   }
 
-  .gar-tier-badge, .gar-summer-badge {
-    display: inline-block;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.5rem;
-    margin-left: 0.5rem;
-    vertical-align: middle;
-    background: rgba(216,255,0,0.12);
-    color: var(--volt);
-    border: 1px solid rgba(216,255,0,0.25);
-  }
-  .gar-summer-badge {
-    background: rgba(232,226,208,0.08);
-    color: rgba(232,226,208,0.7);
-    border-color: rgba(232,226,208,0.25);
-  }
-
-  .gar-substrate-url {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
-    color: rgba(216,255,0,0.6);
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.01em;
-  }
-  .gar-substrate-url em { font-style: italic; }
-
-  .gar-substrate-desc {
-    font-size: 0.87rem;
-    color: rgba(232,226,208,0.65);
-    font-weight: 300;
-    line-height: 1.65;
-  }
-
-  .gar-substrate-closer {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.95rem;
-    color: var(--volt);
-    font-weight: 600;
-    letter-spacing: -0.005em;
-    line-height: 1.55;
-    border-top: 1px solid rgba(216,255,0,0.2);
-    padding-top: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  /* ─── SECTION 5 — TIERS ─── */
+  /* ─── SECTION 5 — CHOOSE YOUR FUTURE (TIERS) ─── */
   .gar-tiers-wrap {
     background: var(--sand);
     scroll-margin-top: 100px;
@@ -1377,7 +1419,7 @@ const schemaGraph = {
     color: var(--pine-light);
     font-weight: 300;
     line-height: 1.65;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
   }
   .tier-reviewed .gar-tier-hook { color: rgba(232,226,208,0.75); }
 
@@ -1507,7 +1549,7 @@ const schemaGraph = {
   }
   .gar-tier-cta:hover { background: #e8ff33; }
 
-  /* ─── SECTION 6 — DEPLOYMENT ─── */
+  /* ─── SECTION 6 — MEMBERS ONLY ─── */
   .gar-deployment-wrap { background: var(--sand-light); }
   .gar-deployment {
     max-width: 1060px;
@@ -1515,67 +1557,35 @@ const schemaGraph = {
     padding: 5rem 3rem;
   }
 
-  .gar-deploy-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    margin-top: 2.5rem;
-  }
-
-  .gar-deploy-col {
-    background: var(--sand);
-    padding: 2rem 1.75rem;
-    border-left: 3px solid var(--volt);
-  }
-
-  .gar-deploy-title {
+  .gar-members-lede {
     font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.35rem;
+    font-weight: 600;
     color: var(--pine);
     letter-spacing: -0.01em;
+    line-height: 1.3;
     margin-bottom: 1.25rem;
   }
 
-  .gar-deploy-list {
-    list-style: none;
-    counter-reset: deploy;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-  }
-
-  .gar-deploy-list li {
-    counter-increment: deploy;
-    font-size: 0.88rem;
-    color: var(--pine-dark);
-    line-height: 1.6;
-    padding-left: 2rem;
-    position: relative;
-    font-weight: 400;
-  }
-  .gar-deploy-list li::before {
-    content: counter(deploy);
-    position: absolute;
-    left: 0; top: 0;
+  .gar-members-bespoke {
     font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    color: var(--volt);
-    background: var(--pine);
-    width: 1.4rem;
-    height: 1.4rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--pine);
+    letter-spacing: -0.01em;
+    margin-top: 1.5rem;
+    line-height: 1.4;
   }
-  .gar-deploy-list li em { font-style: italic; color: var(--pine); font-weight: 500; }
 
-  /* ─── SECTION 7 — BET ─── */
+  /* ─── SECTION 7 — ABOUT AICV ─── */
+  .gar-about-wrap { background: var(--sand); }
+  .gar-about {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 5rem 3rem;
+  }
+
+  /* ─── SECTION 8 — FINAL CLOSE ─── */
   .gar-bet-wrap { background: var(--pine-dark); }
   .gar-bet {
     max-width: 1060px;
@@ -1591,7 +1601,28 @@ const schemaGraph = {
     margin-top: 1.25rem;
   }
 
-  /* ─── SECTION 8 — FAQ ─── */
+  .gar-close-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2.25rem;
+  }
+
+  .gar-close-cta-secondary {
+    background: transparent;
+    color: var(--sand);
+    border: 1.5px solid rgba(232,226,208,0.4);
+    padding: 0.95rem 1.6rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .gar-close-cta-secondary:hover { background: rgba(232,226,208,0.08); border-color: rgba(232,226,208,0.7); }
+
+  /* ─── SECTION 9 — FAQ ─── */
   .gar-faq-wrap { background: var(--sand); }
   .gar-faq {
     max-width: 960px;
@@ -1625,65 +1656,6 @@ const schemaGraph = {
   .gar-faq-a em { font-style: italic; color: var(--pine); }
   .gar-faq-a a { color: var(--pine); text-decoration: underline; text-decoration-color: rgba(27,67,50,0.3); }
   .gar-faq-a a:hover { text-decoration-color: var(--pine); }
-
-  /* ─── SECTION 9 — BOOK ─── */
-  .gar-book-wrap {
-    background: var(--pine);
-    scroll-margin-top: 100px;
-  }
-  .gar-book {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 5rem 3rem;
-  }
-
-  .gar-book-lede {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.15rem;
-    color: var(--volt);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-  }
-
-  .gar-book-cta-wrap {
-    margin-top: 2.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .gar-book-cta {
-    display: inline-block;
-    background: var(--volt);
-    color: var(--pine);
-    padding: 1.2rem 2.25rem;
-    font-family: 'Syne', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-decoration: none;
-    transition: background 0.2s, gap 0.2s;
-  }
-  .gar-book-cta:hover { background: #e8ff33; }
-
-  .gar-book-note {
-    margin-top: 0.75rem;
-    font-size: 0.75rem;
-    color: rgba(232,226,208,0.5);
-    font-weight: 300;
-    letter-spacing: 0.02em;
-  }
-
-  .gar-book-fineprint {
-    font-size: 0.78rem;
-    color: rgba(232,226,208,0.5);
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    line-height: 1.6;
-    font-style: italic;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(232,226,208,0.1);
-  }
 
   /* ─── FOOTER (shared with homepage) ─── */
   footer {
@@ -1852,13 +1824,13 @@ const schemaGraph = {
     .aio-input { border-right: 1px solid var(--sand); }
     .result-top { grid-template-columns: 1fr; }
 
-    .gar-bridge, .gar-substrate, .gar-tiers, .gar-deployment, .gar-bet, .gar-faq, .gar-book {
+    .gar-bridge, .gar-substrate, .gar-tiers, .gar-deployment, .gar-bet, .gar-faq, .gar-about {
       padding: 3.5rem 1.5rem;
     }
 
-    .gar-substrate-grid { grid-template-columns: 1fr; }
     .gar-tier-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-    .gar-deploy-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .gar-network-statements { grid-template-columns: 1fr; gap: 1rem; }
+    .gar-proof-strip-inner { padding: 1.5rem; }
 
     footer { padding: 2.5rem 1.5rem 2rem; }
     .foot-top { grid-template-columns: 1fr; gap: 2rem; }
