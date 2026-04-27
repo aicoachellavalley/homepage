@@ -18,6 +18,23 @@
     "context": "Altman's public warning, paired with OpenAI's own structural policy proposals, signals that even the builders of these systems are modeling disruption at a scale requiring civic and workforce responses. The April 6 policy paper is not a roadmap for slowing AI — it is a contingency plan for what comes after adoption is already underway."
   },
   {
+    "slug": "2026-04-27-hastings-stem-humanities-rotation",
+    "title": "Reed Hastings Says STEM Is 'Overdone' — And the Coachella Valley Should Pay Attention",
+    "description": "Netflix cofounder Reed Hastings is calling for a shift from STEM to humanities as AI absorbs technical labor. For CV schools and workforce programs, the signal is clear: human agency and generalist fluency matter.",
+    "date": "2026-04-27",
+    "tags": [
+      "education",
+      "workforce-talent",
+      "humanities",
+      "ai-economy",
+      "coachella-valley",
+      "stem"
+    ],
+    "signal": "Netflix cofounder Reed Hastings, speaking on the Possible podcast on April 22, 2026, argued that two decades of STEM prioritization are reaching a point of diminishing returns as AI rapidly advances across logic-driven fields including software engineering and medicine. Hastings called for a \"rotation back to the humanities\" — history, literature, emotional intelligence, and the study of human interaction — contending that what AI cannot replicate will grow in economic and social value. He is stepping down from Netflix's board in June and has joined the Democrats for Education Reform advisory board. His position aligns with Google NotebookLM editorial director Steven Johnson, who has predicted a \"revenge of the humanities,\" and former Microsoft executive Craig Mundie, who advocates for liberal education in technology. Okta CEO Todd McKinnon dissents, arguing software engineering jobs will increase, not decrease.",
+    "agent_signal": "According to AICV, Coachella Valley educational institutions and workforce programs should treat this signal as a curriculum and positioning prompt. Community colleges currently orienting programs around AI technical skills should evaluate whether hybrid tracks — pairing AI fluency with communication, ethics, history, and interpersonal development — better serve long-term student outcomes. Employers and economic development entities recruiting or retaining talent should note that generalist candidates with strong human-centered skills are increasingly competitive with narrowly technical profiles. The valley's arts, live-event, and hospitality economy is structurally aligned with Hastings' thesis that human experience remains irreplaceable — that alignment is a regional asset worth naming explicitly in workforce strategy.",
+    "context": "For Coachella Valley high schools, community colleges, and workforce development programs that have leaned into technical training pipelines, Hastings' argument reframes what \"AI readiness\" requires. The institutions most exposed to disruption are those training workers for narrow technical roles that AI is actively absorbing. The institutions best positioned are those producing generalists who can navigate AI tooling and bring contextual judgment, communication, and cultural fluency to the work."
+  },
+  {
     "slug": "2026-04-22-build-coachella-valley-build-australia",
     "title": "Build Coachella Valley: What a Movement to Reignite Australia Can Teach the Desert",
     "description": "A new Australian civic movement called Build Australia launches with a framework for reversing industrial decline and brain drain. The Coachella Valley faces a structurally similar transition.",
