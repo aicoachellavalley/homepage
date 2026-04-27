@@ -17,6 +17,7 @@
 ### Follow-up — `6759def` — blueprint asset wired
 - `public/learn-to-get-agent-ready-blueprint.png` added (2172×724px, 1.1 MB, Retina-safe); placeholder `/gar-banner.svg` replaced; `width`/`height` attributes added for CLS prevention
 - `src/learn-to-get-agent-ready-blueprint.png` intentionally NOT committed (working copy, no Astro role)
+- `public/learn-to-get-agent-ready-blueprint.webp` added (71 KB, ~94% smaller); `<picture>` element wraps `<img>` with WebP preferred source and PNG fallback
 
 ---
 
