@@ -2,6 +2,26 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-04-27 — /get-agent-ready V7.7 copy replacement
+
+- **Commit:** `1e85313` — feat(get-agent-ready): V7.7 final copy — proof strip, streamlined sections, agentic-internet thesis
+- **Deploy:** Cloudflare Pages auto-deploy on push to main; live at `https://aicoachellavalley.com/get-agent-ready/`
+- **Scope:** full visible-content replacement; schema, AIO widget, TOS modal, JS preserved exactly
+- **dateModified:** updated to 2026-04-26
+- **Dynamic proof strip:** `{nodeCount}+` / `{briefCount}+` imported from `public/nodes.json` and `public/briefs.json` at build time (80 nodes, 136 briefs as of this build)
+- **Sections added:** Proof Strip (new), Why This Matters Now, Why Networks Win (network statements two-up), Members Only (25-min session), About AICV (with address — Local Signals improvement), Final Close (dual CTAs)
+- **Sections removed:** Section 6 Deployment (7-step sequence), Section 9 Booking (standalone calendar section)
+- **New CSS:** `.gar-proof-strip`, `.gar-light-list`, `.gar-dark-list`, `.gar-network-statements`, `.gar-about-wrap`, `.gar-close-ctas`, `.gar-hero-note`
+- **Build check:** 248 pages, no errors, 4.33s
+
+### Deferred verifications — schedule 2026-04-28
+
+- **AIO Tool grade on `/get-agent-ready/`** — V7.7 adds address (Local Signals fix) and About AICV entity block. Run after deploy propagation (~24h). Target: clear Local Signals warn from Phase 1, assess Entity Clarity and Content Completeness improvements.
+- **Google Rich Results** — confirm dateModified=2026-04-26 reflected, all 4 schema types still valid after description update.
+- **Homepage regression check** — confirm unchanged (200 OK, stat blocks present, no CSS bleed from gar-* additions).
+
+---
+
 ## 2026-04-23 — /get-agent-ready Phase 1 launch
 
 - **Commit:** `32b6981` — feat: add /get-agent-ready commercial positioning page (Phase 1 — widget copied, homepage unchanged)
