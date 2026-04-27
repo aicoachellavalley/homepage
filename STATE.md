@@ -14,6 +14,10 @@
 - **TOS modal retained** (not removed — separate decision needed): `id="tosModal"`, triggered by footer "Terms of Use" link; title still reads "AIO Tool — Terms of Use"
 - Build: 248 pages, no errors, 4.35s
 
+### Follow-up — `6759def` — blueprint asset wired
+- `public/learn-to-get-agent-ready-blueprint.png` added (2172×724px, 1.1 MB, Retina-safe); placeholder `/gar-banner.svg` replaced; `width`/`height` attributes added for CLS prevention
+- `src/learn-to-get-agent-ready-blueprint.png` intentionally NOT committed (working copy, no Astro role)
+
 ---
 
 ## 2026-04-27 — /get-agent-ready FAQ 10th entry (agent-payment)
