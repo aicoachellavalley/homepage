@@ -2,6 +2,15 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-04-27 — Homepage Get Included CTA fix
+
+- **Commit:** `1126352` — fix(homepage): repoint Get Included CTA to V7.7 diagnostic anchor
+- `#aio` → `/get-agent-ready/#diagnostic` (one-line change, `src/pages/index.astro` line 363)
+- Submit a Brief `mailto:sat@aicv.co` unchanged — mailto is correct, AIO Tool inability to verify mailto is a known tool limitation (codified in aicv-playbook CLAUDE.md)
+- Homepage MED-tier nav finding from 2026-04-27 AIO scan addressed; will confirm at next routine homepage scan (no dedicated re-verification scheduled)
+
+---
+
 ## 2026-04-27 — /get-agent-ready Phase 2 schema additions
 
 - **Commit:** `2ccc65a` — feat(get-agent-ready): Phase 2 schema additions (Organization, LocalBusiness, ContactPoint)
