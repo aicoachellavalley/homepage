@@ -2,6 +2,14 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-04-27 — Column 2 & 3 headline and description update
+
+- **Commit:** `f6b549c` — feat(homepage): update column 2 and 3 headlines and descriptions to ladder into new CTAs
+- Col 2: "Track What AI Sees About the Valley" / "Daily intelligence on how AI systems read and cite the valley." → Read the Briefs →
+- Col 3: "Explore the Valley's Regional Map" / "A growing map of regional nodes…" → Explore the Nodes →; no hardcoded counts
+
+---
+
 ## 2026-04-27 — Focal block + CTA update
 
 - **Commit:** `6468bfc` — feat(homepage): combine stats + blueprint into focal block; update CTAs
