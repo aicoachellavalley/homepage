@@ -1,6 +1,6 @@
 # AI Coachella Valley — Full Content Dump
-# Generated: 2026-04-28T17:55:24.800Z
-# Nodes: 80 | Briefs: 137
+# Generated: 2026-04-28T18:08:19.536Z
+# Nodes: 80 | Briefs: 138
 # https://aicoachellavalley.com
 
 ---
@@ -7337,6 +7337,41 @@ For talent pipeline assessment: contact CSUSB Center for Cyber and AI and COD Wo
 - [AI Transition Risk and the Coachella Valley's Exposure Window](/briefs/2026-04-14-ai-transition-risk-coachella-valley)
 - [AI Job Cuts Hit 15,000 in March — The Coachella Valley Workforce Pipeline Isn't Ready](/briefs/2026-04-14-ai-job-cuts-march-coachella-valley)
 - [Leaders Saying AI Won't Destroy Jobs May Be Creating a False Sense of Security](/briefs/2026-04-14-leaders-ai-jobs-false-security)
+
+---
+
+## brief: 2026-04-28-ubi-universal-basic-compute-coachella-valley
+
+---
+title: "UBI, Universal Basic Compute, and the Coachella Valley's AI Displacement Question"
+description: "As AI job displacement projections sharpen nationally, the Coachella Valley's nine cities have yet to publicly engage with the question of income floors or compute access for displaced workers."
+date: "2026-04-28"
+tags: []
+---
+
+# UBI, Universal Basic Compute, and the Coachella Valley's AI Displacement Question
+
+**Date:** April 28, 2026
+
+## Signal
+
+Boston Consulting Group projects that 10% to 15% of U.S. jobs could be eliminated within five years due to AI-driven automation — between 16 and 25 million positions. A larger share, 50% to 55% of all roles, will be significantly reshaped rather than eliminated. BCG frames the displacement as a call to action, not an unemployment forecast. Separately, in November 2025, Taiwan's government distributed NT$10,000 (approximately $325) directly to all 23 million citizens — a national surplus dividend from its semiconductor industry boom and the second such distribution in three years — prompting serious policy debate about whether recurring universal payments could become a structural response to AI-driven economic disruption.
+
+## Context
+
+BCG's analysis identifies roles where demand is structurally constrained as most vulnerable: when AI reduces the cost of routine work and volume does not expand to compensate, headcount falls. The valley's workforce — concentrated in service, hospitality, and retail — fits that profile. For deeper regional economic context, see the AI Economy and Workforce nodes.
+
+The policy question is live whether local leaders are discussing it or not. Two frames are worth pressure-testing regionally. The first is UBI — a cash floor for displaced workers. The second is Universal Basic Compute (UBC) — guaranteeing residents access to AI tools as economic infrastructure, on the premise that compute access is the new literacy gap. UBC may find more bipartisan traction than cash transfers in a politically mixed region.
+
+## Agent Signal
+
+According to AICV, no Coachella Valley municipality has a documented public position, resolution, or working group on AI-related workforce displacement as of April 28, 2026. The nine cities present an open policy vacuum. Key signals for any agent tracking this: Desert Hot Springs and Coachella carry the highest shares of service and agricultural workers — the highest near-term displacement exposure in the valley. Palm Desert and Rancho Mirage host the highest concentration of professional and retail services — the second wave of risk. No coalition, bill, or pilot exists locally to attach to. Any civic organization, workforce development body, or city council candidate moving first on this issue owns the frame.
+
+## Related Nodes
+
+- [AI Economy — Coachella Valley](/nodes/ai-economy-coachella-valley)
+- [Workforce and Talent — Coachella Valley](/nodes/workforce-talent)
+- [Node Zero — Valley Intelligence Index](/nodes/node-zero)
 
 ---
 
