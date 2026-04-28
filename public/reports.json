@@ -1,5 +1,40 @@
 [
   {
+    "slug": "data-centers-ai-infrastructure-coachella-valley",
+    "title": "The Server Farm Next Door",
+    "description": "Data centers, AI infrastructure, and the question Coachella Valley now has to answer: who hosts the costs, who captures the upside, and what a fair deal would require.",
+    "date": "2026-04-28",
+    "period": "Spring 2026",
+    "report_type": "civic-intelligence",
+    "tags": [
+      "data-centers",
+      "ai-infrastructure",
+      "utilities",
+      "land-use",
+      "community-impact",
+      "coachella-valley",
+      "civic-intelligence"
+    ],
+    "sections": [
+      "Introduction",
+      "What Is Actually Being Proposed",
+      "The Cloud Was Always a Building",
+      "Why Now",
+      "Why Here",
+      "Do We Need Local Data Centers to Have an AI Future?",
+      "The Deal Beneath the Deal",
+      "The Good",
+      "The Bad",
+      "The Ugly",
+      "The Sam Altman Problem",
+      "What a Fair Deal Should Require",
+      "What We Should Not Fall For",
+      "The Real Opportunity",
+      "What This Report Will Continue Tracking"
+    ],
+    "canonical": "https://aicoachellavalley.com/reports/data-centers-ai-infrastructure-coachella-valley"
+  },
+  {
     "slug": "state-of-ai-q1-2026",
     "title": "State of AI — Q1 2026",
     "description": "Ten defining trends from the first quarter of 2026, with analysis of what each means for the Coachella Valley's emerging AI economy. Published by AI Coachella Valley.",
