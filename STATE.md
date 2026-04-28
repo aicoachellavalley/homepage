@@ -2,6 +2,13 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-04-27 — Focal block + CTA update
+
+- **Commit:** `6468bfc` — feat(homepage): combine stats + blueprint into focal block; update CTAs
+- Stats, "Updated" date (repositioned above stats), and blueprint image merged into single `<section class="focal-block">`; CTAs updated: "Join the Network →" (/get-agent-ready/#diagnostic), "Read the Briefs →" (/briefs/), "Explore the Nodes →" (/nodes/); column 2/3 headlines held pending copy approval
+
+---
+
 ## 2026-04-27 — TOS modal generalized to AICV Terms of Use
 
 - **Commit:** `a3e0bc4` — chore(homepage): generalize TOS modal to AICV Terms of Use (was AIO Tool — Terms of Use)
