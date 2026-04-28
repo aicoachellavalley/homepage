@@ -256,8 +256,9 @@ const personSchema = {
   </div>
 </section>
 
-<!-- ─── STATS ─── -->
-<div class="stats-wrap">
+<!-- ─── FOCAL BLOCK: STATS + BLUEPRINT ─── -->
+<section class="focal-block">
+  <p class="focal-updated">Updated {lastUpdatedDisplay}</p>
   <div class="stats-inner">
     <div class="stat-cell">
       <div class="stat-n">{nodeCount}</div>
@@ -276,25 +277,20 @@ const personSchema = {
       <div class="stat-l">AICV Intelligence<br>Reports Published</div>
     </div>
   </div>
-</div>
-<p style="text-align: center; font-size: 0.875rem; opacity: 0.7; margin-top: 0.5rem;">
-  Updated {lastUpdatedDisplay}
-</p>
-
-<!-- ─── IMAGE-CTA BRIDGE → /get-agent-ready/ ─── -->
-<section class="img-cta-section">
-  <a href="/get-agent-ready/" aria-label="Learn to Get Agent Ready — architectural blueprint graphic linking to the AICV agent-readiness page">
-    <picture>
-      <source srcset="/learn-to-get-agent-ready-blueprint.webp" type="image/webp">
-      <img
-        src="/learn-to-get-agent-ready-blueprint.png"
-        alt="Learn to Get Agent Ready — architectural blueprint graphic linking to the AICV agent-readiness page"
-        loading="eager"
-        width="2172"
-        height="724"
-      >
-    </picture>
-  </a>
+  <div class="focal-img-wrap">
+    <a href="/get-agent-ready/" aria-label="Learn to Get Agent Ready — architectural blueprint graphic linking to the AICV agent-readiness page">
+      <picture>
+        <source srcset="/learn-to-get-agent-ready-blueprint.webp" type="image/webp">
+        <img
+          src="/learn-to-get-agent-ready-blueprint.png"
+          alt="Learn to Get Agent Ready — architectural blueprint graphic linking to the AICV agent-readiness page"
+          loading="eager"
+          width="2172"
+          height="724"
+        >
+      </picture>
+    </a>
+  </div>
 </section>
 
 <!-- ─── PATH CARDS ─── -->
@@ -303,17 +299,17 @@ const personSchema = {
     <div class="path-card">
       <div class="path-card-title">Make Your Business Visible to AI</div>
       <p class="path-card-desc">Get included in the region's structured intelligence layer.</p>
-      <a href="/get-agent-ready/#diagnostic" class="path-card-cta">Get Included →</a>
+      <a href="/get-agent-ready/#diagnostic" class="path-card-cta">Join the Network →</a>
     </div>
     <div class="path-card">
       <div class="path-card-title">Partner with the Intelligence Layer</div>
       <p class="path-card-desc">Collaborate on modernization signals, research, and regional AI visibility.</p>
-      <a href="mailto:sat@aicv.co" class="path-card-cta">Submit a Brief →</a>
+      <a href="/briefs/" class="path-card-cta">Read the Briefs →</a>
     </div>
     <div class="path-card">
       <div class="path-card-title">Access Structured Documentation</div>
       <p class="path-card-desc">Explore the schema-consistent intelligence framework and live nodes.</p>
-      <a href="/nodes/" class="path-card-cta">Explore Documentation →</a>
+      <a href="/nodes/" class="path-card-cta">Explore the Nodes →</a>
     </div>
   </div>
 </div>
@@ -1101,15 +1097,24 @@ const personSchema = {
 
   .layer-half:hover .half-link { background: #e8ff33; }
 
-  /* ─── STATS ─── */
-  .stats-wrap {
+  /* ─── FOCAL BLOCK: STATS + BLUEPRINT ─── */
+  .focal-block {
     background: var(--pine);
+  }
+
+  .focal-updated {
+    text-align: center;
+    font-size: 0.68rem;
+    color: rgba(232,226,208,0.45);
+    letter-spacing: 0.08em;
+    padding: 1.75rem 3rem 0;
+    margin: 0;
   }
 
   .stats-inner {
     max-width: 1060px;
     margin: 0 auto;
-    padding: 3.5rem 3rem;
+    padding: 1.25rem 3rem 3.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
@@ -1139,21 +1144,19 @@ const personSchema = {
     line-height: 1.45;
   }
 
-  /* ─── IMAGE-CTA BRIDGE ─── */
-  .img-cta-section {
-    background: var(--pine);
+  .focal-img-wrap {
     padding: 0 3rem;
   }
-  .img-cta-section a {
+  .focal-img-wrap a {
     display: block;
     max-width: 1060px;
     margin: 0 auto;
   }
-  .img-cta-section a:focus-visible {
+  .focal-img-wrap a:focus-visible {
     outline: 3px solid var(--volt);
     outline-offset: 4px;
   }
-  .img-cta-section img {
+  .focal-img-wrap img {
     width: 100%;
     height: auto;
     display: block;
@@ -1795,12 +1798,13 @@ const personSchema = {
     .layers-duo { grid-template-columns: 1fr; }
     .layer-half.agents { border-right: none; border-bottom: 1px solid rgba(27,67,50,0.1); }
     .layers-duo .layer-half.agents::before { display: none; }
-    .stats-inner { padding: 2rem 1.5rem; grid-template-columns: 1fr 1fr; }
+    .focal-updated { padding: 1.25rem 1.5rem 0; }
+    .stats-inner { padding: 0.75rem 1.5rem 2rem; grid-template-columns: 1fr 1fr; }
+    .focal-img-wrap { padding: 0 1.5rem; }
     .path-cards { grid-template-columns: 1fr; padding: 0 1.5rem; background: transparent; }
     .path-cards-wrap { padding: 0; }
     .intel-what-section { padding: 3.5rem 1.5rem 0; }
     .intel-what-inner { padding: 2rem 1.5rem; }
-    .img-cta-section { padding: 0 1.5rem; }
     .result-top { grid-template-columns: 1fr; }
     .partners-section { padding: 3rem 1.5rem; }
     footer { padding: 2.5rem 1.5rem 2rem; }
