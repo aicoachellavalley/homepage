@@ -1839,12 +1839,6 @@ const personSchema = {
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
-  function fmt(n) {
-    if (n == null) return '—';
-    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
-    return String(n);
-  }
-
   function resetTool() {
     document.getElementById('aioResults').classList.remove('on');
     document.getElementById('aioLoading').classList.remove('on');
