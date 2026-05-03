@@ -2,6 +2,18 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-05-02 — Background color swap: sand → paper (#FAFAF7)
+
+- **Commit:** `690dc4a` — style: swap sand background to paper (#FAFAF7) across five files
+- `--sand` #E8E2D0 → #FAFAF7 (body background)
+- `--sand-light` #F2EDE0 → #FFFFFF (elevated surfaces)
+- `--sand-dark` #D4CCBA → #E8E5DD (borders/dividers)
+- Variable names (`--sand`, `--sand-light`, `--sand-dark`) unchanged — Option B, rename deferred
+- **Files touched (5):** `src/styles/tokens.css`, `src/pages/briefs/[slug].astro`, `src/pages/nodes/[slug].astro`, `src/pages/reports/[slug].astro`, `src/pages/snapshots/[slug].astro`
+- **Intentionally untouched:** Grade color maps in `snapshots/[slug].astro` lines 57–110 (`gradeBg`, `gradeBorder`, `gradeLightBg`, `findingHeaderBorderColor`) — these use old sand hex values as semantic indicators for D/F grade tiers, not background colors. **Dead code post-postcard migration — delete in cleanup pass after postcards ship.**
+
+---
+
 ## 2026-04-27 — Column 2 & 3 headline and description update
 
 - **Commit:** `f6b549c` — feat(homepage): update column 2 and 3 headlines and descriptions to ladder into new CTAs
