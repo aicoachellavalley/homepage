@@ -470,8 +470,10 @@ const schemaGraph = {
         <p class="gar-v2-tier-desc">Become easier for AI systems to understand, trust, and surface.</p>
         <p class="gar-v2-tier-includes">Includes onboarding, profile deployment, and first-step readiness roadmap.</p>
       </div>
-      <div class="gar-v2-tier-divider"><div class="gar-v2-tier-deploy">$1,000 Deployment</div></div>
-      <div class="gar-v2-tier-price">$2,500 / year</div>
+      <div class="gar-v2-tier-divider">
+        <div class="gar-v2-tier-price-line"><span class="label">Setup</span> <span class="amount">$1,000</span></div>
+      </div>
+      <div class="gar-v2-tier-price-line" style="padding-top: 2px;"><span class="label">Annual</span> <span class="amount">$2,500</span></div>
       <div class="gar-v2-tier-scarcity-spacer"></div>
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Deploy Today →</a>
     </div>
@@ -486,9 +488,11 @@ const schemaGraph = {
         <p class="gar-v2-tier-desc">For standout entities ready for deeper intelligence review.</p>
         <p class="gar-v2-tier-includes">Includes intelligence review, premium routing readiness, and advanced positioning.</p>
       </div>
-      <div class="gar-v2-tier-divider"><div class="gar-v2-tier-deploy">$2,500 Deployment</div></div>
-      <div class="gar-v2-tier-price">$5,000 / year</div>
-      <div class="gar-v2-tier-scarcity">10 of 10 founding spots remaining</div>
+      <div class="gar-v2-tier-divider">
+        <div class="gar-v2-tier-price-line"><span class="label">Setup</span> <span class="amount">$2,500</span></div>
+      </div>
+      <div class="gar-v2-tier-price-line" style="padding-top: 2px;"><span class="label">Annual</span> <span class="amount">$5,000</span></div>
+      <div class="gar-v2-tier-scarcity">Limited to 10 Founding Members.</div>
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Apply / Deploy Today →</a>
     </div>
   </div>
@@ -534,12 +538,16 @@ const schemaGraph = {
     <div class="gar-v2-footer-fields">
       <p class="gar-v2-footer-fiscal">AICV is fiscally sponsored by the Desert Community Foundation and operates from the CSUSB Entrepreneurship Resource Center in Palm Desert, California.</p>
       <p class="gar-v2-footer-email">Email Sat Singh, Founder: <a href="/cdn-cgi/l/email-protection#ff8c9e8bbf9e969c89d19c90"><span class="__cf_email__" data-cfemail="94e7f5e0d4f5fdf7e2baf7fb">[email&#160;protected]</span></a></p>
-      <div class="gar-v2-footer-tagline">BUILT FOR AGENTS · POWERED BY HUMANS</div>
     </div>
   </div>
 </section>
 
-<div class="gar-v2-section-break"></div>
+<!-- Full-width tagline band — page/chrome transition -->
+<section class="gar-v2-tagline-band">
+  <div class="gar-v2-tagline-band-inner">
+    <div class="gar-v2-tagline">BUILT FOR AGENTS · POWERED BY HUMANS</div>
+  </div>
+</section>
 
 <!-- ─── FOOTER ─── -->
 <footer>
@@ -1799,21 +1807,22 @@ const schemaGraph = {
   .gar-v2-close {
     position: relative;
     overflow: hidden;
-    padding: 64px 0;
+    padding: 96px 0;
   }
 
   .gar-v2-inner {
     max-width: 1060px;
     margin: 0 auto;
+    padding: 0 48px;
     position: relative;
   }
 
-  .gar-v2-hero { background: var(--pine-tint); padding: 64px 0 56px; }
+  .gar-v2-hero { background: var(--pine-tint); padding: 96px 0 72px; }
   .gar-v2-diagnostic { background: var(--pine-mist); border-top: 1px dashed rgba(18,43,34,0.15); }
   .gar-v2-networks { background: var(--pine-tint); }
   .gar-v2-tiers { background: var(--pine-mist); }
-  .gar-v2-about { background: var(--pine-tint); padding: 56px 0; }
-  .gar-v2-close { background: var(--pine-dark); padding: 72px 0 32px; text-align: left; }
+  .gar-v2-about { background: var(--pine-tint); padding: 80px 0; }
+  .gar-v2-close { background: var(--pine-dark); padding: 96px 0 32px; text-align: left; }
 
   /* Blueprint figures */
   .gar-v2-fig { position: absolute; top: 16px; right: 16px; opacity: 0.4; }
@@ -1825,28 +1834,61 @@ const schemaGraph = {
   /* Eyebrows */
   .gar-v2-eyebrow {
     font-family: 'Syne', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--pine);
     margin-bottom: 18px;
-    letter-spacing: 2.8px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: 700;
+  }
+
+  /* Unified header tier system — desktop-first */
+  .gar-v2-h-tier-1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 84px;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    color: var(--pine-dark);
+  }
+  .gar-v2-h-tier-2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+  }
+  .gar-v2-h-tier-3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--pine-dark);
+  }
+  .gar-v2-h-tier-4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.4px;
+    color: var(--pine-dark);
   }
 
   /* Hero */
   .gar-v2-h1 {
     font-family: 'Syne', sans-serif;
-    font-size: 60px;
+    font-size: 84px;
     font-weight: 800;
-    line-height: 1.0;
+    line-height: 0.95;
     margin: 0 0 24px;
     color: var(--pine-dark);
-    letter-spacing: -2px;
+    letter-spacing: -3px;
     max-width: 520px;
   }
   .gar-v2-hero-sub {
     font-family: 'DM Sans', sans-serif;
-    font-size: 21px;
+    font-size: 24px;
     line-height: 1.5;
     color: var(--pine);
     margin: 0 0 36px;
@@ -1857,12 +1899,12 @@ const schemaGraph = {
     display: inline-block;
     background: var(--pine-dark);
     color: var(--snow);
-    padding: 16px 32px;
+    padding: 18px 38px;
     border-radius: 6px;
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 18px;
   }
   .gar-v2-cta-primary:hover { background: var(--pine); }
 
@@ -1914,10 +1956,10 @@ const schemaGraph = {
   /* Diagnostic */
   .gar-v2-diagnostic-h {
     font-family: 'Syne', sans-serif;
-    font-size: 44px;
+    font-size: 56px;
     font-weight: 800;
     margin: 0 0 20px;
-    letter-spacing: -1.2px;
+    letter-spacing: -1.5px;
     line-height: 1.05;
     max-width: 560px;
   }
@@ -1927,7 +1969,7 @@ const schemaGraph = {
   /* Body text */
   .gar-v2-body {
     font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
     color: var(--pine);
     margin: 0 0 32px;
@@ -1938,23 +1980,23 @@ const schemaGraph = {
   /* Networks */
   .gar-v2-networks-h {
     font-family: 'Syne', sans-serif;
-    font-size: 32px;
+    font-size: 44px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
     margin: 0 0 24px;
     color: var(--pine-dark);
-    letter-spacing: -0.6px;
-    max-width: 480px;
+    letter-spacing: -1px;
+    max-width: 640px;
   }
 
   /* Tiers */
   .gar-v2-tiers-h {
     font-family: 'Syne', sans-serif;
-    font-size: 34px;
+    font-size: 44px;
     font-weight: 700;
     margin: 0 0 28px;
     color: var(--pine-dark);
-    letter-spacing: -0.6px;
+    letter-spacing: -1px;
   }
   .gar-v2-booking-strip {
     background: var(--pine-dark);
@@ -2002,7 +2044,7 @@ const schemaGraph = {
     grid-template-rows: auto 1fr auto auto auto auto;
     background: var(--snow);
     border-radius: 8px;
-    padding: 28px;
+    padding: 36px;
     position: relative;
   }
   .gar-v2-tier-ready { border: 1px solid rgba(18,43,34,0.15); }
@@ -2033,15 +2075,16 @@ const schemaGraph = {
   }
   .gar-v2-tier-name {
     font-family: 'Syne', sans-serif;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--pine-dark);
     margin-bottom: 12px;
     letter-spacing: -0.4px;
+    white-space: nowrap;
   }
   .gar-v2-tier-desc {
     font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     color: var(--pine);
     line-height: 1.5;
     margin: 0 0 16px;
@@ -2049,7 +2092,7 @@ const schemaGraph = {
   }
   .gar-v2-tier-includes {
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--pine-light);
     line-height: 1.5;
     margin: 0 0 24px;
@@ -2058,38 +2101,40 @@ const schemaGraph = {
   }
   .gar-v2-tier-divider {
     border-top: 1px dashed rgba(18,43,34,0.18);
-    padding-top: 18px;
+    padding-top: 22px;
   }
-  .gar-v2-tier-deploy {
+  .gar-v2-tier-price-line {
     font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: var(--pine-light);
+    font-size: 17px;
     font-weight: 400;
+    color: var(--pine-light);
+    line-height: 1.6;
   }
-  .gar-v2-tier-price {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 22px;
+  .gar-v2-tier-price-line .label {
+    display: inline-block;
+    min-width: 64px;
+  }
+  .gar-v2-tier-price-line .amount {
+    color: var(--pine);
     font-weight: 500;
-    color: var(--pine-dark);
-    padding: 4px 0 0;
   }
   .gar-v2-tier-scarcity {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--pine-light);
     font-style: italic;
-    line-height: 28px;
+    line-height: 32px;
   }
-  .gar-v2-tier-scarcity-spacer { height: 28px; }
+  .gar-v2-tier-scarcity-spacer { height: 32px; }
   .gar-v2-tier-cta {
     display: block;
     background: var(--pine-dark);
     color: var(--snow);
-    padding: 13px 18px;
+    padding: 15px 22px;
     border-radius: 4px;
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     text-align: center;
   }
@@ -2098,9 +2143,9 @@ const schemaGraph = {
   /* About */
   .gar-v2-about-h {
     font-family: 'Syne', sans-serif;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.3;
     color: var(--pine-dark);
     margin: 0 0 20px;
     max-width: 520px;
@@ -2108,7 +2153,7 @@ const schemaGraph = {
   }
   .gar-v2-about-body {
     font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.65;
     color: var(--pine);
     margin: 0 0 16px;
@@ -2116,7 +2161,7 @@ const schemaGraph = {
   }
   .gar-v2-about-italic {
     font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.65;
     color: var(--pine);
     margin: 0;
@@ -2127,26 +2172,27 @@ const schemaGraph = {
   /* Final close */
   .gar-v2-close-h {
     font-family: 'Syne', sans-serif;
-    font-size: 32px;
+    font-size: 44px;
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.1;
     margin: 0 0 14px;
     color: var(--snow);
-    letter-spacing: -0.8px;
-    max-width: 540px;
+    letter-spacing: -1px;
+    max-width: 640px;
   }
   .gar-v2-close-volt {
     font-family: 'Syne', sans-serif;
-    font-size: 26px;
+    font-size: 32px;
     font-weight: 600;
     color: var(--volt);
     margin: 0 0 36px;
     letter-spacing: -0.4px;
+    line-height: 1.15;
     max-width: 540px;
   }
   .gar-v2-close-imperative {
     font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5;
     color: var(--snow);
     margin: 0 0 12px;
@@ -2155,7 +2201,7 @@ const schemaGraph = {
   }
   .gar-v2-close-inventory {
     font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.7;
     color: rgba(245,245,245,0.78);
     margin: 0 0 36px;
@@ -2167,12 +2213,12 @@ const schemaGraph = {
     display: inline-block;
     background: var(--volt);
     color: var(--pine-dark);
-    padding: 16px 32px;
+    padding: 18px 38px;
     border-radius: 6px;
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 18px;
   }
 
   /* Footer fields inside close section */
@@ -2196,39 +2242,68 @@ const schemaGraph = {
     font-size: 14px;
     line-height: 1.7;
     color: var(--snow);
-    margin: 0 0 28px;
+    margin: 0;
     max-width: 540px;
     font-weight: 500;
   }
   .gar-v2-footer-email a { color: var(--volt); font-weight: 500; }
-  .gar-v2-footer-tagline {
-    font-family: 'Syne', sans-serif;
-    font-size: 12px;
-    color: rgba(245,245,245,0.55);
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
   /* Non-breaking term wrapper */
   .no-break { white-space: nowrap; }
 
-  /* Section break between V2 close and footer */
-  .gar-v2-section-break {
-    height: 12px;
-    background: var(--pine-tint);
-    width: 100%;
+  /* Tagline band — page/chrome transition */
+  .gar-v2-tagline-band {
+    background: var(--pine-mist);
+    padding: 28px 0;
+    text-align: center;
+  }
+  .gar-v2-tagline-band-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .gar-v2-tagline {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    color: var(--pine);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 
   /* V2 mobile responsive */
   @media (max-width: 768px) {
-    .gar-v2-h1 { font-size: 44px; }
-    .gar-v2-diagnostic-h { font-size: 36px; }
-    .gar-v2-networks-h { font-size: 26px; }
-    .gar-v2-tiers-h { font-size: 28px; }
-    .gar-v2-close-h { font-size: 28px; }
+    .gar-v2-h-tier-1 { font-size: 48px; letter-spacing: -1.5px; }
+    .gar-v2-h-tier-2 { font-size: 38px; letter-spacing: -1px; }
+    .gar-v2-h-tier-3 { font-size: 30px; letter-spacing: -0.6px; }
+    .gar-v2-h-tier-4 { font-size: 22px; letter-spacing: -0.3px; }
+
+    .gar-v2-h1 { font-size: 48px; letter-spacing: -1.5px; }
+    .gar-v2-diagnostic-h { font-size: 38px; letter-spacing: -1px; }
+    .gar-v2-networks-h { font-size: 30px; letter-spacing: -0.6px; }
+    .gar-v2-tiers-h { font-size: 30px; letter-spacing: -0.6px; }
+    .gar-v2-close-h { font-size: 30px; letter-spacing: -0.6px; }
     .gar-v2-close-volt { font-size: 22px; }
+    .gar-v2-about-h { font-size: 22px; letter-spacing: -0.3px; }
+
+    .gar-v2-hero,
+    .gar-v2-diagnostic,
+    .gar-v2-networks,
+    .gar-v2-tiers,
+    .gar-v2-close { padding: 64px 0; }
+    .gar-v2-about { padding: 56px 0; }
+
+    .gar-v2-hero-sub { font-size: 18px; }
+    .gar-v2-body { font-size: 16px; }
+    .gar-v2-close-imperative { font-size: 17px; }
+    .gar-v2-close-inventory { font-size: 15px; }
+
     .gar-v2-tier-grid { grid-template-columns: 1fr; }
+    .gar-v2-tier-card { padding: 28px; }
+    .gar-v2-tier-name { font-size: 24px; white-space: normal; }
+
+    .gar-v2-tagline-band-inner { padding: 0 1.5rem; }
+    .gar-v2-tagline { font-size: 12px; letter-spacing: 3px; }
+
     .gar-v2-fig,
     .gar-v2-fig-tall,
     .gar-v2-fig-network,
