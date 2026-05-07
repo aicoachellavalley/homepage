@@ -1783,15 +1783,28 @@ const schemaGraph = {
   .gar-v2-close {
     position: relative;
     overflow: hidden;
-    padding: 64px 28px;
+    padding: 64px 0;
   }
 
-  .gar-v2-hero { background: var(--pine-tint); padding: 64px 28px 56px; }
+  .gar-v2-hero > *,
+  .gar-v2-diagnostic > *,
+  .gar-v2-networks > *,
+  .gar-v2-tiers > *,
+  .gar-v2-about > *,
+  .gar-v2-close > * {
+    max-width: 1060px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .gar-v2-hero { background: var(--pine-tint); padding: 64px 0 56px; }
   .gar-v2-diagnostic { background: var(--pine-mist); border-top: 1px dashed rgba(18,43,34,0.15); }
   .gar-v2-networks { background: var(--pine-tint); }
   .gar-v2-tiers { background: var(--pine-mist); }
-  .gar-v2-about { background: var(--pine-tint); padding: 56px 28px; }
-  .gar-v2-close { background: var(--pine-dark); padding: 72px 28px 32px; text-align: left; }
+  .gar-v2-about { background: var(--pine-tint); padding: 56px 0; }
+  .gar-v2-close { background: var(--pine-dark); padding: 72px 0 32px; text-align: left; }
 
   /* Blueprint figures */
   .gar-v2-fig { position: absolute; top: 16px; right: 16px; opacity: 0.4; }
