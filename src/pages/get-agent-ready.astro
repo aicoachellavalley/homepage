@@ -539,6 +539,8 @@ const schemaGraph = {
   </div>
 </section>
 
+<div class="gar-v2-section-break"></div>
+
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="foot-inner">
@@ -1778,6 +1780,8 @@ const schemaGraph = {
     footer { padding: 2.5rem 1.5rem 2rem; }
     .foot-top { grid-template-columns: 1fr; gap: 2rem; }
     .foot-bottom { flex-direction: column; align-items: flex-start; }
+
+    .gar-v2-inner { padding: 0 1.5rem; }
   }
 
   /* ============================================
@@ -1801,8 +1805,6 @@ const schemaGraph = {
   .gar-v2-inner {
     max-width: 1060px;
     margin: 0 auto;
-    padding-left: 28px;
-    padding-right: 28px;
     position: relative;
   }
 
@@ -2210,6 +2212,13 @@ const schemaGraph = {
 
   /* Non-breaking term wrapper */
   .no-break { white-space: nowrap; }
+
+  /* Section break between V2 close and footer */
+  .gar-v2-section-break {
+    height: 12px;
+    background: var(--pine-tint);
+    width: 100%;
+  }
 
   /* V2 mobile responsive */
   @media (max-width: 768px) {
