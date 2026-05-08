@@ -1790,7 +1790,6 @@ const schemaGraph = {
     .foot-top { grid-template-columns: 1fr; gap: 2rem; }
     .foot-bottom { flex-direction: column; align-items: flex-start; }
 
-    .gar-v2-inner { padding: 0 1.5rem; }
     .gar-v2-fig, .gar-v2-fig-tall, .gar-v2-fig-network,
     .gar-v2-fig-small, .gar-v2-fig-close { display: none; }
   }
@@ -2281,7 +2280,7 @@ const schemaGraph = {
     .gar-v2-h-tier-4 { font-size: 22px; letter-spacing: -0.3px; }
 
     .gar-v2-h1 { font-size: 48px; letter-spacing: -1.5px; }
-    .gar-v2-diagnostic-h { font-size: 38px; letter-spacing: -1px; }
+    .gar-v2-diagnostic-h { font-size: 32px; letter-spacing: -1px; }
     .gar-v2-networks-h { font-size: 30px; letter-spacing: -0.6px; }
     .gar-v2-tiers-h { font-size: 30px; letter-spacing: -0.6px; }
     .gar-v2-close-h { font-size: 30px; letter-spacing: -0.6px; }
@@ -2304,6 +2303,7 @@ const schemaGraph = {
     .gar-v2-tier-card { padding: 28px; }
     .gar-v2-tier-name { font-size: 24px; white-space: normal; }
 
+    .gar-v2-inner { padding: 0 1.5rem; }
     .gar-v2-tagline-band-inner { padding: 0 1.5rem; }
     .gar-v2-tagline { font-size: 12px; letter-spacing: 3px; }
 
@@ -2312,6 +2312,10 @@ const schemaGraph = {
     .gar-v2-fig-network,
     .gar-v2-fig-small,
     .gar-v2-fig-close { display: none; }
+  }
+
+  @media (max-width: 375px) {
+    .gar-v2-diagnostic-h { font-size: 24px; letter-spacing: -0.6px; }
   }
 </style>
 
