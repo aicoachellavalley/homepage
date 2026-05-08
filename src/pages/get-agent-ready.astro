@@ -1615,7 +1615,7 @@ const schemaGraph = {
     background: var(--pine-dark);
     padding: 4rem 3rem 2.5rem;
   }
-  .foot-inner { max-width: 1060px; margin: 0 auto; }
+  .foot-inner { max-width: 1060px; margin: 0 auto; padding: 0 48px; }
   .foot-top {
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -1785,11 +1785,14 @@ const schemaGraph = {
     .gar-network-statements { grid-template-columns: 1fr; gap: 1rem; }
     .gar-proof-strip-inner { padding: 1.5rem; }
 
-    footer { padding: 2.5rem 1.5rem 2rem; }
+    footer { padding: 2.5rem 0 2rem; }
+    .foot-inner { padding: 0 1.5rem; }
     .foot-top { grid-template-columns: 1fr; gap: 2rem; }
     .foot-bottom { flex-direction: column; align-items: flex-start; }
 
     .gar-v2-inner { padding: 0 1.5rem; }
+    .gar-v2-fig, .gar-v2-fig-tall, .gar-v2-fig-network,
+    .gar-v2-fig-small, .gar-v2-fig-close { display: none; }
   }
 
   /* ============================================
@@ -1825,11 +1828,11 @@ const schemaGraph = {
   .gar-v2-close { background: var(--pine-dark); padding: 96px 0 32px; text-align: left; }
 
   /* Blueprint figures */
-  .gar-v2-fig { position: absolute; top: 16px; right: 16px; opacity: 0.4; }
-  .gar-v2-fig-tall { position: absolute; top: 60px; right: 20px; opacity: 0.35; }
-  .gar-v2-fig-network { position: absolute; top: 36px; right: 16px; opacity: 0.38; }
-  .gar-v2-fig-small { position: absolute; top: 36px; right: 20px; opacity: 0.35; }
-  .gar-v2-fig-close { position: absolute; top: 36px; right: 16px; opacity: 0.28; }
+  .gar-v2-fig { position: absolute; top: 16px; right: calc((100% - 1060px) / 2); opacity: 0.4; }
+  .gar-v2-fig-tall { position: absolute; top: 60px; right: calc((100% - 1060px) / 2); opacity: 0.35; }
+  .gar-v2-fig-network { position: absolute; top: 36px; right: calc((100% - 1060px) / 2); opacity: 0.38; }
+  .gar-v2-fig-small { position: absolute; top: 36px; right: calc((100% - 1060px) / 2); opacity: 0.35; }
+  .gar-v2-fig-close { position: absolute; top: 36px; right: calc((100% - 1060px) / 2); opacity: 0.28; }
 
   /* Eyebrows */
   .gar-v2-eyebrow {
@@ -2308,7 +2311,7 @@ const schemaGraph = {
     .gar-v2-fig-tall,
     .gar-v2-fig-network,
     .gar-v2-fig-small,
-    .gar-v2-fig-close { opacity: 0.2; }
+    .gar-v2-fig-close { display: none; }
   }
 </style>
 
