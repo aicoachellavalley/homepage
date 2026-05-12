@@ -14,11 +14,6 @@
     "addressLocality": "Rancho Mirage",
     "addressRegion": "CA"
   },
-  "grades": {
-    "buyerReadiness": "D",
-    "competitivePositioning": "D",
-    "aiReadiness": "F"
-  },
   "opener": {
     "lead": "The Coachella Valley is being written into AI systems right now. This is what the frontier foundational AI models currently know about Sensei Porcupine Creek.",
     "bridge": "This Snapshot is part of AICV's intelligence layer for the Coachella Valley — a machine-readable knowledge base built for the agents and AI systems that increasingly mediate how high-value buyers discover, evaluate, and choose where to spend their time and money."
@@ -27,17 +22,14 @@
   "findings": [
     {
       "dimension": "Buyer Readiness",
-      "grade": "D",
       "body": "The council identified a Ferrari locked in a welded garage scenario. Sensei possesses world-class executive retreat infrastructure but zero buyer conversion pathways for corporate procurement. The property lacks dedicated corporate landing pages, group inquiry forms, meeting capacity documentation, and AV specifications. Executive assistants researching retreat venues encounter generic contact forms rather than instant RFP responses. The Adobe Sensei brand conflict further suppresses discovery in tech-executive search contexts. Minor digital restructuring could elevate this score to 8.5+ immediately."
     },
     {
       "dimension": "Competitive Position",
-      "grade": "D",
       "body": "The competitive paradox is severe: Sensei defeats Napa, Montecito, and Scottsdale on privacy (10.5 acres per guest room), weather reliability, PSP access, and integrated luxury amenities. Yet inferior local properties (Ritz-Carlton, JW Marriott) capture executive business through dedicated corporate sales teams and Cvent integration. The council identified massive untapped demand from adjacent wealth nodes — Madison Club, Bighorn, Reserve Club members who need commercial venues for portfolio company retreats and board dinners but cannot discover Sensei's corporate capabilities."
     },
     {
       "dimension": "AI Readiness",
-      "grade": "F",
       "body": "Sensei suffers from catastrophic AI invisibility. The property does not appear in AI responses for 'executive retreat Coachella Valley,' 'luxury wellness Southern California,' or 'private estate corporate offsite' queries. The Adobe Sensei brand conflict creates additional search pollution for tech executive contexts. Without structured data markup for meeting venue capabilities or Wikipedia knowledge graph anchoring, AI systems classify the property as individual wellness-only, not corporate retreat venue."
     }
   ],

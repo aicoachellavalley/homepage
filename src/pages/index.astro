@@ -2,13 +2,11 @@
 import Base from '../layouts/Base.astro';
 import nodesData from '../../public/nodes.json';
 import briefsData from '../../public/briefs.json';
-import reviewsData from '../../public/reviews.json';
 import reportsData from '../../public/reports.json';
 import statsData from '../data/stats.json';
 
 const nodeCount = nodesData.length;
 const briefCount = briefsData.length;
-const reviewCount = reviewsData.count;
 const reportCount = reportsData.length;
 
 const lastUpdated = new Date(statsData.generated_at);
@@ -269,8 +267,8 @@ const personSchema = {
       <div class="stat-l">AICV Intelligence<br>Briefs Published</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">{reviewCount}</div>
-      <div class="stat-l">AICV Intelligence<br>Reviews Completed</div>
+      <div class="stat-n">{statsData.counts.snapshots}</div>
+      <div class="stat-l">Agentic Reviews</div>
     </div>
     <div class="stat-cell">
       <div class="stat-n">{reportCount}</div>

@@ -14,11 +14,6 @@
     "addressLocality": "Palm Desert",
     "addressRegion": "CA"
   },
-  "grades": {
-    "buyerReadiness": "C",
-    "competitivePositioning": "D",
-    "aiReadiness": "D"
-  },
   "opener": {
     "lead": "The Coachella Valley is being written into AI systems right now. This is what the frontier foundational AI models currently know about The Gardens on El Paseo.",
     "bridge": "This Snapshot is part of AICV's intelligence layer for the Coachella Valley — a machine-readable knowledge base built for the agents and AI systems that increasingly mediate how high-value buyers discover, evaluate, and choose where to spend their time and money."
@@ -27,17 +22,14 @@
   "findings": [
     {
       "dimension": "Buyer Readiness",
-      "grade": "C",
       "body": "The physical experience holds up. A resort guest who makes it here will not be disappointed. The failure is earlier — there is no digital bridge pulling them off their property and onto El Paseo. The assets justify the visit. The digital presence cannot initiate it."
     },
     {
       "dimension": "Competitive Position",
-      "grade": "D",
       "body": "The Gardens holds the valley's only consolidated open-air luxury retail footprint. No competitor owns this territory. The problem is that nobody knows it — including the AI systems the target buyer relies on. The monopoly exists on the ground. It has not been claimed in any language agents read."
     },
     {
       "dimension": "AI Readiness",
-      "grade": "D",
       "body": "The domain redirect from thegardensonelpaseo.com to simon.com/mall placed this property inside a national portfolio CMS serving 200 properties identically. Every AI system now reads this as a mall. The open-air, palm-lined, flagship-brand reality is invisible to the layer where the buyer's decision is already being made."
     }
   ],

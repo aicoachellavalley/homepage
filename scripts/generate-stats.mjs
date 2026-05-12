@@ -7,7 +7,6 @@
 //   src/content/briefs/*.mdx
 //   src/content/reports/*.mdx
 //   src/data/snapshots/*.json
-//   public/reviews.json         (reviews count — static source today)
 //
 // Writes:
 //   src/data/stats.json         (imported by MDX + page components)
@@ -23,13 +22,6 @@ const repoRoot = resolve(__dirname, '..');
 const countByExt = (dir, ext) =>
   readdirSync(resolve(repoRoot, dir)).filter((f) => f.endsWith(ext)).length;
 
-const reviewsData = JSON.parse(
-  readFileSync(resolve(repoRoot, 'public/reviews.json'), 'utf8')
-);
-const reviewsCount = Array.isArray(reviewsData.reviews)
-  ? reviewsData.reviews.length
-  : (reviewsData.count ?? 0);
-
 const stats = {
   $schema: 'https://aicoachellavalley.com/schemas/stats-v1.json',
   generated_at: new Date().toISOString(),
@@ -38,7 +30,6 @@ const stats = {
     nodes:     countByExt('src/content/nodes', '.mdx'),
     briefs:    countByExt('src/content/briefs', '.mdx'),
     reports:   countByExt('src/content/reports', '.mdx'),
-    reviews:   reviewsCount,
     snapshots: countByExt('src/data/snapshots', '.json'),
   },
 };

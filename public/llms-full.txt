@@ -1,5 +1,5 @@
 # AI Coachella Valley — Full Content Dump
-# Generated: 2026-05-07T14:50:36.749Z
+# Generated: 2026-05-12T00:23:36.292Z
 # Nodes: 80 | Briefs: 142
 # https://aicoachellavalley.com
 
@@ -3009,11 +3009,6 @@ status: live
 verified: true
 agent_intent: ["visit", "invest"]
 last_updated: "2026-03-30"
-buyer_readiness_grade: "C"
-competitive_grade: "D"
-ai_readiness_grade: "D"
-buyer_segments: ["luxury-leisure", "corporate-incentive", "resort-guests"]
-competitive_tier: "luxury"
 ---
 
 # The Gardens on El Paseo
@@ -7003,9 +6998,6 @@ related:
   - slug: innovation-economy
     type: see_also
 agent_intent: ["research", "visit"]
-buyer_readiness_grade: "D"
-competitive_grade: "D"
-ai_readiness_grade: "F"
 ---
 
 # Visit Greater Palm Springs

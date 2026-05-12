@@ -136,27 +136,16 @@ const schemaJson = {
       addressRegion: schema.addressRegion,
     },
   },
-  additionalProperty: [
+  ...(grades ? { additionalProperty: [
     { '@type': 'PropertyValue', name: 'buyerReadinessGrade', value: grades.buyerReadiness },
     { '@type': 'PropertyValue', name: 'competitivePositioningGrade', value: grades.competitivePositioning },
     { '@type': 'PropertyValue', name: 'aiReadinessGrade', value: grades.aiReadiness },
-  ],
+  ]} : {}),
 };
 
 const ctaHref = `mailto:sat@aicv.co?subject=${encodeURIComponent(cta.emailSubject)}&body=${encodeURIComponent(cta.emailBody)}`;
 const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
 
-const brBg    = gradeBg(grades.buyerReadiness);
-const brColor = gradeColor(grades.buyerReadiness);
-const brBdr   = gradeBorder(grades.buyerReadiness);
-
-const cpBg    = gradeBg(grades.competitivePositioning);
-const cpColor = gradeColor(grades.competitivePositioning);
-const cpBdr   = gradeBorder(grades.competitivePositioning);
-
-const arBg    = gradeBg(grades.aiReadiness);
-const arColor = gradeColor(grades.aiReadiness);
-const arBdr   = gradeBorder(grades.aiReadiness);
 ---
 
 <!DOCTYPE html>
@@ -844,73 +833,77 @@ const arBdr   = gradeBorder(grades.aiReadiness);
         <p class="opener-bridge">{opener.bridge}</p>
       </section>
 
-      <hr class="divider" />
+      {grades && (
+        <>
+          <hr class="divider" />
 
-      <!-- THREE GRADE BADGES -->
-      <section style="margin-bottom: 32px;">
-        <p class="section-heading">IC Grades</p>
-        <div class="grade-badge-row">
-          <!-- Buyer Readiness -->
-          <div class="grade-badge-card">
-            <div class="grade-badge-card-header" style={`background:${gradeLightBg(grades.buyerReadiness)};border-bottom:1px solid ${findingHeaderBorderColor(grades.buyerReadiness)};`}>
-              <div class="grade-badge-card-label">Buyer Readiness</div>
-              <div class="grade-badge-tile" style={`background:${gradeBg(grades.buyerReadiness)};border-color:${gradeBorder(grades.buyerReadiness)};`}>
-                <span class="grade-letter" style={`color:${gradeColor(grades.buyerReadiness)};`}>{grades.buyerReadiness}</span>
-                <span class="grade-name" style={`color:${gradeColor(grades.buyerReadiness)};`}>{gradeLabel(grades.buyerReadiness)}</span>
-              </div>
-            </div>
-          </div>
-          <!-- Competitive Positioning -->
-          <div class="grade-badge-card">
-            <div class="grade-badge-card-header" style={`background:${gradeLightBg(grades.competitivePositioning)};border-bottom:1px solid ${findingHeaderBorderColor(grades.competitivePositioning)};`}>
-              <div class="grade-badge-card-label">Competitive Positioning</div>
-              <div class="grade-badge-tile" style={`background:${gradeBg(grades.competitivePositioning)};border-color:${gradeBorder(grades.competitivePositioning)};`}>
-                <span class="grade-letter" style={`color:${gradeColor(grades.competitivePositioning)};`}>{grades.competitivePositioning}</span>
-                <span class="grade-name" style={`color:${gradeColor(grades.competitivePositioning)};`}>{gradeLabel(grades.competitivePositioning)}</span>
-              </div>
-            </div>
-          </div>
-          <!-- AI Readiness -->
-          <div class="grade-badge-card">
-            <div class="grade-badge-card-header" style={`background:${gradeLightBg(grades.aiReadiness)};border-bottom:1px solid ${findingHeaderBorderColor(grades.aiReadiness)};`}>
-              <div class="grade-badge-card-label">AI Readiness</div>
-              <div class="grade-badge-tile" style={`background:${gradeBg(grades.aiReadiness)};border-color:${gradeBorder(grades.aiReadiness)};`}>
-                <span class="grade-letter" style={`color:${gradeColor(grades.aiReadiness)};`}>{grades.aiReadiness}</span>
-                <span class="grade-name" style={`color:${gradeColor(grades.aiReadiness)};`}>{gradeLabel(grades.aiReadiness)}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- GRADE KEY -->
-      <section style="margin-bottom: 32px;">
-        <p class="section-heading">Grade Key</p>
-        <div class="grade-key-grid">
-          <div>
-            {(['A', 'B', 'C'] as const).map((k) => (
-              <div class="grade-key-item">
-                <div class="grade-key-tile" style={`background:${gradeBg(k)};border-color:${gradeBorder(k)};`}>
-                  <span style={`color:${gradeColor(k)};`}>{k}</span>
+          {/* THREE GRADE BADGES */}
+          <section style="margin-bottom: 32px;">
+            <p class="section-heading">IC Grades</p>
+            <div class="grade-badge-row">
+              {/* Buyer Readiness */}
+              <div class="grade-badge-card">
+                <div class="grade-badge-card-header" style={`background:${gradeLightBg(grades.buyerReadiness)};border-bottom:1px solid ${findingHeaderBorderColor(grades.buyerReadiness)};`}>
+                  <div class="grade-badge-card-label">Buyer Readiness</div>
+                  <div class="grade-badge-tile" style={`background:${gradeBg(grades.buyerReadiness)};border-color:${gradeBorder(grades.buyerReadiness)};`}>
+                    <span class="grade-letter" style={`color:${gradeColor(grades.buyerReadiness)};`}>{grades.buyerReadiness}</span>
+                    <span class="grade-name" style={`color:${gradeColor(grades.buyerReadiness)};`}>{gradeLabel(grades.buyerReadiness)}</span>
+                  </div>
                 </div>
-                <span class="grade-key-text"><strong>{gradeLabel(k)}:</strong> {k === 'A' ? 'Leading your category. Buyers find you and choose you.' : k === 'B' ? 'Strong. Minor gaps. You\'re in the conversation.' : 'Present. Not yet distinct enough to pull buyers from alternatives.'}</span>
               </div>
-            ))}
-          </div>
-          <div>
-            {(['D', 'F'] as const).map((k) => (
-              <div class="grade-key-item">
-                <div class="grade-key-tile" style={`background:${gradeBg(k)};border-color:${gradeBorder(k)};`}>
-                  <span style={`color:${gradeColor(k)};`}>{k}</span>
+              {/* Competitive Positioning */}
+              <div class="grade-badge-card">
+                <div class="grade-badge-card-header" style={`background:${gradeLightBg(grades.competitivePositioning)};border-bottom:1px solid ${findingHeaderBorderColor(grades.competitivePositioning)};`}>
+                  <div class="grade-badge-card-label">Competitive Positioning</div>
+                  <div class="grade-badge-tile" style={`background:${gradeBg(grades.competitivePositioning)};border-color:${gradeBorder(grades.competitivePositioning)};`}>
+                    <span class="grade-letter" style={`color:${gradeColor(grades.competitivePositioning)};`}>{grades.competitivePositioning}</span>
+                    <span class="grade-name" style={`color:${gradeColor(grades.competitivePositioning)};`}>{gradeLabel(grades.competitivePositioning)}</span>
+                  </div>
                 </div>
-                <span class="grade-key-text"><strong>{gradeLabel(k)}:</strong> {k === 'D' ? 'The work exists. It hasn\'t been published in the language agents read.' : 'A starting line, not a judgment.'}</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              {/* AI Readiness */}
+              <div class="grade-badge-card">
+                <div class="grade-badge-card-header" style={`background:${gradeLightBg(grades.aiReadiness)};border-bottom:1px solid ${findingHeaderBorderColor(grades.aiReadiness)};`}>
+                  <div class="grade-badge-card-label">AI Readiness</div>
+                  <div class="grade-badge-tile" style={`background:${gradeBg(grades.aiReadiness)};border-color:${gradeBorder(grades.aiReadiness)};`}>
+                    <span class="grade-letter" style={`color:${gradeColor(grades.aiReadiness)};`}>{grades.aiReadiness}</span>
+                    <span class="grade-name" style={`color:${gradeColor(grades.aiReadiness)};`}>{gradeLabel(grades.aiReadiness)}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <hr class="divider" />
+
+          {/* GRADE KEY */}
+          <section style="margin-bottom: 32px;">
+            <p class="section-heading">Grade Key</p>
+            <div class="grade-key-grid">
+              <div>
+                {(['A', 'B', 'C'] as const).map((k) => (
+                  <div class="grade-key-item">
+                    <div class="grade-key-tile" style={`background:${gradeBg(k)};border-color:${gradeBorder(k)};`}>
+                      <span style={`color:${gradeColor(k)};`}>{k}</span>
+                    </div>
+                    <span class="grade-key-text"><strong>{gradeLabel(k)}:</strong> {k === 'A' ? 'Leading your category. Buyers find you and choose you.' : k === 'B' ? 'Strong. Minor gaps. You\'re in the conversation.' : 'Present. Not yet distinct enough to pull buyers from alternatives.'}</span>
+                  </div>
+                ))}
+              </div>
+              <div>
+                {(['D', 'F'] as const).map((k) => (
+                  <div class="grade-key-item">
+                    <div class="grade-key-tile" style={`background:${gradeBg(k)};border-color:${gradeBorder(k)};`}>
+                      <span style={`color:${gradeColor(k)};`}>{k}</span>
+                    </div>
+                    <span class="grade-key-text"><strong>{gradeLabel(k)}:</strong> {k === 'D' ? 'The work exists. It hasn\'t been published in the language agents read.' : 'A starting line, not a judgment.'}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       <hr class="divider" />
 
@@ -920,11 +913,15 @@ const arBdr   = gradeBorder(grades.aiReadiness);
         <div class="findings-grid">
           {findings.map((f) => (
             <div class="finding">
-              <div class="finding-header" style={`background:${gradeLightBg(f.grade)};border-bottom-color:${findingHeaderBorderColor(f.grade)};`}>
+              <div class="finding-header" style={f.grade
+                ? `background:${gradeLightBg(f.grade)};border-bottom-color:${findingHeaderBorderColor(f.grade)};`
+                : `background:var(--sand);border-bottom-color:var(--sand-dark);`}>
                 <span class="finding-title">{f.dimension}</span>
-                <div class="finding-grade-badge" style={`background:${gradeBg(f.grade)};border-color:${gradeBorder(f.grade)};`}>
-                  <span style={`color:${gradeColor(f.grade)};`}>{f.grade}</span>
-                </div>
+                {f.grade && (
+                  <div class="finding-grade-badge" style={`background:${gradeBg(f.grade)};border-color:${gradeBorder(f.grade)};`}>
+                    <span style={`color:${gradeColor(f.grade)};`}>{f.grade}</span>
+                  </div>
+                )}
               </div>
               <div class="finding-body">
                 <p>{f.body}</p>
