@@ -426,7 +426,7 @@ const schemaGraph = {
     <div class="gar-v2-why-card-content">
       <div class="gar-v2-eyebrow">WHY THIS TOOL</div>
       <p class="gar-v2-about-h">How is this different from every other AI visibility tool?</p>
-      <p class="gar-v2-body">How is this different from every other AI visibility tool? Two reasons. First, audience. Every other AIO tool scores your site against generic agent-readiness. AICV's tool scores you against agent-readiness for a specific audience — the newly liquid tech wealth migrating from SF and LA, asking their agents about the Valley as they consider their next chapter. Second, methodology. AICV's diagnostic sits on top of a proprietary three-part scoring model: the AICV LLM Council powered by Anthropic's Claude, AICV's own AIO tool, and Cloudflare's Agent Readiness Score. We applied it to aicoachellavalley.com first — and went from a low-20s score to Level 5 Agent-Native classification on Cloudflare's scanner. That same methodology is what your node inherits when you join the network.</p>
+      <p class="gar-v2-body">Two reasons. First, audience. Every other AIO tool scores your site against generic agent-readiness. AICV's tool scores you against agent-readiness for a specific audience — the newly liquid tech wealth migrating from SF and LA, asking their agents about the Valley as they consider their next chapter. Second, methodology. AICV's diagnostic sits on top of a proprietary three-part scoring model: the AICV LLM Council powered by Anthropic's Claude, AICV's own AIO tool, and Cloudflare's Agent Readiness Score. We applied it to aicoachellavalley.com first — and went from a low-20s score to Level 5 Agent-Native classification on Cloudflare's scanner. That same methodology is what your node inherits when you join the network.</p>
     </div>
     <div class="gar-v2-why-screenshot-placeholder">
       <span>[ CLOUDFLARE SCREENSHOT ]</span>
@@ -1862,12 +1862,16 @@ const schemaGraph = {
 
   /* Section containers */
   .gar-v2-hero,
-  .gar-v2-diagnostic,
   .gar-v2-networks,
   .gar-v2-tiers,
   .gar-v2-close {
     position: relative;
     overflow: hidden;
+    padding: 96px 0;
+  }
+  .gar-v2-diagnostic {
+    position: relative;
+    overflow: visible;
     padding: 96px 0;
   }
 
@@ -2414,16 +2418,20 @@ const schemaGraph = {
     padding: 1.75rem 2rem;
     margin-top: 24px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 48px;
     align-items: center;
+    overflow: visible;
   }
-  .gar-v2-why-card .gar-v2-eyebrow { color: rgba(232,226,208,0.55); margin-bottom: 14px; }
-  .gar-v2-why-card .gar-v2-about-h { color: var(--snow); max-width: none; }
+  .gar-v2-why-card .gar-v2-eyebrow { color: var(--volt); margin-bottom: 14px; }
+  .gar-v2-why-card .gar-v2-about-h { color: var(--snow); max-width: none; font-size: 22px; line-height: 1.25; }
   .gar-v2-why-card .gar-v2-body { color: rgba(232,226,208,0.78); margin-bottom: 0; max-width: none; font-size: 14px; }
   .gar-v2-why-screenshot-placeholder {
-    background: rgba(255,255,255,0.07);
-    border-radius: 12px;
+    position: relative;
+    z-index: 10;
+    background: #1a3829;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
     aspect-ratio: 16 / 10;
     display: flex;
     align-items: center;
@@ -2432,7 +2440,12 @@ const schemaGraph = {
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(232,226,208,0.25);
+    color: rgba(255,255,255,0.35);
+    margin-right: -5rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    box-shadow: 0 20px 56px rgba(0,0,0,0.55), 0 6px 20px rgba(0,0,0,0.35);
+    transform: rotate(-0.5deg);
   }
   .gar-v2-agent-pills {
     display: flex;
