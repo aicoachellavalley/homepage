@@ -344,13 +344,12 @@ const schemaGraph = {
     <div class="gar-v2-eyebrow">THE AGENTIC INTERNET IS HERE</div>
     <h1 class="gar-v2-h1">Get Agent Ready.</h1>
     <p class="gar-v2-hero-sub">AICV is the Coachella Valley's intelligence network for the agentic internet.</p>
-    <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-cta-primary">Join the Network →</a>
     <div class="gar-v2-proof-strip">
-      <div class="gar-v2-proof-line">
-        <div class="gar-v2-proof-stats">80+ AGENT-READY NODES · ESTABLISHED 2025</div>
-        <a href="/nodes/node-zero" class="gar-v2-proof-btn">PROOF OF WORK →</a>
-      </div>
       <div class="gar-v2-proof-visibility">Designed to be cited by Claude, ChatGPT, Perplexity &amp; Gemini</div>
+      <div class="gar-v2-proof-line">
+        <a href="/nodes/node-zero" class="gar-v2-proof-btn">PROOF OF WORK →</a>
+        <div class="gar-v2-proof-stats">80+ AGENT-READY NODES · ESTABLISHED 2025</div>
+      </div>
     </div>
   </div>
 </section>
@@ -2014,11 +2013,14 @@ const schemaGraph = {
   }
   .gar-v2-proof-btn:hover { background: var(--pine); }
   .gar-v2-proof-visibility {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: var(--pine-light);
-    letter-spacing: 0.2px;
-    font-weight: 400;
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3.4rem);
+    font-weight: 700;
+    color: var(--pine);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
   }
 
   /* Diagnostic */
