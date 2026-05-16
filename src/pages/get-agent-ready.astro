@@ -348,7 +348,7 @@ const schemaGraph = {
       <div class="gar-v2-proof-visibility">Designed to be cited by Claude, ChatGPT, Perplexity &amp; Gemini</div>
       <div class="gar-v2-proof-line">
         <a href="/nodes/node-zero" class="gar-v2-proof-btn">PROOF OF WORK →</a>
-        <div class="gar-v2-proof-stats">80+ AGENT-READY NODES · ESTABLISHED 2025</div>
+        <div class="gar-v2-proof-stats">{nodeCount} AGENT-READY NODES · {briefCount} BRIEFS · ESTABLISHED 2025</div>
       </div>
     </div>
   </div>
@@ -456,7 +456,40 @@ const schemaGraph = {
   <div class="gar-v2-inner">
     <div class="gar-v2-eyebrow">WHY NETWORKS WIN</div>
     <h2 class="gar-v2-networks-h">A business optimizing alone is almost invisible. A business inside the AICV network is signal.</h2>
-    <p class="gar-v2-body">Agents don't reward scattered noise. They reach for trusted regional context. A cluster.</p>
+    <p class="gar-v2-body">LLMs and AI don't reward scattered noise. They reach for trusted regional context. A cluster.</p>
+  </div>
+</section>
+
+<div class="gar-v2-callout-bridge">
+  <div class="gar-v2-callout-bridge-inner">
+    <p class="gar-v2-callout-bridge-text">The network that earns the cluster earns the citation.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="gar-v2-howitworks">
+  <div class="gar-v2-inner">
+    <div class="gar-v2-eyebrow">WHAT HAPPENS WHEN YOU JOIN AICV</div>
+    <p class="gar-v2-about-h">You don't change your website. Let the network do the work.</p>
+    <div class="gar-v2-hw-cards">
+      <div class="gar-v2-hw-card">
+        <div class="gar-v2-hw-step">STEP 1</div>
+        <p class="gar-v2-hw-title">Your agent goes live</p>
+        <p class="gar-v2-hw-body">Two weeks from kickoff. One short conversation. Your business shows up on the AICV network with an agent answering on your behalf — to other agents, around the clock.</p>
+      </div>
+      <div class="gar-v2-hw-arrow">→</div>
+      <div class="gar-v2-hw-card">
+        <div class="gar-v2-hw-step">STEP 2</div>
+        <p class="gar-v2-hw-title">Other agents start citing you</p>
+        <p class="gar-v2-hw-body">Founder agents, research agents, booking agents read your record and route their humans accordingly. Nothing touches your existing website. Nothing on your end to maintain.</p>
+      </div>
+      <div class="gar-v2-hw-arrow">→</div>
+      <div class="gar-v2-hw-card">
+        <div class="gar-v2-hw-step">STEP 3</div>
+        <p class="gar-v2-hw-title">The cluster compounds</p>
+        <p class="gar-v2-hw-body">Every brief AICV publishes, every node added, every citation earned — the cluster gets more trusted, and your record inherits the lift. The work AICV does daily becomes work done for you.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -531,33 +564,6 @@ const schemaGraph = {
     </div>
   </div>
   <p class="gar-v2-tier-note">Intro and founding member pricing shown — limited availability. Not sure where you fit? <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Book a chat with Sat.</a></p>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="gar-v2-howitworks">
-  <div class="gar-v2-inner">
-    <div class="gar-v2-eyebrow">WHAT HAPPENS WHEN YOU JOIN</div>
-    <p class="gar-v2-about-h">You don't change your website. Let the network do the work.</p>
-    <div class="gar-v2-hw-cards">
-      <div class="gar-v2-hw-card">
-        <div class="gar-v2-hw-step">STEP 1</div>
-        <p class="gar-v2-hw-title">Your agent goes live</p>
-        <p class="gar-v2-hw-body">Two weeks from kickoff. One short conversation. Your business shows up on the AICV network with an agent answering on your behalf — to other agents, around the clock.</p>
-      </div>
-      <div class="gar-v2-hw-arrow">→</div>
-      <div class="gar-v2-hw-card">
-        <div class="gar-v2-hw-step">STEP 2</div>
-        <p class="gar-v2-hw-title">Other agents start citing you</p>
-        <p class="gar-v2-hw-body">Founder agents, research agents, booking agents read your record and route their humans accordingly. Nothing touches your existing website. Nothing on your end to maintain.</p>
-      </div>
-      <div class="gar-v2-hw-arrow">→</div>
-      <div class="gar-v2-hw-card">
-        <div class="gar-v2-hw-step">STEP 3</div>
-        <p class="gar-v2-hw-title">The cluster compounds</p>
-        <p class="gar-v2-hw-body">Every brief AICV publishes, every node added, every citation earned — the cluster gets more trusted, and your record inherits the lift. The work AICV does daily becomes work done for you.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1883,9 +1889,9 @@ const schemaGraph = {
 
   .gar-v2-hero { background: var(--pine-tint); padding: 96px 0 72px; }
   .gar-v2-diagnostic { background: var(--pine-mist); border-top: 1px dashed rgba(18,43,34,0.15); }
-  .gar-v2-networks { background: var(--pine-tint); }
+  .gar-v2-networks { background: var(--pine-tint); padding-bottom: 48px; }
   .gar-v2-tiers { background: var(--pine-mist); }
-  .gar-v2-howitworks { background: var(--pine-tint); padding: 80px 0; position: relative; overflow: hidden; }
+  .gar-v2-howitworks { background: var(--pine-tint); padding: 48px 0 80px; position: relative; overflow: hidden; }
   .gar-v2-proof { background: var(--pine-mist); padding: 80px 0; position: relative; overflow: hidden; border-top: 1px dashed rgba(18,43,34,0.12); }
   .gar-v2-proof .gar-v2-about-h { max-width: 780px; }
   .gar-v2-proof .gar-v2-about-body { max-width: 780px; }
@@ -2327,6 +2333,43 @@ const schemaGraph = {
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
+  }
+
+  /* ─── CALLOUT BRIDGE ─── */
+  .gar-v2-callout-bridge {
+    background: var(--pine-tint);
+    padding: 0;
+  }
+  .gar-v2-callout-bridge-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+  .gar-v2-callout-bridge-text {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 600;
+    color: var(--pine);
+    text-align: center;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    padding: 2rem 3rem;
+    border: 1px solid rgba(18,43,34,0.15);
+    border-radius: 8px;
+    background: rgba(18,43,34,0.04);
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .gar-v2-callout-bridge-text::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.5rem;
+    left: 2rem;
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    color: rgba(18,43,34,0.12);
+    line-height: 1;
   }
 
   /* ─── TIER DISCLOSURE ─── */
