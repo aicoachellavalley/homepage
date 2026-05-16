@@ -423,9 +423,14 @@ const schemaGraph = {
 
   <!-- WHY THIS TOOL — card inside diagnostic section -->
   <div class="gar-v2-why-card">
-    <div class="gar-v2-eyebrow">WHY THIS TOOL</div>
-    <p class="gar-v2-about-h">How is this different from every other AI visibility tool?</p>
-    <p class="gar-v2-body">How is this different from every other AI visibility tool? Two reasons. First, audience. Every other AIO tool scores your site against generic agent-readiness. AICV's tool scores you against agent-readiness for a specific audience — the newly liquid tech wealth migrating from SF and LA, asking their agents about the Valley as they consider their next chapter. Second, methodology. AICV's diagnostic sits on top of a proprietary three-part scoring model: the AICV LLM Council powered by Anthropic's Claude, AICV's own AIO tool, and Cloudflare's Agent Readiness Score. We applied it to aicoachellavalley.com first — and went from a low-20s score to Level 5 Agent-Native classification on Cloudflare's scanner. That same methodology is what your node inherits when you join the network.</p>
+    <div class="gar-v2-why-card-content">
+      <div class="gar-v2-eyebrow">WHY THIS TOOL</div>
+      <p class="gar-v2-about-h">How is this different from every other AI visibility tool?</p>
+      <p class="gar-v2-body">How is this different from every other AI visibility tool? Two reasons. First, audience. Every other AIO tool scores your site against generic agent-readiness. AICV's tool scores you against agent-readiness for a specific audience — the newly liquid tech wealth migrating from SF and LA, asking their agents about the Valley as they consider their next chapter. Second, methodology. AICV's diagnostic sits on top of a proprietary three-part scoring model: the AICV LLM Council powered by Anthropic's Claude, AICV's own AIO tool, and Cloudflare's Agent Readiness Score. We applied it to aicoachellavalley.com first — and went from a low-20s score to Level 5 Agent-Native classification on Cloudflare's scanner. That same methodology is what your node inherits when you join the network.</p>
+    </div>
+    <div class="gar-v2-why-screenshot-placeholder">
+      <span>[ CLOUDFLARE SCREENSHOT ]</span>
+    </div>
   </div>
 
   </div>
@@ -571,8 +576,14 @@ const schemaGraph = {
   <div class="gar-v2-inner">
     <h2 class="gar-v2-close-h"><span class="no-break">Agent-to-agent</span> infrastructure is being built right now.</h2>
     <p class="gar-v2-close-volt">The agentic internet isn't five years away — it's reading the web today, and the businesses already on agent-readable networks are the ones being cited.</p>
-    <p class="gar-v2-close-imperative">Get Agent Ready for Coachella Valley inbound.</p>
-    <p class="gar-v2-close-inventory">Research agents. Booking agents. Buying agents. Travel agents. Shopping assistants. Executive AI.</p>
+    <div class="gar-v2-agent-pills">
+      <span class="gar-v2-agent-pill">Research agents</span>
+      <span class="gar-v2-agent-pill">Booking agents</span>
+      <span class="gar-v2-agent-pill">Buying agents</span>
+      <span class="gar-v2-agent-pill">Travel agents</span>
+      <span class="gar-v2-agent-pill">Shopping assistants</span>
+      <span class="gar-v2-agent-pill">Executive AI Assistants</span>
+    </div>
     <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-cta-volt">Join the Network →</a>
     
     <div class="gar-v2-footer-fields">
@@ -1873,6 +1884,8 @@ const schemaGraph = {
   .gar-v2-tiers { background: var(--pine-mist); }
   .gar-v2-howitworks { background: var(--pine-tint); padding: 80px 0; position: relative; overflow: hidden; }
   .gar-v2-proof { background: var(--pine-mist); padding: 80px 0; position: relative; overflow: hidden; border-top: 1px dashed rgba(18,43,34,0.12); }
+  .gar-v2-proof .gar-v2-about-h { max-width: 780px; }
+  .gar-v2-proof .gar-v2-about-body { max-width: 780px; }
   .gar-v2-close { background: var(--pine-dark); padding: 96px 0 32px; text-align: left; }
 
   /* Blueprint figures */
@@ -2239,15 +2252,6 @@ const schemaGraph = {
     line-height: 1.15;
     max-width: 540px;
   }
-  .gar-v2-close-imperative {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
-    line-height: 1.5;
-    color: var(--snow);
-    margin: 0 0 12px;
-    max-width: 520px;
-    font-weight: 500;
-  }
   .gar-v2-close-inventory {
     font-family: 'DM Sans', sans-serif;
     font-size: 17px;
@@ -2409,10 +2413,43 @@ const schemaGraph = {
     background: var(--pine-dark);
     padding: 1.75rem 2rem;
     margin-top: 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    align-items: center;
   }
   .gar-v2-why-card .gar-v2-eyebrow { color: rgba(232,226,208,0.55); margin-bottom: 14px; }
   .gar-v2-why-card .gar-v2-about-h { color: var(--snow); max-width: none; }
-  .gar-v2-why-card .gar-v2-body { color: rgba(232,226,208,0.78); margin-bottom: 0; max-width: none; }
+  .gar-v2-why-card .gar-v2-body { color: rgba(232,226,208,0.78); margin-bottom: 0; max-width: none; font-size: 14px; }
+  .gar-v2-why-screenshot-placeholder {
+    background: rgba(255,255,255,0.07);
+    border-radius: 12px;
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(232,226,208,0.25);
+  }
+  .gar-v2-agent-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 36px;
+  }
+  .gar-v2-agent-pill {
+    background: var(--volt);
+    color: var(--pine-dark);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
 
   /* ─── HOW IT WORKS ─── */
   .gar-v2-hw-cards {
@@ -2509,9 +2546,9 @@ const schemaGraph = {
 
     .gar-v2-hero-sub { font-size: 18px; }
     .gar-v2-body { font-size: 16px; }
-    .gar-v2-close-imperative { font-size: 17px; }
     .gar-v2-close-inventory { font-size: 15px; }
 
+    .gar-v2-why-card { grid-template-columns: 1fr; gap: 24px; }
     .gar-v2-tier-grid { grid-template-columns: 1fr; }
     .gar-v2-tier-card { padding: 28px; }
     .gar-v2-tier-name { font-size: 24px; white-space: normal; }
