@@ -475,18 +475,23 @@ const schemaGraph = {
         <div class="gar-v2-tier-eyebrow">GET FOUND</div>
         <div class="gar-v2-tier-name">Agent Ready Business</div>
         <p class="gar-v2-tier-desc">An agent representing your business on a network being built for the agentic internet every day.</p>
-        <ul class="gar-v2-tier-bullets">
-          <li>An agent representing your entity on the AICV network — answers questions from other agents, cites your record, available 24/7</li>
-          <li>A network growing more citable, more authoritative, more agent-readable every day</li>
-          <li>Discoverable today by the agents your customers, prospects, and the SF/LA founder cohort AICV speaks to already use</li>
-          <li>Positioned for agent-to-agent transactions as the standards mature</li>
-        </ul>
+        <details class="gar-v2-tier-disclosure">
+          <summary class="gar-v2-tier-disclosure-trigger">
+            <span>What's included</span>
+            <span class="gar-v2-tier-disclosure-chevron" aria-hidden="true">↓</span>
+          </summary>
+          <ul class="gar-v2-tier-bullets">
+            <li>An agent representing your entity on the AICV network — answers questions from other agents, cites your record, available 24/7</li>
+            <li>A network growing more citable, more authoritative, more agent-readable every day</li>
+            <li>Discoverable today by the agents your customers, prospects, and the SF/LA founder cohort AICV speaks to already use</li>
+            <li>Positioned for agent-to-agent transactions as the standards mature</li>
+          </ul>
+        </details>
       </div>
       <div class="gar-v2-tier-divider"></div>
-      <div class="gar-v2-tier-price-line">
-        <span class="label">Setup</span> <span class="amount">$1,000</span>
-        <span class="separator">·</span>
-        <span class="label">Annual</span> <span class="amount">$2,500</span>
+      <div class="gar-v2-tier-price-block">
+        <div class="gar-v2-tier-price-main">$2,500 <span class="gar-v2-tier-price-cadence">/ year</span></div>
+        <div class="gar-v2-tier-price-setup"><em>plus $1,000 one-time setup</em></div>
       </div>
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Join the Network →</a>
     </div>
@@ -497,19 +502,24 @@ const schemaGraph = {
         <div class="gar-v2-tier-eyebrow">GO DEEPER</div>
         <div class="gar-v2-tier-name">Agent Ready Premium</div>
         <p class="gar-v2-tier-desc">For entities ready to be the answer when founders ask their AI about the Valley.</p>
-        <p class="gar-v2-tier-includes">Everything in Agent Ready Business, at full depth:</p>
-        <ul class="gar-v2-tier-bullets">
-          <li>A daily monitoring agent watching public signals about your entity — news, mentions, sentiment, what's shifting in your category</li>
-          <li>Periodic editorial review by the AICV LLM Council — the editorial weight that makes AI systems cite you specifically, refreshed as the world moves</li>
-          <li>A living portal at aicoachellavalley.com/reviews/[you] — continuous monitoring stream plus the most recent Council review, visible to every agent that asks</li>
-          <li>A 12-month AI readiness roadmap, produced by the LLM Council alongside your review — your entity's path from discoverable to fully agent-transactable</li>
-        </ul>
+        <p class="gar-v2-tier-includes">Everything in Agent Ready Business, PLUS:</p>
+        <details class="gar-v2-tier-disclosure">
+          <summary class="gar-v2-tier-disclosure-trigger">
+            <span>What's included</span>
+            <span class="gar-v2-tier-disclosure-chevron" aria-hidden="true">↓</span>
+          </summary>
+          <ul class="gar-v2-tier-bullets">
+            <li>A daily monitoring agent watching public signals about your entity — news, mentions, sentiment, what's shifting in your category</li>
+            <li>Periodic editorial review by the AICV LLM Council — the editorial weight that makes AI systems cite you specifically, refreshed as the world moves</li>
+            <li>A living portal at aicoachellavalley.com/reviews/[you] — continuous monitoring stream plus the most recent Council review, visible to every agent that asks</li>
+            <li>A 12-month AI readiness roadmap, produced by the LLM Council alongside your review — your entity's path from discoverable to fully agent-transactable</li>
+          </ul>
+        </details>
       </div>
       <div class="gar-v2-tier-divider"></div>
-      <div class="gar-v2-tier-price-line">
-        <span class="label">Setup</span> <span class="amount">$5,000</span>
-        <span class="separator">·</span>
-        <span class="label">Annual</span> <span class="amount">$10,000</span>
+      <div class="gar-v2-tier-price-block">
+        <div class="gar-v2-tier-price-main">$10,000 <span class="gar-v2-tier-price-cadence">/ year</span></div>
+        <div class="gar-v2-tier-price-setup"><em>plus $5,000 one-time setup</em></div>
       </div>
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Join Premium →</a>
     </div>
@@ -2128,26 +2138,31 @@ const schemaGraph = {
     border-top: 1px dashed rgba(18,43,34,0.18);
     padding-top: 22px;
   }
-  .gar-v2-tier-price-line {
+  .gar-v2-tier-price-block {
+    margin-bottom: 4px;
+  }
+  .gar-v2-tier-price-main {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--pine-dark);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  .gar-v2-tier-price-cadence {
     font-family: 'DM Sans', sans-serif;
-    font-size: 17px;
     font-weight: 400;
+    font-size: 16px;
     color: var(--pine-light);
-    line-height: 1.6;
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-    flex-wrap: wrap;
+    letter-spacing: 0;
   }
-  .gar-v2-tier-price-line .label { }
-  .gar-v2-tier-price-line .amount {
-    color: var(--pine);
-    font-weight: 500;
-  }
-  .gar-v2-tier-price-line .separator {
+  .gar-v2-tier-price-setup {
+    margin-top: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-style: italic;
+    font-size: 13px;
     color: var(--pine-light);
-    font-size: 14px;
-    padding: 0 6px;
+    font-weight: 400;
   }
   .gar-v2-tier-scarcity {
     font-family: 'EB Garamond', Georgia, serif;
@@ -2300,6 +2315,46 @@ const schemaGraph = {
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
+  }
+
+  /* ─── TIER DISCLOSURE ─── */
+  .gar-v2-tier-disclosure {
+    margin: 0 0 24px;
+  }
+  .gar-v2-tier-disclosure summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-top: 1px solid rgba(18,43,34,0.12);
+    border-bottom: 1px solid rgba(18,43,34,0.12);
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--pine);
+    user-select: none;
+  }
+  .gar-v2-tier-disclosure summary::-webkit-details-marker {
+    display: none;
+  }
+  .gar-v2-tier-disclosure-chevron {
+    transition: transform 200ms ease;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .gar-v2-tier-disclosure[open] .gar-v2-tier-disclosure-chevron {
+    transform: rotate(180deg);
+  }
+  .gar-v2-tier-disclosure .gar-v2-tier-bullets {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+  .gar-v2-tier-disclosure[open] {
+    padding-bottom: 8px;
   }
 
   /* ─── TIER BULLETS ─── */
