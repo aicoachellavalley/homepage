@@ -7,6 +7,7 @@ import statsData from '../data/stats.json';
 
 const nodeCount = nodesData.length;
 const briefCount = briefsData.length;
+const latestBriefs = briefsData.slice(0, 3);
 const reportCount = reportsData.length;
 
 const lastUpdated = new Date(statsData.generated_at);
@@ -322,6 +323,25 @@ const personSchema = {
       <p class="intel-what-body" style="margin-top:0.25rem;">It documents the Valley's businesses, institutions, and modernization signals as living intelligence — continuously updated, structured for Foundational LLMs and agentic AI systems, and grounded in real economic activity.</p>
       <p class="intel-what-body" style="margin-top:0.25rem;">Rancho Mirage · Palm Desert · Indian Wells — and all nine valley cities — represented. Live intelligence briefs. Curated regional network. Version 2 framework — evolving with the technology.</p>
       <p class="intel-what-body" style="margin-top:0.25rem;"><strong>We're not waiting for the future of AI. We're building for it — now.</strong></p>
+    </div>
+  </section>
+</div>
+
+<!-- ─── LATEST BRIEFS ─── -->
+<div class="briefs-strip-wrap">
+  <section class="briefs-strip-section">
+    <div class="briefs-strip-header-row">
+      <div class="briefs-strip-label">Latest Briefs</div>
+      <a href="/briefs/" class="briefs-strip-viewall">View all briefs →</a>
+    </div>
+    <div class="briefs-strip-grid">
+      {latestBriefs.map((brief) => (
+        <a href={`/briefs/${brief.slug}/`} class="briefs-strip-card">
+          <div class="briefs-strip-date">{brief.date}</div>
+          <div class="briefs-strip-title">{brief.title}</div>
+          <p class="briefs-strip-desc">{brief.description}</p>
+        </a>
+      ))}
     </div>
   </section>
 </div>
@@ -768,6 +788,88 @@ const personSchema = {
   .intel-what-body strong {
     color: var(--pine);
     font-weight: 600;
+  }
+
+  /* ─── LATEST BRIEFS STRIP ─── */
+  .briefs-strip-wrap {
+    background: var(--sand);
+  }
+  .briefs-strip-section {
+    padding: 4rem 3rem;
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+  .briefs-strip-header-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .briefs-strip-label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: var(--pine);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .briefs-strip-viewall {
+    font-size: 0.82rem;
+    color: var(--pine);
+    opacity: 0.55;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.15s, opacity 0.15s;
+  }
+  .briefs-strip-viewall:hover {
+    color: var(--volt);
+    opacity: 1;
+  }
+  .briefs-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .briefs-strip-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .briefs-strip-card:hover {
+    border-color: rgba(0,0,0,0.18);
+    background: rgba(0,0,0,0.05);
+  }
+  .briefs-strip-date {
+    font-size: 0.72rem;
+    color: rgba(0,0,0,0.4);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .briefs-strip-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.88rem, 1.3vw, 1rem);
+    color: var(--pine);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .briefs-strip-desc {
+    font-size: 0.82rem;
+    color: rgba(0,0,0,0.55);
+    font-weight: 300;
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+  }
+  @media (max-width: 768px) {
+    .briefs-strip-grid { grid-template-columns: 1fr; }
+    .briefs-strip-section { padding: 3.5rem 1.5rem; }
   }
 
   /* ─── INTELLIGENCE LAYER BLOCK ─── */
