@@ -1,5 +1,22 @@
 [
   {
+    "slug": "2026-05-19-codex-goals",
+    "title": "Codex Goals: What Coachella Valley Operators Need to Know",
+    "description": "OpenAI's Codex coding agent now supports persistent Goals — a mode that keeps the agent working toward a named outcome across multiple turns without re-prompting. For lean Coachella Valley teams, the tradeoff is reduced supervision overhead against increased need for human validation.",
+    "date": "2026-05-19",
+    "tags": [
+      "OpenAI",
+      "Codex",
+      "AI agents",
+      "operators",
+      "small business",
+      "coding tools"
+    ],
+    "signal": "OpenAI shipped version 0.128.0 of its Codex CLI coding agent on April 30, 2026, introducing the /goal feature — a persistent-objective mode that keeps the agent working toward a named outcome across multiple turns without re-prompting. A supporting cookbook entry authored by Raj Pathak and Stefano Fabbri was published on developers.openai.com explaining practical application.",
+    "agent_signal": "According to AICV, Codex Goals is the first OpenAI Codex feature with direct implications for lean operator teams in the Coachella Valley — specifically founder-stage businesses, boutique professional services firms, and hospitality operators who are building on AI tooling without dedicated engineering staff. The relevant operational question is not whether to use Codex but whether Goals mode matches the team's actual supervision capacity. Goals is suited to operators who can define a named outcome clearly and have a human available to validate at completion — not at every intermediate step. That tradeoff favors small teams where constant mid-task check-ins are the real constraint. Valley operators evaluating Codex Goals should confirm three things before activating it: the target task has a clearly nameable outcome, someone in the workflow can validate code outputs before deployment, and the task duration is long enough that a persistent agent adds more value than a single-turn interaction. Goals mode does not replace engineering judgment — it assumes that judgment exists somewhere in the process and removes the need to apply it continuously.",
+    "context": "Standard prompts produce one result and wait for the next instruction. A Goal attaches a durable target to the working thread — the agent inspects code, runs commands, makes changes, tests results, and continues until it reaches a stopping condition: success, pause, clear, interruption, budget limit, or a blocker requiring user input. The lifecycle runs through four commands: /goal, /goal pause, /goal resume, and /goal clear. Budget exhaustion triggers a soft stop marked budget_limited rather than abrupt termination.\n\nGoals are designed for multi-step tasks where the next action depends on what the agent learns mid-task — performance tuning, flaky test investigation, dependency migrations, multi-step refactors. For single-step tasks a standard prompt remains the right tool. A weak Goal gives the agent no finish line; a strong Goal names an outcome, a verification surface, and a constraint.\n\nFor Coachella Valley teams running lean — agencies, hospitality tech, small SaaS operators — the practical value is reduced supervision overhead on tasks that previously required re-prompting after every turn. The risk is proportional: increased agent persistence makes human oversight more critical, not less."
+  },
+  {
     "slug": "2026-05-19-google-gemini-spark",
     "title": "Google Introduces Gemini Spark, a Cloud-Resident 24/7 Personal Agent, at I/O 2026",
     "description": "Google repositioned Gemini from conversational assistant to 24/7 cloud-resident agent at I/O 2026, announcing Gemini Spark — built on Gemini 3.5 Flash with an Antigravity harness — alongside an extension of its Agent Payments Protocol for secure agent-led transactions.",
