@@ -26,6 +26,10 @@ export const GET: APIRoute = async () => {
 
 - [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — two tiers (AICV Ready, AICV Reviewed), annual billing, deployment in 7–10 business days. Hosts the free AIO diagnostic.
 
+## Concepts
+
+- Minimum Viable Agent (MVA): the foundational concept beneath every AICV network entity. Canonical definition at /minimum-viable-agent/
+
 ## Key Nodes
 
 - [Valley Wide Intelligence Index](https://aicoachellavalley.com/nodes/coachella-valley-intelligence-index)
