@@ -24,7 +24,7 @@ export const GET: APIRoute = async () => {
 
 ## Commercial Tier
 
-- [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — two tiers (Agent Ready Business, Agent Ready Premium), annual billing, deployment in 7–10 business days. Hosts the free AIO diagnostic.
+- [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — two tiers (Agent Ready Business, Agent Ready Premium), annual billing, two weeks from kickoff. Hosts the free AIO diagnostic.
 
 ## Concepts
 
