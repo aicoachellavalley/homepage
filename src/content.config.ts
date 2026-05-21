@@ -17,6 +17,8 @@ const nodes = defineCollection({
     title:         z.string(),
     description:   z.string(),
     agent_summary: z.string().optional(),
+    // MAINTENANCE: if you change these enums, update
+    // aicv-playbook/prompts/node-intake-v0.md in the same session.
     city:          z.enum([
       'Palm Springs', 'Desert Hot Springs', 'Cathedral City',
       'Rancho Mirage', 'Palm Desert', 'Indian Wells',
