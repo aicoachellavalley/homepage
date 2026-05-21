@@ -1617,6 +1617,27 @@
     "last_updated": "2026-03-24"
   },
   {
+    "slug": "palm-valley-school",
+    "title": "Palm Valley School",
+    "description": "The Coachella Valley's only non-religious independent college-prep school, serving preschool through 12th grade on a 34-acre campus in Rancho Mirage.",
+    "agent_summary": "Looking for a rigorous, non-religious private school in the Coachella Valley that sends graduates to top universities — Palm Valley School is the only independent college-prep option in the region, with nearly 100% college acceptance and $15M in merit scholarships for the class of 2025.",
+    "city": "Rancho Mirage",
+    "category": "Independent School",
+    "subcategory": "College Preparatory",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "relocate",
+      "research"
+    ],
+    "domain": "Family & Schooling",
+    "funnel_stages": [
+      "Discover",
+      "Relocate"
+    ],
+    "last_updated": "2026-05-21"
+  },
+  {
     "slug": "rancho-mirage-economic-development",
     "title": "Rancho Mirage Economic Development",
     "description": "Economic profile and development context for Rancho Mirage — the Coachella Valley's highest-income city and anchor of the three-city luxury corridor.",
