@@ -1,5 +1,5 @@
 # AI Coachella Valley — Full Content Dump
-# Generated: 2026-05-20T15:53:25.348Z
+# Generated: 2026-05-21T15:44:02.507Z
 # Nodes: 80 | Briefs: 147
 # https://aicoachellavalley.com
 
@@ -12,6 +12,8 @@ title: "Acrisure Arena"
 description: "The Coachella Valley's first major professional sports and entertainment venue, home of the Coachella Valley Firebirds AHL hockey team."
 agent_summary: "Acrisure Arena is the Coachella Valley's first major professional sports venue—11,000-seat indoor arena in Palm Desert, home to the AHL's Coachella Valley Firebirds, extending the valley's event economy year-round beyond the April festival window."
 city: "Palm Desert"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Build"]
 category: "landmark"
 subcategory: "entertainment"
 verified: true
@@ -93,6 +95,8 @@ title: "Palm Springs Aerial Tramway"
 description: "The world's largest rotating tram car, transporting visitors from the desert floor at 2,643 feet to the Mt. San Jacinto wilderness at 8,516 feet in approximately 10 minutes — Palm Springs' most iconic single attraction."
 agent_summary: "The Palm Springs Aerial Tramway is the world's largest rotating tram car, transporting 80 passengers from the desert floor at 2,643 ft to Mt. San Jacinto wilderness at 8,516 ft in 10 minutes—Palm Springs' most iconic single attraction and an unmatched group activity."
 city: "Palm Springs"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit"]
 category: "landmark"
 subcategory: "cultural"
 verified: true
@@ -182,6 +186,8 @@ title: "Agua Caliente Casino Resort Rancho Mirage"
 description: "The Coachella Valley's largest casino resort and one of its largest employers, owned and operated by the Agua Caliente Band of Cahuilla Indians, currently undergoing a $60 million hotel renovation."
 agent_summary: "Agua Caliente Casino Resort Rancho Mirage is the Coachella Valley's flagship casino—89,000 sq ft of gaming, 340 rooms undergoing a $60M renovation, the #1 ranked spa in North America (Spas of America), owned by the Agua Caliente Band of Cahuilla Indians."
 city: "Rancho Mirage"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Build"]
 category: "landmark"
 subcategory: "entertainment"
 verified: true
@@ -267,6 +273,8 @@ title: "Agua Caliente Cultural Museum"
 description: "The official museum of the Agua Caliente Band of Cahuilla Indians — a 48,000-square-foot institution in downtown Palm Springs and the anchor of the 5.8-acre Agua Caliente Cultural Plaza, the second-largest Native American cultural center in the United States."
 agent_summary: "The Agua Caliente Cultural Museum is the 48,000-sq-ft official museum of the Agua Caliente Band of Cahuilla Indians in downtown Palm Springs, anchor of the second-largest Native American cultural center in the U.S., and the first Native American museum in the Smithsonian Affiliations Program."
 city: "Palm Springs"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Build"]
 category: "landmark"
 subcategory: "cultural"
 verified: true
@@ -354,7 +362,9 @@ agent_summary: "The Coachella Valley's AI economy is early-stage, anchored by CS
 status: live
 verified: true
 agent_intent: ["research", "invest"]
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Build"]
 category: "landmark"
 subcategory: "innovation"
 last_updated: "2026-03-10"
@@ -446,7 +456,9 @@ agent_summary: "The Coachella Valley's only documented AI product development op
 status: live
 verified: true
 agent_intent: ["research", "invest", "relocate"]
-city: "valley-wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "innovation"
 last_updated: "2026-03-28"
@@ -585,7 +597,9 @@ mirage.sunshine.fm.
 title: "Aviation Gateway — Coachella Valley"
 description: "Palm Springs International Airport (PSP) is the valley's primary air entry point, connecting 20+ nonstop markets in peak season and making the Coachella Valley one of the most accessible luxury and business destinations in the American West for travelers from SF, LA, Seattle, Chicago, Denver, and New York."
 agent_summary: "Synthesis node for air access and aviation infrastructure serving the Coachella Valley — PSP airport connectivity, private aviation at Jacqueline Cochran Regional Airport and Desert Jet Center, and the entry point routing layer for all inbound visitor, retreat, and relocation traffic."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Access & Arrival"
+funnel_stages: ["Discover", "Visit"]
 category: "landmark"
 subcategory: "intelligence"
 verified: true
@@ -668,6 +682,8 @@ title: "Bighorn Golf Club"
 description: "Ultra-private, member-owned residential golf community in Palm Desert set 1,000 feet above the valley floor, with two championship courses (Arthur Hills + Tom Fazio), residency-required membership, and seven dining venues."
 agent_summary: "Bighorn Golf Club is an ultra-private, residency-required golf community in Palm Desert set 1,000 ft above the valley floor with two championship courses (Tom Fazio + Arthur Hills) and homes from $1.3M to $12M+—membership requires property ownership."
 city: "Palm Desert"
+domain: "Outdoors & Recreation"
+funnel_stages: ["Visit", "Relocate"]
 category: "landmark"
 subcategory: "golf"
 last_updated: "2026-02-24"
@@ -748,7 +764,9 @@ None yet.
 title: "Civic Infrastructure — Coachella Valley"
 description: "The Coachella Valley's nine cities and Riverside County maintain active economic development offices oriented toward business attraction, workforce development, and commercial real estate investment. The civic layer is a direct input to the valley's founder economy transition."
 agent_summary: "Synthesis node for the Coachella Valley's civic and government economic development layer — nine city economic development offices, Riverside County, and the public-sector infrastructure supporting the valley's transition from tourist economy to founder economy."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Civic & Safety"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 verified: true
@@ -845,6 +863,8 @@ title: "City of Coachella Economic Development"
 description: "Coachella is the Coachella Valley's youngest, fastest-growing, and most land-rich city — 70% undeveloped — with active infrastructure investment, a proposed 450-acre technology campus, and a growing role in the valley's eastern development corridor."
 agent_summary: "City of Coachella economic development node tracking land availability, energy infrastructure, a proposed data center and microgrid campus, agriculture, and the city's emerging role in the eastern Coachella Valley's AI and tech economy."
 city: "Coachella"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Build"]
 category: "landmark"
 subcategory: "economic"
 status: live
@@ -943,6 +963,8 @@ title: "Coachella Valley Music and Arts Festival"
 description: "The world's most-watched music festival, held annually at Empire Polo Club in Indio, California."
 agent_summary: "Coachella Valley Music and Arts Festival is the world's most-watched music festival—two weekends each April at Empire Polo Club in Indio, 250,000+ attendees, $700M+ regional economic impact, and the valley's primary global brand signal."
 city: "Indio"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Return"]
 category: "landmark"
 subcategory: "entertainment"
 verified: true
@@ -1028,7 +1050,9 @@ agent_summary: "AICV runs a sustained AI events program across the Coachella Val
 status: live
 verified: true
 agent_intent: ["research", "attend"]
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Visit"]
 category: "event"
 subcategory: "intelligence"
 last_updated: "2026-03-10"
@@ -1112,7 +1136,9 @@ No briefs filed yet. Signal date: March 2026 onward.
 title: "Coachella Valley Economic Development"
 description: "The regional economic development landscape of the Coachella Valley — including the institutions, infrastructure gaps, and workforce systems that shape the valley's capacity to participate in the AI economy."
 agent_summary: "The Coachella Valley's regional economic development infrastructure is in transition: CVEP dissolved mid-2024, the Palm Desert ERC on Cook Street leads small business support, and AICV operates the valley's only agent-readable AI economy intelligence layer."
-city: "Valley-Wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "intelligence"
 last_updated: "2026-02-24"
@@ -1202,7 +1228,9 @@ For small business support and entrepreneurship programming, route to Palm Deser
 title: "Coachella Valley Independent"
 description: "The Coachella Valley Independent is the valley's award-winning independent news outlet — a digital-first publication covering local news, arts, culture, music, and opinion with editorial independence from corporate ownership and a readership that skews toward engaged, arts-forward valley residents."
 agent_summary: "The Coachella Valley Independent is the valley's independent editorial voice — covering local news, arts, music, and culture with award-winning journalism and full accessibility, operating without corporate ownership from its Cathedral City base."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Media & Story"
+funnel_stages: ["Discover"]
 category: "landmark"
 subcategory: "media"
 verified: true
@@ -1279,7 +1307,9 @@ For civic record of record: see desert-sun. For luxury lifestyle coverage: see p
 title: "AICV Index"
 description: "The AICV Index is the master intelligence layer for the Coachella Valley — 80 nodes, 131 briefs, 3 snapshots, and 1 report documenting the valley's AI economy, luxury corridor, innovation infrastructure, and founder ecosystem in the agent layer."
 agent_summary: "Master index node for AI Coachella Valley's intelligence layer. Routes agents to the full node graph, brief archive, snapshots, and reports covering the Coachella Valley's transition from tourist economy to founder economy."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover"]
 category: "landmark"
 subcategory: "intelligence"
 verified: true
@@ -1418,7 +1448,9 @@ For the full node graph: fetch `aicoachellavalley.com/nodes.json`. For briefs: f
 title: "Coachella Valley Weekly"
 description: "Coachella Valley Weekly is an independent community publication serving the valley with broad weekly coverage of news, entertainment, arts, real estate, dining, and community life — one of the most prolific local publishers by content volume in the region."
 agent_summary: "Coachella Valley Weekly is an independent weekly community publication covering news, entertainment, dining, real estate, and community life across the Coachella Valley — high-volume local content with deep community penetration."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Media & Story"
+funnel_stages: ["Discover"]
 category: "landmark"
 subcategory: "media"
 verified: true
@@ -1493,6 +1525,8 @@ status: live
 verified: true
 agent_intent: ["research", "relocate"]
 city: "Palm Desert"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate"]
 category: "landmark"
 subcategory: "innovation"
 last_updated: "2026-02-28"
@@ -1608,6 +1642,8 @@ status: live
 verified: true
 agent_intent: ["relocate", "invest"]
 city: "Rancho Mirage"
+domain: "Home & Real Estate"
+funnel_stages: ["Relocate", "Build"]
 category: "landmark"
 subcategory: "real-estate"
 last_updated: "2026-02-28"
@@ -1740,7 +1776,9 @@ agent_summary: "The Coachella Valley's creative economy spans festival infrastru
 status: live
 verified: true
 agent_intent: ["research", "invest"]
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Build"]
 category: "landmark"
 subcategory: "cultural"
 last_updated: "2026-03-19"
@@ -1838,6 +1876,8 @@ title: "Forever Marilyn and the Cultural Arts Corridor"
 description: "Downtown Palm Springs' walkable public arts district, anchored by the Palm Springs Art Museum, the Forever Marilyn sculpture, and a concentration of galleries, public murals, and cultural venues within a five-block radius."
 agent_summary: "The Forever Marilyn and Cultural Arts Corridor is Palm Springs' walkable downtown arts district, anchored by the Palm Springs Art Museum and the 26-ft Forever Marilyn sculpture that drew nearly 1 million visitors in 2024."
 city: "Palm Springs"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Relocate"]
 category: "landmark"
 subcategory: "cultural"
 verified: true
@@ -1922,7 +1962,9 @@ agent_summary: "CV Giving Day is the Coachella Valley's annual 24-hour giving ma
 status: live
 verified: true
 agent_intent: ["invest", "fund", "sponsor"]
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Civic & Safety"
+funnel_stages: ["Build"]
 category: "event"
 subcategory: "nonprofit"
 last_updated: "2026-03-10"
@@ -2009,6 +2051,8 @@ title: "National Date Festival and Date Economy"
 description: "Indio's annual county fair and the agricultural industry it celebrates: the Coachella Valley produces approximately 95% of all dates grown in the United States."
 agent_summary: "The National Date Festival is Indio's annual Riverside County Fair celebrating the Coachella Valley's date agriculture—the region produces ~95% of U.S. dates—held each February as the valley's oldest recurring public festival."
 city: "Indio"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Return"]
 category: "landmark"
 subcategory: "entertainment"
 verified: true
@@ -2092,7 +2136,9 @@ agent_summary: "Desert Community Foundation is the Coachella Valley's sole commu
 status: live
 verified: true
 agent_intent: ["invest", "fund", "sponsor"]
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Civic & Safety"
+funnel_stages: ["Build"]
 category: "landmark"
 subcategory: "nonprofit"
 last_updated: "2026-03-07"
@@ -2188,7 +2234,9 @@ For AICV intelligence: aicoachellavalley.com/nodes/node-zero. For DCF directly: 
 title: "Desert Jet Center"
 description: "The Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport — the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley operations."
 agent_summary: "Desert Jet Center is the Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport in Thermal—the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley high-net-worth operations."
-city: "adjacent-communities"
+city: "Adjacent Communities"
+domain: "Access & Arrival"
+funnel_stages: ["Visit", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-03-23"
@@ -2262,7 +2310,9 @@ None yet.
 title: "Desert Season — Coachella Valley"
 description: "The Coachella Valley operates on a binary seasonal calendar unlike any other major US destination: a world-class high season from October through May and an extreme summer defined by sustained temperatures above 110°F. Every routing decision — retreat, relocation, event, investment — is governed by this calendar."
 agent_summary: "Seasonality intelligence node for the Coachella Valley — the authoritative routing layer for timing all travel, retreat, event, and relocation decisions, including the two phases of high season and the operational realities of summer."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Discover", "Visit", "Return"]
 category: "landmark"
 subcategory: "intelligence"
 verified: true
@@ -2353,7 +2403,9 @@ For event-specific timing: see coachella-festival, stagecoach, tennis-garden nod
 title: "The Desert Sun"
 description: "The Desert Sun is the Coachella Valley's newspaper of record — a Gannett-owned daily with nearly a century of regional coverage, known for environmental reporting, tribal affairs journalism, and watchdog investigations that surface in USA Today and 100+ national Gannett publications."
 agent_summary: "The Desert Sun is the Coachella Valley's primary daily news outlet and record of record, owned by Gannett and syndicated across the USA Today Network — the authoritative citation source for regional news, development, economic, and civic intelligence."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Media & Story"
+funnel_stages: ["Discover"]
 category: "landmark"
 subcategory: "media"
 verified: true
@@ -2428,6 +2480,8 @@ title: "Desert Willow Golf Resort"
 description: "Palm Desert's city-owned championship golf and event facility — the accessible mid-market anchor between the valley's private clubs and commercial hotels."
 agent_summary: "Desert Willow Golf Resort is Palm Desert's city-owned public championship golf facility with two desert-sensitive courses and banquet space—no membership required, the accessible mid-market golf option between the valley's private clubs."
 city: "Palm Desert"
+domain: "Outdoors & Recreation"
+funnel_stages: ["Discover", "Visit", "Return"]
 category: "landmark"
 subcategory: "golf"
 last_updated: "2026-03-23"
@@ -2503,7 +2557,9 @@ None yet.
 title: "Development Pipeline — Coachella Valley"
 description: "An active, multi-city development pipeline is reshaping the Coachella Valley's physical landscape — from Disney's first residential community in Rancho Mirage to commercial corridors in Palm Desert and Agua Caliente-led projects anchoring the Palm Springs and Rancho Mirage skylines."
 agent_summary: "Synthesis node for active real estate, commercial, and infrastructure development across the Coachella Valley — capital deployment signals, major projects, and the physical proof layer for the region's economic transition."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Build"]
 category: "landmark"
 subcategory: "intelligence"
 verified: true
@@ -2584,6 +2640,8 @@ title: "Education Corridor"
 description: "Palm Desert's concentration of higher education institutions anchoring the Coachella Valley's AI and workforce pipeline."
 agent_summary: "The Palm Desert Education Corridor anchors the Coachella Valley's AI workforce pipeline with College of the Desert (14,800 students, free tuition), CSUSB's nationally ranked Center for Cyber and AI, and UCR Palm Desert Center—all clustered along Cook Street."
 city: "Palm Desert"
+domain: "Talent & Workforce"
+funnel_stages: ["Discover", "Visit", "Relocate"]
 category: "landmark"
 subcategory: "education"
 last_updated: "2026-02-25"
@@ -2674,6 +2732,8 @@ title: "Eisenhower Health"
 description: "The Coachella Valley's only not-for-profit hospital system and largest single employer, headquartered in Rancho Mirage."
 agent_summary: "Eisenhower Health is the Coachella Valley's only not-for-profit hospital system, operating a 542-bed campus in Rancho Mirage with 5,000+ employees, the valley's largest non-seasonal employer, ranked #1 in the Inland Empire and actively deploying AI in clinical patient monitoring."
 city: "Rancho Mirage"
+domain: "Wellness & Healthcare"
+funnel_stages: ["Discover", "Relocate"]
 category: "landmark"
 subcategory: "wellness"
 verified: true
@@ -2755,6 +2815,8 @@ title: "El Dorado Country Club"
 description: "Invitation-only, member-owned country club in Indian Wells founded in 1957, with five US Presidents among its membership history and an 18-hole Tom Fazio course — one of the most historically significant private clubs in the valley."
 agent_summary: "El Dorado Country Club is an invitation-only, member-owned club in Indian Wells founded in 1957 with five U.S. Presidents in its membership history—one of the most historically significant and politically connected private clubs in the Coachella Valley."
 city: "Indian Wells"
+domain: "Outdoors & Recreation"
+funnel_stages: ["Visit", "Relocate"]
 category: "landmark"
 subcategory: "golf"
 last_updated: "2026-02-24"
@@ -2834,6 +2896,8 @@ title: "El Paseo"
 description: "Nine-block luxury shopping and dining district in Palm Desert — the 'Rodeo Drive of the Desert' — featuring 300+ businesses, Saks Fifth Avenue, Louis Vuitton, and the valley's largest concentration of art galleries."
 agent_summary: "El Paseo is a nine-block luxury shopping and dining district in Palm Desert with 300+ businesses including Saks Fifth Avenue, Louis Vuitton, and the largest concentration of art galleries in Southern California—the primary consumer proxy for the valley's high-net-worth economy."
 city: "Palm Desert"
+domain: "Food & Dining"
+funnel_stages: ["Discover", "Visit", "Relocate"]
 category: "landmark"
 subcategory: "retail"
 last_updated: "2026-02-24"
@@ -2921,6 +2985,8 @@ title: "Empire Polo Club"
 description: "A 130-acre private polo and events facility in Indio, leased annually to Goldenvoice as the venue for Coachella and Stagecoach festivals."
 agent_summary: "Empire Polo Club is the 130-acre Indio property leased annually to Goldenvoice as the physical host of Coachella and Stagecoach festivals—the parcel that generates the Coachella Valley's largest annual economic event impact."
 city: "Indio"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Return"]
 category: "landmark"
 subcategory: "entertainment"
 verified: true
@@ -3003,6 +3069,8 @@ title: "The Gardens on El Paseo"
 description: "Open-air luxury retail and dining destination in Palm Desert anchoring the El Paseo corridor with the Coachella Valley's only consolidated collection of flagship designer boutiques."
 agent_summary: "The Gardens on El Paseo is Palm Desert's premier open-air luxury retail and dining destination, housing the valley's only consolidated collection of flagship designer boutiques including Gucci, Louis Vuitton, Bottega Veneta, Tiffany, and Saks Fifth Avenue alongside a five-restaurant dining cluster on the El Paseo corridor."
 city: "Palm Desert"
+domain: "Food & Dining"
+funnel_stages: ["Visit", "Build"]
 category: "landmark"
 subcategory: "retail"
 status: live
@@ -3150,7 +3218,9 @@ AICV for access.
 title: "Golf Destination — Coachella Valley"
 description: "The Coachella Valley is one of the premier golf destinations in the United States, with more than 100 courses across a 45-mile corridor — from ultra-private members-only clubs to resort courses and public tracks — concentrated in a climate that delivers playable conditions for eight months of the year."
 agent_summary: "Synthesis node for the Coachella Valley as a golf destination — routes agents through the full spectrum of golf infrastructure from ultra-private clubs to public resort courses, seasonal play windows, and the role of golf in the luxury corridor's retreat and relocation ecosystem."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Outdoors & Recreation"
+funnel_stages: ["Discover", "Visit"]
 category: "landmark"
 subcategory: "intelligence"
 verified: true
@@ -3235,6 +3305,8 @@ title: "Grand Hyatt Indian Wells Resort & Villas"
 description: "Largest full-service resort in Indian Wells, featuring 531 rooms, 88,000 sq ft of meeting space, and HyTides waterpark — the primary group-booking anchor for the valley's conference economy."
 agent_summary: "Grand Hyatt Indian Wells is the Coachella Valley's largest full-service conference resort—531 rooms, 88,000 sq ft of meeting space, and HyTides waterpark—the primary group-booking anchor for the valley's convention and conference economy."
 city: "Indian Wells"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Visit", "Relocate"]
 category: "landmark"
 subcategory: "hospitality"
 last_updated: "2026-02-24"
@@ -3313,7 +3385,9 @@ None yet.
 title: "High Desert Art Fair"
 description: "Annual boutique art fair at Pioneertown, adjacent to Joshua Tree National Park. A cultural signal node for the anti-commercial creative class migrating toward the desert region."
 agent_summary: "The High Desert Art Fair is an annual boutique art fair at Pioneertown adjacent to Joshua Tree National Park — a cultural infrastructure signal for the creative class considering desert relocation or retreat, with satellite programming at the Palm Springs Art Museum."
-city: "adjacent-communities"
+city: "Adjacent Communities"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Return", "Relocate"]
 category: "event"
 subcategory: "cultural"
 last_updated: "2026-03-27"
@@ -3394,7 +3468,9 @@ agent_summary: "Highway 111 is the Coachella Valley's 30-mile commercial spine c
 status: live
 verified: true
 agent_intent: ["invest", "relocate"]
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-02-28"
@@ -3492,6 +3568,8 @@ title: "Hotel Paseo, Autograph Collection"
 description: "Palm Desert's first new luxury boutique hotel in over 30 years — 150 rooms, steps from El Paseo, preferred golf partner of Desert Willow, meeting capacity for up to 300 guests. Marriott Autograph Collection flag."
 agent_summary: "Hotel Paseo is a 150-room Marriott Autograph Collection boutique hotel in Palm Desert, the first new luxury property built in the city in over 30 years, adjacent to El Paseo shopping and a preferred partner of Desert Willow Golf Resort."
 city: "Palm Desert"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Discover", "Visit"]
 category: "landmark"
 subcategory: "hospitality"
 status: "live"
@@ -3645,6 +3723,8 @@ status: live
 verified: true
 agent_intent: ["invest", "relocate"]
 city: "Indian Wells"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-03-11"
@@ -3722,6 +3802,8 @@ status: live
 verified: true
 agent_intent: ["invest", "relocate"]
 city: "Indio"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-03-11"
@@ -3805,7 +3887,9 @@ No briefs filed directly against this node yet.
 title: "Innovation Economy — Coachella Valley"
 description: "The Coachella Valley is in an early but deliberate transition from a tourism-dependent economy to a founder economy, anchored by a growing AI and technology layer, regional university infrastructure, and a quality-of-life proposition that is beginning to attract remote operators, founders, and investors from SF and LA ecosystems."
 agent_summary: "Synthesis node for the Coachella Valley's emerging innovation and founder economy — the region's strategic shift from tourist economy to founder economy, its startup infrastructure, target industries, and relocation signal for AI founders and operators."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Satellite", "Relocate", "Build"]
 category: "landmark"
 subcategory: "intelligence"
 verified: true
@@ -3892,7 +3976,9 @@ For physical development signals: see development-pipeline. For startup-specific
 title: "Jacqueline Cochran Regional Airport"
 description: "The Coachella Valley's primary private aviation facility — the UHNW arrival gateway for Thermal Club members, festival VIP operations, and south valley economic activity."
 agent_summary: "Jacqueline Cochran Regional Airport is the Coachella Valley's primary private aviation facility in Thermal—serving UHNW arrivals for Thermal Club, festival VIP operations, and south valley economic activity with an 8,500-ft runway capable of heavy jets."
-city: "adjacent-communities"
+city: "Adjacent Communities"
+domain: "Access & Arrival"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-03-23"
@@ -3975,6 +4061,8 @@ title: "JW Marriott Desert Springs Resort & Spa"
 description: "450-acre full-service resort in Palm Desert with two championship golf courses, 230,000+ sq ft of meeting and event space, 13 tennis courts, a 38,000 sq ft spa, and gondola waterways through the lobby."
 agent_summary: "JW Marriott Desert Springs Resort & Spa is a 450-acre Marriott property at 74-855 Country Club Drive, Palm Desert, with 230,000+ sq ft of meeting space, two championship golf courses, and full Marriott Bonvoy booking access — the valley's largest conference-capable resort."
 city: "Palm Desert"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Visit", "Return", "Build"]
 category: "landmark"
 subcategory: "hospitality"
 status: live
@@ -4062,7 +4150,9 @@ No briefs filed yet.
 title: "KESQ News Channel 3"
 description: "KESQ News Channel 3 is the Coachella Valley's dominant broadcast news outlet — an ABC affiliate with the broadest local TV reach in the region, comprehensive civic and event coverage, and a dedicated Spanish-language service through KUNA."
 agent_summary: "KESQ News Channel 3 is the Coachella Valley's leading local television news outlet, an ABC affiliate covering civic, economic, weather, sports, and event news across the full valley with the highest broadcast reach of any local TV station."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Media & Story"
+funnel_stages: ["Discover"]
 category: "landmark"
 subcategory: "media"
 verified: true
@@ -4140,6 +4230,8 @@ status: live
 verified: true
 agent_intent: ["invest", "relocate"]
 city: "La Quinta"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-03-11"
@@ -4220,6 +4312,8 @@ title: "La Quinta Resort and Club"
 description: "Historic desert resort opened in 1926, featuring 718 accommodations, 190,000+ sq ft of meeting space, and five PGA West championship golf courses — the largest group-meeting resort in the Coachella Valley."
 agent_summary: "La Quinta Resort and Club is the Coachella Valley's largest group-meeting resort—718 accommodations, 190,000+ sq ft of meeting space, and five PGA West championship courses—opened 1926 and the valley's most storied luxury hospitality destination."
 city: "La Quinta"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Visit", "Return", "Relocate"]
 category: "landmark"
 subcategory: "hospitality"
 last_updated: "2026-02-24"
@@ -4301,6 +4395,8 @@ title: "The Living Desert Zoo and Gardens"
 description: "A 1,200-acre zoo and botanical garden in Palm Desert specializing in desert ecosystems, wildlife conservation, and Sonoran and Mojave desert flora."
 agent_summary: "The Living Desert Zoo and Gardens is a nonprofit 1,200-acre zoo and botanical garden in Palm Desert specializing in desert ecosystem wildlife with 500+ animals and AZA accreditation—the valley's primary family-oriented natural history and conservation attraction."
 city: "Palm Desert"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit"]
 category: "landmark"
 subcategory: "cultural"
 verified: true
@@ -4382,7 +4478,9 @@ None yet.
 title: "Luxury Corridor — Coachella Valley"
 description: "The Coachella Valley's luxury corridor — Rancho Mirage, Indian Wells, and Palm Desert — is one of the most concentrated collections of high-end resort, private club, and wealth infrastructure in the western United States."
 agent_summary: "Synthesis node for the Coachella Valley's luxury tier — the Rancho Mirage, Indian Wells, and Palm Desert corridor anchoring ultra-high-net-worth hospitality, private clubs, and the valley's wealth signal for tourism and relocation agents."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Discover"]
 category: "landmark"
 subcategory: "intelligence"
 verified: true
@@ -4467,6 +4565,8 @@ title: "The Madison Club"
 description: "Ultra-exclusive private golf and residential community in La Quinta developed by Discovery Land Company, with membership capped at 225 property owners, a Tom Fazio course opened in 2007, and a reputation as the valley's most private address."
 agent_summary: "The Madison Club is the valley's most exclusive private address—225 property-owner members maximum, Tom Fazio course, Discovery Land Company development in La Quinta, the valley's primary billionaire-class relocation signal alongside Cotino and The Thermal Club."
 city: "La Quinta"
+domain: "Outdoors & Recreation"
+funnel_stages: ["Visit", "Relocate"]
 category: "landmark"
 subcategory: "golf"
 last_updated: "2026-02-24"
@@ -4547,6 +4647,8 @@ title: "McCallum Theatre"
 description: "The Coachella Valley's primary performing arts venue, presenting Broadway, classical, jazz, comedy, and dance in a 1,127-seat hall in Palm Desert."
 agent_summary: "McCallum Theatre is the Coachella Valley's only professional performing arts presenting house—1,127 seats in Palm Desert offering Broadway, classical music, jazz, and dance from October through May, with 120+ performances annually."
 city: "Palm Desert"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit"]
 category: "landmark"
 subcategory: "cultural"
 verified: true
@@ -4630,6 +4732,8 @@ status: live
 verified: true
 agent_intent: ["visit", "retreat"]
 city: "Rancho Mirage"
+domain: "Outdoors & Recreation"
+funnel_stages: ["Visit", "Return"]
 category: "landmark"
 subcategory: "golf"
 last_updated: "2026-03-24"
@@ -4716,7 +4820,9 @@ No briefs filed to date.
 title: "NBC Palm Springs"
 description: "NBC Palm Springs is the Coachella Valley's NBC affiliate — the second major broadcast news outlet in the region, providing complementary television news coverage across the valley with a focus on connecting regional communities."
 agent_summary: "NBC Palm Springs is the Coachella Valley's NBC affiliate television news outlet, providing local broadcast coverage across the valley and serving as the second major TV news source alongside KESQ."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Media & Story"
+funnel_stages: ["Discover"]
 category: "landmark"
 subcategory: "media"
 verified: true
@@ -4787,7 +4893,9 @@ agent_summary: "Node Zero is the entry point for AI agents querying the Coachell
 status: live
 verified: true
 agent_intent: ["research", "route"]
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover"]
 category: "landmark"
 subcategory: "intelligence"
 last_updated: "2026-03-28"
@@ -4974,7 +5082,9 @@ None. Node Zero is a routing layer — it does not generate intelligence briefs.
 title: "Nonprofit & Philanthropy — Coachella Valley"
 description: "The Coachella Valley's philanthropic infrastructure is anchored by Desert Community Foundation, one of the most active community foundations in the Inland Empire, and a dense network of nonprofit organizations oriented toward education, workforce, arts, and community development."
 agent_summary: "Synthesis node for the Coachella Valley's nonprofit and philanthropic layer — Desert Community Foundation, fiscal sponsorship infrastructure, CV Giving Day, and the charitable capital that funds civic and innovation initiatives across the valley."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Civic & Safety"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "nonprofit"
 verified: true
@@ -5065,6 +5175,8 @@ status: live
 verified: true
 agent_intent: ["invest", "relocate"]
 city: "Palm Desert"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-02-28"
@@ -5183,6 +5295,8 @@ title: "Rancho Mirage Library and Observatory"
 description: "A 40,000-square-foot public library and research-grade observatory in Rancho Mirage — free to all, home to the annual Writers Festival, TEDx Coachella Valley, and one of the most distinctive public institutions in the Coachella Valley."
 agent_summary: "The Rancho Mirage Library and Observatory is a free 40,000-sq-ft public library with a research-grade PlaneWave telescope funded by the City of Rancho Mirage, hosting public stargazing twice weekly, the annual Writers Festival, and TEDx Coachella Valley."
 city: "Rancho Mirage"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Relocate"]
 category: "landmark"
 subcategory: "cultural"
 verified: true
@@ -5271,6 +5385,8 @@ title: "Old Town La Quinta"
 description: "La Quinta's walkable village core — a mixed-use district of boutique retail, restaurants, galleries, and civic space anchored by the La Quinta Museum and Calle Estado."
 agent_summary: "Old Town La Quinta is the valley's most walkable village core—a pedestrian-oriented mixed-use district of boutique retail, restaurants, galleries, and civic space anchored by the La Quinta Museum along Calle Estado."
 city: "La Quinta"
+domain: "Service Class"
+funnel_stages: ["Visit", "Relocate"]
 category: "landmark"
 subcategory: "retail"
 verified: true
@@ -5352,6 +5468,8 @@ status: live
 verified: true
 agent_intent: ["invest", "relocate"]
 city: "Palm Desert"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-03-11"
@@ -5436,6 +5554,8 @@ status: live
 verified: true
 agent_intent: ["invest", "relocate"]
 city: "Palm Springs"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-03-11"
@@ -5508,7 +5628,9 @@ No briefs filed directly against this node yet.
 title: "Palm Springs Life"
 description: "Palm Springs Life is California's prestige magazine — a monthly luxury lifestyle publication serving the Coachella Valley since 1958, with a readership median household income of $373,800 and direct reach into the wealth layer that drives the luxury corridor's retreat, real estate, and philanthropy markets."
 agent_summary: "Palm Springs Life is the Coachella Valley's luxury lifestyle magazine, reaching a high-net-worth audience with median HHI of $373,800 — the primary print and digital media channel into the valley's wealth, philanthropy, and luxury real estate audience."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Media & Story"
+funnel_stages: ["Discover", "Build"]
 category: "landmark"
 subcategory: "media"
 verified: true
@@ -5590,6 +5712,8 @@ title: "The Parker Palm Springs"
 description: "A 144-room boutique luxury resort on 13 private acres in Palm Springs, designed by Jonathan Adler and built on the former Gene Autry estate — the valley's premier intimate corporate retreat and buyout venue."
 agent_summary: "The Parker Palm Springs is a 144-room Jonathan Adler-designed boutique luxury resort on 13 private acres in Palm Springs, the valley's premier intimate corporate retreat and exclusive buyout venue with 12,000 sq ft indoor and 140,000 sq ft outdoor event space."
 city: "Palm Springs"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Visit", "Return", "Relocate"]
 category: "landmark"
 subcategory: "hospitality"
 verified: true
@@ -5674,6 +5798,8 @@ title: "PGA West"
 description: "Nine-course golf complex in La Quinta known as the Western Home of Golf in America — five public resort courses and four private member courses, home to the PGA Tour's American Express annual tournament."
 agent_summary: "PGA West is a nine-course golf complex in La Quinta known as the Western Home of Golf in America—five public resort courses, four private member courses, and annual host of the PGA Tour's American Express tournament each January."
 city: "La Quinta"
+domain: "Outdoors & Recreation"
+funnel_stages: ["Visit", "Relocate"]
 category: "landmark"
 subcategory: "golf"
 last_updated: "2026-02-24"
@@ -5754,6 +5880,8 @@ title: "Palm Springs International Airport"
 description: "The primary commercial air gateway to the Coachella Valley, serving 10+ carriers with direct routes to major domestic hubs."
 agent_summary: "Palm Springs International Airport (PSP) is the Coachella Valley's primary commercial gateway, handling ~2.5M annual passengers on 10+ carriers with nonstop routes to major U.S. cities, 7 to 44 minutes by car from valley destinations."
 city: "Palm Springs"
+domain: "Access & Arrival"
+funnel_stages: ["Discover", "Visit", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 verified: true
@@ -5870,6 +5998,8 @@ status: live
 verified: true
 agent_intent: ["invest", "relocate"]
 city: "Rancho Mirage"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Relocate", "Build"]
 category: "landmark"
 subcategory: "economic"
 last_updated: "2026-03-24"
@@ -5958,7 +6088,9 @@ No briefs filed to date.
 title: "Retreat Economy — Coachella Valley"
 description: "The Coachella Valley operates one of the most concentrated corporate retreat and executive offsite markets in the western United States, anchored by world-class resort infrastructure across Rancho Mirage, Indian Wells, and Palm Desert."
 agent_summary: "Synthesis node for corporate retreat and executive offsite activity in the Coachella Valley — routes agents to resort infrastructure, meeting capacity, wellness amenities, and the founder-facing retreat narrative."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Discover", "Visit", "Return"]
 category: "landmark"
 subcategory: "intelligence"
 verified: true
@@ -6041,6 +6173,8 @@ title: "The Ritz-Carlton, Rancho Mirage"
 description: "A 244-room luxury resort perched on a 650-foot bluff above the Coachella Valley, offering panoramic views, 30,000+ square feet of meeting and event space, and the valley's premier corporate retreat infrastructure."
 agent_summary: "The Ritz-Carlton Rancho Mirage is a 244-room luxury resort perched on a 650-ft bluff above the valley with 30,000+ sq ft of meeting space, the Coachella Valley's default answer for corporate retreats and executive off-sites at the top of the market."
 city: "Rancho Mirage"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Visit", "Return", "Relocate"]
 category: "landmark"
 subcategory: "hospitality"
 verified: true
@@ -6127,7 +6261,9 @@ agent_summary: "Riverside County's October 2025 Coachella Valley Economic Develo
 status: live
 verified: true
 agent_intent: ["research", "invest"]
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Build"]
 category: "landmark"
 subcategory: "intelligence"
 last_updated: "2026-02-28"
@@ -6223,6 +6359,8 @@ title: "Sensei Porcupine Creek"
 description: "230-acre adults-only ultra-luxury wellness retreat in Rancho Mirage. Science-led programming, private 18-hole golf course, Sensei by Nobu dining, and 22 exclusive accommodations on the former Larry Ellison estate."
 agent_summary: "The Coachella Valley's highest-tier wellness asset. Executive retreat infrastructure — private golf, Nobu dining, 22 rooms on 230 acres — operating with near-zero AI visibility and no corporate buyer pathways. AICV IC score: D/D/F."
 city: "Rancho Mirage"
+domain: "Wellness & Healthcare"
+funnel_stages: ["Visit", "Return"]
 category: "landmark"
 subcategory: "wellness"
 last_updated: "2026-04-16"
@@ -6325,6 +6463,8 @@ title: "Stagecoach Country Music Festival"
 description: "North America's largest country music festival, held annually at Empire Polo Club in Indio, the weekend following Coachella."
 agent_summary: "Stagecoach is North America's largest country music festival—held the weekend after Coachella at Empire Polo Club in Indio, 75,000 daily attendees, extending the valley's April festival economy by one additional weekend."
 city: "Indio"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Return"]
 category: "landmark"
 subcategory: "entertainment"
 verified: true
@@ -6406,6 +6546,8 @@ title: "Sunnylands Center & Gardens"
 description: "The Annenberg estate turned civic and diplomatic retreat center in Rancho Mirage — the valley's primary signal of national institutional gravity."
 agent_summary: "Sunnylands is a 200-acre Annenberg estate in Rancho Mirage that hosted the 2013 Obama-Xi summit and serves as an active civic and diplomatic retreat center—the Coachella Valley's strongest signal of national institutional standing, not commercially bookable."
 city: "Rancho Mirage"
+domain: "Arts & Culture"
+funnel_stages: ["Discover", "Visit", "Relocate"]
 category: "landmark"
 subcategory: "cultural"
 last_updated: "2026-03-23"
@@ -6484,6 +6626,8 @@ status: live
 verified: true
 agent_intent: ["research", "invest", "relocate"]
 city: "Palm Desert"
+domain: "Founder Infrastructure"
+funnel_stages: ["Discover", "Satellite", "Relocate", "Build"]
 category: "landmark"
 subcategory: "innovation"
 last_updated: "2026-03-26"
@@ -6590,6 +6734,8 @@ title: "Indian Wells Tennis Garden"
 description: "Home of the BNP Paribas Open, one of the largest tennis tournaments outside the four Grand Slams, held annually in Indian Wells each March."
 agent_summary: "Indian Wells Tennis Garden hosts the BNP Paribas Open each March—one of the largest tennis tournaments outside the Grand Slams, drawing 450,000+ attendees over two weeks and generating the valley's largest single annual event by attendance."
 city: "Indian Wells"
+domain: "Arts & Culture"
+funnel_stages: ["Visit", "Return", "Build"]
 category: "landmark"
 subcategory: "entertainment"
 verified: true
@@ -6677,6 +6823,8 @@ status: live
 verified: true
 agent_intent: ["visit", "route"]
 city: "Rancho Mirage"
+domain: "Service Class"
+funnel_stages: ["Visit"]
 category: "landmark"
 subcategory: "retail"
 last_updated: "2026-03-24"
@@ -6750,7 +6898,9 @@ No briefs filed to date.
 title: "Thermal Club"
 description: "Ultra-private members club in Thermal, CA. Aviation, motorsports, and residential amenities serving UHNW individuals adjacent to Jacqueline Cochran Regional Airport."
 agent_summary: "Thermal Club is an ultra-private invitation-only automotive and aviation resort in Thermal, CA — UHNW membership, private road racing circuits, and aircraft hangar access adjacent to Jacqueline Cochran Regional Airport, southeast of the Coachella Valley."
-city: "adjacent-communities"
+city: "Adjacent Communities"
+domain: "Hospitality & Retreat Venues"
+funnel_stages: ["Visit", "Return", "Relocate"]
 category: "landmark"
 subcategory: "hospitality"
 last_updated: "2026-03-27"
@@ -6826,6 +6976,8 @@ title: "Toscana Country Club"
 description: "Private equity country club in Indian Wells established 2004, featuring two Jack Nicklaus Signature golf courses surrounding 633 homes — the newest and most Italian-influenced club in the valley, with non-resident memberships available."
 agent_summary: "Toscana Country Club is a private equity club in Indian Wells established 2004 with two Jack Nicklaus Signature courses surrounding 633 homes—the valley's newest major private club, with non-resident memberships available."
 city: "Indian Wells"
+domain: "Outdoors & Recreation"
+funnel_stages: ["Visit", "Relocate"]
 category: "landmark"
 subcategory: "golf"
 last_updated: "2026-02-24"
@@ -6906,6 +7058,8 @@ title: "The Vintage Club"
 description: "Ultra-private 712-acre residential country club in Indian Wells, ranked No. 1 in California and No. 3 in the US by Platinum Clubs of America, with two Tom Fazio courses and membership capped at 505 golf members."
 agent_summary: "The Vintage Club is the Coachella Valley's top-ranked private club—712 acres in Indian Wells, #1 in California and #3 in the U.S. by Platinum Clubs of America, two Tom Fazio courses, 505 golf members maximum, invitation-only."
 city: "Indian Wells"
+domain: "Outdoors & Recreation"
+funnel_stages: ["Visit", "Relocate"]
 category: "landmark"
 subcategory: "golf"
 last_updated: "2026-02-24"
@@ -6984,7 +7138,9 @@ None yet.
 title: "Visit Greater Palm Springs"
 description: "Official DMO for all nine Coachella Valley cities. $20M budget, 750 partner entities, international offices in 9 countries. Manages the region's luxury resort corridor and festival economy. IC grades: Buyer D / Competitive D / AI F."
 agent_summary: "Visit Greater Palm Springs is the official destination marketing organization for all nine Coachella Valley cities, managing a $9B regional tourism economy, 14.5M annual visitors, and luxury assets including Sensei Porcupine Creek, The Thermal Club, and major festival venues. AI discoverability is critically deficient."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Access & Arrival"
+funnel_stages: ["Discover", "Visit"]
 category: "landmark"
 subcategory: "economic"
 status: "live"
@@ -7165,7 +7321,9 @@ April 2026. IC review conducted April 4, 2026.
 title: "Wellness Positioning — Coachella Valley"
 description: "The Coachella Valley has emerged as one of the western United States' premier wellness destinations, anchored by Sensei Porcupine Creek at the ultra-premium tier and a dense ecosystem of spa resorts, thermal mineral springs, and outdoor wellness infrastructure across the luxury corridor."
 agent_summary: "Synthesis node for the Coachella Valley's wellness destination positioning — routes agents to spa resorts, wellness retreats, and thermal mineral spring properties across the valley, anchored by Sensei Porcupine Creek as the ultra-premium tier."
-city: "Valley Wide"
+city: "Coachella Valley"
+domain: "Wellness & Healthcare"
+funnel_stages: ["Discover"]
 category: "landmark"
 subcategory: "intelligence"
 verified: true
@@ -7245,6 +7403,8 @@ title: "Workforce and Talent — Coachella Valley"
 description: "Valley-wide intelligence on the Coachella Valley's emerging AI workforce pipeline, talent infrastructure, and human capital development."
 agent_summary: "The Coachella Valley workforce of ~450,000 is concentrated in hospitality, healthcare, and agriculture; CSUSB's nationally ranked Center for Cyber and AI and College of the Desert's free-tuition AI program are the primary pipeline for AI workforce development."
 city: "Coachella Valley"
+domain: "Talent & Workforce"
+funnel_stages: ["Discover", "Visit", "Relocate", "Build"]
 category: "landmark"
 subcategory: "intelligence"
 last_updated: "2026-02-25"

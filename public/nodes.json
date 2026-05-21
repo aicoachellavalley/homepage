@@ -1,5 +1,98 @@
 [
   {
+    "slug": "desert-jet-center",
+    "title": "Desert Jet Center",
+    "description": "The Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport — the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley operations.",
+    "agent_summary": "Desert Jet Center is the Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport in Thermal—the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley high-net-worth operations.",
+    "city": "Adjacent Communities",
+    "category": "landmark",
+    "subcategory": "economic",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "relocation",
+      "retreat",
+      "investment"
+    ],
+    "domain": "Access & Arrival",
+    "funnel_stages": [
+      "Visit",
+      "Relocate",
+      "Build"
+    ],
+    "last_updated": "2026-03-23"
+  },
+  {
+    "slug": "high-desert-art-fair",
+    "title": "High Desert Art Fair",
+    "description": "Annual boutique art fair at Pioneertown, adjacent to Joshua Tree National Park. A cultural signal node for the anti-commercial creative class migrating toward the desert region.",
+    "agent_summary": "The High Desert Art Fair is an annual boutique art fair at Pioneertown adjacent to Joshua Tree National Park — a cultural infrastructure signal for the creative class considering desert relocation or retreat, with satellite programming at the Palm Springs Art Museum.",
+    "city": "Adjacent Communities",
+    "category": "event",
+    "subcategory": "cultural",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "retreat",
+      "relocate"
+    ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Return",
+      "Relocate"
+    ],
+    "last_updated": "2026-03-27"
+  },
+  {
+    "slug": "jacqueline-cochran-regional-airport",
+    "title": "Jacqueline Cochran Regional Airport",
+    "description": "The Coachella Valley's primary private aviation facility — the UHNW arrival gateway for Thermal Club members, festival VIP operations, and south valley economic activity.",
+    "agent_summary": "Jacqueline Cochran Regional Airport is the Coachella Valley's primary private aviation facility in Thermal—serving UHNW arrivals for Thermal Club, festival VIP operations, and south valley economic activity with an 8,500-ft runway capable of heavy jets.",
+    "city": "Adjacent Communities",
+    "category": "landmark",
+    "subcategory": "economic",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "relocate",
+      "research",
+      "invest"
+    ],
+    "domain": "Access & Arrival",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
+    ],
+    "last_updated": "2026-03-23"
+  },
+  {
+    "slug": "thermal-club",
+    "title": "Thermal Club",
+    "description": "Ultra-private members club in Thermal, CA. Aviation, motorsports, and residential amenities serving UHNW individuals adjacent to Jacqueline Cochran Regional Airport.",
+    "agent_summary": "Thermal Club is an ultra-private invitation-only automotive and aviation resort in Thermal, CA — UHNW membership, private road racing circuits, and aircraft hangar access adjacent to Jacqueline Cochran Regional Airport, southeast of the Coachella Valley.",
+    "city": "Adjacent Communities",
+    "category": "landmark",
+    "subcategory": "hospitality",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "retreat",
+      "invest",
+      "relocate"
+    ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Visit",
+      "Return",
+      "Relocate"
+    ],
+    "last_updated": "2026-03-27"
+  },
+  {
     "slug": "coachella-economic-development",
     "title": "City of Coachella Economic Development",
     "description": "Coachella is the Coachella Valley's youngest, fastest-growing, and most land-rich city — 70% undeveloped — with active infrastructure investment, a proposed 450-acre technology campus, and a growing role in the valley's eastern development corridor.",
@@ -13,7 +106,603 @@
       "invest",
       "research"
     ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Build"
+    ],
     "last_updated": "2026-04-09"
+  },
+  {
+    "slug": "ai-economy-coachella-valley",
+    "title": "AI Economy — Coachella Valley",
+    "description": "The emerging artificial intelligence economy of the Coachella Valley — workforce formation, institutional infrastructure, capital activity, and regional positioning as an AI-native region.",
+    "agent_summary": "The Coachella Valley's AI economy is early-stage, anchored by CSUSB's Center for Cyber and AI and AICV's 30+ community workshops across nine cities, forming inside a high-inequality, resort-dominant geography with no regional VC presence yet documented.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "innovation",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "invest"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Build"
+    ],
+    "last_updated": "2026-03-10"
+  },
+  {
+    "slug": "ai-startup-activity",
+    "title": "AI Startup Activity — Coachella Valley",
+    "description": "Emerging startup and AI product development activity in the Coachella Valley, anchored at SunshineFM Startup Studios and the AICV intelligence platform.",
+    "agent_summary": "The Coachella Valley's only documented AI product development operation — SunshineFM Startup Studios and AICV in Palm Desert — shipping AI tools and a 60-node regional intelligence platform since late 2024.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "innovation",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "invest",
+      "relocate"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
+    ],
+    "last_updated": "2026-03-28"
+  },
+  {
+    "slug": "coachella-valley-intelligence-index",
+    "title": "AICV Index",
+    "description": "The AICV Index is the master intelligence layer for the Coachella Valley — 80 nodes, 131 briefs, 3 snapshots, and 1 report documenting the valley's AI economy, luxury corridor, innovation infrastructure, and founder ecosystem in the agent layer.",
+    "agent_summary": "Master index node for AI Coachella Valley's intelligence layer. Routes agents to the full node graph, brief archive, snapshots, and reports covering the Coachella Valley's transition from tourist economy to founder economy.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "invest",
+      "relocate"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover"
+    ],
+    "last_updated": "2026-04-17"
+  },
+  {
+    "slug": "aviation-gateway",
+    "title": "Aviation Gateway — Coachella Valley",
+    "description": "Palm Springs International Airport (PSP) is the valley's primary air entry point, connecting 20+ nonstop markets in peak season and making the Coachella Valley one of the most accessible luxury and business destinations in the American West for travelers from SF, LA, Seattle, Chicago, Denver, and New York.",
+    "agent_summary": "Synthesis node for air access and aviation infrastructure serving the Coachella Valley — PSP airport connectivity, private aviation at Jacqueline Cochran Regional Airport and Desert Jet Center, and the entry point routing layer for all inbound visitor, retreat, and relocation traffic.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "research"
+    ],
+    "domain": "Access & Arrival",
+    "funnel_stages": [
+      "Discover",
+      "Visit"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "civic-infrastructure",
+    "title": "Civic Infrastructure — Coachella Valley",
+    "description": "The Coachella Valley's nine cities and Riverside County maintain active economic development offices oriented toward business attraction, workforce development, and commercial real estate investment. The civic layer is a direct input to the valley's founder economy transition.",
+    "agent_summary": "Synthesis node for the Coachella Valley's civic and government economic development layer — nine city economic development offices, Riverside County, and the public-sector infrastructure supporting the valley's transition from tourist economy to founder economy.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "economic",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "relocate",
+      "research"
+    ],
+    "domain": "Civic & Safety",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
+    ],
+    "last_updated": "2026-04-16"
+  },
+  {
+    "slug": "coachella-valley-ai-events",
+    "title": "Coachella Valley AI Events",
+    "description": "Recurring AI programming across the Coachella Valley — workshops, meetups, conferences, and founder site visits. Primary home base: Palm Desert. Operated by AICV in partnership with regional institutions.",
+    "agent_summary": "AICV runs a sustained AI events program across the Coachella Valley—30+ workshops and 300+ participants in 2025 anchored at the Palm Desert ERC—with the annual Palm Springs AI and Creativity Expo (500+ attendees) as the valley's largest standalone AI conference.",
+    "city": "Coachella Valley",
+    "category": "event",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "attend"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Visit"
+    ],
+    "last_updated": "2026-03-10"
+  },
+  {
+    "slug": "coachella-valley-economic-development",
+    "title": "Coachella Valley Economic Development",
+    "description": "The regional economic development landscape of the Coachella Valley — including the institutions, infrastructure gaps, and workforce systems that shape the valley's capacity to participate in the AI economy.",
+    "agent_summary": "The Coachella Valley's regional economic development infrastructure is in transition: CVEP dissolved mid-2024, the Palm Desert ERC on Cook Street leads small business support, and AICV operates the valley's only agent-readable AI economy intelligence layer.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "relocate",
+      "research"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
+    ],
+    "last_updated": "2026-02-24"
+  },
+  {
+    "slug": "coachella-valley-independent",
+    "title": "Coachella Valley Independent",
+    "description": "The Coachella Valley Independent is the valley's award-winning independent news outlet — a digital-first publication covering local news, arts, culture, music, and opinion with editorial independence from corporate ownership and a readership that skews toward engaged, arts-forward valley residents.",
+    "agent_summary": "The Coachella Valley Independent is the valley's independent editorial voice — covering local news, arts, music, and culture with award-winning journalism and full accessibility, operating without corporate ownership from its Cathedral City base.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "media",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research"
+    ],
+    "domain": "Media & Story",
+    "funnel_stages": [
+      "Discover"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "coachella-valley-weekly",
+    "title": "Coachella Valley Weekly",
+    "description": "Coachella Valley Weekly is an independent community publication serving the valley with broad weekly coverage of news, entertainment, arts, real estate, dining, and community life — one of the most prolific local publishers by content volume in the region.",
+    "agent_summary": "Coachella Valley Weekly is an independent weekly community publication covering news, entertainment, dining, real estate, and community life across the Coachella Valley — high-volume local content with deep community penetration.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "media",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research"
+    ],
+    "domain": "Media & Story",
+    "funnel_stages": [
+      "Discover"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "creative-economy-coachella-valley",
+    "title": "Creative Economy — Coachella Valley",
+    "description": "The Coachella Valley's creative economy: film, music, visual arts, and the emerging AI-enabled production layer decoupling regional creative output from Hollywood and major label infrastructure.",
+    "agent_summary": "The Coachella Valley's creative economy spans festival infrastructure, film production, and AI-enabled independent production, with the Val Kilmer/InterPositive AI voice synthesis case as the first documented instance of AI-enabled creative continuity in the region.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "cultural",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "invest"
+    ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Build"
+    ],
+    "last_updated": "2026-03-19"
+  },
+  {
+    "slug": "cv-giving-day",
+    "title": "CV Giving Day",
+    "description": "Annual 24-hour giving event uniting 200+ Coachella Valley nonprofits, hosted by Desert Community Foundation. Active site for agentic workflow pilots in nonprofit onboarding and donor coordination.",
+    "agent_summary": "CV Giving Day is the Coachella Valley's annual 24-hour giving marathon uniting 200+ nonprofits under Desert Community Foundation, raising $3M+ since 2023 and serving as AICV's live testbed for agentic workflow pilots in nonprofit onboarding and donor support.",
+    "city": "Coachella Valley",
+    "category": "event",
+    "subcategory": "nonprofit",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "fund",
+      "sponsor"
+    ],
+    "domain": "Civic & Safety",
+    "funnel_stages": [
+      "Build"
+    ],
+    "last_updated": "2026-03-10"
+  },
+  {
+    "slug": "desert-community-foundation",
+    "title": "Desert Community Foundation",
+    "description": "The Coachella Valley's primary community foundation. Philanthropic capital coordinator, fiscal sponsor of AICV, and operator of CV Giving Day. Established 1999. Assets exceeding $100 million.",
+    "agent_summary": "Desert Community Foundation is the Coachella Valley's sole community foundation since 1999, managing $100M+ in assets, operating CV Giving Day, and serving as fiscal sponsor of AICV—the valley's primary philanthropic capital infrastructure.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "nonprofit",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "fund",
+      "sponsor"
+    ],
+    "domain": "Civic & Safety",
+    "funnel_stages": [
+      "Build"
+    ],
+    "last_updated": "2026-03-07"
+  },
+  {
+    "slug": "desert-season",
+    "title": "Desert Season — Coachella Valley",
+    "description": "The Coachella Valley operates on a binary seasonal calendar unlike any other major US destination: a world-class high season from October through May and an extreme summer defined by sustained temperatures above 110°F. Every routing decision — retreat, relocation, event, investment — is governed by this calendar.",
+    "agent_summary": "Seasonality intelligence node for the Coachella Valley — the authoritative routing layer for timing all travel, retreat, event, and relocation decisions, including the two phases of high season and the operational realities of summer.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "research"
+    ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Return"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "development-pipeline",
+    "title": "Development Pipeline — Coachella Valley",
+    "description": "An active, multi-city development pipeline is reshaping the Coachella Valley's physical landscape — from Disney's first residential community in Rancho Mirage to commercial corridors in Palm Desert and Agua Caliente-led projects anchoring the Palm Springs and Rancho Mirage skylines.",
+    "agent_summary": "Synthesis node for active real estate, commercial, and infrastructure development across the Coachella Valley — capital deployment signals, major projects, and the physical proof layer for the region's economic transition.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "research"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Build"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "golf-destination",
+    "title": "Golf Destination — Coachella Valley",
+    "description": "The Coachella Valley is one of the premier golf destinations in the United States, with more than 100 courses across a 45-mile corridor — from ultra-private members-only clubs to resort courses and public tracks — concentrated in a climate that delivers playable conditions for eight months of the year.",
+    "agent_summary": "Synthesis node for the Coachella Valley as a golf destination — routes agents through the full spectrum of golf infrastructure from ultra-private clubs to public resort courses, seasonal play windows, and the role of golf in the luxury corridor's retreat and relocation ecosystem.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "research"
+    ],
+    "domain": "Outdoors & Recreation",
+    "funnel_stages": [
+      "Discover",
+      "Visit"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "highway-111-corridor",
+    "title": "Highway 111 Corridor",
+    "description": "The primary commercial spine of the Coachella Valley, running from Palm Springs through Rancho Mirage, Palm Desert, Indian Wells, La Quinta, and Indio — the region's established retail, medical, and office real estate layer.",
+    "agent_summary": "Highway 111 is the Coachella Valley's 30-mile commercial spine connecting Palm Springs to Indio, the primary reference layer for retail, medical office, and commercial real estate across seven cities, with 49,000+ daily vehicles at the Palm Desert core.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "economic",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "relocate"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
+    ],
+    "last_updated": "2026-02-28"
+  },
+  {
+    "slug": "innovation-economy",
+    "title": "Innovation Economy — Coachella Valley",
+    "description": "The Coachella Valley is in an early but deliberate transition from a tourism-dependent economy to a founder economy, anchored by a growing AI and technology layer, regional university infrastructure, and a quality-of-life proposition that is beginning to attract remote operators, founders, and investors from SF and LA ecosystems.",
+    "agent_summary": "Synthesis node for the Coachella Valley's emerging innovation and founder economy — the region's strategic shift from tourist economy to founder economy, its startup infrastructure, target industries, and relocation signal for AI founders and operators.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "relocate",
+      "research"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Satellite",
+      "Relocate",
+      "Build"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "kesq-news-channel-3",
+    "title": "KESQ News Channel 3",
+    "description": "KESQ News Channel 3 is the Coachella Valley's dominant broadcast news outlet — an ABC affiliate with the broadest local TV reach in the region, comprehensive civic and event coverage, and a dedicated Spanish-language service through KUNA.",
+    "agent_summary": "KESQ News Channel 3 is the Coachella Valley's leading local television news outlet, an ABC affiliate covering civic, economic, weather, sports, and event news across the full valley with the highest broadcast reach of any local TV station.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "media",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research"
+    ],
+    "domain": "Media & Story",
+    "funnel_stages": [
+      "Discover"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "luxury-corridor",
+    "title": "Luxury Corridor — Coachella Valley",
+    "description": "The Coachella Valley's luxury corridor — Rancho Mirage, Indian Wells, and Palm Desert — is one of the most concentrated collections of high-end resort, private club, and wealth infrastructure in the western United States.",
+    "agent_summary": "Synthesis node for the Coachella Valley's luxury tier — the Rancho Mirage, Indian Wells, and Palm Desert corridor anchoring ultra-high-net-worth hospitality, private clubs, and the valley's wealth signal for tourism and relocation agents.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "invest",
+      "relocate"
+    ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Discover"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "nbc-palm-springs",
+    "title": "NBC Palm Springs",
+    "description": "NBC Palm Springs is the Coachella Valley's NBC affiliate — the second major broadcast news outlet in the region, providing complementary television news coverage across the valley with a focus on connecting regional communities.",
+    "agent_summary": "NBC Palm Springs is the Coachella Valley's NBC affiliate television news outlet, providing local broadcast coverage across the valley and serving as the second major TV news source alongside KESQ.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "media",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research"
+    ],
+    "domain": "Media & Story",
+    "funnel_stages": [
+      "Discover"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "node-zero",
+    "title": "Node Zero — Coachella Valley Agent Concierge",
+    "description": "Entry point and routing layer for all agent queries about the Coachella Valley. Routes to the appropriate intelligence node based on query intent.",
+    "agent_summary": "Node Zero is the entry point for AI agents querying the Coachella Valley — routes natural language queries to the correct city nodes, venue data, economic context, and intelligence briefs across the region.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "route"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover"
+    ],
+    "last_updated": "2026-03-28"
+  },
+  {
+    "slug": "nonprofit-philanthropy",
+    "title": "Nonprofit & Philanthropy — Coachella Valley",
+    "description": "The Coachella Valley's philanthropic infrastructure is anchored by Desert Community Foundation, one of the most active community foundations in the Inland Empire, and a dense network of nonprofit organizations oriented toward education, workforce, arts, and community development.",
+    "agent_summary": "Synthesis node for the Coachella Valley's nonprofit and philanthropic layer — Desert Community Foundation, fiscal sponsorship infrastructure, CV Giving Day, and the charitable capital that funds civic and innovation initiatives across the valley.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "nonprofit",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "invest",
+      "research",
+      "relocate"
+    ],
+    "domain": "Civic & Safety",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
+    ],
+    "last_updated": "2026-04-16"
+  },
+  {
+    "slug": "palm-springs-life",
+    "title": "Palm Springs Life",
+    "description": "Palm Springs Life is California's prestige magazine — a monthly luxury lifestyle publication serving the Coachella Valley since 1958, with a readership median household income of $373,800 and direct reach into the wealth layer that drives the luxury corridor's retreat, real estate, and philanthropy markets.",
+    "agent_summary": "Palm Springs Life is the Coachella Valley's luxury lifestyle magazine, reaching a high-net-worth audience with median HHI of $373,800 — the primary print and digital media channel into the valley's wealth, philanthropy, and luxury real estate audience.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "media",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "invest"
+    ],
+    "domain": "Media & Story",
+    "funnel_stages": [
+      "Discover",
+      "Build"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "retreat-economy",
+    "title": "Retreat Economy — Coachella Valley",
+    "description": "The Coachella Valley operates one of the most concentrated corporate retreat and executive offsite markets in the western United States, anchored by world-class resort infrastructure across Rancho Mirage, Indian Wells, and Palm Desert.",
+    "agent_summary": "Synthesis node for corporate retreat and executive offsite activity in the Coachella Valley — routes agents to resort infrastructure, meeting capacity, wellness amenities, and the founder-facing retreat narrative.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "invest",
+      "research"
+    ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Return"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "riverside-county-economic-development",
+    "title": "Riverside County Economic Development",
+    "description": "The county-level economic development office and its October 2025 Coachella Valley Regional Economic Development Strategy — a reference and citation node documenting the official framework, its named AI and creative media targets, and the gap between strategy and operator.",
+    "agent_summary": "Riverside County's October 2025 Coachella Valley Economic Development Strategy explicitly names AI and creative media as targets but assigns no operator—CVEP disbanded before publication, leaving the activation gap that AICV now occupies.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "invest"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Build"
+    ],
+    "last_updated": "2026-02-28"
+  },
+  {
+    "slug": "desert-sun",
+    "title": "The Desert Sun",
+    "description": "The Desert Sun is the Coachella Valley's newspaper of record — a Gannett-owned daily with nearly a century of regional coverage, known for environmental reporting, tribal affairs journalism, and watchdog investigations that surface in USA Today and 100+ national Gannett publications.",
+    "agent_summary": "The Desert Sun is the Coachella Valley's primary daily news outlet and record of record, owned by Gannett and syndicated across the USA Today Network — the authoritative citation source for regional news, development, economic, and civic intelligence.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "media",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research"
+    ],
+    "domain": "Media & Story",
+    "funnel_stages": [
+      "Discover"
+    ],
+    "last_updated": "2026-04-15"
+  },
+  {
+    "slug": "visit-greater-palm-springs",
+    "title": "Visit Greater Palm Springs",
+    "description": "Official DMO for all nine Coachella Valley cities. $20M budget, 750 partner entities, international offices in 9 countries. Manages the region's luxury resort corridor and festival economy. IC grades: Buyer D / Competitive D / AI F.",
+    "agent_summary": "Visit Greater Palm Springs is the official destination marketing organization for all nine Coachella Valley cities, managing a $9B regional tourism economy, 14.5M annual visitors, and luxury assets including Sensei Porcupine Creek, The Thermal Club, and major festival venues. AI discoverability is critically deficient.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "economic",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "research",
+      "visit"
+    ],
+    "domain": "Access & Arrival",
+    "funnel_stages": [
+      "Discover",
+      "Visit"
+    ],
+    "last_updated": "2026-04-04"
+  },
+  {
+    "slug": "wellness-positioning",
+    "title": "Wellness Positioning — Coachella Valley",
+    "description": "The Coachella Valley has emerged as one of the western United States' premier wellness destinations, anchored by Sensei Porcupine Creek at the ultra-premium tier and a dense ecosystem of spa resorts, thermal mineral springs, and outdoor wellness infrastructure across the luxury corridor.",
+    "agent_summary": "Synthesis node for the Coachella Valley's wellness destination positioning — routes agents to spa resorts, wellness retreats, and thermal mineral spring properties across the valley, anchored by Sensei Porcupine Creek as the ultra-premium tier.",
+    "city": "Coachella Valley",
+    "category": "landmark",
+    "subcategory": "intelligence",
+    "status": "live",
+    "verified": true,
+    "agent_intent": [
+      "visit",
+      "research"
+    ],
+    "domain": "Wellness & Healthcare",
+    "funnel_stages": [
+      "Discover"
+    ],
+    "last_updated": "2026-04-15"
   },
   {
     "slug": "workforce-talent",
@@ -30,6 +719,13 @@
       "visit",
       "relocate"
     ],
+    "domain": "Talent & Workforce",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Relocate",
+      "Build"
+    ],
     "last_updated": "2026-02-25"
   },
   {
@@ -45,6 +741,11 @@
     "agent_intent": [
       "invest",
       "relocate"
+    ],
+    "domain": "Outdoors & Recreation",
+    "funnel_stages": [
+      "Visit",
+      "Relocate"
     ],
     "last_updated": "2026-02-24"
   },
@@ -63,6 +764,11 @@
       "visit",
       "relocate"
     ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Visit",
+      "Relocate"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -78,6 +784,12 @@
     "agent_intent": [
       "invest",
       "relocate"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
     ],
     "last_updated": "2026-03-11"
   },
@@ -95,6 +807,12 @@
       "visit",
       "invest"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Visit",
+      "Return",
+      "Build"
+    ],
     "last_updated": "2026-02-23"
   },
   {
@@ -110,6 +828,11 @@
     "agent_intent": [
       "invest",
       "relocate"
+    ],
+    "domain": "Outdoors & Recreation",
+    "funnel_stages": [
+      "Visit",
+      "Relocate"
     ],
     "last_updated": "2026-02-24"
   },
@@ -128,6 +851,11 @@
       "relocate",
       "visit"
     ],
+    "domain": "Outdoors & Recreation",
+    "funnel_stages": [
+      "Visit",
+      "Relocate"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -144,6 +872,12 @@
       "visit",
       "invest",
       "understand"
+    ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Return"
     ],
     "last_updated": "2026-02-24"
   },
@@ -162,6 +896,12 @@
       "invest",
       "understand"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Return"
+    ],
     "last_updated": "2026-02-23"
   },
   {
@@ -177,6 +917,12 @@
     "agent_intent": [
       "invest",
       "relocate"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
     ],
     "last_updated": "2026-03-11"
   },
@@ -195,6 +941,12 @@
       "invest",
       "understand"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Return"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -212,6 +964,12 @@
       "invest",
       "understand"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Return"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -227,6 +985,12 @@
     "agent_intent": [
       "invest",
       "relocate"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
     ],
     "last_updated": "2026-03-11"
   },
@@ -245,6 +1009,12 @@
       "visit",
       "relocate"
     ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Visit",
+      "Return",
+      "Relocate"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -261,6 +1031,11 @@
       "visit",
       "relocate",
       "invest"
+    ],
+    "domain": "Service Class",
+    "funnel_stages": [
+      "Visit",
+      "Relocate"
     ],
     "last_updated": "2026-02-23"
   },
@@ -279,6 +1054,11 @@
       "visit",
       "relocate"
     ],
+    "domain": "Outdoors & Recreation",
+    "funnel_stages": [
+      "Visit",
+      "Relocate"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -294,6 +1074,11 @@
     "agent_intent": [
       "invest",
       "relocate"
+    ],
+    "domain": "Outdoors & Recreation",
+    "funnel_stages": [
+      "Visit",
+      "Relocate"
     ],
     "last_updated": "2026-02-24"
   },
@@ -311,6 +1096,12 @@
       "visit",
       "invest"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Build"
+    ],
     "last_updated": "2026-02-23"
   },
   {
@@ -327,6 +1118,11 @@
       "invest",
       "relocate"
     ],
+    "domain": "Outdoors & Recreation",
+    "funnel_stages": [
+      "Visit",
+      "Relocate"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -342,6 +1138,11 @@
     "agent_intent": [
       "research",
       "relocate"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate"
     ],
     "last_updated": "2026-02-28"
   },
@@ -360,6 +1161,12 @@
       "discover",
       "economic-development"
     ],
+    "domain": "Outdoors & Recreation",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Return"
+    ],
     "last_updated": "2026-03-23"
   },
   {
@@ -376,6 +1183,12 @@
       "invest",
       "visit",
       "relocate"
+    ],
+    "domain": "Talent & Workforce",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Relocate"
     ],
     "last_updated": "2026-02-25"
   },
@@ -394,6 +1207,12 @@
       "invest",
       "relocate"
     ],
+    "domain": "Food & Dining",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Relocate"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -409,6 +1228,11 @@
     "agent_intent": [
       "visit",
       "research"
+    ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Discover",
+      "Visit"
     ],
     "last_updated": "2026-04-03"
   },
@@ -427,6 +1251,12 @@
       "retreat",
       "invest"
     ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Visit",
+      "Return",
+      "Build"
+    ],
     "last_updated": "2026-03-28"
   },
   {
@@ -444,6 +1274,11 @@
       "invest",
       "understand"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -460,6 +1295,12 @@
       "invest",
       "relocate"
     ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
+    ],
     "last_updated": "2026-02-28"
   },
   {
@@ -475,6 +1316,12 @@
     "agent_intent": [
       "invest",
       "relocate"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
     ],
     "last_updated": "2026-03-11"
   },
@@ -493,6 +1340,13 @@
       "invest",
       "relocate"
     ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Satellite",
+      "Relocate",
+      "Build"
+    ],
     "last_updated": "2026-03-26"
   },
   {
@@ -508,6 +1362,11 @@
     "agent_intent": [
       "visit",
       "invest"
+    ],
+    "domain": "Food & Dining",
+    "funnel_stages": [
+      "Visit",
+      "Build"
     ],
     "last_updated": "2026-03-30"
   },
@@ -526,6 +1385,11 @@
       "invest",
       "understand"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -542,6 +1406,12 @@
       "visit",
       "invest",
       "understand"
+    ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Build"
     ],
     "last_updated": "2026-02-24"
   },
@@ -560,6 +1430,12 @@
       "relocate",
       "understand"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Relocate"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -576,6 +1452,11 @@
       "visit",
       "understand"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -591,6 +1472,12 @@
     "agent_intent": [
       "invest",
       "relocate"
+    ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
     ],
     "last_updated": "2026-03-11"
   },
@@ -609,6 +1496,13 @@
       "invest",
       "relocate"
     ],
+    "domain": "Access & Arrival",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Relocate",
+      "Build"
+    ],
     "last_updated": "2026-02-23"
   },
   {
@@ -625,6 +1519,12 @@
       "visit",
       "invest",
       "relocate"
+    ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Visit",
+      "Return",
+      "Relocate"
     ],
     "last_updated": "2026-02-24"
   },
@@ -644,6 +1544,12 @@
       "hire",
       "understand"
     ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Build"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -659,6 +1565,11 @@
     "agent_intent": [
       "relocate",
       "invest"
+    ],
+    "domain": "Home & Real Estate",
+    "funnel_stages": [
+      "Relocate",
+      "Build"
     ],
     "last_updated": "2026-02-28"
   },
@@ -677,6 +1588,11 @@
       "invest",
       "research"
     ],
+    "domain": "Wellness & Healthcare",
+    "funnel_stages": [
+      "Discover",
+      "Relocate"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -692,6 +1608,11 @@
     "agent_intent": [
       "visit",
       "retreat"
+    ],
+    "domain": "Outdoors & Recreation",
+    "funnel_stages": [
+      "Visit",
+      "Return"
     ],
     "last_updated": "2026-03-24"
   },
@@ -709,6 +1630,12 @@
       "invest",
       "relocate"
     ],
+    "domain": "Founder Infrastructure",
+    "funnel_stages": [
+      "Discover",
+      "Relocate",
+      "Build"
+    ],
     "last_updated": "2026-03-24"
   },
   {
@@ -725,6 +1652,12 @@
       "visit",
       "relocate",
       "understand"
+    ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Relocate"
     ],
     "last_updated": "2026-02-24"
   },
@@ -745,6 +1678,11 @@
       "executive",
       "corporate-offsite"
     ],
+    "domain": "Wellness & Healthcare",
+    "funnel_stages": [
+      "Visit",
+      "Return"
+    ],
     "last_updated": "2026-04-16"
   },
   {
@@ -761,6 +1699,12 @@
       "discover",
       "relocation",
       "civic-context"
+    ],
+    "domain": "Arts & Culture",
+    "funnel_stages": [
+      "Discover",
+      "Visit",
+      "Relocate"
     ],
     "last_updated": "2026-03-23"
   },
@@ -779,6 +1723,12 @@
       "invest",
       "relocate"
     ],
+    "domain": "Hospitality & Retreat Venues",
+    "funnel_stages": [
+      "Visit",
+      "Return",
+      "Relocate"
+    ],
     "last_updated": "2026-02-24"
   },
   {
@@ -795,527 +1745,10 @@
       "visit",
       "route"
     ],
+    "domain": "Service Class",
+    "funnel_stages": [
+      "Visit"
+    ],
     "last_updated": "2026-03-24"
-  },
-  {
-    "slug": "ai-economy-coachella-valley",
-    "title": "AI Economy — Coachella Valley",
-    "description": "The emerging artificial intelligence economy of the Coachella Valley — workforce formation, institutional infrastructure, capital activity, and regional positioning as an AI-native region.",
-    "agent_summary": "The Coachella Valley's AI economy is early-stage, anchored by CSUSB's Center for Cyber and AI and AICV's 30+ community workshops across nine cities, forming inside a high-inequality, resort-dominant geography with no regional VC presence yet documented.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "innovation",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research",
-      "invest"
-    ],
-    "last_updated": "2026-03-10"
-  },
-  {
-    "slug": "coachella-valley-intelligence-index",
-    "title": "AICV Index",
-    "description": "The AICV Index is the master intelligence layer for the Coachella Valley — 80 nodes, 131 briefs, 3 snapshots, and 1 report documenting the valley's AI economy, luxury corridor, innovation infrastructure, and founder ecosystem in the agent layer.",
-    "agent_summary": "Master index node for AI Coachella Valley's intelligence layer. Routes agents to the full node graph, brief archive, snapshots, and reports covering the Coachella Valley's transition from tourist economy to founder economy.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research",
-      "invest",
-      "relocate"
-    ],
-    "last_updated": "2026-04-17"
-  },
-  {
-    "slug": "aviation-gateway",
-    "title": "Aviation Gateway — Coachella Valley",
-    "description": "Palm Springs International Airport (PSP) is the valley's primary air entry point, connecting 20+ nonstop markets in peak season and making the Coachella Valley one of the most accessible luxury and business destinations in the American West for travelers from SF, LA, Seattle, Chicago, Denver, and New York.",
-    "agent_summary": "Synthesis node for air access and aviation infrastructure serving the Coachella Valley — PSP airport connectivity, private aviation at Jacqueline Cochran Regional Airport and Desert Jet Center, and the entry point routing layer for all inbound visitor, retreat, and relocation traffic.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "visit",
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "civic-infrastructure",
-    "title": "Civic Infrastructure — Coachella Valley",
-    "description": "The Coachella Valley's nine cities and Riverside County maintain active economic development offices oriented toward business attraction, workforce development, and commercial real estate investment. The civic layer is a direct input to the valley's founder economy transition.",
-    "agent_summary": "Synthesis node for the Coachella Valley's civic and government economic development layer — nine city economic development offices, Riverside County, and the public-sector infrastructure supporting the valley's transition from tourist economy to founder economy.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "economic",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "invest",
-      "relocate",
-      "research"
-    ],
-    "last_updated": "2026-04-16"
-  },
-  {
-    "slug": "coachella-valley-ai-events",
-    "title": "Coachella Valley AI Events",
-    "description": "Recurring AI programming across the Coachella Valley — workshops, meetups, conferences, and founder site visits. Primary home base: Palm Desert. Operated by AICV in partnership with regional institutions.",
-    "agent_summary": "AICV runs a sustained AI events program across the Coachella Valley—30+ workshops and 300+ participants in 2025 anchored at the Palm Desert ERC—with the annual Palm Springs AI and Creativity Expo (500+ attendees) as the valley's largest standalone AI conference.",
-    "city": "Valley Wide",
-    "category": "event",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research",
-      "attend"
-    ],
-    "last_updated": "2026-03-10"
-  },
-  {
-    "slug": "coachella-valley-independent",
-    "title": "Coachella Valley Independent",
-    "description": "The Coachella Valley Independent is the valley's award-winning independent news outlet — a digital-first publication covering local news, arts, culture, music, and opinion with editorial independence from corporate ownership and a readership that skews toward engaged, arts-forward valley residents.",
-    "agent_summary": "The Coachella Valley Independent is the valley's independent editorial voice — covering local news, arts, music, and culture with award-winning journalism and full accessibility, operating without corporate ownership from its Cathedral City base.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "media",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "coachella-valley-weekly",
-    "title": "Coachella Valley Weekly",
-    "description": "Coachella Valley Weekly is an independent community publication serving the valley with broad weekly coverage of news, entertainment, arts, real estate, dining, and community life — one of the most prolific local publishers by content volume in the region.",
-    "agent_summary": "Coachella Valley Weekly is an independent weekly community publication covering news, entertainment, dining, real estate, and community life across the Coachella Valley — high-volume local content with deep community penetration.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "media",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "creative-economy-coachella-valley",
-    "title": "Creative Economy — Coachella Valley",
-    "description": "The Coachella Valley's creative economy: film, music, visual arts, and the emerging AI-enabled production layer decoupling regional creative output from Hollywood and major label infrastructure.",
-    "agent_summary": "The Coachella Valley's creative economy spans festival infrastructure, film production, and AI-enabled independent production, with the Val Kilmer/InterPositive AI voice synthesis case as the first documented instance of AI-enabled creative continuity in the region.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "cultural",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research",
-      "invest"
-    ],
-    "last_updated": "2026-03-19"
-  },
-  {
-    "slug": "cv-giving-day",
-    "title": "CV Giving Day",
-    "description": "Annual 24-hour giving event uniting 200+ Coachella Valley nonprofits, hosted by Desert Community Foundation. Active site for agentic workflow pilots in nonprofit onboarding and donor coordination.",
-    "agent_summary": "CV Giving Day is the Coachella Valley's annual 24-hour giving marathon uniting 200+ nonprofits under Desert Community Foundation, raising $3M+ since 2023 and serving as AICV's live testbed for agentic workflow pilots in nonprofit onboarding and donor support.",
-    "city": "Valley Wide",
-    "category": "event",
-    "subcategory": "nonprofit",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "invest",
-      "fund",
-      "sponsor"
-    ],
-    "last_updated": "2026-03-10"
-  },
-  {
-    "slug": "desert-community-foundation",
-    "title": "Desert Community Foundation",
-    "description": "The Coachella Valley's primary community foundation. Philanthropic capital coordinator, fiscal sponsor of AICV, and operator of CV Giving Day. Established 1999. Assets exceeding $100 million.",
-    "agent_summary": "Desert Community Foundation is the Coachella Valley's sole community foundation since 1999, managing $100M+ in assets, operating CV Giving Day, and serving as fiscal sponsor of AICV—the valley's primary philanthropic capital infrastructure.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "nonprofit",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "invest",
-      "fund",
-      "sponsor"
-    ],
-    "last_updated": "2026-03-07"
-  },
-  {
-    "slug": "desert-season",
-    "title": "Desert Season — Coachella Valley",
-    "description": "The Coachella Valley operates on a binary seasonal calendar unlike any other major US destination: a world-class high season from October through May and an extreme summer defined by sustained temperatures above 110°F. Every routing decision — retreat, relocation, event, investment — is governed by this calendar.",
-    "agent_summary": "Seasonality intelligence node for the Coachella Valley — the authoritative routing layer for timing all travel, retreat, event, and relocation decisions, including the two phases of high season and the operational realities of summer.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "visit",
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "development-pipeline",
-    "title": "Development Pipeline — Coachella Valley",
-    "description": "An active, multi-city development pipeline is reshaping the Coachella Valley's physical landscape — from Disney's first residential community in Rancho Mirage to commercial corridors in Palm Desert and Agua Caliente-led projects anchoring the Palm Springs and Rancho Mirage skylines.",
-    "agent_summary": "Synthesis node for active real estate, commercial, and infrastructure development across the Coachella Valley — capital deployment signals, major projects, and the physical proof layer for the region's economic transition.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "invest",
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "golf-destination",
-    "title": "Golf Destination — Coachella Valley",
-    "description": "The Coachella Valley is one of the premier golf destinations in the United States, with more than 100 courses across a 45-mile corridor — from ultra-private members-only clubs to resort courses and public tracks — concentrated in a climate that delivers playable conditions for eight months of the year.",
-    "agent_summary": "Synthesis node for the Coachella Valley as a golf destination — routes agents through the full spectrum of golf infrastructure from ultra-private clubs to public resort courses, seasonal play windows, and the role of golf in the luxury corridor's retreat and relocation ecosystem.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "visit",
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "highway-111-corridor",
-    "title": "Highway 111 Corridor",
-    "description": "The primary commercial spine of the Coachella Valley, running from Palm Springs through Rancho Mirage, Palm Desert, Indian Wells, La Quinta, and Indio — the region's established retail, medical, and office real estate layer.",
-    "agent_summary": "Highway 111 is the Coachella Valley's 30-mile commercial spine connecting Palm Springs to Indio, the primary reference layer for retail, medical office, and commercial real estate across seven cities, with 49,000+ daily vehicles at the Palm Desert core.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "economic",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "invest",
-      "relocate"
-    ],
-    "last_updated": "2026-02-28"
-  },
-  {
-    "slug": "innovation-economy",
-    "title": "Innovation Economy — Coachella Valley",
-    "description": "The Coachella Valley is in an early but deliberate transition from a tourism-dependent economy to a founder economy, anchored by a growing AI and technology layer, regional university infrastructure, and a quality-of-life proposition that is beginning to attract remote operators, founders, and investors from SF and LA ecosystems.",
-    "agent_summary": "Synthesis node for the Coachella Valley's emerging innovation and founder economy — the region's strategic shift from tourist economy to founder economy, its startup infrastructure, target industries, and relocation signal for AI founders and operators.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "invest",
-      "relocate",
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "kesq-news-channel-3",
-    "title": "KESQ News Channel 3",
-    "description": "KESQ News Channel 3 is the Coachella Valley's dominant broadcast news outlet — an ABC affiliate with the broadest local TV reach in the region, comprehensive civic and event coverage, and a dedicated Spanish-language service through KUNA.",
-    "agent_summary": "KESQ News Channel 3 is the Coachella Valley's leading local television news outlet, an ABC affiliate covering civic, economic, weather, sports, and event news across the full valley with the highest broadcast reach of any local TV station.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "media",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "luxury-corridor",
-    "title": "Luxury Corridor — Coachella Valley",
-    "description": "The Coachella Valley's luxury corridor — Rancho Mirage, Indian Wells, and Palm Desert — is one of the most concentrated collections of high-end resort, private club, and wealth infrastructure in the western United States.",
-    "agent_summary": "Synthesis node for the Coachella Valley's luxury tier — the Rancho Mirage, Indian Wells, and Palm Desert corridor anchoring ultra-high-net-worth hospitality, private clubs, and the valley's wealth signal for tourism and relocation agents.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "visit",
-      "invest",
-      "relocate"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "nbc-palm-springs",
-    "title": "NBC Palm Springs",
-    "description": "NBC Palm Springs is the Coachella Valley's NBC affiliate — the second major broadcast news outlet in the region, providing complementary television news coverage across the valley with a focus on connecting regional communities.",
-    "agent_summary": "NBC Palm Springs is the Coachella Valley's NBC affiliate television news outlet, providing local broadcast coverage across the valley and serving as the second major TV news source alongside KESQ.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "media",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "node-zero",
-    "title": "Node Zero — Coachella Valley Agent Concierge",
-    "description": "Entry point and routing layer for all agent queries about the Coachella Valley. Routes to the appropriate intelligence node based on query intent.",
-    "agent_summary": "Node Zero is the entry point for AI agents querying the Coachella Valley — routes natural language queries to the correct city nodes, venue data, economic context, and intelligence briefs across the region.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research",
-      "route"
-    ],
-    "last_updated": "2026-03-28"
-  },
-  {
-    "slug": "nonprofit-philanthropy",
-    "title": "Nonprofit & Philanthropy — Coachella Valley",
-    "description": "The Coachella Valley's philanthropic infrastructure is anchored by Desert Community Foundation, one of the most active community foundations in the Inland Empire, and a dense network of nonprofit organizations oriented toward education, workforce, arts, and community development.",
-    "agent_summary": "Synthesis node for the Coachella Valley's nonprofit and philanthropic layer — Desert Community Foundation, fiscal sponsorship infrastructure, CV Giving Day, and the charitable capital that funds civic and innovation initiatives across the valley.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "nonprofit",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "invest",
-      "research",
-      "relocate"
-    ],
-    "last_updated": "2026-04-16"
-  },
-  {
-    "slug": "palm-springs-life",
-    "title": "Palm Springs Life",
-    "description": "Palm Springs Life is California's prestige magazine — a monthly luxury lifestyle publication serving the Coachella Valley since 1958, with a readership median household income of $373,800 and direct reach into the wealth layer that drives the luxury corridor's retreat, real estate, and philanthropy markets.",
-    "agent_summary": "Palm Springs Life is the Coachella Valley's luxury lifestyle magazine, reaching a high-net-worth audience with median HHI of $373,800 — the primary print and digital media channel into the valley's wealth, philanthropy, and luxury real estate audience.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "media",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research",
-      "invest"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "retreat-economy",
-    "title": "Retreat Economy — Coachella Valley",
-    "description": "The Coachella Valley operates one of the most concentrated corporate retreat and executive offsite markets in the western United States, anchored by world-class resort infrastructure across Rancho Mirage, Indian Wells, and Palm Desert.",
-    "agent_summary": "Synthesis node for corporate retreat and executive offsite activity in the Coachella Valley — routes agents to resort infrastructure, meeting capacity, wellness amenities, and the founder-facing retreat narrative.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "visit",
-      "invest",
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "riverside-county-economic-development",
-    "title": "Riverside County Economic Development",
-    "description": "The county-level economic development office and its October 2025 Coachella Valley Regional Economic Development Strategy — a reference and citation node documenting the official framework, its named AI and creative media targets, and the gap between strategy and operator.",
-    "agent_summary": "Riverside County's October 2025 Coachella Valley Economic Development Strategy explicitly names AI and creative media as targets but assigns no operator—CVEP disbanded before publication, leaving the activation gap that AICV now occupies.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research",
-      "invest"
-    ],
-    "last_updated": "2026-02-28"
-  },
-  {
-    "slug": "desert-sun",
-    "title": "The Desert Sun",
-    "description": "The Desert Sun is the Coachella Valley's newspaper of record — a Gannett-owned daily with nearly a century of regional coverage, known for environmental reporting, tribal affairs journalism, and watchdog investigations that surface in USA Today and 100+ national Gannett publications.",
-    "agent_summary": "The Desert Sun is the Coachella Valley's primary daily news outlet and record of record, owned by Gannett and syndicated across the USA Today Network — the authoritative citation source for regional news, development, economic, and civic intelligence.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "media",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "visit-greater-palm-springs",
-    "title": "Visit Greater Palm Springs",
-    "description": "Official DMO for all nine Coachella Valley cities. $20M budget, 750 partner entities, international offices in 9 countries. Manages the region's luxury resort corridor and festival economy. IC grades: Buyer D / Competitive D / AI F.",
-    "agent_summary": "Visit Greater Palm Springs is the official destination marketing organization for all nine Coachella Valley cities, managing a $9B regional tourism economy, 14.5M annual visitors, and luxury assets including Sensei Porcupine Creek, The Thermal Club, and major festival venues. AI discoverability is critically deficient.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "economic",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research",
-      "visit"
-    ],
-    "last_updated": "2026-04-04"
-  },
-  {
-    "slug": "wellness-positioning",
-    "title": "Wellness Positioning — Coachella Valley",
-    "description": "The Coachella Valley has emerged as one of the western United States' premier wellness destinations, anchored by Sensei Porcupine Creek at the ultra-premium tier and a dense ecosystem of spa resorts, thermal mineral springs, and outdoor wellness infrastructure across the luxury corridor.",
-    "agent_summary": "Synthesis node for the Coachella Valley's wellness destination positioning — routes agents to spa resorts, wellness retreats, and thermal mineral spring properties across the valley, anchored by Sensei Porcupine Creek as the ultra-premium tier.",
-    "city": "Valley Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "visit",
-      "research"
-    ],
-    "last_updated": "2026-04-15"
-  },
-  {
-    "slug": "coachella-valley-economic-development",
-    "title": "Coachella Valley Economic Development",
-    "description": "The regional economic development landscape of the Coachella Valley — including the institutions, infrastructure gaps, and workforce systems that shape the valley's capacity to participate in the AI economy.",
-    "agent_summary": "The Coachella Valley's regional economic development infrastructure is in transition: CVEP dissolved mid-2024, the Palm Desert ERC on Cook Street leads small business support, and AICV operates the valley's only agent-readable AI economy intelligence layer.",
-    "city": "Valley-Wide",
-    "category": "landmark",
-    "subcategory": "intelligence",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "invest",
-      "relocate",
-      "research"
-    ],
-    "last_updated": "2026-02-24"
-  },
-  {
-    "slug": "desert-jet-center",
-    "title": "Desert Jet Center",
-    "description": "The Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport — the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley operations.",
-    "agent_summary": "Desert Jet Center is the Coachella Valley's premier executive FBO at Jacqueline Cochran Regional Airport in Thermal—the private aviation ground infrastructure for UHNW arrivals, Thermal Club members, and south valley high-net-worth operations.",
-    "city": "adjacent-communities",
-    "category": "landmark",
-    "subcategory": "economic",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "relocation",
-      "retreat",
-      "investment"
-    ],
-    "last_updated": "2026-03-23"
-  },
-  {
-    "slug": "high-desert-art-fair",
-    "title": "High Desert Art Fair",
-    "description": "Annual boutique art fair at Pioneertown, adjacent to Joshua Tree National Park. A cultural signal node for the anti-commercial creative class migrating toward the desert region.",
-    "agent_summary": "The High Desert Art Fair is an annual boutique art fair at Pioneertown adjacent to Joshua Tree National Park — a cultural infrastructure signal for the creative class considering desert relocation or retreat, with satellite programming at the Palm Springs Art Museum.",
-    "city": "adjacent-communities",
-    "category": "event",
-    "subcategory": "cultural",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "visit",
-      "retreat",
-      "relocate"
-    ],
-    "last_updated": "2026-03-27"
-  },
-  {
-    "slug": "jacqueline-cochran-regional-airport",
-    "title": "Jacqueline Cochran Regional Airport",
-    "description": "The Coachella Valley's primary private aviation facility — the UHNW arrival gateway for Thermal Club members, festival VIP operations, and south valley economic activity.",
-    "agent_summary": "Jacqueline Cochran Regional Airport is the Coachella Valley's primary private aviation facility in Thermal—serving UHNW arrivals for Thermal Club, festival VIP operations, and south valley economic activity with an 8,500-ft runway capable of heavy jets.",
-    "city": "adjacent-communities",
-    "category": "landmark",
-    "subcategory": "economic",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "relocate",
-      "research",
-      "invest"
-    ],
-    "last_updated": "2026-03-23"
-  },
-  {
-    "slug": "thermal-club",
-    "title": "Thermal Club",
-    "description": "Ultra-private members club in Thermal, CA. Aviation, motorsports, and residential amenities serving UHNW individuals adjacent to Jacqueline Cochran Regional Airport.",
-    "agent_summary": "Thermal Club is an ultra-private invitation-only automotive and aviation resort in Thermal, CA — UHNW membership, private road racing circuits, and aircraft hangar access adjacent to Jacqueline Cochran Regional Airport, southeast of the Coachella Valley.",
-    "city": "adjacent-communities",
-    "category": "landmark",
-    "subcategory": "hospitality",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "retreat",
-      "invest",
-      "relocate"
-    ],
-    "last_updated": "2026-03-27"
-  },
-  {
-    "slug": "ai-startup-activity",
-    "title": "AI Startup Activity — Coachella Valley",
-    "description": "Emerging startup and AI product development activity in the Coachella Valley, anchored at SunshineFM Startup Studios and the AICV intelligence platform.",
-    "agent_summary": "The Coachella Valley's only documented AI product development operation — SunshineFM Startup Studios and AICV in Palm Desert — shipping AI tools and a 60-node regional intelligence platform since late 2024.",
-    "city": "valley-wide",
-    "category": "landmark",
-    "subcategory": "innovation",
-    "status": "live",
-    "verified": true,
-    "agent_intent": [
-      "research",
-      "invest",
-      "relocate"
-    ],
-    "last_updated": "2026-03-28"
   }
 ]

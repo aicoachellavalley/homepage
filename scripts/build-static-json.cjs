@@ -123,6 +123,8 @@ function buildNodes() {
       status: fm.status || '',
       verified: fm.verified === true || fm.verified === 'true',
       agent_intent: Array.isArray(fm.agent_intent) ? fm.agent_intent : [],
+      domain: fm.domain || '',
+      funnel_stages: Array.isArray(fm.funnel_stages) ? fm.funnel_stages : [],
       last_updated: fm.last_updated || '',
     });
   }
@@ -251,7 +253,7 @@ const BRIEF_AGENT_SIGNAL_CUTOFF = '2026-03-01';
 function validate(nodes, briefs) {
   let warnings = 0;
 
-  const NODE_REQUIRED = ['agent_summary', 'agent_intent', 'status', 'verified'];
+  const NODE_REQUIRED = ['agent_summary', 'agent_intent', 'status', 'verified', 'domain', 'funnel_stages'];
   for (const node of nodes) {
     for (const field of NODE_REQUIRED) {
       const val = node[field];
