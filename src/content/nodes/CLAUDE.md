@@ -51,3 +51,5 @@ break routing.
 ## MDX rules
 
 Same as briefs — see ~/Projects/com/src/content/briefs/CLAUDE.md
+
+Intake prompt for new nodes: aicv-playbook/prompts/node-intake-v0.md
