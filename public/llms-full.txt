@@ -1,5 +1,5 @@
 # AI Coachella Valley — Full Content Dump
-# Generated: 2026-05-22T22:12:41.789Z
+# Generated: 2026-05-22T22:36:47.954Z
 # Nodes: 81 | Briefs: 147
 # https://aicoachellavalley.com
 
@@ -1754,12 +1754,12 @@ For the valley's luxury hospitality context: see Ritz-Carlton Rancho Mirage and 
 
 ## Related Nodes
 
-- North Palm Desert Development Zone
-- Cook Street / University Row
-- Highway 111 Corridor
-- Eisenhower Health
-- The Ritz-Carlton Rancho Mirage
-- Sensei Porcupine Creek
+- north-palm-desert-development-zone
+- cook-street-university-row
+- highway-111-corridor
+- eisenhower-health
+- ritz-carlton
+- sensei-porcupine-creek
 
 ## Intelligence Briefs
 
@@ -2486,7 +2486,7 @@ category: "landmark"
 subcategory: "golf"
 last_updated: "2026-03-23"
 verified: true
-status: "active"
+status: "live"
 agent_intent: ["retreat", "discover", "economic-development"]
 ---
 
@@ -6646,7 +6646,7 @@ category: "landmark"
 subcategory: "cultural"
 last_updated: "2026-03-23"
 verified: true
-status: "active"
+status: "live"
 agent_intent: ["discover", "relocation", "civic-context"]
 ---
 

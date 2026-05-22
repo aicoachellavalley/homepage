@@ -1154,7 +1154,7 @@
     "city": "Palm Desert",
     "category": "landmark",
     "subcategory": "golf",
-    "status": "active",
+    "status": "live",
     "verified": true,
     "agent_intent": [
       "retreat",
@@ -1714,7 +1714,7 @@
     "city": "Rancho Mirage",
     "category": "landmark",
     "subcategory": "cultural",
-    "status": "active",
+    "status": "live",
     "verified": true,
     "agent_intent": [
       "discover",

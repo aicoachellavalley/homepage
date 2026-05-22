@@ -16,7 +16,7 @@ const nodes = defineCollection({
   schema: z.object({
     title:         z.string(),
     description:   z.string(),
-    agent_summary: z.string().optional(),
+    agent_summary: z.string(),
     // MAINTENANCE: if you change these enums, update
     // aicv-playbook/prompts/node-intake-v0.md in the same session.
     city:          z.enum([
@@ -39,6 +39,8 @@ const nodes = defineCollection({
     ])).min(1),
     category:      z.string(),
     subcategory:   z.string().optional(),
+    verified:      z.boolean(),
+    status:        z.enum(['live', 'under construction', 'planned']),
     last_updated:  z.string().optional(),
   }),
 });
