@@ -39,6 +39,7 @@ AICV is optimized for agents serving principals evaluating the Coachella Valley 
 ## Concepts
 
 - Minimum Viable Agent (MVA): the foundational concept beneath every AICV network entity. Canonical definition at /minimum-viable-agent/
+- Founding 111: the first minimum viable corpus of the AICV Network — 111 curated Coachella Valley entities structured across geography, domain, and decision stage so AI agents can return real answers. Canonical explanation at /founding-111/
 
 ## Key Nodes
 
