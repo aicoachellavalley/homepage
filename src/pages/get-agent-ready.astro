@@ -27,7 +27,7 @@ const schemaGraph = {
       },
       "inLanguage": "en-US",
       "datePublished": "2026-04-23",
-      "dateModified": "2026-05-07"
+      "dateModified": "2026-05-26"
     },
     {
       "@type": "BreadcrumbList",
@@ -50,7 +50,7 @@ const schemaGraph = {
     {
       "@type": "Service",
       "@id": "https://aicoachellavalley.com/get-agent-ready/#service-ready",
-      "name": "AICV Ready",
+      "name": "Agent Ready Business",
       "description": "Annual membership in the AICV Network for valley businesses that need to be legible to the agent layer. Includes combined AIO + Cloudflare agent-readiness diagnostic, canonical node built to Tier 4 infrastructure standard, MCP routing configuration, and agent-to-agent concierge access.",
       "provider": { "@id": "https://aicoachellavalley.com/#organization" },
       "areaServed": {
@@ -60,7 +60,7 @@ const schemaGraph = {
       "offers": [
         {
           "@type": "Offer",
-          "name": "AICV Ready — Deployment Fee",
+          "name": "Agent Ready Business — Deployment Fee",
           "price": "1000.00",
           "priceCurrency": "USD",
           "description": "One-time Deployment Fee covering diagnostic, node build, and MCP integration.",
@@ -68,7 +68,7 @@ const schemaGraph = {
         },
         {
           "@type": "Offer",
-          "name": "AICV Ready — Annual Membership",
+          "name": "Agent Ready Business — Annual Membership",
           "price": "2500.00",
           "priceCurrency": "USD",
           "description": "Annual membership fee for ongoing Network access.",
@@ -86,8 +86,8 @@ const schemaGraph = {
     {
       "@type": "Service",
       "@id": "https://aicoachellavalley.com/get-agent-ready/#service-reviewed",
-      "name": "AICV Premium",
-      "description": "Annual membership with full Agentic Review for entities positioning to high-net-worth buyers, relocation prospects, corporate retreat decision-makers, or civic partners. Includes everything in AICV Ready plus full LLM Council deliberation, 12-month AI readiness roadmap, public living portal, and templatized MCP access.",
+      "name": "Agent Ready Premium",
+      "description": "Annual membership with full Agentic Review for entities positioning to high-net-worth buyers, relocation prospects, corporate retreat decision-makers, or civic partners. Includes everything in Agent Ready Business plus full LLM Council deliberation, 12-month AI readiness roadmap, public living portal, and templatized MCP access.",
       "provider": { "@id": "https://aicoachellavalley.com/#organization" },
       "areaServed": {
         "@type": "Place",
@@ -96,50 +96,22 @@ const schemaGraph = {
       "offers": [
         {
           "@type": "Offer",
-          "name": "AICV Premium — Founding Deployment Fee",
-          "price": "2500.00",
-          "priceCurrency": "USD",
-          "description": "One-time Deployment Fee for founding members (first 10 only, pricing locked for life). Covers diagnostic, node build, MCP integration, Agentic Review, and portal build.",
-          "availability": "https://schema.org/LimitedAvailability",
-          "eligibleQuantity": {
-            "@type": "QuantitativeValue",
-            "maxValue": 10,
-            "unitText": "founding members"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "AICV Premium — Founding Annual Membership",
+          "name": "Agent Ready Premium — Deployment Fee",
           "price": "5000.00",
           "priceCurrency": "USD",
-          "description": "Annual membership for founding members, locked for life.",
-          "availability": "https://schema.org/LimitedAvailability",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "5000.00",
-            "priceCurrency": "USD",
-            "billingDuration": "P1Y",
-            "unitText": "annual"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "AICV Premium — Standard Deployment Fee",
-          "price": "5000.00",
-          "priceCurrency": "USD",
-          "description": "Standard Deployment Fee for members 11 onward.",
+          "description": "One-time Deployment Fee covering diagnostic, node build, MCP integration, Agentic Review, and portal build.",
           "availability": "https://schema.org/InStock"
         },
         {
           "@type": "Offer",
-          "name": "AICV Premium — Standard Annual Membership",
-          "price": "7500.00",
+          "name": "Agent Ready Premium — Annual Membership",
+          "price": "10000.00",
           "priceCurrency": "USD",
-          "description": "Annual membership for standard members.",
+          "description": "Annual membership fee for ongoing Network access, monitoring, and LLM Council editorial reviews.",
           "availability": "https://schema.org/InStock",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "7500.00",
+            "price": "10000.00",
             "priceCurrency": "USD",
             "billingDuration": "P1Y",
             "unitText": "annual"
@@ -220,7 +192,7 @@ const schemaGraph = {
           "name": "What ships this summer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Three things, together: the public Ask AICV chat interface, the Network map at aicoachellavalley.com/network, and member-scoped query access for deployed members. Members who deploy before summer see themselves appear in all three as they ship."
+            "text": "Three things, together: the public Ask AICV chat interface, the AICV Network member directory (in development), and member-scoped query access for deployed members. Members who deploy before summer see themselves appear in all three as they ship."
           }
         },
         {
@@ -228,7 +200,7 @@ const schemaGraph = {
           "name": "My business handles bookings or transactions. Will AICV support agent-mediated payments?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AICV is tracking emerging agent-payment protocols, including Coinbase's x402 and the Agentic Commerce Protocol (ACP). For Premium members in transaction-driven categories — hospitality, dining, wellness, retail — AICV plans to deploy agent-payable MCP endpoints as the standards stabilize and member needs are scoped. This is part of the infrastructure differentiation between AICV Ready and Premium: Premium members participate in capability planning and receive priority deployment of new agentic commerce surfaces."
+            "text": "AICV is tracking emerging agent-payment protocols, including Coinbase's x402 and the Agentic Commerce Protocol (ACP). For Premium members in transaction-driven categories — hospitality, dining, wellness, retail — AICV plans to deploy agent-payable MCP endpoints as the standards stabilize and member needs are scoped. This is part of the infrastructure differentiation between Agent Ready Business and Agent Ready Premium: Premium members participate in capability planning and receive priority deployment of new agentic commerce surfaces."
           }
         }
       ]
@@ -344,6 +316,7 @@ const schemaGraph = {
     <div class="gar-v2-eyebrow">THE AGENTIC INTERNET IS HERE</div>
     <h1 class="gar-v2-h1">Get Agent Ready.</h1>
     <p class="gar-v2-hero-sub">AICV is the Coachella Valley's intelligence network for the agentic internet.</p>
+    <p class="gar-hero-note">AICV gives your business a structured AI-readable profile so AI tools can understand, cite, and route people to you — without touching your website.</p>
     <div class="gar-v2-proof-strip">
       <div class="gar-v2-proof-visibility">Designed to be cited by Claude, ChatGPT, Perplexity &amp; Gemini</div>
       <div class="gar-v2-proof-line">
@@ -478,6 +451,7 @@ const schemaGraph = {
   <div class="gar-v2-inner">
     <div class="gar-v2-eyebrow">WHAT HAPPENS WHEN YOU JOIN AICV</div>
     <p class="gar-v2-about-h">You don't change your website. Let the network do the work.</p>
+    <p class="gar-v2-body">Kickoff call → AIO diagnostic → node &amp; MVA build → network inclusion → ongoing updates. Two weeks from kickoff to live.</p>
     <div class="gar-v2-hw-cards">
       <div class="gar-v2-hw-card">
         <div class="gar-v2-hw-step">STEP 1</div>

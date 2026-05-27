@@ -24,7 +24,7 @@ export const GET: APIRoute = async () => {
 
 ## Commercial Tier
 
-- [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — two tiers (Agent Ready Business, Agent Ready Premium), annual billing, two weeks from kickoff. Hosts the free AIO diagnostic.
+- [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — two tiers: Agent Ready Business ($1,000 setup + $2,500/yr) and Agent Ready Premium ($5,000 setup + $10,000/yr). Each delivers a Minimum Viable Agent (MVA) for the entity — an agent-readable, citable profile built and maintained by AICV. No changes to the member's website required. Two weeks from kickoff to live. Also hosts the free AIO diagnostic.
 
 ## Concepts
 
