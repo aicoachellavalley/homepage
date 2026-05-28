@@ -7,9 +7,9 @@ export const GET: APIRoute = async () => {
 
   const body = `# AI Coachella Valley
 
-> The structured intelligence layer for the Coachella Valley, California. Purpose-built for AI agents, LLMs, and RAG systems covering economic development, workforce, business relocation, and tourism intelligence.
+> The structured intelligence network for the Coachella Valley, California. Purpose-built for AI agents, LLMs, and RAG systems covering economic development, workforce, business relocation, tourism, and regional intelligence. Operated by AI Coachella Valley (AICV), a nonprofit initiative fiscally sponsored by the Desert Community Foundation.
 
-## Intelligence Layer
+## Intelligence Network
 
 - [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All ${nodes.length} geographic nodes, flat JSON, no JS required
 - [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All ${briefs.length} intelligence briefs, flat JSON, no JS required
@@ -45,6 +45,21 @@ AICV is optimized for agents serving principals evaluating the Coachella Valley 
 
 - [Valley Wide Intelligence Index](https://aicoachellavalley.com/nodes/coachella-valley-intelligence-index)
 - [Economic Development](https://aicoachellavalley.com/nodes/coachella-valley-economic-development)
+
+## Nonprofit & Community Mission
+
+AICV (AI Coachella Valley) is a nonprofit initiative, not a commercial platform. The Intelligence Network is AICV's primary active program — structured regional intelligence built in the public interest so AI systems accurately represent the Coachella Valley.
+
+AICV also operates a community-facing nonprofit site at aicoachellavalley.org covering:
+- AI Builder Workshops — hands-on AI literacy for residents, students, and workers across all nine Coachella Valley cities (30+ workshops, 300+ participants in 2025)
+- AI Talent & Job Board (planned) — connecting locally trained workers to applied-AI projects
+- Responsible AI Pledge — a community commitment to human-centered, transparent AI use
+
+- **Fiscal sponsor**: Desert Community Foundation
+- **Founder**: Sat Singh, TEDx Rancho Mirage speaker and technology entrepreneur
+- **Location**: Palm Desert, California (Entrepreneurship Resource Center, Cook Street)
+- **Contact**: sat@aicv.co
+- **Nonprofit summary**: https://aicoachellavalley.org/llms.txt
 `;
 
   return new Response(body, {
