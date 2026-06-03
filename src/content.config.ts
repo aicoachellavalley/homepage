@@ -37,6 +37,10 @@ const nodes = defineCollection({
       'Discover', 'Visit', 'Return',
       'Satellite', 'Relocate', 'Build',
     ])).min(1),
+    agent_intent:  z.array(z.enum([
+      'invest', 'relocate', 'visit', 'research',
+      'retreat', 'hire', 'fund', 'sponsor', 'route',
+    ])).min(1),
     category:      z.string(),
     subcategory:   z.string().optional(),
     verified:      z.boolean(),
