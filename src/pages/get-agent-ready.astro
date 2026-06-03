@@ -351,7 +351,7 @@ const schemaGraph = {
     <label class="aio-input-label" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
     <div class="aio-row">
       <input type="url" id="urlInput" class="aio-input" placeholder="yourrestaurant.com or https://yourbusiness.com" autocomplete="off" autocapitalize="off">
-      <button class="aio-submit" id="analyzeBtn" onclick="runAnalysis()">Analyze →</button>
+      <button class="aio-submit" id="analyzeBtn" aria-label="Analyze website" onclick="runAnalysis()">Analyze →</button>
     </div>
     <div class="aio-callout">
       <div class="aio-callout-item">FREE</div>
@@ -384,11 +384,11 @@ const schemaGraph = {
       </div>
       <div class="result-checks" id="resultChecks"></div>
       <div id="fixesWrap"></div>
-      <button class="aio-reset" onclick="resetTool()">← Analyze another site</button>
+      <button class="aio-reset" aria-label="Analyze another website" onclick="resetTool()">← Analyze another site</button>
       <div class="copy-btns">
-        <button class="aio-copy" onclick="copyReport('md')">Copy Markdown</button>
-        <button class="aio-copy" onclick="copyReport('json')">Copy JSON</button>
-        <button class="aio-copy" onclick="copyReport('text')">Copy Text</button>
+        <button class="aio-copy" aria-label="Copy results as Markdown" onclick="copyReport('md')">Copy Markdown</button>
+        <button class="aio-copy" aria-label="Copy results as JSON" onclick="copyReport('json')">Copy JSON</button>
+        <button class="aio-copy" aria-label="Copy results as plain text" onclick="copyReport('text')">Copy Text</button>
       </div>
       <div class="aio-post-results">A diagnostic tells you what AI sees today. It doesn't change what AI reads tomorrow. That's what the Network does. Keep scrolling.</div>
     </div>
