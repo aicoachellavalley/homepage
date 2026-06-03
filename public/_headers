@@ -1,8 +1,9 @@
 # Agent discovery — Link response headers on homepage
 # Advertises llms.txt, MCP endpoint, API catalog, sitemap
-# per RFC 8288. Registered and common relation types only.
+# per RFC 8288. Registered relations where available; llms-txt and
+# llms-full-txt are emerging conventions pending IANA registration.
 /
-  Link: </llms.txt>; rel="service-doc"; type="text/plain"
+  Link: </llms.txt>; rel="llms-txt", </llms-full.txt>; rel="llms-full-txt"
   Link: </.well-known/mcp/server-card.json>; rel="describedby"; type="application/json"
   Link: </.well-known/api-catalog>; rel="api-catalog"
   Link: </sitemap.xml>; rel="sitemap"; type="application/xml"
