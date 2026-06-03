@@ -349,10 +349,18 @@ const schemaGraph = {
     
     <div class="aio-card">
     <label class="aio-input-label" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
+    <form
+      id="aio-analyzer"
+      toolname="analyze_agent_readiness"
+      tooldescription="Analyzes a public website URL and returns an agent-readiness score, verdict, and specific findings. Use to evaluate how well a site is structured for AI agent interaction."
+      novalidate
+      onsubmit="runAnalysis(event); return false;"
+    >
     <div class="aio-row">
-      <input type="url" id="urlInput" class="aio-input" placeholder="yourrestaurant.com or https://yourbusiness.com" autocomplete="off" autocapitalize="off">
-      <button class="aio-submit" id="analyzeBtn" aria-label="Analyze website" onclick="runAnalysis()">Analyze →</button>
+      <input type="url" id="urlInput" name="url" class="aio-input" placeholder="yourrestaurant.com or https://yourbusiness.com" autocomplete="off" autocapitalize="off" toolparamdescription="Public website URL to analyze. Must include http:// or https://." required>
+      <button type="submit" class="aio-submit" id="analyzeBtn" aria-label="Analyze website">Analyze →</button>
     </div>
+    </form>
     <div class="aio-callout">
       <div class="aio-callout-item">FREE</div>
       <div class="aio-callout-divider">·</div>
@@ -2697,7 +2705,8 @@ const schemaGraph = {
     return { grade: 'F', color: '#C48A8A' };
   }
 
-  async function runAnalysis() {
+  async function runAnalysis(event) {
+    if (event && event.preventDefault) event.preventDefault();
     const url = norm(document.getElementById('urlInput').value);
     if (!url) { showErr('Please enter a valid website address, like yourrestaurant.com'); return; }
 
