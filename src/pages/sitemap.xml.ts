@@ -2,13 +2,17 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async () => {
-  const nodes  = await getCollection('nodes');
-  const briefs = await getCollection('briefs');
+  const nodes   = await getCollection('nodes');
+  const briefs  = await getCollection('briefs');
+  const reports = await getCollection('reports');
 
   const staticPages = [
-    { url: 'https://aicoachellavalley.com/',        changefreq: 'weekly',  priority: '1.0' },
-    { url: 'https://aicoachellavalley.com/nodes/',  changefreq: 'weekly',  priority: '0.9' },
-    { url: 'https://aicoachellavalley.com/briefs/', changefreq: 'daily',   priority: '0.9' },
+    { url: 'https://aicoachellavalley.com/',                       changefreq: 'weekly',  priority: '1.0' },
+    { url: 'https://aicoachellavalley.com/nodes/',                 changefreq: 'weekly',  priority: '0.9' },
+    { url: 'https://aicoachellavalley.com/briefs/',                changefreq: 'daily',   priority: '0.9' },
+    { url: 'https://aicoachellavalley.com/reports/',               changefreq: 'weekly',  priority: '0.9' },
+    { url: 'https://aicoachellavalley.com/get-agent-ready/',       changefreq: 'monthly', priority: '0.9' },
+    { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8' },
   ];
 
   const snapshotFiles = import.meta.glob('../data/snapshots/*.json');
@@ -46,6 +50,18 @@ export const GET: APIRoute = async () => {
     <loc>https://aicoachellavalley.com/briefs/${slug}/</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>`);
+  }
+
+  // Reports
+  for (const entry of reports) {
+    if (entry.data.status !== 'published') continue;
+    const slug    = entry.id.replace(/\.mdx$/, '');
+    const lastmod = entry.data.date;
+    urlEntries.push(`  <url>
+    <loc>https://aicoachellavalley.com/reports/${slug}/</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>`);
   }
 

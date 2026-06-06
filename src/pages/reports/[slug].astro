@@ -317,9 +317,13 @@ const reportSchema = {
 <script define:vars={{ sections }}>
   // Assign ids to h2 elements by position — sections[i] maps to the i-th h2.
   // Position-based is reliable: MDX body order matches frontmatter sections order.
+  //
+  // Overrides MDX's auto-generated kebab-case IDs (2026-06-05 fix). Anchor nav
+  // hrefs are built from the frontmatter `sections` array, so the rendered H2
+  // IDs must match those strings exactly, not the auto-slugified versions.
   const h2s = document.querySelectorAll('.report-body h2');
   h2s.forEach((el, i) => {
-    if (sections[i] && !el.id) el.id = sections[i];
+    if (sections[i]) el.id = sections[i];
   });
 </script>
 

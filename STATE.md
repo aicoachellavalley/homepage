@@ -2,6 +2,29 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-06-05 — Q2 2026 agent-readiness report + editorial link convention + sitemap fix
+
+- **New report published:** `src/content/reports/state-cv-visitor-economy-agent-readiness-q2-2026.mdx`
+  - `report_type: "agent-readiness"`, `period: "Q2 2026"`
+  - First entry in a recurring agent-readiness report series. Subsequent reports will follow the same `report_type` for category continuity.
+  - Section identifiers are label-style (matches `data-centers-ai-infrastructure-coachella-valley` precedent, not the slug-style used by `state-of-ai-q1-2026`).
+
+- **Sitemap fix:** `src/pages/sitemap.xml.ts` now includes a reports loop parallel to the existing nodes/briefs loops, and the `staticPages` array now includes `/reports/`, `/get-agent-ready/`, and `/minimum-viable-agent/`. The reports loop filters on `status === 'published'` to match the index page and `[slug].astro` behavior. Three pre-existing static pages were missing from the sitemap; this is a back-fix.
+
+- **Editorial link convention (new, applies to all future reports and the visitor-economy landing page):**
+  - First mention: `[AICV (AI Coachella Valley)](https://aicoachellavalley.com)` — expand and link in body prose on first use; bylines stay plain.
+  - `aicoachellavalley.com` — link on first body mention and in the closing italicized note.
+  - `aicoachellavalley.org` — link on first body mention.
+  - `Desert Community Foundation` — link to `https://desertcommunityfoundation.org` on first mention; repeat in closing note if relevant.
+  - Internal program/framework names — link to canonical page on first mention: `[Get Agent Ready program](/get-agent-ready/)`, `[Minimum Viable Agent framework](/minimum-viable-agent/)`.
+  - Prior reports — link to canonical URL on first mention: `[State of AI — Q1 2026](/reports/state-of-ai-q1-2026/)`, `[The Server Farm Next Door](/reports/data-centers-ai-infrastructure-coachella-valley/)`.
+  - Standard markdown link syntax. No special MDX components.
+  - **This convention departs from earlier reports** (state-of-ai and data-centers use plain-text mentions for AICV and aicoachellavalley.com in the body). The new convention is more agent-readable and more navigable; it becomes the going-forward standard. Earlier reports are not back-fixed.
+
+- **Closing italicized note — institutional pattern.** Reports authored under AICV's institutional voice use the institutional closing pattern: organization-published declaration + methodology transparency hook + .com/.org surface clarification + DCF fiscal-sponsor mention + "nodes, briefs, and reports are available at aicoachellavalley.com" callout. The data-centers report's bylined closing remains valid for personal-voice essays from Sat Singh; institutional reports use the institutional pattern.
+
+---
+
 ## 2026-05-02 — Background color swap: sand → paper (#FAFAF7)
 
 - **Commit:** `690dc4a` — style: swap sand background to paper (#FAFAF7) across five files

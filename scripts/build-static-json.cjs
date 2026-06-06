@@ -304,6 +304,15 @@ function generateLlmsFullTxt() {
     path.basename(b).localeCompare(path.basename(a))
   );
 
+  // Reports — published only, sorted reverse-chronologically by frontmatter date
+  // (matches the /reports/ index page sort and buildReports() behavior).
+  // Added 2026-06-05; reports were previously absent from the LLM-facing dump.
+  const reportFiles = walkMdx(REPORTS_DIR)
+    .map(filePath => ({ filePath, fm: parseFrontmatter(fs.readFileSync(filePath, 'utf8')) }))
+    .filter(({ fm }) => fm.status === 'published')
+    .sort((a, b) => (a.fm.date > b.fm.date ? -1 : a.fm.date < b.fm.date ? 1 : 0))
+    .map(({ filePath }) => filePath);
+
   const nodeSections = nodeFiles.map(filePath => {
     const slug = path.basename(filePath, '.mdx');
     const content = fs.readFileSync(filePath, 'utf8');
@@ -316,18 +325,28 @@ function generateLlmsFullTxt() {
     return `## brief: ${slug}\n\n${content.trim()}`;
   });
 
+  const reportSections = reportFiles.map(filePath => {
+    const slug = path.basename(filePath, '.mdx');
+    const content = fs.readFileSync(filePath, 'utf8');
+    return `## report: ${slug}\n\n${content.trim()}`;
+  });
+
   const header = [
     `# AI Coachella Valley — Full Content Dump`,
     `# Generated: ${timestamp}`,
-    `# Nodes: ${nodeSections.length} | Briefs: ${briefSections.length}`,
+    `# Nodes: ${nodeSections.length} | Briefs: ${briefSections.length} | Reports: ${reportSections.length}`,
     `# https://aicoachellavalley.com`,
   ].join('\n');
 
-  const output = [header, ...nodeSections, ...briefSections].join('\n\n---\n\n');
+  // Order: header → reports (long-form research; highest signal density) →
+  // nodes (canonical entities) → briefs (chronological intelligence stream).
+  // Snapshots are intentionally excluded: they are JSON, not MDX, and would
+  // require a separate formatting pass to render as readable text.
+  const output = [header, ...reportSections, ...nodeSections, ...briefSections].join('\n\n---\n\n');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), output, 'utf8');
 
   const sizeKb = (Buffer.byteLength(output, 'utf8') / 1024).toFixed(1);
-  console.log(`llms-full.txt  — ${nodeSections.length} nodes, ${briefSections.length} briefs (${sizeKb} KB)`);
+  console.log(`llms-full.txt  — ${nodeSections.length} nodes, ${briefSections.length} briefs, ${reportSections.length} reports (${sizeKb} KB)`);
 }
 
 // --- IndexNow submission ---
