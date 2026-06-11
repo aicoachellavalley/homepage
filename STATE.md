@@ -2,6 +2,26 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-06-11 — Dining report shipped + agent-discovery recon (two gaps logged)
+
+Report `agent-mapped-food-dining-coachella-valley` is published and wired into every in-repo agent-discovery surface (commit `63c454d`). Recon across all surfaces:
+
+- **Inherited automatically (no per-report work needed):** `/reports/` index, `sitemap.xml`, `reports.json` (+ `.well-known/api-catalog`, IndexNow), `llms-full.txt` — all dynamic via `getCollection('reports')` / `build-static-json.cjs` since the 2026-06-05 work. JSON-LD is a shared layout (`reports/[slug].astro`) emitting `@type: ['Article','Report']` + the full field set — verified byte-identical to the visitor-economy report.
+- **Fixed this session:** the curated `/llms.txt` summary now advertises `reports.json` in both its Intelligence Network and Static Machine-Readable Endpoints lists (it previously omitted the entire reports collection — a 06-05 oversight; `api-catalog` already carried it).
+
+Two gaps surfaced by the recon, logged here as **prioritized future work — neither built this session:**
+
+**GAP 1 — HIGH PRIORITY — MCP exposes no report retrieval.**
+- The `mcp.aicoachellavalley.com` worker (**repo: `aicv-mcp`, OUT OF THIS REPO**) exposes tools `query_venues`, `get_node`, `get_regional_brief`, `get_economic_context`, `route_query`. No report tool or resource.
+- **Why it matters:** agents querying the canonical MCP "desk" cannot retrieve AICV's long-form reports — directly contradicts the agent-to-agent north star. Humans can read reports on the web; agents through the desk cannot.
+- **Next step (own recon→propose→build arc in `aicv-mcp`, NOT here):** open questions to resolve — new tool name/shape (e.g. `get_report` / `query_reports`); return payload (full body vs. summary + metadata + canonical URL); how it reads `reports.json` (already built, already in `api-catalog`, IndexNow-submitted — the data surface is ready, only the MCP tool layer is missing); schema fit with the existing tools.
+
+**GAP 2 — CORPUS ENRICHMENT — LOWER PRIORITY — no node↔report cross-links.**
+- No node links to any report and no report links to any node, anywhere in the corpus (category-wide, affects all 4 reports). Agent graph traversal cannot move between entity nodes and the reports about their category.
+- **Next step (own session, NOT here):** establish a node↔report cross-link pattern (e.g. food nodes `el-paseo` / `gardens-on-el-paseo` ↔ the dining report) and apply corpus-wide. No existing pattern to replicate → it is a net-new convention, so design it deliberately before applying.
+
+---
+
 ## 2026-06-11 — Food & Dining census report + three standing report conventions
 
 - **New report published:** `src/content/reports/agent-mapped-food-dining-coachella-valley.mdx`
