@@ -2,8 +2,9 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async () => {
-  const nodes  = await getCollection('nodes');
-  const briefs = await getCollection('briefs');
+  const nodes   = await getCollection('nodes');
+  const briefs  = await getCollection('briefs');
+  const reports = (await getCollection('reports')).filter((r) => r.data.status === 'published');
 
   const body = `# AI Coachella Valley
 
@@ -13,6 +14,7 @@ export const GET: APIRoute = async () => {
 
 - [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All ${nodes.length} geographic nodes, flat JSON, no JS required
 - [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All ${briefs.length} intelligence briefs, flat JSON, no JS required
+- [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.length} long-form intelligence reports, flat JSON, no JS required
 - [Snapshots (JSON)](https://aicoachellavalley.com/snapshots.json): AICV Intelligence Council snapshots — scored entity assessments
 - [MCP server](https://mcp.aicoachellavalley.com): Structured query tools for nodes, briefs, and economic context
 
@@ -20,6 +22,7 @@ export const GET: APIRoute = async () => {
 
   https://aicoachellavalley.com/nodes.json — all geographic nodes
   https://aicoachellavalley.com/briefs.json — all intelligence briefs
+  https://aicoachellavalley.com/reports.json — all long-form intelligence reports
   https://aicoachellavalley.com/snapshots.json — all Intelligence Review snapshots
 
 ## Commercial Tier

@@ -2,6 +2,24 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-06-11 — Food & Dining census report + three standing report conventions
+
+- **New report published:** `src/content/reports/agent-mapped-food-dining-coachella-valley.mdx`
+  - `report_type: "agent-readiness"`, `period: "Q2 2026"`, label-style `sections` identifiers (continues the 2026-06-05 convention below).
+  - Second entry in the recurring agent-readiness series; first to map a single category end to end (ground-up establishment census of 1,423 + an agent-visibility sample of 377 independents).
+
+- **THREE STANDING CONVENTIONS for every AICV category report** (apply to reports #3–#13 and beyond — the dining report is the worked example, so report #2 onward inherit these instead of re-deriving them on review):
+
+  1. **House voice — mark interpretation, state data plainly.** Interpretive / strategic claims are prefixed `According to AICV, …`; measured data is stated without the prefix. The construction deliberately separates AICV's interpretation from the numbers it measured. Lead each `### What This Means for the Coachella Valley` subsection with it, and attach it to standalone strategic claims (e.g. the closing thesis); do NOT attach it to pure data statements — overuse defeats the marker. (Matches the visitor-economy report's usage.)
+
+  2. **Every report closes with three elements, in order, before the italic publisher footer:** (a) **free-diagnostic CTA** pointing to `/get-agent-ready/` — "free, immediate, no AICV engagement required"; (b) **recurring-series framing** — which entry this is, which verticals come next, and the baseline this report puts on the record; (c) the **institutional publisher/footer block** — org-published declaration + methodology transparency hook + .com/.org surface clarification + Desert Community Foundation fiscal-sponsor mention + "nodes, briefs, and reports are available at aicoachellavalley.com" callout (the institutional closing pattern from the 2026-06-05 entry).
+
+  3. **Cross-report number hygiene.** When a new report's figures touch a category a prior report already covered, reconcile the numbers explicitly (2–3 sentences, cite the prior report by name) rather than letting two figures stand unexplained and read as a contradiction. Worked example: the dining report reconciles its ground-up census (1,423 establishments / 924 independents) against the visitor-economy report's directory-sourced scored subset (Dining = 956, mean 3.01, 5.5% Tier A) — the difference is scope/method, not a conflict or correction.
+
+- **Pointer:** a terse author checklist of these three (plus the frontmatter + editorial-link conventions) lives at `src/content/reports/README.md`; this STATE.md entry is canonical. The README is `.md`, so the reports glob loader (`**/*.mdx`) ignores it as a content entry.
+
+---
+
 ## 2026-06-05 — Q2 2026 agent-readiness report + editorial link convention + sitemap fix
 
 - **New report published:** `src/content/reports/state-cv-visitor-economy-agent-readiness-q2-2026.mdx`
