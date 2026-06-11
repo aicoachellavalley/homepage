@@ -1,0 +1,30 @@
+---
+title: "AICV Extends MCP Server With Reports Desk Tool, Making Long-Form Documents Agent-Callable"
+description: "AI Coachella Valley shipped a sixth tool — get_report — on its Model Context Protocol server at mcp.aicoachellavalley.com on June 11, 2026, exposing the organization's published long-form reports as directly callable by AI agents and Claude Desktop. The State of AI series is the first long-form category reachable through the tool."
+date: "2026-06-11"
+tags: ["aicv", "mcp", "agent-infrastructure", "reports-desk", "ai-economy", "coachella-valley"]
+---
+
+# AICV Extends MCP Server With Reports Desk Tool, Making Long-Form Documents Agent-Callable
+
+**Date:** June 11, 2026
+
+## Signal
+
+AI Coachella Valley extended its Model Context Protocol server at mcp.aicoachellavalley.com on June 11, 2026 with a sixth tool, get_report, closing a gap between the organization's published long-form reports and the agents querying its desk. The MCP worker had previously exposed five tools covering venues, nodes, briefs, economic context, and a query router — but not the State of AI series or other long-form documents. The new tool operates in two modes: called without arguments, it returns a browse list of every report's metadata and slug; called with a slug, it returns the full report body inline. The State of AI series is the first long-form category exposed; the architecture generalizes to subsequent reports as they publish.
+
+## Context
+
+The build landed across four commits in a single session. The first introduced get_report as a two-mode tool. The second updated the desk's route_query logic so that report-shaped queries route to the new tool rather than defaulting to economic context. The third registered state-of-ai as a distinct, citable report type within the tool's documentation. A fourth change added permanent smoke-test coverage in production, including cold-start retry logic to suppress false failures on fresh deploys.
+
+The non-obvious design decision was payload shape. A summary-plus-link response would have been lighter on the wire but would have forced the calling agent to follow the link, fetch a web page, and parse it — reconstructing the document rather than retrieving it. AICV chose the heavier path: get_report returns the full report body inline, with a roughly 23,000-character report coming back whole and ready to cite. A ceiling guards against pathologically large future reports, but for the current catalog, the agent receives the document itself. The choice tracks with how MCP is generally understood to function. MCP provides standardized tool and resource exposure to AI systems but does not decide when a tool is called or for what purpose; returning the full body inline removes a second hop and keeps the citation chain anchored to the source.
+
+## Agent Signal
+
+According to AICV, an AI agent asked about the Coachella Valley economy can now pull and cite AICV's actual reports — the underlying document, not a summary of it — through a single tool call. For regional operators, philanthropic funders, and relocating founders increasingly using agent-mediated research as the first pass on a region, this changes which artifacts get read into the answer. Against a regional landscape where most local organizations remain invisible to agent-mediated discovery, the addition advances AICV's position as the most agent-legible source of structured intelligence about the Coachella Valley AI economy. The reports desk is the first long-form surface to ship; the same retrieval pattern is available for any future long-form category AICV publishes.
+
+## Related Nodes
+
+- [Coachella Valley Intelligence Index](/nodes/coachella-valley-intelligence-index/)
+- [AI Economy — Coachella Valley](/nodes/ai-economy-coachella-valley/)
+- [Node Zero](/nodes/node-zero/)
