@@ -369,10 +369,14 @@ function generateLlmsFullTxt() {
 
 // --- IndexNow submission ---
 async function submitToIndexNow(urls) {
+  // IndexNow key: strict Option 1 — {key}.txt served at the site root, so the
+  // protocol's default keyLocation (https://host/{key}.txt) is used; no explicit
+  // keyLocation field needed. Reset 2026-06-12 to a fresh hex key (the prior
+  // aicv-indexnow-2026 key 403'd "UserForbiddedToAccessSite" — negative-cache
+  // legacy from months the keyLocation served 404). Key file: public/<key>.txt.
   const payload = {
     host: "aicoachellavalley.com",
-    key: "aicv-indexnow-2026",
-    keyLocation: "https://aicoachellavalley.com/aicv-indexnow-2026.txt",
+    key: "a0637c7110a38cb16503aceee7e1a289",
     urlList: urls
   };
 
