@@ -11,10 +11,10 @@ Report `agent-mapped-food-dining-coachella-valley` is published and wired into e
 
 Two gaps surfaced by the recon, logged here as **prioritized future work — neither built this session:**
 
-**GAP 1 — HIGH PRIORITY — MCP exposes no report retrieval.**
+**GAP 1 — ✅ CLOSED 2026-06-11 — MCP report retrieval shipped.**
 - The `mcp.aicoachellavalley.com` worker (**repo: `aicv-mcp`, OUT OF THIS REPO**) exposes tools `query_venues`, `get_node`, `get_regional_brief`, `get_economic_context`, `route_query`. No report tool or resource.
 - **Why it matters:** agents querying the canonical MCP "desk" cannot retrieve AICV's long-form reports — directly contradicts the agent-to-agent north star. Humans can read reports on the web; agents through the desk cannot.
-- **Next step (own recon→propose→build arc in `aicv-mcp`, NOT here):** open questions to resolve — new tool name/shape (e.g. `get_report` / `query_reports`); return payload (full body vs. summary + metadata + canonical URL); how it reads `reports.json` (already built, already in `api-catalog`, IndexNow-submitted — the data surface is ready, only the MCP tool layer is missing); schema fit with the existing tools.
+- **✅ Closed 2026-06-11 (same day logged):** built and deployed in `aicv-mcp` — commits `ce42b68`→`4eca8ed`. The desk now serves **6 tools** incl. `get_report` (browse/filter + full-body modes); `route_query` routes report-shaped intent to it; `scripts/smoke-test.mjs` covers it. `get_report` reads `reports.json` via the same fetch pattern as nodes/briefs. Verified disk + live (`tools/list`) June 11 — **zero drift**. The open questions resolved as: ONE tool (`get_report`), slug-presence selecting browse vs. full-body (not two tools); the data surface was already ready — only the MCP tool layer was missing.
 
 **GAP 2 — CORPUS ENRICHMENT — LOWER PRIORITY — no node↔report cross-links.**
 - No node links to any report and no report links to any node, anywhere in the corpus (category-wide, affects all 4 reports). Agent graph traversal cannot move between entity nodes and the reports about their category.
