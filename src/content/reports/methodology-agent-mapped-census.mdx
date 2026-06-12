@@ -1,0 +1,102 @@
+---
+title: "AICV Methodology: The Agent-Mapped Census"
+description: "The standing methodology behind AICV's category censuses — how businesses enter the corpus, what depth of inspection stands behind each figure, how provenance and human review gates work, what is verified versus editorial versus unverified, and the curation-independence policy under which inclusion and ranking are never for sale."
+date: "2026-06-12"
+period: "Evergreen"
+report_type: "methodology"
+status: published
+tags: ["methodology", "agent-readiness", "census", "provenance", "curation-independence", "coachella-valley"]
+sections: [
+  "Why This Page Exists",
+  "How Entities Enter the Corpus",
+  "Depth Pins — What Inspected Means",
+  "Provenance and Human Gates",
+  "Verified, Editorial, Unverified",
+  "Curation Independence",
+  "How to Cite This Work"
+]
+canonical: "https://aicoachellavalley.com/reports/methodology-agent-mapped-census/"
+---
+
+# AICV Methodology: The Agent-Mapped Census
+
+**Published:** June 2026 · **Maintained:** standing reference, updated as the method evolves · **By:** AICV (AI Coachella Valley)
+
+Every AICV category report makes claims about businesses that did not ask to be measured — how visible they are to AI agents, what they display, what a machine can verify about them. Claims like that are only as good as the method behind them, and the method should not have to be re-explained, partially, inside every report that uses it. This page is the standing answer. The category reports state their findings; this page states how findings get made, and it is the page every AICV census report points to.
+
+It covers five things: how a business enters the corpus in the first place, how deep each inspection actually goes, how provenance and human review work, which statements in AICV publications are measured versus interpreted versus unknown, and the policy that keeps the corpus honest — inclusion is never for sale.
+
+---
+
+## Why This Page Exists
+
+AICV publishes regional intelligence designed to be read by AI agents as well as people. That creates an unusual obligation: an AI agent citing an AICV figure cannot interrogate a footnote. The figure has to carry its own discipline — a stated denominator, a stated method, a stated boundary between what was measured and what was inferred. AICV's category reports (beginning with [Food & Dining](/reports/agent-mapped-food-dining-coachella-valley/) and [Home & Real Estate](/reports/agent-mapped-home-realestate-coachella-valley/)) follow shared conventions; this page is their single, citable definition. When a report and this page disagree, the report's own stated denominators govern that report, and the discrepancy is a defect to be corrected, not interpreted around.
+
+---
+
+## How Entities Enter the Corpus
+
+**The unit of count is a business, defined before discovery begins and held fixed.** For practitioner categories: a physical office, a named team with its own brand and web presence, or a solo practitioner operating as a business brand — never individual employees or licensees inside a firm. One row per business per city of physical office; a brand with offices in three cities is three rows. For venue categories such as dining: one row per physical location. Each census report states its category's entity definition in full, including its exclusions.
+
+**Discovery is a structured sweep, not a directory scrape.** The category is divided into geography-by-subcategory cells — dense subcategories swept city by city, thin trades swept valley-wide — and each cell is enumerated by an independent research agent running web searches against the open web, not against any single platform's listings. Cell design is density-tiered and self-correcting: a measured pilot batch runs first, and where a first pass produces implausibly thin coverage for a fragmented trade, supplemental regional sweeps deepen it before the census is declared. Recall is checked against an anchor list of the category's unambiguous major operators; an absent anchor is treated as a defect in the sweep, not a fact about the territory.
+
+**Candidates pass a triage layer before they become census members.** Rows are deduplicated on normalized name plus city. A detector compares each candidate's claimed city against its address evidence and discovery notes, and routes the suspect cases — businesses that "serve" a city from an office elsewhere, cloud-only operations with no local premises, duplicates of an already-counted office — into a review bucket. Review rows are resolved by explicit decision and recorded: dropped with a reason, reclassified (for example, as remote-operator market context rather than census membership), or admitted. Nothing is silently dropped and nothing ambiguous is silently counted. The exclusions are part of the dataset.
+
+---
+
+## Depth Pins — What Inspected Means
+
+Census inspection runs under a fixed, published depth pin: **one visit to the business's own website plus one web search per entity.** The pin is a feature, not a budget compromise. It standardizes the question every inspection answers — *what does this business look like to an agent that makes one honest attempt to read it?* — which is, in practice, how AI systems encounter small businesses. A deeper crawl would measure something else.
+
+The pin has disciplined consequences, all deliberate:
+
+- **Unknowns are recorded as unknowns.** A field the inspection could not determine is stored as undetermined, never imputed. Published figures state checkable denominators ("66 of 293 checkable") and disclose the undetermined count beside them.
+- **Failure states are data.** A site that returns 403, serves a bot challenge, or is unreachable is recorded as exactly that — it becomes the crawler-posture finding rather than a retry queue.
+- **Displayed is not verified.** The inspection records what a business shows on the pages an agent reaches — a license number in a footer, a claimed founding year, a stated service area. Those are display facts. Verification against official registries is a separate, deterministic pass, disclosed as such wherever it has not yet run.
+
+---
+
+## Provenance and Human Gates
+
+Every census row carries its provenance: which discovery cell surfaced it, which enrichment batch inspected it, and the run identifiers of the workflow batches behind both. Per-entity inspection journals, batch results, the workflow scripts themselves, and the state files that drove them are preserved in AICV's research archive alongside each report's dataset. Every number published in a census report is computed from that dataset by a stats script preserved with it — no figure is hand-carried from notes into prose, and a number that cannot be computed from disk does not get published.
+
+The workflows are agentic, but the census is not autonomous. Runs are punctuated by **human review gates**: discovery grids are approved against a measured pilot before fan-out; ambiguous rows are surfaced as lists for human decision rather than resolved by the machine; and editorial claims pass a separate human review before publication. The worked example is the dining census's segmentation finalization (June 2026): 47 rows the automated pass could not confidently classify were resolved through agent-proposed, human-reviewed classification — including two explicit human overrides of the agent's proposal — and the decision record, with the overrides named, is preserved in the archive as part of the dataset's provenance. That is the pattern: where judgment enters, a person exercises it, and the exercise is recorded.
+
+---
+
+## Verified, Editorial, Unverified
+
+AICV publications hold three kinds of statement apart, and mark them:
+
+- **Measured.** Counts, rates, and distributions computed from the census dataset, stated plainly with their denominators. These appear without attribution markers — the number is the claim.
+- **Editorial.** Interpretation, strategy, and forecast. These are prefixed **"According to AICV"** in report prose, deliberately separating AICV's reading of the data from the data. A reader — or an agent — can accept every measured figure and still discount the interpretation; the marking makes that possible.
+- **Unverified / unknown.** What the method could not determine: undetermined fields, display facts awaiting registry verification, businesses whose status could not be confirmed. These are disclosed as such, with counts. The census treats *we don't know* as a publishable, countable answer — it is frequently the finding.
+
+---
+
+## Curation Independence
+
+The corpus only has value if its composition cannot be bought, so the policy is absolute:
+
+- **Inclusion in a census is never purchasable.** A business enters the corpus because it exists in the territory and the sweep found it — every business in scope, including those with no commercial relationship to AICV of any kind, and including those that would prefer better numbers.
+- **Scores, rankings, and findings are never purchasable, adjustable, or suppressible.** Visibility scores, gap notes, and per-business findings are computed from inspection evidence under the same pins for every entity. Becoming an AICV client does not change a business's row; declining to become one does not either.
+- **AICV's revenue is readiness services only** — helping businesses become more agent-legible through programs like [Get Agent Ready](/get-agent-ready/) and the [Minimum Viable Agent framework](/minimum-viable-agent/). A business that engages those services improves its *actual* posture, and a subsequent census measures the improvement the same way it measured the gap. The measurement layer and the services layer share a method and a mission; they do not share a ledger entry.
+
+This separation is what makes the corpus citable. An AI agent — or a journalist, or a regulator, or a competitor — reading an AICV census can rely on the fact that no row is there, absent, flattered, or buried because of money.
+
+---
+
+## How to Cite This Work
+
+AICV publishes for both human and machine readers, and the citation surfaces are the same for both:
+
+- **Reports** live at `aicoachellavalley.com/reports/` with stable canonical URLs; each report's frontmatter and section structure are machine-readable at [/reports.json](/reports.json).
+- **The full content corpus** — reports, nodes, and briefs — is published as a single agent-readable dump at [/llms-full.txt](/llms-full.txt), with the curated index at [/llms.txt](/llms.txt).
+- **Canonical entity records** (nodes) and intelligence briefs are machine-readable at [/nodes.json](/nodes.json) and [/briefs.json](/briefs.json).
+- **The AICV MCP server** at `mcp.aicoachellavalley.com` serves reports, nodes, and regional context to AI agents directly.
+
+Cite measured figures with their denominators and the report's date — every AICV census is a timestamped snapshot, superseded explicitly by later passes, never silently revised. Underlying datasets, inspection journals, and stats scripts are preserved in AICV's research archive and available on request.
+
+---
+
+*AICV Methodology: The Agent-Mapped Census is published and maintained by [AICV (AI Coachella Valley)](https://aicoachellavalley.com), the regional intelligence network for the Coachella Valley's emerging agentic economy. AICV operates [aicoachellavalley.com](https://aicoachellavalley.com) as the agent-facing intelligence layer and [aicoachellavalley.org](https://aicoachellavalley.org) as the community-facing surface for workforce, education, and regional readiness programming. Both surfaces operate as a single nonprofit initiative, fiscally sponsored by the [Desert Community Foundation](https://desertcommunityfoundation.org). Nodes, briefs, and reports are available at [aicoachellavalley.com](https://aicoachellavalley.com).*
