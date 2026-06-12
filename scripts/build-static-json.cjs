@@ -21,7 +21,9 @@ function parseFrontmatter(content) {
   const yaml = match[1];
   const result = {};
 
-  for (const line of yaml.split('\n')) {
+  const lines = yaml.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
     const colonIdx = line.indexOf(':');
     if (colonIdx === -1) continue;
 
@@ -29,6 +31,14 @@ function parseFrontmatter(content) {
     let value = line.slice(colonIdx + 1).trim();
 
     if (!key) continue;
+
+    // Multiline YAML block array: opener '[' with no closing ']' on this
+    // line — pull in following lines until the array closes.
+    if (value.startsWith('[') && !value.includes(']')) {
+      while (i + 1 < lines.length && !value.includes(']')) {
+        value += ' ' + lines[++i].trim();
+      }
+    }
 
     // Array: ["a", "b"] or [a, b]
     if (value.startsWith('[')) {
