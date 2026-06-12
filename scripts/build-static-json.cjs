@@ -42,6 +42,14 @@ function parseFrontmatter(content) {
 
     // Array: ["a", "b"] or [a, b]
     if (value.startsWith('[')) {
+      // Strict pass first: double-quoted frontmatter arrays are valid JSON.
+      // The legacy bare-word quoting below corrupts quoted strings that
+      // contain commas (e.g. "Verified, Editorial, Unverified") — only fall
+      // through to it for arrays that aren't already parseable as-is.
+      try {
+        result[key] = JSON.parse(value);
+        continue;
+      } catch { /* not strict JSON — legacy paths below */ }
       try {
         const jsonLike = value
           .replace(/'/g, '"')
