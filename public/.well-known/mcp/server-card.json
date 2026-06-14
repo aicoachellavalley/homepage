@@ -33,6 +33,10 @@
       "description": "Get valley-wide or city-specific economic intelligence including workforce, education, and AI signals for the Coachella Valley region."
     },
     {
+      "name": "get_report",
+      "description": "Retrieve AICV long-form intelligence reports. Call without a slug to browse the available reports — filterable by report_type, period, topic, date_from, date_to, and limit — returning a metadata list whose entries each carry a slug; call again with a slug to retrieve that report's full body inline."
+    },
+    {
       "name": "route_query",
       "description": "Natural language dispatcher. Classifies an incoming query and returns the recommended AICV MCP tool plus suggested parameters. Useful when the caller is uncertain which tool to invoke."
     }
