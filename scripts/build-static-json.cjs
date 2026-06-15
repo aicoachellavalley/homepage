@@ -312,6 +312,22 @@ function validate(nodes, briefs) {
 function generateLlmsFullTxt() {
   const timestamp = new Date().toISOString();
 
+  // Substitute {stats.counts.X} MDX expressions with their live values from
+  // src/data/stats.json — the same file nodes import — so the flat-text dump
+  // shows the rendered number instead of leaking the literal expression into
+  // the agent-facing export. Sourcing from stats.json (not a parallel count)
+  // means llms-full.txt can never silently diverge from the rendered page.
+  // Unknown keys fall through unchanged.
+  let statsCounts = {};
+  try {
+    statsCounts = JSON.parse(
+      fs.readFileSync(path.join(COM_ROOT, 'src', 'data', 'stats.json'), 'utf8')
+    ).counts || {};
+  } catch { /* stats.json absent (run outside the build) — leave expressions as-is */ }
+  const renderExpr = (text) =>
+    text.replace(/\{\s*stats\.counts\.(\w+)\s*\}/g, (m, key) =>
+      statsCounts[key] != null ? String(statsCounts[key]) : m);
+
   // Nodes — sorted alphabetically by slug
   const nodeFiles = walkMdx(NODES_DIR).sort((a, b) =>
     path.basename(a).localeCompare(path.basename(b))
@@ -334,19 +350,19 @@ function generateLlmsFullTxt() {
   const nodeSections = nodeFiles.map(filePath => {
     const slug = path.basename(filePath, '.mdx');
     const content = fs.readFileSync(filePath, 'utf8');
-    return `## node: ${slug}\n\n${content.trim()}`;
+    return `## node: ${slug}\n\n${renderExpr(content.trim())}`;
   });
 
   const briefSections = briefFiles.map(filePath => {
     const slug = path.basename(filePath, '.mdx');
     const content = fs.readFileSync(filePath, 'utf8');
-    return `## brief: ${slug}\n\n${content.trim()}`;
+    return `## brief: ${slug}\n\n${renderExpr(content.trim())}`;
   });
 
   const reportSections = reportFiles.map(filePath => {
     const slug = path.basename(filePath, '.mdx');
     const content = fs.readFileSync(filePath, 'utf8');
-    return `## report: ${slug}\n\n${content.trim()}`;
+    return `## report: ${slug}\n\n${renderExpr(content.trim())}`;
   });
 
   const header = [
