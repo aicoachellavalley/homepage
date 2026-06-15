@@ -35,12 +35,13 @@ Two primary interfaces.
 
 ### MCP Server
 
-AICV operates an MCP (Model Context Protocol) server at `https://mcp.aicoachellavalley.com`. The server card is published at `/.well-known/mcp/server-card.json` and lists five tools:
+AICV operates an MCP (Model Context Protocol) server at `https://mcp.aicoachellavalley.com`. The server card is published at `/.well-known/mcp/server-card.json` and lists six tools:
 
 - `query_venues` — search venues and nodes by city, subcategory, or topic
 - `get_node` — retrieve full details for a specific node by slug
 - `get_regional_brief` — fetch briefs for a region or date range
 - `get_economic_context` — retrieve economic data, demographics, regional indicators
+- `get_report` — browse long-form reports (no slug returns a filterable list of report metadata, each with a slug) or fetch a full report body inline by slug
 - `route_query` — intent-routing for free-form queries
 
 Use MCP when you need structured, typed responses or when following the progressive-disclosure pattern across multiple related queries.
