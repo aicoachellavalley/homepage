@@ -12,6 +12,7 @@ const NODES_DIR  = path.join(COM_ROOT, 'src', 'content', 'nodes');
 const BRIEFS_DIR = path.join(COM_ROOT, 'src', 'content', 'briefs');
 const SNAPS_DIR  = path.join(COM_ROOT, 'src', 'data', 'snapshots');
 const REPORTS_DIR = path.join(COM_ROOT, 'src', 'content', 'reports');
+const AIQNA_DIR  = path.join(COM_ROOT, 'src', 'content', 'aiqna');
 const PUBLIC_DIR = path.join(COM_ROOT, 'public');
 
 // --- Frontmatter parser (no external deps) ---
@@ -265,6 +266,53 @@ function buildReports() {
   return reports;
 }
 
+// --- Build aiqna.json ---
+// The AIQnA corpus index: the methodology entry first, then weekly findings
+// reverse-chronologically. Same flat-metadata shape as reports.json. The rich
+// per-finding display data (results, cities, quotes) lives in the .mdx
+// frontmatter and is rendered by the Astro pages; the index stays lightweight.
+function buildAiqna() {
+  const files = walkMdx(AIQNA_DIR);
+  const entries = [];
+
+  for (const filePath of files) {
+    const content = fs.readFileSync(filePath, 'utf8');
+    const fm = parseFrontmatter(content);
+    if (!fm.title) continue;
+
+    const slug = path.basename(filePath, '.mdx');
+    const type = fm.type || (slug === 'methodology' ? 'methodology' : 'finding');
+    const url = type === 'methodology'
+      ? 'https://aicoachellavalley.com/aiqna'
+      : `https://aicoachellavalley.com/aiqna/${slug}/`;
+
+    entries.push({
+      slug,
+      type,
+      title:       fm.title       || '',
+      description: fm.description || '',
+      date:        fm.date        || '',
+      status:      fm.status      || '',
+      cadence:     fm.cadence     || 'weekly',
+      language:    fm.language    || 'en',
+      license:     fm.license     || 'CC-BY-4.0',
+      question_id: fm.question_id || '',
+      url,
+    });
+  }
+
+  // Methodology pinned first; findings reverse-chronological after it.
+  entries.sort((a, b) => {
+    if (a.type === 'methodology') return -1;
+    if (b.type === 'methodology') return 1;
+    if (a.date > b.date) return -1;
+    if (a.date < b.date) return 1;
+    return 0;
+  });
+
+  return entries;
+}
+
 // --- Schema validation ---
 const BRIEF_AGENT_SIGNAL_CUTOFF = '2026-03-01';
 
@@ -418,12 +466,14 @@ async function main() {
 
   const snapshots = buildSnapshots(nodeSlugs);
   const reports   = buildReports();
+  const aiqna     = buildAiqna();
 
   // Serialize
   const nodesJson     = JSON.stringify(nodes,     null, 2);
   const briefsJson    = JSON.stringify(briefs,    null, 2);
   const snapshotsJson = JSON.stringify(snapshots, null, 2);
   const reportsJson   = JSON.stringify(reports,   null, 2);
+  const aiqnaJson     = JSON.stringify(aiqna,     null, 2);
 
   // Size guard
   const nodesSize  = Buffer.byteLength(nodesJson,  'utf8');
@@ -436,11 +486,13 @@ async function main() {
   fs.writeFileSync(path.join(PUBLIC_DIR, 'briefs.json'),    briefsJson,    'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'snapshots.json'), snapshotsJson, 'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'reports.json'),   reportsJson,   'utf8');
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'aiqna.json'),     aiqnaJson,     'utf8');
 
   console.log(`nodes.json     — ${nodes.length} nodes     (${(nodesSize  / 1024).toFixed(1)} KB)`);
   console.log(`briefs.json    — ${briefs.length} briefs   (${(briefsSize / 1024).toFixed(1)} KB)`);
   console.log(`snapshots.json — ${snapshots.length} snapshots`);
   console.log(`reports.json   — ${reports.length} published reports`);
+  console.log(`aiqna.json     — ${aiqna.length} entries (methodology + findings)`);
   console.log(`Output: public/`);
 
   validate(nodes, briefs);
@@ -452,6 +504,7 @@ async function main() {
     "https://aicoachellavalley.com/briefs.json",
     "https://aicoachellavalley.com/snapshots.json",
     "https://aicoachellavalley.com/reports.json",
+    "https://aicoachellavalley.com/aiqna.json",
   ]);
 }
 

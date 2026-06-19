@@ -1,0 +1,678 @@
+---
+import { getEntry } from 'astro:content';
+
+// The methodology entry drives the meta bar, the canonical URL, and the
+// TechArticle schema — so the page is frontmatter-driven, not hardcoded.
+const entry = await getEntry('aiqna', 'methodology');
+const { title, description, date, status, license, canonical } = entry!.data;
+
+const canonicalUrl = canonical ?? 'https://aicoachellavalley.com/aiqna';
+const licenseUrl = 'https://creativecommons.org/licenses/by/4.0/';
+
+const techArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  'headline': 'AIQnA — Methodology and Source Documentation',
+  'description': 'Source documentation for the Coachella Valley\'s first longitudinal AI sentiment corpus, operated by AI Coachella Valley.',
+  'author': {
+    '@type': 'NGO',
+    'name': 'AI Coachella Valley',
+    'url': 'https://aicoachellavalley.com',
+  },
+  'publisher': {
+    '@type': 'NGO',
+    'name': 'AI Coachella Valley',
+    'url': 'https://aicoachellavalley.com',
+    'parentOrganization': {
+      '@type': 'NGO',
+      'name': 'Desert Community Foundation',
+    },
+  },
+  'url': canonicalUrl,
+  'datePublished': date,
+  'inLanguage': 'en-US',
+  'license': licenseUrl,
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'AIQnA',
+  'alternateName': 'AI Question and Answer',
+  'url': 'https://aiqna.org',
+  'description': 'AIQnA is a regional AI listening infrastructure operated by AI Coachella Valley. Each week, residents respond to one question about AI and daily life through a short conversation with an AI agent. Aggregate findings publish every Friday under CC-BY-4.0.',
+  'provider': {
+    '@type': 'NGO',
+    'name': 'AI Coachella Valley',
+    'url': 'https://aicoachellavalley.com',
+  },
+  'areaServed': {
+    '@type': 'Place',
+    'name': 'Coachella Valley, California',
+  },
+  'serviceType': 'Civic AI listening infrastructure',
+  'termsOfService': 'https://aicoachellavalley.com/aiqna',
+  'audience': [
+    { '@type': 'Audience', 'audienceType': 'Coachella Valley residents' },
+    { '@type': 'Audience', 'audienceType': 'Local media outlets' },
+    { '@type': 'Audience', 'audienceType': 'Local businesses and operators' },
+    { '@type': 'Audience', 'audienceType': 'Journalists and researchers' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'Who runs AIQnA?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'AIQnA is built, engineered, and operated by AI Coachella Valley — a regional intelligence network based at the CSUSB Entrepreneurship Resource Center in Palm Desert, California. AICV is fiscally sponsored by Desert Community Foundation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'How are AIQnA questions selected?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Questions are drafted by AICV against a calendar mapped to the 13-week series. Domains rotate by season and include work, education, healthcare, creativity, privacy, journalism, companionship, environment, and civic services. Questions are designed to be accessible to any resident, locally specific where appropriate, and structurally neutral.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'Is my response to AIQnA anonymous?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. AIQnA does not request or retain identifying information. The only metadata captured is city of residence and audience type. Individual records are never shared with media partners, sponsors, or any third party. You may opt out of verbatim quote publication while still contributing to aggregate findings.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'Can sponsors influence AIQnA findings?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'No. Sponsors do not select questions, review findings before publication, or shape methodology. Sponsorship buys association with the program, not influence over its outputs.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'Who can participate in AIQnA?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Anyone who lives, works, or operates a business in the Coachella Valley can participate. The conversation runs at aiqna.org and takes under five minutes. No account or login is required. One response per question per device.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'How are AIQnA findings published?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Each Friday, aggregate findings publish on aiqna.org as a human-readable summary and on aicoachellavalley.com/aiqna/[week-slug] as a structured canonical record. Partner media outlets receive a complete content kit with topline findings, word cloud, city breakdown, story lead memo, and ready-to-paste social and newsletter copy.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'Can other regions operate AIQnA?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'The AIQnA methodology and infrastructure are being incubated in the Coachella Valley with an eye toward broader Inland Empire deployment. Regional licensing arrangements are not yet open. Interested parties should contact AICV directly.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'Is AIQnA affiliated with any political organization?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'No. AIQnA does not endorse candidates, parties, or political positions. Questions and findings are presented documentarily. AICV operates as a nonprofit civic technology initiative under fiscal sponsorship of Desert Community Foundation.',
+      },
+    },
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | AI Coachella Valley</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <meta property="og:title" content="AIQnA — Methodology and Source Documentation" />
+  <meta property="og:description" content="Source documentation for the Coachella Valley's first longitudinal AI sentiment corpus. Operated by AI Coachella Valley." />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="article" />
+
+  <link rel="alternate" href="https://aiqna.org" title="AIQnA live experience" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(techArticleSchema, null, 2)} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema, null, 2)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema, null, 2)} />
+
+  <style>
+    :root {
+      --volt: #D8FF00;
+      --pine: #1B4332;
+      --pine-light: #2D6A4F;
+      --pine-dark: #122B22;
+      --pine-tint: #C8DDB4;
+      --pine-mist: #E0EDD2;
+      --gunmetal: #1E1E1E;
+      --sand: #FAFAF7;
+      --sand-light: #FFFFFF;
+      --sand-dark: #E8E5DD;
+      --text-primary: var(--gunmetal);
+      --text-secondary: #4A4A4A;
+      --text-tertiary: #888888;
+      --font-display: 'Syne', system-ui, sans-serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'DM Mono', ui-monospace, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--sand);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+    /* ── IQ PIVOT — wordmark treatment for brand-mark contexts ──
+       Use these spans around the I and Q of AIQnA only in
+       brand-mark contexts (logos, eyebrows, titles, headers).
+       Never in body copy where AIQnA is part of a sentence. */
+    .iq-pivot { color: var(--pine-light); }
+    .iq-pivot-on-dark { color: var(--pine-tint); }
+    .wordmark { font-family: var(--font-body); font-weight: 700; letter-spacing: -0.01em; }
+
+    /* ── BREADCRUMB ──────────────────────────────────────── */
+    .crumb {
+      font-family: var(--font-mono); font-size: 12px;
+      color: var(--text-tertiary); letter-spacing: 0.04em;
+      margin-bottom: 2rem; padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(28, 43, 34, 0.12);
+    }
+    .crumb a { color: var(--pine-light); text-decoration: none; }
+    .crumb a:hover { text-decoration: underline; }
+    .crumb .sep { color: var(--text-tertiary); margin: 0 0.5em; }
+
+    /* ── HEADER ──────────────────────────────────────────── */
+    .header { margin-bottom: 3rem; }
+    .header-eyebrow {
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--pine-light); letter-spacing: 0.16em;
+      text-transform: uppercase; font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .header-eyebrow .brand {
+      color: var(--pine-dark); font-weight: 700;
+      text-transform: none; letter-spacing: -0.01em;
+      font-family: var(--font-body); font-size: 13px;
+    }
+    .title {
+      font-family: var(--font-body); font-size: 44px; font-weight: 700;
+      line-height: 1.05; letter-spacing: -0.03em;
+      color: var(--pine-dark); margin: 0 0 1rem;
+    }
+    .subtitle {
+      font-size: 18px; color: var(--text-secondary);
+      line-height: 1.5; margin: 0; max-width: 620px;
+    }
+
+    /* ── METADATA BAR ────────────────────────────────────── */
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: var(--sand-light);
+      border: 0.5px solid rgba(28, 43, 34, 0.12);
+      border-left: 3px solid var(--volt);
+      border-radius: 8px;
+      margin: 2rem 0 3rem;
+      font-family: var(--font-mono); font-size: 12px;
+    }
+    .meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .meta-label {
+      color: var(--text-tertiary); letter-spacing: 0.08em;
+      text-transform: uppercase; font-size: 10px;
+    }
+    .meta-value { color: var(--text-primary); font-weight: 500; }
+    .meta-value a { color: var(--pine-light); text-decoration: none; }
+    .meta-value a:hover { text-decoration: underline; }
+
+    /* ── SECTIONS ────────────────────────────────────────── */
+    .section { margin: 3rem 0; }
+    .section h2 {
+      font-family: var(--font-display); font-size: 26px; font-weight: 600;
+      line-height: 1.25; letter-spacing: -0.015em;
+      color: var(--pine-dark); margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--pine);
+      display: inline-block;
+    }
+    .section h3 {
+      font-family: var(--font-display); font-size: 19px; font-weight: 500;
+      color: var(--pine-dark); margin: 2rem 0 0.5rem;
+    }
+    .section p { margin: 0 0 1rem; color: var(--text-primary); }
+    .section p.intro {
+      font-size: 17px; color: var(--text-secondary); line-height: 1.6;
+    }
+
+    /* ── LIVE CTA BLOCK ──────────────────────────────────── */
+    .live-cta {
+      background: var(--pine); color: var(--sand-light);
+      border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1.5rem; flex-wrap: wrap;
+      border-left: 6px solid var(--volt);
+    }
+    .live-cta-text { flex: 1; min-width: 240px; }
+    .live-cta-label {
+      font-family: var(--font-mono); font-size: 11px; color: var(--volt);
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px;
+    }
+    .live-cta-headline {
+      font-family: var(--font-display); font-size: 22px; font-weight: 500;
+      color: var(--sand-light); letter-spacing: -0.01em;
+    }
+    .live-cta-btn {
+      background: var(--volt); color: var(--pine-dark);
+      padding: 10px 20px; border-radius: 6px; font-weight: 600;
+      text-decoration: none; font-size: 15px; white-space: nowrap;
+    }
+
+    /* ── FACT TABLE ──────────────────────────────────────── */
+    .facts { margin: 1.5rem 0; border-top: 1px solid rgba(28, 43, 34, 0.12); }
+    .fact {
+      display: grid; grid-template-columns: 200px 1fr;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(28, 43, 34, 0.12);
+      gap: 1.5rem;
+    }
+    .fact-key {
+      font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);
+      letter-spacing: 0.04em; text-transform: uppercase; padding-top: 2px;
+    }
+    .fact-val { color: var(--text-primary); }
+
+    /* ── PRINCIPLES LIST ─────────────────────────────────── */
+    .principles { margin: 1.5rem 0; padding: 0; list-style: none; }
+    .principles li {
+      padding: 0.85rem 1.25rem 0.85rem 1.5rem;
+      border-left: 3px solid var(--volt);
+      margin-bottom: 0.75rem;
+      background: var(--pine-mist);
+    }
+    .principles li strong {
+      display: block; color: var(--pine-dark);
+      font-weight: 600; margin-bottom: 4px;
+    }
+    .principles li span { color: var(--text-secondary); font-size: 15px; }
+
+    /* ── POLICIES TABLE ──────────────────────────────────── */
+    .policy {
+      margin: 1rem 0; padding: 1rem 1.25rem;
+      background: var(--sand-light);
+      border: 0.5px solid rgba(28, 43, 34, 0.12);
+      border-radius: 6px;
+    }
+    .policy-key {
+      font-family: var(--font-mono); font-size: 11px; color: var(--pine-light);
+      letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .policy-val { color: var(--text-primary); font-size: 14.5px; line-height: 1.55; }
+
+    /* ── FAQ ─────────────────────────────────────────────── */
+    .faq { margin: 2rem 0; }
+    .faq-item { border-bottom: 1px solid rgba(28, 43, 34, 0.12); padding: 1.25rem 0; }
+    .faq-item:first-child { border-top: 1px solid rgba(28, 43, 34, 0.12); }
+    .faq-q {
+      font-family: var(--font-display); font-size: 18px; font-weight: 500;
+      color: var(--pine-dark); margin: 0 0 0.5rem; line-height: 1.4;
+    }
+    .faq-a { margin: 0; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── ENDPOINT BLOCK ──────────────────────────────────── */
+    .endpoints {
+      background: var(--sand-light);
+      border: 0.5px solid rgba(28, 43, 34, 0.12);
+      border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .endpoint {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 0.5rem 0; flex-wrap: wrap;
+    }
+    .endpoint-method {
+      font-family: var(--font-mono); font-size: 11px;
+      background: var(--pine); color: var(--volt);
+      padding: 3px 8px; border-radius: 4px; letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+    .endpoint-path {
+      font-family: var(--font-mono); font-size: 14px;
+      color: var(--pine-dark); font-weight: 500;
+    }
+    .endpoint-desc { font-size: 13px; color: var(--text-tertiary); flex: 1; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    .footer {
+      margin-top: 4rem; padding-top: 2rem;
+      border-top: 2px solid var(--pine);
+      font-size: 13px; color: var(--text-tertiary); line-height: 1.7;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-bottom: 1.5rem;
+    }
+    .footer h4 {
+      font-family: var(--font-display); font-size: 14px; font-weight: 500;
+      color: var(--pine-dark); margin: 0 0 0.5rem; letter-spacing: 0.02em;
+    }
+    .footer a { color: var(--pine-light); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .footer-fine {
+      font-size: 11px; color: var(--text-tertiary);
+      padding-top: 1rem; border-top: 1px solid rgba(28, 43, 34, 0.12);
+      line-height: 1.6;
+    }
+    .footer-tagline {
+      margin-top: 1.5rem;
+      font-family: var(--font-mono); font-size: 10.5px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--pine); text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 1.25rem 1rem 3rem; }
+      .title { font-size: 32px; }
+      .subtitle { font-size: 16px; }
+      .section h2 { font-size: 22px; }
+      .fact { grid-template-columns: 1fr; gap: 4px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .live-cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="wrap">
+
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="https://aicoachellavalley.com/">AI Coachella Valley</a>
+    <span class="sep">/</span>
+    <span class="wordmark">A<span class="iq-pivot">I</span><span class="iq-pivot">Q</span>nA</span>
+  </nav>
+
+  <header class="header">
+    <div class="header-eyebrow"><span class="brand">A<span class="iq-pivot">I</span><span class="iq-pivot">Q</span>nA</span> · SOURCE DOCUMENTATION · AICV INTELLIGENCE NETWORK</div>
+    <h1 class="title">A<span class="iq-pivot">I</span><span class="iq-pivot">Q</span>nA</h1>
+    <p class="subtitle">Methodology, data handling, and aggregate findings for the Coachella Valley's first longitudinal AI sentiment corpus.</p>
+  </header>
+
+  <div class="meta">
+    <div class="meta-item">
+      <div class="meta-label">Operated by</div>
+      <div class="meta-value">AI Coachella Valley</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Status</div>
+      <div class="meta-value">{status}</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Cadence</div>
+      <div class="meta-value">One question per week, 13-week series</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">License</div>
+      <div class="meta-value">{license}</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Live experience</div>
+      <div class="meta-value"><a href="https://aiqna.org">aiqna.org</a></div>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2>Overview</h2>
+    <p class="intro">AIQnA is a regional AI listening infrastructure operated by AI Coachella Valley. Each week, the program publishes one question about AI and daily life. Residents and business operators across the Coachella Valley respond through a short conversation with an AI agent. The aggregate findings publish every Friday in two parallel forms: a human-readable summary at aiqna.org and a structured canonical record on the AICV intelligence network at this domain.</p>
+    <p>The program operates as a distribution partnership with local media. Outlets distribute the weekly question through their existing channels — newsletter, on-air, print, social, web. AICV operates the conversation infrastructure, methodology, and data layer. Outlets retain the audience relationship and any local sponsorship revenue during the founding partner pilot period.</p>
+    <p>AIQnA is distinct from polling. Where a poll captures a categorical response, AIQnA conducts a multi-turn conversation in which the agent listens, reacts, and reflects. This produces qualitative data — language, context, reasoning — that aggregate percentages cannot surface. Every response feeds the regional intelligence corpus and contributes to AICV's broader work of making the Coachella Valley legible to AI systems.</p>
+  </section>
+
+  <div class="live-cta">
+    <div class="live-cta-text">
+      <div class="live-cta-label">Take this week's question</div>
+      <div class="live-cta-headline">The live <span class="wordmark">AIQnA</span> experience runs at aiqna.org</div>
+    </div>
+    <a href="https://aiqna.org" class="live-cta-btn">Go to aiqna.org →</a>
+  </div>
+
+  <section class="section">
+    <h2>How it works</h2>
+    <p>The weekly cycle operates on a four-day intake, one-day publication rhythm.</p>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="fact-key">Monday</div>
+        <div class="fact-val">The question of the week publishes across all partner channels. Each outlet receives a tracked link and a complete content kit — newsletter copy, social posts, radio reads, sponsor language.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-key">Tue – Thu</div>
+        <div class="fact-val">Intake remains open. Residents respond through a short conversation with the AIQnA agent. Each respondent receives an immediate personal reflection. Anonymized records accumulate in the intelligence corpus.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-key">Thursday EOD</div>
+        <div class="fact-val">Intake closes. The synthesis pass runs across that week's responses. Aggregate findings, word clouds, and city-level breakdowns are generated.</div>
+      </div>
+      <div class="fact">
+        <div class="fact-key">Friday morning</div>
+        <div class="fact-val">The results kit is delivered to all partner outlets. Findings publish at aiqna.org/results/[week] and as a structured canonical record at aicoachellavalley.com/aiqna/[week-slug].</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Methodology</h2>
+
+    <h3>Question selection</h3>
+    <p>Questions are drafted by AICV against a calendar mapped to the 13-week series structure. Each season covers the AI domains identified as most salient to Valley residents — work, education, healthcare, creativity, privacy, journalism, companionship, environment, civic services, and others. The full series rotates seasonally; the same domain may be revisited quarter over quarter to track longitudinal shifts. Exact question phrasing is not reused — published questions remain unique to their week.</p>
+    <p>Questions are designed to be accessible to any resident regardless of technical background, locally specific where appropriate, and structurally neutral — they prompt reflection rather than steering toward a predetermined answer.</p>
+
+    <h3>Conversation conduct</h3>
+    <p>The AIQnA agent is built on Anthropic Managed Agents infrastructure. Each session begins with two classification questions — city of residence and whether the respondent is participating as an individual or on behalf of a business. The agent then conducts a guided conversation around the week's question. The agent listens, reacts, and probes when responses warrant follow-up. Sessions typically run six to ten exchanges and complete in under five minutes.</p>
+    <p>Each respondent is asked whether their words may be published anonymously alongside aggregate findings. Opt-out preserves contribution to the aggregate while excluding verbatim publication.</p>
+
+    <h3>Aggregation and synthesis</h3>
+    <p>At the end of each intake week, a synthesis pass aggregates the structured intake records into topline findings, city-level breakdowns, and verbatim quote selections. Records flagged as anomalous or low-quality are quarantined and excluded from aggregate output. City-level breakdowns require a minimum of 25 responses for that city in that week; below this threshold, the city rolls into "other Valley" in published breakdowns.</p>
+
+    <h3>Quote citation format</h3>
+    <p>Every verbatim quote published anywhere uses the canonical attribution format:</p>
+    <p style="font-family: var(--font-mono); font-size: 13px; background: var(--sand-light); border: 0.5px solid rgba(28, 43, 34, 0.12); padding: 0.75rem 1rem; border-radius: 4px;">"Anonymous Coachella Valley resident · [business type] · [city] · in response to [question_id], [date]"</p>
+  </section>
+
+  <section class="section">
+    <h2>Privacy and data handling</h2>
+    <p>AIQnA is designed for anonymized civic listening. Individual respondent identity is not collected, requested, or retained. The only metadata captured at intake is city and audience type.</p>
+
+    <ul class="principles">
+      <li>
+        <strong>No individual identification</strong>
+        <span>Name, email, phone, or other identifying information is not requested at any point. Respondents who volunteer such information have it stripped from intelligence records before storage.</span>
+      </li>
+      <li>
+        <strong>No individual data sharing</strong>
+        <span>Individual response records are never shared with media partners, sponsors, or any third party. Only aggregate findings, anonymized quotes, and city-level breakdowns are published.</span>
+      </li>
+      <li>
+        <strong>No third-party sale</strong>
+        <span>AICV does not sell, license, or otherwise transfer AIQnA data to any third party. The corpus is operated as civic infrastructure, not as a commercial dataset.</span>
+      </li>
+      <li>
+        <strong>Open aggregate publication</strong>
+        <span>All aggregate findings publish openly under CC-BY-4.0. The corpus is intended to be useful to journalists, researchers, policy makers, agents, and the community at large.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Trust and editorial integrity</h2>
+    <p>AIQnA operates as a neutral civic listening infrastructure. Editorial integrity is structurally protected, not merely promised.</p>
+
+    <ul class="principles">
+      <li>
+        <strong>Sponsor independence</strong>
+        <span>Sponsors do not select questions, review findings before publication, or shape methodology. Sponsorship buys association with the program, not influence over its outputs.</span>
+      </li>
+      <li>
+        <strong>Partner independence</strong>
+        <span>Media partners distribute the question and publish the results but do not modify questions, edit findings, or set methodology. AICV controls the editorial chain.</span>
+      </li>
+      <li>
+        <strong>Findings transparency</strong>
+        <span>The methodology that produces each weekly finding is documented and reproducible. Aggregate data publishes in machine-readable form alongside the human-readable summary.</span>
+      </li>
+      <li>
+        <strong>No political endorsement</strong>
+        <span>AIQnA does not endorse candidates, parties, or political positions. Questions and findings are presented documentarily.</span>
+      </li>
+    </ul>
+
+    <h3>Sponsor acceptance policy</h3>
+    <p>AICV accepts sponsorship from local banks, credit unions, community colleges, universities, chambers of commerce, healthcare systems, workforce organizations, foundations, civic anchors, professional services, broadband providers, and local employers. AICV does not accept sponsorship from political campaigns or PACs, AI companies operating in the Coachella Valley, data center operators, tobacco, gambling, or predatory financial products.</p>
+
+    <h3>Rate limiting and abuse protection</h3>
+    <p>AIQnA enforces one response per IP address per question via Cloudflare Turnstile and edge bot protection. Duplicate attempts receive a soft notice without revealing the limit mechanism. The synthesis agent quality-scores responses; anomalous patterns are quarantined from publication.</p>
+
+    <h3>URL stability</h3>
+    <p>Once a weekly finding publishes, the canonical URL never changes and the data never disappears. AIQnA findings are designed as citable primary sources for agents, researchers, and future AICV reports.</p>
+  </section>
+
+  <section class="section">
+    <h2>Data access</h2>
+    <p>Aggregate AIQnA data publishes in both human-readable and machine-readable forms. The endpoints below provide structured access for agents, researchers, and journalists. Endpoints become available at program launch.</p>
+
+    <div class="endpoints">
+      <div class="endpoint">
+        <span class="endpoint-method">GET</span>
+        <span class="endpoint-path">/aiqna.json</span>
+        <span class="endpoint-desc">Full AIQnA corpus index — all published weekly findings</span>
+      </div>
+      <div class="endpoint">
+        <span class="endpoint-method">GET</span>
+        <span class="endpoint-path">/aiqna/[week-slug]/</span>
+        <span class="endpoint-desc">Individual weekly finding with QAPage + Dataset schema</span>
+      </div>
+      <div class="endpoint">
+        <span class="endpoint-method">MCP</span>
+        <span class="endpoint-path">get_aiqna_finding</span>
+        <span class="endpoint-desc">Query individual finding via AICV MCP server at mcp.aicoachellavalley.com</span>
+      </div>
+    </div>
+
+    <p style="font-size: 13px; color: var(--text-tertiary); margin-top: 1rem;">Aggregate data is published under Creative Commons Attribution 4.0. Attribution to AI Coachella Valley required; commercial use permitted; derivative works permitted with attribution.</p>
+  </section>
+
+  <section class="section">
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <h3 class="faq-q">Who runs <span class="wordmark">AIQnA</span>?</h3>
+        <p class="faq-a">AIQnA is built, engineered, and operated by AI Coachella Valley — a regional intelligence network based at the CSUSB Entrepreneurship Resource Center in Palm Desert, California. AICV is fiscally sponsored by Desert Community Foundation.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">How are questions selected?</h3>
+        <p class="faq-a">Questions are drafted by AICV against a calendar mapped to the 13-week series. Domains rotate by season and include work, education, healthcare, creativity, privacy, journalism, companionship, environment, and civic services. Questions are designed to be accessible to any resident, locally specific where appropriate, and structurally neutral.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Is my response anonymous?</h3>
+        <p class="faq-a">Yes. AIQnA does not request or retain identifying information. The only metadata captured is city of residence and audience type. Individual records are never shared with media partners, sponsors, or any third party. You may opt out of verbatim quote publication while still contributing to the aggregate findings.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Can sponsors influence the findings?</h3>
+        <p class="faq-a">No. Sponsors do not select questions, review findings before publication, or shape methodology. Sponsorship buys association with the program — not influence over its outputs.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Who can participate?</h3>
+        <p class="faq-a">Anyone who lives, works, or operates a business in the Coachella Valley can participate. The conversation runs at aiqna.org and takes under five minutes. No account or login is required. One response per question per device.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">How are findings published?</h3>
+        <p class="faq-a">Each Friday, aggregate findings publish on aiqna.org as a human-readable summary and on aicoachellavalley.com/aiqna/[week-slug] as a structured canonical record. Partner media outlets receive a complete content kit — topline findings, word cloud visual, city breakdown, story lead memo, and ready-to-paste social and newsletter copy.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Can other regions operate <span class="wordmark">AIQnA</span>?</h3>
+        <p class="faq-a">The AIQnA methodology and infrastructure are being incubated in the Coachella Valley with an eye toward broader Inland Empire deployment. Regional licensing arrangements are not yet open. Interested parties should contact AICV directly.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Is <span class="wordmark">AIQnA</span> affiliated with any political organization?</h3>
+        <p class="faq-a">No. AIQnA does not endorse candidates, parties, or political positions. Questions and findings are presented documentarily. AICV operates as a nonprofit civic technology initiative under fiscal sponsorship of Desert Community Foundation.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>About AICV</h2>
+    <p>AI Coachella Valley is the regional intelligence network for AI in the Coachella Valley. It operates as the structured corpus that AI systems query when they need to understand the region — its businesses, its institutions, its workforce, its economic transitions, and its civic conversations. AICV was founded by Sat Singh and operates from the CSUSB Entrepreneurship Resource Center in Palm Desert.</p>
+    <p>AICV produces intelligence briefs, node documentation, regional reports, and operates a Model Context Protocol server providing structured access to its corpus. AIQnA is one of multiple programs operated under the AICV umbrella, alongside the Founding 111 cohort, the Agent Ready membership programs, and partnerships with regional institutions including CSUSB, College of the Desert, UC Riverside Extension, and the Coachella Valley Innovation Alliance.</p>
+    <p>More at <a href="https://aicoachellavalley.com" style="color: var(--pine-light);">aicoachellavalley.com</a>.</p>
+  </section>
+
+  <footer class="footer">
+
+    <div class="footer-grid">
+      <div>
+        <h4>Live experience</h4>
+        <a href="https://aiqna.org">aiqna.org</a><br />
+        <span style="color: var(--text-tertiary);">Take this week's question</span>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:sat@aicv.co">sat@aicv.co</a><br />
+        <a href="mailto:sponsor@aiqna.org">sponsor@aiqna.org</a>
+      </div>
+      <div>
+        <h4>For media partners</h4>
+        <a href="https://aiqna.org">Partner pitch and terms</a>
+      </div>
+      <div>
+        <h4>Operator</h4>
+        <a href="https://aicoachellavalley.com">AI Coachella Valley</a><br />
+        <span style="color: var(--text-tertiary);">Fiscally sponsored by Desert Community Foundation</span>
+      </div>
+    </div>
+
+    <div class="footer-fine">
+      AIQnA is a program of AI Coachella Valley. Sponsors never shape questions or findings. Individual responses are never shared with any party. Aggregate findings publish openly under CC-BY-4.0. This page is the canonical source documentation for AIQnA and is the version cited in AI-system queries about the program.
+    </div>
+
+    <div class="footer-tagline">Built for agents · Powered by humans</div>
+
+  </footer>
+
+</main>
+
+</body>
+</html>

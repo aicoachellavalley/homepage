@@ -1,0 +1,53 @@
+---
+title: "AIQnA — Methodology and Source Documentation"
+description: "Methodology, data handling, and aggregate findings for the Coachella Valley's first longitudinal AI sentiment corpus. Operated by AI Coachella Valley."
+date: "2026-06-02"
+status: "Pilot · launching June 2026"
+cadence: "weekly"
+language: "en"
+license: "CC-BY-4.0"
+type: "methodology"
+canonical: "https://aicoachellavalley.com/aiqna"
+---
+
+## Overview
+
+AIQnA is a regional AI listening infrastructure operated by AI Coachella Valley. Each week, the program publishes one question about AI and daily life. Residents and business operators across the Coachella Valley respond through a short conversation with an AI agent. The aggregate findings publish every Friday in two parallel forms: a human-readable summary at aiqna.org and a structured canonical record on the AICV intelligence network at this domain.
+
+The program operates as a distribution partnership with local media. Outlets distribute the weekly question through their existing channels — newsletter, on-air, print, social, web. AICV operates the conversation infrastructure, methodology, and data layer. Outlets retain the audience relationship and any local sponsorship revenue during the founding partner pilot period.
+
+AIQnA is distinct from polling. Where a poll captures a categorical response, AIQnA conducts a multi-turn conversation in which the agent listens, reacts, and reflects. This produces qualitative data — language, context, reasoning — that aggregate percentages cannot surface. Every response feeds the regional intelligence corpus and contributes to AICV's broader work of making the Coachella Valley legible to AI systems.
+
+## How it works
+
+The weekly cycle operates on a four-day intake, one-day publication rhythm. Monday, the question of the week publishes across all partner channels with a tracked link and a complete content kit. Tuesday through Thursday, intake remains open and residents respond through a short conversation; each respondent receives an immediate personal reflection while anonymized records accumulate in the corpus. Thursday end of day, intake closes and the synthesis pass runs. Friday morning, the results kit is delivered to all partner outlets, and findings publish at aiqna.org/results/[week] and as a structured canonical record at aicoachellavalley.com/aiqna/[week-slug].
+
+## Methodology
+
+Questions are drafted by AICV against a calendar mapped to the 13-week series structure. Each season covers the AI domains identified as most salient to Valley residents — work, education, healthcare, creativity, privacy, journalism, companionship, environment, civic services, and others. The full series rotates seasonally; the same domain may be revisited quarter over quarter to track longitudinal shifts. Exact question phrasing is not reused. Questions are designed to be accessible to any resident regardless of technical background, locally specific where appropriate, and structurally neutral.
+
+The AIQnA agent conducts a guided conversation around the week's question. Each session begins with two classification questions — city of residence and whether the respondent is participating as an individual or on behalf of a business. The agent listens, reacts, and probes when responses warrant follow-up. Sessions typically run six to ten exchanges and complete in under five minutes. Each respondent is asked whether their words may be published anonymously alongside aggregate findings.
+
+At the end of each intake week, a synthesis pass aggregates the structured intake records into topline findings, city-level breakdowns, and verbatim quote selections. Records flagged as anomalous or low-quality are quarantined and excluded from aggregate output. City-level breakdowns require a minimum of 25 responses for that city in that week; below this threshold, the city rolls into "other Valley" in published breakdowns.
+
+Every verbatim quote published anywhere uses the canonical attribution format: "Anonymous Coachella Valley resident · [business type] · [city] · in response to [question_id], [date]".
+
+## Privacy and data handling
+
+AIQnA is designed for anonymized civic listening. Individual respondent identity is not collected, requested, or retained. The only metadata captured at intake is city and audience type. Name, email, phone, or other identifying information is not requested at any point. Individual response records are never shared with media partners, sponsors, or any third party. AICV does not sell, license, or otherwise transfer AIQnA data to any third party. All aggregate findings publish openly under CC-BY-4.0.
+
+## Trust and editorial integrity
+
+AIQnA operates as a neutral civic listening infrastructure. Sponsors do not select questions, review findings before publication, or shape methodology. Media partners distribute the question and publish the results but do not modify questions, edit findings, or set methodology. The methodology that produces each weekly finding is documented and reproducible. AIQnA does not endorse candidates, parties, or political positions.
+
+AICV accepts sponsorship from local banks, credit unions, community colleges, universities, chambers of commerce, healthcare systems, workforce organizations, foundations, civic anchors, professional services, broadband providers, and local employers. AICV does not accept sponsorship from political campaigns or PACs, AI companies operating in the Coachella Valley, data center operators, tobacco, gambling, or predatory financial products.
+
+Once a weekly finding publishes, the canonical URL never changes and the data never disappears. AIQnA findings are designed as citable primary sources for agents, researchers, and future AICV reports.
+
+## Data access
+
+Aggregate AIQnA data publishes in both human-readable and machine-readable forms. The full corpus index is available at /aiqna.json; individual weekly findings publish at /aiqna/[week-slug]/ with QAPage and Dataset schema; and findings are queryable via the AICV MCP server at mcp.aicoachellavalley.com. Aggregate data is published under Creative Commons Attribution 4.0. Attribution to AI Coachella Valley required; commercial use permitted; derivative works permitted with attribution.
+
+## About AICV
+
+AI Coachella Valley is the regional intelligence network for AI in the Coachella Valley. It operates as the structured corpus that AI systems query when they need to understand the region. AICV was founded by Sat Singh and operates from the CSUSB Entrepreneurship Resource Center in Palm Desert. AIQnA is one of multiple programs operated under the AICV umbrella, alongside the Founding 111 cohort, the Agent Ready membership programs, and partnerships with regional institutions. AICV is fiscally sponsored by Desert Community Foundation.

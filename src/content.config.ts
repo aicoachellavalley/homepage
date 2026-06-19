@@ -64,4 +64,30 @@ const reports = defineCollection({
   }),
 });
 
-export const collections = { briefs, nodes, reports };
+const aiqna = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/aiqna' }),
+  schema: z.object({
+    title:       z.string(),
+    description: z.string(),
+    date:        z.string(),
+    status:      z.string(),
+    cadence:     z.enum(['daily', 'weekly', 'monthly']).default('weekly'),
+    language:    z.string().default('en'),
+    license:     z.string().default('CC-BY-4.0'),
+    // type distinguishes the single methodology entry (rendered at /aiqna/)
+    // from weekly findings (rendered at /aiqna/[slug]/).
+    type:        z.enum(['methodology', 'finding']).default('finding'),
+    canonical:   z.string().optional(),
+    // Finding-only display data (a weekly aggregate snapshot). Optional so the
+    // methodology entry validates without them.
+    question_id:     z.string().optional(),
+    question:        z.string().optional(),
+    total_responses: z.number().optional(),
+    results:  z.array(z.object({ label: z.string(), pct: z.number(), accent: z.boolean().default(false) })).optional(),
+    cities:   z.array(z.object({ name: z.string(), pct: z.number() })).optional(),
+    cloud:    z.array(z.object({ term: z.string(), size: z.enum(['xl', 'lg', 'md', 'sm']), accent: z.boolean().default(false) })).optional(),
+    quotes:   z.array(z.object({ text: z.string(), attribution: z.string() })).optional(),
+  }),
+});
+
+export const collections = { briefs, nodes, reports, aiqna };
