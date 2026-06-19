@@ -1,0 +1,354 @@
+---
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('aiqna');
+  // Findings only. The methodology entry is served by index.astro at /aiqna/,
+  // so excluding it here keeps route precedence clean (/aiqna/ vs /aiqna/[slug]/).
+  return entries
+    .filter((entry) => (entry.data.type ?? 'finding') === 'finding')
+    .map((entry) => ({
+      params: { slug: entry.id.replace(/\.mdx$/, '') },
+      props:  { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const {
+  title, description, date, status, license, canonical,
+  question_id, question, total_responses,
+  results = [], cities = [], cloud = [], quotes = [],
+} = entry.data;
+
+const slug = entry.id.replace(/\.mdx$/, '');
+const canonicalUrl = canonical ?? `https://aicoachellavalley.com/aiqna/${slug}/`;
+const jsonUrl = `https://aicoachellavalley.com/aiqna/${slug}.json`;
+const csvUrl  = `https://aicoachellavalley.com/aiqna/${slug}.csv`;
+const licenseUrl = 'https://creativecommons.org/licenses/by/4.0/';
+const isSample = status === 'sample';
+
+const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+
+// Topline answer text, assembled from the aggregate results.
+const answerText =
+  results.map((r: any) => `${r.pct}% ${r.label.toLowerCase()}`).join(', ') +
+  ` across ${total_responses} responses` +
+  (cities.length ? `. Support ranged from ${cities[cities.length - 1].pct}% in ${cities[cities.length - 1].name} to ${cities[0].pct}% in ${cities[0].name}.` : '.');
+
+const qaSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'QAPage',
+  'mainEntity': {
+    '@type': 'Question',
+    'name': question,
+    'text': question,
+    'answerCount': 1,
+    'datePublished': date,
+    'author': { '@type': 'NGO', 'name': 'AI Coachella Valley', 'url': 'https://aicoachellavalley.com' },
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': answerText,
+      'url': canonicalUrl,
+      'datePublished': date,
+      'author': { '@type': 'NGO', 'name': 'AI Coachella Valley', 'url': 'https://aicoachellavalley.com' },
+    },
+  },
+};
+
+const datasetSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  'name': title,
+  'description': description,
+  'url': canonicalUrl,
+  'datePublished': date,
+  'creator': { '@type': 'NGO', 'name': 'AI Coachella Valley', 'url': 'https://aicoachellavalley.com' },
+  'publisher': { '@type': 'NGO', 'name': 'AI Coachella Valley', 'url': 'https://aicoachellavalley.com' },
+  'license': licenseUrl,
+  'isAccessibleForFree': true,
+  'spatialCoverage': { '@type': 'Place', 'name': 'Coachella Valley, California' },
+  'temporalCoverage': date,
+  'measurementTechnique': 'Multi-turn AI conversation (AIQnA), aggregated and quality-filtered',
+  'variableMeasured': results.map((r: any) => r.label),
+  'distribution': [
+    { '@type': 'DataDownload', 'encodingFormat': 'application/json', 'contentUrl': jsonUrl },
+    { '@type': 'DataDownload', 'encodingFormat': 'text/csv', 'contentUrl': csvUrl },
+  ],
+};
+
+const cloudSize: Record<string, string> = { xl: '32px', lg: '24px', md: '18px', sm: '14px' };
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | AIQnA · AI Coachella Valley</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content={date} />
+
+  <link rel="alternate" href="https://aiqna.org" title="AIQnA live experience" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(qaSchema, null, 2)} />
+  <script type="application/ld+json" set:html={JSON.stringify(datasetSchema, null, 2)} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&family=EB+Garamond:ital,wght@1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --volt: #D8FF00;
+      --pine: #1B4332;
+      --pine-light: #2D6A4F;
+      --pine-dark: #122B22;
+      --pine-tint: #C8DDB4;
+      --pine-mist: #E0EDD2;
+      --gunmetal: #1E1E1E;
+      --sand: #FAFAF7;
+      --sand-light: #FFFFFF;
+      --sand-dark: #E8E5DD;
+      --text-primary: var(--gunmetal);
+      --text-secondary: #4A4A4A;
+      --text-tertiary: #888888;
+      --font-display: 'Syne', system-ui, sans-serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'DM Mono', ui-monospace, monospace;
+      --font-italic: 'EB Garamond', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: var(--font-body); color: var(--text-primary);
+      background: var(--sand); line-height: 1.7; font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+    .iq-pivot { color: var(--pine-light); }
+    .iq-pivot-on-dark { color: var(--pine-tint); }
+    .wordmark { font-family: var(--font-body); font-weight: 700; letter-spacing: -0.01em; }
+
+    .crumb {
+      font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);
+      letter-spacing: 0.04em; margin-bottom: 1.5rem; padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(28, 43, 34, 0.12);
+    }
+    .crumb a { color: var(--pine-light); text-decoration: none; }
+    .crumb a:hover { text-decoration: underline; }
+    .crumb .sep { color: var(--text-tertiary); margin: 0 0.5em; }
+
+    .sample-banner {
+      background: var(--volt); color: var(--pine-dark);
+      font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 8px 14px; border-radius: 6px; margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .finding-eyebrow {
+      font-family: var(--font-mono); font-size: 11px; color: var(--pine-light);
+      letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .finding-eyebrow .brand {
+      color: var(--pine-dark); font-weight: 700; text-transform: none;
+      letter-spacing: -0.01em; font-family: var(--font-body); font-size: 13px;
+    }
+    .finding-title {
+      font-family: var(--font-display); font-size: 32px; font-weight: 600;
+      line-height: 1.15; letter-spacing: -0.02em; color: var(--pine-dark);
+      margin: 0 0 0.75rem;
+    }
+    .finding-date {
+      font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2rem;
+    }
+
+    .q-block {
+      background: var(--pine-mist); border-left: 6px solid var(--volt);
+      border-radius: 6px; padding: 1.25rem 1.5rem; margin: 2rem 0;
+    }
+    .q-label {
+      font-family: var(--font-mono); font-size: 10px; color: var(--pine-light);
+      letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; margin-bottom: 6px;
+    }
+    .q-text { font-size: 18px; font-weight: 500; color: var(--pine-dark); line-height: 1.4; }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: 11px; color: var(--pine-light);
+      letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; margin: 2.5rem 0 0.75rem;
+    }
+
+    .stat-row {
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding: 10px 0; border-bottom: 1px solid rgba(28, 43, 34, 0.1);
+    }
+    .stat-label { font-size: 15px; color: var(--pine-dark); font-weight: 500; }
+    .stat-val { font-family: var(--font-body); font-size: 24px; font-weight: 700; color: var(--pine-dark); letter-spacing: -0.015em; }
+    .stat-val.accent { color: var(--pine-light); }
+    .stat-total { padding-top: 12px; }
+    .stat-total .stat-label { color: var(--pine-light); }
+    .stat-total .stat-val { font-size: 18px; color: var(--pine-light); }
+
+    .city { display: grid; grid-template-columns: 110px 1fr 44px; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .city-name { font-size: 14px; color: var(--pine-dark); font-weight: 500; }
+    .city-bar { height: 12px; background: var(--pine-mist); border-radius: 3px; overflow: hidden; }
+    .city-fill { height: 100%; background: var(--pine); }
+    .city-val { color: var(--pine-light); font-family: var(--font-mono); font-size: 12px; text-align: right; font-weight: 600; }
+
+    .cloud {
+      background: var(--pine-mist); border-radius: 6px; padding: 24px 20px;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 10px 18px; line-height: 1.1; margin-top: 0.5rem;
+    }
+    .cloud span { font-family: var(--font-body); font-weight: 700; letter-spacing: -0.01em; color: var(--pine-dark); display: inline-block; }
+    .cloud span.md, .cloud span.sm { font-weight: 500; color: var(--pine-light); }
+    .cloud span.accent { color: var(--pine-dark); background: var(--volt); padding: 2px 8px; border-radius: 3px; }
+
+    .narrative { margin: 2.5rem 0; }
+    .narrative p { margin: 0 0 1rem; color: var(--text-primary); }
+
+    .quote { margin: 1rem 0; padding-left: 14px; border-left: 3px solid var(--volt); }
+    .quote-text { font-family: var(--font-italic); font-style: italic; font-size: 17px; color: var(--pine-dark); line-height: 1.5; margin: 0 0 6px; }
+    .quote-attr { font-family: var(--font-mono); font-size: 11px; color: var(--pine-light); letter-spacing: 0.04em; }
+
+    .downloads { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 0.75rem; }
+    .download-link {
+      font-family: var(--font-mono); font-size: 12px; color: var(--pine-dark);
+      text-decoration: none; background: var(--sand-light);
+      border: 0.5px solid rgba(28, 43, 34, 0.2); border-radius: 6px; padding: 8px 14px;
+    }
+    .download-link:hover { border-color: var(--pine); }
+
+    .footer {
+      margin-top: 3.5rem; padding-top: 2rem; border-top: 2px solid var(--pine);
+      font-size: 13px; color: var(--text-tertiary); line-height: 1.7;
+    }
+    .footer a { color: var(--pine-light); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .footer-tagline {
+      margin-top: 1.5rem; font-family: var(--font-mono); font-size: 10.5px;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--pine); text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 1.25rem 1rem 3rem; }
+      .finding-title { font-size: 24px; }
+      .q-text { font-size: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<main class="wrap">
+
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="https://aicoachellavalley.com/">AI Coachella Valley</a>
+    <span class="sep">/</span>
+    <a href="/aiqna"><span class="wordmark">A<span class="iq-pivot">I</span><span class="iq-pivot">Q</span>nA</span></a>
+    <span class="sep">/</span>
+    <span>{question_id}</span>
+  </nav>
+
+  {isSample && (
+    <div class="sample-banner">Sample data — illustrative finding for template validation, not real responses</div>
+  )}
+
+  <div class="finding-eyebrow"><span class="brand">A<span class="iq-pivot">I</span><span class="iq-pivot">Q</span>nA</span> · WEEKLY FINDING · {question_id}</div>
+  <h1 class="finding-title">{title}</h1>
+  <div class="finding-date">Published {formattedDate} · {total_responses} responses</div>
+
+  <div class="q-block">
+    <div class="q-label">The question</div>
+    <div class="q-text">{question}</div>
+  </div>
+
+  <div class="section-label">Where the Valley landed</div>
+  {results.map((r: any) => (
+    <div class="stat-row">
+      <span class="stat-label">{r.label}</span>
+      <span class={r.accent ? 'stat-val accent' : 'stat-val'}>{r.pct}%</span>
+    </div>
+  ))}
+  <div class="stat-row stat-total">
+    <span class="stat-label">Total responses</span>
+    <span class="stat-val">{total_responses}</span>
+  </div>
+
+  {cities.length > 0 && (
+    <>
+      <div class="section-label">By city · % right call</div>
+      {cities.map((c: any) => (
+        <div class="city">
+          <span class="city-name">{c.name}</span>
+          <div class="city-bar"><div class="city-fill" style={`width: ${c.pct}%;`}></div></div>
+          <span class="city-val">{c.pct}%</span>
+        </div>
+      ))}
+    </>
+  )}
+
+  {cloud.length > 0 && (
+    <>
+      <div class="section-label">What people said</div>
+      <div class="cloud">
+        {cloud.map((w: any) => (
+          <span class={`${w.size}${w.accent ? ' accent' : ''}`} style={`font-size: ${cloudSize[w.size]};`}>{w.term}</span>
+        ))}
+      </div>
+    </>
+  )}
+
+  <div class="narrative">
+    <div class="section-label">Reading</div>
+    <Content />
+  </div>
+
+  {quotes.length > 0 && (
+    <>
+      <div class="section-label">In their words</div>
+      {quotes.map((q: any) => (
+        <div class="quote">
+          <p class="quote-text">{q.text}</p>
+          <div class="quote-attr">{q.attribution}</div>
+        </div>
+      ))}
+    </>
+  )}
+
+  <div class="section-label">Data access</div>
+  <p style="font-size: 14px; color: var(--text-secondary); margin: 0 0 0.5rem;">This finding publishes openly under Creative Commons Attribution 4.0. Attribution to AI Coachella Valley required.</p>
+  <div class="downloads">
+    <a class="download-link" href={`/aiqna/${slug}.json`}>↓ JSON</a>
+    <a class="download-link" href={`/aiqna/${slug}.csv`}>↓ CSV</a>
+    <a class="download-link" href="/aiqna">Methodology</a>
+    <a class="download-link" href="https://aiqna.org">Live experience ↗</a>
+  </div>
+
+  <footer class="footer">
+    <p>
+      <span class="wordmark">A<span class="iq-pivot">I</span><span class="iq-pivot">Q</span>nA</span> is a program of <a href="https://aicoachellavalley.com">AI Coachella Valley</a>.
+      Sponsors never shape questions or findings. Individual responses are never shared with any party.
+      Aggregate findings publish openly under {license}. The canonical URL for this finding never changes.
+      Full methodology and source documentation at <a href="/aiqna">aicoachellavalley.com/aiqna</a>.
+    </p>
+    <div class="footer-tagline">Built for agents · Powered by humans</div>
+  </footer>
+
+</main>
+
+</body>
+</html>
