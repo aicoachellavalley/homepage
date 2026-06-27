@@ -2,7 +2,7 @@
 // build-static-json.js
 // Generates public/nodes.json, public/briefs.json, public/snapshots.json,
 // and public/reports.json from content files in the com repo.
-// Run from ~/Projects/com: node scripts/build-static-json.js
+// Run from ~/AICV/core/com: node scripts/build-static-json.js
 
 const fs = require('fs');
 const path = require('path');

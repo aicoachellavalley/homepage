@@ -20,7 +20,7 @@ Full schema: AICV Claude Project → CLAUDE.md → "Also Noted"
 
 ## After filing any brief
 
-1. Run: node scripts/build-static-json.cjs from ~/Projects/com/
+1. Run: node scripts/build-static-json.cjs from ~/AICV/core/com/
 2. Commit: feat: add [date] [slug] brief
 3. Push to main — auto-deploys
 4. Add 📡 journal line item to ~/sunshine-fm/journal/index.html

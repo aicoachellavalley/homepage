@@ -35,21 +35,21 @@ break routing.
 
 ## After adding any node
 
-1. Run: node scripts/build-static-json.cjs from ~/Projects/com/
+1. Run: node scripts/build-static-json.cjs from ~/AICV/core/com/
    Verify: node count incremented, zero validation warnings,
    domain and funnel_stages present on the new node in nodes.json
 2. Update org graph — add to ZONE_MAP, SUB_MAP, and STATIC_LINKS
-   in ~/Projects/org/index.html (minimum one edge required)
+   in ~/AICV/core/org/index.html (minimum one edge required)
 3. If valley-wide node: add slug to VW_ORDER array
 4. Update reciprocal related: frontmatter on all linked nodes
 5. Commit com changes: feat: add [location] node
 6. Commit org changes: feat: add [node-slug] to graph lookup tables
-7. Deploy both sites (see ~/Projects/com/CLAUDE.md)
+7. Deploy both sites (see ~/AICV/core/com/CLAUDE.md)
 8. Add 📓 journal line item to ~/sunshine-fm/journal/index.html
 9. Update STATE.md node count
 
 ## MDX rules
 
-Same as briefs — see ~/Projects/com/src/content/briefs/CLAUDE.md
+Same as briefs — see ~/AICV/core/com/src/content/briefs/CLAUDE.md
 
 Intake prompt for new nodes: aicv-playbook/prompts/node-intake-v0.md

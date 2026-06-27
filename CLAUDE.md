@@ -3,14 +3,14 @@
 ## Canonical workflow reference
 
 The canonical schema, voice rules, and workflow documentation
-for AICV live at ~/Projects/aicv-playbook/. When working on AICV
+for AICV live at ~/AICV/core/playbook/. When working on AICV
 content here, that's where the rules come from. Live content
 lives here in src/content/; rules live there.
 
 ### Stack
 Astro + Cloudflare Pages. Mintlify as a hosted doc site was retired
 April 2026. The former docs/ folder has been restructured into
-~/Projects/aicv-playbook/ as the canonical workflow/schema store
+~/AICV/core/playbook/ as the canonical workflow/schema store
 (content-free).
 
 ### CRITICAL: Source of Truth
@@ -47,14 +47,14 @@ scripts/              — Build scripts
 
 Build static JSON (run after every content session):
   node scripts/build-static-json.cjs
-  from ~/Projects/com/
+  from ~/AICV/core/com/
 
 Deploy:
-  cd ~/Projects/com && npx wrangler pages deploy dist 
+  cd ~/AICV/core/com && npx wrangler pages deploy dist 
   --project-name aicoachellavalley-homepage
 
 Org site deploy (required after every node addition):
-  cd ~/Projects/org && npx wrangler pages deploy . 
+  cd ~/AICV/core/org && npx wrangler pages deploy . 
   --project-name aicoachellavalley-org
 
 ## Companion files (in Claude Project)
