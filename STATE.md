@@ -2,6 +2,12 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-06-30 — Homepage stats bar made status-aware (commit `bf0bd3e`)
+
+`scripts/generate-stats.mjs` (the `prebuild` step that writes `stats.json`, which the homepage bar reads at build time) now counts by frontmatter status — `nodes` = `status: live`, `reports` = `status: published` — instead of raw `.mdx` file count. `briefs`/`snapshots` have no status field and stay raw counts. Output is identical today (81/163/8/3 — zero drafts/non-live), so this is a drift guard, not a number change: a future `draft` report or `planned`/`under construction` node can no longer silently inflate the bar above what its "Published" / "Regional Nodes" labels claim. Confirm the bar anytime with `curl -s https://aicoachellavalley.com/stats.json` — check the counts and `generated_at` (should be ≥ the last content deploy).
+
+---
+
 ## 2026-06-30 — Social cards shipped to Base layout; two items parked (hw-card non-bug, detail-page cards)
 
 **Shipped — `feat(seo): og:image + twitter cards in Base.astro` (commit `81558bc`).** Base-using pages (homepage, get-agent-ready, minimum-viable-agent, founding-111, 404, and the index/listing pages) emitted no social card unless they passed `ogImage` — only the homepage did, so most pages shared as naked links. Base now sets a default `ogImage`, expands it to an absolute URL via `new URL(ogImage, Astro.site)` (no hardcoded domain — uses the `site` config), and always emits `og:image` + `og:type` / `og:site_name` / `og:image:alt` + the `twitter:*` card block. Backward-compatible: an absolute `ogImage` (the homepage's) passes through `new URL()` unchanged. High-effort `/code-review`: no blockers; low findings folded into the follow-up below.
