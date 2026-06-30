@@ -11,11 +11,13 @@ const {
   title,
   description = 'AI Coachella Valley (AICV) is the structured intelligence layer AI uses to evaluate the Coachella Valley.',
   canonicalUrl,
-  ogImage,
+  ogImage = '/learn-to-get-agent-ready-blueprint.png',  // site-wide default; per-page prop overrides
   schema
 } = Astro.props;
 
 const canonical = canonicalUrl ?? Astro.url.href;
+// expand short path → absolute, using the `site` from astro.config
+const ogImageAbsolute = new URL(ogImage, Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -30,7 +32,15 @@ const canonical = canonicalUrl ?? Astro.url.href;
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
-  {ogImage && <meta property="og:image" content={ogImage} />}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AI Coachella Valley" />
+  <meta property="og:image" content={ogImageAbsolute} />
+  <meta property="og:image:alt" content={title} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageAbsolute} />
 
   {schema && (
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
