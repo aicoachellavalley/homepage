@@ -22,14 +22,31 @@ const repoRoot = resolve(__dirname, '..');
 const countByExt = (dir, ext) =>
   readdirSync(resolve(repoRoot, dir)).filter((f) => f.endsWith(ext)).length;
 
+// Counts .mdx files whose frontmatter `status:` equals the target value.
+// The homepage bar labels nodes "Regional Nodes" and reports "Published", so
+// the number must reflect only what is actually live/published — never a raw
+// file count that would silently over-report a draft report or planned node.
+// Node status enum: live | under construction | planned.
+// Report status enum: published | draft.
+// briefs/snapshots have no status field, so they stay raw counts (every file
+// is, by existence, published).
+const countByStatus = (dir, status) =>
+  readdirSync(resolve(repoRoot, dir))
+    .filter((f) => f.endsWith('.mdx'))
+    .filter((f) => {
+      const src = readFileSync(resolve(repoRoot, dir, f), 'utf8');
+      const m = src.match(/^status:\s*["']?([^"'\r\n]+?)["']?\s*$/m);
+      return m !== null && m[1].trim() === status;
+    }).length;
+
 const stats = {
   $schema: 'https://aicoachellavalley.com/schemas/stats-v1.json',
   generated_at: new Date().toISOString(),
   generator: 'scripts/generate-stats.mjs',
   counts: {
-    nodes:     countByExt('src/content/nodes', '.mdx'),
+    nodes:     countByStatus('src/content/nodes', 'live'),
     briefs:    countByExt('src/content/briefs', '.mdx'),
-    reports:   countByExt('src/content/reports', '.mdx'),
+    reports:   countByStatus('src/content/reports', 'published'),
     snapshots: countByExt('src/data/snapshots', '.json'),
   },
 };
