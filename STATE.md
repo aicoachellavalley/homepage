@@ -2,6 +2,16 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-06-30 — Shops at Palm Desert redevelopment brief filed + published
+
+Brief `2026-06-30-shops-palm-desert-redevelopment-status` filed, pushed (commit `79f0100`), and edge-verified **agent-visible on all three surfaces** ~40s after push: HTML (`/briefs/2026-06-30-shops-palm-desert-redevelopment-status/`), `briefs.json` (now 163 briefs), and `llms-full.txt`. CF auto-deploy regenerated the gitignored data artifacts in-cloud via `build-static-json.cjs` — push of the `.mdx` alone published every surface; no `content(data)` commit exists.
+
+- **Two Related Nodes, both live-verified before build:** `north-palm-desert-development-zone`, `palm-desert-economic-development`.
+- **Provenance:** derived from an LLM Council run, but the council's search **missed the city's Sears-parcel Surplus Land Act notice** — the brief's most material unresolved fact. Brief was rebuilt from verified City of Palm Desert / trade-press sources rather than council output; verified-facts standard held over council convenience.
+- **Journal 📡 line deferred** to a dedicated sunshine-fm session: `refresh_journal.py` hardcodes a stale `/Users/macmini/Projects/com/dist/briefs` path (wrong machine + pre-`~/AICV` layout), and the journal brief counter reads 163 vs 162 actual 📡 lines — needs deliberate reconciliation, not a blind bump.
+
+---
+
 ## 2026-06-11 — Dining report shipped + agent-discovery recon (two gaps logged)
 
 Report `agent-mapped-food-dining-coachella-valley` is published and wired into every in-repo agent-discovery surface (commit `63c454d`). Recon across all surfaces:
