@@ -49,9 +49,51 @@ const schemaGraph = {
     },
     {
       "@type": "Service",
+      "@id": "https://aicoachellavalley.com/get-agent-ready/#service-preview",
+      "name": "Agent Preview",
+      "description": "A free, stateless diagnostic showing how an AI agent reads a business today. Nothing is stored. No agent is built — Agent Preview is the free look before an entity joins the network.",
+      "provider": { "@id": "https://aicoachellavalley.com/#organization" },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Coachella Valley, California"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Agent Preview",
+          "price": "0.00",
+          "priceCurrency": "USD",
+          "description": "Free, stateless agent-readiness diagnostic. No account, no cost, nothing stored.",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://aicoachellavalley.com/get-agent-ready/#service-agent-ready",
+      "name": "Agent Ready",
+      "description": "One-time build of an entity's Minimum Viable Agent (MVA) on the AICV Network — an agent-readable, citable profile, discoverable and citable from day one. No annual membership, no setup fee.",
+      "provider": { "@id": "https://aicoachellavalley.com/#organization" },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Coachella Valley, California"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Agent Ready — One-Time Build",
+          "price": "500.00",
+          "priceCurrency": "USD",
+          "description": "One-time fee to build the entity's MVA on the network. No annual membership, no setup fee.",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
       "@id": "https://aicoachellavalley.com/get-agent-ready/#service-ready",
       "name": "Agent Ready Business",
-      "description": "Annual membership in the AICV Network for valley businesses that need to be legible to the agent layer. Includes combined AIO + Cloudflare agent-readiness diagnostic, canonical node built to Tier 4 infrastructure standard, MCP routing configuration, and agent-to-agent concierge access.",
+      "description": "Annual membership in the AICV Network for valley businesses that need to be legible to the agent layer. Includes combined Cloudflare agent-readiness diagnostic, canonical MVA built to Tier 4 infrastructure standard, MCP routing configuration, and agent-to-agent concierge access.",
       "provider": { "@id": "https://aicoachellavalley.com/#organization" },
       "areaServed": {
         "@type": "Place",
@@ -63,7 +105,7 @@ const schemaGraph = {
           "name": "Agent Ready Business — Deployment Fee",
           "price": "1000.00",
           "priceCurrency": "USD",
-          "description": "One-time Deployment Fee covering diagnostic, node build, and MCP integration.",
+          "description": "One-time Deployment Fee covering diagnostic, MVA build, and MCP integration.",
           "availability": "https://schema.org/InStock"
         },
         {
@@ -99,7 +141,7 @@ const schemaGraph = {
           "name": "Agent Ready Premium — Deployment Fee",
           "price": "5000.00",
           "priceCurrency": "USD",
-          "description": "One-time Deployment Fee covering diagnostic, node build, MCP integration, Agentic Review, and portal build.",
+          "description": "One-time Deployment Fee covering diagnostic, MVA build, MCP integration, Agentic Review, and portal build.",
           "availability": "https://schema.org/InStock"
         },
         {
@@ -259,7 +301,7 @@ const schemaGraph = {
         "name": "Coachella Valley, California"
       },
       "image": "https://aicoachellavalley.com/logo.png",
-      "priceRange": "$1,000 - $15,000+",
+      "priceRange": "$0 - $15,000+",
       "email": "sat@aicv.co",
       "url": "https://aicoachellavalley.com/"
     }
@@ -409,7 +451,7 @@ const schemaGraph = {
       <p class="gar-v2-about-h">How is this different from every other AI visibility tool?</p>
     </div>
     <div class="gar-v2-why-bottom">
-      <p class="gar-v2-body">Two reasons. First, audience. Every other AIO tool scores your site against generic agent-readiness. AICV's tool scores you against agent-readiness for a specific audience — the newly liquid tech wealth migrating from SF and LA, asking their agents about the Valley as they consider their next chapter. Second, methodology. AICV's diagnostic sits on top of a multi-part proprietary scoring model: the AICV LLM Council powered by Anthropic's Claude, AICV's own AIO tool, and Cloudflare's Agent Readiness Score. We applied it to aicoachellavalley.com first — and went from a low-20s score to Level 5 Agent-Native classification on Cloudflare's scanner. That same methodology is what your node inherits when you join the network. As of Google I/O 2026, the model also reflects Google's newly-published Lighthouse Agentic Browsing standard — see Under the Hood below.</p>
+      <p class="gar-v2-body">Two reasons. First, audience. Every other agent-readiness tool scores your site against generic criteria. AICV's tool scores you against agent-readiness for a specific audience: agents with capital — the assistants doing the looking for the founders and newly-liquid operators now eyeing the Valley. Second, methodology. The LLM Council — human editorial review by our panel — lives in Agent Ready Premium. The free preview doesn't touch it: it runs on Cloudflare's Agent Readiness Score and Google's Lighthouse agentic-browsing checks, both independently verifiable. We applied that same foundation to aicoachellavalley.com first — and went from a low-20s score to Level 5 Agent-Native classification on Cloudflare's scanner. That same foundation is what your MVA inherits when you join the network. See Under the Hood below.</p>
       <div class="gar-v2-why-screenshot-placeholder">
         <img
           src="/cloudflare-agent-readiness-score.png"
@@ -462,12 +504,12 @@ const schemaGraph = {
   <div class="gar-v2-inner">
     <div class="gar-v2-eyebrow">WHAT HAPPENS WHEN YOU JOIN AICV</div>
     <p class="gar-v2-about-h">You don't change your website. Let the network do the work.</p>
-    <p class="gar-v2-body">Kickoff call → AIO diagnostic → node &amp; MVA build → network inclusion → ongoing updates. Two weeks from kickoff to live.</p>
+    <p class="gar-v2-body">Kickoff call → AIO diagnostic → node &amp; MVA build → network inclusion → ongoing updates.</p>
     <div class="gar-v2-hw-cards">
       <div class="gar-v2-hw-card">
         <div class="gar-v2-hw-step">STEP 1</div>
         <p class="gar-v2-hw-title">Your agent goes live</p>
-        <p class="gar-v2-hw-body">Two weeks from kickoff. One short conversation. Your business shows up on the AICV network with an agent answering on your behalf — to other agents, around the clock.</p>
+        <p class="gar-v2-hw-body">One short conversation. Your business shows up on the AICV network with an agent answering on your behalf — to other agents, around the clock.</p>
       </div>
       <div class="gar-v2-hw-arrow">→</div>
       <div class="gar-v2-hw-card">
@@ -489,8 +531,8 @@ const schemaGraph = {
 <section class="gar-v2-tiers" id="tiers">
   <div class="gar-v2-inner">
   <div class="gar-v2-eyebrow">CHOOSE YOUR FUTURE</div>
-  <h2 class="gar-v2-tiers-h">Two Agentic Pathways</h2>
-  <p class="gar-v2-body">Both tiers deliver a <a href="/minimum-viable-agent/">Minimum Viable Agent (MVA)</a> for your entity on the AICV network — Business is the substrate, Premium adds the editorial and monitoring layer.</p>
+  <h2 class="gar-v2-tiers-h">Start free. Build when you're ready.</h2>
+  <p class="gar-v2-body">Agent Preview shows how an agent reads your business today — free. When you want more than a look, the paid tiers build your agent on the network: Agent Ready gets you live, Business and Premium go deeper as you need them.</p>
 
   <div class="gar-v2-booking-strip">
     <div class="gar-v2-booking-text">
@@ -501,10 +543,39 @@ const schemaGraph = {
   </div>
   
   <div class="gar-v2-tier-grid">
-    <!-- TIER 1: Agent Ready Business -->
+    <!-- TIER 0: Agent Preview -->
+    <div class="gar-v2-tier-card">
+      <div class="gar-v2-tier-body">
+        <div class="gar-v2-tier-eyebrow">SEE</div>
+        <div class="gar-v2-tier-name">Agent Preview</div>
+        <p class="gar-v2-tier-desc">See how an agent reads your business right now — a free look before you build anything.</p>
+      </div>
+      <div class="gar-v2-tier-divider"></div>
+      <div class="gar-v2-tier-price-block">
+        <div class="gar-v2-tier-price-main">Free</div>
+      </div>
+      <a href="#diagnostic" class="gar-v2-tier-cta">See how an agent reads you →</a>
+    </div>
+
+    <!-- TIER 1: Agent Ready -->
+    <div class="gar-v2-tier-card">
+      <div class="gar-v2-tier-body">
+        <div class="gar-v2-tier-eyebrow">GET BUILT</div>
+        <div class="gar-v2-tier-name">Agent Ready</div>
+        <p class="gar-v2-tier-desc">We build your agent — your MVA on the AICV network, discoverable and citable.</p>
+      </div>
+      <div class="gar-v2-tier-divider"></div>
+      <div class="gar-v2-tier-price-block">
+        <div class="gar-v2-tier-price-main">$500 <span class="gar-v2-tier-price-cadence">one-time</span></div>
+        <div class="gar-v2-tier-price-setup"><em>no setup fee</em></div>
+      </div>
+      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Get Agent Ready →</a>
+    </div>
+
+    <!-- TIER 2: Agent Ready Business -->
     <div class="gar-v2-tier-card gar-v2-tier-ready">
       <div class="gar-v2-tier-body">
-        <div class="gar-v2-tier-eyebrow">GET FOUND</div>
+        <div class="gar-v2-tier-eyebrow">GET SERVICED</div>
         <div class="gar-v2-tier-name">Agent Ready Business</div>
         <p class="gar-v2-tier-desc">Your agent on the AICV network — discoverable today, citable today, transactable when you're ready.</p>
         <details class="gar-v2-tier-disclosure">
@@ -513,7 +584,7 @@ const schemaGraph = {
             <span class="gar-v2-tier-disclosure-chevron" aria-hidden="true">↓</span>
           </summary>
           <ul class="gar-v2-tier-bullets">
-            <li>Your node on the AICV network IS your agent — answers questions from other agents, cites your record, available 24/7</li>
+            <li>Your MVA on the AICV network IS your agent — answers questions from other agents, cites your record, available 24/7</li>
             <li>A network growing more citable, more authoritative, more agent-readable every day</li>
             <li>Discoverable today by the agents your customers, prospects, and the SF/LA founder cohort AICV speaks to already use</li>
             <li>Positioned for agent-to-agent transactions as the standards mature</li>
@@ -528,10 +599,10 @@ const schemaGraph = {
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Join the Network →</a>
     </div>
 
-    <!-- TIER 2: Agent Ready Premium -->
+    <!-- TIER 3: Agent Ready Premium -->
     <div class="gar-v2-tier-card gar-v2-tier-reviewed">
       <div class="gar-v2-tier-body">
-        <div class="gar-v2-tier-eyebrow">GO DEEPER</div>
+        <div class="gar-v2-tier-eyebrow">GET CURATED</div>
         <div class="gar-v2-tier-name">Agent Ready Premium</div>
         <p class="gar-v2-tier-desc">For entities ready to be the answer when founders ask their AI about the Valley.</p>
         <p class="gar-v2-tier-includes">Everything in Agent Ready Business, PLUS:</p>
@@ -594,7 +665,7 @@ const schemaGraph = {
   <div class="gar-v2-inner">
     <div class="gar-v2-eyebrow">UNDER THE HOOD</div>
     <p class="gar-v2-about-h">AICV operates at top-tier agent-readable infrastructure.</p>
-    <p class="gar-v2-about-body">For the technically curious or the procurement team vetting the claim — AICV scores 75/100 at Level 5 Agent-Native on Cloudflare's Agent Readiness Score (verifiable at <a href="https://isitagentready.com" target="_blank" rel="noopener noreferrer">isitagentready.com</a>), Grade A on our own AICV AIO tool, and a full pass on Google's Lighthouse Agentic Browsing audit — the deterministic agent-readiness standard published with Lighthouse 13.3 (<a href="https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring" target="_blank" rel="noopener noreferrer">Chrome for Developers documentation</a>). The network is built on Cloudflare's edge infrastructure and powered by Anthropic's Claude. We publish RFC 9727 linksets, MCP server cards, and .well-known discovery endpoints. Your entity inherits this infrastructure without retrofitting your site.</p>
+    <p class="gar-v2-about-body">For the technically curious or the procurement team vetting the claim — AICV scores 75/100 at Level 5 Agent-Native on Cloudflare's Agent Readiness Score (verifiable at <a href="https://isitagentready.com" target="_blank" rel="noopener noreferrer">isitagentready.com</a>) and passes Google's Lighthouse agentic-browsing checks — the deterministic audit category introduced in Lighthouse 13.3 (<a href="https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring" target="_blank" rel="noopener noreferrer">Chrome for Developers documentation</a>). The network is built on Cloudflare's edge infrastructure and powered by Anthropic's Claude. We publish RFC 9727 linksets, MCP server cards, and .well-known discovery endpoints. Your entity inherits this infrastructure without retrofitting your site.</p>
   </div>
 </section>
 
