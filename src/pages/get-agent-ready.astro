@@ -367,7 +367,7 @@ const schemaGraph = {
       <p class="gr-tool-sub">See how Claude, ChatGPT, Perplexity, or Gemini read — or miss — your business right now. Plain English.</p>
     
     <div class="aio-card">
-    <label class="aio-input-label" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
+    <label class="aio-input-label gr-sr-only" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
     <form
       id="aio-analyzer"
       toolname="analyze_agent_readiness"
@@ -376,7 +376,7 @@ const schemaGraph = {
       onsubmit="runAnalysis(event); return false;"
     >
     <div class="aio-row">
-      <input type="url" id="urlInput" name="url" class="aio-input" placeholder="yourrestaurant.com or https://yourbusiness.com" autocomplete="off" autocapitalize="off" toolparamdescription="Public website URL to analyze. Must include http:// or https://." required>
+      <input type="url" id="urlInput" name="url" class="aio-input" placeholder="yourbusiness.com" autocomplete="off" autocapitalize="off" toolparamdescription="Public website URL to analyze. Must include http:// or https://." required>
       <button type="submit" class="aio-submit" id="analyzeBtn" aria-label="Analyze website">Analyze →</button>
     </div>
     </form>
@@ -453,6 +453,7 @@ const schemaGraph = {
       <div class="gar-v2-tier-divider"></div>
       <div class="gar-v2-tier-price-block">
         <div class="gar-v2-tier-price-main">Free</div>
+        <div class="gar-v2-tier-price-setup"><em>no cost · no signup</em></div>
       </div>
       <a href="#diagnostic" class="gar-v2-tier-cta">See how an agent reads you →</a>
     </div>
@@ -2632,6 +2633,9 @@ const schemaGraph = {
   .gr-tool .aio-card { background: transparent; border: none; border-radius: 0; padding: 0; margin: 0; }
   .gr-tool .aio-callout-item { color: var(--pine-light); }
   .gr-tool .aio-callout-divider { color: var(--pine-light); opacity: .5; }
+  .gr-tool { scroll-margin-top: 96px; }
+  .gr-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
   /* Tiers: 4 compact flat cards */
   .gar-v2-tiers { background: var(--pine-mist); font-family: 'DM Sans', sans-serif; }
@@ -2642,7 +2646,9 @@ const schemaGraph = {
   .gar-v2-tier-name { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1.15rem; color: var(--pine-dark); }
   .gar-v2-tier-desc { font-size: .88rem; line-height: 1.55; color: var(--pine); }
   .gar-v2-tier-price-main { font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--pine-dark); }
-  .gar-v2-tier-cta { background: var(--pine); color: #fff; border: none; }
+  /* Equal button height so 1-line ("Join Premium") and 2-line CTAs share a grid row,
+     keeping price + CTA baselines aligned across all four cards. */
+  .gar-v2-tier-cta { background: var(--pine); color: #fff; border: none; min-height: 82px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center; }
   .gar-v2-tier-cta:hover { background: var(--pine-dark); }
   .gar-v2-booking-btn { background: var(--pine); color: #fff; }
   .gr-cta-volt { background: var(--volt); color: var(--pine-dark); font-weight: 600; }
@@ -2681,6 +2687,23 @@ const schemaGraph = {
     .gr-fold { padding: 48px 0 56px; }
   }
 </style>
+
+<script is:inline>
+  /* Behavior only — focus the diagnostic input when a CTA jumps to #diagnostic.
+     Does not touch runAnalysis or the tool form wiring. */
+  (function () {
+    var focusTool = function () {
+      var i = document.getElementById('urlInput');
+      if (i) { try { i.focus({ preventScroll: true }); } catch (e) { i.focus(); } }
+    };
+    document.querySelectorAll('a[href="#diagnostic"]').forEach(function (a) {
+      a.addEventListener('click', function () { setTimeout(focusTool, 500); });
+    });
+    window.addEventListener('hashchange', function () {
+      if (location.hash === '#diagnostic') { setTimeout(focusTool, 500); }
+    });
+  })();
+</script>
 
 <script is:inline>
   const WORKER_BASE = 'https://aicv-api.sunshinefm.workers.dev';
