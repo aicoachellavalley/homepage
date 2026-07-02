@@ -392,23 +392,13 @@ const schemaGraph = {
       <div class="loading-txt">Analyzing your site the way AI systems would…</div>
       <div class="loading-step" id="loadingStep">Checking crawler access…</div>
     </div>
+  </div>
+
+    </div>
+  </div>
+  <div class="gr-wrap gr-results-wrap">
     <div class="aio-results" id="aioResults">
-      <div class="result-top">
-        <div class="score-block">
-          <div class="score-grade" id="scoreGrade">—</div>
-          <div class="score-num" id="scoreNum">—</div>
-          <div class="score-bar-wrap">
-            <div class="score-bar-track">
-              <div class="score-bar-fill" id="scoreBarFill"></div>
-              <div class="score-bar-marker" id="scoreBarMarker"></div>
-            </div>
-            <div class="score-bar-labels"><span>0</span><span>100</span></div>
-          </div>
-          <div class="score-tag">AIO Visibility Grade</div>
-        </div>
-        <div class="verdict" id="verdictText"></div>
-      </div>
-      <div class="result-checks" id="resultChecks"></div>
+      <div class="verdict" id="verdictText"></div>
       <div id="fixesWrap"></div>
       <button class="aio-reset" aria-label="Analyze another website" onclick="resetTool()">← Analyze another site</button>
       <div class="copy-btns">
@@ -417,9 +407,6 @@ const schemaGraph = {
         <button class="aio-copy" aria-label="Copy results as plain text" onclick="copyReport('text')">Copy Text</button>
       </div>
       <div class="aio-post-results">A diagnostic tells you what AI sees today. It doesn't change what AI reads tomorrow. That's what the Network does. Keep scrolling.</div>
-    </div>
-  </div>
-
     </div>
   </div>
 </section>
@@ -604,11 +591,11 @@ const schemaGraph = {
     <button class="tos-close" onclick="document.getElementById('tosModal').classList.remove('on')" aria-label="Close">✕</button>
     <div class="tos-header">
       <div class="tos-label">AI Coachella Valley</div>
-      <h2 class="tos-title">AIO Tool — Terms of Use</h2>
+      <h2 class="tos-title">Agent-Readiness Review — Terms of Use</h2>
       <div class="tos-date">Last updated: March 6, 2026</div>
     </div>
     <div class="tos-body">
-      <p>The AICV AIO Visibility Tool is a free, experimental diagnostic provided by AI Coachella Valley, a fiscally sponsored project of the Desert Community Foundation, operating in Riverside County, California.</p>
+      <p>The AICV Agent-Readiness Review is a free, experimental diagnostic provided by AI Coachella Valley, a fiscally sponsored project of the Desert Community Foundation, operating in Riverside County, California.</p>
 
       <h3>No Account. No Cost. No Data Stored.</h3>
       <p>This tool requires no registration, login, or payment. URLs you submit are processed in real time and are not stored, logged, or retained by AICV. We do not collect personal information through this tool.</p>
@@ -971,109 +958,18 @@ const schemaGraph = {
   .aio-results { display: none; margin-top: 2.25rem; padding-top: 2.25rem; border-top: 1px solid rgba(232,226,208,0.08); }
   .aio-results.on { display: block; background: var(--sand-light); border-radius: 2px; padding: 2rem; margin-top: 1.5rem; }
 
-  .result-top {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 3rem;
-    margin-bottom: 1.75rem;
-    align-items: center;
-  }
+  /* Score/grade/gauge styles removed — the tool no longer renders a verdict. */
 
-  .score-block {
-    min-width: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .score-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 5rem;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.05em;
-  }
-  .score-num.hi { color: var(--success); }
-  .score-num.mid { color: var(--warning); }
-  .score-num.lo { color: var(--danger); }
-
-  .score-grade {
-    font-family: 'Syne', sans-serif;
-    font-size: 5.5rem;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.05em;
-  }
-
-  .score-bar-wrap { width: 100%; }
-  .score-bar-track {
-    position: relative;
-    height: 8px;
-    background: linear-gradient(to right, #f87171, #fbbf24, #4ade80);
-    border-radius: 4px;
-    margin-bottom: 0.25rem;
-  }
-  .score-bar-fill {
-    position: absolute;
-    top: 0; left: 0;
-    height: 100%;
-    background: rgba(0,0,0,0.4);
-    border-radius: 4px;
-    transition: width 1s ease;
-  }
-  .score-bar-marker {
-    position: absolute;
-    top: -4px;
-    width: 16px;
-    height: 16px;
-    background: white;
-    border-radius: 50%;
-    border: 2px solid rgba(0,0,0,0.3);
-    transform: translateX(-50%);
-    transition: left 1s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-  }
-  .score-bar-labels { display: flex; justify-content: space-between; font-size: 0.65rem; color: rgba(245,245,245,0.3); }
-  .score-tag {
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(245,245,245,0.4);
-    text-align: center;
-  }
-
+  /* The discovery read — the payoff. Promoted to the headline of the result. */
   .verdict {
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     color: var(--pine-dark);
-    line-height: 1.8;
+    line-height: 1.7;
     font-weight: 400;
+    max-width: 70ch;
+    margin: 0 0 1.9rem;
   }
-  .verdict strong { color: var(--snow); font-weight: 500; }
-
-  .result-checks {
-    display: grid;
-    gap: 1px;
-    background: rgba(232,226,208,0.06);
-    margin-bottom: 1.5rem;
-  }
-
-  .r-check {
-    background: white;
-    padding: 1rem 1.25rem;
-    display: flex;
-    gap: 0.875rem;
-    align-items: flex-start;
-    margin-bottom: 1px;
-  }
-
-  .r-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-  .r-dot.pass { background: var(--success); }
-  .r-dot.warn { background: var(--warning); }
-  .r-dot.fail { background: var(--danger); }
-
-  .r-name { font-size: 0.9rem; font-weight: 600; color: var(--pine); margin-bottom: 0.2rem; }
-  .r-detail { font-size: 0.82rem; color: rgba(27,67,50,0.65); font-weight: 400; line-height: 1.55; }
+  .verdict strong { color: var(--pine); font-weight: 600; }
 
   .fixes-label {
     font-size: 0.62rem; letter-spacing: 0.15em;
@@ -1771,7 +1667,6 @@ const schemaGraph = {
     .aio-top { grid-template-columns: 1fr; gap: 1rem; }
     .aio-row { flex-direction: column; }
     .aio-input { border-right: 1px solid var(--sand); }
-    .result-top { grid-template-columns: 1fr; }
 
     .gar-bridge, .gar-substrate, .gar-tiers, .gar-deployment, .gar-bet, .gar-faq, .gar-about {
       padding: 3.5rem 1.5rem;
@@ -2611,6 +2506,9 @@ const schemaGraph = {
   .gr-tool .aio-callout-item { color: var(--pine-light); }
   .gr-tool .aio-callout-divider { color: var(--pine-light); opacity: .5; }
   .gr-tool { scroll-margin-top: 96px; }
+  /* Results render full-width below the fold grid (reparented out of .gr-tool). */
+  .gr-results-wrap { scroll-margin-top: 96px; }
+  .gr-results-wrap .aio-results.on { margin-top: 2rem; }
   .gr-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
@@ -2723,14 +2621,6 @@ const schemaGraph = {
     clearInterval(ticker);
   }
 
-  function gradeFromScore(score) {
-    if (score >= 90) return { grade: 'A', color: '#7BAE8C' };
-    if (score >= 80) return { grade: 'B', color: '#A8BC7B' };
-    if (score >= 70) return { grade: 'C', color: '#C9B87A' };
-    if (score >= 60) return { grade: 'D', color: '#C49A7B' };
-    return { grade: 'F', color: '#C48A8A' };
-  }
-
   async function runAnalysis(event) {
     if (event && event.preventDefault) event.preventDefault();
     const url = norm(document.getElementById('urlInput').value);
@@ -2770,39 +2660,13 @@ const schemaGraph = {
       clearInterval(ticker);
       document.getElementById('aioLoading').classList.remove('on');
 
-      const score = Math.max(0, Math.min(100, Math.round(r.score)));
-      const sEl = document.getElementById('scoreNum');
-      sEl.textContent = score + '%';
-      sEl.className = 'score-num';
-      const { grade, color: gradeColor } = gradeFromScore(score);
-      const gradeEl = document.getElementById('scoreGrade');
-      gradeEl.textContent = grade;
-      gradeEl.style.color = gradeColor;
-
-      const fill = document.getElementById('scoreBarFill');
-      const marker = document.getElementById('scoreBarMarker');
-      if (fill && marker) {
-        const pct = score;
-        fill.style.width = (100 - pct) + '%';
-        fill.style.left = pct + '%';
-        marker.style.left = pct + '%';
-      }
-
+      // Score is still returned by the worker but no longer displayed — the
+      // discovery read (r.verdict) is the payoff, not a grade.
       document.getElementById('verdictText').innerHTML = esc(r.verdict || '');
-
-      document.getElementById('resultChecks').innerHTML = (r.checks || []).map(c => `
-        <div class="r-check">
-          <div class="r-dot ${c.status}"></div>
-          <div>
-            <div class="r-name">${esc(c.name)}</div>
-            <div class="r-detail">${esc(c.detail)}</div>
-          </div>
-        </div>
-      `).join('');
 
       const fixes = r.fixes || [];
       document.getElementById('fixesWrap').innerHTML = fixes.length ? `
-        <div class="fixes-label" style="margin-top:1.5rem;">Your top fixes</div>
+        <div class="fixes-label">What you could fix</div>
         ${fixes.map(f => `
           <div class="fix ${f.priority}">
             <span class="fix-p ${f.priority}">${f.priority}</span>
@@ -2829,18 +2693,8 @@ const schemaGraph = {
   });
 
   function copyReport(format) {
-    const score = document.getElementById('scoreNum').textContent;
-    const grade = document.getElementById('scoreGrade').textContent;
     const verdict = document.getElementById('verdictText').textContent;
     const url = document.getElementById('urlInput').value;
-
-    const checks = [...document.querySelectorAll('.r-check')].map(el => {
-      const dot = el.querySelector('.r-dot');
-      const status = dot.classList.contains('pass') ? 'pass' : dot.classList.contains('warn') ? 'warn' : 'fail';
-      const name = el.querySelector('.r-name').textContent;
-      const detail = el.querySelector('.r-detail').textContent;
-      return { status, name, detail };
-    });
 
     const fixes = [...document.querySelectorAll('.fix')].map(el => {
       const priority = el.querySelector('.fix-p').textContent;
@@ -2851,18 +2705,16 @@ const schemaGraph = {
     let output = '';
 
     if (format === 'md') {
-      const statusIcon = s => s === 'pass' ? '✅' : s === 'warn' ? '⚠️' : '❌';
-      output = `# AIO Visibility Report\n\n**Site:** ${url}\n**AIO Visibility Grade:** ${grade}\n\n## Summary\n\n${verdict}\n\n## Checks\n\n${checks.map(c => `${statusIcon(c.status)} **${c.name}** — ${c.detail}`).join('\n')}\n\n## Top Fixes\n\n${fixes.map(f => `- **[${f.priority.toUpperCase()}]** ${f.text}`).join('\n')}\n\n---\n*Generated by AICV AIO Tool · aicoachellavalley.com*`;
+      output = `# Agent-Readiness Review\n\n**Site:** ${url}\n\n## How an agent reads this business\n\n${verdict}\n\n## What you could fix\n\n${fixes.map(f => `- **[${f.priority.toUpperCase()}]** ${f.text}`).join('\n')}\n\n---\n*Generated by AICV Agent-Readiness Review · aicoachellavalley.com*`;
     }
 
     if (format === 'json') {
-      const data = { site: url, score: parseInt(score), verdict, checks, fixes, generated: new Date().toISOString(), source: 'AICV AIO Tool' };
+      const data = { site: url, verdict, fixes, generated: new Date().toISOString(), source: 'AICV Agent-Readiness Review' };
       output = JSON.stringify(data, null, 2);
     }
 
     if (format === 'text') {
-      const statusIcon = s => s === 'pass' ? '✅' : s === 'warn' ? '⚠️' : '❌';
-      output = `AIO VISIBILITY GRADE: ${grade}\nSite: ${url}\n\n${verdict}\n\nCHECKS\n${checks.map(c => `${statusIcon(c.status)} ${c.name}: ${c.detail}`).join('\n')}\n\nTOP FIXES\n${fixes.map(f => `[${f.priority.toUpperCase()}] ${f.text}`).join('\n')}\n\nGenerated by AICV AIO Tool · aicoachellavalley.com`;
+      output = `AGENT-READINESS REVIEW\nSite: ${url}\n\n${verdict}\n\nWHAT YOU COULD FIX\n${fixes.map(f => `[${f.priority.toUpperCase()}] ${f.text}`).join('\n')}\n\nGenerated by AICV Agent-Readiness Review · aicoachellavalley.com`;
     }
 
     navigator.clipboard.writeText(output).then(() => {
