@@ -455,7 +455,7 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-main">Free</div>
         <div class="gar-v2-tier-price-setup"><em>no cost · no signup</em></div>
       </div>
-      <a href="#diagnostic" class="gar-v2-tier-cta">See how an agent reads you →</a>
+      <a href="#diagnostic" class="gar-v2-tier-cta">See how an agent reads you&nbsp;→</a>
     </div>
 
     <!-- TIER 1: Agent Ready -->
@@ -470,7 +470,7 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-main">$500 <span class="gar-v2-tier-price-cadence">one-time</span></div>
         <div class="gar-v2-tier-price-setup"><em>no setup fee</em></div>
       </div>
-      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta gr-cta-volt">Get Agent Ready →</a>
+      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta gr-cta-volt">Get Agent Ready&nbsp;→</a>
     </div>
 
     <!-- TIER 2: Agent Ready Business -->
@@ -485,7 +485,7 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-main">$2,500 <span class="gar-v2-tier-price-cadence">/ year</span></div>
         <div class="gar-v2-tier-price-setup"><em>plus $1,000 one-time setup</em></div>
       </div>
-      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Join the Network →</a>
+      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Book a Call&nbsp;→</a>
     </div>
 
     <!-- TIER 3: Agent Ready Premium -->
@@ -500,7 +500,7 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-main">$10,000 <span class="gar-v2-tier-price-cadence">/ year</span></div>
         <div class="gar-v2-tier-price-setup"><em>plus $5,000 one-time setup</em></div>
       </div>
-      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Join Premium →</a>
+      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Request Premium&nbsp;→</a>
     </div>
   </div>
   <p class="gar-v2-tier-note">Current membership pricing shown. Availability is limited by deployment capacity. Not sure where you fit? <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Book a chat with Sat.</a></p>
@@ -509,7 +509,7 @@ const schemaGraph = {
 
 <!-- CONDENSED PERSUASION (why networks · what happens · under the hood) -->
 <section class="gr-why">
-  <div class="gr-wrap">
+  <div class="gar-v2-inner">
     <p class="gr-why-lead">The agentic internet isn't five years away — it's reading the web today, and the businesses already on agent-readable networks are the ones being discovered.</p>
     <div class="gr-why-grid">
       <div class="gr-col">
@@ -527,14 +527,6 @@ const schemaGraph = {
       <div class="gr-col">
         <h3 class="gr-col-h">Under the hood</h3>
         <p class="gr-col-body">AICV scores 75/100 at Level 5 Agent-Native on Cloudflare's Agent Readiness Score (<a href="https://isitagentready.com" target="_blank" rel="noopener noreferrer">verifiable here</a>) and passes Google's Lighthouse agentic-browsing checks (<a href="https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring" target="_blank" rel="noopener noreferrer">Chrome for Developers documentation</a>) — the same free checks the preview runs on. The LLM Council editorial layer is Premium-only.</p>
-        <img
-          src="/cloudflare-agent-readiness-score.png"
-          alt="AICV Cloudflare Agent Readiness Score — 75/100, Level 5 Agent-Native classification. Discoverability 100, Content 100, Bot Access Control 100, API/Auth/MCP &amp; Skill Discovery 50."
-          class="gr-proof-img"
-          width="2334"
-          height="1824"
-          loading="lazy"
-        />
       </div>
     </div>
     <div class="gr-agents">
@@ -2656,15 +2648,14 @@ const schemaGraph = {
   .gr-starthere { display: inline-block; background: var(--pine-dark); color: #fff; font-size: .58rem; font-weight: 700; letter-spacing: .06em; padding: 2px 6px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
 
   /* Condensed persuasion */
-  .gr-why { background: var(--pine-tint); padding: 64px 0; }
-  .gr-why-lead { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(1.3rem, 2.4vw, 1.7rem); line-height: 1.35; color: var(--pine-dark); max-width: 46ch; margin: 0 0 2.5rem; }
-  .gr-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .gr-why { background: var(--pine-tint); padding: 48px 0; }
+  .gr-why-lead { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(1rem, 1.6vw, 1.15rem); line-height: 1.4; color: var(--pine-dark); max-width: 52ch; margin: 0 0 1.75rem; }
+  .gr-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
   .gr-col-h { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1rem; color: var(--pine-dark); margin: 0 0 .75rem; }
-  .gr-col-body { font-size: .92rem; line-height: 1.65; color: var(--pine); margin: 0; }
+  .gr-col-body { font-size: .88rem; line-height: 1.6; color: var(--pine); margin: 0; }
   .gr-col-body a { color: var(--pine-dark); }
-  .gr-steps { margin: 0; padding-left: 1.1rem; font-size: .92rem; line-height: 1.6; color: var(--pine); }
+  .gr-steps { margin: 0; padding-left: 1.1rem; font-size: .88rem; line-height: 1.6; color: var(--pine); }
   .gr-steps li { margin-bottom: .6rem; }
-  .gr-proof-img { display: block; max-width: 100%; height: auto; margin-top: 1rem; border: .5px solid rgba(18,43,34,.18); border-radius: 8px; }
   .gr-agents { margin-top: 3rem; }
   .gr-agents-label { font-size: .72rem; letter-spacing: .09em; text-transform: uppercase; color: var(--pine-light); font-weight: 500; }
   .gr-pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
