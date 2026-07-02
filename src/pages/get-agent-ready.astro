@@ -343,51 +343,28 @@ const schemaGraph = {
      Replaces V7.7 eight-section education surface
      ============================================ -->
 
-<!-- HERO -->
-<section class="gar-v2-hero">
-  <svg class="gar-v2-fig" width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">
-    <g stroke="var(--pine-dark)" stroke-width="0.8" fill="none">
-      <circle cx="60" cy="60" r="6"/>
-      <circle cx="60" cy="60" r="14"/>
-      <line x1="60" y1="40" x2="60" y2="80"/>
-      <line x1="40" y1="60" x2="80" y2="60"/>
-      <rect x="20" y="20" width="80" height="80" stroke-dasharray="2 2"/>
-      <text x="100" y="14" font-family="Syne, sans-serif" font-size="8" fill="var(--pine-dark)" font-weight="600">FIG.01</text>
-    </g>
-  </svg>
-  <div class="gar-v2-inner">
-    <div class="gar-v2-eyebrow">THE AGENTIC INTERNET IS HERE</div>
-    <h1 class="gar-v2-h1">Get Agent Ready.</h1>
-    <p class="gar-v2-hero-sub">AICV is the Coachella Valley's intelligence network for the agentic internet.</p>
-    <p class="gar-hero-note">AICV gives your business a structured AI-readable profile so AI tools can understand, cite, and route people to you — without touching your website.</p>
-    <div class="gar-v2-proof-strip">
-      <div class="gar-v2-proof-visibility">Designed to be discovered by Claude, ChatGPT, Perplexity &amp; Gemini</div>
-      <div class="gar-v2-proof-line">
-        <a href="/nodes/node-zero" class="gar-v2-proof-btn">PROOF OF WORK →</a>
-        <div class="gar-v2-proof-stats">{nodeCount} AGENT-READY NODES · {briefCount} BRIEFS · ESTABLISHED 2025</div>
+<!-- ABOVE THE FOLD: hero (left) + diagnostic tool (right) -->
+<section class="gr-fold">
+  <div class="gr-wrap gr-fold-grid">
+    <div class="gr-hero">
+      <div class="gr-eyebrow">The agentic internet is here</div>
+      <h1 class="gr-h1">Get agent ready.</h1>
+      <p class="gr-sub">AICV is the Coachella Valley's intelligence network for the agentic internet.</p>
+      <p class="gr-lead">AICV gives your business a structured, AI-readable profile — so AI tools can understand, discover, and route people to you, without touching your website.</p>
+      <p class="gr-proofline">Designed to be discovered by Claude, ChatGPT, Perplexity &amp; Gemini.</p>
+      <div class="gr-stats">
+        <span class="gr-stat">{nodeCount} nodes</span>
+        <span class="gr-dot" aria-hidden="true">·</span>
+        <span class="gr-stat">{briefCount} briefs</span>
+        <span class="gr-dot" aria-hidden="true">·</span>
+        <span class="gr-stat">est. 2025</span>
+        <a href="/nodes/node-zero" class="gr-proof-link">Proof of work →</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- DIAGNOSTIC -->
-<section class="gar-v2-diagnostic" id="diagnostic">
-  <svg class="gar-v2-fig-tall" width="80" height="180" viewBox="0 0 80 180" aria-hidden="true">
-    <g stroke="var(--pine-dark)" stroke-width="0.6" fill="none">
-      <line x1="40" y1="10" x2="40" y2="170"/>
-      <line x1="30" y1="10" x2="50" y2="10"/>
-      <line x1="30" y1="170" x2="50" y2="170"/>
-      <line x1="35" y1="40" x2="45" y2="40"/>
-      <line x1="35" y1="70" x2="45" y2="70"/>
-      <line x1="35" y1="100" x2="45" y2="100"/>
-      <line x1="35" y1="130" x2="45" y2="130"/>
-      <text x="55" y="92" font-family="Syne, sans-serif" font-size="7" fill="var(--pine-dark)" font-weight="600">SCAN</text>
-    </g>
-  </svg>
-  <div class="gar-v2-inner">
-    <div class="gar-v2-eyebrow">FREE TOOL</div>
-    <h2 class="gar-v2-diagnostic-h"><span class="diag-pine">Can AI see</span><br><span class="diag-volt">your business?</span></h2>
-    <p class="gar-v2-body">See how Claude, ChatGPT, Perplexity, or Gemini read—or miss—your business right now. Plain English.</p>
+    <div class="gr-tool" id="diagnostic">
+      <div class="gr-tool-label">Free tool</div>
+      <h2 class="gr-tool-h">Can AI see your business?</h2>
+      <p class="gr-tool-sub">See how Claude, ChatGPT, Perplexity, or Gemini read — or miss — your business right now. Plain English.</p>
     
     <div class="aio-card">
     <label class="aio-input-label" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
@@ -444,88 +421,11 @@ const schemaGraph = {
     </div>
   </div>
 
-  <!-- WHY THIS TOOL — card inside diagnostic section -->
-  <div class="gar-v2-why-card">
-    <div class="gar-v2-why-top">
-      <div class="gar-v2-eyebrow">WHY THIS TOOL</div>
-      <p class="gar-v2-about-h">How is this different from every other AI visibility tool?</p>
-    </div>
-    <div class="gar-v2-why-bottom">
-      <p class="gar-v2-body">Two reasons. First, audience. Every other agent-readiness tool scores your site against generic criteria. AICV's tool scores you against agent-readiness for a specific audience: agents with capital — the assistants doing the looking for the founders and newly-liquid operators now eyeing the Valley. Second, methodology. The LLM Council — human editorial review by our panel — lives in Agent Ready Premium. The free preview doesn't touch it: it runs on Cloudflare's Agent Readiness Score and Google's Lighthouse agentic-browsing checks, both independently verifiable. We applied that same foundation to aicoachellavalley.com first — and went from a low-20s score to Level 5 Agent-Native classification on Cloudflare's scanner. That same foundation is what your MVA inherits when you join the network. See Under the Hood below.</p>
-      <div class="gar-v2-why-screenshot-placeholder">
-        <img
-          src="/cloudflare-agent-readiness-score.png"
-          alt="AICV Cloudflare Agent Readiness Score — 75/100, Level 5 Agent-Native classification. Discoverability 100, Content 100, Bot Access Control 100, API/Auth/MCP &amp; Skill Discovery 50."
-          class="gar-v2-why-card-image"
-          loading="lazy"
-        />
-      </div>
-    </div>
-  </div>
-
-  </div>
-</section>
-
-<!-- WHY NETWORKS WIN -->
-<section class="gar-v2-networks">
-  <svg class="gar-v2-fig-network" width="140" height="140" viewBox="0 0 140 140" aria-hidden="true">
-    <g stroke="var(--pine-dark)" stroke-width="0.8" fill="none">
-      <circle cx="70" cy="70" r="8" fill="var(--pine-dark)" fill-opacity="0.18"/>
-      <circle cx="20" cy="30" r="4"/>
-      <circle cx="120" cy="25" r="4"/>
-      <circle cx="115" cy="100" r="4"/>
-      <circle cx="30" cy="115" r="4"/>
-      <circle cx="125" cy="65" r="4"/>
-      <line x1="20" y1="30" x2="70" y2="70"/>
-      <line x1="120" y1="25" x2="70" y2="70"/>
-      <line x1="115" y1="100" x2="70" y2="70"/>
-      <line x1="30" y1="115" x2="70" y2="70"/>
-      <line x1="125" y1="65" x2="70" y2="70"/>
-      <text x="68" y="135" font-family="Syne, sans-serif" font-size="7" fill="var(--pine-dark)" font-weight="600" text-anchor="middle">FIG.02 CLUSTER</text>
-    </g>
-  </svg>
-  <div class="gar-v2-inner">
-    <div class="gar-v2-eyebrow">WHY NETWORKS WIN</div>
-    <h2 class="gar-v2-networks-h">A business optimizing alone is almost invisible. A business inside the AICV network is signal.</h2>
-    <p class="gar-v2-body">LLMs and AI don't reward scattered noise. They reach for trusted regional context. A cluster.</p>
-    <p class="gar-v2-body">The agents serving founders, executives, and high-net-worth households are already asking: <em>"Where should we spend winters — privacy, wellness, golf, easy access to LA?"</em> and <em>"What venues, clubs, healthcare, and schools matter for our relocation decision?"</em> and <em>"Is there a real business ecosystem in the desert, or is it just seasonal?"</em></p>
-    <p class="gar-v2-body">The Coachella Valley businesses and venues that show up in those answers are the ones with a structured, agent-readable presence. That's what the AICV Network builds.</p>
-  </div>
-</section>
-
-<div class="gar-v2-callout-bridge">
-  <div class="gar-v2-callout-bridge-inner">
-    <p class="gar-v2-callout-bridge-text">The network that earns the cluster earns the citation.</p>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="gar-v2-howitworks">
-  <div class="gar-v2-inner">
-    <div class="gar-v2-eyebrow">WHAT HAPPENS WHEN YOU JOIN AICV</div>
-    <p class="gar-v2-about-h">You don't change your website. Let the network do the work.</p>
-    <p class="gar-v2-body">Kickoff call → AIO diagnostic → node &amp; MVA build → network inclusion → ongoing updates.</p>
-    <div class="gar-v2-hw-cards">
-      <div class="gar-v2-hw-card">
-        <div class="gar-v2-hw-step">STEP 1</div>
-        <p class="gar-v2-hw-title">Your agent goes live</p>
-        <p class="gar-v2-hw-body">One short conversation. Your business shows up on the AICV network with an agent answering on your behalf — to other agents, around the clock.</p>
-      </div>
-      <div class="gar-v2-hw-arrow">→</div>
-      <div class="gar-v2-hw-card">
-        <div class="gar-v2-hw-step">STEP 2</div>
-        <p class="gar-v2-hw-title">Other agents start citing you</p>
-        <p class="gar-v2-hw-body">Founder agents, research agents, booking agents read your record and route their humans accordingly. Nothing touches your existing website. Nothing on your end to maintain.</p>
-      </div>
-      <div class="gar-v2-hw-arrow">→</div>
-      <div class="gar-v2-hw-card">
-        <div class="gar-v2-hw-step">STEP 3</div>
-        <p class="gar-v2-hw-title">The cluster compounds</p>
-        <p class="gar-v2-hw-body">Every brief AICV publishes, every node added, every citation earned — the cluster gets more trusted, and your record inherits the lift. The work AICV does daily becomes work done for you.</p>
-      </div>
     </div>
   </div>
 </section>
+
+<!-- (Why-networks + how-it-works folded into the condensed persuasion row below the tiers.) -->
 
 <!-- TIERS -->
 <section class="gar-v2-tiers" id="tiers">
@@ -560,7 +460,7 @@ const schemaGraph = {
     <!-- TIER 1: Agent Ready -->
     <div class="gar-v2-tier-card">
       <div class="gar-v2-tier-body">
-        <div class="gar-v2-tier-eyebrow">GET BUILT</div>
+        <div class="gar-v2-tier-eyebrow">GET BUILT <span class="gr-starthere">Start here</span></div>
         <div class="gar-v2-tier-name">Agent Ready</div>
         <p class="gar-v2-tier-desc">We build your agent — your MVA on the AICV network, discoverable and citable.</p>
       </div>
@@ -569,7 +469,7 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-main">$500 <span class="gar-v2-tier-price-cadence">one-time</span></div>
         <div class="gar-v2-tier-price-setup"><em>no setup fee</em></div>
       </div>
-      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Get Agent Ready →</a>
+      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta gr-cta-volt">Get Agent Ready →</a>
     </div>
 
     <!-- TIER 2: Agent Ready Business -->
@@ -577,19 +477,7 @@ const schemaGraph = {
       <div class="gar-v2-tier-body">
         <div class="gar-v2-tier-eyebrow">GET SERVICED</div>
         <div class="gar-v2-tier-name">Agent Ready Business</div>
-        <p class="gar-v2-tier-desc">Your agent on the AICV network — discoverable today, citable today, transactable when you're ready.</p>
-        <details class="gar-v2-tier-disclosure">
-          <summary class="gar-v2-tier-disclosure-trigger">
-            <span>What's included</span>
-            <span class="gar-v2-tier-disclosure-chevron" aria-hidden="true">↓</span>
-          </summary>
-          <ul class="gar-v2-tier-bullets">
-            <li>Your MVA on the AICV network IS your agent — answers questions from other agents, cites your record, available 24/7</li>
-            <li>A network growing more citable, more authoritative, more agent-readable every day</li>
-            <li>Discoverable today by the agents your customers, prospects, and the SF/LA founder cohort AICV speaks to already use</li>
-            <li>Positioned for agent-to-agent transactions as the standards mature</li>
-          </ul>
-        </details>
+        <p class="gar-v2-tier-desc">Serviced membership: your agent on the network, discoverable today, with the full discovery infrastructure maintained for you.</p>
       </div>
       <div class="gar-v2-tier-divider"></div>
       <div class="gar-v2-tier-price-block">
@@ -604,20 +492,7 @@ const schemaGraph = {
       <div class="gar-v2-tier-body">
         <div class="gar-v2-tier-eyebrow">GET CURATED</div>
         <div class="gar-v2-tier-name">Agent Ready Premium</div>
-        <p class="gar-v2-tier-desc">For entities ready to be the answer when founders ask their AI about the Valley.</p>
-        <p class="gar-v2-tier-includes">Everything in Agent Ready Business, PLUS:</p>
-        <details class="gar-v2-tier-disclosure">
-          <summary class="gar-v2-tier-disclosure-trigger">
-            <span>What's included</span>
-            <span class="gar-v2-tier-disclosure-chevron" aria-hidden="true">↓</span>
-          </summary>
-          <ul class="gar-v2-tier-bullets">
-            <li>A daily monitoring agent watching public signals about your entity — news, mentions, sentiment, what's shifting in your category</li>
-            <li>Periodic editorial review by the AICV LLM Council — the editorial weight that makes AI systems cite you specifically, refreshed as the world moves</li>
-            <li>A living portal at aicoachellavalley.com/reviews/[you] — continuous monitoring stream plus the most recent Council review, visible to every agent that asks</li>
-            <li>A 12-month AI readiness roadmap, produced by the LLM Council alongside your review — your entity's path from discoverable to fully agent-transactable</li>
-          </ul>
-        </details>
+        <p class="gar-v2-tier-desc">Everything in Business, plus editorial review by the AICV LLM Council — the weight that gets you cited, not just discovered.</p>
       </div>
       <div class="gar-v2-tier-divider"></div>
       <div class="gar-v2-tier-price-block">
@@ -631,41 +506,48 @@ const schemaGraph = {
   </div>
 </section>
 
-<!-- FINAL CLOSE -->
-<section class="gar-v2-close">
-  <svg class="gar-v2-fig-close" width="140" height="140" viewBox="0 0 140 140" aria-hidden="true">
-    <g stroke="var(--volt)" stroke-width="0.8" fill="none">
-      <rect x="20" y="20" width="100" height="100" stroke-dasharray="3 3"/>
-      <line x1="20" y1="70" x2="120" y2="70"/>
-      <line x1="70" y1="20" x2="70" y2="120"/>
-      <circle cx="70" cy="70" r="8"/>
-      <text x="68" y="14" font-family="Syne, sans-serif" font-size="8" fill="var(--volt)" font-weight="600" text-anchor="middle">FIG.03</text>
-    </g>
-  </svg>
-  <div class="gar-v2-inner">
-    <h2 class="gar-v2-close-h"><span class="no-break">Agent-to-agent</span> infrastructure is being built right now.</h2>
-    <p class="gar-v2-close-volt">The agentic internet isn't five years away — it's reading the web today, and the businesses already on agent-readable networks are the ones being cited.</p>
-    <div class="gar-v2-agent-pills">
-      <span class="gar-v2-agent-pill">Research agents</span>
-      <span class="gar-v2-agent-pill">Booking agents</span>
-      <span class="gar-v2-agent-pill">Buying agents</span>
-      <span class="gar-v2-agent-pill">Travel agents</span>
-      <span class="gar-v2-agent-pill">Shopping assistants</span>
-      <span class="gar-v2-agent-pill">Executive AI Assistants</span>
+<!-- CONDENSED PERSUASION (why networks · what happens · under the hood) -->
+<section class="gr-why">
+  <div class="gr-wrap">
+    <p class="gr-why-lead">The agentic internet isn't five years away — it's reading the web today, and the businesses already on agent-readable networks are the ones being discovered.</p>
+    <div class="gr-why-grid">
+      <div class="gr-col">
+        <h3 class="gr-col-h">Why networks win</h3>
+        <p class="gr-col-body">A business optimizing alone is almost invisible. Inside the AICV network it's signal — AI systems reach for trusted regional context, not scattered noise. The network that earns the cluster earns the citation, and your record inherits the lift.</p>
+      </div>
+      <div class="gr-col">
+        <h3 class="gr-col-h">What happens when you join</h3>
+        <ol class="gr-steps">
+          <li>Your agent goes live on the network — answering other agents, around the clock. You don't change your website.</li>
+          <li>Other agents discover you — founder, research, and booking agents read your record and route their humans to you.</li>
+          <li>The cluster compounds — every brief and node AICV adds makes the network more trusted, and your record rises with it.</li>
+        </ol>
+      </div>
+      <div class="gr-col">
+        <h3 class="gr-col-h">Under the hood</h3>
+        <p class="gr-col-body">AICV scores 75/100 at Level 5 Agent-Native on Cloudflare's Agent Readiness Score (<a href="https://isitagentready.com" target="_blank" rel="noopener noreferrer">verifiable here</a>) and passes Google's Lighthouse agentic-browsing checks (<a href="https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring" target="_blank" rel="noopener noreferrer">Chrome for Developers documentation</a>) — the same free checks the preview runs on. The LLM Council editorial layer is Premium-only.</p>
+        <img
+          src="/cloudflare-agent-readiness-score.png"
+          alt="AICV Cloudflare Agent Readiness Score — 75/100, Level 5 Agent-Native classification. Discoverability 100, Content 100, Bot Access Control 100, API/Auth/MCP &amp; Skill Discovery 50."
+          class="gr-proof-img"
+          width="2334"
+          height="1824"
+          loading="lazy"
+        />
+      </div>
     </div>
-    <div class="gar-v2-footer-fields">
-      <p class="gar-v2-footer-fiscal">AICV is fiscally sponsored by the Desert Community Foundation and operates from the CSUSB Entrepreneurship Resource Center in Palm Desert, California.</p>
-      <p class="gar-v2-footer-email">Email Sat Singh, Founder: <a href="/cdn-cgi/l/email-protection#ff8c9e8bbf9e969c89d19c90"><span class="__cf_email__" data-cfemail="94e7f5e0d4f5fdf7e2baf7fb">[email&#160;protected]</span></a></p>
+    <div class="gr-agents">
+      <span class="gr-agents-label">Who's already asking</span>
+      <div class="gr-pills">
+        <span class="gr-pill">Research agents</span>
+        <span class="gr-pill">Booking agents</span>
+        <span class="gr-pill">Buying agents</span>
+        <span class="gr-pill">Travel agents</span>
+        <span class="gr-pill">Shopping assistants</span>
+        <span class="gr-pill">Executive AI assistants</span>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- UNDER THE HOOD -->
-<section class="gar-v2-proof">
-  <div class="gar-v2-inner">
-    <div class="gar-v2-eyebrow">UNDER THE HOOD</div>
-    <p class="gar-v2-about-h">AICV operates at top-tier agent-readable infrastructure.</p>
-    <p class="gar-v2-about-body">For the technically curious or the procurement team vetting the claim — AICV scores 75/100 at Level 5 Agent-Native on Cloudflare's Agent Readiness Score (verifiable at <a href="https://isitagentready.com" target="_blank" rel="noopener noreferrer">isitagentready.com</a>) and passes Google's Lighthouse agentic-browsing checks — the deterministic audit category introduced in Lighthouse 13.3 (<a href="https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring" target="_blank" rel="noopener noreferrer">Chrome for Developers documentation</a>). The network is built on Cloudflare's edge infrastructure and powered by Anthropic's Claude. We publish RFC 9727 linksets, MCP server cards, and .well-known discovery endpoints. Your entity inherits this infrastructure without retrofitting your site.</p>
+    <p class="gr-fiscal">AICV is fiscally sponsored by the Desert Community Foundation and operates from the CSUSB Entrepreneurship Resource Center in Palm Desert, California. Email Sat Singh, Founder: <a href="/cdn-cgi/l/email-protection#ff8c9e8bbf9e969c89d19c90"><span class="__cf_email__" data-cfemail="94e7f5e0d4f5fdf7e2baf7fb">[email&#160;protected]</span></a></p>
   </div>
 </section>
 
@@ -2722,6 +2604,81 @@ const schemaGraph = {
 
   @media (max-width: 375px) {
     .gar-v2-diagnostic-h { font-size: 24px; letter-spacing: -0.6px; }
+  }
+  /* ================================================================
+     GET AGENT READY — sales-page refresh
+     DM Sans throughout · flat white hairline cards · volt = CTAs only
+     ================================================================ */
+  .gr-wrap { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+  .gr-fold, .gr-why { font-family: 'DM Sans', sans-serif; color: var(--pine); }
+
+  /* Above the fold */
+  .gr-fold { background: var(--pine-tint); padding: 64px 0 72px; }
+  .gr-fold-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .gr-eyebrow { font-size: .75rem; letter-spacing: .09em; text-transform: uppercase; color: var(--pine-light); font-weight: 500; margin-bottom: .9rem; }
+  .gr-h1 { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(2.4rem, 4.6vw, 3.4rem); line-height: 1.08; letter-spacing: -.01em; color: var(--pine-dark); margin: 0 0 1rem; }
+  .gr-sub { font-size: 1.15rem; line-height: 1.6; color: var(--pine); margin: 0 0 1rem; }
+  .gr-lead { font-size: 1rem; line-height: 1.7; color: var(--pine); margin: 0 0 1.1rem; max-width: 42ch; }
+  .gr-proofline { font-size: .95rem; line-height: 1.6; color: var(--pine-light); margin: 0 0 1.4rem; }
+  .gr-stats { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; font-size: .9rem; color: var(--pine); }
+  .gr-dot { color: var(--pine-light); }
+  .gr-proof-link { color: var(--pine-dark); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; margin-left: .4rem; }
+
+  /* Tool card */
+  .gr-tool { background: #fff; border: .5px solid rgba(18,43,34,.2); border-radius: 12px; padding: 28px 28px 30px; }
+  .gr-tool-label { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--pine-light); font-weight: 600; margin-bottom: .7rem; }
+  .gr-tool-h { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1.55rem; line-height: 1.2; color: var(--pine-dark); margin: 0 0 .4rem; }
+  .gr-tool-sub { font-size: .95rem; line-height: 1.6; color: var(--pine); margin: 0 0 1.2rem; }
+  .gr-tool .aio-card { background: transparent; border: none; border-radius: 0; padding: 0; margin: 0; }
+  .gr-tool .aio-callout-item { color: var(--pine-light); }
+  .gr-tool .aio-callout-divider { color: var(--pine-light); opacity: .5; }
+
+  /* Tiers: 4 compact flat cards */
+  .gar-v2-tiers { background: var(--pine-mist); font-family: 'DM Sans', sans-serif; }
+  .gar-v2-tiers-h { font-family: 'DM Sans', sans-serif; font-weight: 500; letter-spacing: -.01em; text-transform: none; color: var(--pine-dark); }
+  .gar-v2-tier-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .gar-v2-tier-card { background: #fff; border: .5px solid rgba(18,43,34,.18); border-radius: 12px; padding: 22px; box-shadow: none; }
+  .gar-v2-tier-eyebrow { font-size: .68rem; letter-spacing: .08em; color: var(--pine-light); font-weight: 600; text-transform: uppercase; }
+  .gar-v2-tier-name { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1.15rem; color: var(--pine-dark); }
+  .gar-v2-tier-desc { font-size: .88rem; line-height: 1.55; color: var(--pine); }
+  .gar-v2-tier-price-main { font-family: 'DM Sans', sans-serif; font-weight: 500; color: var(--pine-dark); }
+  .gar-v2-tier-cta { background: var(--pine); color: #fff; border: none; }
+  .gar-v2-tier-cta:hover { background: var(--pine-dark); }
+  .gar-v2-booking-btn { background: var(--pine); color: #fff; }
+  .gr-cta-volt { background: var(--volt); color: var(--pine-dark); font-weight: 600; }
+  .gr-cta-volt:hover { background: var(--volt); filter: brightness(.95); }
+  .gr-starthere { display: inline-block; background: var(--pine-dark); color: #fff; font-size: .58rem; font-weight: 700; letter-spacing: .06em; padding: 2px 6px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+
+  /* Condensed persuasion */
+  .gr-why { background: var(--pine-tint); padding: 64px 0; }
+  .gr-why-lead { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(1.3rem, 2.4vw, 1.7rem); line-height: 1.35; color: var(--pine-dark); max-width: 46ch; margin: 0 0 2.5rem; }
+  .gr-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .gr-col-h { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1rem; color: var(--pine-dark); margin: 0 0 .75rem; }
+  .gr-col-body { font-size: .92rem; line-height: 1.65; color: var(--pine); margin: 0; }
+  .gr-col-body a { color: var(--pine-dark); }
+  .gr-steps { margin: 0; padding-left: 1.1rem; font-size: .92rem; line-height: 1.6; color: var(--pine); }
+  .gr-steps li { margin-bottom: .6rem; }
+  .gr-proof-img { display: block; max-width: 100%; height: auto; margin-top: 1rem; border: .5px solid rgba(18,43,34,.18); border-radius: 8px; }
+  .gr-agents { margin-top: 3rem; }
+  .gr-agents-label { font-size: .72rem; letter-spacing: .09em; text-transform: uppercase; color: var(--pine-light); font-weight: 500; }
+  .gr-pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+  .gr-pill { font-size: .8rem; color: var(--pine); background: rgba(255,255,255,.55); border: .5px solid rgba(18,43,34,.15); border-radius: 999px; padding: .3rem .8rem; }
+  .gr-fiscal { margin-top: 2.5rem; font-size: .8rem; line-height: 1.6; color: var(--pine-light); max-width: 72ch; }
+  .gr-fiscal a { color: var(--pine-dark); }
+
+  /* Focus + motion */
+  .gr-fold a:focus-visible, .gr-why a:focus-visible, .gar-v2-tier-cta:focus-visible { outline: 2px solid var(--pine-dark); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .gr-cta-volt, .gar-v2-tier-cta, .gar-v2-booking-btn { transition: none; } }
+
+  /* Responsive: two-column → stack */
+  @media (max-width: 900px) {
+    .gr-fold-grid { grid-template-columns: 1fr; gap: 36px; }
+    .gar-v2-tier-grid { grid-template-columns: repeat(2, 1fr); }
+    .gr-why-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 560px) {
+    .gar-v2-tier-grid { grid-template-columns: 1fr; }
+    .gr-fold { padding: 48px 0 56px; }
   }
 </style>
 
