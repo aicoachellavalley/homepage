@@ -295,24 +295,17 @@ const personSchema = {
   </div>
 </section>
 
-<!-- ─── PATH CARDS ─── -->
+<!-- ─── PATH CARDS: promoted primary door + two quiet secondary links ─── -->
 <div class="path-cards-wrap">
-  <div class="path-cards">
-    <div class="path-card">
-      <div class="path-card-title">Make Your Business Visible to AI</div>
-      <p class="path-card-desc">Get your Minimum Viable Agent — a structured, AI-readable profile in the Coachella Valley intelligence network.</p>
-      <p class="path-card-desc">To request inclusion or membership, email <a href="mailto:sat@aicv.co">sat@aicv.co</a> or begin with Get Agent Ready.</p>
+  <div class="path-hierarchy">
+    <div class="path-primary">
+      <div class="path-primary-title">Make Your Business Visible to AI</div>
+      <p class="path-primary-desc">Get your Minimum Viable Agent — a structured, AI-readable profile so agents can find, read, and cite your business, without touching your website.</p>
       <a href="/get-agent-ready/#diagnostic" class="path-card-cta">Join the Network →</a>
     </div>
-    <div class="path-card">
-      <div class="path-card-title">Track What AI Sees About the Valley</div>
-      <p class="path-card-desc">Daily intelligence on how AI systems read and cite the valley.</p>
-      <a href="/briefs/" class="path-card-cta">Read the Briefs →</a>
-    </div>
-    <div class="path-card">
-      <div class="path-card-title">Explore the Valley's Regional Map</div>
-      <p class="path-card-desc">A growing map of regional nodes — businesses, institutions, and landmarks AI systems read as a connected unit.</p>
-      <a href="/nodes/" class="path-card-cta">Explore the Nodes →</a>
+    <div class="path-secondary">
+      <a href="/briefs/" class="path-secondary-link">Read the daily Briefs →</a>
+      <a href="/nodes/" class="path-secondary-link">Explore the regional map →</a>
     </div>
   </div>
 </div>
@@ -712,67 +705,79 @@ const personSchema = {
     background: var(--pine);
   }
 
-  .path-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(232,226,208,0.08);
-    margin-bottom: 0;
+  /* Three-door hierarchy: one promoted primary + two quiet secondary links. */
+  .path-hierarchy {
     max-width: 1060px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 2.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
     opacity: 0;
     animation: fadeUp 0.7s ease forwards 0.5s;
   }
 
-  .path-card {
-    background: var(--pine);
-    padding: 1.75rem 1.5rem;
+  /* Promoted primary door — the money door */
+  .path-primary {
+    background: var(--pine-light);
+    border-top: 3px solid var(--volt);
+    padding: 2rem 2rem 2.15rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    border-top: 3px solid rgba(232,226,208,0.12);
-    transition: border-color 0.2s, background 0.2s;
+    gap: 0.7rem;
+    align-items: flex-start;
   }
 
-  .path-card:hover {
-    border-top-color: var(--volt);
-    background: var(--pine-light);
-  }
-
-  .path-card-title {
+  .path-primary-title {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1.35rem;
     color: var(--sand);
     letter-spacing: -0.01em;
-    line-height: 1.3;
+    line-height: 1.2;
   }
 
-  .path-card-desc {
-    font-size: 0.8rem;
-    color: rgba(232,226,208,0.75);
+  .path-primary-desc {
+    font-size: 1rem;
+    color: rgba(232,226,208,0.9);
     font-weight: 300;
     line-height: 1.6;
-    flex: 1;
+    max-width: 54ch;
   }
 
   .path-card-cta {
     display: inline-block;
-    margin-top: 0.75rem;
+    margin-top: 0.4rem;
     font-size: 0.72rem;
     font-weight: 700;
     font-family: 'Syne', sans-serif;
     letter-spacing: 0.06em;
     background: var(--volt);
     color: var(--pine);
-    padding: 0.45rem 0.9rem;
+    padding: 0.55rem 1.1rem;
     text-decoration: none;
     transition: background 0.2s, letter-spacing 0.2s;
     align-self: flex-start;
   }
+  .path-card-cta:hover { background: #e8ff33; letter-spacing: 0.1em; }
 
-  .path-card:hover .path-card-cta { background: #e8ff33; letter-spacing: 0.1em; }
+  /* Demoted secondary doors — quiet text links, no card, no button */
+  .path-secondary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    padding-left: 0.25rem;
+  }
+
+  .path-secondary-link {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(232,226,208,0.7);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.15s;
+  }
+  .path-secondary-link:hover { color: var(--volt); }
 
   /* ─── WHAT IS THE INTELLIGENCE LAYER ─── */
   .intel-what-wrap {
@@ -1925,7 +1930,9 @@ const personSchema = {
     .focal-updated { padding: 1.25rem 1.5rem 0; }
     .stats-inner { padding: 0.75rem 1.5rem 2rem; grid-template-columns: 1fr 1fr; }
     .focal-img-wrap { padding: 0 1.5rem; }
-    .path-cards { grid-template-columns: 1fr; padding: 0 1.5rem; background: transparent; }
+    .path-hierarchy { padding: 2rem 1.5rem 2.25rem; gap: 1.1rem; }
+    .path-primary { padding: 1.5rem 1.25rem 1.75rem; }
+    .path-primary-title { font-size: 1.2rem; }
     .path-cards-wrap { padding: 0; }
     .intel-what-section { padding: 3.5rem 1.5rem 0; }
     .intel-what-inner { padding: 2rem 1.5rem; }
