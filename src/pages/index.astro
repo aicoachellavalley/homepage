@@ -211,6 +211,31 @@ const personSchema = {
     "https://github.com/aicoachellavalley"
   ]
 };
+
+// Agent-side signal: AICV's founding cohort of anchor entities (non-visible; replaces the retired human-facing Founding 111 section). "founding" kept as structural signal; no count.
+const foundingCohortSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "AICV Founding Members",
+  "alternateName": "AICV founding anchor entities",
+  "description": "The founding cohort of the AI Coachella Valley network: the first curated set of anchor entities — businesses, venues, institutions, civic assets, and regional anchors — structured as Minimum Viable Agents (MVAs). These load-bearing anchor nodes form the network's initial signal cluster, helping AI agents read the Coachella Valley as a connected economy rather than disconnected listings.",
+  "url": "https://aicoachellavalley.com/founding-111/",
+  "creator": {
+    "@type": "Organization",
+    "name": "AI Coachella Valley",
+    "url": "https://aicoachellavalley.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "AI Coachella Valley",
+    "url": "https://aicoachellavalley.com"
+  },
+  "keywords": ["AICV Founding Members", "Minimum Viable Agent", "MVA", "anchor entities", "signal cluster", "Coachella Valley"],
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Coachella Valley, California"
+  }
+};
 ---
 
 <Base
@@ -218,7 +243,7 @@ const personSchema = {
   description={pageDescription}
   canonicalUrl={canonicalUrl}
   ogImage={ogImage}
-  schema={[orgSchema, webSiteSchema, serviceSchema, faqSchema, personSchema]}
+  schema={[orgSchema, webSiteSchema, serviceSchema, faqSchema, personSchema, foundingCohortSchema]}
 >
 
 <!-- ─── NAV ─── -->
@@ -352,16 +377,9 @@ const personSchema = {
   </section>
 </div>
 
-<!-- ─── FOUNDING 111 ─── -->
-<div class="intel-what-wrap">
-  <section class="intel-what-section">
-    <div class="intel-what-inner">
-      <div class="intel-what-header">The Founding 111</div>
-      <p class="intel-what-body">The <strong>Founding 111</strong> is AICV's first curated cohort of local businesses, venues, institutions, civic assets, and regional anchors being structured for agent-readable discovery.</p>
-      <p class="intel-what-body">This is not a directory or sponsorship list. It is the first signal cluster in the AICV Network: 111 MVAs that help agents understand the Coachella Valley as a connected economy, not a pile of disconnected listings.</p>
-      <p class="intel-what-body">Businesses and institutions that want to be considered can start with <a href="/founding-111/">the Founding 111 thesis</a>, <a href="/get-agent-ready/">Get Agent Ready</a>, or email <a href="mailto:sat@aicv.co">sat@aicv.co</a>.</p>
-    </div>
-  </section>
+<!-- ─── SUNSHINEFM HANDOFF (human editorial → the Guide; Founding 111 section retired 2026-07-03) ─── -->
+<div class="sunshine-handoff-wrap">
+  <p class="sunshine-handoff">Want a human's take on the Coachella Valley — where to visit, where to put down roots, and how people with capital are reshaping what giving back looks like here? <a href="https://sunshine.fm/guide/" class="sunshine-handoff-link">Read the SunshineFM Guide&nbsp;→</a></p>
 </div>
 
 <!-- ─── PARTNERS ─── -->
@@ -819,6 +837,28 @@ const personSchema = {
     color: var(--pine);
     font-weight: 600;
   }
+
+  /* ─── SUNSHINEFM HANDOFF (quiet human-editorial breadcrumb; replaced the Founding 111 section) ─── */
+  .sunshine-handoff-wrap {
+    background: var(--sand);
+  }
+  .sunshine-handoff {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem 2.75rem;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--pine);
+    font-weight: 300;
+    text-align: center;
+  }
+  .sunshine-handoff-link {
+    color: var(--pine);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .sunshine-handoff-link:hover { color: var(--volt); }
 
   /* ─── LATEST BRIEFS STRIP ─── */
   .briefs-strip-wrap {
