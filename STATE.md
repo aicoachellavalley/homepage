@@ -2,6 +2,18 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-05 — ⚠️ PUSH BLOCKED: cross-thread tangle on com main (do NOT push without coordination)
+
+Three parallel threads stacked work on this one local branch today. Nothing is lost, nothing conflicts (all touch disjoint files), but **`git push` is blocked pending coordination** — a blind push ships another thread's work to production.
+
+**Two unpushed commits on `main` (origin/main is at `884b1b2`):**
+- `a25e497` — **feat: publish State of AI — Q2 2026 report** (ANOTHER thread, committed 08:26). Adds `src/content/reports/state-of-ai-q2-2026.mdx`. **This thread did NOT confirm the report is cleared to go live** — committed-by-another-tab ≠ cleared-to-ship (same principle as the AIQnA hold below). Pushing publishes it.
+- `d17de7a` — **chore(nav): remove Founding 111 link, rename Free AIO Tool → Agent Preview** (this thread). Nav-only text swaps across 11 `.astro` files; built + verified clean; `/founding-111/` page stays live; footers unchanged.
+
+**Parked, do NOT disturb:** `stash@{0}` ("WIP on main: 884b1b2") = a third thread's **AIQnA `llms.txt.ts` WIP** (+12 lines advertising `aiqna.json` / `aiqna.org`). In-flight, not done — it'll be `stash pop`ped by its own thread. **Do not `stash drop`/`pop`.**
+
+**Before ANY push to com main:** re-check `git log origin/main..HEAD`, confirm with each owning thread that its commit is ready to ship, THEN push (or deliberately ship all). Do not "clean up unpushed commits" by pushing blindly — you'd publish the Q2 report and/or nav change without their owners' sign-off. (This note commit is itself unpushed and travels with them; update/remove it when the tangle clears.)
+
 ## 2026-06-30 — Homepage stats bar made status-aware (commit `bf0bd3e`)
 
 `scripts/generate-stats.mjs` (the `prebuild` step that writes `stats.json`, which the homepage bar reads at build time) now counts by frontmatter status — `nodes` = `status: live`, `reports` = `status: published` — instead of raw `.mdx` file count. `briefs`/`snapshots` have no status field and stay raw counts. Output is identical today (81/163/8/3 — zero drafts/non-live), so this is a drift guard, not a number change: a future `draft` report or `planned`/`under construction` node can no longer silently inflate the bar above what its "Published" / "Regional Nodes" labels claim. Confirm the bar anytime with `curl -s https://aicoachellavalley.com/stats.json` — check the counts and `generated_at` (should be ≥ the last content deploy).
