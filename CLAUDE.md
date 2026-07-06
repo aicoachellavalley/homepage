@@ -78,6 +78,6 @@ auto-indexing.
 
 ## Side effects (required after every session)
 
-Every brief filed → 📡 journal line item in ~/sunshine-fm/journal/index.html
-Every node added → 📓 journal line item in ~/sunshine-fm/journal/index.html
+Every brief filed → 📡 journal line item in ~/AICV/sunshine-fm/journal/index.html
+Every node added → 📓 journal line item in ~/AICV/sunshine-fm/journal/index.html
 Every session → update STATE.md counts and last commit hash
