@@ -50,8 +50,9 @@ Build static JSON (run after every content session):
   from ~/AICV/core/com/
 
 Deploy:
-  cd ~/AICV/core/com && npx wrangler pages deploy dist 
-  --project-name aicoachellavalley-homepage
+  Push to main — Cloudflare auto-deploys com on push (git push origin main).
+  Never `wrangler pages deploy` com — a direct upload diverges production from
+  origin/main. (See playbook ARCHITECTURE.md → Deployment notes.)
 
 Org site deploy (required after every node addition):
   cd ~/AICV/core/org && npx wrangler pages deploy . 
