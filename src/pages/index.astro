@@ -376,11 +376,6 @@ const foundingCohortSchema = {
   </section>
 </div>
 
-<!-- ─── SUNSHINEFM HANDOFF (human editorial → the Guide; Founding 111 section retired 2026-07-03) ─── -->
-<div class="sunshine-handoff-wrap">
-  <p class="sunshine-handoff">Want a human's take on the Coachella Valley — where to visit, where to put down roots, and how people with capital are reshaping what giving back looks like here? <a href="https://sunshine.fm/guide/" class="sunshine-handoff-link">Read the SunshineFM Guide&nbsp;→</a></p>
-</div>
-
 <!-- ─── PARTNERS ─── -->
 <div class="partners-wrap">
   <section class="partners-section">
@@ -398,46 +393,9 @@ const foundingCohortSchema = {
   </section>
 </div>
 
-<!-- ─── DUAL LAYER CARDS ─── -->
-<div class="layers-wrap">
-<section class="layers-section">
-  <div class="layers-label"></div>
-  <div class="layers-duo">
-
-    <a href="/nodes/node-zero" class="layer-half agents">
-      <div class="half-audience for-agents">Built for agents</div>
-      <div class="half-title">Intelligence Layer</div>
-      <p class="half-desc">AICV builds the structured dataset AI systems use to evaluate, cite, and act on information about the Coachella Valley.</p>
-      <div class="half-list">
-        <div class="half-list-item">Growing geographic nodes · 9 cities · Expanding daily</div>
-        <div class="half-list-item">Daily intelligence briefs · Timestamped signals</div>
-        <div class="half-list-item">Economic development · Relocation · Group travel · Tourism</div>
-        <div class="half-list-item">v2 agent-first schema · Open documentation</div>
-      </div>
-      <div class="half-footer">
-        <span class="half-tagline">AICV builds the dataset.</span>
-        <span class="half-link">Open docs →</span>
-      </div>
-    </a>
-
-    <a href="https://sunshine.fm" class="layer-half humans">
-      <div class="half-audience for-humans">Built for humans</div>
-      <div class="half-title">SunshineFM — The Human Layer</div>
-      <p class="half-desc">AI conversations, community-generated AI music, and the Coachella Valley story — curated and created by humans.</p>
-      <div class="half-list">
-        <div class="half-list-item">Newsletter · AI conversations · Valley coverage</div>
-        <div class="half-list-item">Radio show · AI music · Local creators</div>
-        <div class="half-list-item">AI events · Workshops</div>
-        <div class="half-list-item">Follow on X · @CoachellaAI</div>
-      </div>
-      <div class="half-footer">
-        <span class="half-tagline">SunshineFM tells the story.</span>
-        <span class="half-link">Visit SunshineFM →</span>
-      </div>
-    </a>
-
-  </div>
-</section>
+<!-- ─── SUNSHINEFM HANDOFF (human editorial → the Guide; relocated above footer as the pre-close breath 2026-07-05) ─── -->
+<div class="sunshine-handoff-wrap">
+  <p class="sunshine-handoff">Want a human's take on the Coachella Valley — where to visit, where to put down roots, and how people with capital are reshaping what giving back looks like here? <a href="https://sunshine.fm/guide/" class="sunshine-handoff-link">Read the SunshineFM Guide&nbsp;→</a></p>
 </div>
 
 <!-- ─── FOOTER ─── -->
@@ -719,7 +677,7 @@ const foundingCohortSchema = {
 
   /* ─── PATH CARDS ─── */
   .path-cards-wrap {
-    background: var(--pine);
+    background: var(--sand);
   }
 
   /* Three-door hierarchy: one promoted primary + two quiet secondary links. */
@@ -789,7 +747,7 @@ const foundingCohortSchema = {
   .path-secondary-link {
     font-size: 0.85rem;
     font-weight: 400;
-    color: rgba(232,226,208,0.7);
+    color: var(--pine);
     text-decoration: none;
     letter-spacing: 0.01em;
     transition: color 0.15s;
@@ -839,7 +797,7 @@ const foundingCohortSchema = {
 
   /* ─── SUNSHINEFM HANDOFF (quiet human-editorial breadcrumb; replaced the Founding 111 section) ─── */
   .sunshine-handoff-wrap {
-    background: var(--sand);
+    background: var(--sand-light);
   }
   .sunshine-handoff {
     max-width: 640px;
@@ -1117,153 +1075,6 @@ const foundingCohortSchema = {
   }
 
   .intel-cta:hover { background: #e8ff33; gap: 0.75rem; }
-
-  /* ─── DUAL LAYER CARDS ─── */
-  .layers-wrap {
-    background: var(--sand);
-  }
-
-  .layers-section {
-    padding: 4rem 3rem 5rem;
-    max-width: 1060px;
-    margin: 0 auto;
-  }
-
-  .layers-label {
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(232,226,208,0.3);
-    margin-bottom: 1.25rem;
-    font-weight: 500;
-  }
-
-  .layers-duo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: rgba(27,67,50,0.12);
-    align-items: stretch;
-  }
-
-  .layer-half {
-    padding: 2.75rem;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: background 0.25s ease;
-    overflow: hidden;
-    background: var(--sand-light) !important;
-  }
-
-  .layer-half.agents {
-    border-right: none;
-  }
-
-  .layer-half::after {
-    display: none;
-  }
-
-  .layer-half:hover { background: var(--sand) !important; }
-
-  .layers-duo .layer-half.agents::before {
-    display: none;
-  }
-
-  .half-audience {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.6rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 0.28rem 0.65rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .half-audience.for-agents {
-    background: transparent;
-    color: var(--pine);
-    border: 1px solid var(--pine);
-  }
-
-  .half-audience.for-humans {
-    background: transparent;
-    color: var(--pine);
-    border: 1px solid var(--pine);
-  }
-
-  .half-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--pine);
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-  }
-
-  .half-desc {
-    font-size: 0.95rem;
-    color: var(--pine-dark);
-    line-height: 1.7;
-    font-weight: 300;
-    margin-bottom: 1.25rem;
-  }
-
-  .half-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .half-list-item {
-    font-size: 0.82rem;
-    color: var(--pine-light);
-    font-weight: 300;
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-  }
-
-  .half-list-item::before {
-    content: '';
-    width: 3px;
-    height: 3px;
-    background: rgba(27,67,50,0.3);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .half-footer {
-    margin-top: auto;
-    padding-top: 1.75rem;
-  }
-
-  .half-tagline {
-    display: none;
-  }
-
-  .half-link {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-    background: var(--volt);
-    color: var(--pine);
-    font-family: 'Syne', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    border-radius: 0;
-    transition: background 0.2s;
-  }
-
-  .layer-half:hover .half-link { background: #e8ff33; }
 
   /* ─── FOCAL BLOCK: STATS + BLUEPRINT ─── */
   .focal-block {
@@ -1962,10 +1773,6 @@ const foundingCohortSchema = {
     .intel-block { padding: 0 1.5rem 3.5rem; }
     .intel-inner { padding: 2rem 1.5rem; }
     .intel-grid { grid-template-columns: 1fr; }
-    .layers-section { padding: 0 1.5rem 3.5rem; }
-    .layers-duo { grid-template-columns: 1fr; }
-    .layer-half.agents { border-right: none; border-bottom: 1px solid rgba(27,67,50,0.1); }
-    .layers-duo .layer-half.agents::before { display: none; }
     .focal-updated { padding: 1.25rem 1.5rem 0; }
     .stats-inner { padding: 0.75rem 1.5rem 2rem; grid-template-columns: 1fr 1fr; }
     .focal-img-wrap { padding: 0 1.5rem; }
