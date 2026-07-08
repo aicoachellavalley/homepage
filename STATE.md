@@ -2,6 +2,16 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-08 — California adopts Claude brief filed + published
+
+Brief `2026-07-08-california-adopts-claude-state-local-government` filed, pushed (commit `991db84`), and edge-verified **agent-visible** ~60s after push: HTML (`/briefs/2026-07-08-california-adopts-claude-state-local-government/`, HTTP 200), `briefs.json` (now 169 briefs), and `llms-full.txt`. CF auto-deploy regenerated the gitignored data artifacts in-cloud via `build-static-json.cjs` — push of the `.mdx` alone published every surface and fired IndexNow; no `content(data)` commit exists.
+
+- **Three Related Nodes, all live-verified before build:** `riverside-county-economic-development`, `civic-infrastructure`, `workforce-talent`.
+- **Filing-date discipline:** `date: 2026-07-08` (today's filing date) drives `datePublished`/`dateModified` in the NewsArticle schema; the June 29, 2026 announcement date lives in the Signal prose, not the schema — a citable source states its true publication date, not the event date.
+- **Journal 📡 line reconciled, not deferred:** the sunshine-fm `📡` line was added (commit `20e3f62`, wrangler-deployed) and **closed the +1 brief-counter drift** flagged in the 2026-06-30 entry — actual `📡` lines 168→169 now equal the `169 briefs` span; the counter was left untouched, not bumped.
+
+---
+
 ## 2026-07-05 — Cross-thread tangle RESOLVED (reconciled + shipped)
 
 The weekend's parallel-thread stack on com main is cleared: **origin/main = `949993f`, production matches canon.** The Q2 report (`a25e497`) and the nav cleanup (`d17de7a`) were pushed and are live; the git↔production divergence is healed. The AIQnA `llms.txt.ts` WIP remains parked in `stash@{0}` for its own thread — **untouched; do not `stash drop`/`pop`.** *(Retires the earlier "⚠️ PUSH BLOCKED" note — it did its job over the weekend and is no longer true.)*
