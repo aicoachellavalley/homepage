@@ -397,13 +397,14 @@ const schemaGraph = {
   </div>
   <div class="gr-wrap gr-results-wrap">
     <div class="aio-results" id="aioResults">
-      <div class="verdict" id="verdictText"></div>
-      <div id="fixesWrap"></div>
-      <button class="aio-reset" aria-label="Analyze another website" onclick="resetTool()">← Analyze another site</button>
-      <div class="copy-btns">
-        <button class="aio-copy" aria-label="Copy results as Markdown" onclick="copyReport('md')">Copy Markdown</button>
-        <button class="aio-copy" aria-label="Copy results as JSON" onclick="copyReport('json')">Copy JSON</button>
-        <button class="aio-copy" aria-label="Copy results as plain text" onclick="copyReport('text')">Copy Text</button>
+      <div id="reviewCard"></div>
+      <div class="aicv-actions">
+        <button class="btn" aria-label="Analyze another website" onclick="resetTool()">← Analyze another site</button>
+        <div class="copy-row">
+          <button class="btn btn-primary" aria-label="Copy results as JSON" onclick="copyReport('json')">Copy JSON</button>
+          <button class="btn" aria-label="Copy results as Markdown" onclick="copyReport('md')">Copy Markdown</button>
+          <button class="btn" aria-label="Copy results as plain text" onclick="copyReport('text')">Copy Text</button>
+        </div>
       </div>
       <div class="aio-post-results">A diagnostic tells you what AI sees today. It doesn't change what AI reads tomorrow. That's what the Network does. Keep scrolling.</div>
     </div>
@@ -959,74 +960,92 @@ const schemaGraph = {
 
   /* Score/grade/gauge styles removed — the tool no longer renders a verdict. */
 
-  /* The discovery read — the payoff. Promoted to the headline of the result. */
-  .verdict {
-    font-size: 1.3rem;
-    color: var(--pine-dark);
-    line-height: 1.7;
-    font-weight: 400;
-    max-width: 70ch;
-    margin: 0 0 1.9rem;
-  }
-  .verdict strong { color: var(--pine); font-weight: 600; }
-
-  .fixes-label {
-    font-size: 0.62rem; letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(27,67,50,0.4);
-    margin-bottom: 0.875rem;
-  }
-
-  .fix {
-    display: flex; gap: 1rem; align-items: flex-start;
-    padding: 1.1rem 1.25rem;
-    background: rgba(232,226,208,0.03);
-    border-left: 2px solid transparent;
-    margin-bottom: 1px;
-  }
-  .fix.high { border-left-color: var(--danger); }
-  .fix.med  { border-left-color: var(--warning); }
-  .fix.low  { border-left-color: var(--success); }
-
-  .fix-p {
-    font-size: 0.6rem; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 0.2rem 0.5rem; flex-shrink: 0; margin-top: 2px;
-  }
-  .fix-p.high { background: rgba(248,113,113,0.08); color: var(--danger); }
-  .fix-p.med  { background: rgba(251,191,36,0.08);  color: var(--warning); }
-  .fix-p.low  { background: rgba(74,222,128,0.12);  color: #166534; }
-
-  .fix-t { font-size: 0.88rem; color: rgba(27,67,50,0.75); line-height: 1.6; font-weight: 400; }
-  .fix-t strong { color: var(--pine); font-weight: 600; }
-
-  .aio-reset {
-    margin-top: 1.5rem;
-    background: white;
-    border: 1px solid rgba(27,67,50,0.2);
-    color: rgba(27,67,50,0.5);
-    padding: 0.6rem 1.2rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.77rem;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .aio-reset:hover { border-color: var(--pine); color: var(--pine); }
-
-  .copy-btns { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
-
-  .aio-copy {
-    background: white;
-    border: 1px solid rgba(27,67,50,0.2);
+  /* ─── AGENT-READINESS REVIEW CARD — structured read (header / ladder /
+     dimensions / fixes). Filled by renderReview() from the worker's
+     structured response. State tints are literals by design: they are the
+     card's own semantic scale, not brand tokens. ─── */
+  .aicv-review {
+    background: var(--sand);
+    border: 1px solid var(--pine-tint);
+    border-radius: 12px;
+    padding: 1.5rem 1.5rem 1.25rem;
+    max-width: 720px;
     color: var(--pine);
-    padding: 0.6rem 1.1rem;
+  }
+  .aicv-eyebrow { font-size: 0.66rem; letter-spacing: 0.09em; color: #5C6B52; font-weight: 500; }
+  .aicv-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 0.5rem;
+    border-bottom: 1px solid #DDE7CC; padding-bottom: 0.9rem;
+  }
+  .aicv-biz { font-size: 1.2rem; font-weight: 500; color: var(--pine-dark); margin-top: 3px; }
+  .aicv-url { font-size: 0.75rem; color: #6B7A61; margin-top: 2px; }
+  .aicv-reviewed { font-size: 0.68rem; color: #8A9880; margin-top: 4px; }
+  .aicv-head-right { text-align: right; }
+  .aicv-verdict {
+    display: inline-block; background: var(--pine); color: var(--pine-mist);
+    font-size: 0.8rem; font-weight: 500; padding: 5px 12px; border-radius: 6px; margin-top: 4px;
+  }
+
+  /* Ladder: rungs 1-3 are the diagnostic scale; rungs 4-5 are the dashed
+     horizon (the Network) and are never active from a free read. */
+  .aicv-ladder { padding: 1.2rem 0 0.4rem; }
+  .aicv-ladder-track { display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+  .aicv-ladder-track::before { content: ''; position: absolute; top: 6px; left: 10%; right: 50%; border-top: 2px solid var(--pine-tint); }
+  .aicv-ladder-track::after  { content: ''; position: absolute; top: 6px; left: 50%; right: 10%; border-top: 2px dashed var(--pine-tint); }
+  .aicv-rung { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+  .aicv-rung-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--pine-light); }
+  .aicv-rung.is-horizon .aicv-rung-dot { background: var(--sand); border: 1.5px dashed var(--pine-light); }
+  .aicv-rung.is-active .aicv-rung-dot { background: var(--pine); box-shadow: 0 0 0 3px var(--volt); }
+  .aicv-rung-label { font-size: 0.66rem; color: var(--pine); line-height: 1.25; padding: 0 4px; }
+  .aicv-rung.is-horizon .aicv-rung-label { color: #8A9880; }
+  .aicv-rung.is-active .aicv-rung-label { font-weight: 700; color: var(--pine-dark); }
+  .aicv-rung-here { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pine); background: var(--volt); padding: 1px 6px; border-radius: 4px; }
+  .aicv-ladder-net { font-size: 0.66rem; color: #8A9880; text-align: right; margin-top: 6px; }
+
+  .aicv-dims { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 1.1rem; }
+  .aicv-dim { background: var(--cardbg); border: 1px solid var(--cardbd); border-radius: 10px; padding: 0.75rem 0.85rem; }
+  .st-clear   { --cardbg:#F3F7EB; --cardbd:#DDE7CC; --pillbg:#D6E8CF; --pilltx:#2E5B3D; --notec:#5C6B52; }
+  .st-partial { --cardbg:#FBF8EC; --cardbd:#EAE3C9; --pillbg:#EFE6C8; --pilltx:#84611A; --notec:#6B6350; }
+  .st-missing { --cardbg:#FBF3EC; --cardbd:#EAD9C9; --pillbg:#F0D9C8; --pilltx:#8A3B1C; --notec:#6B5A4E; }
+  .aicv-dim-head { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+  .aicv-dim-name { font-size: 0.75rem; font-weight: 500; color: var(--pine-dark); }
+  .aicv-dim-state { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; color: var(--pilltx); background: var(--pillbg); padding: 2px 7px; border-radius: 5px; white-space: nowrap; }
+  .aicv-dim-note { font-size: 0.75rem; color: var(--notec); line-height: 1.45; margin-top: 6px; }
+
+  .aicv-fixes { margin-top: 1.2rem; }
+  .aicv-fixes-cap { margin-bottom: 9px; }
+  .aicv-fix-row { display: flex; gap: 10px; padding: 9px 0; border-top: 1px solid #E4EBD7; }
+  .aicv-fix-row:last-child { border-bottom: 1px solid #E4EBD7; }
+  .aicv-sev { flex: 0 0 auto; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 5px; height: fit-content; margin-top: 2px; }
+  .aicv-sev-high { color: #8A3B1C; background: #F0D9C8; }
+  .aicv-sev-med  { color: #84611A; background: #EFE6C8; }
+  .aicv-sev-low  { color: #5C6B52; background: #EDF1E4; }
+  .aicv-fix-txt { font-size: 0.79rem; color: #3D4A38; line-height: 1.5; }
+
+  .aicv-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 1.1rem; }
+  .aicv-foot-meta { font-size: 0.66rem; color: #8A9880; }
+  .aicv-cta { background: var(--volt); color: var(--pine); font-size: 0.75rem; font-weight: 500; padding: 7px 14px; border-radius: 7px; text-decoration: none; }
+  .aicv-cta:hover { background: #e8ff33; }
+
+  /* Footer furniture — same handlers, restyled to the review card's language. */
+  .aicv-actions { margin-top: 1.5rem; max-width: 720px; }
+  .aicv-actions .btn {
+    background: var(--sand);
+    border: 1px solid var(--pine-tint);
+    color: var(--pine);
+    padding: 8px 14px;
+    border-radius: 7px;
     font-family: 'DM Sans', sans-serif;
     font-size: 0.77rem;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
-    font-weight: 500;
   }
-  .aio-copy:hover { background: var(--pine); color: var(--volt); border-color: var(--pine); }
+  .aicv-actions .btn:hover { border-color: var(--pine); }
+  .aicv-actions .btn-primary { background: var(--pine); border-color: var(--pine); color: var(--pine-mist); }
+  .aicv-actions .btn-primary:hover { background: var(--pine-dark); }
+  .aicv-actions .copy-row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
 
   .aio-err {
     display: none; margin-top: 1rem;
@@ -2590,6 +2609,7 @@ const schemaGraph = {
   ];
 
   let ticker;
+  let lastResult = null; // last structured review, source of truth for exports
 
   function norm(s) {
     s = s.trim();
@@ -2644,35 +2664,18 @@ const schemaGraph = {
 
       if (!res.ok) throw new Error('Analysis service unavailable. Please try again in a moment.');
 
-      const data = await res.json();
-      if (data.error) {
-        showErr(data.error);
+      const r = await res.json();
+      if (r.error) {
+        showErr(r.error);
         return;
       }
-      let r;
-      try {
-        const raw = data.content[0].text.replace(/^```json\s*/i, '').replace(/\s*```$/, '').trim();
-        r = JSON.parse(raw);
-        if (!r.score) throw new Error('Could not read results. Please try again.');
-      } catch { throw new Error('Could not read results. Please try again.'); }
+      if (!r.verdict || !r.dimensions) throw new Error('Could not read results. Please try again.');
 
       clearInterval(ticker);
       document.getElementById('aioLoading').classList.remove('on');
 
-      // Score is still returned by the worker but no longer displayed — the
-      // discovery read (r.verdict) is the payoff, not a grade.
-      document.getElementById('verdictText').innerHTML = esc(r.verdict || '');
-
-      const fixes = r.fixes || [];
-      document.getElementById('fixesWrap').innerHTML = fixes.length ? `
-        <div class="fixes-label">What you could fix</div>
-        ${fixes.map(f => `
-          <div class="fix ${f.priority}">
-            <span class="fix-p ${f.priority}">${f.priority}</span>
-            <div class="fix-t">${esc(f.text)}</div>
-          </div>
-        `).join('')}
-      ` : '';
+      lastResult = r;
+      document.getElementById('reviewCard').innerHTML = renderReview(r);
 
       document.getElementById('aioResults').classList.add('on');
       document.getElementById('analyzeBtn').disabled = false;
@@ -2683,6 +2686,68 @@ const schemaGraph = {
     }
   }
 
+  const DIM_LABELS = { identity: 'Identity', structure: 'Structure', substance: 'Substance', credibility: 'Credibility' };
+  // Display labels only — the underlying state enum (clear/partial/missing)
+  // is unchanged everywhere, including Copy JSON. One rung, two causes:
+  // the label carries how bad, the note carries why (absent vs stale).
+  const STATE_LABELS = { clear: 'CLEAR', partial: 'PARTIAL', missing: 'MISSING/STALE' };
+  const RUNGS = ['Invisible', 'Partly visible', 'Visible', 'Agent ready', 'Cited'];
+
+  function renderReview(r) {
+    const dims = r.dimensions || {};
+    const urlLine = [esc(r.domain || ''), esc(r.locality || '')].filter(Boolean).join(' · ');
+
+    const rungs = RUNGS.map((label, i) => {
+      const n = i + 1;
+      const active = n === r.active_rung;
+      const horizon = n > 3;
+      return `<div class="aicv-rung${active ? ' is-active' : ''}${horizon ? ' is-horizon' : ''}">
+        <span class="aicv-rung-dot"></span>
+        <span class="aicv-rung-label">${label}</span>
+        ${active ? '<span class="aicv-rung-here">you are here</span>' : ''}
+      </div>`;
+    }).join('');
+
+    const cards = Object.keys(DIM_LABELS).map(k => {
+      const d = dims[k] || {};
+      const state = ['clear', 'partial', 'missing'].includes(d.state) ? d.state : 'partial';
+      return `<div class="aicv-dim st-${state}">
+        <div class="aicv-dim-head"><span class="aicv-dim-name">${DIM_LABELS[k]}</span><span class="aicv-dim-state">${STATE_LABELS[state]}</span></div>
+        <div class="aicv-dim-note">${esc(d.note || '')}</div>
+      </div>`;
+    }).join('');
+
+    const fixes = (r.fixes || []).slice(0, 3).map(f => {
+      const sev = ['high', 'med', 'low'].includes(f.severity) ? f.severity : 'med';
+      return `<div class="aicv-fix-row"><span class="aicv-sev aicv-sev-${sev}">${sev.toUpperCase()}</span><span class="aicv-fix-txt">${esc(f.text)}</span></div>`;
+    }).join('');
+
+    return `<div class="aicv-review">
+      <div class="aicv-head">
+        <div>
+          <div class="aicv-eyebrow">AGENT-READINESS REVIEW</div>
+          <div class="aicv-biz">${esc(r.business_name || 'This business')}</div>
+          ${urlLine ? `<div class="aicv-url">${urlLine}</div>` : ''}
+          <div class="aicv-reviewed">Reviewed ${esc(r.reviewed_date || '')}</div>
+        </div>
+        <div class="aicv-head-right">
+          <div class="aicv-eyebrow">HOW AGENTS SEE YOU</div>
+          <div class="aicv-verdict">${esc(r.verdict || '')}</div>
+        </div>
+      </div>
+      <div class="aicv-ladder">
+        <div class="aicv-ladder-track">${rungs}</div>
+        <div class="aicv-ladder-net">— the Network —</div>
+      </div>
+      <div class="aicv-dims">${cards}</div>
+      ${fixes ? `<div class="aicv-fixes"><div class="aicv-eyebrow aicv-fixes-cap">WHAT YOU COULD FIX YOURSELF</div>${fixes}</div>` : ''}
+      <div class="aicv-foot">
+        <span class="aicv-foot-meta">Generated by AICV · aicoachellavalley.com · Reviewed ${esc(r.reviewed_date || '')}</span>
+        <a class="aicv-cta" href="#tiers">Get to Agent Ready →</a>
+      </div>
+    </div>`;
+  }
+
   document.getElementById('urlInput').addEventListener('keydown', e => {
     if (e.key === 'Enter') runAnalysis();
   });
@@ -2691,33 +2756,43 @@ const schemaGraph = {
     if (e.key === 'Escape') document.getElementById('tosModal').classList.remove('on');
   });
 
+  // Exports read from lastResult (the worker's structured response), not the
+  // DOM. The public payload is qualitative only: verdict enum, dimensions,
+  // fixes, dates — never a score, never a claim about the horizon rungs.
   function copyReport(format) {
-    const verdict = document.getElementById('verdictText').textContent;
-    const url = document.getElementById('urlInput').value;
-
-    const fixes = [...document.querySelectorAll('.fix')].map(el => {
-      const priority = el.querySelector('.fix-p').textContent;
-      const text = el.querySelector('.fix-t').textContent;
-      return { priority, text };
+    if (!lastResult) return;
+    const r = lastResult;
+    const dims = Object.keys(DIM_LABELS).map(k => {
+      const d = (r.dimensions || {})[k] || {};
+      return { name: DIM_LABELS[k], state: STATE_LABELS[d.state] || (d.state || '').toUpperCase(), note: d.note || '' };
     });
+    const fixes = (r.fixes || []).map(f => ({ severity: f.severity, text: f.text }));
 
     let output = '';
 
     if (format === 'md') {
-      output = `# Agent-Readiness Review\n\n**Site:** ${url}\n\n## How an agent reads this business\n\n${verdict}\n\n## What you could fix\n\n${fixes.map(f => `- **[${f.priority.toUpperCase()}]** ${f.text}`).join('\n')}\n\n---\n*Generated by AICV Agent-Readiness Review · aicoachellavalley.com*`;
+      output = `# Agent-Readiness Review — ${r.business_name}\n\n**Site:** ${r.domain}${r.locality ? `\n**Location:** ${r.locality}` : ''}\n**Reviewed:** ${r.reviewed_date}\n**How agents see you:** ${r.verdict}\n\n${r.summary}\n\n## The four dimensions\n\n${dims.map(d => `- **${d.name} — ${d.state}.** ${d.note}`).join('\n')}\n\n## What you could fix yourself\n\n${fixes.map(f => `- **[${f.severity.toUpperCase()}]** ${f.text}`).join('\n')}\n\n---\n*Generated by AICV Agent-Readiness Review · aicoachellavalley.com · Reviewed ${r.reviewed_date}*`;
     }
 
     if (format === 'json') {
-      const data = { site: url, verdict, fixes, generated: new Date().toISOString(), source: 'AICV Agent-Readiness Review' };
-      output = JSON.stringify(data, null, 2);
+      output = JSON.stringify({
+        site: r.domain,
+        business_name: r.business_name,
+        locality: r.locality,
+        reviewed_date: r.reviewed_date,
+        verdict: r.verdict,
+        dimensions: r.dimensions,
+        fixes,
+        source: 'AICV Agent-Readiness Review · aicoachellavalley.com'
+      }, null, 2);
     }
 
     if (format === 'text') {
-      output = `AGENT-READINESS REVIEW\nSite: ${url}\n\n${verdict}\n\nWHAT YOU COULD FIX\n${fixes.map(f => `[${f.priority.toUpperCase()}] ${f.text}`).join('\n')}\n\nGenerated by AICV Agent-Readiness Review · aicoachellavalley.com`;
+      output = `AGENT-READINESS REVIEW\n${r.business_name}\nSite: ${r.domain}${r.locality ? `\nLocation: ${r.locality}` : ''}\nReviewed: ${r.reviewed_date}\nHow agents see you: ${r.verdict}\n\n${r.summary}\n\nTHE FOUR DIMENSIONS\n${dims.map(d => `${d.name} — ${d.state}: ${d.note}`).join('\n')}\n\nWHAT YOU COULD FIX YOURSELF\n${fixes.map(f => `[${f.severity.toUpperCase()}] ${f.text}`).join('\n')}\n\nGenerated by AICV Agent-Readiness Review · aicoachellavalley.com · Reviewed ${r.reviewed_date}`;
     }
 
     navigator.clipboard.writeText(output).then(() => {
-      const btns = document.querySelectorAll('.aio-copy');
+      const btns = document.querySelectorAll('.aicv-actions .btn');
       btns.forEach(b => {
         if (b.textContent.toLowerCase().includes(format === 'md' ? 'markdown' : format)) {
           b.textContent = 'Copied ✓';
