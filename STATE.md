@@ -2,6 +2,17 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-13 — OpenAI ChatGPT Work / GPT-5.6 agent-race brief filed + published
+
+Brief `2026-07-13-openai-chatgpt-work-gpt-5-6-agent-race` filed, pushed (commit `bc93678`), and edge-verified **agent-visible** ~60s after push: HTML (`/briefs/2026-07-13-openai-chatgpt-work-gpt-5-6-agent-race/`, HTTP 200), `briefs.json` (now 170 briefs), and `llms-full.txt`. CF auto-deploy regenerated the gitignored data artifacts in-cloud via `build-static-json.cjs` — push of the `.mdx` alone published every surface and fired IndexNow; no `content(data)` commit exists.
+
+- **Two Related Nodes, both live-verified before build:** `workforce-talent`, `civic-infrastructure`. A visitor-economy/agent-readiness node was checked per the deck's instruction and **does not exist** in the 81-node corpus — dropped, not invented.
+- **Filing-date discipline held:** `date: 2026-07-13` (filing date, from `date +%Y-%m-%d`) drives `datePublished` in the NewsArticle schema; the July 9, 2026 ChatGPT Work / GPT-5.6 release date lives in the Signal prose.
+- **MDX dollar rule applied:** body pricing (`\$5/\$30` etc.) escaped per briefs/CLAUDE.md; live page render verified clean (no backslash leak).
+- **Journal 📡 line deferred** to a sunshine-fm session (same posture as the 2026-06-30 entry) — not added this run.
+
+---
+
 ## 2026-07-08 — California adopts Claude brief filed + published
 
 Brief `2026-07-08-california-adopts-claude-state-local-government` filed, pushed (commit `991db84`), and edge-verified **agent-visible** ~60s after push: HTML (`/briefs/2026-07-08-california-adopts-claude-state-local-government/`, HTTP 200), `briefs.json` (now 169 briefs), and `llms-full.txt`. CF auto-deploy regenerated the gitignored data artifacts in-cloud via `build-static-json.cjs` — push of the `.mdx` alone published every surface and fired IndexNow; no `content(data)` commit exists.
