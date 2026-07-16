@@ -2691,7 +2691,9 @@ const schemaGraph = {
   // is unchanged everywhere, including Copy JSON. One rung, two causes:
   // the label carries how bad, the note carries why (absent vs stale).
   const STATE_LABELS = { clear: 'CLEAR', partial: 'PARTIAL', missing: 'MISSING/STALE' };
-  const RUNGS = ['Invisible', 'Partly visible', 'Visible', 'Agent ready', 'Cited'];
+  // "Discoverable", not "Cited": locked vocabulary rule (2026-07-16) —
+  // "Cited" is reserved for premium-tier materials only.
+  const RUNGS = ['Invisible', 'Partly visible', 'Visible', 'Agent ready', 'Discoverable'];
 
   function renderReview(r) {
     const dims = r.dimensions || {};
