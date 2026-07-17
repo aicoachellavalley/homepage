@@ -2,6 +2,16 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-17 — How We Do This page + org-identity wording fixes shipped
+
+Commit `b6cc1bd` (range `793a73a..b6cc1bd`) pushed and **edge-verified live**: new plain-language method page `/how-we-do-this/` (HTTP 200, five beats, Gate B amendment passage verbatim), both index.astro JSON-LD wording fixes confirmed in the live homepage (org description layer→network + legal fiscal string; Q3 FAQ AIO Tool→Agent Preview + same string — zero occurrences of the old strings remain), foot-links live on index / get-agent-ready / minimum-viable-agent, methodology-page pointer live, sitemap entry live. IndexNow: 200, 5 URLs.
+
+- **Five-stage gates held** (Recon STOP → Propose STOP → Draft/Gate B STOP → Build+Verify STOP → Canon Gate). Voice sweep clean: zero "the Valley" alone, zero "cited", fiscal string exact ("AICV is a fiscally sponsored project of Desert Community Foundation, a 501(c)(3) nonprofit organization").
+- **New page's footer brand block** intentionally carries the full legal string (site-wide footers still say the short form — queued sweep below).
+- **QUEUED (future session): vocabulary + nonprofit-boilerplate sweep** — Base.astro default description ("structured intelligence layer"), get-agent-ready copy ("regional intelligence layer", short/varied fiscal strings), ~5 report MDX boilerplates ("single nonprofit initiative", "layer"), minimum-viable-agent tier copy ("the Valley" ×2, lines ~108/145) + its TOS modal ("AIO Visibility Tool"), and the site-wide TOS modal fiscal wording ("the Desert Community Foundation", no 501(c)(3) — dated legal doc, revise deliberately).
+
+---
+
 ## 2026-07-13 — OpenAI ChatGPT Work / GPT-5.6 agent-race brief filed + published
 
 Brief `2026-07-13-openai-chatgpt-work-gpt-5-6-agent-race` filed, pushed (commit `bc93678`), and edge-verified **agent-visible** ~60s after push: HTML (`/briefs/2026-07-13-openai-chatgpt-work-gpt-5-6-agent-race/`, HTTP 200), `briefs.json` (now 170 briefs), and `llms-full.txt`. CF auto-deploy regenerated the gitignored data artifacts in-cloud via `build-static-json.cjs` — push of the `.mdx` alone published every surface and fired IndexNow; no `content(data)` commit exists.
