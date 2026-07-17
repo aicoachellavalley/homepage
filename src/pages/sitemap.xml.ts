@@ -13,6 +13,7 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/reports/',               changefreq: 'weekly',  priority: '0.9' },
     { url: 'https://aicoachellavalley.com/get-agent-ready/',       changefreq: 'monthly', priority: '0.9' },
     { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8' },
+    { url: 'https://aicoachellavalley.com/how-we-do-this/',        changefreq: 'monthly', priority: '0.8' },
     { url: 'https://aicoachellavalley.com/founding-111/',          changefreq: 'monthly', priority: '0.8' },
   ];
 
