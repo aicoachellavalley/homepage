@@ -1,0 +1,86 @@
+---
+title: "Measured Twice: The First Re-Measurement of the Coachella Valley's Agent Layer"
+description: "AICV re-measured 536 independent businesses across two censused categories — dining and hospitality — four to nine days after their original probes, on the same deterministic instrument. One row in nine had already changed its machine-facing state. Two lapsed domains were serving offshore gambling sites, one was listed for sale, one had expired into a hosting company's error page — all four had been hiding inside a single 'challenge blocked' classification that only a real browser could unmask. 102 correction rows were applied to the census canon under a two-date verification rule, and 41 links are suppressed from the network until they can be vouched for. This is the first report in the series about keeping the map true rather than drawing it."
+date: "2026-07-17"
+period: "Q3 2026"
+report_type: "agent-readiness"
+status: published
+tags: ["agent-readiness", "re-measurement", "data-maintenance", "census", "agent-visibility", "coachella-valley", "dining", "hospitality", "corpus-integrity"]
+sections: [
+  "The Re-Measurement",
+  "Methodology — Measured Twice, Not Asserted Once",
+  "Finding 1 — One Row in Nine Drifted Within a Week",
+  "Finding 2 — What a Bot Wall Can Hide",
+  "Finding 3 — The Door Is Closed Specifically to Machines",
+  "Finding 4 — Repair, Not Republication",
+  "Finding 5 — The Key Action, Category by Category",
+  "What This Means for the Coachella Valley"
+]
+canonical: "https://aicoachellavalley.com/reports/measured-twice-coachella-valley-agent-layer-remeasurement/"
+---
+
+# Measured Twice: The First Re-Measurement of the Coachella Valley's Agent Layer
+
+**Published:** July 2026 · **Period:** Q3 2026 · **By:** AICV (AI Coachella Valley)
+
+**Source material:** Original AICV research — a two-category fleet re-measurement on the deterministic census instrument, with a rendering second tier and a committed repair record
+
+## The Re-Measurement
+
+Over five weeks this summer AICV published seven complete category censuses of the Coachella Valley — maps of how AI agents actually experience the desert's businesses when they try to read them. Every one of those reports measured each business once. This report is about what happens when you go back.
+
+In mid-July, AICV re-measured **536 independent businesses** across the two most consumer-facing censused categories — 453 in food and dining, 83 in hospitality and retreat venues, spanning **435 unique web domains** — between four and nine days after their original census probes, using the same deterministic instrument the censuses used. Not a new census: a re-reading of ground already mapped, to answer a question no directory, aggregator, or one-time audit can answer. *How fast does this data rot?*
+
+The answer: fast. Roughly **one row in nine had already changed its machine-facing state within a week.** And inside that drift were failure modes worse than staleness — domains that no longer belonged to the businesses that once held them, serving content no business would want its name attached to.
+
+## Methodology — Measured Twice, Not Asserted Once
+
+The re-measurement kept the census discipline — every visibility fact comes from a deterministic dual-client probe, fetching each URL once as a browser and once as an AI crawler, never from a model's judgment — and added a second tier the censuses did not have: wherever the plain read came back blocked, thin, or empty, the site was re-read in a **real, rendering browser**. Nothing was ever submitted, clicked into a form, or typed anywhere; booking engines and reservation widgets were observed, not operated. Every recorded fact carries its mechanism — what a plain crawler received versus what a rendering browser received — because those are different things, and the gap between them turned out to be one of the findings.
+
+One boundary matters for reading the numbers. The re-measurement rosters are the **independent businesses with working websites** from each census — the sales-relevant core, not the full censused universe. Within them, the drift rate is computed on the 490 of 536 rows that carried a prior deterministic visibility class to compare against; the other 46 were not covered by the census arc's July 6 re-classification pass, so they had a first reading this week, not a second — nothing to drift from. The figures in this report therefore revise nothing in the published censuses: dining's finding that roughly 28.4 percent of checkable independent sites block AI crawlers, and hospitality's 31.1 percent — the most agent-blocked category in the series — stand as published, on their own denominators. This report measures a different thing: not where the walls are, but how quickly the ground moves.
+
+## Finding 1 — One Row in Nine Drifted Within a Week
+
+Of the 490 re-measured rows that carried a deterministic visibility class from their census probe, **55 measured differently on re-read — 11.2 percent**. In dining, 10.8 percent of rows drifted in nine days. In hospitality, 13.3 percent drifted in eight.
+
+Some drift is a site fixing itself — a challenge wall coming down, structured data appearing. Some is the opposite — a previously open site newly refusing crawlers. Some is terminal: a domain expiring, a hosting account lapsing, a site going dark between one Tuesday and the next. The direction varies; the rate is the point. At roughly one row in nine per week, any static snapshot of this region's business layer is measurably wrong within a month of being taken — which is precisely the condition the desert's business data has lived in until now, because nobody was re-measuring.
+
+## Finding 2 — What a Bot Wall Can Hide
+
+The single most consequential technical finding is about a classification, not a business.
+
+The census instrument classifies a site that answers a human browser but stonewalls an automated client as *challenge blocked* — a bot-mitigation wall. It is a common and usually accurate reading. But when the re-measurement pushed a rendering browser through those walls, four of them turned out not to be walls at all. Behind one "challenge blocked" classification sat **four businesses in three unrelated terminal conditions**: two restaurant domains that had lapsed and been re-registered by offshore gambling operations, wearing the restaurants' names in the census while serving slot-machine promotions to anyone who followed the link; one domain sitting on a for-sale page at a domain marketplace; and one hotel website expired into its hosting company's error page.
+
+To a non-rendering probe, a security challenge and a dead business look identical. The censuses recorded these sites as blocked; only a second measurement with a different mechanism could tell that they were gone — or worse than gone. The affected businesses are identified in AICV's internal correction records and are not named here; a business whose lapsed domain now serves gambling content has a problem to fix, not a headline to star in.
+
+The protective mechanism this feeds is **link suppression**: 41 of the 536 re-measured rows — 39 in dining, two in hospitality — now carry a suppression flag, meaning the network will not publish or amplify a link it measured as dead, parked, hijacked, or pointing at the wrong entity, until the record is repaired. A network that vouches for links has to be willing to withhold them.
+
+## Finding 3 — The Door Is Closed Specifically to Machines
+
+The censuses established that between roughly a fifth and a third of this region's business sites turn AI crawlers away, category by category. The re-measurement adds the other half of that finding: **385 of the re-measured rows carry full rendering-browser evidence, and in exactly one case did a challenge wall survive the real browser.**
+
+One. Everywhere else, the content exists, loads, and reads cleanly the moment the reader executes JavaScript like a human's browser does. The desert's visibility problem is almost never missing content — it is access discrimination, aimed with precision at the class of readers that assembles AI answers: the non-rendering crawlers that feed the systems a traveler or a would-be resident now asks first. A business behind such a wall is invisible in the exact channel where being discovered increasingly happens, while its website looks perfectly healthy to every human who checks it. That asymmetry — *it looks fine when you look, and it is gone when a machine looks* — is why one-time audits mislead and why re-measurement, with both mechanisms recorded, is the only honest reading.
+
+## Finding 4 — Repair, Not Republication
+
+Measurement that never becomes repair is just surveillance. On July 16, the accumulated findings were applied to the census canon as a single committed repair: **102 unique correction rows** across the two categories.
+
+The repair followed a two-class discipline. **Fourteen values were actually changed** — cities, phone numbers, website URLs — and only where the fix had been verified on the live site on two separate dates by two separate measurement passes. **Six duplicate records were merged**, each a case of one real business carried as two census rows under name or domain variants. Everything else — 32 businesses whose recorded website is simply unknown and needs discovery, operating-status questions, wrong-granularity links — was **annotated, not altered**: flagged on the record with a dated correction note, awaiting its own verification, because a maintained dataset never lets an unverified claim quietly become a fact.
+
+Two details of the repair say more about the method than the totals. First: the eight correction candidates surfaced by AICV's original pilot re-measurement were re-confirmed **eight for eight** by the fleet's independent second pass — different day, same instrument, same findings. Second, and the reverse case: the **Movie Colony Hotel** in Palm Springs, a boutique property whose site refused every plain fetch and which a single measurement would have recorded as dark. The re-measurement's rendering tier told the truer story: the hotel's site loads completely in a real browser — name, address, phone, rooms, a published nightly rate, a working booking calendar. The record was corrected in the hotel's favor before any false reading of it existed anywhere. A re-measured corpus protects businesses from the single worst error a data product can make about them: calling a living business gone.
+
+## Finding 5 — The Key Action, Category by Category
+
+Each category has one action that matters most to a visitor's agent, and the re-measurement graded it with strict verbs — an intent is *completable* only from evidence measured that day, a *dead end* only where a real control fails, and *not observed* where the evidence simply doesn't show it.
+
+In **hospitality**, the key action is booking, and the desert's independent properties are good at it: the booking or inquiry path was locatable on **79 of 83 properties**. What is missing is the price: only **nine of 83** display a rate an agent can read on the page, with 72 not observed — rates living inside booking engines and quote-based venue pricing, hidden by industry norm rather than neglect. The door is open; the number on the door is not.
+
+In **dining**, the key action is the reservation path, and the split is three ways: **165 completable, 89 dead ends, 199 not observed** — the last group dominated by walk-in restaurants where no booking surface is expected and none is claimed missing. The 89 dead ends are the sales-relevant core: full-service, reservation-taking restaurants whose fully-read pages offer an agent no way to complete the booking online — reachable, readable, and unbookable.
+
+## What This Means for the Coachella Valley
+
+Seven censuses drew the first machine-readable map of this region's business layer. This report is the first evidence that the map is *kept* — re-measured on a cadence, repaired under a verification rule, with a public record of what changed and a refusal to publish what can't be vouched for.
+
+The rate matters to anyone who builds on regional data: at one row in nine drifting per week, a directory assembled in January is fiction by spring. The failure modes matter more: business data doesn't just go stale here, it gets *repurposed* — a trusted local name silently pointing at an offshore casino is a failure no freshness date on a directory listing will ever surface. And the repair discipline matters most, because it is the difference between a dataset and an intelligence layer: values change only when verified twice, unverified claims are flagged and never absorbed, duplicates are merged in the open, and a business that merely *looks* dark to one kind of reader gets a second, fairer reading before anything is said about it.
+
+For the desert's business owners, the practical meaning is simple: the systems your next guest asks are reading your site with the least-privileged client there is, and what they see changes faster than anyone has been checking. AICV now checks. Measured twice, repaired once, on the record.
