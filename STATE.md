@@ -2,6 +2,42 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-20 — Save-card PNG export shipped on the Agent Preview result card
+
+Commit `b1afcbd` (pushed 2026-07-19 ~17:06 PT) **live-verified 2026-07-20 ~08:15 PT**: "⬇ Save card"
+button in the result actions row downloads the full card (attribution footer + reviewed date) as a
+2x PNG, `agent-preview-<domain>-<date>.png`, "Saved ✓" confirmation flash. html-to-image from cdnjs
+(SRI-pinned, lazy-loaded on first tap); card serialized to SVG with fonts embedded, rasterized to
+canvas via `Image.onload` — NOT the library's `toPng`, whose `Image.decode()` path hangs/flakes on
+SVG payloads in some engines (Safari included). Copy JSON/MD/Text exports untouched. Local build
+passed pre-push (301 pages).
+
+- **Deploy propagation was slow (~overnight) + one stale edge copy** — a 08:05 recon read the old
+  build on the plain path while a cache-busted fetch served the new one; both paths confirmed
+  current by ~08:10. Not a failed build.
+- **Tripwire CORRECTION:** `2ed92b3` (ladder rung Cited → Discoverable) did NOT ship with this
+  push — it has been **live since 2026-07-17**, carried by the How We Do This push (`793a73a..
+  e0becd3` sit on top of it). The playbook STATE tripwire and the b1afcbd commit-message NOTE
+  ("this push also ships 2ed92b3") are both stale on this point; production ladder verified
+  reading "Discoverable", zero "Cited".
+- **Verification evidence (2026-07-19 Stage 4):** four full-size PNG captures inspected — real
+  Visible (aicoachellavalley.com), real Partly visible ×2 (iwcoffeeandchai.com, ritzcarlton.com),
+  plus a clearly-labeled SYNTHETIC Invisible (Sat-approved: same DOM/CSS/pipeline, payload-only
+  difference). Fonts correct, footer + reviewed date present. Production code path exercised
+  end-to-end on the live page 2026-07-20 ("Saved ✓" on deployed code, real result payload
+  injected — the analysis slot budget was spent).
+- **Rate-limit accounting:** worker caps 5 analyses per **rolling 24h window** per IP
+  (`checkRateLimit`, worker.js:209 — window starts at first analysis, not midnight). This iMac
+  spent 5/5 on 2026-07-19 ~16:45–17:00 PT (incl. one CORS-probe mistake and one consumed by
+  molecomida's error response — the limiter increments before the target fetch). Sat's
+  "limit of 5 free analyses" message was the designed response, not an error.
+- **FOLLOW-UP (not a gate, per Sat):** after the window resets (~16:45 PT 2026-07-20), run ONE
+  real production analysis end-to-end incl. a real Save-card download, and attempt a real
+  Invisible-verdict capture (candidates must be fetchable-but-unreadable; blocked sites return
+  the tool's error, not a card).
+
+---
+
 ## 2026-07-17 — How We Do This page + org-identity wording fixes shipped
 
 Commit `b6cc1bd` (range `793a73a..b6cc1bd`) pushed and **edge-verified live**: new plain-language method page `/how-we-do-this/` (HTTP 200, five beats, Gate B amendment passage verbatim), both index.astro JSON-LD wording fixes confirmed in the live homepage (org description layer→network + legal fiscal string; Q3 FAQ AIO Tool→Agent Preview + same string — zero occurrences of the old strings remain), foot-links live on index / get-agent-ready / minimum-viable-agent, methodology-page pointer live, sitemap entry live. IndexNow: 200, 5 URLs.
