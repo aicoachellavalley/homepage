@@ -404,6 +404,7 @@ const schemaGraph = {
           <button class="btn btn-primary" aria-label="Copy results as JSON" onclick="copyReport('json')">Copy JSON</button>
           <button class="btn" aria-label="Copy results as Markdown" onclick="copyReport('md')">Copy Markdown</button>
           <button class="btn" aria-label="Copy results as plain text" onclick="copyReport('text')">Copy Text</button>
+          <button class="btn" id="saveCardBtn" aria-label="Download the result card as an image" onclick="saveCard()">⬇ Save card</button>
         </div>
       </div>
       <div class="aio-post-results">A diagnostic tells you what AI sees today. It doesn't change what AI reads tomorrow. That's what the Network does. Keep scrolling.</div>
@@ -2805,6 +2806,97 @@ const schemaGraph = {
         }
       });
     });
+  }
+
+  // ── Save-card PNG export. html-to-image is lazy-loaded from cdnjs on
+  // first tap (zero page-weight until used); capture is #reviewCard at 2x
+  // on the cream ground. Double-render is the Safari warm-up (first pass
+  // can drop webfonts); document.fonts.ready guards font timing. Failure
+  // never touches the copy exports: capture errors show a polite note and
+  // re-enable; a library-load failure hides the button.
+  let htiLoad = null;
+  function loadHti() {
+    if (window.htmlToImage) return Promise.resolve(window.htmlToImage);
+    if (!htiLoad) {
+      htiLoad = new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.13/html-to-image.min.js';
+        s.integrity = 'sha512-iZ2ORl595Wx6miw+GuadDet4WQbdSWS3JLMoNfY8cRGoEFy6oT3G9IbcrBeL6AfkgpA51ETt/faX6yLV+/gFJg==';
+        s.crossOrigin = 'anonymous';
+        s.referrerPolicy = 'no-referrer';
+        s.onload = () => window.htmlToImage ? resolve(window.htmlToImage) : reject(new Error('no global'));
+        s.onerror = () => { htiLoad = null; reject(new Error('load failed')); };
+        document.head.appendChild(s);
+      });
+    }
+    return htiLoad;
+  }
+
+  async function saveCard() {
+    const btn = document.getElementById('saveCardBtn');
+    const wrap = document.getElementById('reviewCard');
+    // Capture the card itself, not the full-width wrapper — avoids a slab
+    // of empty ground on the right of the PNG.
+    const card = wrap && (wrap.querySelector('.aicv-review') || wrap);
+    if (!btn || !card || !lastResult) return;
+    const idle = '⬇ Save card';
+    btn.disabled = true;
+    btn.textContent = 'Saving…';
+
+    let hti;
+    try {
+      hti = await loadHti();
+    } catch (e) {
+      btn.textContent = "Couldn't save — try a screenshot";
+      setTimeout(() => { btn.style.display = 'none'; }, 3000);
+      return;
+    }
+
+    try {
+      await document.fonts.ready;
+      // toSvg (serializer + font embed) plus our own rasterize step. The
+      // library's toPng path rides on Image.decode(), which hangs or flakes
+      // on SVG payloads in some engines (Safari included) — onload doesn't.
+      const rect = card.getBoundingClientRect();
+      const svgUrl = await hti.toSvg(card, { backgroundColor: '#FAFAF7' });
+      const rasterize = () => new Promise((resolve, reject) => {
+        const img = new Image();
+        const t = setTimeout(() => reject(new Error('capture timed out')), 15000);
+        img.onload = () => {
+          clearTimeout(t);
+          try {
+            const c = document.createElement('canvas');
+            c.width = Math.round(rect.width * 2);   // 2x pixel density
+            c.height = Math.round(rect.height * 2);
+            const ctx = c.getContext('2d');
+            ctx.fillStyle = '#FAFAF7';              // cream ground baked in
+            ctx.fillRect(0, 0, c.width, c.height);
+            ctx.drawImage(img, 0, 0, c.width, c.height);
+            resolve(c.toDataURL('image/png'));
+          } catch (e) { reject(e); }
+        };
+        img.onerror = () => { clearTimeout(t); reject(new Error('render failed')); };
+        img.src = svgUrl;
+      });
+      await rasterize();                 // Safari warm-up pass (fonts settle)
+      const dataUrl = await rasterize(); // keep the second
+      if (!dataUrl || dataUrl.length < 2000) throw new Error('blank capture');
+
+      const domain = (lastResult.domain || 'site').replace(/[^a-zA-Z0-9.-]/g, '');
+      const when = new Date(lastResult.reviewed_date || Date.now());
+      const d = isNaN(when) ? new Date() : when;
+      const date = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      const a = document.createElement('a');
+      a.download = `agent-preview-${domain}-${date}.png`;
+      a.href = dataUrl;
+      a.click();
+
+      btn.textContent = 'Saved ✓';
+      setTimeout(() => { btn.textContent = idle; btn.disabled = false; }, 2000);
+    } catch (e) {
+      btn.textContent = "Couldn't save — try a screenshot";
+      setTimeout(() => { btn.textContent = idle; btn.disabled = false; }, 3000);
+    }
   }
 </script>
 
