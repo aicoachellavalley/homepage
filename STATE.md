@@ -2,6 +2,22 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-22 — Measured Twice drift brief filed + published
+
+Brief `2026-07-22-coachella-valley-business-data-drift-remeasurement` filed, pushed (commit `5fd82ea`, range `d65bf47..5fd82ea`), and edge-verified **agent-visible** within ~1 min of push: HTML (`/briefs/2026-07-22-coachella-valley-business-data-drift-remeasurement/`, HTTP 200 on both the plain path and a cache-busted fetch — no stale-edge repeat of the 07-20 episode), `briefs.json` (now **171 briefs**), and `llms-full.txt` (title present). Live JSON-LD verified: `NewsArticle`, `datePublished`/`dateModified` `2026-07-22`, canonical url + author/publisher correct. Push of the `.mdx` alone published every surface, same as the 07-13 and 07-08 briefs; no `content(data)` commit exists. (IndexNow is the documented auto-deploy behavior; not separately verified this run.)
+
+- **Announces the Measured Twice report** (`793a73a`, published 2026-07-17): 536 businesses re-measured across dining + hospitality, 11.2% drift within roughly a week.
+- **SCOPE GUARD held — W1+W2 published figures ONLY.** Every figure in the brief traces to the live report. Zero W3/W4 wave figures (no 11.8%, no 14.8%, no 323/224, no 450/419/318, no license or credential counts), zero census-repair (`89e350b`) figures, zero restated census denominators. Verified by string scan pre-push; the one loose-pattern hit (`65 `) was `165`, the published dining completable count.
+- **Three Related Nodes, all `status: live` re-verified before build:** `coachella-valley-intelligence-index`, `node-zero`, `ai-economy-coachella-valley`. Link text `Coachella Valley Intelligence Index` follows established brief precedent (wellness + dining census briefs) rather than the node's own `title:` field (`AICV Index`) — precedent, not invention.
+- **Inline report link used** — house pattern supports it (9 prior briefs inline-link a `/reports/` page). Deviation from precedent: those briefs append a closing "Full findings … are published at [path](path)" sentence to Context; here the existing phrase *Measured Twice* in the Signal was wrapped instead, to keep the approved copy verbatim (no words added or removed).
+- **Filing-date discipline held:** `date: 2026-07-22` (filing date, from `date +%Y-%m-%d`) drives `datePublished`; the July 17 report-publication date and the July 16 repair date live in the prose.
+- **MDX dollar rule: N/A this brief** — body contains zero `$` characters (verified pre-push), so no escaping was required.
+- **Local build gate passed** before push: 302 pages (301 → 302), per the standing build-verification rule.
+- **Journal 📡 line NOT added this run** — deferred to a sunshine-fm session (same posture as the 2026-07-13 and 2026-06-30 entries).
+- **Node back-link question — answered, no edits made.** The reciprocity rule (playbook CLAUDE.md, *How to Add a Node* step 9) is scoped to **node→node** links when adding a **node**; the *How to Add an Intelligence Brief* workflow has no back-link step, and com/CLAUDE.md side-effects list only the journal line + STATE update. Practice matches: the 07-13 brief was never added to `workforce-talent` or `civic-infrastructure`. Separate pre-existing debt surfaced while checking — node `## Intelligence Briefs` sections have drifted badly (`workforce-talent` newest listed brief is 2026-04-14; `civic-infrastructure` lists none). Not touched here.
+
+---
+
 ## 2026-07-20 — Save-card PNG export shipped on the Agent Preview result card
 
 Commit `b1afcbd` (pushed 2026-07-19 ~17:06 PT) **live-verified 2026-07-20 ~08:15 PT**: "⬇ Save card"
