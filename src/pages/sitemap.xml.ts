@@ -9,7 +9,7 @@ export const GET: APIRoute = async () => {
   const staticPages = [
     { url: 'https://aicoachellavalley.com/',                       changefreq: 'weekly',  priority: '1.0' },
     { url: 'https://aicoachellavalley.com/nodes/',                 changefreq: 'weekly',  priority: '0.9' },
-    { url: 'https://aicoachellavalley.com/briefs/',                changefreq: 'daily',   priority: '0.9' },
+    { url: 'https://aicoachellavalley.com/briefs/',                changefreq: 'weekly',  priority: '0.9' },
     { url: 'https://aicoachellavalley.com/reports/',               changefreq: 'weekly',  priority: '0.9' },
     { url: 'https://aicoachellavalley.com/get-agent-ready/',       changefreq: 'monthly', priority: '0.9' },
     { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8' },
