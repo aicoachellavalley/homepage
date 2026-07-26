@@ -45,7 +45,7 @@ break routing.
 5. Commit com changes: feat: add [location] node
 6. Commit org changes: feat: add [node-slug] to graph lookup tables
 7. Deploy both sites (see ~/AICV/core/com/CLAUDE.md)
-8. Add 📓 journal line item to ~/sunshine-fm/journal/index.html
+8. Add 📓 journal line item to ~/AICV/sunshine-fm/journal/index.html
 9. Update STATE.md node count
 
 ## MDX rules
