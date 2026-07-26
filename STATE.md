@@ -2,6 +2,65 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-25 — Preview-fleet integration + derived stats + single-source pricing
+
+Live (`3f3f44e`, auto-deployed). Three queued preview-fleet items plus a stats
+audit and two ruled commercial-copy calls.
+
+**Stat bar is now four derived cells** — Briefs 171 · Reports 12 · Coachella
+Valley Businesses Mapped **2,914** · Businesses with a live Agent Preview **75**.
+The old "3 / Agentic Reviews" cell is gone: it counted three retired Snapshot
+files under a label naming the *private* LLM-Council artifact. Nodes left the
+headline bar (internal vocabulary) and keep their page and nav.
+
+- **"Mapped" is the ruled verb for 2,914** — canon rows across the six merchant
+  censuses. It is NOT "measured": only the subset with a reachable site of its
+  own was ever probed (1,632). Never relabel without re-deriving.
+- **Reports show 12, `reports.json` still serves 13.** Display-time filter on
+  `report_type !== 'methodology'` only — the surface-health monitor asserts
+  three-way agreement on that feed and must not be disturbed.
+- **Phone overflow fixed, bounded to the stat bar.** `1fr` is minmax(auto,1fr),
+  so "2,914" (~171px) exceeded its ~91px content box and widened its track.
+  Inside the existing ≤768 block: `repeat(2, minmax(0,1fr))`, cell padding
+  2rem/2.25rem → 1.5rem/0.85rem, numerals 2.75rem → 1.9rem. At 375px: 136px box
+  for a 118px number, 18px headroom. **Sat verifies on a real phone** — the
+  agent browser pane reported innerWidth 671 against a 375px capture and was
+  not trusted for this.
+
+**Pricing has a single source: `src/data/pricing.json`.** get-agent-ready
+(visible cards + JSON-LD offers) and llms.txt all read from it.
+`scripts/check-pricing.mjs` runs in `prebuild` and FAILS the build if a JSON-LD
+price diverges or the retired "AIO" reappears. llms.txt had been advertising
+"two tiers" and the AIO diagnostic; it now renders the four-tier ladder.
+(No $99 promo exists anywhere — the only $99 strings are editorial briefs about
+Microsoft's pricing.)
+
+**Founding-member FAQ entry DELETED** (with its orphaned `.gar-founding-counter`
+CSS). It promised "the first ten Tier 2 members" and "standard pricing begins at
+member eleven" — a retired tier name, backed by no ledger, invisible to humans
+while readable by agents and rich results. **If a founding offer happens later
+it will be written fresh, not resurrected.**
+
+**Cross-repo data: derive-first, committed fallback, no network at build time.**
+`scripts/sync-previews-manifest.mjs` (from sibling mva) and
+`scripts/sync-corpus.mjs` (from sibling playbook canon) validate then write
+`src/data/previews/` and `src/data/corpus.json`; absent a sibling checkout the
+committed copies stand, so a Pages build can never fail on a remote blip.
+
+**`/sitemap-index.xml`** lists `/sitemap.xml` plus each tranche's preview
+sitemap, derived from the manifests. `/sitemap.xml` unchanged; robots.txt
+already had a Sitemap line and now carries the index alongside it.
+
+**Report → preview block** on census reports only, via explicit
+`src/data/report-preview-map.json` (never slug inference). Renders 75 pages and
+75 links, derived — it self-corrected 78 → 75 when the mva canon gate dropped
+three duplicates. Numeric-honesty copy: a census row exists for every entity
+found; a preview page needs a reachable site of its own.
+
+**Verified live** on the real URLs: stat bar 171/12/2,914/75 · llms.txt ladder
+(AIO 0) · sitemap-index → tranche sitemap (73 urls) → a preview page 200 ·
+founding claim 0 · JSON-LD parses.
+
 ## 2026-07-22 — Measured Twice drift brief filed + published
 
 Brief `2026-07-22-coachella-valley-business-data-drift-remeasurement` filed, pushed (commit `5fd82ea`, range `d65bf47..5fd82ea`), and edge-verified **agent-visible** within ~1 min of push: HTML (`/briefs/2026-07-22-coachella-valley-business-data-drift-remeasurement/`, HTTP 200 on both the plain path and a cache-busted fetch — no stale-edge repeat of the 07-20 episode), `briefs.json` (now **171 briefs**), and `llms-full.txt` (title present). Live JSON-LD verified: `NewsArticle`, `datePublished`/`dateModified` `2026-07-22`, canonical url + author/publisher correct. Push of the `.mdx` alone published every surface, same as the 07-13 and 07-08 briefs; no `content(data)` commit exists. (IndexNow is the documented auto-deploy behavior; not separately verified this run.)
