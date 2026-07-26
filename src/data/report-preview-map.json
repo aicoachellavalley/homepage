@@ -1,0 +1,11 @@
+{
+  "$comment": "EXPLICIT report-slug → preview-segment map. Deliberately not slug inference: the URL segment is a published contract, and a report renamed or a segment retired must be a visible edit here, never a silent string-match failure. Add a row when a census report gains a shipped preview tranche.",
+  "map": {
+    "agent-mapped-hospitality-retreat-venues-coachella-valley": "hospitality",
+    "agent-mapped-outdoors-recreation-coachella-valley": "outdoors-recreation",
+    "agent-mapped-home-realestate-coachella-valley": "home-real-estate",
+    "agent-mapped-wellness-healthcare-coachella-valley": "wellness-healthcare",
+    "agent-mapped-food-dining-coachella-valley": "food-dining",
+    "agent-mapped-family-schooling-coachella-valley": "family-schooling"
+  }
+}

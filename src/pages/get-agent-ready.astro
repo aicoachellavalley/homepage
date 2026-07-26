@@ -1,4 +1,5 @@
 ---
+import pricing from '../data/pricing.json';
 import Base from '../layouts/Base.astro';
 import nodesData from '../../public/nodes.json';
 import briefsData from '../../public/briefs.json';
@@ -221,14 +222,7 @@ const schemaGraph = {
             "text": "AICV is a fiscally sponsored project of the Desert Community Foundation, a 501(c)(3) operating in Riverside County, California. Membership fees fund the continued build-out of the regional intelligence layer."
           }
         },
-        {
-          "@type": "Question",
-          "name": "What's the founding-member cap actually protecting?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Two things. A bounded cohort whose pricing stays locked for life — a genuine reward for early commitment. And AICV's own delivery capacity: the first ten Tier 2 members are deployed and supported personally by Sat. Standard pricing begins at member eleven, by which point Network density, delivery tooling, and positioning have all matured."
-          }
-        },
+        
         {
           "@type": "Question",
           "name": "What ships this summer?",
@@ -438,8 +432,8 @@ const schemaGraph = {
       </div>
       <div class="gar-v2-tier-divider"></div>
       <div class="gar-v2-tier-price-block">
-        <div class="gar-v2-tier-price-main">Free</div>
-        <div class="gar-v2-tier-price-setup"><em>no cost · no signup</em></div>
+        <div class="gar-v2-tier-price-main">{pricing.tiers[0].price_amount}</div>
+        <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[0].price_sub}</em></div>
       </div>
       <a href="#diagnostic" class="gar-v2-tier-cta">See how an agent reads you&nbsp;→</a>
     </div>
@@ -453,8 +447,8 @@ const schemaGraph = {
       </div>
       <div class="gar-v2-tier-divider"></div>
       <div class="gar-v2-tier-price-block">
-        <div class="gar-v2-tier-price-main">$500 <span class="gar-v2-tier-price-cadence">one-time</span></div>
-        <div class="gar-v2-tier-price-setup"><em>no setup fee</em></div>
+        <div class="gar-v2-tier-price-main">{pricing.tiers[1].price_amount} <span class="gar-v2-tier-price-cadence">{pricing.tiers[1].price_cadence}</span></div>
+        <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[1].price_sub}</em></div>
       </div>
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta gr-cta-volt">Get Agent Ready&nbsp;→</a>
     </div>
@@ -468,8 +462,8 @@ const schemaGraph = {
       </div>
       <div class="gar-v2-tier-divider"></div>
       <div class="gar-v2-tier-price-block">
-        <div class="gar-v2-tier-price-main">$2,500 <span class="gar-v2-tier-price-cadence">/ year</span></div>
-        <div class="gar-v2-tier-price-setup"><em>plus $1,000 one-time setup</em></div>
+        <div class="gar-v2-tier-price-main">{pricing.tiers[2].price_amount} <span class="gar-v2-tier-price-cadence">{pricing.tiers[2].price_cadence}</span></div>
+        <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[2].price_sub}</em></div>
       </div>
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Book a Call&nbsp;→</a>
     </div>
@@ -483,8 +477,8 @@ const schemaGraph = {
       </div>
       <div class="gar-v2-tier-divider"></div>
       <div class="gar-v2-tier-price-block">
-        <div class="gar-v2-tier-price-main">$10,000 <span class="gar-v2-tier-price-cadence">/ year</span></div>
-        <div class="gar-v2-tier-price-setup"><em>plus $5,000 one-time setup</em></div>
+        <div class="gar-v2-tier-price-main">{pricing.tiers[3].price_amount} <span class="gar-v2-tier-price-cadence">{pricing.tiers[3].price_cadence}</span></div>
+        <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[3].price_sub}</em></div>
       </div>
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Request Premium&nbsp;→</a>
     </div>
@@ -1384,19 +1378,6 @@ const schemaGraph = {
     line-height: 1.55;
   }
   .tier-reviewed .gar-price-summary { color: rgba(232,226,208,0.55); }
-
-  .gar-founding-counter {
-    margin-top: 1.25rem;
-    padding: 0.75rem 1rem;
-    background: rgba(216,255,0,0.08);
-    border: 1px solid rgba(216,255,0,0.25);
-    font-family: 'Syne', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: var(--volt);
-    text-align: center;
-  }
 
   .gar-tier-cta {
     margin-top: 1.5rem;

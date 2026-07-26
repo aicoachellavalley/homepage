@@ -1,0 +1,13 @@
+{
+  "$comment": "Derived by scripts/sync-corpus.mjs from repaired census canon. \"mapped\" = a canon row exists. NEVER label this number \"measured\".",
+  "updated": "2026-07-26",
+  "merchant_censuses": {
+    "Food & Dining": 1420,
+    "Hospitality & Retreat Venues": 232,
+    "Home & Real Estate": 291,
+    "Wellness & Healthcare": 403,
+    "Family & Schooling": 266,
+    "Outdoors & Recreation": 302
+  },
+  "businesses_mapped": 2914
+}

@@ -1,0 +1,58 @@
+{
+  "$comment": "SINGLE SOURCE OF TRUTH for the tier ladder. Consumed by get-agent-ready.astro (visible cards + JSON-LD offers) and llms.txt.ts. Change a price HERE only \u2014 never in a page. A build-time assertion in scripts/check-pricing.mjs fails the build if any surface diverges.",
+  "updated": "2026-07-25",
+  "tiers": [
+    {
+      "id": "agent-preview",
+      "name": "Agent Preview",
+      "blurb": "See how an agent reads your business right now \u2014 a free look before you build anything.",
+      "price_main": "Free",
+      "price_sub": "no cost \u00b7 no signup",
+      "setup": 0,
+      "annual": 0,
+      "onetime": 0,
+      "llms": "free diagnostic \u2014 how an AI agent reads a business today, no signup, nothing stored",
+      "price_amount": "Free",
+      "price_cadence": ""
+    },
+    {
+      "id": "agent-ready",
+      "name": "Agent Ready",
+      "blurb": "We build your agent \u2014 your MVA on the AICV network, discoverable and citable.",
+      "price_main": "$500 one-time",
+      "price_sub": "no setup fee",
+      "setup": 0,
+      "annual": 0,
+      "onetime": 500,
+      "llms": "$500 one-time \u2014 a Minimum Viable Agent on the AICV network, built and maintained by AICV",
+      "price_amount": "$500",
+      "price_cadence": "one-time"
+    },
+    {
+      "id": "agent-ready-business",
+      "name": "Agent Ready Business",
+      "blurb": "Serviced membership: your agent on the network, discoverable today, with the full discovery infrastructure maintained for you.",
+      "price_main": "$2,500 / year",
+      "price_sub": "plus $1,000 one-time setup",
+      "setup": 1000,
+      "annual": 2500,
+      "onetime": 0,
+      "llms": "$1,000 setup + $2,500/yr \u2014 serviced membership with the full discovery infrastructure maintained",
+      "price_amount": "$2,500",
+      "price_cadence": "/ year"
+    },
+    {
+      "id": "agent-ready-premium",
+      "name": "Agent Ready Premium",
+      "blurb": "Everything in Business, plus editorial review by the AICV LLM Council \u2014 the weight that gets you cited, not just discovered.",
+      "price_main": "$10,000 / year",
+      "price_sub": "plus $5,000 one-time setup",
+      "setup": 5000,
+      "annual": 10000,
+      "onetime": 0,
+      "llms": "$5,000 setup + $10,000/yr \u2014 everything in Business plus full LLM Council review (the Agentic Review)",
+      "price_amount": "$10,000",
+      "price_cadence": "/ year"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
+import reportPreviewMap from '../../data/report-preview-map.json';
+const previewManifests = import.meta.glob('../../data/previews/previews-index-*.json', { eager: true });
 
 export async function getStaticPaths() {
   const entries = await getCollection('reports');
@@ -12,6 +14,15 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+
+// ── Agent Preview tranche for this census (explicit map, derived counts) ──
+// The map is deliberate; the numbers are not hardcoded — they come from the
+// committed manifest the mva build emits, so a re-tranched category updates
+// itself on the next sync.
+const previewSegment = (reportPreviewMap.map as Record<string, string>)[entry.id.replace(/\.mdx$/, '')];
+const previewManifest = previewSegment
+  ? (Object.values(previewManifests).find((m: any) => m.default.segment === previewSegment) as any)?.default
+  : null;
 const { Content } = await render(entry);
 
 const { title, description, date, period, report_type, tags, sections, canonical } = entry.data;
@@ -85,6 +96,14 @@ const reportSchema = {
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
 
   <style>
+  .report-previews { margin-top:3.5rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.12); }
+  .report-previews-h { font-size:1.15rem; margin-bottom:.75rem; }
+  .report-previews-p { font-size:.9rem; line-height:1.65; opacity:.85; max-width:60ch; }
+  .report-previews-list { margin:1.25rem 0 0; padding:0; list-style:none; columns:2; column-gap:2rem; font-size:.85rem; line-height:1.9; }
+  .report-previews-list li { break-inside:avoid; }
+  .report-previews-city { opacity:.55; }
+  @media (max-width:700px){ .report-previews-list { columns:1; } }
+
     :root {
       --volt:       #D8FF00;
       --pine:       #1B4332;
@@ -308,6 +327,25 @@ const reportSchema = {
   <div class="report-body">
     <Content />
   </div>
+
+  {previewManifest && (
+    <section class="report-previews">
+      <h2 class="report-previews-h">Agent Preview pages from this census</h2>
+      <p class="report-previews-p">
+        AICV publishes an Agent Preview page for each business in this category
+        whose own website could be measured — <strong>{previewManifest.count} pages</strong> so far.
+        That is deliberately fewer than the census counts: a census row exists for
+        every entity found, while a preview page requires a reachable site of its
+        own to read. Each page records what an AI agent can and cannot read there,
+        on the date it was measured.
+      </p>
+      <ul class="report-previews-list">
+        {previewManifest.entries.map((e: any) => (
+          <li><a href={e.url}>{e.name}</a>{e.city ? <span class="report-previews-city"> · {e.city}</span> : null}</li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   <footer style="margin-top:4rem;padding:2rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:0.8rem;opacity:0.5;">
     <p>AI Coachella Valley · <a href="https://aicoachellavalley.com" style="color:inherit;">aicoachellavalley.com</a> · <a href="/nodes/" style="color:inherit;">Nodes</a> · <a href="/briefs/" style="color:inherit;">Briefs</a> · <a href="/reports/" style="color:inherit;">Reports</a></p>

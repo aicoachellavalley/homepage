@@ -1,14 +1,29 @@
 ---
 import Base from '../layouts/Base.astro';
-import nodesData from '../../public/nodes.json';
 import briefsData from '../../public/briefs.json';
 import reportsData from '../../public/reports.json';
 import statsData from '../data/stats.json';
+import corpus from '../data/corpus.json';
+const previewManifests = import.meta.glob('../data/previews/previews-index-*.json', { eager: true });
 
-const nodeCount = nodesData.length;
+// Derived, never literal. Both climb as tranches ship and censuses land.
+const previewsLive = Object.values(previewManifests)
+  .reduce((n, m) => n + (m.default?.count ?? 0), 0);
+const businessesMapped = corpus.businesses_mapped;
+
+// Bar shape RULED 2026-07-25: exactly four cells — Briefs · Reports ·
+// Businesses Mapped · Live Agent Previews. The grid is repeat(4,1fr) desktop
+// and 1fr 1fr phone, so a fifth cell orphans on both. Nodes keep their page
+// and nav presence; they left the headline bar ("Regional Nodes" is internal
+// vocabulary, and Reports are the original-research signal).
+
 const briefCount = briefsData.length;
 const latestBriefs = briefsData.slice(0, 3);
-const reportCount = reportsData.length;
+// DISPLAY-ONLY filter. reports.json keeps all 13 entries — the surface-health
+// monitor asserts three-way agreement on that feed, so it must not change. The
+// homepage labels this cell "Reports Published", and the evergreen methodology
+// page is not a Report, so it is excluded from the DISPLAYED number only.
+const reportCount = reportsData.filter((r) => r.report_type !== 'methodology').length;
 
 const lastUpdated = new Date(statsData.generated_at);
 const lastUpdatedDisplay = lastUpdated.toLocaleDateString('en-US', {
@@ -287,20 +302,20 @@ const foundingCohortSchema = {
   <p class="focal-updated">Updated {lastUpdatedDisplay}</p>
   <div class="stats-inner">
     <div class="stat-cell">
-      <div class="stat-n">{nodeCount}</div>
-      <div class="stat-l">AI-optimized<br>Regional Nodes</div>
-    </div>
-    <div class="stat-cell">
       <div class="stat-n">{briefCount}</div>
       <div class="stat-l">AICV Intelligence<br>Briefs Published</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">{statsData.counts.snapshots}</div>
-      <div class="stat-l">Agentic Reviews</div>
-    </div>
-    <div class="stat-cell">
       <div class="stat-n">{reportCount}</div>
       <div class="stat-l">AICV Intelligence<br>Reports Published</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">{businessesMapped.toLocaleString('en-US')}</div>
+      <div class="stat-l">Coachella Valley<br>Businesses Mapped</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">{previewsLive}</div>
+      <div class="stat-l">Businesses with a<br>live Agent Preview</div>
     </div>
   </div>
   <div class="focal-img-wrap">
@@ -1775,7 +1790,15 @@ const foundingCohortSchema = {
     .intel-inner { padding: 2rem 1.5rem; }
     .intel-grid { grid-template-columns: 1fr; }
     .focal-updated { padding: 1.25rem 1.5rem 0; }
-    .stats-inner { padding: 0.75rem 1.5rem 2rem; grid-template-columns: 1fr 1fr; }
+    /* Stat bar at phone width. `1fr` is minmax(auto,1fr), so a cell whose
+       min-content is wider than its share (2,914 renders ~171px against a
+       ~91px content box) pushes its track wider and overflows the row. Three
+       bounded changes, stat bar only: tracks may shrink below min-content,
+       tighter cell padding, smaller numerals. */
+    .stats-inner { padding: 0.75rem 1.5rem 2rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stat-cell { padding: 1.5rem 0.85rem; min-width: 0; }
+    .stat-n { font-size: 1.9rem; letter-spacing: -0.03em; }
+    .stat-l { overflow-wrap: anywhere; }
     .focal-img-wrap { padding: 0 1.5rem; }
     .path-hierarchy { padding: 2rem 1.5rem 2.25rem; gap: 1.1rem; }
     .path-primary { padding: 1.5rem 1.25rem 1.75rem; }

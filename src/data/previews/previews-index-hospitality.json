@@ -1,0 +1,535 @@
+{
+ "domain": "Hospitality & Retreat Venues",
+ "segment": "hospitality",
+ "generated": "2026-07-15",
+ "count": 75,
+ "indexable": 73,
+ "sitemap": "https://aicoachellavalley.com/agent-preview/sitemap-previews-hospitality.xml",
+ "entries": [
+  {
+   "slug": "97-lake-shore-kirkwood-collection",
+   "name": "97 Lake Shore (Kirkwood Collection)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/97-lake-shore-kirkwood-collection",
+   "indexable": true
+  },
+  {
+   "slug": "agua-caliente-resort-casino-spa-rancho-mirage",
+   "name": "Agua Caliente Resort Casino Spa Rancho Mirage",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/agua-caliente-resort-casino-spa-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "aqua-soleil-hotel-mineral-water-pool",
+   "name": "Aqua Soleil Hotel & Mineral Water Pool",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/aqua-soleil-hotel-mineral-water-pool",
+   "indexable": true
+  },
+  {
+   "slug": "bravo-collection-club",
+   "name": "Bravo Collection Club",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/bravo-collection-club",
+   "indexable": true
+  },
+  {
+   "slug": "bubbling-wells-oasis",
+   "name": "Bubbling Wells Oasis",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/bubbling-wells-oasis",
+   "indexable": true
+  },
+  {
+   "slug": "caliente-springs-rv-resort",
+   "name": "Caliente Springs RV Resort",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/caliente-springs-rv-resort",
+   "indexable": true
+  },
+  {
+   "slug": "caliente-tropics-resort",
+   "name": "Caliente Tropics Resort",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/caliente-tropics-resort",
+   "indexable": true
+  },
+  {
+   "slug": "casa-cody",
+   "name": "Casa Cody",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/casa-cody",
+   "indexable": true
+  },
+  {
+   "slug": "casa-larrea-inn",
+   "name": "Casa Larrea Inn",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/casa-larrea-inn",
+   "indexable": true
+  },
+  {
+   "slug": "catalina-spa-rv-resort",
+   "name": "Catalina Spa & RV Resort",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/catalina-spa-rv-resort",
+   "indexable": true
+  },
+  {
+   "slug": "cavallo-ranch",
+   "name": "Cavallo Ranch",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/cavallo-ranch",
+   "indexable": true
+  },
+  {
+   "slug": "coachella-lakes-rv-resort",
+   "name": "Coachella Lakes RV Resort",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/coachella-lakes-rv-resort",
+   "indexable": true
+  },
+  {
+   "slug": "colony-palms-hotel-bungalows",
+   "name": "Colony Palms Hotel & Bungalows",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/colony-palms-hotel-bungalows",
+   "indexable": true
+  },
+  {
+   "slug": "desert-hot-springs-inn-spa-hotel",
+   "name": "Desert Hot Springs Inn (Spa Hotel)",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/desert-hot-springs-inn-spa-hotel",
+   "indexable": true
+  },
+  {
+   "slug": "desert-island-country-club",
+   "name": "Desert Island Country Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/desert-island-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "desert-shadows-rv-resort",
+   "name": "Desert Shadows RV Resort",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/desert-shadows-rv-resort",
+   "indexable": true
+  },
+  {
+   "slug": "desert-shores-motorcoach-resort",
+   "name": "Desert Shores Motorcoach Resort",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/desert-shores-motorcoach-resort",
+   "indexable": true
+  },
+  {
+   "slug": "diaita-yoga-retreat",
+   "name": "Diaita Yoga Retreat",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/diaita-yoga-retreat",
+   "indexable": true
+  },
+  {
+   "slug": "el-morocco-inn-spa",
+   "name": "El Morocco Inn & Spa",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/el-morocco-inn-spa",
+   "indexable": true
+  },
+  {
+   "slug": "fantasy-springs-resort-casino",
+   "name": "Fantasy Springs Resort Casino",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/fantasy-springs-resort-casino",
+   "indexable": true
+  },
+  {
+   "slug": "fleur-noire-h-tel",
+   "name": "Fleur Noire Hôtel",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/fleur-noire-h-tel",
+   "indexable": true
+  },
+  {
+   "slug": "happy-traveler-rv-park",
+   "name": "Happy Traveler RV Park",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/happy-traveler-rv-park",
+   "indexable": true
+  },
+  {
+   "slug": "hermann-bungalows",
+   "name": "Hermann Bungalows",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/hermann-bungalows",
+   "indexable": true
+  },
+  {
+   "slug": "holiday-house-palm-springs",
+   "name": "Holiday House Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/holiday-house-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "hotel-02",
+   "name": "Hotel 02",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/hotel-02",
+   "indexable": true
+  },
+  {
+   "slug": "indian-wells-resort-hotel",
+   "name": "Indian Wells Resort Hotel",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/indian-wells-resort-hotel",
+   "indexable": true
+  },
+  {
+   "slug": "ingleside-estate",
+   "name": "Ingleside Estate",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/ingleside-estate",
+   "indexable": true
+  },
+  {
+   "slug": "inn-at-palm-springs",
+   "name": "Inn at Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/inn-at-palm-springs",
+   "indexable": false
+  },
+  {
+   "slug": "korakia-pensione",
+   "name": "Korakia Pensione",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/korakia-pensione",
+   "indexable": true
+  },
+  {
+   "slug": "lake-cahuilla-veterans-regional-park-recreation-area",
+   "name": "Lake Cahuilla Veterans Regional Park (Recreation Area)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/lake-cahuilla-veterans-regional-park-recreation-area",
+   "indexable": true
+  },
+  {
+   "slug": "lazy-c-ranch",
+   "name": "Lazy C Ranch",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/lazy-c-ranch",
+   "indexable": true
+  },
+  {
+   "slug": "lhorizon-resort-spa",
+   "name": "L'Horizon Resort & Spa",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/lhorizon-resort-spa",
+   "indexable": true
+  },
+  {
+   "slug": "miracle-springs-resort-and-spa",
+   "name": "Miracle Springs Resort and Spa",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/miracle-springs-resort-and-spa",
+   "indexable": true
+  },
+  {
+   "slug": "mod-palm-desert",
+   "name": "Mod Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/mod-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "mojave-resort",
+   "name": "Mojave Resort",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/mojave-resort",
+   "indexable": true
+  },
+  {
+   "slug": "motorcoach-country-club",
+   "name": "Motorcoach Country Club",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/motorcoach-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "movie-colony-hotel",
+   "name": "Movie Colony Hotel",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/movie-colony-hotel",
+   "indexable": true
+  },
+  {
+   "slug": "musicland-hotel",
+   "name": "Musicland Hotel",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/musicland-hotel",
+   "indexable": true
+  },
+  {
+   "slug": "outdoor-resort-indio",
+   "name": "Outdoor Resort Indio",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/outdoor-resort-indio",
+   "indexable": true
+  },
+  {
+   "slug": "paradise-rv-park",
+   "name": "Paradise RV Park",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/paradise-rv-park",
+   "indexable": true
+  },
+  {
+   "slug": "parker-palm-springs",
+   "name": "Parker Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/parker-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "rancho-51-date-garden",
+   "name": "Rancho 51 Date Garden",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/rancho-51-date-garden",
+   "indexable": true
+  },
+  {
+   "slug": "rancho-51-festival-campgrounds",
+   "name": "Rancho 51 Festival Campgrounds",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/rancho-51-festival-campgrounds",
+   "indexable": true
+  },
+  {
+   "slug": "sagewater-springs",
+   "name": "Sagewater Springs",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/sagewater-springs",
+   "indexable": true
+  },
+  {
+   "slug": "sams-family-spa-hot-water-resort",
+   "name": "Sam's Family Spa Hot Water Resort",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/sams-family-spa-hot-water-resort",
+   "indexable": true
+  },
+  {
+   "slug": "sands-hotel-and-spa",
+   "name": "Sands Hotel and Spa",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/sands-hotel-and-spa",
+   "indexable": true
+  },
+  {
+   "slug": "shadow-hills-rv-resort",
+   "name": "Shadow Hills RV Resort",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/shadow-hills-rv-resort",
+   "indexable": true
+  },
+  {
+   "slug": "shadow-mountain-resort-club",
+   "name": "Shadow Mountain Resort & Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/shadow-mountain-resort-club",
+   "indexable": true
+  },
+  {
+   "slug": "sky-valley-resort",
+   "name": "Sky Valley Resort",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/sky-valley-resort",
+   "indexable": true
+  },
+  {
+   "slug": "sparkling-waters-rv-park",
+   "name": "Sparkling Waters RV Park",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/sparkling-waters-rv-park",
+   "indexable": true
+  },
+  {
+   "slug": "spotlight-29-casino",
+   "name": "Spotlight 29 Casino",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/spotlight-29-casino",
+   "indexable": true
+  },
+  {
+   "slug": "spring-house-resort",
+   "name": "Spring House Resort",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/spring-house-resort",
+   "indexable": true
+  },
+  {
+   "slug": "talavera-palm-springs",
+   "name": "Talavera Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/talavera-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "the-bentley-estate",
+   "name": "The Bentley Estate",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-bentley-estate",
+   "indexable": true
+  },
+  {
+   "slug": "the-chateau-at-lake-la-quinta",
+   "name": "The Chateau at Lake La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-chateau-at-lake-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "the-emerson-estate",
+   "name": "The Emerson Estate",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-emerson-estate",
+   "indexable": true
+  },
+  {
+   "slug": "the-inn-at-deep-canyon",
+   "name": "The Inn at Deep Canyon",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-inn-at-deep-canyon",
+   "indexable": true
+  },
+  {
+   "slug": "the-living-desert-zoo-and-gardens",
+   "name": "The Living Desert Zoo and Gardens",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-living-desert-zoo-and-gardens",
+   "indexable": true
+  },
+  {
+   "slug": "the-monkey-tree-hotel",
+   "name": "The Monkey Tree Hotel",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-monkey-tree-hotel",
+   "indexable": true
+  },
+  {
+   "slug": "the-old-polo-estate",
+   "name": "The Old Polo Estate",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-old-polo-estate",
+   "indexable": true
+  },
+  {
+   "slug": "the-packhouse-at-aziz-farms",
+   "name": "The Packhouse at Aziz Farms",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-packhouse-at-aziz-farms",
+   "indexable": true
+  },
+  {
+   "slug": "the-respite",
+   "name": "The Respite",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-respite",
+   "indexable": true
+  },
+  {
+   "slug": "the-spa-at-s-c-he-agua-caliente-resort-casino-spa",
+   "name": "The Spa at Séc-he / Agua Caliente Resort Casino Spa",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-spa-at-s-c-he-agua-caliente-resort-casino-spa",
+   "indexable": true
+  },
+  {
+   "slug": "trilogy-at-the-polo-club-2-palms-event-center",
+   "name": "Trilogy at The Polo Club (2 Palms Event Center)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/trilogy-at-the-polo-club-2-palms-event-center",
+   "indexable": true
+  },
+  {
+   "slug": "two-bunch-palms-resort-spa",
+   "name": "Two Bunch Palms Resort & Spa",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/two-bunch-palms-resort-spa",
+   "indexable": true
+  },
+  {
+   "slug": "venueten-casa-del-lujo-estate-lujo-villa",
+   "name": "VenueTEN (Casa del Lujo Estate + Lujo Villa)",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+   "indexable": true
+  },
+  {
+   "slug": "villa-de-martini",
+   "name": "Villa de Martini",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/villa-de-martini",
+   "indexable": false
+  },
+  {
+   "slug": "yara-hotel",
+   "name": "Yara Hotel",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/yara-hotel",
+   "indexable": true
+  },
+  {
+   "slug": "azure-palm-hot-springs-resort-day-spa-oasis",
+   "name": "Azure Palm Hot Springs Resort & Day Spa Oasis",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/azure-palm-hot-springs-resort-day-spa-oasis",
+   "indexable": true
+  },
+  {
+   "slug": "miracle-manor-boutique-hotel-spa",
+   "name": "Miracle Manor Boutique Hotel & Spa",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/miracle-manor-boutique-hotel-spa",
+   "indexable": true
+  },
+  {
+   "slug": "onsen-hotel-spa",
+   "name": "Onsen Hotel & Spa",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/onsen-hotel-spa",
+   "indexable": true
+  },
+  {
+   "slug": "the-good-house",
+   "name": "The Good House",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-good-house",
+   "indexable": true
+  },
+  {
+   "slug": "the-spring-resort-spa",
+   "name": "The Spring Resort & Spa",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-spring-resort-spa",
+   "indexable": true
+  },
+  {
+   "slug": "tuscan-springs-hotel-spa",
+   "name": "Tuscan Springs Hotel & Spa",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/tuscan-springs-hotel-spa",
+   "indexable": true
+  },
+  {
+   "slug": "we-care-spa",
+   "name": "We Care Spa",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/we-care-spa",
+   "indexable": true
+  }
+ ]
+}

@@ -33,6 +33,7 @@ User-agent: BingBot
 Allow: /
 
 Sitemap: https://aicoachellavalley.com/sitemap.xml
+Sitemap: https://aicoachellavalley.com/sitemap-index.xml
 
 # AI Agent Resources
 # Machine-readable intelligence layer: https://aicoachellavalley.com/llms.txt

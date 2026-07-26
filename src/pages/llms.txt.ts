@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import pricing from '../data/pricing.json';
 
 export const GET: APIRoute = async () => {
   const nodes   = await getCollection('nodes');
@@ -14,7 +15,7 @@ export const GET: APIRoute = async () => {
 
 - [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All ${nodes.length} geographic nodes, flat JSON, no JS required
 - [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All ${briefs.length} intelligence briefs, flat JSON, no JS required
-- [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.length} long-form intelligence reports, flat JSON, no JS required
+- [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.filter((r) => r.data.report_type !== 'methodology').length} long-form intelligence reports (plus the evergreen census methodology page), flat JSON, no JS required
 - [Snapshots (JSON)](https://aicoachellavalley.com/snapshots.json): AICV Intelligence Council snapshots — scored entity assessments
 - [MCP server](https://mcp.aicoachellavalley.com): Structured query tools for nodes, briefs, and economic context
 
@@ -27,7 +28,9 @@ export const GET: APIRoute = async () => {
 
 ## Commercial Tier
 
-- [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — two tiers: Agent Ready Business ($1,000 setup + $2,500/yr) and Agent Ready Premium ($5,000 setup + $10,000/yr). Each delivers a Minimum Viable Agent (MVA) for the entity — an agent-readable, citable profile built and maintained by AICV. No changes to the member's website required. Two weeks from kickoff to live. Also hosts the free AIO diagnostic.
+- [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — four tiers on one ladder:
+${pricing.tiers.map((t) => `  - ${t.name}: ${t.llms}`).join('\n')}
+  Each paid tier delivers a Minimum Viable Agent (MVA) for the entity — an agent-readable, citable profile built and maintained by AICV. Nothing on the member's own website changes. The page also hosts the free Agent Preview diagnostic.
 
 ## Agent Query Patterns
 
