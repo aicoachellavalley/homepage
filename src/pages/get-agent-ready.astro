@@ -1649,10 +1649,13 @@ const schemaGraph = {
   }
   .tos-overlay.on { display: flex; }
 
+  /* Modal surface: SAGE with FOREST text (ruled 2026-07-26). Volt is 1.07:1
+     on sage — never used for text, links, or accents here; it is valid only as
+     a BACKGROUND behind forest text (9.75:1), e.g. the close button on hover. */
   .tos-panel {
-    background: var(--gunmetal);
-    border: 1px solid rgba(232,226,208,0.12);
-    border-top: 3px solid var(--volt);
+    background: #E2EDD4;
+    border: 1px solid #C6D6B4;
+    border-top: 3px solid #234233;
     max-width: 660px;
     width: 100%;
     max-height: 85vh;
@@ -1666,8 +1669,8 @@ const schemaGraph = {
     top: 1.25rem;
     right: 1.25rem;
     background: none;
-    border: 1px solid rgba(232,226,208,0.2);
-    color: rgba(232,226,208,0.6);
+    border: 1px solid #3A5648;
+    color: #234233;
     width: 2rem;
     height: 2rem;
     cursor: pointer;
@@ -1677,13 +1680,13 @@ const schemaGraph = {
     justify-content: center;
     transition: border-color 0.2s, color 0.2s;
   }
-  .tos-close:hover { border-color: var(--volt); color: var(--volt); }
+  .tos-close:hover { background: #DFFF40; border-color: #234233; color: #234233; }
 
   .tos-label {
     font-size: 0.6rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--volt);
+    color: #234233;
     margin-bottom: 0.6rem;
     font-weight: 500;
   }
@@ -1692,22 +1695,22 @@ const schemaGraph = {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--sand);
+    color: #234233;
     letter-spacing: -0.02em;
     margin-bottom: 0.35rem;
   }
 
   .tos-date {
     font-size: 0.7rem;
-    color: rgba(232,226,208,0.4);
+    color: #3A5648;
     font-weight: 300;
     margin-bottom: 2rem;
   }
 
   .tos-body p {
     font-size: 0.875rem;
-    color: rgba(232,226,208,0.7);
-    font-weight: 300;
+    color: #234233;
+    font-weight: 400;
     line-height: 1.75;
     margin-bottom: 1rem;
   }
@@ -1716,14 +1719,26 @@ const schemaGraph = {
     font-family: 'Syne', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--sand);
+    color: #234233;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin: 1.75rem 0 0.5rem;
   }
 
-  .tos-body a { color: var(--volt); text-decoration: none; }
-  .tos-body a:hover { text-decoration: underline; }
+  .tos-body ul { margin: 0 0 1rem; padding-left: 1.15rem; }
+  .tos-body li {
+    font-size: 0.875rem;
+    color: #234233;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+  .tos-body li::marker { color: #234233; }
+  .tos-body strong { color: #234233; font-weight: 600; }
+
+  /* Links carry forest + a permanent underline — never colour alone. */
+  .tos-body a { color: #234233; text-decoration: underline; text-underline-offset: 2px; }
+  .tos-body a:hover { text-decoration-thickness: 2px; }
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 860px) {
