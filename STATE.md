@@ -2,6 +2,42 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-26 — Tier cards restored + "What's included" disclosure modals
+
+Live (`98c6e40`).
+
+**RESTORE.** The 2026-07-25 buy-button commit had appended a bullet list and two
+fine-print paragraphs to the Agent Ready card *only*, breaking the four-card
+height parity the grid depends on. Card bodies are now byte-identical to their
+pre-2026-07-26 state, recovered from git (`a10d1ff^`), not rewritten. Proof: the
+full diff of the tier block against that parent is exactly ONE line pair — the
+CTA href/label swap that was meant to survive. Business and Premium remain on
+the calendar; volt CTA still on the $500 tier.
+
+**DISCLOSURE.** Each card gained one identical "What's included" line under its
+button, opening a modal on this page's existing `#tosModal` pattern. Content is
+in the RENDERED HTML and hidden by CSS (`.tos-overlay{display:none}`) — never
+injected on click, so agents and no-JS readers get it. Escape closes whichever
+overlay is open.
+
+**Copy provenance (no new promises):** Agent Ready from the approved activation
+page (`mva/activate` `activationPage()`); the other three from this page's own
+published JSON-LD Service descriptions.
+- ⚠️ **Agent Preview has nothing beyond its card description** — its modal
+  restates the published Service description and links the free-tool terms.
+- ⚠️ **One sentence is NOT from existing copy** and needs Sat's ruling: *"Scope
+  is confirmed on a call before anything is billed."* on the Business and
+  Premium modals. It describes the consultative process accurately but was
+  authored here — remove it or bless it.
+
+**Verified live:** desktop card heights 462/462/462/462 (spread 0), all four
+CTAs and links inside their cards; phone (375px) is single-column so cards stack
+— no horizontal overflow, spread is inherent to content and unchanged by this
+work since every card gained the same element. All four modals open (`flex`) and
+close (`none`) on the live page; $500 → Stripe, Business/Premium → calendar.
+
+Also removed the `.gar-v2-tier-gets/-fine/-terms` rules the restore orphaned.
+
 ## 2026-07-25 (later) — $500 buy button live + addressable purchase terms
 
 Live (`a10d1ff`). Selling is now possible from the storefront.
