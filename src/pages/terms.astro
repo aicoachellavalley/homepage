@@ -1,0 +1,176 @@
+---
+/**
+ * /terms/ — the addressable Terms of Use.
+ *
+ * Created 2026-07-25 because Stripe's checkout requires a Terms of service
+ * URL and AICV's terms existed only inside a JS modal on /get-agent-ready/,
+ * which has no URL a payment processor can point at.
+ *
+ * DATED-SECTION DISCIPLINE: each section carries its own effective date. The
+ * free-diagnostic terms below are reproduced VERBATIM from the modal (dated
+ * March 6, 2026) and are NOT rewritten here. The Agent Ready paid-tier section
+ * is new and dated July 25, 2026. Future changes ADD a dated section; they do
+ * not silently edit an existing one.
+ */
+const pageTitle = 'Terms of Use — AI Coachella Valley';
+const pageDescription =
+  'AICV Terms of Use: the free Agent-Readiness Review diagnostic (March 6, 2026) and the Agent Ready paid tier (July 25, 2026).';
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
+  <link rel="canonical" href="https://aicoachellavalley.com/terms/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --volt:#D8FF00; --pine:#1B4332; --pine-dark:#122B22; --sand:#FAFAF7; --sand-dark:#E8E5DD; --gunmetal:#1E1E1E; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family:'DM Sans',sans-serif; background:var(--sand); color:var(--pine-dark); line-height:1.65; -webkit-font-smoothing:antialiased; }
+    header { background:var(--gunmetal); padding:1.1rem 1.5rem; }
+    header a { display:inline-flex; align-items:center; gap:.7rem; text-decoration:none; }
+    .mark { width:32px; height:32px; background:var(--volt); display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-weight:800; font-size:10px; color:var(--pine); }
+    .brand { font-family:'Syne',sans-serif; font-weight:800; font-size:13px; color:#fff; }
+    main { max-width:760px; margin:0 auto; padding:3rem 1.5rem 5rem; }
+    h1 { font-family:'Syne',sans-serif; font-size:1.9rem; font-weight:800; letter-spacing:-.02em; margin-bottom:.4rem; }
+    .lede { font-size:.92rem; color:#5C6B52; margin-bottom:2.5rem; }
+    section { border-top:1px solid var(--sand-dark); padding-top:2rem; margin-top:2.5rem; }
+    section:first-of-type { border-top:0; margin-top:0; padding-top:0; }
+    h2 { font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:700; margin-bottom:.3rem; }
+    .dated { font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:#6B7A61; margin-bottom:1.2rem; }
+    h3 { font-size:1rem; font-weight:500; margin:1.6rem 0 .4rem; }
+    p, li { font-size:.9rem; margin-bottom:.8rem; }
+    ul { padding-left:1.2rem; }
+    a { color:var(--pine); }
+    footer { border-top:1px solid var(--sand-dark); margin-top:3.5rem; padding-top:1.5rem; font-size:.78rem; color:#6B7A61; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/"><span class="mark">AICV</span><span class="brand">AI Coachella Valley</span></a>
+  </header>
+
+  <main>
+    <h1>Terms of Use</h1>
+    <p class="lede">
+      Each section below is separately dated and applies to what it names. The free
+      Agent-Readiness Review diagnostic and the paid Agent Ready tier are governed by
+      different terms — read the one that applies to you.
+    </p>
+
+    <section id="agent-ready">
+      <h2>Agent Ready (paid tier) — $500 one-time</h2>
+      <div class="dated">Effective July 25, 2026</div>
+
+      <p>
+        These terms apply to the Agent Ready tier, a one-time $500 purchase from AI
+        Coachella Valley (AICV), a fiscally sponsored project of the Desert Community
+        Foundation, operating in Riverside County, California. Payment is processed by
+        Stripe; AICV does not receive or store your card details.
+      </p>
+
+      <h3>What you get</h3>
+      <ul>
+        <li><strong>Your page goes Live</strong> — indexed, agent-readable, publishing your facts in structured form on the AICV network.</li>
+        <li><strong>Your private agent-readiness review</strong> — the full read of how AI agents see your web presence today. It is delivered to you and is never published.</li>
+        <li><strong>The owner-verified stamp</strong> — once ownership verification clears, your page carries "Owner-verified · attested by AICV."</li>
+      </ul>
+
+      <h3>What you must do: verify ownership</h3>
+      <p>
+        Your page goes Live only after you verify that you own or represent the business.
+        Verification is no-touch — <strong>we never touch or require any change to your
+        website</strong>. There are two ways:
+      </p>
+      <ul>
+        <li><strong>A DNS record</strong> you add at your own domain — self-serve and automatic.</li>
+        <li><strong>A census-detail challenge</strong> — you confirm details only the owner would know, reviewed by AICV.</li>
+      </ul>
+
+      <h3>Timing</h3>
+      <p>
+        Your private agent-readiness review is released to you promptly after payment — it
+        does not wait on verification. Your public page goes Live once verification clears.
+        Because verification depends on a step you take, AICV does not promise a date by
+        which a page will be Live.
+      </p>
+
+      <h3>Refunds</h3>
+      <p>
+        If your page can't go live, or you change your mind before verification, email
+        <a href="mailto:billing@aicv.co">billing@aicv.co</a> for a full refund. A refund
+        returns your page to Private and ends access to the private review.
+      </p>
+
+      <h3>What this is not</h3>
+      <p>
+        AICV publishes a structured, agent-readable page about your business on its own
+        network. AICV does not modify your website, does not control how any third-party AI
+        system, search engine, or agent ranks, cites, or uses that page, and makes no
+        guarantee of traffic, ranking, citation, revenue, or any other outcome. Measurements
+        describe what was observable on a stated date and may change as your site changes.
+      </p>
+
+      <h3>Accuracy of what you provide</h3>
+      <p>
+        Facts you supply for your page are published as provided by you and marked as such.
+        You are responsible for their accuracy and for having the right to publish them.
+      </p>
+
+      <h3>Removal</h3>
+      <p>
+        You may request removal of your page at any time by writing to
+        <a href="mailto:remove@aicv.co">remove@aicv.co</a>.
+      </p>
+
+      <h3>Governing law</h3>
+      <p>
+        These terms are governed by the laws of the State of California. Any disputes shall
+        be resolved in Riverside County, California.
+      </p>
+
+      <h3>Contact</h3>
+      <p>Billing and purchase questions: <a href="mailto:billing@aicv.co">billing@aicv.co</a></p>
+    </section>
+
+    <section id="agent-readiness-review">
+      <h2>Agent-Readiness Review (free diagnostic) — Terms of Use</h2>
+      <div class="dated">Last updated: March 6, 2026</div>
+
+      <p>The AICV Agent-Readiness Review is a free, experimental diagnostic provided by AI Coachella Valley, a fiscally sponsored project of the Desert Community Foundation, operating in Riverside County, California.</p>
+
+      <h3>No Account. No Cost. No Data Stored.</h3>
+      <p>This tool requires no registration, login, or payment. URLs you submit are processed in real time and are not stored, logged, or retained by AICV. We do not collect personal information through this tool.</p>
+
+      <h3>How It Works</h3>
+      <p>Your submitted URL is passed to a third-party AI model (Anthropic Claude) via a Cloudflare Worker. Results are generated automatically and returned directly to your browser. AICV does not retain your query or output after your session ends.</p>
+
+      <h3>For Informational, Experimental, and Entertainment Purposes Only</h3>
+      <p>Results produced by this tool are AI-generated and provided strictly for informational, experimental, and entertainment purposes. They do not constitute professional SEO, legal, technical, marketing, or business advice of any kind. AICV makes no representations or warranties — express or implied — regarding the accuracy, completeness, reliability, or fitness of results for any particular purpose. Always verify findings independently and consult qualified professionals before making decisions based on tool output.</p>
+
+      <h3>No Legal Recourse</h3>
+      <p>By using this tool, you acknowledge that AICV, the Desert Community Foundation, and their respective officers, volunteers, and affiliates shall not be liable for any decisions made, actions taken, or outcomes arising from your use of or reliance on tool results. Use is entirely at your own risk.</p>
+
+      <h3>Acceptable Use</h3>
+      <p>Only submit URLs you own or have permission to analyze. Do not use automated tools to submit queries in bulk. Do not attempt to exploit, reverse engineer, or abuse the service.</p>
+
+      <h3>Changes</h3>
+      <p>We may update this tool and these terms at any time without notice. Continued use constitutes acceptance of any changes.</p>
+
+      <h3>Governing Law</h3>
+      <p>These terms are governed by the laws of the State of California. Any disputes shall be resolved in Riverside County, California.</p>
+
+      <h3>Contact</h3>
+      <p>Questions? Reach us at <a href="mailto:sat@aicv.co">sat@aicv.co</a></p>
+    </section>
+
+    <footer>
+      AI Coachella Valley · a fiscally sponsored project of the Desert Community Foundation,
+      a 501(c)(3) nonprofit organization · <a href="/">aicoachellavalley.com</a>
+    </footer>
+  </main>
+</body>
+</html>

@@ -450,7 +450,15 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-main">{pricing.tiers[1].price_amount} <span class="gar-v2-tier-price-cadence">{pricing.tiers[1].price_cadence}</span></div>
         <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[1].price_sub}</em></div>
       </div>
-      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta gr-cta-volt">Get Agent Ready&nbsp;→</a>
+      <ul class="gar-v2-tier-gets">
+        <li><strong>Your page goes Live</strong> — indexed, agent-readable, publishing your facts in structured form on the AICV network.</li>
+        <li><strong>Your private agent-readiness review</strong> — the full read of how AI agents see your web presence today. Never published.</li>
+        <li><strong>The owner-verified stamp</strong> — your page carries "Owner-verified · attested by AICV."</li>
+      </ul>
+      <p class="gar-v2-tier-fine">We never touch your website. After payment you verify ownership — a small DNS record you control, or a short challenge only the owner could answer.</p>
+      <p class="gar-v2-tier-fine">If your page can't go live, or you change your mind before verification, email <a href="mailto:billing@aicv.co">billing@aicv.co</a> for a full refund.</p>
+      <a href="https://buy.stripe.com/6oUfZhcZN0hBcEa1we8k801" class="gar-v2-tier-cta gr-cta-volt">Get Agent Ready — $500&nbsp;→</a>
+      <p class="gar-v2-tier-fine gar-v2-tier-terms">Secure checkout by Stripe · <a href="/terms/#agent-ready">Purchase terms</a></p>
     </div>
 
     <!-- TIER 2: Agent Ready Business -->
@@ -616,6 +624,9 @@ const schemaGraph = {
 
       <h3>Contact</h3>
       <p>Questions? Reach us at <a href="mailto:sat@aicv.co">sat@aicv.co</a></p>
+
+      <h3>Paid tiers</h3>
+      <p>These terms cover the free diagnostic only. Purchase terms for the Agent Ready tier are at <a href="/terms/#agent-ready">aicoachellavalley.com/terms/</a>.</p>
     </div>
   </div>
 </div>
@@ -2018,6 +2029,10 @@ const schemaGraph = {
     line-height: 32px;
   }
   .gar-v2-tier-scarcity-spacer { height: 32px; }
+  .gar-v2-tier-gets { margin: 0 0 0.85rem; padding: 0 0 0 1.05rem; font-size: 0.82rem; line-height: 1.55; color: var(--pine-dark); }
+  .gar-v2-tier-gets li { margin-bottom: 0.45rem; }
+  .gar-v2-tier-fine { font-size: 0.75rem; line-height: 1.5; color: #5C6B52; margin: 0 0 0.7rem; }
+  .gar-v2-tier-terms { margin-top: 0.6rem; margin-bottom: 0; text-align: center; }
   .gar-v2-tier-cta {
     display: block;
     background: var(--pine-dark);
