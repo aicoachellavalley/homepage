@@ -436,6 +436,7 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[0].price_sub}</em></div>
       </div>
       <a href="#diagnostic" class="gar-v2-tier-cta">See how an agent reads you&nbsp;→</a>
+      <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-preview').classList.add('on');return false;">What's included</button>
     </div>
 
     <!-- TIER 1: Agent Ready -->
@@ -450,15 +451,8 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-main">{pricing.tiers[1].price_amount} <span class="gar-v2-tier-price-cadence">{pricing.tiers[1].price_cadence}</span></div>
         <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[1].price_sub}</em></div>
       </div>
-      <ul class="gar-v2-tier-gets">
-        <li><strong>Your page goes Live</strong> — indexed, agent-readable, publishing your facts in structured form on the AICV network.</li>
-        <li><strong>Your private agent-readiness review</strong> — the full read of how AI agents see your web presence today. Never published.</li>
-        <li><strong>The owner-verified stamp</strong> — your page carries "Owner-verified · attested by AICV."</li>
-      </ul>
-      <p class="gar-v2-tier-fine">We never touch your website. After payment you verify ownership — a small DNS record you control, or a short challenge only the owner could answer.</p>
-      <p class="gar-v2-tier-fine">If your page can't go live, or you change your mind before verification, email <a href="mailto:billing@aicv.co">billing@aicv.co</a> for a full refund.</p>
       <a href="https://buy.stripe.com/6oUfZhcZN0hBcEa1we8k801" class="gar-v2-tier-cta gr-cta-volt">Get Agent Ready — $500&nbsp;→</a>
-      <p class="gar-v2-tier-fine gar-v2-tier-terms">Secure checkout by Stripe · <a href="/terms/#agent-ready">Purchase terms</a></p>
+      <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-ready').classList.add('on');return false;">What's included</button>
     </div>
 
     <!-- TIER 2: Agent Ready Business -->
@@ -474,6 +468,7 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[2].price_sub}</em></div>
       </div>
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Book a Call&nbsp;→</a>
+      <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-business').classList.add('on');return false;">What's included</button>
     </div>
 
     <!-- TIER 3: Agent Ready Premium -->
@@ -489,6 +484,7 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[3].price_sub}</em></div>
       </div>
       <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Request Premium&nbsp;→</a>
+      <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-premium').classList.add('on');return false;">What's included</button>
     </div>
   </div>
   <p class="gar-v2-tier-note">Current membership pricing shown. Availability is limited by deployment capacity. Not sure where you fit? <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Book a chat with Sat.</a></p>
@@ -590,6 +586,66 @@ const schemaGraph = {
 </footer>
 
 <!-- ─── TERMS OF USE MODAL ─── -->
+<!-- ── "What's included" modals — one per tier. Content is ALWAYS in the
+     rendered HTML and hidden by CSS (.tos-overlay{display:none}); nothing is
+     injected on click, so agents and no-JS readers see it too. Copy is drawn
+     from already-approved sources only: the activation page (mva/activate)
+     for Agent Ready, and this page's own published Service descriptions for
+     the other three. ── -->
+<div class="tos-overlay" id="inc-preview" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="tos-panel">
+    <button class="tos-close" onclick="document.getElementById('inc-preview').classList.remove('on')" aria-label="Close">✕</button>
+    <div class="tos-header"><div class="tos-label">AI Coachella Valley</div>
+      <h2 class="tos-title">Agent Preview — what's included</h2><div class="tos-date">Free · no signup</div></div>
+    <div class="tos-body">
+      <p>A free, stateless diagnostic showing how an AI agent reads a business today. Nothing is stored. No agent is built — Agent Preview is the free look before an entity joins the network.</p>
+      <p>Terms for the free diagnostic: <a href="/terms/#agent-readiness-review">aicoachellavalley.com/terms/</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="tos-overlay" id="inc-ready" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="tos-panel">
+    <button class="tos-close" onclick="document.getElementById('inc-ready').classList.remove('on')" aria-label="Close">✕</button>
+    <div class="tos-header"><div class="tos-label">AI Coachella Valley</div>
+      <h2 class="tos-title">Agent Ready — what's included</h2><div class="tos-date">$500 one-time</div></div>
+    <div class="tos-body">
+      <ul>
+        <li><strong>Your page goes Live</strong> — indexed, agent-readable, publishing your facts in structured form on the AICV network.</li>
+        <li><strong>Your private agent-readiness review</strong> — the full read of how AI agents see your web presence today. Never published.</li>
+        <li><strong>The owner-verified stamp</strong> — your page carries "Owner-verified · attested by AICV."</li>
+      </ul>
+      <p>We never touch your website. After payment you verify ownership — a small DNS record you control, or a short challenge only the owner could answer.</p>
+      <p>If your page can't go live, or you change your mind before verification, email <a href="mailto:billing@aicv.co">billing@aicv.co</a> for a full refund.</p>
+      <p>Full purchase terms: <a href="/terms/#agent-ready">aicoachellavalley.com/terms/</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="tos-overlay" id="inc-business" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="tos-panel">
+    <button class="tos-close" onclick="document.getElementById('inc-business').classList.remove('on')" aria-label="Close">✕</button>
+    <div class="tos-header"><div class="tos-label">AI Coachella Valley</div>
+      <h2 class="tos-title">Agent Ready Business — what's included</h2><div class="tos-date">$2,500 / year · plus $1,000 one-time setup</div></div>
+    <div class="tos-body">
+      <p>Annual membership in the AICV Network for valley businesses that need to be legible to the agent layer. Includes combined Cloudflare agent-readiness diagnostic, canonical MVA built to Tier 4 infrastructure standard, MCP routing configuration, and agent-to-agent concierge access.</p>
+      <p>Scope is confirmed on a call before anything is billed. <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Book a call</a>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="tos-overlay" id="inc-premium" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="tos-panel">
+    <button class="tos-close" onclick="document.getElementById('inc-premium').classList.remove('on')" aria-label="Close">✕</button>
+    <div class="tos-header"><div class="tos-label">AI Coachella Valley</div>
+      <h2 class="tos-title">Agent Ready Premium — what's included</h2><div class="tos-date">$10,000 / year · plus $5,000 one-time setup</div></div>
+    <div class="tos-body">
+      <p>Annual membership with full Agentic Review for entities positioning to high-net-worth buyers, relocation prospects, corporate retreat decision-makers, or civic partners. Includes everything in Agent Ready Business plus full LLM Council deliberation, 12-month AI readiness roadmap, public living portal, and templatized MCP access.</p>
+      <p>Scope is confirmed on a call before anything is billed. <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Request Premium</a>.</p>
+    </div>
+  </div>
+</div>
+
 <div class="tos-overlay" id="tosModal" onclick="if(event.target===this)this.classList.remove('on')">
   <div class="tos-panel">
     <button class="tos-close" onclick="document.getElementById('tosModal').classList.remove('on')" aria-label="Close">✕</button>
@@ -2029,10 +2085,10 @@ const schemaGraph = {
     line-height: 32px;
   }
   .gar-v2-tier-scarcity-spacer { height: 32px; }
-  .gar-v2-tier-gets { margin: 0 0 0.85rem; padding: 0 0 0 1.05rem; font-size: 0.82rem; line-height: 1.55; color: var(--pine-dark); }
-  .gar-v2-tier-gets li { margin-bottom: 0.45rem; }
-  .gar-v2-tier-fine { font-size: 0.75rem; line-height: 1.5; color: #5C6B52; margin: 0 0 0.7rem; }
-  .gar-v2-tier-terms { margin-top: 0.6rem; margin-bottom: 0; text-align: center; }
+  .gar-v2-tier-inc { display: block; width: 100%; margin: 0.55rem 0 0; padding: 0; background: none; border: 0;
+    font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: #5C6B52; text-decoration: underline;
+    text-underline-offset: 2px; cursor: pointer; text-align: center; }
+  .gar-v2-tier-inc:hover { color: var(--pine-dark); }
   .gar-v2-tier-cta {
     display: block;
     background: var(--pine-dark);
