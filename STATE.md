@@ -2,6 +2,48 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-25 (later) — $500 buy button live + addressable purchase terms
+
+Live (`a10d1ff`). Selling is now possible from the storefront.
+
+**Agent Ready ($500) CTA → Stripe.** Destination changed from the Google
+Calendar booking URL to `buy.stripe.com/6oUfZhcZN0hBcEa1we8k801`, relabelled
+"Get Agent Ready — $500 →" so it reads as a purchase, not a booking.
+**Business and Premium deliberately still point at the calendar** — those tiers
+are consultative; do not "fix" them to checkout links.
+
+Card now carries the approved activation-page copy (adapted from
+`mva/activate/worker.js` `activationPage()`): the three unlocks, "We never
+touch your website" with the two no-touch verification paths, and the refund
+line to billing@aicv.co. The activation page's parenthetical about AICV's
+email **sending rail was deliberately NOT carried over** — internal roadmap
+state, not customer copy.
+
+**NEW `/terms/` page — the Stripe Terms of service URL is
+`https://aicoachellavalley.com/terms/`.** Created because AICV's terms existed
+only inside a JS modal on /get-agent-ready/, and a modal has no URL a payment
+processor can point at. Two separately dated sections:
+- **Agent Ready (paid tier) — Effective July 25, 2026**: what's delivered, what
+  the buyer must do (DNS record or census-detail challenge), timing (review
+  released promptly after payment; page goes Live once verification clears —
+  **no date promised**, because the step is the buyer's), refunds, never-touch,
+  no outcome guarantee, owner-supplied facts, removal via remove@aicv.co.
+- **Agent-Readiness Review (free diagnostic) — March 6, 2026**, reproduced
+  **verbatim** from the modal; verified byte-identical across all 7 clauses.
+
+**DATED-SECTION DISCIPLINE (standing):** the TOS is a legal document. Future
+changes ADD a dated section; they never silently rewrite an existing clause.
+The modal gained one additive pointer to /terms/#agent-ready; the diff removed
+zero lines from the TOS body.
+
+**Verified live:** $500 → Stripe (link itself 200) · Business/Premium → calendar
+· all card copy renders · /terms/ 200 with both dated sections and the
+`#agent-ready` anchor.
+
+**Follow-up, not done (out of bounded scope):** `/terms/` is not yet listed in
+`sitemap.xml.ts` staticPages, and no footer links to it besides the modal
+pointer.
+
 ## 2026-07-25 — Preview-fleet integration + derived stats + single-source pricing
 
 Live (`3f3f44e`, auto-deployed). Three queued preview-fleet items plus a stats
