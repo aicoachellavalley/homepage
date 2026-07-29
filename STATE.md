@@ -2,6 +2,66 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-29 — CVEP Chapter 7 citation repair (6 nodes) + archive-at-publish practice
+
+Live (`69e57bf`), deployed and edge-verified. Node count unchanged at **81** — this was a
+content repair, no nodes added or removed.
+
+**THIS WAS A CITATION REPAIR, NOT A RETRACTION.** The Chapter 7 claim is true. What was broken
+was the citation chain: the only source cited was a Desert Sun URL sitting behind a Gannett SSO
+redirect loop with no usable Wayback capture, which is exactly why the 2026-07-29 verification
+audit could not verify it and flagged it unsupported. Sat located readable reporting — **KNews
+94.3/104.7, "Desert non-profit tasked with growing local businesses now bankrupt," May 27 2026,
+reporting The Desert Sun.**
+
+**NEW STANDING PRACTICE — load-bearing news citations get ARCHIVED AT PUBLISH TIME.** The KNews
+URL was saved to the Wayback Machine and the capture verified to contain the full article body
+*before* any file was edited: `web.archive.org/web/20260729183104`. Both the live link and the
+archive link now ship in the node. **Rationale: a claim is only as durable as its most fragile
+link, and a paywalled URL with no capture is indistinguishable from a fabricated one to anyone
+auditing later — which is precisely the failure this repair exists to undo.** Apply to every
+future node or brief that rests on a news citation.
+
+**Claim conformed to what the source actually supports:** filed Chapter 7 on **March 28, 2026**;
+nearly **\$300,000** owed, most of it **SBA loans from 2020 and 2021**. Case disposition and
+creditor outcome are **deliberately not asserted** — they appear in no reachable source and are
+queued for docket verification separately. Timeline conformed across all touched nodes: board
+voted to shutter (reported May 2025, three confidential sources, **exact vote date not publicly
+established**); CEO departed March 2025; past tense throughout for CVEP as an operating entity.
+
+**13 locations across 6 nodes — five MORE than the prior session's proposal inventoried.** The
+extra five were body prose in `riverside-county` and `ai-economy` asserting "voted to end
+operations May 2025" with no citation attached. They were missed because the original inventory
+searched for the Desert Sun URL and the string "Chapter 7"; they were found here by sweeping for
+stale *date-claim patterns* instead. **Operating lesson: inventory a claim by what it asserts,
+not by the string it cites.**
+
+| Node | Action |
+|---|---|
+| `coachella-valley-economic-development` | repaired — agent_summary, comment, body, key facts, agent signal, provenance |
+| `ai-economy-coachella-valley` | repaired — agent_summary, body, key facts, agent signal, provenance |
+| `riverside-county-economic-development` | repaired — comment, body, 2 key facts, agent signal, provenance |
+| `indian-wells-economic-development` | **was listing CVEP as a CURRENT partner organization, present tense** — corrected |
+| `north-palm-desert-development-zone` | "officially disbanded May 2025" conformed |
+| `node-zero` | dissolution date conformed |
+| `cotino`, `visit-greater-palm-springs` | audited, **no change needed** |
+
+**Agent-surface note worth keeping:** `nodes.json` is **frontmatter-only** by design — it never
+carried the citation and still doesn't. The citation lives in `llms-full.txt` (knewsradio ×5,
+archive ×5, "March 28, 2026" ×20). The field agents lift most often is **`agent_summary`**, so
+that is where claim accuracy matters most; both summaries carrying the claim were corrected.
+
+**Verified live** (not just in the repo): all 6 node pages serve the corrected text with both
+the live and archive links; `nodes.json` serves 81 nodes with corrected `agent_summary` and
+`last_updated: 2026-07-29`; `llms-full.txt` carries the citation. No stale "formally dissolving"
+or "voted to end operations" strings survive on any live surface. Local build gate passed first
+(303 pages, 81 nodes, 0 validation warnings) per the Build Verification rule.
+
+**Out of scope, flagged not fixed:** two briefs dated 2026-03-23
+(`ai-education-gap-coachella-valley`, `cv-startup-gap`) still say "CVEP dissolved in May 2025."
+Both **predate** the March 28 filing and briefs are timestamped signal, not living documents —
+left true-to-their-time deliberately.
+
 ## 2026-07-26 — Tier cards restored + "What's included" disclosure modals
 
 Live (`98c6e40`).
