@@ -2,6 +2,41 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-29 (later) — Thirteenth Report published: Agent-Mapped Founder Infrastructure
+
+Live. `reports.json` **13 → 14**; 304 pages built (**+1**); nodes 81 and briefs 171 unchanged —
+this publish added a report only.
+
+**No hand-edits were needed anywhere, and that is the notable operational fact.** The homepage
+stat bar is build-time derived; the surface-health report anchor has been **runtime-derived since
+the 2026-07-17 un-pin**, so the three-way agreement (site ↔ `reports.json` ↔ MCP desk)
+re-established itself with no literal to bump. `get_report`'s cap is 50, so 14 needs no change.
+IndexNow resubmitted on build. This is the first census-series publish since the un-pin that
+required **zero** count maintenance — exactly the payoff that change was made for.
+
+**`report_type: agent-readiness`**, and it is deliberately **not** counted as a category census —
+complete category censuses stay at **7**. This is an enrichment pass organized on a question
+(*can a funded person build here?*), and the report's own text says so.
+
+**Gates, all upstream of the push:** local `npm run build` **before** any push per the Build
+Verification rule (304 pages, 0 validation warnings); ship-day freshness re-check of every
+dormancy claim (**17 live checks, 0 status changes**); §5.2/§5.3 on the final text (**55
+assertions, 0 fail** — every prose figure reproduces from the committed `stats.json`). Both
+§5.3-killed claims appear only as their required negations in a dedicated *"What We Are Not
+Claiming"* section. Reproducible scripts live in the playbook run's `verification/`.
+
+**Internal links out of this report:** the three econ-dev nodes repaired earlier today
+(`coachella-valley-economic-development`, `ai-economy-coachella-valley`,
+`riverside-county-economic-development`), the seven prior series entries, the methodology page,
+and the data-centers civic report. The CVEP bankruptcy is cited to **KNews (via The Desert Sun)
+plus its Wayback capture `20260729183104`** — the same citation chain repaired in the nodes this
+morning, so report and nodes now agree to the link.
+
+**Convention confirmed:** run dirs never retain a report MDX. The draft was `_`-prefixed in the
+playbook run dir until Gate 1 approval, then **moved** (not copied) to
+`src/content/reports/agent-mapped-founder-infrastructure-coachella-valley.mdx`, and the banked
+gate re-pointed at this published path so it stays runnable against canon.
+
 ## 2026-07-29 — CVEP Chapter 7 citation repair (6 nodes) + archive-at-publish practice
 
 Live (`69e57bf`), deployed and edge-verified. Node count unchanged at **81** — this was a
