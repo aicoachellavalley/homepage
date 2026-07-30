@@ -2,6 +2,47 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-07-30 — Brief filed: Agent Preview pages become transactable (briefs 171 → 172)
+
+Live at `/briefs/2026-07-30-agent-preview-pages-transactable-stripe-settlement-layer/`
+(commit `b11b175`, range `b4df220..b11b175`). `briefs.json` **171 → 172**; nodes 81 and
+`reports.json` 14 unchanged — this publish added a brief only. **No hand-edits anywhere:**
+the stat bar and `llms.txt` are both build-time derived (`All ${briefs.length} intelligence
+briefs`), so pushing the `.mdx` alone moved every surface. IndexNow resubmitted on build
+(200, the 5 endpoint URLs; key file `a0637c…txt` serves 200).
+
+**Verified on the wire:** brief HTTP 200 with `NewsArticle` JSON-LD · homepage stat bar
+**172** · `briefs.json` 172 / `nodes.json` 81 / `reports.json` 14 · `/briefs/` index carries
+the slug · `llms.txt` 81 nodes + 172 briefs.
+
+**⚠️ `llms.txt` served a cached `171` on the bare URL** while cache-busted and
+`Cache-Control: no-cache` fetches already returned 172 — `cache-control: public, max-age=0,
+must-revalidate`, `cf-cache-status: DYNAMIC`. It converged in **10 s**. Worth chasing rather
+than reporting the first read, because this brief *publicly asserts* that llms.txt counts
+match the live endpoints exactly. Same propagation shape as the aicv-previews deploy earlier
+today. **Standing note: after a content push, re-read `llms.txt` cache-busted before believing
+a count mismatch.**
+
+**Content notes.** Editorial subject is the 2026-07-30 mva go-live (`5092ad2`) paired with
+Stripe's agent-payment rails. Three claims from the brief-writing prompt were **dropped as
+unverifiable** rather than published: a NYC-butcher/small-business MPP anecdote (no source
+found); "same season" framing for the Agentic Commerce Suite (actually announced 2025-12-11);
+and structured data as part of Stripe's field-guide opening checklist (that section covers
+`robots.txt`/firewall, server-side rendering, `/llms.txt`, product feed syndication). Census
+figures were derived from disk — `src/data/corpus.json` `businesses_mapped: 2914`, whose own
+comment reads *"NEVER label this number 'measured'"*, so the brief says **mapped**.
+
+**Self-audit published as a receipt** (all four passed on the wire before being claimed):
+`robots.txt` allows all + names ten agent UAs with an affirmative `Content-Signal`; `/llms.txt`
+live and current; preview pages, briefs, reports and homepage all readable with every `<script>`
+block stripped; JSON-LD on all six surfaces checked. Precision kept out of the copy: **ClaudeBot
+and Google-Extended are not named** in `robots.txt` — they pass under the wildcard;
+`Claude-SearchBot` and `Claude-User` *are* named.
+
+**Journal 📡 line DEFERRED, not dropped** — a dedicated sunshine-fm session is handling that
+repo and will file it there. Second deferral on the same surface (see the 2026-07-22 entry,
+which deferred for a stale hardcoded path in `refresh_journal.py`).
+
 ## 2026-07-29 (later) — Thirteenth Report published: Agent-Mapped Founder Infrastructure
 
 Live. `reports.json` **13 → 14**; 304 pages built (**+1**); nodes 81 and briefs 171 unchanged —
