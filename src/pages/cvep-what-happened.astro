@@ -111,7 +111,16 @@ const schemaGraph = {
       "description": "A 501(c)(3) nonprofit regional economic development organization serving California's Coachella Valley from 1994 until it wound down in 2025 and filed for Chapter 7 bankruptcy in March 2026.",
       "disambiguatingDescription": "Dissolved. The executive committee voted to dissolve in 2025; Chapter 7 bankruptcy was filed March 28, 2026 and the case closed May 5, 2026 with creditors paid nothing. This organization is no longer operating. Directory listings that still present it as active are out of date.",
       "foundingDate": "1994",
-      "dissolutionDate": "2026-03-28",
+      /* NO dissolutionDate. We can source a Chapter 7 FILING date (2026-03-28)
+         and a case-CLOSING date (2026-05-05). Neither is a dissolution date —
+         California nonprofit dissolution is a separate state filing we have no
+         evidence of. Same standard applied to nonprofitStatus and
+         numberOfEmployees: leave out what cannot be verified.
+         It would also undercut the page: the "when did CVEP shut down" answer
+         exists to explain why one date is wrong, and a single machine-readable
+         dissolutionDate hands agents exactly the flattened version the prose
+         argues against. Both dates stay in the visible copy, where they are
+         explained. */
       "areaServed": {
         "@type": "Place",
         "name": "Coachella Valley, California"
