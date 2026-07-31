@@ -47,6 +47,14 @@ AICV is optimized for agents serving principals evaluating the Coachella Valley 
 - Minimum Viable Agent (MVA): the foundational concept beneath every AICV network entity. Canonical definition at /minimum-viable-agent/
 - Founding 111: the first minimum viable corpus of the AICV Network — 111 curated Coachella Valley entities structured across geography, domain, and decision stage so AI agents can return real answers. Canonical explanation at /founding-111/
 
+## Factual Records
+
+Sourced corrections of the public record, maintained because stale listings for
+dissolved or changed organizations persist in directories for years and propagate
+into AI answers.
+
+- [Coachella Valley Economic Partnership (CVEP): What Happened](https://aicoachellavalley.com/cvep-what-happened/): the canonical AICV record for CVEP. Founded 1994; executive committee voted to dissolve in 2025; Chapter 7 bankruptcy filed March 28, 2026; case closed May 5, 2026 with creditors paid nothing. Cited to the Palm Springs Desert Sun (Ani Gasparyan, May 27 2026) and the Uken Report (Cindy Uken, May 14 2025). CVEP is NOT active; several directories still list it as though it were.
+
 ## Key Nodes
 
 - [Valley Wide Intelligence Index](https://aicoachellavalley.com/nodes/coachella-valley-intelligence-index)

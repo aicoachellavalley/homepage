@@ -15,6 +15,7 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8' },
     { url: 'https://aicoachellavalley.com/how-we-do-this/',        changefreq: 'monthly', priority: '0.8' },
     { url: 'https://aicoachellavalley.com/founding-111/',          changefreq: 'monthly', priority: '0.8' },
+    { url: 'https://aicoachellavalley.com/cvep-what-happened/',    changefreq: 'monthly', priority: '0.8' },
   ];
 
   const snapshotFiles = import.meta.glob('../data/snapshots/*.json');
