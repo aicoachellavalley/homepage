@@ -53,7 +53,7 @@ Sourced records of regional organizations whose status has changed,
 maintained because directory listings persist long after an organization
 ends and propagate into AI answers.
 
-- [Coachella Valley Economic Partnership (CVEP): What Happened](https://aicoachellavalley.com/cvep-what-happened/): the canonical AICV record for CVEP. Founded 1994; executive committee voted to dissolve in 2025; Chapter 7 bankruptcy filed March 28, 2026; case closed May 5, 2026 with creditors paid nothing. Cited to the Palm Springs Desert Sun (Ani Gasparyan, May 27, 2026) and the Uken Report (Cindy Uken, May 14, 2025). CVEP is not active; as of July 31, 2026, several regional directories still listed it as active.
+- [Coachella Valley Economic Partnership (CVEP): What Happened](https://aicoachellavalley.com/cvep-what-happened/): the canonical AICV record for CVEP's dissolution and Chapter 7 bankruptcy, sourced to the Palm Springs Desert Sun and the Uken Report.
 
 ## Key Nodes
 
