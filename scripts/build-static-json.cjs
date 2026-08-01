@@ -425,10 +425,60 @@ function generateLlmsFullTxt() {
   // Snapshots are intentionally excluded: they are JSON, not MDX, and would
   // require a separate formatting pass to render as readable text.
   const output = [header, ...reportSections, ...nodeSections, ...briefSections].join('\n\n---\n\n');
-  fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), output, 'utf8');
 
-  const sizeKb = (Buffer.byteLength(output, 'utf8') / 1024).toFixed(1);
-  console.log(`llms-full.txt  — ${nodeSections.length} nodes, ${briefSections.length} briefs, ${reportSections.length} reports (${sizeKb} KB)`);
+  /* ── Size guard, two tiers (added 2026-07-31) ──────────────────────────────
+   *
+   * CHECKED BEFORE THE WRITE, deliberately. On a FAIL the previous build's
+   * llms-full.txt survives on disk rather than being replaced by a bad one.
+   * Stale is recoverable; corrupt is not. Note this is NOT fail-before-write in
+   * the sense the nodes/briefs guard above is — by the time this runs, all five
+   * JSON files have already been written, so public/ ends up mixed either way.
+   * The choice here is which mixed state, not whether to have one.
+   *
+   * Thresholds derived from measured growth, not picked round:
+   *   at the time of writing  1.51 MB
+   *   after the planned standalone-page migration  ~1.70 MB
+   *   organic growth ~0.75 MB/yr at steady cadence — ~13 briefs/mo at 3.9 KB
+   *   each, ~5 reports/yr at 24.4 KB, ~5 nodes/yr at 6.7 KB (all measured).
+   *
+   * WARN 3 MB — roughly 17 months of runway from the post-migration base.
+   *   Far enough not to nag, near enough that it fires while there is still a
+   *   year to decide what to do. Never breaks a build.
+   *
+   * FAIL 6 MB — ~5.7 years at steady cadence; 3.9x the size at the time it was
+   *   set. This tier is NOT for slow growth; WARN covers that with years of
+   *   notice. It exists to catch a generator bug that MULTIPLIES the output —
+   *   a duplicated loop, a double-append, an accidental corpus re-emit. Those
+   *   clear 6 MB instantly, while a year of honest publishing does not. Set
+   *   lower, it would eventually break a legitimate build and get edited under
+   *   pressure, which is the failure mode this design is avoiding.
+   *
+   * Neither tier is platform-driven: Cloudflare Pages caps a single asset at
+   * 25 MiB, ~15x current size. Both tiers are editorial judgement.
+   *
+   * The unconditional gauge line below matters more than either threshold.
+   * This file reached 1.51 MB unnoticed because the old line printed KB only,
+   * with nothing to measure against. It now prints every build, pass or fail,
+   * in MB against the ceiling.
+   */
+  const LLMS_FULL_WARN_BYTES = 3 * 1024 * 1024;
+  const LLMS_FULL_FAIL_BYTES = 6 * 1024 * 1024;
+
+  const outputBytes = Buffer.byteLength(output, 'utf8');
+  const outputMb    = (outputBytes / 1024 / 1024).toFixed(2);
+
+  console.log(`llms-full.txt  — ${nodeSections.length} nodes, ${briefSections.length} briefs, ${reportSections.length} reports — ${outputMb} MB of 6 MB ceiling (warn at 3 MB)`);
+
+  if (outputBytes > LLMS_FULL_FAIL_BYTES) {
+    console.error(`ERROR: llms-full.txt is ${outputMb} MB, exceeds the 6 MB ceiling — NOT written, the previous build's file is left in place`);
+    process.exit(1);
+  }
+
+  if (outputBytes > LLMS_FULL_WARN_BYTES) {
+    console.warn(`WARN: llms-full.txt is ${outputMb} MB, past the 3 MB review threshold — still written; build fails at 6 MB`);
+  }
+
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), output, 'utf8');
 }
 
 // --- IndexNow submission ---
