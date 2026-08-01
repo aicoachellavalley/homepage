@@ -1,78 +1,39 @@
 ---
+/**
+ * /cvep-what-happened/ — thin renderer over the `records` collection.
+ *
+ * Shape B: this file owns the route, the markup and the @graph SHAPE. The
+ * record itself — title, description, dates, the 13 questions and the two
+ * source citations — lives in src/content/records/cvep-what-happened.mdx and
+ * is pulled through getEntry. Nothing factual is duplicated here.
+ */
 import Base from '../layouts/Base.astro';
+import { getEntry, render } from 'astro:content';
 
-const pageTitle = 'Coachella Valley Economic Partnership (CVEP): What Happened — AICV';
-const pageDescription = 'A factual, sourced record of what happened to the Coachella Valley Economic Partnership (CVEP): founded 1994, wound down 2025, Chapter 7 bankruptcy filed March 28 2026, case closed May 5 2026 with creditors paid nothing. Compiled from court reporting and primary sources.';
+const entry = await getEntry('records', 'cvep-what-happened');
+if (!entry) throw new Error('records/cvep-what-happened is missing — refusing to build an empty record page');
+const { Content } = await render(entry);
+const { title, description, datePublished, dateModified, faq, sources } = entry.data;
+
+/* Route identity. Deliberately a page constant, not record data: the record
+   could in principle be rendered elsewhere, but THIS route is what every other
+   surface links to. */
 const canonicalUrl = 'https://aicoachellavalley.com/cvep-what-happened/';
 
-const DESERT_SUN_URL = 'https://www.desertsun.com/story/money/business/2026/05/27/startups-small-businesses-palm-springs-coachella-valley-bankruptcy/90044348007/';
-const UKEN_URL = 'https://ukenreport.com/coachella-valley-economic-partnership-end-of-era/';
+const pageTitle = `${title} — AICV`;
+const pageDescription = description;
 
-const PUBLISHED = '2026-07-31';
-const MODIFIED  = '2026-07-31';
-
-/* Every question on the page, in page order. Rendered as the h2 sequence in the
-   body AND as FAQPage mainEntity, from this one array — so the structured data
-   cannot drift from the visible copy. Answers are self-contained by design:
-   no answer refers to another answer. */
-const faqs = [
-  {
-    q: 'What was the Coachella Valley Economic Partnership?',
-    a: 'The Coachella Valley Economic Partnership, known as CVEP, was a 501(c)(3) nonprofit regional economic development organization serving California’s Coachella Valley from 1994 until it wound down in 2025 and filed for Chapter 7 bankruptcy in March 2026. Its stated mission was to build a diversified, year-round economy — attracting new businesses to the region, helping existing ones expand, and supporting startups from incubation through daily operation. It was small: roughly five employees and about a $1.2 million annual budget, governed by a board of some 34 members.',
-  },
-  {
-    q: 'Why was CVEP founded?',
-    a: 'The Coachella Valley’s economy has long concentrated in tourism, hospitality, agriculture and food service — sectors that are seasonal and comparatively low-paying. CVEP was created in 1994 to diversify away from that dependence. It described its target sectors over time as renewable energy, health and medicine, digital technology, cybersecurity and the internet of things. In its own words, the aim was a diversified, year-round economy rather than a seasonal one.',
-  },
-  {
-    q: 'Who funded CVEP?',
-    a: 'Public and private money, with the public share coming mainly from local government. CVEP described its membership as the nine Coachella Valley cities — Cathedral City, Coachella, Desert Hot Springs, Indian Wells, Indio, La Quinta, Palm Desert, Palm Springs and Rancho Mirage — along with the County of Riverside and roughly 130 private businesses. It also counted the region’s tribal governments and the Greater Palm Springs Convention & Visitors Bureau among its partners. Specific projects drew specific backers. The Palm Springs iHub, a state-designated business incubator CVEP managed, was funded by the City of Palm Springs and Wells Fargo. In 2014 the U.S. Economic Development Administration awarded $784,769 toward a valley business accelerator, announced alongside the City of Palm Springs and the Measure J Commission. In July 2016 the Desert Healthcare District, a public special district, granted CVEP $500,000 for a Health & Medical Innovation Center. A second hub, the Palm Desert Digital iHub, operated on the CSUSB Palm Desert campus. CVEP was candid about the fragility of this arrangement. In its own public filing it described budgets as determined largely by city councils and redevelopment committees on an annual basis, with no long-term commitments — leaving the organization, as it put it, vulnerable to political shifts and to whatever surplus its funders happened to have.',
-  },
-  {
-    q: 'What happened to CVEP?',
-    a: 'CVEP filed for Chapter 7 bankruptcy on March 28, 2026, and a federal bankruptcy judge closed the case on May 5, 2026 — less than two months later. Chapter 7 is liquidation, not reorganization, meaning the organization did not continue in any form. Creditors were paid nothing.',
-  },
-  {
-    q: 'When did CVEP actually shut down? Sources say 2024, 2025 and 2026.',
-    a: 'All three dates circulate because three different things happened. CVEP’s executive committee voted to dissolve in 2025, confirmed by the organization’s secretary, Bruce Whitman. Operations wound down across that year. But the corporation remained a legal entity until the March 2026 bankruptcy filing, which is when it formally ended. If you need one date: 2025 for the decision to dissolve, March 28, 2026 for the filing.',
-  },
-  {
-    q: 'Why did CVEP go bankrupt?',
-    a: 'No one involved with the organization would explain the failure publicly; board and staff declined to comment or redirected inquiries. What the court record shows is that CVEP took just under $300,000 in U.S. Small Business Administration Economic Injury Disaster Loans across 2020 and 2021 and could not repay them. Its gross revenue fell from $1,165,211 in 2021 to $945,088 in 2022 to $373,907 in 2024. A bankruptcy attorney who reviewed the records for the Desert Sun, and who was not involved in the case, assessed the COVID-19 pandemic as the primary driver.',
-  },
-  {
-    q: 'How much did CVEP owe, and to whom?',
-    a: 'Total debts came to $338,037.69. The large majority was owed to the U.S. Small Business Administration for the pandemic-era disaster loans. A smaller balance of roughly $8,500 was owed to American Express National Bank.',
-  },
-  {
-    q: 'Did CVEP’s creditors get paid?',
-    a: 'No. The case closed with creditors receiving nothing. The attorney who reviewed the records found CVEP had nothing meaningful left to liquidate — no property, accounts or equipment of consequence.',
-  },
-  {
-    q: 'Was CVEP being sued?',
-    a: 'Yes. American Express Travel Related Services filed a collection suit in October 2025. It was dismissed shortly after the bankruptcy filing, which triggers an automatic stay halting creditor collection actions. Avoiding that litigation appears to have been part of the motivation for filing, though the reporting stops short of stating it as the reason.',
-  },
-  {
-    q: 'What happened to the Palm Springs iHub?',
-    a: 'CVEP was associated with two innovation hubs; this answer concerns the Palm Springs iHub. The separate Palm Desert iHub, a City of Palm Desert facility, was rebranded as the Palm Desert Entrepreneurial Resource Center in March 2025. CVEP managed the Palm Springs iHub, a state-designated business incubator. Archived performance figures credited it with 175 jobs created, roughly $5 million in annual revenue across its companies and about $23 million invested in them. The bankruptcy reporting does not establish what became of the incubator itself, and AICV makes no claim about its current status.',
-  },
-  {
-    q: 'Is CVEP still listed as an active organization?',
-    a: 'In several places, yes — and this is worth knowing if you are relying on any directory. As of July 31, 2026, the Greater Coachella Valley Chamber of Commerce carried a present-tense member listing. LinkedIn showed an active company page with an employee count. The Desert Healthcare District’s partner page still listed CVEP’s address and phone number and linked to cvep.com, which is offline, while describing a July 2016 grant as recent. Directories do not automatically retire entries when an organization dissolves.',
-  },
-  {
-    q: 'Is there a successor to CVEP?',
-    a: 'No single organization has assumed CVEP’s role. Regional economic development functions are now distributed across city economic development offices, chambers of commerce, county programs, and the CSUSB Palm Desert campus. No entity has been designated a successor.',
-  },
-  {
-    q: 'Where can I verify this?',
-    a: 'The primary account is Ani Gasparyan’s reporting in the Palm Springs Desert Sun, published May 27, 2026, based on court documents. The earlier board decision to dissolve was first reported by Cindy Uken in the Uken Report on May 14, 2025. Both are linked above. Financial and organizational details predating the bankruptcy come from CVEP’s own public filings and from the funders named.',
-  },
-];
+/* Dates are derived from the ISO values, never carried twice. String-split
+   rather than Date() so no timezone can shift a day. Two forms because the
+   page uses two: "July 31, 2026" in the standfirst, "May 27 2026" in the
+   sources line. */
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const dparts = (iso: string) => { const [y, m, d] = iso.split('-'); return { y, m: MONTHS[Number(m) - 1], d: String(Number(d)) }; };
+const longDate   = (iso: string) => { const p = dparts(iso); return `${p.m} ${p.d}, ${p.y}`; };
+const sourceDate = (iso: string) => { const p = dparts(iso); return `${p.m} ${p.d} ${p.y}`; };
 
 const CVEP_ID = `${canonicalUrl}#cvep-organization`;
-const CITE_DS = `${canonicalUrl}#citation-desert-sun`;
-const CITE_UR = `${canonicalUrl}#citation-uken-report`;
+const citeId = (s: { id: string }) => `${canonicalUrl}#${s.id}`;
 
 const schemaGraph = {
   "@context": "https://schema.org",
@@ -90,15 +51,15 @@ const schemaGraph = {
         "name": "AI Coachella Valley"
       },
       "inLanguage": "en-US",
-      "datePublished": PUBLISHED,
-      "dateModified": MODIFIED,
+      "datePublished": datePublished,
+      "dateModified": dateModified,
       /* The page is ABOUT CVEP. `about` points at a CVEP Organization node with
          its own @id, scoped to this URL — deliberately never the AICV
          organization node, and never markup that could be read as CVEP
          publishing this itself. */
       "about": { "@id": CVEP_ID },
       "publisher": { "@id": "https://aicoachellavalley.com/#organization" },
-      "citation": [ { "@id": CITE_DS }, { "@id": CITE_UR } ]
+      "citation": sources.map((s) => ({ "@id": citeId(s) }))
     },
     {
       /* The subject. A dissolved organization described by a third party.
@@ -137,31 +98,23 @@ const schemaGraph = {
       "@id": `${canonicalUrl}#faq`,
       "isPartOf": { "@id": `${canonicalUrl}#webpage` },
       "about": { "@id": CVEP_ID },
-      "mainEntity": faqs.map((f) => ({
+      "mainEntity": faq.map((f) => ({
         "@type": "Question",
-        "name": f.q,
+        "name": f.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": f.a
+          "text": f.answer
         }
       }))
     },
-    {
+    ...sources.map((s) => ({
       "@type": "NewsArticle",
-      "@id": CITE_DS,
-      "url": DESERT_SUN_URL,
-      "author": { "@type": "Person", "name": "Ani Gasparyan" },
-      "datePublished": "2026-05-27",
-      "publisher": { "@type": "Organization", "name": "The Desert Sun" }
-    },
-    {
-      "@type": "NewsArticle",
-      "@id": CITE_UR,
-      "url": UKEN_URL,
-      "author": { "@type": "Person", "name": "Cindy Uken" },
-      "datePublished": "2025-05-14",
-      "publisher": { "@type": "Organization", "name": "Uken Report" }
-    },
+      "@id": citeId(s),
+      "url": s.url,
+      "author": { "@type": "Person", "name": s.author },
+      "datePublished": s.publicationDate,
+      "publisher": { "@type": "Organization", "name": s.publisher }
+    })),
     {
       "@type": "BreadcrumbList",
       "@id": `${canonicalUrl}#breadcrumbs`,
@@ -199,65 +152,185 @@ const schemaGraph = {
 
     <header class="cvep-head">
       <div class="cvep-eyebrow">AICV · Factual Record</div>
-      <h1 class="cvep-h1">Coachella Valley Economic Partnership (CVEP): What Happened</h1>
-      <p class="cvep-standfirst">A factual record, compiled from court reporting and primary sources. Last verified <time datetime={MODIFIED}>July 31, 2026</time>.</p>
+      <h1 class="cvep-h1">{title}</h1>
+      <p class="cvep-standfirst">A factual record, compiled from court reporting and primary sources. Last verified <time datetime={dateModified}>{longDate(dateModified)}</time>.</p>
       <p class="cvep-sources">
-        Sources: <a href={DESERT_SUN_URL} rel="nofollow noopener" target="_blank">Ani Gasparyan, The Desert Sun, May 27 2026</a>
-        · <a href={UKEN_URL} rel="nofollow noopener" target="_blank">Cindy Uken, Uken Report, May 14 2025</a>
+        Sources: {sources.map((s, i) => (
+          <Fragment>
+            {i > 0 && <Fragment> · </Fragment>}
+            <a href={s.url} rel="nofollow noopener" target="_blank">{s.author}, {s.publisher}, {sourceDate(s.publicationDate)}</a>
+          </Fragment>
+        ))}
       </p>
     </header>
 
-    {faqs.map((f) => (
+    {faq.map((f) => (
       <section class="cvep-q">
-        <h2 class="cvep-h2">{f.q}</h2>
-        <p class="cvep-a">{f.a}</p>
+        <h2 class="cvep-h2">{f.question}</h2>
+        <p class="cvep-a">{f.answer}</p>
       </section>
     ))}
 
-    <footer class="cvep-foot">
-      <p>AICV maintains this record because AI assistants are asked about regional organizations and repeat whatever they find. Listings for dissolved entities persist for years, and that stale data propagates. This page exists so an accurate, sourced version is available to be found.</p>
-    </footer>
+    {/* A <div>, not a <footer>: the site-wide `footer` rule below paints the
+        real page footer dark, and a second <footer> element would inherit it. */}
+    <div class="cvep-foot">
+      <Content />
+    </div>
 
   </div>
 </main>
 
-<style>
-  :root {
-    --volt:     #D8FF00;
-    --pine:     #1B4332;
-    --gunmetal: #1E1E1E;
-    --sand:     #FAFAF7;
-  }
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="foot-mark">AICV</div>
+        <div class="foot-name">AI Coachella Valley</div>
+        <div class="foot-full">
+          Intelligence Network · Est. 2025<br>
+          Coachella Valley, California<br>
+          Built for agents. Powered by humans.<br>
+          A fiscally sponsored project of Desert Community Foundation, a 501(c)(3) nonprofit organization.
+        </div>
+      </div>
+      <div>
+        <div class="foot-cities-label">Serving the Coachella Valley</div>
+        <div class="foot-cities">
+          Palm Springs<span class="foot-sep">·</span>
+          Desert Hot Springs<span class="foot-sep">·</span>
+          Cathedral City<span class="foot-sep">·</span>
+          Rancho Mirage<span class="foot-sep">·</span>
+          Palm Desert<span class="foot-sep">·</span>
+          Indian Wells<span class="foot-sep">·</span>
+          La Quinta<span class="foot-sep">·</span>
+          Indio<span class="foot-sep">·</span>
+          Coachella<span class="foot-sep">·</span>
+          Bermuda Dunes<span class="foot-sep">·</span>
+          Thousand Palms<span class="foot-sep">·</span>
+          Mecca<span class="foot-sep">·</span>
+          Thermal<span class="foot-sep">·</span>
+          Desert Center
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-copy">
+        © 2026 AICV · Established 2025 · Coachella Valley, California<br>
+        Built for agents. Powered by humans. · <a href="mailto:sat@aicv.co" style="color:rgba(232,226,208,0.6);text-decoration:none;">sat@aicv.co</a>
+      </div>
+      <div class="foot-links">
+        <a href="/nodes/">Intelligence Network</a>
+        <a href="/briefs/">Briefs</a>
+        <a href="/reports/">Reports</a>
+        <a href="https://sunshine.fm">SunshineFM</a>
+        <a href="/get-agent-ready/#diagnostic">Agent Preview</a>
+        <a href="https://x.com/CoachellaAI">@CoachellaAI</a>
+        <a href="https://github.com/aicoachellavalley">GitHub</a>
+        <a href="/terms/">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
+<style is:global>
+  /* ─── NAV ─── */
+  nav { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 3rem; background:var(--gunmetal); position:sticky; top:0; z-index:50; }
+  .nav-logo { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
+  .nav-logo-mark { width:36px; height:36px; background:var(--volt); display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-weight:800; font-size:11px; color:var(--pine); letter-spacing:0.02em; flex-shrink:0; }
+  .nav-logo-words { display:flex; flex-direction:column; line-height:1; gap:2px; }
+  .nav-logo-aicv { font-family:'Syne',sans-serif; font-weight:800; font-size:0.9rem; color:var(--sand); letter-spacing:0.04em; }
+  .nav-logo-sub { font-size:0.6rem; font-weight:300; color:rgba(232,226,208,0.4); letter-spacing:0.08em; text-transform:uppercase; }
+  .nav-right { display:flex; align-items:center; gap:1.5rem; }
+  .nav-links { display:flex; align-items:center; gap:1.75rem; }
+  .nav-links a { font-size:0.78rem; color:var(--sand); text-decoration:none; letter-spacing:0.03em; transition:color 0.2s; }
+  .nav-links a:hover { color:var(--volt); }
+  .nav-aio-btn { font-size:0.72rem; color:var(--sand); text-decoration:none; border:1px solid rgba(232,226,208,0.25); padding:0.4rem 0.9rem; letter-spacing:0.04em; transition:all 0.2s; font-weight:500; }
+  .nav-aio-btn:hover { background:var(--volt); color:var(--pine); border-color:var(--volt); }
+  .nav-docs-btn { background:var(--volt); color:var(--pine); padding:0.45rem 1.1rem; font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; text-decoration:none; letter-spacing:0.04em; transition:background 0.2s; }
+  .nav-docs-btn:hover { background:var(--pine-tint); }
+
+  /* ─── FOOTER ─── */
+  footer { background:var(--pine-dark); padding:4rem 3rem 2.5rem; }
+  .foot-inner { max-width:1060px; margin:0 auto; padding:0 48px; }
+  .foot-top { display:grid; grid-template-columns:220px 1fr; gap:4rem; padding-bottom:2.5rem; border-bottom:1px solid rgba(232,226,208,0.08); margin-bottom:2rem; }
+  .foot-mark { width:38px; height:38px; background:var(--volt); display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-weight:800; font-size:11px; color:var(--pine); margin-bottom:0.875rem; }
+  .foot-name { font-family:'Syne',sans-serif; font-weight:700; font-size:0.88rem; color:var(--sand); margin-bottom:0.3rem; }
+  .foot-full { font-size:0.7rem; color:rgba(232,226,208,0.6); font-weight:300; line-height:1.6; }
+  .foot-cities-label { font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(232,226,208,0.6); margin-bottom:1rem; font-weight:500; }
+  .foot-cities { font-size:0.8rem; color:rgba(232,226,208,0.4); font-weight:300; line-height:2; }
+  .foot-sep { color:rgba(232,226,208,0.15); margin:0 0.4rem; }
+  .foot-bottom { display:flex; align-items:center; justify-content:space-between; gap:2rem; }
+  .foot-copy { font-size:0.72rem; color:rgba(232,226,208,0.6); font-weight:300; line-height:1.6; }
+  .foot-links { display:flex; gap:1.75rem; align-items:center; flex-wrap:wrap; }
+  .foot-links a { font-size:0.72rem; color:rgba(232,226,208,0.6); text-decoration:none; transition:color 0.2s; letter-spacing:0.02em; }
+  .foot-links a:hover { color:var(--volt); }
+
+  /* ─── CVEP RECORD PAGE ─── */
   .cvep {
     background: var(--sand);
-    color: var(--gunmetal);
+    color: var(--pine);
     padding: 3.5rem 1.5rem 5rem;
   }
+  /* A reading measure, deliberately narrower than the site's 1060px shell —
+     this page is a long-form Q&A record, not a landing page. */
   .cvep-inner { max-width: 44rem; margin: 0 auto; }
 
+  /* TYPE — every declaration below the comment in each rule is copied verbatim
+     from how-we-do-this.astro's own block (.hwd-eyebrow / .hwd-h1 / .hwd-def /
+     .hwd-h2 / .hwd-body). Where this page's narrower column needs a different
+     LAYOUT value, the override follows the copied block and says so. */
   .cvep-eyebrow {
-    font-size: .72rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    font-weight: 600;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
     color: var(--pine);
-    margin-bottom: .9rem;
+    margin-bottom: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
   }
   .cvep-h1 {
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: clamp(1.9rem, 4.4vw, 2.9rem);
-    line-height: 1.14;
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(56px, 8vw, 96px);
     font-weight: 800;
-    margin: 0 0 1.1rem;
-    letter-spacing: -0.02em;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    color: var(--pine-dark);
+    margin: 0 0 32px;
   }
   .cvep-standfirst {
-    font-size: 1.02rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
     line-height: 1.65;
+    color: var(--pine);
+    max-width: 620px;
+    margin: 0;
+    /* overrides .hwd-def's `margin: 0` — the sources line follows this one */
     margin: 0 0 .55rem;
   }
+  .cvep-h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--pine-dark);
+    margin: 0 0 28px;
+    max-width: 680px;
+  }
+  .cvep-a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--pine);
+    max-width: 640px;
+    margin: 0 0 1.25rem;
+  }
+  /* .hwd-body:last-child in how-we-do-this. .cvep-a is always the last child
+     of its section, so this zeroes the copied trailing margin. */
+  .cvep-a:last-child { margin-bottom: 0; }
+
   .cvep-sources {
+    font-family: 'DM Sans', sans-serif;
     font-size: .86rem;
     line-height: 1.7;
     margin: 0;
@@ -265,40 +338,45 @@ const schemaGraph = {
   }
   .cvep-sources a { color: var(--pine); }
 
+  /* --pine at 18% via color-mix rather than a hardcoded rgba(27,67,50,…):
+     27,67,50 IS #1B4332 IS var(--pine), and tokens.css carries no alpha or
+     rule token that substitutes as a bare var(). Same pixels, one source. */
   .cvep-head {
     padding-bottom: 2.2rem;
     margin-bottom: .6rem;
-    border-bottom: 2px solid rgba(27,67,50,0.18);
+    border-bottom: 2px solid color-mix(in srgb, var(--pine) 18%, transparent);
   }
 
   .cvep-q { padding-top: 2.3rem; }
-  .cvep-h2 {
-    font-family: 'Syne', system-ui, sans-serif;
-    font-size: clamp(1.18rem, 2.3vw, 1.42rem);
-    line-height: 1.3;
-    font-weight: 700;
-    margin: 0 0 .8rem;
-    letter-spacing: -0.01em;
-  }
-  .cvep-a {
-    font-size: 1.02rem;
-    line-height: 1.75;
-    margin: 0;
-    max-width: 40rem;
-  }
 
   .cvep-foot {
     margin-top: 3.5rem;
     padding-top: 1.6rem;
-    border-top: 1px solid rgba(27,67,50,0.18);
+    border-top: 1px solid color-mix(in srgb, var(--pine) 18%, transparent);
     font-size: .94rem;
     line-height: 1.72;
     opacity: .88;
   }
   .cvep-foot p { margin: 0; max-width: 40rem; }
 
+  /* Responsive — the nav and footer rules are the site's own 860px block; the
+     nav collapses its link list here, so this breakpoint is not optional once
+     the nav CSS is present. */
+  @media (max-width: 860px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    footer { padding: 2.5rem 0 2rem; }
+    .foot-inner { padding: 0 1.5rem; }
+    .foot-top { grid-template-columns: 1fr; gap: 2rem; }
+    .foot-bottom { flex-direction: column; align-items: flex-start; }
+    /* matches .hwd-inner's 1.5rem gutter at this breakpoint */
+    .cvep { padding: 2.5rem 1.5rem 3.5rem; }
+  }
+
+  /* Retuned for the shared scale. The old rule also cut the gutter to 1.15rem,
+     which was sized for the previous half-size type and is too tight for a
+     56px h1 — the gutter now comes from the 860px block above. */
   @media (max-width: 640px) {
-    .cvep { padding: 2.5rem 1.15rem 3.5rem; }
     .cvep-q { padding-top: 1.9rem; }
   }
 </style>

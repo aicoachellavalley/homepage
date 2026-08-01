@@ -49,6 +49,39 @@ const nodes = defineCollection({
   }),
 });
 
+// Standing factual records of regional organizations whose status has changed.
+// One entry = one record page with its own FAQ set. Modeled on `briefs` — the
+// same glob loader, a flat schema, no taxonomy enums — because a record is a
+// single self-contained document, not a node in the network graph. Like nodes
+// and briefs (and unlike reports) there is deliberately NO status field: the
+// generator does not status-filter this collection.
+const records = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/records' }),
+  schema: z.object({
+    title:         z.string(),
+    description:   z.string(),
+    datePublished: z.string(),
+    dateModified:  z.string(),
+    // Page order. Rendered as the visible h2/answer sequence AND as FAQPage
+    // mainEntity from this one array, so the structured data cannot drift
+    // from the visible copy.
+    faq: z.array(z.object({
+      question: z.string(),
+      answer:   z.string(),
+    })).min(1),
+    // `id` is the @id fragment the citation takes in the page @graph. It is
+    // carried rather than slugged from `publisher` because the fragment is
+    // part of the citation's identity and no slug rule reproduces it.
+    sources: z.array(z.object({
+      id:              z.string(),
+      url:             z.string(),
+      author:          z.string(),
+      publisher:       z.string(),
+      publicationDate: z.string(),
+    })).min(1),
+  }),
+});
+
 const reports = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/reports' }),
   schema: z.object({
@@ -90,4 +123,4 @@ const aiqna = defineCollection({
   }),
 });
 
-export const collections = { briefs, nodes, reports, aiqna };
+export const collections = { briefs, nodes, records, reports, aiqna };
