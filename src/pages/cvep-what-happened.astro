@@ -288,14 +288,25 @@ const schemaGraph = {
     text-transform: uppercase;
     font-weight: 700;
   }
+  /* Long-title h1 scale, restored 2026-08-01.
+     e370ffd re-cut this onto the hero scale — clamp(56px, 8vw, 96px) — copied
+     from how-we-do-this. That scale is built for short, hand-broken titles (its
+     own h1 is 13 characters over 2 lines). This title is 59 characters: at 96px
+     it ran 7 lines and 638px tall, pushing the first question to y=986 on an
+     800px viewport, so the page loaded as a headline and nothing else.
+     These four properties are the pre-e370ffd values, restored verbatim. The
+     floor is 1.9rem, which is exactly .report-title's size — the corpus already
+     has a second h1 scale for sentence-shaped titles, and this page belongs to
+     it. `color` is NOT reverted: pine-dark is the colour fix from e370ffd and
+     stays. */
   .cvep-h1 {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(56px, 8vw, 96px);
+    font-size: clamp(1.9rem, 4.4vw, 2.9rem);
     font-weight: 800;
-    line-height: 0.95;
-    letter-spacing: -3px;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
     color: var(--pine-dark);
-    margin: 0 0 32px;
+    margin: 0 0 1.1rem;
   }
   .cvep-standfirst {
     font-family: 'DM Sans', sans-serif;
