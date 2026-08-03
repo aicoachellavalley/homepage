@@ -318,14 +318,23 @@ const schemaGraph = {
     /* overrides .hwd-def's `margin: 0` — the sources line follows this one */
     margin: 0 0 .55rem;
   }
+  /* Long-title h2 scale, restored 2026-08-03 — the second half of the h1 fix
+     in 6222433. e370ffd re-cut both headings onto how-we-do-this's hero scale;
+     the h1 was reverted on Saturday and this was left, which is why h1 computed
+     to 46.4px against an h2 of 44px and the first question read nearly as large
+     as the headline. Ordered, but functionally flat.
+     These four are the pre-e370ffd values, restored verbatim. They travel
+     together: reverting size alone would leave -1px tracking on a ~20px glyph.
+     `color` is NOT reverted — pine-dark is e370ffd's colour fix and is correct;
+     the pre-migration rule had no colour at all and inherited gunmetal. */
   .cvep-h2 {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(28px, 4vw, 44px);
+    font-size: clamp(1.18rem, 2.3vw, 1.42rem);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -1px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
     color: var(--pine-dark);
-    margin: 0 0 28px;
+    margin: 0 0 .8rem;
     max-width: 680px;
   }
   .cvep-a {
