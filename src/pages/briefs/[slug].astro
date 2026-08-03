@@ -141,8 +141,24 @@ const briefSchema = {
       padding: 48px 24px 80px;
     }
 
-    /* Markdown body styles */
-    .brief-body h1 { display: none; } /* title already in header */
+    /* Markdown body styles
+     *
+     * ⚠️ These rules target MDX-RENDERED elements, which Astro's style scoper
+     * never touches. A plain `.brief-body h1` compiles to
+     * `.brief-body[data-astro-cid-x] h1[data-astro-cid-x]`, and markdown output
+     * emits bare `<h1 id="...">` with no such attribute — so the rule never
+     * matches and silently does nothing. Only `.brief-body` itself carries the
+     * attribute, because that div is template-authored.
+     *
+     * `:global()` on the descendant is the fix: the parent stays scoped, the
+     * child matches whatever markdown emitted. Applied 2026-08-03 to the two
+     * rules with visible symptoms (h1, a). THE REST OF THIS BLOCK IS STILL
+     * DEAD — h2, h3, p, li, strong, em, ul, ol, hr, blockquote all fail the
+     * same way, verified 0/12 matching in built output. They are left alone
+     * deliberately: turning them on changes body typography across all 173
+     * briefs and is its own decision, queued separately. Do not "tidy" them in
+     * passing. */
+    .brief-body :global(h1) { display: none; } /* title already in header */
     .brief-body h2 {
       font-family: 'Syne', sans-serif;
       font-size: 1rem;
@@ -176,12 +192,12 @@ const briefSchema = {
       line-height: 1.7;
       margin-bottom: 6px;
     }
-    .brief-body a {
+    .brief-body :global(a) {
       color: var(--pine);
       text-decoration: underline;
       text-decoration-color: var(--pine-light);
     }
-    .brief-body a:hover { color: var(--pine-dark); }
+    .brief-body :global(a:hover) { color: var(--pine-dark); }
     .brief-body hr {
       border: none;
       border-top: 1px solid var(--sand-dark);
