@@ -1649,13 +1649,36 @@ const schemaGraph = {
   }
   .tos-overlay.on { display: flex; }
 
-  /* Modal surface: SAGE with FOREST text (ruled 2026-07-26). Volt is 1.07:1
-     on sage — never used for text, links, or accents here; it is valid only as
-     a BACKGROUND behind forest text (9.75:1), e.g. the close button on hover. */
+  /* Modal surface — ruled 2026-07-26, renamed 2026-08-04.
+     These four values are PAGE-SCOPED, declared on .tos-panel below. They are
+     NOT brand tokens and must not enter tokens.css: a value confined to this
+     one modal component does not earn token status, and promoting it would put
+     a second near-pine-mist green into the shared set. Previously referred to
+     in this comment as "sage" and "forest" — informal words that read like
+     tokens.css entries and were once misread as such. That is why they now
+     carry their scope in the name.
+
+     MEASURED CONTRAST — both figures belong to --tos-close-hover #DFFF40,
+     NOT to --volt #D8FF00:
+       --tos-close-hover #DFFF40 on --tos-panel-bg #E2EDD4  = 1.07:1
+       --tos-text        #234233 on --tos-close-hover #DFFF40 = 9.75:1
+     So #DFFF40 is unusable for text here, and is valid ONLY as a BACKGROUND
+     behind --tos-text — e.g. the close button on hover. Never text, links,
+     or accents.
+
+     TRAP — check the pairs exactly as named above. --volt on --tos-panel-bg
+     measures 1.05:1, and --tos-text on --tos-panel-bg measures 9.11:1;
+     neither reproduces the figures above. A reader who checks those pairs
+     instead will wrongly conclude this ruling is broken. */
   .tos-panel {
-    background: #E2EDD4;
-    border: 1px solid #C6D6B4;
-    border-top: 3px solid #234233;
+    --tos-panel-bg: #E2EDD4;
+    --tos-panel-bd: #C6D6B4;
+    --tos-text: #234233;
+    --tos-close-hover: #DFFF40;
+
+    background: var(--tos-panel-bg);
+    border: 1px solid var(--tos-panel-bd);
+    border-top: 3px solid var(--tos-text);
     max-width: 660px;
     width: 100%;
     max-height: 85vh;
@@ -1669,8 +1692,8 @@ const schemaGraph = {
     top: 1.25rem;
     right: 1.25rem;
     background: none;
-    border: 1px solid #3A5648;
-    color: #234233;
+    border: 1px solid #3A5648; /* deliberately unnamed — see note at end of block */
+    color: var(--tos-text);
     width: 2rem;
     height: 2rem;
     cursor: pointer;
@@ -1680,13 +1703,14 @@ const schemaGraph = {
     justify-content: center;
     transition: border-color 0.2s, color 0.2s;
   }
-  .tos-close:hover { background: #DFFF40; border-color: #234233; color: #234233; }
+  /* The one place --tos-close-hover is used: a BACKGROUND behind --tos-text. */
+  .tos-close:hover { background: var(--tos-close-hover); border-color: var(--tos-text); color: var(--tos-text); }
 
   .tos-label {
     font-size: 0.6rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #234233;
+    color: var(--tos-text);
     margin-bottom: 0.6rem;
     font-weight: 500;
   }
@@ -1695,7 +1719,7 @@ const schemaGraph = {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: #234233;
+    color: var(--tos-text);
     letter-spacing: -0.02em;
     margin-bottom: 0.35rem;
   }
@@ -1709,7 +1733,7 @@ const schemaGraph = {
 
   .tos-body p {
     font-size: 0.875rem;
-    color: #234233;
+    color: var(--tos-text);
     font-weight: 400;
     line-height: 1.75;
     margin-bottom: 1rem;
@@ -1719,7 +1743,7 @@ const schemaGraph = {
     font-family: 'Syne', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
-    color: #234233;
+    color: var(--tos-text);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin: 1.75rem 0 0.5rem;
@@ -1728,17 +1752,22 @@ const schemaGraph = {
   .tos-body ul { margin: 0 0 1rem; padding-left: 1.15rem; }
   .tos-body li {
     font-size: 0.875rem;
-    color: #234233;
+    color: var(--tos-text);
     font-weight: 400;
     line-height: 1.7;
     margin-bottom: 0.5rem;
   }
-  .tos-body li::marker { color: #234233; }
-  .tos-body strong { color: #234233; font-weight: 600; }
+  .tos-body li::marker { color: var(--tos-text); }
+  .tos-body strong { color: var(--tos-text); font-weight: 600; }
 
-  /* Links carry forest + a permanent underline — never colour alone. */
-  .tos-body a { color: #234233; text-decoration: underline; text-underline-offset: 2px; }
+  /* Links carry --tos-text + a permanent underline — never colour alone. */
+  .tos-body a { color: var(--tos-text); text-decoration: underline; text-underline-offset: 2px; }
   .tos-body a:hover { text-decoration-thickness: 2px; }
+
+  /* #3A5648 (.tos-close border, .tos-date) is a fifth one-off in this block.
+     It was NOT given a scoped name in the 2026-08-04 rename — the ruling named
+     four values. Left hardcoded deliberately; do not invent a fifth name
+     without recording it in playbook BRAND.md section 3 first. */
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 860px) {
