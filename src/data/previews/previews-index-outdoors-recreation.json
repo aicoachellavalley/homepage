@@ -1,0 +1,1354 @@
+{
+ "domain": "Outdoors & Recreation",
+ "segment": "outdoors-recreation",
+ "generated": "2026-07-23",
+ "count": 192,
+ "indexable": 134,
+ "sitemap": "https://aicoachellavalley.com/agent-preview/sitemap-previews-outdoors-recreation.xml",
+ "entries": [
+  {
+   "slug": "accelerated-tennis",
+   "name": "Accelerated Tennis",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/accelerated-tennis",
+   "indexable": false
+  },
+  {
+   "slug": "andalusia-country-club-pickleball",
+   "name": "Andalusia Country Club - Pickleball",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/andalusia-country-club-pickleball",
+   "indexable": true
+  },
+  {
+   "slug": "andalusia-country-club",
+   "name": "Andalusia Country Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/andalusia-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "balloons-above-the-desert",
+   "name": "Balloons Above the Desert",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/balloons-above-the-desert",
+   "indexable": true
+  },
+  {
+   "slug": "bermuda-dunes-country-club",
+   "name": "Bermuda Dunes Country Club",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/bermuda-dunes-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "bermuda-dunes-racquet-club",
+   "name": "Bermuda Dunes Racquet Club",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/bermuda-dunes-racquet-club",
+   "indexable": false
+  },
+  {
+   "slug": "big-league-dreams-sports-park-cathedral-city",
+   "name": "Big League Dreams Sports Park (Cathedral City)",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/big-league-dreams-sports-park-cathedral-city",
+   "indexable": true
+  },
+  {
+   "slug": "big-wheel-tours-palm-desert-bike-rentals",
+   "name": "Big Wheel Tours / Palm Desert Bike Rentals",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/big-wheel-tours-palm-desert-bike-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "big-wheel-tours-palm-springs",
+   "name": "Big Wheel Tours - Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/big-wheel-tours-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "big-wheel-tours",
+   "name": "Big Wheel Tours",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/big-wheel-tours",
+   "indexable": true
+  },
+  {
+   "slug": "bighorn-golf-club-canyons-course",
+   "name": "Bighorn Golf Club (Canyons Course)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/bighorn-golf-club-canyons-course",
+   "indexable": true
+  },
+  {
+   "slug": "bighorn-golf-club-mountains-course",
+   "name": "Bighorn Golf Club (Mountains Course)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/bighorn-golf-club-mountains-course",
+   "indexable": true
+  },
+  {
+   "slug": "bike-palm-springs-rentals-tours",
+   "name": "Bike Palm Springs Rentals & Tours",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/bike-palm-springs-rentals-tours",
+   "indexable": true
+  },
+  {
+   "slug": "black-sheep-adventures-california-desert-bike-tour",
+   "name": "Black Sheep Adventures - California Desert Bike Tour",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/black-sheep-adventures-california-desert-bike-tour",
+   "indexable": true
+  },
+  {
+   "slug": "blu-off-road-rentals",
+   "name": "Blu Off Road Rentals",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/blu-off-road-rentals",
+   "indexable": false
+  },
+  {
+   "slug": "canyon-country-club-historic-name-now-part-of-indian-canyons-north",
+   "name": "Canyon Country Club (historic name, now part of Indian Canyons North)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/canyon-country-club-historic-name-now-part-of-indian-canyons-north",
+   "indexable": false
+  },
+  {
+   "slug": "cathedral-canyon-country-club",
+   "name": "Cathedral Canyon Country Club",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/cathedral-canyon-country-club",
+   "indexable": false
+  },
+  {
+   "slug": "chaparral-country-club",
+   "name": "Chaparral Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/chaparral-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "cimarron-golf-resort",
+   "name": "Cimarron Golf Resort",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/cimarron-golf-resort",
+   "indexable": true
+  },
+  {
+   "slug": "citrus-club-at-pga-west-tennis-pickleball",
+   "name": "Citrus Club at PGA West - Tennis & Pickleball",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/citrus-club-at-pga-west-tennis-pickleball",
+   "indexable": true
+  },
+  {
+   "slug": "club-at-pga-west-tennis-pickleball",
+   "name": "Club at PGA West (Tennis & Pickleball)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/club-at-pga-west-tennis-pickleball",
+   "indexable": true
+  },
+  {
+   "slug": "coachella-festers-bike-rentals",
+   "name": "Coachella Festers Bike Rentals",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/coachella-festers-bike-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "coachella-valley-aquatics",
+   "name": "Coachella Valley Aquatics",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/coachella-valley-aquatics",
+   "indexable": false
+  },
+  {
+   "slug": "coachella-valley-scorpions-pickleball-national-pickleball-league",
+   "name": "Coachella Valley Scorpions Pickleball (National Pickleball League)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/coachella-valley-scorpions-pickleball-national-pickleball-league",
+   "indexable": true
+  },
+  {
+   "slug": "college-of-the-desert-palm-springs-campus-pickleball-courts",
+   "name": "College of the Desert Palm Springs Campus Pickleball Courts",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/college-of-the-desert-palm-springs-campus-pickleball-courts",
+   "indexable": true
+  },
+  {
+   "slug": "covered-wagon-tours",
+   "name": "Covered Wagon Tours",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/covered-wagon-tours",
+   "indexable": true
+  },
+  {
+   "slug": "date-palm-country-club",
+   "name": "Date Palm Country Club",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/date-palm-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "deer-creek-equestrian-center",
+   "name": "Deer Creek Equestrian Center",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/deer-creek-equestrian-center",
+   "indexable": false
+  },
+  {
+   "slug": "desert-adventures-jeep-tours",
+   "name": "Desert Adventures Jeep Tours",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-adventures-jeep-tours",
+   "indexable": false
+  },
+  {
+   "slug": "desert-crest-country-club",
+   "name": "Desert Crest Country Club",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-crest-country-club",
+   "indexable": false
+  },
+  {
+   "slug": "desert-dunes-golf-club",
+   "name": "Desert Dunes Golf Club",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-dunes-golf-club",
+   "indexable": false
+  },
+  {
+   "slug": "desert-falls-country-club",
+   "name": "Desert Falls Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-falls-country-club",
+   "indexable": false
+  },
+  {
+   "slug": "desert-horizons-country-club-pickleball",
+   "name": "Desert Horizons Country Club - Pickleball",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-horizons-country-club-pickleball",
+   "indexable": true
+  },
+  {
+   "slug": "desert-horizons-country-club",
+   "name": "Desert Horizons Country Club",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-horizons-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "desert-hot-springs-spa-hotel-mineral-pool",
+   "name": "Desert Hot Springs Spa Hotel mineral pool",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-hot-springs-spa-hotel-mineral-pool",
+   "indexable": true
+  },
+  {
+   "slug": "desert-island-golf-country-club",
+   "name": "Desert Island Golf & Country Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-island-golf-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "desert-princess-golf-resort",
+   "name": "Desert Princess Golf Resort",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-princess-golf-resort",
+   "indexable": false
+  },
+  {
+   "slug": "desert-rocks-indoor-climbing-gym",
+   "name": "Desert Rocks Indoor Climbing Gym",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-rocks-indoor-climbing-gym",
+   "indexable": false
+  },
+  {
+   "slug": "desert-springs-pbi-tennis-club-at-jw-marriott-desert-springs-resort-spa",
+   "name": "Desert Springs PBI Tennis Club at JW Marriott Desert Springs Resort & Spa",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-springs-pbi-tennis-club-at-jw-marriott-desert-springs-resort-spa",
+   "indexable": true
+  },
+  {
+   "slug": "desert-stewards",
+   "name": "Desert Stewards",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-stewards",
+   "indexable": true
+  },
+  {
+   "slug": "desert-willow-golf-resort-firecliff-course",
+   "name": "Desert Willow Golf Resort (Firecliff Course)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-willow-golf-resort-firecliff-course",
+   "indexable": true
+  },
+  {
+   "slug": "desert-willow-golf-resort-mountain-view-course",
+   "name": "Desert Willow Golf Resort (Mountain View Course)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-willow-golf-resort-mountain-view-course",
+   "indexable": true
+  },
+  {
+   "slug": "dsrt-surf",
+   "name": "DSRT Surf",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/dsrt-surf",
+   "indexable": true
+  },
+  {
+   "slug": "el-sarandi-polo-club",
+   "name": "El Sarandi Polo Club",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/el-sarandi-polo-club",
+   "indexable": false
+  },
+  {
+   "slug": "eldorado-country-club",
+   "name": "Eldorado Country Club",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/eldorado-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "eldorado-polo-club",
+   "name": "Eldorado Polo Club",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/eldorado-polo-club",
+   "indexable": true
+  },
+  {
+   "slug": "empire-polo-club",
+   "name": "Empire Polo Club",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/empire-polo-club",
+   "indexable": true
+  },
+  {
+   "slug": "equestrian-centers-international-eci",
+   "name": "Equestrian Centers International (ECI)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/equestrian-centers-international-eci",
+   "indexable": false
+  },
+  {
+   "slug": "escena-golf-club",
+   "name": "Escena Golf Club",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/escena-golf-club",
+   "indexable": true
+  },
+  {
+   "slug": "fantasy-balloon-flights",
+   "name": "Fantasy Balloon Flights",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/fantasy-balloon-flights",
+   "indexable": true
+  },
+  {
+   "slug": "five-star-adventures-tours",
+   "name": "Five Star Adventures Tours",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/five-star-adventures-tours",
+   "indexable": false
+  },
+  {
+   "slug": "fun-time-atv-rentals-inc",
+   "name": "Fun Time ATV Rentals, Inc.",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/fun-time-atv-rentals-inc",
+   "indexable": true
+  },
+  {
+   "slug": "geergarage-palm-springs-e-bike-rental",
+   "name": "GeerGarage (Palm Springs e-bike rental)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/geergarage-palm-springs-e-bike-rental",
+   "indexable": true
+  },
+  {
+   "slug": "golden-racket-academy",
+   "name": "Golden Racket Academy",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/golden-racket-academy",
+   "indexable": true
+  },
+  {
+   "slug": "grand-hyatt-indian-wells-resort-villas-water-park",
+   "name": "Grand Hyatt Indian Wells Resort & Villas water park",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/grand-hyatt-indian-wells-resort-villas-water-park",
+   "indexable": true
+  },
+  {
+   "slug": "heritage-palms-golf-club",
+   "name": "Heritage Palms Golf Club",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/heritage-palms-golf-club",
+   "indexable": true
+  },
+  {
+   "slug": "hidden-springs-country-club",
+   "name": "Hidden Springs Country Club",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/hidden-springs-country-club",
+   "indexable": false
+  },
+  {
+   "slug": "hyatt-regency-indian-wells-pickleball-courts",
+   "name": "Hyatt Regency Indian Wells - Pickleball Courts",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/hyatt-regency-indian-wells-pickleball-courts",
+   "indexable": false
+  },
+  {
+   "slug": "indian-canyons-golf-resort-north-course",
+   "name": "Indian Canyons Golf Resort - North Course",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-canyons-golf-resort-north-course",
+   "indexable": true
+  },
+  {
+   "slug": "indian-canyons-golf-resort-south-course",
+   "name": "Indian Canyons Golf Resort - South Course",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-canyons-golf-resort-south-course",
+   "indexable": true
+  },
+  {
+   "slug": "indian-palms-country-club-resort",
+   "name": "Indian Palms Country Club + Resort",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-palms-country-club-resort",
+   "indexable": true
+  },
+  {
+   "slug": "indian-ridge-country-club",
+   "name": "Indian Ridge Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-ridge-country-club",
+   "indexable": false
+  },
+  {
+   "slug": "indian-wells-country-club-charlie-pasarell-tennis-center",
+   "name": "Indian Wells Country Club - Charlie Pasarell Tennis Center",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-wells-country-club-charlie-pasarell-tennis-center",
+   "indexable": false
+  },
+  {
+   "slug": "indian-wells-country-club",
+   "name": "Indian Wells Country Club",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-wells-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "indian-wells-golf-resort-celebrity-course",
+   "name": "Indian Wells Golf Resort (Celebrity Course)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-wells-golf-resort-celebrity-course",
+   "indexable": true
+  },
+  {
+   "slug": "indian-wells-golf-resort-players-course",
+   "name": "Indian Wells Golf Resort (Players Course)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-wells-golf-resort-players-course",
+   "indexable": true
+  },
+  {
+   "slug": "indian-wells-tennis-garden-pickleball-courts",
+   "name": "Indian Wells Tennis Garden - Pickleball Courts",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-wells-tennis-garden-pickleball-courts",
+   "indexable": false
+  },
+  {
+   "slug": "indio-municipal-golf-course-the-lights-at-indio-gc",
+   "name": "Indio Municipal Golf Course (The Lights at Indio GC)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indio-municipal-golf-course-the-lights-at-indio-gc",
+   "indexable": true
+  },
+  {
+   "slug": "ironwood-country-club-north-course",
+   "name": "Ironwood Country Club (North Course)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/ironwood-country-club-north-course",
+   "indexable": true
+  },
+  {
+   "slug": "ironwood-country-club-south-course",
+   "name": "Ironwood Country Club (South Course)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/ironwood-country-club-south-course",
+   "indexable": true
+  },
+  {
+   "slug": "ironwoods-off-road-rental",
+   "name": "Ironwoods Off-road Rental",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/ironwoods-off-road-rental",
+   "indexable": false
+  },
+  {
+   "slug": "ivey-ranch-country-club-tennis-pickleball",
+   "name": "Ivey Ranch Country Club - Tennis/Pickleball",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/ivey-ranch-country-club-tennis-pickleball",
+   "indexable": false
+  },
+  {
+   "slug": "ivey-ranch-country-club",
+   "name": "Ivey Ranch Country Club",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/ivey-ranch-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "jw-marriott-desert-springs-resort-pbi-tennis-club",
+   "name": "JW Marriott Desert Springs Resort PBI Tennis Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/jw-marriott-desert-springs-resort-pbi-tennis-club",
+   "indexable": false
+  },
+  {
+   "slug": "jw-marriott-desert-springs-resort-spa-palm-course",
+   "name": "JW Marriott Desert Springs Resort & Spa - Palm Course",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/jw-marriott-desert-springs-resort-spa-palm-course",
+   "indexable": true
+  },
+  {
+   "slug": "jw-marriott-desert-springs-resort-spa-pickleball",
+   "name": "JW Marriott Desert Springs Resort & Spa - Pickleball",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/jw-marriott-desert-springs-resort-spa-pickleball",
+   "indexable": false
+  },
+  {
+   "slug": "jw-marriott-desert-springs-resort-spa-valley-course",
+   "name": "JW Marriott Desert Springs Resort & Spa - Valley Course",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/jw-marriott-desert-springs-resort-spa-valley-course",
+   "indexable": true
+  },
+  {
+   "slug": "la-quinta-country-club-pickleball-courts",
+   "name": "La Quinta Country Club - Pickleball Courts",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/la-quinta-country-club-pickleball-courts",
+   "indexable": false
+  },
+  {
+   "slug": "la-quinta-country-club-tennis-pickleball",
+   "name": "La Quinta Country Club - Tennis & Pickleball",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/la-quinta-country-club-tennis-pickleball",
+   "indexable": false
+  },
+  {
+   "slug": "la-quinta-resort-club-golf-citrus-mountain-dunes-courses",
+   "name": "La Quinta Resort & Club Golf (Citrus, Mountain, Dunes courses)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/la-quinta-resort-club-golf-citrus-mountain-dunes-courses",
+   "indexable": true
+  },
+  {
+   "slug": "la-quinta-resort-club-tennis-and-pickleball",
+   "name": "La Quinta Resort & Club Tennis and Pickleball",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/la-quinta-resort-club-tennis-and-pickleball",
+   "indexable": true
+  },
+  {
+   "slug": "ladera-golf-club",
+   "name": "Ladera Golf Club",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/ladera-golf-club",
+   "indexable": true
+  },
+  {
+   "slug": "los-compadres-stables-los-compadres-club",
+   "name": "Los Compadres Stables (Los Compadres Club)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/los-compadres-stables-los-compadres-club",
+   "indexable": false
+  },
+  {
+   "slug": "magical-adventure-balloon-rides",
+   "name": "Magical Adventure Balloon Rides",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/magical-adventure-balloon-rides",
+   "indexable": true
+  },
+  {
+   "slug": "marrakesh-country-club",
+   "name": "Marrakesh Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/marrakesh-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "marriotts-shadow-ridge-golf-club",
+   "name": "Marriott's Shadow Ridge Golf Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/marriotts-shadow-ridge-golf-club",
+   "indexable": false
+  },
+  {
+   "slug": "mesquite-golf-country-club",
+   "name": "Mesquite Golf & Country Club",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/mesquite-golf-country-club",
+   "indexable": false
+  },
+  {
+   "slug": "mission-hills-country-club-gary-player-course-north",
+   "name": "Mission Hills Country Club - Gary Player Course (North)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/mission-hills-country-club-gary-player-course-north",
+   "indexable": true
+  },
+  {
+   "slug": "mission-hills-country-club-racquet-sports",
+   "name": "Mission Hills Country Club Racquet Sports",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/mission-hills-country-club-racquet-sports",
+   "indexable": true
+  },
+  {
+   "slug": "mission-lakes-country-club",
+   "name": "Mission Lakes Country Club",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/mission-lakes-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "monterey-country-club",
+   "name": "Monterey Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/monterey-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "moorten-botanical-garden",
+   "name": "Moorten Botanical Garden",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/moorten-botanical-garden",
+   "indexable": true
+  },
+  {
+   "slug": "mountain-view-country-club",
+   "name": "Mountain View Country Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/mountain-view-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "mountain-vista-golf-club-at-sun-city-palm-desert",
+   "name": "Mountain Vista Golf Club at Sun City Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/mountain-vista-golf-club-at-sun-city-palm-desert",
+   "indexable": false
+  },
+  {
+   "slug": "north-shore-beach-yacht-club",
+   "name": "North Shore Beach & Yacht Club",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/north-shore-beach-yacht-club",
+   "indexable": true
+  },
+  {
+   "slug": "oasis-country-club-tennis-pickleball",
+   "name": "Oasis Country Club Tennis & Pickleball",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/oasis-country-club-tennis-pickleball",
+   "indexable": false
+  },
+  {
+   "slug": "oasis-country-club",
+   "name": "Oasis Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/oasis-country-club",
+   "indexable": false
+  },
+  {
+   "slug": "odonnell-golf-club",
+   "name": "O'Donnell Golf Club",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/odonnell-golf-club",
+   "indexable": true
+  },
+  {
+   "slug": "offroad-rentals-palm-springs",
+   "name": "Offroad Rentals (Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/offroad-rentals-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "omni-rancho-las-palmas-golf-course",
+   "name": "Omni Rancho Las Palmas Golf Course",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/omni-rancho-las-palmas-golf-course",
+   "indexable": false
+  },
+  {
+   "slug": "omni-rancho-las-palmas-resort-spa-cliff-drysdale-tennis",
+   "name": "Omni Rancho Las Palmas Resort & Spa - Cliff Drysdale Tennis",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/omni-rancho-las-palmas-resort-spa-cliff-drysdale-tennis",
+   "indexable": true
+  },
+  {
+   "slug": "omni-rancho-las-palmas-resort-tennis",
+   "name": "Omni Rancho Las Palmas Resort Tennis",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/omni-rancho-las-palmas-resort-tennis",
+   "indexable": true
+  },
+  {
+   "slug": "outdoor-resort-country-club-outdoor-resorts-palm-springs",
+   "name": "Outdoor Resort & Country Club (Outdoor Resorts Palm Springs)",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/outdoor-resort-country-club-outdoor-resorts-palm-springs",
+   "indexable": false
+  },
+  {
+   "slug": "outdoor-resort-indio-pickleball-courts",
+   "name": "Outdoor Resort Indio - Pickleball Courts",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/outdoor-resort-indio-pickleball-courts",
+   "indexable": false
+  },
+  {
+   "slug": "outdoor-resorts-palm-springs-cathedral-city",
+   "name": "Outdoor Resorts Palm Springs (Cathedral City)",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/outdoor-resorts-palm-springs-cathedral-city",
+   "indexable": false
+  },
+  {
+   "slug": "palm-desert-country-club-golf-course",
+   "name": "Palm Desert Country Club Golf Course",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/palm-desert-country-club-golf-course",
+   "indexable": true
+  },
+  {
+   "slug": "palm-desert-resort-country-club-pickleball-complex",
+   "name": "Palm Desert Resort Country Club Pickleball Complex",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/palm-desert-resort-country-club-pickleball-complex",
+   "indexable": false
+  },
+  {
+   "slug": "palm-desert-tennis-club-pickleball",
+   "name": "Palm Desert Tennis Club - Pickleball",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/palm-desert-tennis-club-pickleball",
+   "indexable": true
+  },
+  {
+   "slug": "palm-desert-tennis-club",
+   "name": "Palm Desert Tennis Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/palm-desert-tennis-club",
+   "indexable": true
+  },
+  {
+   "slug": "palm-springs-aerial-tramway",
+   "name": "Palm Springs Aerial Tramway",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/palm-springs-aerial-tramway",
+   "indexable": true
+  },
+  {
+   "slug": "palm-springs-balloons",
+   "name": "Palm Springs Balloons",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/palm-springs-balloons",
+   "indexable": true
+  },
+  {
+   "slug": "palm-springs-pickleball-league",
+   "name": "Palm Springs Pickleball League",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/palm-springs-pickleball-league",
+   "indexable": false
+  },
+  {
+   "slug": "palm-springs-tennis-club",
+   "name": "Palm Springs Tennis Club",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/palm-springs-tennis-club",
+   "indexable": true
+  },
+  {
+   "slug": "palm-valley-country-club",
+   "name": "Palm Valley Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/palm-valley-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "paradise-pickleball",
+   "name": "Paradise Pickleball",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/paradise-pickleball",
+   "indexable": true
+  },
+  {
+   "slug": "pedego-electric-bikes-la-quinta",
+   "name": "Pedego Electric Bikes La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/pedego-electric-bikes-la-quinta",
+   "indexable": false
+  },
+  {
+   "slug": "pedego-electric-bikes-palm-springs",
+   "name": "Pedego Electric Bikes Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/pedego-electric-bikes-palm-springs",
+   "indexable": false
+  },
+  {
+   "slug": "pga-west-nicklaus-tournament-course",
+   "name": "PGA West - Nicklaus Tournament Course",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/pga-west-nicklaus-tournament-course",
+   "indexable": false
+  },
+  {
+   "slug": "pga-west-private-clubhouse-nicklaus-private-weiskopf-private-palmer-private-courses",
+   "name": "PGA West Private Clubhouse (Nicklaus Private, Weiskopf Private, Palmer Private courses)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/pga-west-private-clubhouse-nicklaus-private-weiskopf-private-palmer-private-courses",
+   "indexable": true
+  },
+  {
+   "slug": "pga-west-resort-courses-stadium-mountain-dunes-nicklaus-tournament-greg-norman",
+   "name": "PGA West Resort Courses (Stadium, Mountain, Dunes, Nicklaus Tournament, Greg Norman)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/pga-west-resort-courses-stadium-mountain-dunes-nicklaus-tournament-greg-norman",
+   "indexable": true
+  },
+  {
+   "slug": "pga-west-stadium-course-pete-dye",
+   "name": "PGA West - Stadium Course (Pete Dye)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/pga-west-stadium-course-pete-dye",
+   "indexable": false
+  },
+  {
+   "slug": "pickled-bar",
+   "name": "Pickled Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/pickled-bar",
+   "indexable": false
+  },
+  {
+   "slug": "portola-country-club",
+   "name": "Portola Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/portola-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "prickly-pear-e-bike-tours",
+   "name": "Prickly Pear E-Bike Tours",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/prickly-pear-e-bike-tours",
+   "indexable": true
+  },
+  {
+   "slug": "rancho-del-sol-performance-horses-rancho-del-sol-quarter-horses",
+   "name": "Rancho Del Sol Performance Horses (Rancho Del Sol Quarter Horses)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/rancho-del-sol-performance-horses-rancho-del-sol-quarter-horses",
+   "indexable": true
+  },
+  {
+   "slug": "rancho-la-quinta-country-club",
+   "name": "Rancho La Quinta Country Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/rancho-la-quinta-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "rancho-mirage-country-club",
+   "name": "Rancho Mirage Country Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/rancho-mirage-country-club",
+   "indexable": false
+  },
+  {
+   "slug": "rancho-mirage-racquet-club",
+   "name": "Rancho Mirage Racquet Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/rancho-mirage-racquet-club",
+   "indexable": false
+  },
+  {
+   "slug": "rancho-polo-equestrian-center",
+   "name": "Rancho Polo Equestrian Center",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/rancho-polo-equestrian-center",
+   "indexable": true
+  },
+  {
+   "slug": "red-jeep-tours-desert-adventures",
+   "name": "Red Jeep Tours (Desert Adventures)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/red-jeep-tours-desert-adventures",
+   "indexable": true
+  },
+  {
+   "slug": "renaissance-esmeralda-resort-golf-indian-wells-golf-resort-access",
+   "name": "Renaissance Esmeralda Resort golf (Indian Wells Golf Resort access)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/renaissance-esmeralda-resort-golf-indian-wells-golf-resort-access",
+   "indexable": true
+  },
+  {
+   "slug": "riverside-county-fairgrounds",
+   "name": "Riverside County Fairgrounds",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/riverside-county-fairgrounds",
+   "indexable": false
+  },
+  {
+   "slug": "seven-lakes-country-club",
+   "name": "Seven Lakes Country Club",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/seven-lakes-country-club",
+   "indexable": false
+  },
+  {
+   "slug": "shadow-hills-golf-club-north-south-courses",
+   "name": "Shadow Hills Golf Club (North & South Courses)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/shadow-hills-golf-club-north-south-courses",
+   "indexable": true
+  },
+  {
+   "slug": "shadow-mountain-golf-club",
+   "name": "Shadow Mountain Golf Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/shadow-mountain-golf-club",
+   "indexable": true
+  },
+  {
+   "slug": "silverrock-resort-arnold-palmer-classic-course",
+   "name": "SilverRock Resort (Arnold Palmer Classic Course)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/silverrock-resort-arnold-palmer-classic-course",
+   "indexable": true
+  },
+  {
+   "slug": "sky-valley-golf-club",
+   "name": "Sky Valley Golf Club",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/sky-valley-golf-club",
+   "indexable": false
+  },
+  {
+   "slug": "sky-watcher-star-tours",
+   "name": "Sky Watcher Star Tours",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/sky-watcher-star-tours",
+   "indexable": false
+  },
+  {
+   "slug": "slinging-360",
+   "name": "Slinging 360",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/slinging-360",
+   "indexable": false
+  },
+  {
+   "slug": "smoke-tree-stables",
+   "name": "Smoke Tree Stables",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/smoke-tree-stables",
+   "indexable": true
+  },
+  {
+   "slug": "social-cycle-palm-springs",
+   "name": "Social Cycle Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/social-cycle-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "sojourn-bicycling-vacations-palm-springs-joshua-tree-tour",
+   "name": "Sojourn Bicycling Vacations (Palm Springs / Joshua Tree tour)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/sojourn-bicycling-vacations-palm-springs-joshua-tree-tour",
+   "indexable": true
+  },
+  {
+   "slug": "steves-atv-rentals",
+   "name": "Steve's ATV Rentals",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/steves-atv-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "stone-adventures-climbing-guide-service",
+   "name": "Stone Adventures (climbing guide service)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/stone-adventures-climbing-guide-service",
+   "indexable": false
+  },
+  {
+   "slug": "sun-city-shadow-hills-golf-course-18-hole-par-3",
+   "name": "Sun City Shadow Hills Golf Course (18-hole + Par-3)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/sun-city-shadow-hills-golf-course-18-hole-par-3",
+   "indexable": true
+  },
+  {
+   "slug": "sun-city-shadow-hills-scsh-pickleball-club",
+   "name": "Sun City Shadow Hills - SCSH Pickleball Club",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/sun-city-shadow-hills-scsh-pickleball-club",
+   "indexable": true
+  },
+  {
+   "slug": "suncrest-country-club",
+   "name": "Suncrest Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/suncrest-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "sunnylands-center-gardens",
+   "name": "Sunnylands Center & Gardens",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/sunnylands-center-gardens",
+   "indexable": true
+  },
+  {
+   "slug": "sunrise-country-club-tennis-club",
+   "name": "Sunrise Country Club Tennis Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/sunrise-country-club-tennis-club",
+   "indexable": true
+  },
+  {
+   "slug": "sunrise-country-club",
+   "name": "Sunrise Country Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/sunrise-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "tahquitz-canyon",
+   "name": "Tahquitz Canyon",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tahquitz-canyon",
+   "indexable": true
+  },
+  {
+   "slug": "tahquitz-creek-golf-resort-legend-course",
+   "name": "Tahquitz Creek Golf Resort - Legend Course",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tahquitz-creek-golf-resort-legend-course",
+   "indexable": true
+  },
+  {
+   "slug": "tahquitz-creek-golf-resort-resort-course",
+   "name": "Tahquitz Creek Golf Resort - Resort Course",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tahquitz-creek-golf-resort-resort-course",
+   "indexable": true
+  },
+  {
+   "slug": "tamarisk-country-club",
+   "name": "Tamarisk Country Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tamarisk-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "tennis-in-a-pickle",
+   "name": "Tennis in a Pickle",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tennis-in-a-pickle",
+   "indexable": true
+  },
+  {
+   "slug": "terra-lago-golf-club-north-south-courses",
+   "name": "Terra Lago Golf Club (North & South Courses)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/terra-lago-golf-club-north-south-courses",
+   "indexable": true
+  },
+  {
+   "slug": "the-citrus-club-at-pga-west",
+   "name": "The Citrus Club at PGA West",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-citrus-club-at-pga-west",
+   "indexable": true
+  },
+  {
+   "slug": "the-citrus-club",
+   "name": "The Citrus Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-citrus-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-club-at-morningside",
+   "name": "The Club at Morningside",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-club-at-morningside",
+   "indexable": true
+  },
+  {
+   "slug": "the-courts-at-palm-desert-resort-courts-at-pdr",
+   "name": "The Courts at Palm Desert Resort (Courts at PDR)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-courts-at-palm-desert-resort-courts-at-pdr",
+   "indexable": true
+  },
+  {
+   "slug": "the-courts-at-pdr-palm-desert-resort-country-club-pickleball-complex",
+   "name": "The Courts at PDR (Palm Desert Resort & Country Club Pickleball Complex)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-courts-at-pdr-palm-desert-resort-country-club-pickleball-complex",
+   "indexable": true
+  },
+  {
+   "slug": "the-golf-center-at-palm-desert",
+   "name": "The Golf Center at Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-golf-center-at-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "the-hideaway-golf-club",
+   "name": "The Hideaway Golf Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-hideaway-golf-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-hideaway-la-quinta-tennis-pickleball",
+   "name": "The Hideaway (La Quinta) - Tennis & Pickleball",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-hideaway-la-quinta-tennis-pickleball",
+   "indexable": false
+  },
+  {
+   "slug": "the-la-quinta-country-club",
+   "name": "The La Quinta Country Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-la-quinta-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-madison-club-tennis-pickleball",
+   "name": "The Madison Club - Tennis & Pickleball",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-madison-club-tennis-pickleball",
+   "indexable": false
+  },
+  {
+   "slug": "the-madison-club",
+   "name": "The Madison Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-madison-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-new-vineyards-golf-course",
+   "name": "The New Vineyards Golf Course",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-new-vineyards-golf-course",
+   "indexable": true
+  },
+  {
+   "slug": "the-palms-golf-club",
+   "name": "The Palms Golf Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-palms-golf-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-quarry-at-la-quinta-tennis-pickleball",
+   "name": "The Quarry at La Quinta - Tennis & Pickleball",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-quarry-at-la-quinta-tennis-pickleball",
+   "indexable": false
+  },
+  {
+   "slug": "the-quarry-at-la-quinta",
+   "name": "The Quarry at La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-quarry-at-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "the-reserve-club",
+   "name": "The Reserve Club",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-reserve-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-sands-rv-golf-resort",
+   "name": "The Sands RV & Golf Resort",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-sands-rv-golf-resort",
+   "indexable": true
+  },
+  {
+   "slug": "the-springs-club-rancho-mirage",
+   "name": "The Springs Club (Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-springs-club-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "the-springs-club-tennis-pickleball",
+   "name": "The Springs Club - Tennis & Pickleball",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-springs-club-tennis-pickleball",
+   "indexable": false
+  },
+  {
+   "slug": "the-springs-club",
+   "name": "The Springs Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-springs-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-springs-country-club-pickleball",
+   "name": "The Springs Country Club - Pickleball",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-springs-country-club-pickleball",
+   "indexable": false
+  },
+  {
+   "slug": "the-westin-mission-hills-golf-resort-spa-tennis-club",
+   "name": "The Westin Mission Hills Golf Resort & Spa - Tennis Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-westin-mission-hills-golf-resort-spa-tennis-club",
+   "indexable": true
+  },
+  {
+   "slug": "thunderbird-country-club",
+   "name": "Thunderbird Country Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/thunderbird-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "toscana-country-club-charlie-pasarell-tennis-center",
+   "name": "Toscana Country Club Charlie Pasarell Tennis Center",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/toscana-country-club-charlie-pasarell-tennis-center",
+   "indexable": true
+  },
+  {
+   "slug": "toscana-country-club",
+   "name": "Toscana Country Club",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/toscana-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "tour-de-palm-springs",
+   "name": "Tour de Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tour-de-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "tradition-golf-club",
+   "name": "Tradition Golf Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tradition-golf-club",
+   "indexable": true
+  },
+  {
+   "slug": "trek-travel-palm-springs-joshua-tree-bike-tour",
+   "name": "Trek Travel - Palm Springs & Joshua Tree Bike Tour",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/trek-travel-palm-springs-joshua-tree-bike-tour",
+   "indexable": true
+  },
+  {
+   "slug": "tri-a-bike",
+   "name": "Tri-A-Bike",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tri-a-bike",
+   "indexable": true
+  },
+  {
+   "slug": "tri-palm-country-club-eighteen",
+   "name": "Tri-Palm Country Club (Eighteen)",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tri-palm-country-club-eighteen",
+   "indexable": true
+  },
+  {
+   "slug": "tri-palm-country-club-par-3-course",
+   "name": "Tri-Palm Country Club (Par-3 Course)",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tri-palm-country-club-par-3-course",
+   "indexable": true
+  },
+  {
+   "slug": "trilogy-golf-club-at-la-quinta-formerly-coral-mountain-golf-club",
+   "name": "Trilogy Golf Club at La Quinta (formerly Coral Mountain Golf Club)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/trilogy-golf-club-at-la-quinta-formerly-coral-mountain-golf-club",
+   "indexable": true
+  },
+  {
+   "slug": "uprising-rock-climbing-center",
+   "name": "Uprising Rock Climbing Center",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/uprising-rock-climbing-center",
+   "indexable": false
+  },
+  {
+   "slug": "village-peddler",
+   "name": "Village Peddler",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/village-peddler",
+   "indexable": true
+  },
+  {
+   "slug": "willowbrook-riding-club-willowbrook-equestrian-center",
+   "name": "Willowbrook Riding Club (Willowbrook Equestrian Center)",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/willowbrook-riding-club-willowbrook-equestrian-center",
+   "indexable": true
+  },
+  {
+   "slug": "woodhaven-country-club",
+   "name": "Woodhaven Country Club",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/woodhaven-country-club",
+   "indexable": true
+  }
+ ]
+}
