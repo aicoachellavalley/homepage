@@ -2,6 +2,41 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-08-04 — TOS modal colours scoped to `--tos-*` (naming defect closed)
+
+HEAD **`469906b`**. One file, `src/pages/get-agent-ready.astro`, +47/−18. **No content
+counts changed** — briefs 172 / nodes 81 / reports.json 14 all unchanged; this was a
+rename, not a publish.
+
+Closes the naming defect recorded in `playbook/BRAND.md` §3. "sage" and "forest" were
+informal words in a code comment that read like `tokens.css` entries and were once
+misread as such. Four page-scoped names now carry their scope: `--tos-panel-bg`
+`#E2EDD4` (1 use), `--tos-panel-bd` `#C6D6B4` (1), `--tos-text` `#234233` (**12**),
+`--tos-close-hover` `#DFFF40` (1).
+
+**Declared on `.tos-panel`, NOT `:root`** — and that distinction is the whole point.
+This `<style>` block is `is:global`, so a `:root` declaration would have made these
+document-wide, which is the opposite of the ruling that they are not brand tokens.
+Every consumer is `.tos-panel` or a descendant, so inheritance covers them. `tokens.css`
+untouched; `--tos-*` appears in no other file.
+
+**The comment now attaches both measured figures to the value they belong to.** Both are
+`#DFFF40` pairs, not `--volt`: `#DFFF40` on `--tos-panel-bg` = 1.07:1, `--tos-text` on
+`#DFFF40` = 9.75:1. The trap values are carried forward too (`--volt` on the panel is
+1.05:1, `--tos-text` on the panel is 9.11:1) so a future reader checking the wrong pair
+does not conclude the ruling is broken — which happened once, in the session that
+verified it.
+
+**Verified rename, not restyle.** 16 built CSS rules before and after; resolving the
+vars back to literals reproduces the baseline byte for byte. Computed styles confirmed
+in-browser across all five `.tos-*` modals on the page, including the `:hover` state
+painting `rgb(223,255,64)`. Homepage `.tos-panel` still `rgb(30,30,30)` gunmetal with a
+volt top border and zero `--tos-*` vars resolved. Build clean, 307 pages, no console errors.
+
+**Three findings recorded in `playbook/BRAND.md` §3** — the block styles five modals not
+one; `.tos-*` exists on four pages with two different treatments; `#3A5648` is a fifth
+one-off left deliberately unnamed. See that file before touching this block again.
+
 ## 2026-07-30 — Brief filed: Agent Preview pages become transactable (briefs 171 → 172)
 
 Live at `/briefs/2026-07-30-agent-preview-pages-transactable-stripe-settlement-layer/`
