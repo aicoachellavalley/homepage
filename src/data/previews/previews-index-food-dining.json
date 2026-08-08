@@ -1,0 +1,3090 @@
+{
+ "domain": "Food & Dining",
+ "segment": "food-dining",
+ "generated": "2026-07-15",
+ "count": 440,
+ "indexable": 406,
+ "sitemap": "https://aicoachellavalley.com/agent-preview/sitemap-previews-food-dining.xml",
+ "entries": [
+  {
+   "slug": "19th-hole-sports-bar-restaurant",
+   "name": "19th Hole Sports Bar & Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/19th-hole-sports-bar-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "360-sports-agua-caliente-casino-palm-springs",
+   "name": "360 Sports (Agua Caliente Casino Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/360-sports-agua-caliente-casino-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "360-sports-agua-caliente-rancho-mirage",
+   "name": "360 Sports (Agua Caliente Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/360-sports-agua-caliente-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "360-sports-at-agua-caliente",
+   "name": "360 Sports at Agua Caliente",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/360-sports-at-agua-caliente",
+   "indexable": true
+  },
+  {
+   "slug": "360-sports-bar-agua-caliente-casino",
+   "name": "360 Sports Bar (Agua Caliente Casino)",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/360-sports-bar-agua-caliente-casino",
+   "indexable": true
+  },
+  {
+   "slug": "4-saints-kimpton-rowan",
+   "name": "4 Saints (Kimpton Rowan)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/4-saints-kimpton-rowan",
+   "indexable": true
+  },
+  {
+   "slug": "818-coffee",
+   "name": "818 Coffee",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/818-coffee",
+   "indexable": true
+  },
+  {
+   "slug": "ace-deli-agua-caliente-rancho-mirage",
+   "name": "ACE Deli (Agua Caliente Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/ace-deli-agua-caliente-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "ace-deli-at-agua-caliente-the-district",
+   "name": "ACE Deli at Agua Caliente (The District)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/ace-deli-at-agua-caliente-the-district",
+   "indexable": true
+  },
+  {
+   "slug": "adobe-grill-la-quinta-resort-club",
+   "name": "Adobe Grill (La Quinta Resort & Club)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/adobe-grill-la-quinta-resort-club",
+   "indexable": true
+  },
+  {
+   "slug": "adobe-grill",
+   "name": "Adobe Grill",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/adobe-grill",
+   "indexable": true
+  },
+  {
+   "slug": "agave-caliente-tequila-bar-agua-caliente-casino",
+   "name": "Agave Caliente Tequila Bar (Agua Caliente Casino)",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/agave-caliente-tequila-bar-agua-caliente-casino",
+   "indexable": true
+  },
+  {
+   "slug": "al-dente-trattoria",
+   "name": "Al dente Trattoria",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/al-dente-trattoria",
+   "indexable": true
+  },
+  {
+   "slug": "alamo-restaurant",
+   "name": "Alamo Restaurant",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/alamo-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "alana-bar-tapas",
+   "name": "Alana Bar + Tapas",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/alana-bar-tapas",
+   "indexable": true
+  },
+  {
+   "slug": "aldos-taqueria",
+   "name": "Aldo's Taqueria",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/aldos-taqueria",
+   "indexable": true
+  },
+  {
+   "slug": "alps-village",
+   "name": "Alps Village",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/alps-village",
+   "indexable": true
+  },
+  {
+   "slug": "apongs-philly-steak",
+   "name": "Apong's Philly Steak",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/apongs-philly-steak",
+   "indexable": true
+  },
+  {
+   "slug": "aquifer65-jw-sushi-bar",
+   "name": "Aquifer65 & JW Sushi Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/aquifer65-jw-sushi-bar",
+   "indexable": true
+  },
+  {
+   "slug": "armandos-dakota-bar-grill",
+   "name": "Armando's Dakota Bar & Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/armandos-dakota-bar-grill",
+   "indexable": false
+  },
+  {
+   "slug": "arnold-palmers-restaurant",
+   "name": "Arnold Palmer's Restaurant",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/arnold-palmers-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "aspen-mills-bakery-cafe-rancho-mirage-2",
+   "name": "Aspen Mills Bakery & Cafe",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/aspen-mills-bakery-cafe-rancho-mirage-2",
+   "indexable": false
+  },
+  {
+   "slug": "aspen-mills-bakery-cafe-rancho-mirage",
+   "name": "Aspen Mills Bakery & Cafe",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/aspen-mills-bakery-cafe-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "athena-gyro",
+   "name": "Athena Gyro",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/athena-gyro",
+   "indexable": true
+  },
+  {
+   "slug": "azure-palm-cafe",
+   "name": "Azure Palm Cafe",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/azure-palm-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "babes-smokehouse-tavern",
+   "name": "Babe's Smokehouse & Tavern",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/babes-smokehouse-tavern",
+   "indexable": true
+  },
+  {
+   "slug": "babys-march",
+   "name": "Baby's Marché",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/babys-march",
+   "indexable": true
+  },
+  {
+   "slug": "bachoys-kitchen",
+   "name": "Bachoy's Kitchen",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/bachoys-kitchen",
+   "indexable": true
+  },
+  {
+   "slug": "backstreet-bistro",
+   "name": "Backstreet Bistro",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/backstreet-bistro",
+   "indexable": true
+  },
+  {
+   "slug": "bar-cecil",
+   "name": "Bar Cecil",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/bar-cecil",
+   "indexable": true
+  },
+  {
+   "slug": "barrel-district-pizza-bar-kitchen",
+   "name": "Barrel District Pizza, Bar & Kitchen",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/barrel-district-pizza-bar-kitchen",
+   "indexable": true
+  },
+  {
+   "slug": "basil-thai",
+   "name": "Basil Thai",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/basil-thai",
+   "indexable": true
+  },
+  {
+   "slug": "beach-house-frozen-yogurt",
+   "name": "Beach House Frozen Yogurt",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/beach-house-frozen-yogurt",
+   "indexable": true
+  },
+  {
+   "slug": "beautiful-day",
+   "name": "Beautiful Day",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/beautiful-day",
+   "indexable": true
+  },
+  {
+   "slug": "beech-please",
+   "name": "BeeCh, please",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/beech-please",
+   "indexable": false
+  },
+  {
+   "slug": "bellatrix-restaurant",
+   "name": "Bellatrix Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/bellatrix-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "bermuda-dunes-country-club-the-grill-room",
+   "name": "Bermuda Dunes Country Club — The Grill Room",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/bermuda-dunes-country-club-the-grill-room",
+   "indexable": true
+  },
+  {
+   "slug": "between-the-9s-at-the-club-rancho-las-palmas-country-club",
+   "name": "Between the 9's at the Club (Rancho Las Palmas Country Club)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/between-the-9s-at-the-club-rancho-las-palmas-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "big-rock-pub",
+   "name": "Big Rock Pub",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/big-rock-pub",
+   "indexable": true
+  },
+  {
+   "slug": "bills-pizza",
+   "name": "Bill's Pizza",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/bills-pizza",
+   "indexable": false
+  },
+  {
+   "slug": "billy-qs",
+   "name": "Billy Q's",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/billy-qs",
+   "indexable": true
+  },
+  {
+   "slug": "birba",
+   "name": "Birba",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/birba",
+   "indexable": true
+  },
+  {
+   "slug": "birdy-bar-grill",
+   "name": "Birdy Bar & Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/birdy-bar-grill",
+   "indexable": true
+  },
+  {
+   "slug": "birrieria-sinaloa",
+   "name": "Birrieria Sinaloa",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/birrieria-sinaloa",
+   "indexable": true
+  },
+  {
+   "slug": "black-cat-pizza",
+   "name": "Black Cat Pizza",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/black-cat-pizza",
+   "indexable": true
+  },
+  {
+   "slug": "blackbook-bar-kitchen",
+   "name": "Blackbook Bar & Kitchen",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/blackbook-bar-kitchen",
+   "indexable": true
+  },
+  {
+   "slug": "blazing-king-bbq-hot-pot",
+   "name": "Blazing King BBQ & Hot Pot",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/blazing-king-bbq-hot-pot",
+   "indexable": true
+  },
+  {
+   "slug": "bohemios-prime",
+   "name": "Bohemios Prime",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/bohemios-prime",
+   "indexable": true
+  },
+  {
+   "slug": "brandini-toffee-palm-springs",
+   "name": "Brandini Toffee",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/brandini-toffee-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "brandini-toffee-rancho-mirage",
+   "name": "Brandini Toffee",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/brandini-toffee-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "brunch-101",
+   "name": "Brunch 101",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/brunch-101",
+   "indexable": true
+  },
+  {
+   "slug": "bubbas-bones-brews",
+   "name": "Bubba's Bones & Brews",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/bubbas-bones-brews",
+   "indexable": true
+  },
+  {
+   "slug": "bucatini-trattoria",
+   "name": "Bucatini Trattoria",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/bucatini-trattoria",
+   "indexable": true
+  },
+  {
+   "slug": "buena-matcha",
+   "name": "Buena Matcha",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/buena-matcha",
+   "indexable": true
+  },
+  {
+   "slug": "cactus-jacks-bar-and-grill",
+   "name": "Cactus Jack's Bar and Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cactus-jacks-bar-and-grill",
+   "indexable": true
+  },
+  {
+   "slug": "cafe-biscotti",
+   "name": "Cafe Biscotti",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cafe-biscotti",
+   "indexable": true
+  },
+  {
+   "slug": "cafe-des-beaux-arts",
+   "name": "Cafe des Beaux-Arts",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cafe-des-beaux-arts",
+   "indexable": true
+  },
+  {
+   "slug": "cafe-one-eleven-agua-caliente-casino",
+   "name": "Cafe One Eleven (Agua Caliente Casino)",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cafe-one-eleven-agua-caliente-casino",
+   "indexable": true
+  },
+  {
+   "slug": "california-bistro",
+   "name": "California Bistro",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/california-bistro",
+   "indexable": true
+  },
+  {
+   "slug": "capri-italian-restaurant",
+   "name": "Capri Italian Restaurant",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/capri-italian-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "carmens-restaurant",
+   "name": "Carmen's Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/carmens-restaurant",
+   "indexable": false
+  },
+  {
+   "slug": "carmocha",
+   "name": "Carmocha",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/carmocha",
+   "indexable": true
+  },
+  {
+   "slug": "casa-blanca-restaurant-palm-desert",
+   "name": "Casa Blanca Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/casa-blanca-restaurant-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "casa-blanca-restaurant-palm-springs",
+   "name": "Casa Blanca Restaurant",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/casa-blanca-restaurant-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "casa-luna-mexican-seafood-restaurant",
+   "name": "Casa Luna Mexican & Seafood Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/casa-luna-mexican-seafood-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "casa-mendoza-mexican-grill-bar",
+   "name": "Casa Mendoza Mexican Grill & Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/casa-mendoza-mexican-grill-bar",
+   "indexable": true
+  },
+  {
+   "slug": "casa-mendoza-restaurant",
+   "name": "Casa Mendoza Restaurant",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/casa-mendoza-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "castellis",
+   "name": "Castelli's",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/castellis",
+   "indexable": true
+  },
+  {
+   "slug": "casuelas-caf",
+   "name": "Casuelas Café",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/casuelas-caf",
+   "indexable": true
+  },
+  {
+   "slug": "cava-renaissance-esmeralda",
+   "name": "CAVA (Renaissance Esmeralda)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cava-renaissance-esmeralda",
+   "indexable": true
+  },
+  {
+   "slug": "chakaa-tea-shoppe",
+   "name": "Chakaa Tea Shoppe",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/chakaa-tea-shoppe",
+   "indexable": true
+  },
+  {
+   "slug": "champions-craft-kitchen-at-mission-hills-country-club",
+   "name": "Champions Craft Kitchen at Mission Hills Country Club",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/champions-craft-kitchen-at-mission-hills-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "cheekys",
+   "name": "Cheeky's",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cheekys",
+   "indexable": true
+  },
+  {
+   "slug": "chef-georges-picasso-lounge",
+   "name": "Chef George's & Picasso Lounge",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/chef-georges-picasso-lounge",
+   "indexable": false
+  },
+  {
+   "slug": "chef-tanyas-kitchen-palm-desert",
+   "name": "Chef Tanya's Kitchen",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/chef-tanyas-kitchen-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "chef-tanyas-kitchen-palm-springs",
+   "name": "Chef Tanya's Kitchen",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/chef-tanyas-kitchen-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "chez-pierre-bistro",
+   "name": "Chez Pierre Bistro",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/chez-pierre-bistro",
+   "indexable": true
+  },
+  {
+   "slug": "chill-bar-palm-springs",
+   "name": "Chill Bar Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/chill-bar-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "china-8",
+   "name": "China 8",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/china-8",
+   "indexable": true
+  },
+  {
+   "slug": "china-wok",
+   "name": "China Wok",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/china-wok",
+   "indexable": true
+  },
+  {
+   "slug": "chiquita-casa-palma-hotel",
+   "name": "Chiquita (Casa Palma Hotel)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/chiquita-casa-palma-hotel",
+   "indexable": true
+  },
+  {
+   "slug": "chula-artisan-eatery",
+   "name": "Chula Artisan Eatery",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/chula-artisan-eatery",
+   "indexable": true
+  },
+  {
+   "slug": "churrasco-brazilian-steakhouse",
+   "name": "Churrasco Brazilian Steakhouse",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/churrasco-brazilian-steakhouse",
+   "indexable": true
+  },
+  {
+   "slug": "cjs-diner",
+   "name": "CJ's Diner",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cjs-diner",
+   "indexable": true
+  },
+  {
+   "slug": "cluckin-bun",
+   "name": "Cluckin Bun",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cluckin-bun",
+   "indexable": true
+  },
+  {
+   "slug": "coachella-pizza-company",
+   "name": "Coachella Pizza Company",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/coachella-pizza-company",
+   "indexable": true
+  },
+  {
+   "slug": "coachella-valley-brewing-company",
+   "name": "Coachella Valley Brewing Company",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/coachella-valley-brewing-company",
+   "indexable": true
+  },
+  {
+   "slug": "copleys-on-palm-canyon",
+   "name": "Copley's on Palm Canyon",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/copleys-on-palm-canyon",
+   "indexable": true
+  },
+  {
+   "slug": "cork-fork",
+   "name": "Cork & Fork",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cork-fork",
+   "indexable": true
+  },
+  {
+   "slug": "cork-tree-california-cuisine",
+   "name": "Cork Tree California Cuisine",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cork-tree-california-cuisine",
+   "indexable": true
+  },
+  {
+   "slug": "cork-tree-restaurant",
+   "name": "Cork Tree Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cork-tree-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "counter-reformation-parker-palm-springs",
+   "name": "Counter Reformation (Parker Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/counter-reformation-parker-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "crepe-ing-ramen",
+   "name": "Crepe(ing) Ramen",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/crepe-ing-ramen",
+   "indexable": true
+  },
+  {
+   "slug": "cups-cafe",
+   "name": "Cups Cafe",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/cups-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "curcis-grille-indian-wells-country-club",
+   "name": "Curci's Grille (Indian Wells Country Club)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/curcis-grille-indian-wells-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "da-chef-noodle",
+   "name": "Da Chef Noodle",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/da-chef-noodle",
+   "indexable": true
+  },
+  {
+   "slug": "date-restaurant-renaissance-palm-springs",
+   "name": "DATE Restaurant (Renaissance Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/date-restaurant-renaissance-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "deli-chick",
+   "name": "Deli Chick",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/deli-chick",
+   "indexable": true
+  },
+  {
+   "slug": "desert-beer-company",
+   "name": "Desert Beer Company",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/desert-beer-company",
+   "indexable": true
+  },
+  {
+   "slug": "desert-crest-coffee-shop",
+   "name": "Desert Crest Coffee Shop",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/desert-crest-coffee-shop",
+   "indexable": false
+  },
+  {
+   "slug": "desert-horizons-country-club-restaurant-bar",
+   "name": "Desert Horizons Country Club Restaurant & Bar",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/desert-horizons-country-club-restaurant-bar",
+   "indexable": true
+  },
+  {
+   "slug": "desert-pearl-omni-rancho-las-palmas-formerly-bluember",
+   "name": "Desert Pearl (Omni Rancho Las Palmas; formerly bluEmber)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/desert-pearl-omni-rancho-las-palmas-formerly-bluember",
+   "indexable": true
+  },
+  {
+   "slug": "desert-thai-authentic-thai-cuisine",
+   "name": "Desert Thai Authentic Thai Cuisine",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/desert-thai-authentic-thai-cuisine",
+   "indexable": true
+  },
+  {
+   "slug": "desis-deck-indian-wells-country-club",
+   "name": "Desi's Deck (Indian Wells Country Club)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/desis-deck-indian-wells-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "dillons-burgers-beers",
+   "name": "Dillon's Burgers & Beers",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/dillons-burgers-beers",
+   "indexable": true
+  },
+  {
+   "slug": "don-diegos-of-indian-wells",
+   "name": "Don Diego's of Indian Wells",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/don-diegos-of-indian-wells",
+   "indexable": false
+  },
+  {
+   "slug": "double-date-omni-rancho-las-palmas",
+   "name": "Double Date (Omni Rancho Las Palmas)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/double-date-omni-rancho-las-palmas",
+   "indexable": true
+  },
+  {
+   "slug": "dragon-sushi",
+   "name": "Dragon Sushi",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/dragon-sushi",
+   "indexable": true
+  },
+  {
+   "slug": "dsrt-club",
+   "name": "DSRT Club",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/dsrt-club",
+   "indexable": true
+  },
+  {
+   "slug": "dune-room",
+   "name": "Dune Room",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/dune-room",
+   "indexable": true
+  },
+  {
+   "slug": "eight4nine-restaurant-lounge",
+   "name": "Eight4Nine Restaurant & Lounge",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/eight4nine-restaurant-lounge",
+   "indexable": true
+  },
+  {
+   "slug": "el-asado-mexican-grill-meat-market",
+   "name": "El Asado Mexican Grill & Meat Market",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-asado-mexican-grill-meat-market",
+   "indexable": true
+  },
+  {
+   "slug": "el-compaye-tacos-beer",
+   "name": "El Compaye Tacos & Beer",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-compaye-tacos-beer",
+   "indexable": false
+  },
+  {
+   "slug": "el-guero-mexican-bar-grill",
+   "name": "El Guero Mexican Bar & Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-guero-mexican-bar-grill",
+   "indexable": true
+  },
+  {
+   "slug": "el-mirasol-at-los-arboles",
+   "name": "El Mirasol at Los Arboles",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-mirasol-at-los-arboles",
+   "indexable": true
+  },
+  {
+   "slug": "el-mirasol-cocina-mexicana",
+   "name": "El Mirasol Cocina Mexicana",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-mirasol-cocina-mexicana",
+   "indexable": true
+  },
+  {
+   "slug": "el-patio-la-quinta",
+   "name": "El Patio La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-patio-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "el-patio",
+   "name": "El Patio",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-patio",
+   "indexable": false
+  },
+  {
+   "slug": "el-patron",
+   "name": "El Patron",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-patron",
+   "indexable": true
+  },
+  {
+   "slug": "el-portal-mexican-restaurant",
+   "name": "El Portal Mexican Restaurant",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-portal-mexican-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "el-ranchito-taco-shop",
+   "name": "El Ranchito Taco Shop",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-ranchito-taco-shop",
+   "indexable": true
+  },
+  {
+   "slug": "el-taco-asado",
+   "name": "El Taco Asado",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-taco-asado",
+   "indexable": false
+  },
+  {
+   "slug": "el-tapatio-restaurant",
+   "name": "El Tapatio Restaurant",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/el-tapatio-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "elviras-taqueria",
+   "name": "Elvira's Taqueria",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/elviras-taqueria",
+   "indexable": true
+  },
+  {
+   "slug": "enzos-bistro-and-bar-la-quinta-2",
+   "name": "Enzo's Bistro and Bar",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/enzos-bistro-and-bar-la-quinta-2",
+   "indexable": true
+  },
+  {
+   "slug": "enzos-bistro-and-bar-la-quinta",
+   "name": "Enzo's Bistro and Bar",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/enzos-bistro-and-bar-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "ernest-coffee",
+   "name": "Ernest Coffee",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/ernest-coffee",
+   "indexable": true
+  },
+  {
+   "slug": "escena-lounge-grill",
+   "name": "Escena Lounge & Grill",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/escena-lounge-grill",
+   "indexable": true
+  },
+  {
+   "slug": "essense-the-restaurant-at-two-bunch-palms-former-name",
+   "name": "Essense (The Restaurant at Two Bunch Palms - former name)",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/essense-the-restaurant-at-two-bunch-palms-former-name",
+   "indexable": true
+  },
+  {
+   "slug": "everbloom-coffee-downtown",
+   "name": "Everbloom Coffee (Downtown)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/everbloom-coffee-downtown",
+   "indexable": true
+  },
+  {
+   "slug": "everbloom-coffee-midtown",
+   "name": "Everbloom Coffee (Midtown)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/everbloom-coffee-midtown",
+   "indexable": true
+  },
+  {
+   "slug": "fireside-lounge-19th-hole-the-westin-rancho-mirage",
+   "name": "Fireside Lounge - 19th Hole (The Westin Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/fireside-lounge-19th-hole-the-westin-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "flor-de-jalisco",
+   "name": "Flor de Jalisco",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/flor-de-jalisco",
+   "indexable": false
+  },
+  {
+   "slug": "flying-disc-ranch",
+   "name": "Flying Disc Ranch",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/flying-disc-ranch",
+   "indexable": true
+  },
+  {
+   "slug": "fortuns-kitchen-bar",
+   "name": "Fortun's Kitchen + Bar",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/fortuns-kitchen-bar",
+   "indexable": false
+  },
+  {
+   "slug": "foxys-kitchen-bar",
+   "name": "Foxy's Kitchen + Bar",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/foxys-kitchen-bar",
+   "indexable": true
+  },
+  {
+   "slug": "french-corner-cafe-bakery",
+   "name": "French Corner Cafe & Bakery",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/french-corner-cafe-bakery",
+   "indexable": true
+  },
+  {
+   "slug": "fresh-agave-mexican-bar-grill",
+   "name": "Fresh Agave Mexican Bar & Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/fresh-agave-mexican-bar-grill",
+   "indexable": true
+  },
+  {
+   "slug": "fresh-juice-bar-s-palm-canyon",
+   "name": "Fresh Juice Bar (S Palm Canyon)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/fresh-juice-bar-s-palm-canyon",
+   "indexable": true
+  },
+  {
+   "slug": "fresh-juice-bar-sunrise",
+   "name": "Fresh Juice Bar (Sunrise)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/fresh-juice-bar-sunrise",
+   "indexable": true
+  },
+  {
+   "slug": "fresh-juice-bar",
+   "name": "Fresh Juice Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/fresh-juice-bar",
+   "indexable": true
+  },
+  {
+   "slug": "fruit-wonders",
+   "name": "Fruit Wonders",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/fruit-wonders",
+   "indexable": false
+  },
+  {
+   "slug": "gastro-grind-burgers",
+   "name": "Gastro Grind Burgers",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/gastro-grind-burgers",
+   "indexable": true
+  },
+  {
+   "slug": "gelato-a-go-go",
+   "name": "Gelato-A-Go-Go",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/gelato-a-go-go",
+   "indexable": true
+  },
+  {
+   "slug": "gelato-granucci",
+   "name": "Gelato Granucci",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/gelato-granucci",
+   "indexable": true
+  },
+  {
+   "slug": "gigis-restaurant-bar-v-palm-springs",
+   "name": "GiGi's Restaurant + Bar (V Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/gigis-restaurant-bar-v-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "giuseppes-pizzeria-palm-desert",
+   "name": "Giuseppe's Pizzeria",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/giuseppes-pizzeria-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "giuseppes-pizzeria-palm-springs",
+   "name": "Giuseppe's Pizzeria",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/giuseppes-pizzeria-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "glo-sushi",
+   "name": "Glo Sushi",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/glo-sushi",
+   "indexable": true
+  },
+  {
+   "slug": "goodys-cafe",
+   "name": "Goody's Cafe",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/goodys-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "grapefruit-basil",
+   "name": "Grapefruit Basil",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/grapefruit-basil",
+   "indexable": true
+  },
+  {
+   "slug": "guadalajara-caf-bar",
+   "name": "Guadalajara Café & Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/guadalajara-caf-bar",
+   "indexable": true
+  },
+  {
+   "slug": "guillermos-restaurante",
+   "name": "Guillermo's Restaurante",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/guillermos-restaurante",
+   "indexable": false
+  },
+  {
+   "slug": "h2o-pool-bar-renaissance-esmeralda",
+   "name": "H2O Pool Bar (Renaissance Esmeralda)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/h2o-pool-bar-renaissance-esmeralda",
+   "indexable": true
+  },
+  {
+   "slug": "h2o-pool-bar",
+   "name": "H2O Pool Bar",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/h2o-pool-bar",
+   "indexable": true
+  },
+  {
+   "slug": "hair-of-the-dog-english-pub",
+   "name": "Hair of the Dog English Pub",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/hair-of-the-dog-english-pub",
+   "indexable": true
+  },
+  {
+   "slug": "hamachi-sushi",
+   "name": "Hamachi Sushi",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/hamachi-sushi",
+   "indexable": true
+  },
+  {
+   "slug": "heirloom-craft-kitchen",
+   "name": "Heirloom Craft Kitchen",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/heirloom-craft-kitchen",
+   "indexable": true
+  },
+  {
+   "slug": "high-bar-kimpton-rowan-rooftop",
+   "name": "High Bar (Kimpton Rowan rooftop)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/high-bar-kimpton-rowan-rooftop",
+   "indexable": true
+  },
+  {
+   "slug": "hot-cookie",
+   "name": "Hot Cookie",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/hot-cookie",
+   "indexable": true
+  },
+  {
+   "slug": "hunnys-restaurant-bar",
+   "name": "Hunny's Restaurant & Bar",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/hunnys-restaurant-bar",
+   "indexable": true
+  },
+  {
+   "slug": "il-caffe-toscana-country-club",
+   "name": "Il Caffe (Toscana Country Club)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/il-caffe-toscana-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "il-corso-palm-desert",
+   "name": "Il Corso Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/il-corso-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "il-corso-palm-springs",
+   "name": "Il Corso Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/il-corso-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "il-forno-trattoria-toscana-country-club",
+   "name": "Il Forno Trattoria (Toscana Country Club)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/il-forno-trattoria-toscana-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "iluminara-restaurant-lounge-triada-palm-springs",
+   "name": "Iluminara Restaurant & Lounge (Triada Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/iluminara-restaurant-lounge-triada-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "indian-kitchen",
+   "name": "Indian Kitchen",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/indian-kitchen",
+   "indexable": true
+  },
+  {
+   "slug": "indian-palms-country-club-restaurant",
+   "name": "Indian Palms Country Club Restaurant",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/indian-palms-country-club-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "indio-taphouse",
+   "name": "Indio Taphouse",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/indio-taphouse",
+   "indexable": true
+  },
+  {
+   "slug": "italica",
+   "name": "Italica",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/italica",
+   "indexable": true
+  },
+  {
+   "slug": "its-a-deli",
+   "name": "It's A Deli",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/its-a-deli",
+   "indexable": false
+  },
+  {
+   "slug": "its-a-wrap",
+   "name": "It's A Wrap",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/its-a-wrap",
+   "indexable": true
+  },
+  {
+   "slug": "iw-coffee",
+   "name": "IW Coffee",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/iw-coffee",
+   "indexable": true
+  },
+  {
+   "slug": "iw-live-indian-wells-resort-hotel",
+   "name": "IW Live (Indian Wells Resort Hotel)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/iw-live-indian-wells-resort-hotel",
+   "indexable": true
+  },
+  {
+   "slug": "iw-live-sports-entertainment",
+   "name": "IW Live Sports & Entertainment",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/iw-live-sports-entertainment",
+   "indexable": true
+  },
+  {
+   "slug": "jackalope-ranch",
+   "name": "Jackalope Ranch",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/jackalope-ranch",
+   "indexable": true
+  },
+  {
+   "slug": "jade-at-agua-caliente-the-district",
+   "name": "Jade at Agua Caliente (The District)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/jade-at-agua-caliente-the-district",
+   "indexable": true
+  },
+  {
+   "slug": "jakes",
+   "name": "Jake's",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/jakes",
+   "indexable": true
+  },
+  {
+   "slug": "java-caliente-agua-caliente-casino",
+   "name": "Java Caliente (Agua Caliente Casino)",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/java-caliente-agua-caliente-casino",
+   "indexable": true
+  },
+  {
+   "slug": "java-caliente-agua-caliente-rancho-mirage",
+   "name": "Java Caliente (Agua Caliente Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/java-caliente-agua-caliente-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "java-caliente-at-agua-caliente",
+   "name": "Java Caliente at Agua Caliente",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/java-caliente-at-agua-caliente",
+   "indexable": true
+  },
+  {
+   "slug": "java-caliente-cafe-agua-caliente-casino-palm-springs",
+   "name": "Java Caliente Cafe (Agua Caliente Casino Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/java-caliente-cafe-agua-caliente-casino-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "jcs-cafe",
+   "name": "JC's Cafe",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/jcs-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "jillians",
+   "name": "Jillian's",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/jillians",
+   "indexable": true
+  },
+  {
+   "slug": "joes-sushi-the-cabo-way",
+   "name": "Joe's Sushi The Cabo Way",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/joes-sushi-the-cabo-way",
+   "indexable": true
+  },
+  {
+   "slug": "johns-restaurant",
+   "name": "John's Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/johns-restaurant",
+   "indexable": false
+  },
+  {
+   "slug": "joy-asian-cuisine",
+   "name": "Joy Asian Cuisine",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/joy-asian-cuisine",
+   "indexable": true
+  },
+  {
+   "slug": "joyces-sushi-palm-springs",
+   "name": "Joyce's Sushi (Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/joyces-sushi-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "joyces-sushi",
+   "name": "Joyce's Sushi",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/joyces-sushi",
+   "indexable": true
+  },
+  {
+   "slug": "juniper-table-kimpton-rowan",
+   "name": "Juniper Table (Kimpton Rowan)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/juniper-table-kimpton-rowan",
+   "indexable": true
+  },
+  {
+   "slug": "just-java-coffee",
+   "name": "Just Java Coffee",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/just-java-coffee",
+   "indexable": true
+  },
+  {
+   "slug": "k-pop-foodz-korean-street-food",
+   "name": "K Pop Foodz Korean Street Food",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/k-pop-foodz-korean-street-food",
+   "indexable": true
+  },
+  {
+   "slug": "kahvee",
+   "name": "Kahvee",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kahvee",
+   "indexable": true
+  },
+  {
+   "slug": "kaiser-grille",
+   "name": "Kaiser Grille",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kaiser-grille",
+   "indexable": true
+  },
+  {
+   "slug": "kam-lun-chinese-restaurant",
+   "name": "Kam Lun Chinese Restaurant",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kam-lun-chinese-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "katsuyama",
+   "name": "Katsuyama",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/katsuyama",
+   "indexable": true
+  },
+  {
+   "slug": "kestrel-a-richard-blais-kitchen-lounge",
+   "name": "Kestrel – A Richard Blais Kitchen + Lounge",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kestrel-a-richard-blais-kitchen-lounge",
+   "indexable": true
+  },
+  {
+   "slug": "kikis",
+   "name": "Kiki's",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kikis",
+   "indexable": true
+  },
+  {
+   "slug": "kings-highway-ace-hotel-swim-club",
+   "name": "King's Highway (Ace Hotel & Swim Club)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kings-highway-ace-hotel-swim-club",
+   "indexable": true
+  },
+  {
+   "slug": "kitchen-ten-eleven",
+   "name": "Kitchen Ten Eleven",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kitchen-ten-eleven",
+   "indexable": true
+  },
+  {
+   "slug": "kobe-japanese-steak-house-sushi-bar",
+   "name": "Kobe Japanese Steak House & Sushi Bar",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kobe-japanese-steak-house-sushi-bar",
+   "indexable": true
+  },
+  {
+   "slug": "koffi-cafe-drive-thru",
+   "name": "Koffi Cafe & Drive-Thru",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/koffi-cafe-drive-thru",
+   "indexable": true
+  },
+  {
+   "slug": "koffi-central-tahquitz-corridor",
+   "name": "Koffi Central (Tahquitz Corridor)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/koffi-central-tahquitz-corridor",
+   "indexable": true
+  },
+  {
+   "slug": "koffi-north-uptown",
+   "name": "Koffi North (Uptown)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/koffi-north-uptown",
+   "indexable": true
+  },
+  {
+   "slug": "koffi-rancho-mirage-roastery",
+   "name": "Koffi Rancho Mirage Roastery",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/koffi-rancho-mirage-roastery",
+   "indexable": true
+  },
+  {
+   "slug": "koffi-south",
+   "name": "Koffi South",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/koffi-south",
+   "indexable": true
+  },
+  {
+   "slug": "koutouki-greek-estiatorio",
+   "name": "Koutouki Greek Estiatorio",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/koutouki-greek-estiatorio",
+   "indexable": true
+  },
+  {
+   "slug": "kreem",
+   "name": "Kreem",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kreem",
+   "indexable": true
+  },
+  {
+   "slug": "kupi-shop",
+   "name": "Kupi Shop",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/kupi-shop",
+   "indexable": true
+  },
+  {
+   "slug": "la-baguette-vietnamese-sandwiches",
+   "name": "La Baguette Vietnamese Sandwiches",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-baguette-vietnamese-sandwiches",
+   "indexable": true
+  },
+  {
+   "slug": "la-casa-del-mariachi",
+   "name": "La Casa del Mariachi",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-casa-del-mariachi",
+   "indexable": true
+  },
+  {
+   "slug": "la-casita-restaurant",
+   "name": "La Casita Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-casita-restaurant",
+   "indexable": false
+  },
+  {
+   "slug": "la-cazuela-restaurant",
+   "name": "La Cazuela Restaurant",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-cazuela-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "la-cocina-de-mama-margarita",
+   "name": "La Cocina de Mama Margarita",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-cocina-de-mama-margarita",
+   "indexable": true
+  },
+  {
+   "slug": "la-copa-sports-social",
+   "name": "La Copa Sports & Social",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-copa-sports-social",
+   "indexable": false
+  },
+  {
+   "slug": "la-cucina-toscana-country-club",
+   "name": "La Cucina (Toscana Country Club)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-cucina-toscana-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "la-dolce-piccola-gelateria",
+   "name": "La Dolce Piccola Gelateria",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-dolce-piccola-gelateria",
+   "indexable": true
+  },
+  {
+   "slug": "la-hacienda-mexican-restaurant",
+   "name": "La Hacienda Mexican Restaurant",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-hacienda-mexican-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "la-olla-at-agua-caliente-the-district",
+   "name": "La Olla at Agua Caliente (The District)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-olla-at-agua-caliente-the-district",
+   "indexable": true
+  },
+  {
+   "slug": "la-olla-mexican-cuisine-agua-caliente-rancho-mirage",
+   "name": "La Olla Mexican Cuisine (Agua Caliente Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-olla-mexican-cuisine-agua-caliente-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "la-quinta-baking-company",
+   "name": "La Quinta Baking Company",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-quinta-baking-company",
+   "indexable": true
+  },
+  {
+   "slug": "la-quinta-brewing-co-old-town-taproom",
+   "name": "La Quinta Brewing Co. (Old Town Taproom)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-quinta-brewing-co-old-town-taproom",
+   "indexable": true
+  },
+  {
+   "slug": "la-quinta-brewing-co-taproom",
+   "name": "La Quinta Brewing Co. Taproom",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-quinta-brewing-co-taproom",
+   "indexable": true
+  },
+  {
+   "slug": "la-quinta-cliffhouse-grill-bar",
+   "name": "La Quinta Cliffhouse Grill & Bar",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-quinta-cliffhouse-grill-bar",
+   "indexable": true
+  },
+  {
+   "slug": "la-quinta-cliffhouse",
+   "name": "La Quinta Cliffhouse",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-quinta-cliffhouse",
+   "indexable": true
+  },
+  {
+   "slug": "la-spiga-ristorante-italiano",
+   "name": "La Spiga Ristorante Italiano",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-spiga-ristorante-italiano",
+   "indexable": true
+  },
+  {
+   "slug": "la-tablita-restaurant",
+   "name": "La Tablita Restaurant",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-tablita-restaurant",
+   "indexable": false
+  },
+  {
+   "slug": "lartisan-valley-baking-co",
+   "name": "L'Artisan Valley Baking Co.",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/lartisan-valley-baking-co",
+   "indexable": true
+  },
+  {
+   "slug": "las-carretas-taco-shop",
+   "name": "Las Carretas Taco Shop",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/las-carretas-taco-shop",
+   "indexable": true
+  },
+  {
+   "slug": "las-casuelas-nuevas",
+   "name": "Las Casuelas Nuevas",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/las-casuelas-nuevas",
+   "indexable": true
+  },
+  {
+   "slug": "lavender-bistro",
+   "name": "Lavender Bistro",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/lavender-bistro",
+   "indexable": true
+  },
+  {
+   "slug": "le-donne-cucina-italiana",
+   "name": "Le Donne Cucina Italiana",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/le-donne-cucina-italiana",
+   "indexable": true
+  },
+  {
+   "slug": "le-paon-restaurant",
+   "name": "Le Paon Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/le-paon-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "le-vallauris",
+   "name": "Le Vallauris",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/le-vallauris",
+   "indexable": true
+  },
+  {
+   "slug": "legends-icons-pub-grill",
+   "name": "Legends & Icons Pub & Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/legends-icons-pub-grill",
+   "indexable": true
+  },
+  {
+   "slug": "les-filles-cafe-more",
+   "name": "Les Filles Cafe & More",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/les-filles-cafe-more",
+   "indexable": true
+  },
+  {
+   "slug": "lgs-prime-steakhouse",
+   "name": "LG's Prime Steakhouse",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/lgs-prime-steakhouse",
+   "indexable": true
+  },
+  {
+   "slug": "libation-room",
+   "name": "Libation Room",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/libation-room",
+   "indexable": true
+  },
+  {
+   "slug": "lique",
+   "name": "Lique",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/lique",
+   "indexable": true
+  },
+  {
+   "slug": "little-bar",
+   "name": "Little Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/little-bar",
+   "indexable": true
+  },
+  {
+   "slug": "lizzys-premium-frozen-yogurt",
+   "name": "Lizzy's Premium Frozen Yogurt",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/lizzys-premium-frozen-yogurt",
+   "indexable": true
+  },
+  {
+   "slug": "lolas-at-the-cove",
+   "name": "Lola's at The Cove",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/lolas-at-the-cove",
+   "indexable": true
+  },
+  {
+   "slug": "lookout-lounge-aerial-tramway",
+   "name": "Lookout Lounge (Aerial Tramway)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/lookout-lounge-aerial-tramway",
+   "indexable": true
+  },
+  {
+   "slug": "los-arcos-mexican-restaurant-la-quinta-2",
+   "name": "Los Arcos Mexican Restaurant",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/los-arcos-mexican-restaurant-la-quinta-2",
+   "indexable": true
+  },
+  {
+   "slug": "los-arcos-mexican-restaurant-la-quinta",
+   "name": "Los Arcos Mexican Restaurant",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/los-arcos-mexican-restaurant-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "louises-pantry",
+   "name": "Louise's Pantry",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/louises-pantry",
+   "indexable": true
+  },
+  {
+   "slug": "luchador-brewing-company",
+   "name": "Luchador Brewing Company",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/luchador-brewing-company",
+   "indexable": true
+  },
+  {
+   "slug": "lulu-california-bistro",
+   "name": "Lulu California Bistro",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/lulu-california-bistro",
+   "indexable": true
+  },
+  {
+   "slug": "lunas-bar-grill",
+   "name": "Lunas Bar & Grill",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/lunas-bar-grill",
+   "indexable": true
+  },
+  {
+   "slug": "luscious-lorraines-organic-juice-eatery",
+   "name": "Luscious Lorraine's Organic Juice & Eatery",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/luscious-lorraines-organic-juice-eatery",
+   "indexable": true
+  },
+  {
+   "slug": "m-lmal-caf-spa-at-s-c-he",
+   "name": "Málmal Café (Spa at Séc-he)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/m-lmal-caf-spa-at-s-c-he",
+   "indexable": true
+  },
+  {
+   "slug": "main-street-coffee",
+   "name": "Main Street Coffee",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/main-street-coffee",
+   "indexable": true
+  },
+  {
+   "slug": "malie-asian-kitchen",
+   "name": "Malie Asian Kitchen",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/malie-asian-kitchen",
+   "indexable": true
+  },
+  {
+   "slug": "malmal-cafe-the-spa-at-sec-he",
+   "name": "Malmal Cafe (The Spa at Sec-he)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/malmal-cafe-the-spa-at-sec-he",
+   "indexable": true
+  },
+  {
+   "slug": "maracas-cantina",
+   "name": "Maracas Cantina",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/maracas-cantina",
+   "indexable": true
+  },
+  {
+   "slug": "marios-italian-cafe-sun-city",
+   "name": "Mario's Italian Cafe (Sun City)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/marios-italian-cafe-sun-city",
+   "indexable": true
+  },
+  {
+   "slug": "mariscos-el-capitan",
+   "name": "Mariscos El Capitan",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mariscos-el-capitan",
+   "indexable": true
+  },
+  {
+   "slug": "maru-korean-bbq-grill",
+   "name": "Maru Korean BBQ & Grill",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/maru-korean-bbq-grill",
+   "indexable": true
+  },
+  {
+   "slug": "meester-zebra",
+   "name": "Meester Zebra",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/meester-zebra",
+   "indexable": true
+  },
+  {
+   "slug": "menyikish-bar-grill",
+   "name": "Menyikish Bar & Grill",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/menyikish-bar-grill",
+   "indexable": true
+  },
+  {
+   "slug": "mi-cultura-peruvian-colombian-cuisine",
+   "name": "Mi Cultura Peruvian Colombian Cuisine",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mi-cultura-peruvian-colombian-cuisine",
+   "indexable": true
+  },
+  {
+   "slug": "mikado-japanese-steakhouse",
+   "name": "Mikado Japanese Steakhouse",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mikado-japanese-steakhouse",
+   "indexable": true
+  },
+  {
+   "slug": "mimmos-italian-restaurant-bar",
+   "name": "Mimmo's Italian Restaurant & Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mimmos-italian-restaurant-bar",
+   "indexable": true
+  },
+  {
+   "slug": "mister-parkers-parker-palm-springs",
+   "name": "Mister Parker's (Parker Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mister-parkers-parker-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "mitchs-on-el-paseo-prime-seafood",
+   "name": "Mitch's on El Paseo Prime Seafood",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mitchs-on-el-paseo-prime-seafood",
+   "indexable": true
+  },
+  {
+   "slug": "mol-mexican-kitchen",
+   "name": "Molé Mexican Kitchen",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mol-mexican-kitchen",
+   "indexable": false
+  },
+  {
+   "slug": "monsoon-indian-cuisine-palm-desert",
+   "name": "Monsoon Indian Cuisine",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/monsoon-indian-cuisine-palm-desert",
+   "indexable": false
+  },
+  {
+   "slug": "monsoon-indian-cuisine-palm-springs",
+   "name": "Monsoon Indian Cuisine",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/monsoon-indian-cuisine-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "monster-shakes",
+   "name": "Monster Shakes",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/monster-shakes",
+   "indexable": true
+  },
+  {
+   "slug": "morgans-in-the-desert-la-quinta-resort-club",
+   "name": "Morgan's in the Desert (La Quinta Resort & Club)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/morgans-in-the-desert-la-quinta-resort-club",
+   "indexable": true
+  },
+  {
+   "slug": "morgans-in-the-desert",
+   "name": "Morgan's in the Desert",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/morgans-in-the-desert",
+   "indexable": true
+  },
+  {
+   "slug": "mountain-view-grille-at-desert-princess-country-club",
+   "name": "Mountain View Grille at Desert Princess Country Club",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mountain-view-grille-at-desert-princess-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "mr-clamato",
+   "name": "Mr. Clamato",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mr-clamato",
+   "indexable": true
+  },
+  {
+   "slug": "mr-lyons-steakhouse",
+   "name": "Mr. Lyons Steakhouse",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mr-lyons-steakhouse",
+   "indexable": false
+  },
+  {
+   "slug": "musashi-japanese-restaurant",
+   "name": "Musashi Japanese Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/musashi-japanese-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "my-thai",
+   "name": "My Thai",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/my-thai",
+   "indexable": true
+  },
+  {
+   "slug": "mykonos-modern-greek-mediterranean",
+   "name": "Mykonos Modern Greek Mediterranean",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/mykonos-modern-greek-mediterranean",
+   "indexable": true
+  },
+  {
+   "slug": "natures-health-food-cafe",
+   "name": "Nature's Health Food & Cafe",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/natures-health-food-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "nicks-bistro",
+   "name": "Nick's Bistro",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/nicks-bistro",
+   "indexable": true
+  },
+  {
+   "slug": "nitroinfusions-liquid-nitrogen-ice-cream",
+   "name": "Nitroinfusions Liquid Nitrogen Ice Cream",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/nitroinfusions-liquid-nitrogen-ice-cream",
+   "indexable": true
+  },
+  {
+   "slug": "normas-parker-palm-springs",
+   "name": "Norma's (Parker Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/normas-parker-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "nypd-new-york-pizza-delivery",
+   "name": "NYPD - New York Pizza Delivery",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/nypd-new-york-pizza-delivery",
+   "indexable": false
+  },
+  {
+   "slug": "oasis-bar-red-earth-casino",
+   "name": "Oasis Bar (Red Earth Casino)",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/oasis-bar-red-earth-casino",
+   "indexable": true
+  },
+  {
+   "slug": "oceana-rancho-mirage",
+   "name": "Oceana Rancho Mirage",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/oceana-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "oceana-restaurant",
+   "name": "Oceana Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/oceana-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "olgas-tacos",
+   "name": "Olga's Tacos",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/olgas-tacos",
+   "indexable": true
+  },
+  {
+   "slug": "on-the-mark-fine-foods-provisions",
+   "name": "On The Mark Fine Foods & Provisions",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/on-the-mark-fine-foods-provisions",
+   "indexable": true
+  },
+  {
+   "slug": "on-the-rocks-restaurant-cimarron-golf-resort",
+   "name": "On the Rocks Restaurant (Cimarron Golf Resort)",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/on-the-rocks-restaurant-cimarron-golf-resort",
+   "indexable": true
+  },
+  {
+   "slug": "otori-sushi",
+   "name": "Otori Sushi",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/otori-sushi",
+   "indexable": true
+  },
+  {
+   "slug": "pacifica-seafood-restaurant",
+   "name": "Pacifica Seafood Restaurant",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pacifica-seafood-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "pak-inn-chinese-restaurant",
+   "name": "Pak Inn Chinese Restaurant",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pak-inn-chinese-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "palm-desert-bike-n-brews",
+   "name": "Palm Desert Bike N Brews",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/palm-desert-bike-n-brews",
+   "indexable": false
+  },
+  {
+   "slug": "palm-terrace-restaurant-indian-wells-resort-hotel",
+   "name": "Palm Terrace Restaurant (Indian Wells Resort Hotel)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/palm-terrace-restaurant-indian-wells-resort-hotel",
+   "indexable": true
+  },
+  {
+   "slug": "palm-terrace-restaurant",
+   "name": "Palm Terrace Restaurant",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/palm-terrace-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "palmadoros",
+   "name": "Palmadoro's",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/palmadoros",
+   "indexable": true
+  },
+  {
+   "slug": "palms-cafe-omni-rancho-las-palmas",
+   "name": "Palms Cafe (Omni Rancho Las Palmas)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/palms-cafe-omni-rancho-las-palmas",
+   "indexable": true
+  },
+  {
+   "slug": "papa-headz",
+   "name": "Papa Headz",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/papa-headz",
+   "indexable": true
+  },
+  {
+   "slug": "papayas",
+   "name": "Papaya's",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/papayas",
+   "indexable": true
+  },
+  {
+   "slug": "paradise-cove-cafe",
+   "name": "Paradise Cove Cafe",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/paradise-cove-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "perfect-pint",
+   "name": "Perfect Pint",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/perfect-pint",
+   "indexable": true
+  },
+  {
+   "slug": "pines-caf-aerial-tramway",
+   "name": "Pines Café (Aerial Tramway)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pines-caf-aerial-tramway",
+   "indexable": true
+  },
+  {
+   "slug": "pinocchio-in-the-desert",
+   "name": "Pinocchio in the Desert",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pinocchio-in-the-desert",
+   "indexable": false
+  },
+  {
+   "slug": "pinz-and-pints-the-westin-rancho-mirage",
+   "name": "Pinz and Pints (The Westin Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pinz-and-pints-the-westin-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "pinzimini-the-westin-rancho-mirage",
+   "name": "Pinzimini (The Westin Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pinzimini-the-westin-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "pizza-kitchen-at-fantasy-springs",
+   "name": "Pizza Kitchen at Fantasy Springs",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pizza-kitchen-at-fantasy-springs",
+   "indexable": true
+  },
+  {
+   "slug": "pizzeria-bambinos",
+   "name": "Pizzeria Bambinos",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pizzeria-bambinos",
+   "indexable": true
+  },
+  {
+   "slug": "plunge-la-quinta-resort-club",
+   "name": "Plunge (La Quinta Resort & Club)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/plunge-la-quinta-resort-club",
+   "indexable": true
+  },
+  {
+   "slug": "plunge-la-quinta-resort-poolside-bar",
+   "name": "Plunge (La Quinta Resort Poolside Bar)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/plunge-la-quinta-resort-poolside-bar",
+   "indexable": true
+  },
+  {
+   "slug": "pokehana",
+   "name": "Pokehana",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pokehana",
+   "indexable": true
+  },
+  {
+   "slug": "pom-restaurant",
+   "name": "POM Restaurant",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pom-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "ponzu-sushi-palm-springs",
+   "name": "Ponzu Sushi Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/ponzu-sushi-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "porta-via-palm-desert",
+   "name": "Porta Via Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/porta-via-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "project-burger",
+   "name": "Project Burger",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/project-burger",
+   "indexable": true
+  },
+  {
+   "slug": "pueblo-viejo-grill",
+   "name": "Pueblo Viejo Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/pueblo-viejo-grill",
+   "indexable": true
+  },
+  {
+   "slug": "purple-room-supper-club",
+   "name": "Purple Room Supper Club",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/purple-room-supper-club",
+   "indexable": true
+  },
+  {
+   "slug": "r-bar-omni-rancho-las-palmas",
+   "name": "R Bar (Omni Rancho Las Palmas)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/r-bar-omni-rancho-las-palmas",
+   "indexable": true
+  },
+  {
+   "slug": "ramen-musashi",
+   "name": "Ramen Musashi",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/ramen-musashi",
+   "indexable": true
+  },
+  {
+   "slug": "rd-rnnr-libations-pints-plates",
+   "name": "RD RNNR Libations, Pints & Plates",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/rd-rnnr-libations-pints-plates",
+   "indexable": true
+  },
+  {
+   "slug": "red-falcon",
+   "name": "Red Falcon",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/red-falcon",
+   "indexable": true
+  },
+  {
+   "slug": "regulus-date-ranch",
+   "name": "Regulus Date Ranch",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/regulus-date-ranch",
+   "indexable": true
+  },
+  {
+   "slug": "restaurante-los-primos",
+   "name": "Restaurante Los Primos",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/restaurante-los-primos",
+   "indexable": true
+  },
+  {
+   "slug": "rincon-norteno-mexican-restaurant",
+   "name": "Rincon Norteno Mexican Restaurant",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/rincon-norteno-mexican-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "ristorante-mamma-gina",
+   "name": "Ristorante Mamma Gina",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/ristorante-mamma-gina",
+   "indexable": true
+  },
+  {
+   "slug": "rocs-firehouse-grille",
+   "name": "ROC's Firehouse Grille",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/rocs-firehouse-grille",
+   "indexable": true
+  },
+  {
+   "slug": "romanos-pizza-subs-and-salads",
+   "name": "Romanos Pizza Subs and Salads",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/romanos-pizza-subs-and-salads",
+   "indexable": true
+  },
+  {
+   "slug": "rooftop-262-bar-grill",
+   "name": "Rooftop 262 Bar & Grill",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/rooftop-262-bar-grill",
+   "indexable": true
+  },
+  {
+   "slug": "rosemary-hifi",
+   "name": "Rosemary HiFi",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/rosemary-hifi",
+   "indexable": true
+  },
+  {
+   "slug": "sams-sushi",
+   "name": "Sam's Sushi",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/sams-sushi",
+   "indexable": false
+  },
+  {
+   "slug": "santa-fe-restaurant",
+   "name": "Santa Fe Restaurant",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/santa-fe-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "santorini-gyro-palm-springs",
+   "name": "Santorini Gyro Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/santorini-gyro-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "santorini-gyro",
+   "name": "Santorini Gyro",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/santorini-gyro",
+   "indexable": true
+  },
+  {
+   "slug": "santorini-gyros-greek-restaurant",
+   "name": "Santorini Gyros Greek Restaurant",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/santorini-gyros-greek-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "sapporo-ramen-grill",
+   "name": "Sapporo Ramen & Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/sapporo-ramen-grill",
+   "indexable": true
+  },
+  {
+   "slug": "seasons-grill-the-westin-mission-hills-resort-villas",
+   "name": "Seasons Grill (The Westin Mission Hills Resort Villas)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/seasons-grill-the-westin-mission-hills-resort-villas",
+   "indexable": true
+  },
+  {
+   "slug": "sensei-by-nobu-sensei-porcupine-creek",
+   "name": "Sensei by Nobu (Sensei Porcupine Creek)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/sensei-by-nobu-sensei-porcupine-creek",
+   "indexable": true
+  },
+  {
+   "slug": "seven-feathers-restaurant",
+   "name": "Seven Feathers Restaurant",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/seven-feathers-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "seven-olive-modern-gastropub",
+   "name": "Seven Olive Modern Gastropub",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/seven-olive-modern-gastropub",
+   "indexable": true
+  },
+  {
+   "slug": "shabu-shabu-zen-and-sake-bar",
+   "name": "Shabu Shabu Zen and Sake Bar",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/shabu-shabu-zen-and-sake-bar",
+   "indexable": true
+  },
+  {
+   "slug": "shermans-deli-bakery-palm-desert",
+   "name": "Sherman's Deli & Bakery",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/shermans-deli-bakery-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "shermans-deli-bakery-palm-springs",
+   "name": "Sherman's Deli & Bakery",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/shermans-deli-bakery-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "shields-date-garden",
+   "name": "Shields Date Garden",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/shields-date-garden",
+   "indexable": true
+  },
+  {
+   "slug": "si-bon",
+   "name": "Si Bon",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/si-bon",
+   "indexable": true
+  },
+  {
+   "slug": "silverrock-grill",
+   "name": "SilverRock Grill",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/silverrock-grill",
+   "indexable": true
+  },
+  {
+   "slug": "sixth-street-coffee",
+   "name": "Sixth Street Coffee",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/sixth-street-coffee",
+   "indexable": true
+  },
+  {
+   "slug": "sky-valley-cafe-s-cafe-and-market",
+   "name": "Sky Valley Cafe / S' Cafe and Market",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/sky-valley-cafe-s-cafe-and-market",
+   "indexable": true
+  },
+  {
+   "slug": "sloans",
+   "name": "Sloan's",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/sloans",
+   "indexable": true
+  },
+  {
+   "slug": "solanos-bar-grill",
+   "name": "Solano's Bar & Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/solanos-bar-grill",
+   "indexable": true
+  },
+  {
+   "slug": "soul-of-mexico-alma-de-mexico",
+   "name": "Soul of Mexico (Alma De Mexico)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/soul-of-mexico-alma-de-mexico",
+   "indexable": true
+  },
+  {
+   "slug": "south-course-restaurant-indian-canyons-golf-resort",
+   "name": "South Course Restaurant (Indian Canyons Golf Resort)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/south-course-restaurant-indian-canyons-golf-resort",
+   "indexable": true
+  },
+  {
+   "slug": "spencers-restaurant",
+   "name": "Spencer's Restaurant",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/spencers-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "splash-grill-omni-rancho-las-palmas",
+   "name": "Splash Grill (Omni Rancho Las Palmas)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/splash-grill-omni-rancho-las-palmas",
+   "indexable": true
+  },
+  {
+   "slug": "state-fare-bar-kitchen-the-ritz-carlton",
+   "name": "State Fare Bar & Kitchen (The Ritz-Carlton)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/state-fare-bar-kitchen-the-ritz-carlton",
+   "indexable": true
+  },
+  {
+   "slug": "stuft-pizza-bar-grill-la-quinta",
+   "name": "Stuft Pizza Bar & Grill",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/stuft-pizza-bar-grill-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "stuft-pizza-bar-grill-palm-desert",
+   "name": "Stuft Pizza Bar & Grill",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/stuft-pizza-bar-grill-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "sumo-dog",
+   "name": "Sumo Dog",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/sumo-dog",
+   "indexable": true
+  },
+  {
+   "slug": "sunshine-cafe",
+   "name": "Sunshine Cafe",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/sunshine-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "sushi-y-mariscos-guamuchil",
+   "name": "Sushi y Mariscos Guamuchil",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/sushi-y-mariscos-guamuchil",
+   "indexable": true
+  },
+  {
+   "slug": "t-a-carmen",
+   "name": "Tía Carmen",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/t-a-carmen",
+   "indexable": true
+  },
+  {
+   "slug": "tac-quila",
+   "name": "Tac/Quila",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/tac-quila",
+   "indexable": true
+  },
+  {
+   "slug": "taco-jalisco",
+   "name": "Taco Jalisco",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taco-jalisco",
+   "indexable": true
+  },
+  {
+   "slug": "taco-shop-760",
+   "name": "Taco Shop 760",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taco-shop-760",
+   "indexable": true
+  },
+  {
+   "slug": "tacochella",
+   "name": "Tacochella",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/tacochella",
+   "indexable": true
+  },
+  {
+   "slug": "talay-thai-palm-desert",
+   "name": "Talay Thai Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/talay-thai-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "taproom-29",
+   "name": "Taproom 29",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taproom-29",
+   "indexable": true
+  },
+  {
+   "slug": "taqueria-allende-2-ave-48",
+   "name": "Taqueria Allende 2 (Ave 48)",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taqueria-allende-2-ave-48",
+   "indexable": true
+  },
+  {
+   "slug": "taqueria-allende-harrison-st",
+   "name": "Taqueria Allende (Harrison St)",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taqueria-allende-harrison-st",
+   "indexable": true
+  },
+  {
+   "slug": "taqueria-el-guero",
+   "name": "Taqueria El Guero",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taqueria-el-guero",
+   "indexable": true
+  },
+  {
+   "slug": "taqueria-guerrero",
+   "name": "Taqueria Guerrero",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taqueria-guerrero",
+   "indexable": true
+  },
+  {
+   "slug": "taqueria-ixtlan",
+   "name": "Taqueria Ixtlan",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taqueria-ixtlan",
+   "indexable": true
+  },
+  {
+   "slug": "taqueria-san-miguel-restaurant-san-miguel-bar-grill",
+   "name": "Taqueria San Miguel (Restaurant San Miguel Bar & Grill)",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taqueria-san-miguel-restaurant-san-miguel-bar-grill",
+   "indexable": false
+  },
+  {
+   "slug": "taqueria-sinaloense",
+   "name": "Taqueria Sinaloense",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taqueria-sinaloense",
+   "indexable": false
+  },
+  {
+   "slug": "taqueria-teotihuacan",
+   "name": "Taqueria Teotihuacan",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taqueria-teotihuacan",
+   "indexable": true
+  },
+  {
+   "slug": "taqueria-tortilla-factory",
+   "name": "Taqueria Tortilla Factory",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/taqueria-tortilla-factory",
+   "indexable": true
+  },
+  {
+   "slug": "tea-momo",
+   "name": "Tea Momo",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/tea-momo",
+   "indexable": false
+  },
+  {
+   "slug": "temalpakh-farm-market",
+   "name": "Temalpakh Farm Market",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/temalpakh-farm-market",
+   "indexable": true
+  },
+  {
+   "slug": "tequilas-bar-spotlight-29",
+   "name": "Tequila's Bar (Spotlight 29)",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/tequilas-bar-spotlight-29",
+   "indexable": true
+  },
+  {
+   "slug": "teriyaki-yogi",
+   "name": "Teriyaki Yogi",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/teriyaki-yogi",
+   "indexable": true
+  },
+  {
+   "slug": "terrace-hilton-palm-springs",
+   "name": "Terrace (Hilton Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/terrace-hilton-palm-springs",
+   "indexable": false
+  },
+  {
+   "slug": "thai-smile-palm-desert",
+   "name": "Thai Smile Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/thai-smile-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "thai-smile-palm-springs",
+   "name": "Thai Smile Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/thai-smile-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "the-bistro-at-fantasy-springs",
+   "name": "The Bistro at Fantasy Springs",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-bistro-at-fantasy-springs",
+   "indexable": true
+  },
+  {
+   "slug": "the-blushing-peony-wine-bar-cafe",
+   "name": "The Blushing Peony Wine Bar & Cafe",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-blushing-peony-wine-bar-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "the-brown-bag",
+   "name": "The Brown Bag",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-brown-bag",
+   "indexable": true
+  },
+  {
+   "slug": "the-bunny",
+   "name": "The Bunny",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-bunny",
+   "indexable": true
+  },
+  {
+   "slug": "the-cafe-at-shields-date-garden",
+   "name": "The Cafe at Shields Date Garden",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-cafe-at-shields-date-garden",
+   "indexable": true
+  },
+  {
+   "slug": "the-cove-indian-wells-country-club",
+   "name": "The Cove (Indian Wells Country Club)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-cove-indian-wells-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-den-toscana-country-club",
+   "name": "The Den (Toscana Country Club)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-den-toscana-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-edge-steakhouse-the-ritz-carlton",
+   "name": "The Edge Steakhouse (The Ritz-Carlton)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-edge-steakhouse-the-ritz-carlton",
+   "indexable": true
+  },
+  {
+   "slug": "the-fix-on-el-paseo",
+   "name": "The Fix on El Paseo",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-fix-on-el-paseo",
+   "indexable": true
+  },
+  {
+   "slug": "the-fresh-grill-buffet",
+   "name": "The Fresh Grill Buffet",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-fresh-grill-buffet",
+   "indexable": true
+  },
+  {
+   "slug": "the-grill-on-main",
+   "name": "The Grill on Main",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-grill-on-main",
+   "indexable": true
+  },
+  {
+   "slug": "the-hideout-kitchen-bar",
+   "name": "The Hideout Kitchen + Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-hideout-kitchen-bar",
+   "indexable": true
+  },
+  {
+   "slug": "the-kitchen-hotel-zoso",
+   "name": "The Kitchen (Hotel Zoso)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-kitchen-hotel-zoso",
+   "indexable": false
+  },
+  {
+   "slug": "the-marketplace-la-quinta-resort-club",
+   "name": "The Marketplace (La Quinta Resort & Club)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-marketplace-la-quinta-resort-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-marketplace",
+   "name": "The Marketplace",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-marketplace",
+   "indexable": true
+  },
+  {
+   "slug": "the-nest",
+   "name": "The Nest",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-nest",
+   "indexable": true
+  },
+  {
+   "slug": "the-pines-cafe-palm-springs-aerial-tramway",
+   "name": "The Pines Cafe (Palm Springs Aerial Tramway)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-pines-cafe-palm-springs-aerial-tramway",
+   "indexable": true
+  },
+  {
+   "slug": "the-pink-cabana",
+   "name": "The Pink Cabana",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-pink-cabana",
+   "indexable": true
+  },
+  {
+   "slug": "the-place-lobby-bar",
+   "name": "The Place (lobby bar)",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-place-lobby-bar",
+   "indexable": true
+  },
+  {
+   "slug": "the-real-italian-deli",
+   "name": "The Real Italian Deli",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-real-italian-deli",
+   "indexable": true
+  },
+  {
+   "slug": "the-reef-caliente-tropics-resort",
+   "name": "The Reef (Caliente Tropics Resort)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-reef-caliente-tropics-resort",
+   "indexable": true
+  },
+  {
+   "slug": "the-reef-palm-springs",
+   "name": "The Reef Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-reef-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "the-restaurant-at-the-palm-springs-surf-club",
+   "name": "The Restaurant at the Palm Springs Surf Club",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-restaurant-at-the-palm-springs-surf-club",
+   "indexable": true
+  },
+  {
+   "slug": "the-restaurant-at-two-bunch-palms",
+   "name": "The Restaurant at Two Bunch Palms",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-restaurant-at-two-bunch-palms",
+   "indexable": true
+  },
+  {
+   "slug": "the-roost-lounge",
+   "name": "The Roost Lounge",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-roost-lounge",
+   "indexable": true
+  },
+  {
+   "slug": "the-steakhouse-agua-caliente-casino-palm-springs",
+   "name": "The Steakhouse (Agua Caliente Casino Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-steakhouse-agua-caliente-casino-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "the-steakhouse-agua-caliente-rancho-mirage",
+   "name": "The Steakhouse (Agua Caliente Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-steakhouse-agua-caliente-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "the-steakhouse-at-agua-caliente-rancho-mirage",
+   "name": "The Steakhouse at Agua Caliente Rancho Mirage",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-steakhouse-at-agua-caliente-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "the-terrace-restaurant-at-desert-willow",
+   "name": "The Terrace Restaurant at Desert Willow",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-terrace-restaurant-at-desert-willow",
+   "indexable": true
+  },
+  {
+   "slug": "the-traditions-cafe-tahquitz-creek-golf-resort",
+   "name": "The Traditions Cafe (Tahquitz Creek Golf Resort)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-traditions-cafe-tahquitz-creek-golf-resort",
+   "indexable": false
+  },
+  {
+   "slug": "the-venue-sushi-spirits-redefined",
+   "name": "The Venue Sushi & Spirits Redefined",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-venue-sushi-spirits-redefined",
+   "indexable": true
+  },
+  {
+   "slug": "the-wrap-shack",
+   "name": "The Wrap Shack",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-wrap-shack",
+   "indexable": true
+  },
+  {
+   "slug": "tkb-bakery-deli",
+   "name": "TKB Bakery & Deli",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/tkb-bakery-deli",
+   "indexable": true
+  },
+  {
+   "slug": "toastd-in-ps",
+   "name": "Toast'd in PS",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/toastd-in-ps",
+   "indexable": true
+  },
+  {
+   "slug": "tonga-hut-palm-springs",
+   "name": "Tonga Hut Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/tonga-hut-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "tonys-burgers",
+   "name": "Tony's Burgers",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/tonys-burgers",
+   "indexable": true
+  },
+  {
+   "slug": "torakichi-ramen-palm-springs",
+   "name": "Torakichi Ramen Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/torakichi-ramen-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "tortillas-restaurant",
+   "name": "Tortillas Restaurant",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/tortillas-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "townie-bagels-bakery-cafe",
+   "name": "Townie Bagels Bakery Cafe",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/townie-bagels-bakery-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "trattoria-tiramisu",
+   "name": "Trattoria Tiramisu",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/trattoria-tiramisu",
+   "indexable": true
+  },
+  {
+   "slug": "tri-palm-restaurant-the-grill-at-tri-palm-country-club",
+   "name": "Tri Palm Restaurant (The Grill at Tri Palm Country Club)",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/tri-palm-restaurant-the-grill-at-tri-palm-country-club",
+   "indexable": true
+  },
+  {
+   "slug": "trilussa-ristorante",
+   "name": "Trilussa Ristorante",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/trilussa-ristorante",
+   "indexable": true
+  },
+  {
+   "slug": "trio-restaurant",
+   "name": "Trio Restaurant",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/trio-restaurant",
+   "indexable": true
+  },
+  {
+   "slug": "twenty6-la-quinta-resort-club",
+   "name": "Twenty6 (La Quinta Resort & Club)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/twenty6-la-quinta-resort-club",
+   "indexable": true
+  },
+  {
+   "slug": "twenty6",
+   "name": "Twenty6",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/twenty6",
+   "indexable": true
+  },
+  {
+   "slug": "uncle-chai-thailand-street-food",
+   "name": "Uncle Chai Thailand Street Food",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/uncle-chai-thailand-street-food",
+   "indexable": true
+  },
+  {
+   "slug": "unique-bite-eatery",
+   "name": "uniQue Bite Eatery",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/unique-bite-eatery",
+   "indexable": true
+  },
+  {
+   "slug": "vickys-of-santa-fe",
+   "name": "Vicky's of Santa Fe",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/vickys-of-santa-fe",
+   "indexable": true
+  },
+  {
+   "slug": "wabi-sabi-japan-living",
+   "name": "Wabi Sabi Japan Living",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/wabi-sabi-japan-living",
+   "indexable": true
+  },
+  {
+   "slug": "waldos-ristorante-bar",
+   "name": "Waldo's Ristorante & Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/waldos-ristorante-bar",
+   "indexable": true
+  },
+  {
+   "slug": "wangs-chinese-cuisine",
+   "name": "Wang's Chinese Cuisine",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/wangs-chinese-cuisine",
+   "indexable": true
+  },
+  {
+   "slug": "waters-cafe-agua-caliente-rancho-mirage",
+   "name": "Waters Cafe (Agua Caliente Rancho Mirage)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/waters-cafe-agua-caliente-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "waters-cafe-agua-caliente",
+   "name": "Waters Cafe (Agua Caliente)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/waters-cafe-agua-caliente",
+   "indexable": true
+  },
+  {
+   "slug": "waters-cafe-at-agua-caliente",
+   "name": "Waters Cafe at Agua Caliente",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/waters-cafe-at-agua-caliente",
+   "indexable": true
+  },
+  {
+   "slug": "wildest-restaurant-bar",
+   "name": "Wildest Restaurant & Bar",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/wildest-restaurant-bar",
+   "indexable": true
+  },
+  {
+   "slug": "wilma-friedas-cafe",
+   "name": "Wilma & Frieda's Cafe",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/wilma-friedas-cafe",
+   "indexable": true
+  },
+  {
+   "slug": "wok-around",
+   "name": "Wok Around",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/wok-around",
+   "indexable": true
+  },
+  {
+   "slug": "workshop-kitchen-bar",
+   "name": "Workshop Kitchen & Bar",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/workshop-kitchen-bar",
+   "indexable": false
+  },
+  {
+   "slug": "zapopan-mexican-food",
+   "name": "Zapopan Mexican Food",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/zapopan-mexican-food",
+   "indexable": true
+  },
+  {
+   "slug": "zin-american-bistro",
+   "name": "Zin American Bistro",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/zin-american-bistro",
+   "indexable": true
+  }
+ ]
+}

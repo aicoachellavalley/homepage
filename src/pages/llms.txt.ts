@@ -2,10 +2,48 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import pricing from '../data/pricing.json';
 
+/**
+ * Agent Preview tranche manifests — the SAME committed data /sitemap-index.xml
+ * derives from, so the two surfaces can never disagree about what is published.
+ * Counts are DERIVED, never written down: this file's standing discipline is
+ * that a number in it is computed from the thing it describes, so there is no
+ * anchor to bump when a tranche ships.
+ *
+ * Added 2026-08-07. Before that, llms.txt described nodes, briefs, reports and
+ * snapshots but never mentioned the preview corpus at all — 707 published pages
+ * were absent from the one file whose whole job is telling an agent what is here.
+ */
+const previewManifests = import.meta.glob<{ default: { domain: string; segment: string; count: number; indexable: number; sitemap: string } }>(
+  '../data/previews/previews-index-*.json',
+  { eager: true }
+);
+
 export const GET: APIRoute = async () => {
   const nodes   = await getCollection('nodes');
   const briefs  = await getCollection('briefs');
   const reports = (await getCollection('reports')).filter((r) => r.data.status === 'published');
+
+  /* Sorted largest-first so the ordering is deterministic across builds —
+   * import.meta.glob key order is not a contract. */
+  const previews = Object.values(previewManifests)
+    .map((m) => m.default)
+    .filter((m) => m?.sitemap && typeof m.count === 'number')
+    .sort((a, b) => b.count - a.count || a.segment.localeCompare(b.segment));
+
+  /* TWO BASES, AND BOTH MUST BE LABELLED WHEREVER THEY APPEAR.
+   * `count` = pages PUBLISHED. `indexable` = pages IN THE SITEMAP. They differ
+   * by design: suppressed pages (dead / hijacked / parked domains) and
+   * census-only pages (no website on record) are noindexed and never
+   * sitemapped, per previews/README.md.
+   *
+   * The first draft of this block stated the published total in the headline
+   * and the indexable totals in the endpoint list, unlabelled — 707 above three
+   * lines summing to 613. On the file agents read first, that is an arithmetic
+   * contradiction in the one thing AICV sells: numbers you can trust. State the
+   * basis every time, and let the gap explain itself. */
+  const previewPages     = previews.reduce((n, m) => n + m.count, 0);
+  const previewSitemapped = previews.reduce((n, m) => n + m.indexable, 0);
+  const previewWithheld   = previewPages - previewSitemapped;
 
   const body = `# AI Coachella Valley
 
@@ -17,6 +55,7 @@ export const GET: APIRoute = async () => {
 - [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All ${briefs.length} intelligence briefs, flat JSON, no JS required
 - [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.filter((r) => r.data.report_type !== 'methodology').length} long-form intelligence reports (plus the evergreen census methodology page), flat JSON, no JS required
 - [Snapshots (JSON)](https://aicoachellavalley.com/snapshots.json): AICV Intelligence Council snapshots — scored entity assessments
+- [Agent Previews](https://aicoachellavalley.com/sitemap-index.xml): ${previewPages} published Agent Preview pages across ${previews.length} Coachella Valley categories — a dated, independent measurement of how an AI agent reads one specific local business today. ${previewSitemapped} of the ${previewPages} are sitemapped; the other ${previewWithheld} are deliberately noindexed and reachable by direct link only — businesses whose listed web address is dead, hijacked or parked, and businesses with no website on record. Nothing was measured for those, so they are not offered for indexing. Per-category sitemaps under /agent-preview/, all listed in the sitemap index
 - [MCP server](https://mcp.aicoachellavalley.com): Structured query tools for nodes, briefs, and economic context
 
 ## Static Machine-Readable Endpoints
@@ -25,6 +64,7 @@ export const GET: APIRoute = async () => {
   https://aicoachellavalley.com/briefs.json — all intelligence briefs
   https://aicoachellavalley.com/reports.json — all long-form intelligence reports
   https://aicoachellavalley.com/snapshots.json — all Intelligence Review snapshots
+${previews.map((m) => `  ${m.sitemap} — ${m.indexable} of ${m.count} ${m.domain} previews (sitemapped; the rest are noindexed by policy)`).join('\n')}
 
 ## Commercial Tier
 

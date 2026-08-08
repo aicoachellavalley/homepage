@@ -2,6 +2,80 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-08-07 — The preview corpus became discoverable. It was published but unlinked.
+
+Two files: `src/data/previews/previews-index-food-dining.json` (new, synced) and
+`src/pages/llms.txt.ts` (+4 output lines). **No content counts changed** —
+briefs / nodes / reports untouched; this made existing pages findable, not new
+ones.
+
+**`/sitemap-index.xml` was missing food-dining, so 406 indexable pages were off
+the discovery chain.** Food & Dining deployed from mva on 2026-08-07 (440 pages,
+406 sitemapped). Its sitemap was live and served 200 with every URL — and
+**nothing anywhere linked to it.** The chain is `robots.txt` →
+`/sitemap-index.xml` → per-tranche sitemap, and this repo owns the middle link.
+
+**Neither the generator nor the sync tool was at fault, and that is the
+interesting part.** `src/pages/sitemap-index.xml.ts` derives from
+`import.meta.glob('../data/previews/previews-index-*.json')` and is correct —
+its own comment reads *"ship a tranche, sync the manifest, and it appears here."*
+`scripts/sync-previews-manifest.mjs` auto-discovers every tranche and validates
+six required fields plus `entries.length === count`; it needed no change and
+picked dining up on first run. **What was missing was any instruction to run
+it.** `mva/previews/README.md` documented publishing as four acts ending at
+`deploy`; the fifth act lives in this repo and was written down nowhere. All
+four documented acts ran correctly. Fixed on the mva side — five acts now, with
+a "STEP 5 IS NOT OPTIONAL" section and two `curl` assertions.
+
+Re-syncing also confirmed **zero drift**: hospitality and outdoors-recreation
+came back byte-identical, so only dining was ever missing.
+
+**`llms.txt` never mentioned the preview corpus at all.** The one file whose job
+is telling an agent what exists here listed nodes, briefs, reports and snapshots
+and omitted **707 published pages**. Now carries one `## Intelligence Network`
+bullet and three per-tranche endpoints under `## Static Machine-Readable
+Endpoints`.
+
+**Counts are DERIVED, from the same committed manifests `/sitemap-index.xml`
+uses** — so the two surfaces cannot disagree about what is published, and there
+is no hardcoded number to bump when a tranche ships. Sorted largest-first
+because `import.meta.glob` key order is not a contract.
+
+**⚠️ CAUGHT AT THE PUSH GATE: the first draft mixed two bases, unlabelled.** The
+headline read `707 published` (the `count` field) while the three endpoint lines
+read `406 · 134 · 73` (the `indexable` field) — **three numbers summing to 613
+sitting directly under a headline of 707**, with nothing saying why. On the file
+agents read first, that is an arithmetic contradiction in the one thing AICV
+sells: numbers you can trust. It was a Sat call to hold the push and run the
+check before shipping, and the check found it. **Ten minutes held against a
+self-refuting manifest in production on our most legible surface.**
+
+Fixed by labelling the basis everywhere rather than picking one: the headline
+now states `613 of the 707 are sitemapped` and names the other 94 as
+deliberately noindexed (dead/hijacked/parked domains, and businesses with no
+website on record — nothing was measured, so nothing is offered for indexing);
+each endpoint line reads `N of M … (sitemapped; the rest are noindexed by
+policy)`. **The gap is a real editorial policy, so it explains itself instead of
+being hidden.** Per `previews/README.md`, that split is canon and predates this.
+
+Verified against the BUILT ARTIFACT, not the source — six assertions parsed back
+out of `dist/llms.txt`: published 707 == Σ counts · sitemapped 613 == Σ
+indexable · headline self-consistent · withheld 94 == 707−613 · 3 categories ==
+3 endpoint lines · every line `indexable ≤ count`. Per tranche: 406/440,
+134/192, 73/75; withheld 34 + 58 + 2 = 94.
+
+**The five nonprofit characterizations were deliberately NOT touched** (lines 3,
+61, 63, 65, 74) — separate wording pass. Provable rather than asserted: the
+diff of the built `llms.txt` against the live one is **4 added lines and zero
+modifications.**
+
+**Why this mattered, measured not assumed.** Cloudflare zone analytics recorded
+**ClaudeBot crawling the Outdoors tranche on 2026-08-05 — 219 distinct paths,
+267 requests — after fetching `sitemap-previews-outdoors-recreation.xml`.** That
+sitemap was in the index. Dining's was not, and organic AI traffic to dining is
+zero. Full audit and AICV's own measured agent-visibility class
+(`open_with_schema`, 15 surfaces, zero blocked) in `mva/STATE.md`, same date.
+
 ## 2026-08-04 — TOS modal colours scoped to `--tos-*` (naming defect closed)
 
 HEAD **`469906b`**. One file, `src/pages/get-agent-ready.astro`, +47/−18. **No content
