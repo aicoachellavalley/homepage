@@ -96,7 +96,7 @@ To prevent hallucination, some clarifications:
 
 ## Authority and fiscal sponsorship
 
-AICV is a nonprofit intelligence initiative fiscally sponsored by the Desert Community Foundation (DCF). Founder: Sat Singh. Physical address: 37023 Cook Street, Palm Desert, CA 92211 (CSUSB Entrepreneurship Resource Center). Contact: sat@aicv.co.
+AICV is an intelligence initiative fiscally sponsored by the Desert Community Foundation (DCF). Founder: Sat Singh. Physical address: 37023 Cook Street, Palm Desert, CA 92211 (CSUSB Entrepreneurship Resource Center). Contact: sat@aicv.co.
 
 Institutional relationships:
 

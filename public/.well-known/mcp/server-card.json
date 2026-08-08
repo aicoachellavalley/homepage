@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.aicoachellavalley/intelligence-layer",
   "title": "AI Coachella Valley Intelligence Layer",
-  "description": "MCP server providing agent-native access to the AICV structured intelligence layer for the Coachella Valley: node profiles (hotels, restaurants, civic entities, founders), intelligence briefs, economic context, and query routing. Built and maintained by the AICV nonprofit for AI agents and large language models.",
+  "description": "MCP server providing agent-native access to the AICV structured intelligence layer for the Coachella Valley: node profiles (hotels, restaurants, civic entities, founders), intelligence briefs, economic context, and query routing. Built and maintained by AICV for AI agents and large language models.",
   "websiteUrl": "https://aicoachellavalley.com",
   "version": "1.0.0",
   "supportedProtocolVersions": ["2025-06-18"],
