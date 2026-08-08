@@ -2,6 +2,92 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-08-07 — AICV is not a nonprofit. Twenty-eight surfaces said it was.
+
+Commit `cd2ecaf`, 17 files. **COMMITTED, NOT PUSHED — so not deployed.** com
+auto-deploys on push, which makes push and deploy the same act here; the old
+`## Nonprofit & Community Mission` header is still live until someone pushes.
+Deliberate, ruled by Sat: deploy is a separate act.
+
+**AICV is a fiscally sponsored project of Desert Community Foundation. The
+501(c)(3) belongs to DCF, never to AICV.** `llms.txt` — the file agents read
+first — asserted the opposite four times, including *"AICV (AI Coachella Valley)
+is a nonprofit initiative, not a commercial platform"* on a site whose primary
+product is a four-tier paid ladder.
+
+**This was a DELETION pass, and that was the governing ruling.** Where a
+nonprofit claim appeared it was *removed*, leaving the smallest true sentence —
+the locked fiscal-sponsorship strings were **not** inserted anywhere. Inserting
+canon would have been the intuitive fix and the wrong one: it grows the diff,
+re-asserts identity on surfaces that had no business asserting it, and buries
+the deletion in new prose. Word-level census of the whole commit: 16 bare
+`nonprofit` deletions, 6 `nonprofit`→`project`, 2 `a nonprofit`→`an`, 4 whole
+clauses/headers. That reconciles to exactly 28 — no instance unaccounted for,
+none extra.
+
+**Where the 28 were:** `llms.txt.ts` ×5 · report boilerplate ×12 (the *"Both
+surfaces operate as a single nonprofit initiative"* footer, 6 files) · node
+corpus ×6 · AIQnA ×2 (JSON-LD **and** visible HTML — they must move together or
+the page contradicts its own schema) · `.well-known/skills/**/SKILL.md` and
+`.well-known/mcp/server-card.json` ×2. **The two `.well-known` files are the
+easy ones to miss** — they are agent-facing identity copy that ships from
+`public/`, and no content workflow touches them.
+
+**Tier lines now state how each tier is bought**, from `pricing.json`'s `llms`
+field (still the single source): `free diagnostic, self-serve` ·
+`$500 one-time, self-serve` · `$1,000 setup + $2,500/yr, starts with a call` ·
+`$5,000 setup + $10,000/yr, starts with a call`. Verified against the
+storefront's real CTAs — Stripe link for $500, calendar link for both serviced
+tiers. **No price digit changed.**
+
+**NEW STANDING GATE — `check-pricing.mjs` now fails the build if any identity
+surface calls AICV a nonprofit.** Scans `llms.txt.ts`, `server-card.json`, and
+every globbed `SKILL.md`. **The trap it had to avoid: the canonical string
+"AICV is a fiscally sponsored project of Desert Community Foundation, a
+501(c)(3) nonprofit organization" contains both "AICV" and "nonprofit" eleven
+words apart and is CORRECT.** A proximity rule would fail the build on canon
+itself. Method is *neutralise the legitimate carriers first, then match what is
+left* — strip the DCF-attached and third-party phrasings, then run the banned
+patterns. Proven both directions before commit: each of the five old strings
+reintroduced individually → build fails with the right label; five correct
+strings including the locked one → all pass.
+
+**Gate scope is the three identity surfaces, NOT the content corpus.** Extending
+it would false-positive on legitimate third-party nonprofits — the Living
+Desert, McCallum, the eight workforce-development nonprofits in the Talent
+census. The corpus stays under editorial review, not a regex.
+
+**Verification method worth reusing:** the generated `dist/llms.txt` was checked
+by stashing the working set, building a true HEAD baseline, restoring,
+rebuilding, and diffing the two artifacts — 9 changed lines, all intended, zero
+unrelated. Not by reading the file and judging it. (A first false-positive test
+run was silently broken — an env var never reached the injector, so nothing was
+actually tested and everything "passed." The rerun asserts the injection landed
+before judging the result. **A test that cannot fail is not evidence.**)
+
+Counts unchanged and still derived: 81 nodes / 173 briefs / 13 reports +
+methodology. `stash@{0}` (parked AIQnA WIP, base `fd5c437`) verified intact.
+
+**Deliberately untouched, available for a later ruling:** the
+`get-agent-ready.astro` FAQ header *"Is AICV a nonprofit?"* (a question, with a
+compliant answer) · `founder-infrastructure.mdx:138` (501(c)(3) correctly
+attached to DCF, but calls AICV "a research and media property" — a fourth
+identity vocabulary in play) · `desert-community-foundation.mdx:29/62`
+("nonprofit infrastructure" / "nonprofit anchor", both attached to DCF).
+
+**STILL QUEUED — the vocabulary half of the 2026-07-17 sweep**, deliberately not
+folded in: `Base.astro` default description ("structured intelligence layer"),
+`get-agent-ready` copy ("regional intelligence layer", short/varied fiscal
+strings), `minimum-viable-agent` ("the Valley" ×2, "AIO Visibility Tool" in its
+TOS modal), and the site-wide TOS modal fiscal wording (dated legal doc — revise
+deliberately).
+
+**`aicoachellavalley.org/llms.txt` was checked and is already clean** — its only
+nonprofit reference is the LEGAL/FULL string correctly attached to DCF. Nothing
+to fix there.
+
+---
+
 ## 2026-08-07 — The preview corpus became discoverable. It was published but unlinked.
 
 Two files: `src/data/previews/previews-index-food-dining.json` (new, synced) and
