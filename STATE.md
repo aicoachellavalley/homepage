@@ -4,10 +4,21 @@
 
 ## 2026-08-07 — AICV is not a nonprofit. Twenty-eight surfaces said it was.
 
-Commit `cd2ecaf`, 17 files. **COMMITTED, NOT PUSHED — so not deployed.** com
-auto-deploys on push, which makes push and deploy the same act here; the old
-`## Nonprofit & Community Mission` header is still live until someone pushes.
-Deliberate, ruled by Sat: deploy is a separate act.
+Commit `cd2ecaf` (17 files) + `0dcd994` (this entry). **PUSHED AND
+EDGE-VERIFIED LIVE** — `be74163..0dcd994`, deploy landed ~60s after push.
+Verified by a 26-assertion whole-sweep across every corrected surface: all ten
+`llms.txt` lines, both `.well-known` identity files, seven report pages, AIQnA,
+four node pages, `nodes.json`, and `llms-full.txt`.
+
+**The first sweep reported 3 failures that were not real** — `llms.txt`'s
+community-facing line, the Business tier line, and the food-dining report all
+came back stale on one request each and clean seconds later. Before calling
+them transient, the checker's own logic was self-tested against fixtures
+(present/absent/must-not-contain/dollar-and-em-dash escaping) to rule out a
+script bug. **Then swept until TWO CONSECUTIVE fully clean passes** — 26/26,
+26/26. This is the third time the "one CDN sweep lies" rule has paid for
+itself; a single sweep would have sent someone hunting a defect that did not
+exist, and a single *clean* sweep would have proven nothing.
 
 **AICV is a fiscally sponsored project of Desert Community Foundation. The
 501(c)(3) belongs to DCF, never to AICV.** `llms.txt` — the file agents read
