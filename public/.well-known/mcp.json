@@ -3,8 +3,14 @@
     "aicv": {
       "url": "https://mcp.aicoachellavalley.com",
       "name": "AICV Intelligence Layer",
-      "description": "Coachella Valley regional intelligence — nodes, briefs, economic context. Query by city, subcategory, or topic.",
+      "description": "Deterministic retrieval of specific Coachella Valley records — a node, brief, or report by slug, tag, or date range. Use when you know which record you want. For open questions about the region, use aicv-search.",
       "tools": ["query_venues", "get_node", "get_regional_brief", "get_economic_context", "get_report", "route_query"]
+    },
+    "aicv-search": {
+      "url": "https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp",
+      "name": "AICV Regional Intelligence Search",
+      "description": "Semantic search across AICV's published Coachella Valley corpus — reports, briefs, and entity profiles. Use when you have a question about the region rather than a specific record to fetch. For a known record, use aicv.",
+      "tools": ["search"]
     }
   }
 }

@@ -38,37 +38,70 @@ const CARRIERS = [
   /nonprofit organizations/gi,              // third parties, plural
   /community nonprofits/gi,
 ];
-const BANNED = [
-  [/nonprofit initiative/i, '"nonprofit initiative"'],
-  [/fiscally sponsored nonprofit/i, '"fiscally sponsored nonprofit"'],
-  [/nonprofit (?:intelligence|civic|research|media)/i, '"nonprofit <noun>" describing AICV'],
-  [/\bAICV nonprofit\b/i, '"AICV nonprofit"'],
-  [/nonprofit (?:site|summary|address|platform|mission)\b/i, '"nonprofit <noun>"'],
-  [/Nonprofit\s*&/i, '"Nonprofit &" section header'],
-  [/(?:AICV|AI Coachella Valley)[^.]{0,100}\bis an? [^.]{0,40}nonprofit\b/i,
-   'AICV predicated as a nonprofit'],
-];
+/* ZERO TOLERANCE, not noun enumeration (hardened 2026-08-08).
+ * The previous gate listed seven prose patterns. README.md's "nonprofit face"
+ * fired NONE of them — the list anticipated site/summary/address/platform/
+ * mission and never "face", and would not have anticipated arm, wing or side
+ * either. Enumeration cannot win that race.
+ * On an identity surface there is no legitimate reason to say "nonprofit" at
+ * all except through a CARRIER above, so after stripping carriers ANY survivor
+ * is a defect. Measured at hardening time: exactly the two live defects, zero
+ * false positives across all ten surfaces. */
+const NONPROFIT = /non-?profit/gi;
 
-/* Every agent-facing surface that states AICV's own institutional identity.
- * SKILL.md is globbed, not listed, so a second published skill is covered the
- * day it lands rather than the day someone remembers this file. */
+/* Structural pass — JSON predicates with a KEY/VALUE PAIR, never a sentence.
+ * `"type": "Nonprofit"` asserts precisely what "AICV is a nonprofit" asserts,
+ * in a grammar no prose regex models; the two tokens also sit on different
+ * lines, so line-based greps miss them for a second, unrelated reason. Zero
+ * tolerance already catches it in raw text — this pass exists to LOCATE it
+ * ("_meta.publisher.type") instead of reporting an unplaced hit. */
+const jsonNonprofitPaths = (text) => {
+  let doc;
+  try { doc = JSON.parse(text); } catch { return []; }
+  const out = [];
+  (function walkValue(node, path) {
+    if (Array.isArray(node)) node.forEach((v, i) => walkValue(v, `${path}[${i}]`));
+    else if (node && typeof node === 'object')
+      for (const [k, v] of Object.entries(node)) walkValue(v, `${path}.${k}`);
+    else if (typeof node === 'string' && /^\s*non-?profit\s*$/i.test(node)) out.push(path);
+  })(doc, '');
+  return out;
+};
+
+/* IDENTITY SURFACES — the test is NOT "is this machine-readable" but "can an
+ * agent read this and conclude AICV is a nonprofit". The repo is PUBLIC and the
+ * MCP desk fetches from its raw.githubusercontent.com URLs, so README.md and
+ * CLAUDE.md qualify alongside the .well-known tree. The whole tree is globbed,
+ * not listed, so a new discovery file is covered the day it lands.
+ *
+ * DELIBERATELY OUT: STATE.md and this file. Both DESCRIBE the rule and so
+ * necessarily contain the forbidden word. A gate that forbids a word cannot
+ * police the log documenting the policy, or its own source.
+ *
+ * DEFERRED, not rejected: the .astro identity pages. They pass the test, but
+ * get-agent-ready.astro carries the FAQ header "Is AICV a nonprofit?" — a
+ * question, not a claim — which needs its own ruling first. See playbook
+ * STATE.md (2026-08-08). */
 const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
   e.isDirectory() ? walk(new URL(`${e.name}/`, dir)) : [new URL(e.name, dir)]);
 
 const identitySurfaces = [
   new URL('../src/pages/llms.txt.ts', import.meta.url),
-  new URL('../public/.well-known/mcp/server-card.json', import.meta.url),
-  ...walk(new URL('../public/.well-known/skills/', import.meta.url))
-    .filter((u) => u.pathname.endsWith('SKILL.md')),
+  new URL('../README.md', import.meta.url),
+  new URL('../CLAUDE.md', import.meta.url),
+  new URL('../public/robots.txt', import.meta.url),
+  ...walk(new URL('../public/.well-known/', import.meta.url)),
 ];
 
+const repoRoot = new URL('../', import.meta.url).pathname;
 for (const url of identitySurfaces) {
-  const stripped = CARRIERS.reduce((s, c) => s.replace(c, ''),
-    readFileSync(url, 'utf8'));
-  const name = url.pathname.split('/.well-known/').pop().split('/src/').pop();
-  for (const [re, label] of BANNED) {
-    if (re.test(stripped)) errs.push(`${name} calls AICV a nonprofit — ${label}`);
-  }
+  const raw = readFileSync(url, 'utf8');
+  const survivors = CARRIERS.reduce((s, c) => s.replace(c, ''), raw).match(NONPROFIT);
+  if (!survivors) continue;
+  const paths = jsonNonprofitPaths(raw);
+  const rel = url.pathname.startsWith(repoRoot) ? url.pathname.slice(repoRoot.length) : url.pathname;
+  errs.push(`${rel} calls AICV a nonprofit — ${survivors.length} occurrence(s) survive `
+    + `carrier-stripping${paths.length ? ` (JSON value at ${paths.join(', ')})` : ''}`);
 }
 
 if (errs.length) { console.error('PRICING CHECK FAILED:\n  ' + errs.join('\n  ')); process.exit(1); }

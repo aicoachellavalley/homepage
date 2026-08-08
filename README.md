@@ -32,6 +32,6 @@ and `rel="llms-full-txt"` (emerging convention, pending IANA registration).
 
 ## Related
 
-- **aicoachellavalley.org** — civic / nonprofit face
+- **aicoachellavalley.org** — civic / community face
   ([repo](https://github.com/aicoachellavalley/aicoachellavalley-org))
 - **AI Coachella Valley** — [aicoachellavalley.com](https://aicoachellavalley.com)

@@ -56,7 +56,8 @@ export const GET: APIRoute = async () => {
 - [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.filter((r) => r.data.report_type !== 'methodology').length} long-form intelligence reports (plus the evergreen census methodology page), flat JSON, no JS required
 - [Snapshots (JSON)](https://aicoachellavalley.com/snapshots.json): AICV Intelligence Council snapshots — scored entity assessments
 - [Agent Previews](https://aicoachellavalley.com/sitemap-index.xml): ${previewPages} published Agent Preview pages across ${previews.length} Coachella Valley categories — a dated, independent measurement of how an AI agent reads one specific local business today. ${previewSitemapped} of the ${previewPages} are sitemapped; the other ${previewWithheld} are deliberately noindexed and reachable by direct link only — businesses whose listed web address is dead, hijacked or parked, and businesses with no website on record. Nothing was measured for those, so they are not offered for indexing. Per-category sitemaps under /agent-preview/, all listed in the sitemap index
-- [MCP server](https://mcp.aicoachellavalley.com): Structured query tools for nodes, briefs, and economic context
+- [MCP desk](https://mcp.aicoachellavalley.com): Deterministic tools for a specific record — nodes, briefs, reports, economic context, by slug, tag, or date range
+- [Semantic search](https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp): Open questions about the Coachella Valley, answered from the published corpus
 
 ## Static Machine-Readable Endpoints
 
