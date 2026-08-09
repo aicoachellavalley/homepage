@@ -110,7 +110,7 @@ AICV also operates a community-facing site at aicoachellavalley.org covering:
 - AI Talent & Job Board (planned) — connecting locally trained workers to applied-AI projects
 - Responsible AI Pledge — a community commitment to human-centered, transparent AI use
 
-- **Fiscal sponsor**: Desert Community Foundation
+- **Operated by**: SunshineFM LLC
 - **Founder**: Sat Singh, TEDx Rancho Mirage speaker and technology entrepreneur
 - **Location**: Palm Desert, California (Entrepreneurship Resource Center, Cook Street)
 - **Contact**: sat@aicv.co

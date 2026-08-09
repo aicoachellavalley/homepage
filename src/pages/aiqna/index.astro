@@ -9,24 +9,36 @@ const { title, description, date, status, license, canonical } = entry!.data;
 const canonicalUrl = canonical ?? 'https://aicoachellavalley.com/aiqna';
 const licenseUrl = 'https://creativecommons.org/licenses/by/4.0/';
 
+/* CANONICAL LEGAL ENTITY — same @id as the node in get-agent-ready.astro, so
+ * consumers resolve both to ONE entity. It is restated here rather than merely
+ * referenced because JSON-LD is processed per document: a bare @id on this page
+ * with no matching node would assert "AICV has a parent" while naming nobody —
+ * worse than silence on a page whose whole point is entity correction.
+ * AICV is a brand, not a legal entity. legalName belongs to the LLC, never to
+ * AICV, and the fiscal sponsorship belongs to the .org project only. */
+const llcSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://aicoachellavalley.com/#llc',
+  'name': 'SunshineFM LLC',
+  'legalName': 'SunshineFM LLC',
+};
+
 const techArticleSchema = {
   '@context': 'https://schema.org',
   '@type': 'TechArticle',
   'headline': 'AIQnA — Methodology and Source Documentation',
   'description': 'Source documentation for the Coachella Valley\'s first longitudinal AI sentiment corpus, operated by AI Coachella Valley.',
   'author': {
-    '@type': 'NGO',
+    '@type': 'Organization',
     'name': 'AI Coachella Valley',
     'url': 'https://aicoachellavalley.com',
   },
   'publisher': {
-    '@type': 'NGO',
+    '@type': 'Organization',
     'name': 'AI Coachella Valley',
     'url': 'https://aicoachellavalley.com',
-    'parentOrganization': {
-      '@type': 'NGO',
-      'name': 'Desert Community Foundation',
-    },
+    'parentOrganization': { '@id': 'https://aicoachellavalley.com/#llc' },
   },
   'url': canonicalUrl,
   'datePublished': date,
@@ -42,7 +54,7 @@ const serviceSchema = {
   'url': 'https://aiqna.org',
   'description': 'AIQnA is a regional AI listening infrastructure operated by AI Coachella Valley. Each week, residents respond to one question about AI and daily life through a short conversation with an AI agent. Aggregate findings publish every Friday under CC-BY-4.0.',
   'provider': {
-    '@type': 'NGO',
+    '@type': 'Organization',
     'name': 'AI Coachella Valley',
     'url': 'https://aicoachellavalley.com',
   },
@@ -159,6 +171,7 @@ const faqSchema = {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
+  <script type="application/ld+json" set:html={JSON.stringify(llcSchema, null, 2)} />
   <script type="application/ld+json" set:html={JSON.stringify(techArticleSchema, null, 2)} />
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema, null, 2)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema, null, 2)} />

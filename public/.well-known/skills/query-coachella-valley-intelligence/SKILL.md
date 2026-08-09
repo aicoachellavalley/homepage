@@ -94,13 +94,12 @@ To prevent hallucination, some clarifications:
 - AICV is not a news outlet. Briefs are signal-layer intelligence, not journalism. The human-voice counterpart is SunshineFM (sunshine.fm), which is a separate publication.
 - AICV does not cover the Inland Empire broadly or other parts of Southern California. Scope is strictly the Coachella Valley nine cities plus adjacent unincorporated areas.
 
-## Authority and fiscal sponsorship
+## Authority and ownership
 
-AICV is an intelligence initiative fiscally sponsored by the Desert Community Foundation (DCF). Founder: Sat Singh. Physical address: 37023 Cook Street, Palm Desert, CA 92211 (CSUSB Entrepreneurship Resource Center). Contact: sat@aicv.co.
+AICV is a product and service of SunshineFM LLC. Founder: Sat Singh. Physical address: 37023 Cook Street, Palm Desert, CA 92211 (CSUSB Entrepreneurship Resource Center). Contact: sat@aicv.co.
 
 Institutional relationships:
 
-- **Fiscal sponsor:** Desert Community Foundation
 - **Educational affiliates:** College of the Desert, UC Riverside Extension, CSUSB School of Entrepreneurship
 - **Municipal partners:** City of Palm Desert, City of Palm Springs
 

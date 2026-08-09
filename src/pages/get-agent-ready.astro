@@ -242,6 +242,18 @@ const schemaGraph = {
       ]
     },
     {
+      /* CANONICAL LEGAL ENTITY — described ONCE, referenced by @id everywhere.
+       * AICV is a BRAND, not a legal entity: it owns nothing and is nothing in
+       * law. aicoachellavalley.com is a commercial sub-brand of SunshineFM LLC.
+       * The fiscal sponsorship belongs to the .org project only and must never
+       * be asserted on this domain. legalName sits HERE, on the entity that has
+       * one — putting it on the AICV node would assert AICV *is* the LLC. */
+      "@type": "Organization",
+      "@id": "https://aicoachellavalley.com/#llc",
+      "name": "SunshineFM LLC",
+      "legalName": "SunshineFM LLC"
+    },
+    {
       "@type": "Organization",
       "@id": "https://aicoachellavalley.com/#organization",
       "name": "AI Coachella Valley",
@@ -255,11 +267,7 @@ const schemaGraph = {
         "name": "Sat Singh",
         "jobTitle": "Founder"
       },
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "Desert Community Foundation",
-        "description": "Fiscal sponsor"
-      },
+      "parentOrganization": { "@id": "https://aicoachellavalley.com/#llc" },
       "areaServed": {
         "@type": "Place",
         "name": "Coachella Valley, California"
