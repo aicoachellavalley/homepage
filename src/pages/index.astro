@@ -38,14 +38,27 @@ const pageDescription = 'AI Coachella Valley (AICV) is the intelligence network 
 const canonicalUrl = 'https://aicoachellavalley.com/';
 const ogImage = 'https://aicoachellavalley.com/learn-to-get-agent-ready-blueprint.png';
 
+/* CANONICAL LEGAL ENTITY — same @id as the nodes in get-agent-ready.astro and
+ * aiqna/index.astro, so consumers resolve all three to ONE entity. Restated
+ * per document because JSON-LD is processed per document. AICV is a brand,
+ * not a legal entity; legalName belongs to the LLC, never to AICV. */
+const llcSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://aicoachellavalley.com/#llc",
+  "name": "SunshineFM LLC",
+  "legalName": "SunshineFM LLC"
+};
+
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "AI Coachella Valley",
   "alternateName": "AICV",
+  "parentOrganization": { "@id": "https://aicoachellavalley.com/#llc" },
   "url": "https://aicoachellavalley.com",
   "logo": "https://aicoachellavalley.com/logo.png",
-  "description": "AI Coachella Valley (AICV) is the intelligence network AI uses to evaluate the Coachella Valley for economic development, business relocation, group travel, tourism, and institutional planning. AICV is a fiscally sponsored project of Desert Community Foundation, a 501(c)(3) nonprofit organization.",
+  "description": "AI Coachella Valley (AICV) is the intelligence network AI uses to evaluate the Coachella Valley for economic development, business relocation, group travel, tourism, and institutional planning. AICV is a product and service of SunshineFM LLC.",
   "foundingDate": "2025-01-19",
   "foundingLocation": {
     "@type": "Place",
@@ -178,7 +191,7 @@ const faqSchema = {
       "name": "Who built Agent Preview?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Agent Preview was built by AI Coachella Valley (AICV), founded by Sat Singh and based in Palm Desert, serving the nine cities of the Coachella Valley. AICV is a fiscally sponsored project of Desert Community Foundation, a 501(c)(3) nonprofit organization."
+        "text": "Agent Preview was built by AI Coachella Valley (AICV), founded by Sat Singh and based in Palm Desert, serving the nine cities of the Coachella Valley. AICV is a product and service of SunshineFM LLC."
       }
     },
     {
@@ -258,7 +271,7 @@ const foundingCohortSchema = {
   description={pageDescription}
   canonicalUrl={canonicalUrl}
   ogImage={ogImage}
-  schema={[orgSchema, webSiteSchema, serviceSchema, faqSchema, personSchema, foundingCohortSchema]}
+  schema={[llcSchema, orgSchema, webSiteSchema, serviceSchema, faqSchema, personSchema, foundingCohortSchema]}
 >
 
 <!-- ─── NAV ─── -->
@@ -424,7 +437,7 @@ const foundingCohortSchema = {
           Intelligence Network · Est. 2025<br>
           Coachella Valley, California<br>
           Built for agents. Powered by humans.<br>
-          Fiscally sponsored by the Desert Community Foundation.
+          A product and service of SunshineFM LLC.
         </div>
       </div>
       <div>
@@ -477,7 +490,7 @@ const foundingCohortSchema = {
       <div class="tos-date">Last updated: April 27, 2026</div>
     </div>
     <div class="tos-body">
-      <p>The AICV Agent-Readiness Review is a free, experimental diagnostic provided by AI Coachella Valley, a fiscally sponsored project of the Desert Community Foundation, operating in Riverside County, California.</p>
+      <p>The AICV Agent-Readiness Review is a free, experimental diagnostic provided by AI Coachella Valley, a product and service of SunshineFM LLC, operating in Riverside County, California.</p>
 
       <h3>No Account. No Cost. No Data Stored.</h3>
       <p>This tool requires no registration, login, or payment. URLs you submit are processed in real time and are not stored, logged, or retained by AICV. We do not collect personal information through this tool.</p>
