@@ -2,6 +2,128 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-08-08 — Vocabulary sweep, part 1: the product is "Agent Preview". One name.
+
+**FOUNDER RULING.** The free diagnostic had **four** names — `Agent Preview`
+(canonical in `pricing.json` and `llms.txt`), `Agent-Readiness Review` (12
+occurrences), `AIO Visibility Report` / `AIO Visibility Grade` / `AICV AIO Tool`
+(6), and the retired `AIO Tool`. All 18 non-`terms.astro` occurrences are now
+**Agent Preview**.
+
+**The map that made this rulable — seven of eight things were already clean.**
+The whole problem was one thing with four names, plus two collisions:
+
+- **`agent-readiness review` lowercase is a DIFFERENT PRODUCT** — the $500
+  Agent Ready private deliverable, released on payment, never published. It
+  differed from the free tool's alias **only by capitalisation**. A
+  case-insensitive find-and-replace would have renamed a paid deliverable into
+  the free one, in four places. **This is why the sweep was scoped by product,
+  not by string.**
+- **`Agentic Review`** is the Premium tier's LLM Council deliverable, canonical
+  in `pricing.json:53`. One hyphen from the swept term. **Untouched.**
+
+**APPROVED NAME, LANDING DEFERRED — "Your Agent Ready Report".** The $500
+deliverable gets a name derived from its TIER, not from the tool: it tells a
+buyer which purchase produced it, and "Report" vs "Preview" is a distinction
+that survives without a glossary. **Not written in this commit** — two of its
+three instances are in parked `terms.astro`, and renaming only the storefront
+would leave the TOS and the site naming the same deliverable differently.
+**The TOS revision session inherits this name rather than re-deciding it**, and
+lands all three together.
+
+**`terms.astro` KEEPS the old vocabulary — knowing, not oversight.** Its four
+`Agent-Readiness Review` instances include a section HEADING that defines a
+governed legal scope; renaming it changes what the section is about, not just
+what it is called. So the TOS names the tool differently from the rest of the
+site until it is revised with counsel.
+
+**Also fixed:** `get-agent-ready.astro` said "Your Agentic Review portal
+**(Tier 2)**" — Agentic Review is Premium, the fourth tier. The parenthetical
+is **dropped rather than corrected to "(Tier 4)"**: a hard-coded ordinal is an
+anchor that breaks if the ladder is ever reordered, the same failure mode as a
+pinned count. The sentence already names the product.
+
+### FINDING — the homepage diagnostic is ~180 lines of orphaned dead JavaScript
+
+Recon into whether the retired grading posture had leaked into the export path
+answered a different question. **The homepage widget's MARKUP was removed
+(2026-04-27, `472a47c`) and its JavaScript was never deleted.**
+
+Evidence: `aio-input`, `aio-result`, `aio-section` and `id="diagnostic"` exist
+**nowhere in the built homepage — not even inside the JS**. Meanwhile
+`scoreGrade`, `aio-copy` and `Enter any public URL` exist **only inside the
+JS**, never in markup. So `document.getElementById('scoreGrade')` resolves to
+**null**, and the next line assigns `.textContent` on it — the render function
+would throw before displaying anything. **No user can reach this output.**
+
+**So the de-verdicting did NOT miss the export path.** It reached the live
+tool: `get-agent-ready.astro:1032` still carries the note *"Score/grade/gauge
+styles removed — the tool no longer renders a verdict."* The homepage grade
+code was already orphaned when that ruling landed, which is why nothing swept
+it. **Dead code does not appear in a scope list drawn from live surfaces.**
+
+The AIO strings there were renamed anyway, per the ruling — harmless, and they
+do ship in the JS bundle where a scraper could read them. **But the real fix is
+DELETION of the orphaned block, not renaming it.** Not done here: it is a
+~180-line removal on a page outside this sweep's scope, and it wants its own
+gate. `/get-agent-ready/` remains the one live diagnostic.
+
+---
+
+## QUEUED — delete the orphaned homepage diagnostic widget (opened 2026-08-08)
+
+**~180 lines of dead JavaScript on `index.astro`.** The widget's MARKUP was
+removed on **2026-04-27 (`472a47c`)** when the diagnostic moved to
+`/get-agent-ready/`; **the JS was never deleted.** It currently calls
+`document.getElementById('scoreGrade')` — an element that exists nowhere in the
+page — and assigns `.textContent` on the null result, so the render function
+would throw before displaying anything. **No user can reach it.**
+
+Evidence on disk: `aio-input`, `aio-result`, `aio-section`, `id="diagnostic"`
+appear **nowhere in the built homepage, not even inside the JS**, while
+`scoreGrade`, `aio-copy` and `Enter any public URL` appear **only** inside the
+JS. Markup gone, handlers left.
+
+**Deletion supersedes the 2026-08-08 rename.** The AIO strings there were
+renamed to Agent Preview for consistency and because they ship in the JS bundle
+where a scraper can read them — but the block should go, not be relabelled.
+
+**Its own session and its own gate.** Low risk by nature (dead code, one page),
+but it is a homepage change, the block is large, and the boundary between
+orphaned and merely-unused code wants deliberate reading rather than a grep.
+`/get-agent-ready/` remains the one live diagnostic and is not affected.
+
+---
+
+## OPEN QUESTION — /get-agent-ready/ has nine FAQPage questions and no visible FAQ (found 2026-08-08)
+
+`get-agent-ready.astro` emits a **`FAQPage` block carrying nine questions** —
+pricing objections, the Deployment Fee, "Does AICV touch our website?", "What
+happens if we stop paying?", "Who owns AICV?", and more — and **none of them
+render anywhere on the page**. Verified by stripping every `ld+json` block from
+the built HTML and searching the remainder: zero matches, and the page has no
+FAQ section at all.
+
+**This is a rich-results exposure.** Google's FAQPage guidelines require the
+marked-up Q&A to reflect content visible to users on that page. Nine
+questions of structured data with no visible counterpart is the shape that
+gets rich results suppressed, and potentially the surface flagged.
+
+**The fix is probably to RENDER them, not to remove the markup.** These read as
+questions a human buyer genuinely has — the fee split, what happens on
+cancellation, whether AICV modifies your site. Rendering them resolves the
+exposure *and* improves the storefront; deleting the markup resolves the
+exposure and loses nine good answers. **Needs a founder ruling on which
+questions render and in what form** (full accordion, a subset, or a link to a
+dedicated FAQ page).
+
+**Not a defect introduced by the entity work** — the block predates it. Found
+while confirming that the "Who owns AICV?" header had no visible counterpart to
+keep in sync, which it does not: on this page that question is JSON-LD only,
+unlike the `aiqna` FAQ where both halves exist and must move together.
+
+---
+
 ## 2026-08-08 — .com is commercial. Four passes to say so, and the scope lesson that cost.
 
 **FOUNDER RULING, reversing prior canon.** Neither domain is a legal entity.
@@ -38,6 +160,28 @@ narrower than the actual defect surface:
 conclude," and that boundary has been wider than every file list drawn against
 it. Scope by governing test, not by enumeration.** A list is a record of what
 was known when it was written; the test survives contact with what wasn't.
+
+**FOUR BLIND SPOTS, and they are structural rather than careless.** Each one is
+invisible to a particular *kind* of scope:
+
+1. **Frontmatter** — invisible to a scope drawn over body prose. It ships to
+   `nodes.json` / `briefs.json` on its own path and survives every body fix.
+2. **Generated artifacts** — invisible to a scope drawn over source. `dist/`,
+   `llms-full.txt` and the JSON feeds carry corrections downstream only if the
+   build actually re-runs.
+3. **The seam between file lists** — invisible to *both* adjacent scopes.
+   `index.astro`'s JSON-LD sat between "piece 1: get-agent-ready + aiqna" and
+   "piece 2: visible copy" and belonged to neither.
+4. **Dead code** — invisible to a scope drawn from LIVE SURFACES. The orphaned
+   homepage widget could not appear in any list built by asking "what does the
+   site serve," because it serves nothing. Found only by asking why a string
+   existed at all.
+
+**The generalisation past all four: every scope is drawn against something, and
+its complement is invisible BY CONSTRUCTION, not by oversight.** The useful
+question when scoping is therefore not "what did I miss" — which cannot be
+answered from inside the scope — but "**what kind of thing would this scope be
+unable to see?**" Ask it before the sweep, not after the fourth pass.
 
 **BODY PROSE AND FRONTMATTER ARE SEPARATE DISTRIBUTION PATHS.** Frontmatter
 ships to `nodes.json` and `briefs.json` regardless of every body fix — an
