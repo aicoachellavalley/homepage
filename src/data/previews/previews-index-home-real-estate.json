@@ -1,0 +1,1921 @@
+{
+ "domain": "Home & Real Estate",
+ "segment": "home-real-estate",
+ "generated": "2026-07-17",
+ "count": 273,
+ "indexable": 225,
+ "sitemap": "https://aicoachellavalley.com/agent-preview/sitemap-previews-home-real-estate.xml",
+ "entries": [
+  {
+   "slug": "325-appraisal",
+   "name": "325 Appraisal",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/325-appraisal",
+   "indexable": true
+  },
+  {
+   "slug": "absolute-appraisals",
+   "name": "Absolute Appraisals",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/absolute-appraisals",
+   "indexable": false
+  },
+  {
+   "slug": "accredited-appraisal-services",
+   "name": "Accredited Appraisal Services",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/accredited-appraisal-services",
+   "indexable": false
+  },
+  {
+   "slug": "acme-house-company",
+   "name": "ACME House Company",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/acme-house-company",
+   "indexable": true
+  },
+  {
+   "slug": "action-property-management",
+   "name": "Action Property Management",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/action-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "agape-home-inspection",
+   "name": "Agape Home Inspection",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/agape-home-inspection",
+   "indexable": false
+  },
+  {
+   "slug": "air-concierge",
+   "name": "Air Concierge",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/air-concierge",
+   "indexable": true
+  },
+  {
+   "slug": "albert-management",
+   "name": "Albert Management",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/albert-management",
+   "indexable": true
+  },
+  {
+   "slug": "all-county-desert-property-management",
+   "name": "All County Desert Property Management",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/all-county-desert-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "altamira-vacation-rentals",
+   "name": "Altamira Vacation Rentals",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/altamira-vacation-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "american-financial-network-afn",
+   "name": "American Financial Network (AFN)",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/american-financial-network-afn",
+   "indexable": true
+  },
+  {
+   "slug": "american-home-appraisal-company",
+   "name": "American Home Appraisal Company",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/american-home-appraisal-company",
+   "indexable": false
+  },
+  {
+   "slug": "american-valuation-company-2",
+   "name": "American Valuation Company",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/american-valuation-company-2",
+   "indexable": true
+  },
+  {
+   "slug": "american-valuation-company",
+   "name": "American Valuation Company",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/american-valuation-company",
+   "indexable": true
+  },
+  {
+   "slug": "amerispec-inland-empire-and-coachella-valley",
+   "name": "AmeriSpec (Inland Empire and Coachella Valley)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/amerispec-inland-empire-and-coachella-valley",
+   "indexable": true
+  },
+  {
+   "slug": "any-and-all-home-inspections",
+   "name": "Any and All Home Inspections",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/any-and-all-home-inspections",
+   "indexable": false
+  },
+  {
+   "slug": "appraisal-solutions-group",
+   "name": "Appraisal Solutions Group",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/appraisal-solutions-group",
+   "indexable": false
+  },
+  {
+   "slug": "appraisals-2-day",
+   "name": "Appraisals 2-Day",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/appraisals-2-day",
+   "indexable": true
+  },
+  {
+   "slug": "argentia-group-inc",
+   "name": "Argentia Group Inc",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/argentia-group-inc",
+   "indexable": true
+  },
+  {
+   "slug": "associa-desert-resort-management",
+   "name": "Associa Desert Resort Management",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/associa-desert-resort-management",
+   "indexable": true
+  },
+  {
+   "slug": "assured-appraisals",
+   "name": "Assured Appraisals",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/assured-appraisals",
+   "indexable": true
+  },
+  {
+   "slug": "atrix-property-management",
+   "name": "ATRIX Property Management",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/atrix-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "avail-property-management",
+   "name": "Avail Property Management",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/avail-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "avantstay-2",
+   "name": "AvantStay",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/avantstay-2",
+   "indexable": true
+  },
+  {
+   "slug": "avantstay",
+   "name": "AvantStay",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/avantstay",
+   "indexable": true
+  },
+  {
+   "slug": "aw-appraisals",
+   "name": "AW Appraisals",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/aw-appraisals",
+   "indexable": false
+  },
+  {
+   "slug": "bayside-escrow-inc",
+   "name": "Bayside Escrow, Inc.",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bayside-escrow-inc",
+   "indexable": true
+  },
+  {
+   "slug": "bennion-deville-homes-indian-wells",
+   "name": "Bennion Deville Homes – Indian Wells",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bennion-deville-homes-indian-wells",
+   "indexable": true
+  },
+  {
+   "slug": "bennion-deville-homes-la-quinta",
+   "name": "Bennion Deville Homes – La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bennion-deville-homes-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "bennion-deville-homes-palm-desert-san-pablo",
+   "name": "Bennion Deville Homes – Palm Desert San Pablo",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bennion-deville-homes-palm-desert-san-pablo",
+   "indexable": true
+  },
+  {
+   "slug": "bennion-deville-homes-palm-springs",
+   "name": "Bennion Deville Homes – Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bennion-deville-homes-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "bennion-deville-homes-trilogy-at-la-quinta-onsite",
+   "name": "Bennion Deville Homes – Trilogy at La Quinta Onsite",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bennion-deville-homes-trilogy-at-la-quinta-onsite",
+   "indexable": true
+  },
+  {
+   "slug": "bennion-deville-homes",
+   "name": "Bennion Deville Homes",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bennion-deville-homes",
+   "indexable": true
+  },
+  {
+   "slug": "berkshire-hathaway-homeservices-california-properties-palm-desert",
+   "name": "Berkshire Hathaway HomeServices California Properties – Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/berkshire-hathaway-homeservices-california-properties-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "best-property-management",
+   "name": "Best Property Management",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/best-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "bionic-properties",
+   "name": "Bionic Properties",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bionic-properties",
+   "indexable": true
+  },
+  {
+   "slug": "blue-coachella",
+   "name": "Blue Coachella",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/blue-coachella",
+   "indexable": true
+  },
+  {
+   "slug": "bomgardner-blenkinsop-associates",
+   "name": "Bomgardner Blenkinsop & Associates",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bomgardner-blenkinsop-associates",
+   "indexable": true
+  },
+  {
+   "slug": "bourne-inspections",
+   "name": "Bourne Inspections",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bourne-inspections",
+   "indexable": true
+  },
+  {
+   "slug": "boutique-vacation-rentals-bvr",
+   "name": "Boutique Vacation Rentals (BVR)",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/boutique-vacation-rentals-bvr",
+   "indexable": true
+  },
+  {
+   "slug": "bpi-inspections",
+   "name": "BPI Inspections",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bpi-inspections",
+   "indexable": true
+  },
+  {
+   "slug": "brady-sandahl-real-estate-group",
+   "name": "Brady Sandahl Real Estate Group",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/brady-sandahl-real-estate-group",
+   "indexable": true
+  },
+  {
+   "slug": "brian-ward-appraisal",
+   "name": "Brian Ward Appraisal",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/brian-ward-appraisal",
+   "indexable": true
+  },
+  {
+   "slug": "bright-path-property-management",
+   "name": "Bright Path Property Management",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bright-path-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "brinkman-appraisal-services",
+   "name": "Brinkman Appraisal Services",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/brinkman-appraisal-services",
+   "indexable": true
+  },
+  {
+   "slug": "cal-spec-inc",
+   "name": "Cal-Spec Inc.",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/cal-spec-inc",
+   "indexable": true
+  },
+  {
+   "slug": "california-lifestyle-realty",
+   "name": "California Lifestyle Realty",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/california-lifestyle-realty",
+   "indexable": true
+  },
+  {
+   "slug": "california-vacation-villas-join-californiavacationvillas-com",
+   "name": "California Vacation Villas (join.californiavacationvillas.com)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/california-vacation-villas-join-californiavacationvillas-com",
+   "indexable": true
+  },
+  {
+   "slug": "century-21-affiliated-palm-desert",
+   "name": "Century 21 Affiliated – Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/century-21-affiliated-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "century-21-coachella-valley-real-estate",
+   "name": "Century 21 Coachella Valley Real Estate",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/century-21-coachella-valley-real-estate",
+   "indexable": true
+  },
+  {
+   "slug": "century-21-de-oro",
+   "name": "Century 21 De Oro",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/century-21-de-oro",
+   "indexable": false
+  },
+  {
+   "slug": "chicago-title-company",
+   "name": "Chicago Title Company",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/chicago-title-company",
+   "indexable": true
+  },
+  {
+   "slug": "choice-1-realty",
+   "name": "Choice 1 Realty",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/choice-1-realty",
+   "indexable": true
+  },
+  {
+   "slug": "cmg-home-loans",
+   "name": "CMG Home Loans",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/cmg-home-loans",
+   "indexable": true
+  },
+  {
+   "slug": "coachella-realty",
+   "name": "Coachella Realty",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coachella-realty",
+   "indexable": false
+  },
+  {
+   "slug": "coachella-valley-escrow-inc",
+   "name": "Coachella Valley Escrow, Inc.",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coachella-valley-escrow-inc",
+   "indexable": false
+  },
+  {
+   "slug": "coachella-valley-inspection",
+   "name": "Coachella Valley Inspection",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coachella-valley-inspection",
+   "indexable": true
+  },
+  {
+   "slug": "coachella-valley-property-management-coachellavalleypropertymanagement-site",
+   "name": "Coachella Valley Property Management (coachellavalleypropertymanagement.site)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coachella-valley-property-management-coachellavalleypropertymanagement-site",
+   "indexable": true
+  },
+  {
+   "slug": "coachella-valley-property-management",
+   "name": "Coachella Valley Property Management",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coachella-valley-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "coldwell-banker-realty-indian-wells-la-quinta",
+   "name": "Coldwell Banker Realty – Indian Wells/La Quinta",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coldwell-banker-realty-indian-wells-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "coldwell-banker-realty-palm-desert",
+   "name": "Coldwell Banker Realty – Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coldwell-banker-realty-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "coldwell-banker-realty-palm-springs",
+   "name": "Coldwell Banker Realty – Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coldwell-banker-realty-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "community-association-financial-services-cafs",
+   "name": "Community Association Financial Services (CAFS)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/community-association-financial-services-cafs",
+   "indexable": true
+  },
+  {
+   "slug": "community-solutions",
+   "name": "Community Solutions",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/community-solutions",
+   "indexable": true
+  },
+  {
+   "slug": "compass-palm-desert",
+   "name": "Compass – Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/compass-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "compass-palm-springs",
+   "name": "Compass – Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/compass-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "contempo-lending-inc",
+   "name": "Contempo Lending, Inc.",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/contempo-lending-inc",
+   "indexable": true
+  },
+  {
+   "slug": "cv-escrow-4",
+   "name": "CV Escrow",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/cv-escrow-4",
+   "indexable": true
+  },
+  {
+   "slug": "cv-escrow",
+   "name": "CV Escrow",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/cv-escrow",
+   "indexable": true
+  },
+  {
+   "slug": "david-wagner-real-estate-appraiser",
+   "name": "David Wagner Real Estate (Appraiser)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/david-wagner-real-estate-appraiser",
+   "indexable": true
+  },
+  {
+   "slug": "desert-choice-realty",
+   "name": "Desert Choice Realty",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-choice-realty",
+   "indexable": false
+  },
+  {
+   "slug": "desert-cities-property-management",
+   "name": "Desert Cities Property Management",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-cities-property-management",
+   "indexable": false
+  },
+  {
+   "slug": "desert-cities-realtors",
+   "name": "Desert Cities Realtors",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-cities-realtors",
+   "indexable": false
+  },
+  {
+   "slug": "desert-dream-team-realtors",
+   "name": "Desert Dream Team Realtors",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-dream-team-realtors",
+   "indexable": false
+  },
+  {
+   "slug": "desert-dunes-realty-property-management",
+   "name": "Desert Dunes Realty & Property Management",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-dunes-realty-property-management",
+   "indexable": false
+  },
+  {
+   "slug": "desert-empire-realty",
+   "name": "Desert Empire Realty",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-empire-realty",
+   "indexable": true
+  },
+  {
+   "slug": "desert-first-real-estate-corp",
+   "name": "Desert First Real Estate Corp",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-first-real-estate-corp",
+   "indexable": true
+  },
+  {
+   "slug": "desert-lenders-inc",
+   "name": "Desert Lenders, Inc.",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-lenders-inc",
+   "indexable": false
+  },
+  {
+   "slug": "desert-luxury-estates",
+   "name": "Desert Luxury Estates",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-luxury-estates",
+   "indexable": true
+  },
+  {
+   "slug": "desert-luxury-real-estate",
+   "name": "Desert Luxury Real Estate",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-luxury-real-estate",
+   "indexable": true
+  },
+  {
+   "slug": "desert-management",
+   "name": "Desert Management",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-management",
+   "indexable": true
+  },
+  {
+   "slug": "desert-mortgage-lending-inc",
+   "name": "Desert Mortgage Lending, Inc.",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-mortgage-lending-inc",
+   "indexable": false
+  },
+  {
+   "slug": "desert-properties-of-coachella-valley",
+   "name": "Desert Properties of Coachella Valley",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-properties-of-coachella-valley",
+   "indexable": false
+  },
+  {
+   "slug": "desert-rental-properties",
+   "name": "Desert Rental Properties",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-rental-properties",
+   "indexable": true
+  },
+  {
+   "slug": "desert-sol-real-estate",
+   "name": "Desert Sol Real Estate",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-sol-real-estate",
+   "indexable": true
+  },
+  {
+   "slug": "desert-sothebys-international-realty-la-quinta",
+   "name": "Desert Sotheby's International Realty – La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-sothebys-international-realty-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "desert-sothebys-international-realty-palm-springs",
+   "name": "Desert Sotheby's International Realty – Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-sothebys-international-realty-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "desert-sothebys-international-realty",
+   "name": "Desert Sotheby's International Realty",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-sothebys-international-realty",
+   "indexable": true
+  },
+  {
+   "slug": "desert-vista-realtors",
+   "name": "Desert Vista Realtors",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-vista-realtors",
+   "indexable": false
+  },
+  {
+   "slug": "desertspec-llc",
+   "name": "DesertSpec LLC",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desertspec-llc",
+   "indexable": true
+  },
+  {
+   "slug": "djr-palm-springs",
+   "name": "DJR Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/djr-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "dunray-land-co-inc",
+   "name": "Dunray Land Co Inc",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/dunray-land-co-inc",
+   "indexable": false
+  },
+  {
+   "slug": "dw-associates-diane-williams-associates",
+   "name": "DW & Associates (Diane Williams & Associates)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/dw-associates-diane-williams-associates",
+   "indexable": true
+  },
+  {
+   "slug": "elite-guardian-inspections",
+   "name": "Elite Guardian Inspections",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/elite-guardian-inspections",
+   "indexable": true
+  },
+  {
+   "slug": "emblazed",
+   "name": "Emblazed",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/emblazed",
+   "indexable": false
+  },
+  {
+   "slug": "emerge-home-loans",
+   "name": "Emerge Home Loans",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/emerge-home-loans",
+   "indexable": true
+  },
+  {
+   "slug": "emh-home-inspections",
+   "name": "EMH Home Inspections",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/emh-home-inspections",
+   "indexable": true
+  },
+  {
+   "slug": "encore-premier-group",
+   "name": "Encore Premier Group",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/encore-premier-group",
+   "indexable": true
+  },
+  {
+   "slug": "equity-union-palm-desert",
+   "name": "Equity Union – Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/equity-union-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "equity-union-real-estate-la-quinta",
+   "name": "Equity Union Real Estate – La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/equity-union-real-estate-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "equity-union-real-estate-palm-springs",
+   "name": "Equity Union Real Estate – Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/equity-union-real-estate-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "equity-union-real-estate",
+   "name": "Equity Union Real Estate",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/equity-union-real-estate",
+   "indexable": true
+  },
+  {
+   "slug": "escrow-plus-inc",
+   "name": "Escrow Plus, Inc.",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/escrow-plus-inc",
+   "indexable": true
+  },
+  {
+   "slug": "escrowone-inc",
+   "name": "EscrowOne, Inc.",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/escrowone-inc",
+   "indexable": true
+  },
+  {
+   "slug": "executive-one-escrow-inc",
+   "name": "Executive One Escrow, Inc.",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/executive-one-escrow-inc",
+   "indexable": true
+  },
+  {
+   "slug": "exp-realty-of-california-palm-desert",
+   "name": "eXp Realty of California – Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/exp-realty-of-california-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "fairway-independent-mortgage-corporation",
+   "name": "Fairway Independent Mortgage Corporation",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/fairway-independent-mortgage-corporation",
+   "indexable": true
+  },
+  {
+   "slug": "fathom-realty-group-inc-indio-office",
+   "name": "Fathom Realty Group Inc. (Indio office)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/fathom-realty-group-inc-indio-office",
+   "indexable": true
+  },
+  {
+   "slug": "fidelity-national-title-escrow-division",
+   "name": "Fidelity National Title – Escrow Division",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/fidelity-national-title-escrow-division",
+   "indexable": true
+  },
+  {
+   "slug": "first-american-title-2",
+   "name": "First American Title",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/first-american-title-2",
+   "indexable": true
+  },
+  {
+   "slug": "first-american-title-3",
+   "name": "First American Title",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/first-american-title-3",
+   "indexable": true
+  },
+  {
+   "slug": "first-american-title",
+   "name": "First American Title",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/first-american-title",
+   "indexable": true
+  },
+  {
+   "slug": "first-capital-mortgage-inc-2",
+   "name": "First Capital Mortgage Inc.",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/first-capital-mortgage-inc-2",
+   "indexable": true
+  },
+  {
+   "slug": "first-capital-mortgage-inc",
+   "name": "First Capital Mortgage Inc.",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/first-capital-mortgage-inc",
+   "indexable": true
+  },
+  {
+   "slug": "first-west-financial-corporation",
+   "name": "First West Financial Corporation",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/first-west-financial-corporation",
+   "indexable": true
+  },
+  {
+   "slug": "firstservice-residential",
+   "name": "FirstService Residential",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/firstservice-residential",
+   "indexable": true
+  },
+  {
+   "slug": "five-star-vacation-rental",
+   "name": "Five Star Vacation Rental",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/five-star-vacation-rental",
+   "indexable": true
+  },
+  {
+   "slug": "flagstar-home-lending",
+   "name": "Flagstar Home Lending",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/flagstar-home-lending",
+   "indexable": true
+  },
+  {
+   "slug": "foresite-escrow-inc",
+   "name": "Foresite Escrow, Inc.",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/foresite-escrow-inc",
+   "indexable": true
+  },
+  {
+   "slug": "franklin-loan-center",
+   "name": "Franklin Loan Center",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/franklin-loan-center",
+   "indexable": true
+  },
+  {
+   "slug": "fuerza-home-inspections-llc",
+   "name": "Fuerza Home Inspections LLC",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/fuerza-home-inspections-llc",
+   "indexable": true
+  },
+  {
+   "slug": "gng-vacation",
+   "name": "GnG Vacation",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/gng-vacation",
+   "indexable": true
+  },
+  {
+   "slug": "grand-luxury-properties",
+   "name": "Grand Luxury Properties",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/grand-luxury-properties",
+   "indexable": true
+  },
+  {
+   "slug": "grand-welcome-palm-springs",
+   "name": "Grand Welcome Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/grand-welcome-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "guaranteed-rate-affinity-rate",
+   "name": "Guaranteed Rate Affinity / Rate",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/guaranteed-rate-affinity-rate",
+   "indexable": true
+  },
+  {
+   "slug": "hacienda-home-loans-inc",
+   "name": "Hacienda Home Loans, Inc.",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/hacienda-home-loans-inc",
+   "indexable": false
+  },
+  {
+   "slug": "happy-investments-inc",
+   "name": "Happy Investments, Inc.",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/happy-investments-inc",
+   "indexable": true
+  },
+  {
+   "slug": "harcourts-desert-homes",
+   "name": "Harcourts Desert Homes",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/harcourts-desert-homes",
+   "indexable": true
+  },
+  {
+   "slug": "hayes-realty",
+   "name": "Hayes Realty",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/hayes-realty",
+   "indexable": true
+  },
+  {
+   "slug": "helios-vacation-rentals",
+   "name": "Helios Vacation Rentals",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/helios-vacation-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "hk-lane-real-estate-la-quinta",
+   "name": "HK Lane Real Estate – La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/hk-lane-real-estate-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "homesmart-palm-desert",
+   "name": "HomeSmart – Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/homesmart-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "homesmart-palm-springs",
+   "name": "HomeSmart – Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/homesmart-palm-springs",
+   "indexable": false
+  },
+  {
+   "slug": "homespek-llc-home-inspections-termite",
+   "name": "HomeSpek LLC Home Inspections & Termite",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/homespek-llc-home-inspections-termite",
+   "indexable": true
+  },
+  {
+   "slug": "host-palm-springs",
+   "name": "Host Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/host-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "huston-group-at-power-brokers-international",
+   "name": "Huston Group at Power Brokers International",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/huston-group-at-power-brokers-international",
+   "indexable": false
+  },
+  {
+   "slug": "impress-realty",
+   "name": "Impress Realty",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/impress-realty",
+   "indexable": true
+  },
+  {
+   "slug": "indian-wells-escrow-corporation",
+   "name": "Indian Wells Escrow Corporation",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/indian-wells-escrow-corporation",
+   "indexable": true
+  },
+  {
+   "slug": "inspector-nuzzo-home-inspections",
+   "name": "Inspector Nuz'zo Home Inspections",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/inspector-nuzzo-home-inspections",
+   "indexable": false
+  },
+  {
+   "slug": "inspx-home-solutions-llc",
+   "name": "INSPX Home Solutions LLC",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/inspx-home-solutions-llc",
+   "indexable": true
+  },
+  {
+   "slug": "issy-enterprises-inc",
+   "name": "Issy Enterprises Inc",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/issy-enterprises-inc",
+   "indexable": false
+  },
+  {
+   "slug": "itrip-palm-desert-palm-desert-vacation-properties",
+   "name": "iTrip Palm Desert (Palm Desert Vacation Properties)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/itrip-palm-desert-palm-desert-vacation-properties",
+   "indexable": true
+  },
+  {
+   "slug": "itrip-palm-springs",
+   "name": "iTrip Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/itrip-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "j-w-management",
+   "name": "J&W Management",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/j-w-management",
+   "indexable": false
+  },
+  {
+   "slug": "james-d-weir-desert-appraisal",
+   "name": "James D. Weir (Desert Appraisal)",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/james-d-weir-desert-appraisal",
+   "indexable": false
+  },
+  {
+   "slug": "james-l-grant-real-estate-broker",
+   "name": "James L Grant Real Estate Broker",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/james-l-grant-real-estate-broker",
+   "indexable": false
+  },
+  {
+   "slug": "jc-realtors",
+   "name": "JC Realtors",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/jc-realtors",
+   "indexable": false
+  },
+  {
+   "slug": "jelmberg-team-kw-coachella-valley",
+   "name": "Jelmberg Team (KW Coachella Valley)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/jelmberg-team-kw-coachella-valley",
+   "indexable": true
+  },
+  {
+   "slug": "johnson-appraisal-services",
+   "name": "Johnson Appraisal Services",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/johnson-appraisal-services",
+   "indexable": false
+  },
+  {
+   "slug": "jte-escrow-inc",
+   "name": "JTE Escrow, Inc.",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/jte-escrow-inc",
+   "indexable": true
+  },
+  {
+   "slug": "keller-williams-coachella-valley-2",
+   "name": "Keller Williams Coachella Valley",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-coachella-valley-2",
+   "indexable": true
+  },
+  {
+   "slug": "keller-williams-coachella-valley",
+   "name": "Keller Williams Coachella Valley",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-coachella-valley",
+   "indexable": true
+  },
+  {
+   "slug": "keller-williams-palm-springs",
+   "name": "Keller Williams Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-palm-springs",
+   "indexable": false
+  },
+  {
+   "slug": "keller-williams-realty-coachella-valley-kw-coachella-valley",
+   "name": "Keller Williams Realty Coachella Valley (KW Coachella Valley)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-realty-coachella-valley-kw-coachella-valley",
+   "indexable": true
+  },
+  {
+   "slug": "keller-williams-realty-indio-office",
+   "name": "Keller Williams Realty (Indio office)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-realty-indio-office",
+   "indexable": true
+  },
+  {
+   "slug": "keller-williams-realty-la-quinta",
+   "name": "Keller Williams Realty – La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-realty-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "keller-williams-realty-the-hilgenberg-group",
+   "name": "Keller Williams Realty – The Hilgenberg Group",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-realty-the-hilgenberg-group",
+   "indexable": true
+  },
+  {
+   "slug": "kelli-adams-realty",
+   "name": "Kelli Adams Realty",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/kelli-adams-realty",
+   "indexable": true
+  },
+  {
+   "slug": "kw-coachella-valley",
+   "name": "KW Coachella Valley",
+   "city": "Coachella",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/kw-coachella-valley",
+   "indexable": true
+  },
+  {
+   "slug": "la-quinta-palms-realty",
+   "name": "La Quinta Palms Realty",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/la-quinta-palms-realty",
+   "indexable": true
+  },
+  {
+   "slug": "la-quinta-resort-leasing",
+   "name": "La Quinta Resort Leasing",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/la-quinta-resort-leasing",
+   "indexable": true
+  },
+  {
+   "slug": "lawyers-title",
+   "name": "Lawyers Title",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/lawyers-title",
+   "indexable": true
+  },
+  {
+   "slug": "liberty-escrow-inc",
+   "name": "Liberty Escrow Inc.",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/liberty-escrow-inc",
+   "indexable": true
+  },
+  {
+   "slug": "luxsy-palm-springs",
+   "name": "Luxsy Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/luxsy-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "luxury-leasing-vacation-rentals",
+   "name": "Luxury Leasing Vacation Rentals",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/luxury-leasing-vacation-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "macappraisals",
+   "name": "MacAppraisals",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/macappraisals",
+   "indexable": true
+  },
+  {
+   "slug": "matthew-sanchez-home-inspections",
+   "name": "Matthew Sanchez Home Inspections",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/matthew-sanchez-home-inspections",
+   "indexable": true
+  },
+  {
+   "slug": "mclean-company",
+   "name": "McLean Company",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/mclean-company",
+   "indexable": true
+  },
+  {
+   "slug": "millennium-community-management-mcm",
+   "name": "Millennium Community Management (MCM)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/millennium-community-management-mcm",
+   "indexable": true
+  },
+  {
+   "slug": "ml-mortgage",
+   "name": "ML Mortgage",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/ml-mortgage",
+   "indexable": true
+  },
+  {
+   "slug": "modern-home-inspection",
+   "name": "Modern Home Inspection",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/modern-home-inspection",
+   "indexable": true
+  },
+  {
+   "slug": "mortgage-works-financial",
+   "name": "Mortgage Works Financial",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/mortgage-works-financial",
+   "indexable": false
+  },
+  {
+   "slug": "mortgageworks-inc",
+   "name": "MortgageWorks, Inc.",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/mortgageworks-inc",
+   "indexable": true
+  },
+  {
+   "slug": "movement-mortgage-2",
+   "name": "Movement Mortgage",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/movement-mortgage-2",
+   "indexable": true
+  },
+  {
+   "slug": "movement-mortgage",
+   "name": "Movement Mortgage",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/movement-mortgage",
+   "indexable": true
+  },
+  {
+   "slug": "my-canadian-concierge",
+   "name": "My Canadian Concierge",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/my-canadian-concierge",
+   "indexable": true
+  },
+  {
+   "slug": "my-desert-realty-inc",
+   "name": "My Desert Realty Inc.",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/my-desert-realty-inc",
+   "indexable": true
+  },
+  {
+   "slug": "natural-retreats-palm-springs",
+   "name": "Natural Retreats Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/natural-retreats-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "new-american-funding",
+   "name": "New American Funding",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/new-american-funding",
+   "indexable": true
+  },
+  {
+   "slug": "new-venture-escrow",
+   "name": "New Venture Escrow",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/new-venture-escrow",
+   "indexable": true
+  },
+  {
+   "slug": "nexthome-select",
+   "name": "NextHome Select",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/nexthome-select",
+   "indexable": true
+  },
+  {
+   "slug": "oasis-rentals",
+   "name": "Oasis Rentals",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/oasis-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "obsidian-group-team-under-exp-realty-of-southern-california",
+   "name": "Obsidian Group (team under eXp Realty of Southern California)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/obsidian-group-team-under-exp-realty-of-southern-california",
+   "indexable": true
+  },
+  {
+   "slug": "omni-real-estate-group",
+   "name": "OMNI Real Estate Group",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/omni-real-estate-group",
+   "indexable": true
+  },
+  {
+   "slug": "on-the-level-inspections",
+   "name": "On The Level Inspections",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/on-the-level-inspections",
+   "indexable": true
+  },
+  {
+   "slug": "open-air-homes",
+   "name": "Open Air Homes",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/open-air-homes",
+   "indexable": true
+  },
+  {
+   "slug": "oranj-palm-vacation-homes",
+   "name": "Oranj Palm Vacation Homes",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/oranj-palm-vacation-homes",
+   "indexable": true
+  },
+  {
+   "slug": "pacific-appraisers",
+   "name": "Pacific Appraisers",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/pacific-appraisers",
+   "indexable": true
+  },
+  {
+   "slug": "pacific-coast-escrow-corporation",
+   "name": "Pacific Coast Escrow Corporation",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/pacific-coast-escrow-corporation",
+   "indexable": true
+  },
+  {
+   "slug": "pacific-sothebys-international-realty-palm-springs",
+   "name": "Pacific Sotheby's International Realty – Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/pacific-sothebys-international-realty-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "palm-desert-escrow-inc",
+   "name": "Palm Desert Escrow, Inc.",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/palm-desert-escrow-inc",
+   "indexable": true
+  },
+  {
+   "slug": "palm-springs-appraisal-company",
+   "name": "Palm Springs Appraisal Company",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/palm-springs-appraisal-company",
+   "indexable": false
+  },
+  {
+   "slug": "palm-springs-escrow-inc",
+   "name": "Palm Springs Escrow, Inc.",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/palm-springs-escrow-inc",
+   "indexable": true
+  },
+  {
+   "slug": "palm-springs-real-estate-appraiser",
+   "name": "Palm Springs Real Estate Appraiser",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/palm-springs-real-estate-appraiser",
+   "indexable": true
+  },
+  {
+   "slug": "palm-springs-real-estate-palmspringsres-com",
+   "name": "Palm Springs Real Estate (palmspringsres.com)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/palm-springs-real-estate-palmspringsres-com",
+   "indexable": true
+  },
+  {
+   "slug": "parker-property-management",
+   "name": "Parker Property Management",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/parker-property-management",
+   "indexable": false
+  },
+  {
+   "slug": "paul-kaplan-group",
+   "name": "Paul Kaplan Group",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/paul-kaplan-group",
+   "indexable": true
+  },
+  {
+   "slug": "personalized-property-management-ppm",
+   "name": "Personalized Property Management (PPM)",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/personalized-property-management-ppm",
+   "indexable": true
+  },
+  {
+   "slug": "pickford-escrow-company",
+   "name": "Pickford Escrow Company",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/pickford-escrow-company",
+   "indexable": true
+  },
+  {
+   "slug": "pmi-coachella-valley",
+   "name": "PMI Coachella Valley",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/pmi-coachella-valley",
+   "indexable": true
+  },
+  {
+   "slug": "poolside-vacation-rentals",
+   "name": "Poolside Vacation Rentals",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/poolside-vacation-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "poppy-mclean-company-rentals",
+   "name": "Poppy (McLean Company Rentals)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/poppy-mclean-company-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "power-brokers-international",
+   "name": "Power Brokers International",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/power-brokers-international",
+   "indexable": false
+  },
+  {
+   "slug": "powerstone-property-management",
+   "name": "Powerstone Property Management",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/powerstone-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "precision-home-inspection",
+   "name": "Precision Home Inspection",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/precision-home-inspection",
+   "indexable": true
+  },
+  {
+   "slug": "preferred-appraisals-of-the-desert-cities",
+   "name": "Preferred Appraisals of the Desert Cities",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/preferred-appraisals-of-the-desert-cities",
+   "indexable": false
+  },
+  {
+   "slug": "premier-community-association-management-pcam",
+   "name": "Premier Community Association Management (PCAM)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/premier-community-association-management-pcam",
+   "indexable": true
+  },
+  {
+   "slug": "premier-group-home-inspections",
+   "name": "Premier Group Home Inspections",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/premier-group-home-inspections",
+   "indexable": false
+  },
+  {
+   "slug": "premier-properties-of-the-desert",
+   "name": "Premier Properties of the Desert",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/premier-properties-of-the-desert",
+   "indexable": true
+  },
+  {
+   "slug": "premier-realty-group",
+   "name": "Premier Realty Group",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/premier-realty-group",
+   "indexable": false
+  },
+  {
+   "slug": "prominent-escrow-services-inc",
+   "name": "Prominent Escrow Services, Inc.",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/prominent-escrow-services-inc",
+   "indexable": true
+  },
+  {
+   "slug": "prosperity-home-mortgage-llc",
+   "name": "Prosperity Home Mortgage, LLC",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/prosperity-home-mortgage-llc",
+   "indexable": true
+  },
+  {
+   "slug": "ps-appraisals-inc",
+   "name": "PS Appraisals Inc",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/ps-appraisals-inc",
+   "indexable": true
+  },
+  {
+   "slug": "r-j-home-inspections",
+   "name": "R&J Home Inspections",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/r-j-home-inspections",
+   "indexable": false
+  },
+  {
+   "slug": "re-max-area-experts-palm-springs",
+   "name": "RE/MAX Area Experts – Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/re-max-area-experts-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "re-max-consultants-la-quinta",
+   "name": "RE/MAX Consultants – La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/re-max-consultants-la-quinta",
+   "indexable": false
+  },
+  {
+   "slug": "re-max-desert-properties-2",
+   "name": "RE/MAX Desert Properties",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/re-max-desert-properties-2",
+   "indexable": true
+  },
+  {
+   "slug": "re-max-desert-properties-3",
+   "name": "RE/MAX Desert Properties",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/re-max-desert-properties-3",
+   "indexable": true
+  },
+  {
+   "slug": "re-max-desert-properties-la-quinta",
+   "name": "RE/MAX Desert Properties – La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/re-max-desert-properties-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "re-max-desert-properties",
+   "name": "RE/MAX Desert Properties",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/re-max-desert-properties",
+   "indexable": true
+  },
+  {
+   "slug": "real-estate-rancho-mirage",
+   "name": "Real Estate Rancho Mirage",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/real-estate-rancho-mirage",
+   "indexable": true
+  },
+  {
+   "slug": "real-property-management-desert-cities",
+   "name": "Real Property Management Desert Cities",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/real-property-management-desert-cities",
+   "indexable": true
+  },
+  {
+   "slug": "realmanage",
+   "name": "RealManage",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/realmanage",
+   "indexable": true
+  },
+  {
+   "slug": "realty-executives-desert-lifestyles",
+   "name": "Realty Executives Desert Lifestyles",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/realty-executives-desert-lifestyles",
+   "indexable": true
+  },
+  {
+   "slug": "realty-world-coachella-valley",
+   "name": "Realty World Coachella Valley",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/realty-world-coachella-valley",
+   "indexable": false
+  },
+  {
+   "slug": "resort-home-destinations",
+   "name": "Resort Home Destinations",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/resort-home-destinations",
+   "indexable": true
+  },
+  {
+   "slug": "rivale-inspection-services",
+   "name": "Rivale Inspection Services",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/rivale-inspection-services",
+   "indexable": true
+  },
+  {
+   "slug": "royale-vacation-rentals",
+   "name": "Royale Vacation Rentals",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/royale-vacation-rentals",
+   "indexable": true
+  },
+  {
+   "slug": "ryson-vacations",
+   "name": "Ryson Vacations",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/ryson-vacations",
+   "indexable": true
+  },
+  {
+   "slug": "sandi-phillips-associates",
+   "name": "Sandi Phillips & Associates",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/sandi-phillips-associates",
+   "indexable": true
+  },
+  {
+   "slug": "sandra-quinn-real-estate-group",
+   "name": "Sandra Quinn Real Estate Group",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/sandra-quinn-real-estate-group",
+   "indexable": true
+  },
+  {
+   "slug": "sandy-mann-salkind-real-estate-broker-sandy-the-mann-for-real-estate",
+   "name": "Sandy Mann Salkind Real Estate Broker (Sandy the Mann for Real Estate)",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/sandy-mann-salkind-real-estate-broker-sandy-the-mann-for-real-estate",
+   "indexable": false
+  },
+  {
+   "slug": "sc-appraisal-services",
+   "name": "SC Appraisal Services",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/sc-appraisal-services",
+   "indexable": true
+  },
+  {
+   "slug": "schultz-property-inspection",
+   "name": "Schultz Property Inspection",
+   "city": "Cathedral City",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/schultz-property-inspection",
+   "indexable": true
+  },
+  {
+   "slug": "scott-james-properties",
+   "name": "Scott James Properties",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/scott-james-properties",
+   "indexable": true
+  },
+  {
+   "slug": "seabreeze-management-company",
+   "name": "Seabreeze Management Company",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/seabreeze-management-company",
+   "indexable": true
+  },
+  {
+   "slug": "sheri-dettman-associates",
+   "name": "Sheri Dettman & Associates",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/sheri-dettman-associates",
+   "indexable": true
+  },
+  {
+   "slug": "superstay-indiomanagement-com",
+   "name": "SuperStay (indiomanagement.com)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/superstay-indiomanagement-com",
+   "indexable": true
+  },
+  {
+   "slug": "the-bianco-group",
+   "name": "The Bianco Group",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-bianco-group",
+   "indexable": true
+  },
+  {
+   "slug": "the-downs-team",
+   "name": "The Downs Team",
+   "city": "Rancho Mirage",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-downs-team",
+   "indexable": true
+  },
+  {
+   "slug": "the-escrow-connection",
+   "name": "The Escrow Connection",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-escrow-connection",
+   "indexable": true
+  },
+  {
+   "slug": "the-escrow-professionals-inc",
+   "name": "The Escrow Professionals, Inc.",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-escrow-professionals-inc",
+   "indexable": true
+  },
+  {
+   "slug": "the-horne-team",
+   "name": "The Horne Team",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-horne-team",
+   "indexable": true
+  },
+  {
+   "slug": "the-management-trust",
+   "name": "The Management Trust",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-management-trust",
+   "indexable": true
+  },
+  {
+   "slug": "the-mason-group",
+   "name": "The Mason Group",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-mason-group",
+   "indexable": true
+  },
+  {
+   "slug": "the-munselle-group",
+   "name": "The Munselle Group",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-munselle-group",
+   "indexable": true
+  },
+  {
+   "slug": "the-pena-group-the-real-estate-company-inc",
+   "name": "The Pena Group (The Real Estate Company Inc.)",
+   "city": "Indio",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-pena-group-the-real-estate-company-inc",
+   "indexable": false
+  },
+  {
+   "slug": "thomson-appraisal-company-thomas-thomson",
+   "name": "Thomson Appraisal Company (Thomas Thomson)",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/thomson-appraisal-company-thomas-thomson",
+   "indexable": true
+  },
+  {
+   "slug": "todd-walcott-reverse-mortgage",
+   "name": "Todd Walcott Reverse Mortgage",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/todd-walcott-reverse-mortgage",
+   "indexable": true
+  },
+  {
+   "slug": "utopia-management-2",
+   "name": "Utopia Management",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/utopia-management-2",
+   "indexable": true
+  },
+  {
+   "slug": "utopia-management-palm-springs",
+   "name": "Utopia Management (Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/utopia-management-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "utopia-management",
+   "name": "Utopia Management",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/utopia-management",
+   "indexable": true
+  },
+  {
+   "slug": "vacasa-palm-springs-office",
+   "name": "Vacasa (Palm Springs office)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/vacasa-palm-springs-office",
+   "indexable": true
+  },
+  {
+   "slug": "vacasa-via-vacation-palm-springs-partnership",
+   "name": "Vacasa (via Vacation Palm Springs partnership)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/vacasa-via-vacation-palm-springs-partnership",
+   "indexable": true
+  },
+  {
+   "slug": "vacation-rentals-of-the-desert",
+   "name": "Vacation Rentals of the Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/vacation-rentals-of-the-desert",
+   "indexable": false
+  },
+  {
+   "slug": "value-house-appraisal-services-inc",
+   "name": "Value House Appraisal Services, Inc.",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/value-house-appraisal-services-inc",
+   "indexable": false
+  },
+  {
+   "slug": "vanmar-lending",
+   "name": "Vanmar Lending",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/vanmar-lending",
+   "indexable": true
+  },
+  {
+   "slug": "vare-properties",
+   "name": "VARE Properties",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/vare-properties",
+   "indexable": true
+  },
+  {
+   "slug": "village-property-management",
+   "name": "Village Property Management",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/village-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "vintage-real-estate-group",
+   "name": "Vintage Real Estate Group",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/vintage-real-estate-group",
+   "indexable": false
+  },
+  {
+   "slug": "wfg-national-title-company-of-california",
+   "name": "WFG National Title Company of California",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/wfg-national-title-company-of-california",
+   "indexable": true
+  },
+  {
+   "slug": "wfg-national-title-company",
+   "name": "WFG National Title Company",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/wfg-national-title-company",
+   "indexable": true
+  },
+  {
+   "slug": "wilson-property-inspections",
+   "name": "Wilson Property Inspections",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/wilson-property-inspections",
+   "indexable": true
+  },
+  {
+   "slug": "windermere-real-estate-desert-properties-la-quinta",
+   "name": "Windermere Real Estate Desert Properties – La Quinta",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/windermere-real-estate-desert-properties-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "windermere-real-estate-desert-properties-palm-desert",
+   "name": "Windermere Real Estate Desert Properties – Palm Desert",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/windermere-real-estate-desert-properties-palm-desert",
+   "indexable": true
+  },
+  {
+   "slug": "windermere-real-estate-palm-springs",
+   "name": "Windermere Real Estate – Palm Springs",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/windermere-real-estate-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "wonderland-escrow",
+   "name": "Wonderland Escrow",
+   "city": "La Quinta",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/wonderland-escrow",
+   "indexable": true
+  },
+  {
+   "slug": "xepco-properties-desert-cities-property-management",
+   "name": "Xepco Properties (Desert Cities Property Management)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/xepco-properties-desert-cities-property-management",
+   "indexable": true
+  },
+  {
+   "slug": "xepco-property-management-palm-springs",
+   "name": "Xepco Property Management (Palm Springs)",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/xepco-property-management-palm-springs",
+   "indexable": true
+  },
+  {
+   "slug": "xepco-property-management-palmdesertpropertymanagement-com",
+   "name": "Xepco Property Management (palmdesertpropertymanagement.com)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/xepco-property-management-palmdesertpropertymanagement-com",
+   "indexable": true
+  },
+  {
+   "slug": "xepco-property-management-palmspringspropertymanagement-com-coachella-valley-pm",
+   "name": "Xepco Property Management (palmspringspropertymanagement.com / Coachella Valley PM)",
+   "city": "Palm Desert",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/xepco-property-management-palmspringspropertymanagement-com-coachella-valley-pm",
+   "indexable": true
+  },
+  {
+   "slug": "young-real-estate-appraisals",
+   "name": "Young Real Estate Appraisals",
+   "city": "Palm Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/young-real-estate-appraisals",
+   "indexable": false
+  },
+  {
+   "slug": "zwemmer-realty-group",
+   "name": "Zwemmer Realty Group",
+   "city": "Indian Wells",
+   "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/zwemmer-realty-group",
+   "indexable": true
+  }
+ ]
+}
