@@ -6,4 +6,13 @@
 # First node retirement (2026-08-08). Pattern C1: delete the .mdx, 301 the
 # live URL, repoint every in-corpus link. AICV measures dead URLs as a defect
 # in other sites; shipping one of our own is not available to us.
-/nodes/sunshinefm-startup-studios /nodes/ai-economy-coachella-valley 301
+#
+# WRITE BOTH FORMS. These rules are PATH-EXACT. This site's canonical node URL
+# is the TRAILING-SLASH form (/nodes/x -> 308 -> /nodes/x/), so the slash rule
+# is the one real traffic hits; the bare form is the belt-and-braces. Shipping
+# only the bare rule on 2026-08-08 left the retired page live at its canonical
+# URL, served from a ~23h stale edge entry with the very DCF text the deploy
+# had just corrected. A redirect rule is evaluated BEFORE asset serving, so the
+# slash rule also masks a stale edge entry instead of waiting it out.
+/nodes/sunshinefm-startup-studios/ /nodes/ai-economy-coachella-valley/ 301
+/nodes/sunshinefm-startup-studios /nodes/ai-economy-coachella-valley/ 301

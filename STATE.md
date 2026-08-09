@@ -58,11 +58,30 @@ string belonged to `coachella-valley-ai-events`. And the belief that the site
 was publicly self-contradicting was false: piece 1 was never pushed.
 
 **FIRST NODE RETIREMENT — pattern C1**, recorded inline in `public/_redirects`:
-delete the `.mdx`, 301 the live URL, repoint every in-corpus link rather than
-leaning on the redirect. **A link that works only because of a redirect is a
-latent break.** C3 (unpublish via frontmatter) is not available — nothing
-filters nodes by `status` except `generate-stats.mjs`. Counts are derived and
-fell 81 → 80 with no anchors to bump.
+delete the `.mdx`, **301 BOTH URL FORMS — canonical trailing-slash first, bare
+form alongside** — and repoint every in-corpus link rather than leaning on the
+redirect. **A link that works only because of a redirect is a latent break.**
+C3 (unpublish via frontmatter) is not available — nothing filters nodes by
+`status` except `generate-stats.mjs`. Counts are derived and fell 81 → 80 with
+no anchors to bump.
+
+**PATH-EXACT RULES MUST BE WRITTEN AGAINST THE CANONICAL FORM — the lesson
+that generalises past redirects.** This site's canonical node URL is the
+**trailing-slash** form: `/nodes/x` 308-redirects to `/nodes/x/`. The first
+retirement shipped a `_redirects` rule for the *bare* form only, because that
+is the shape it was typed as. Result: the bare form 301'd correctly while the
+**canonical form — the one every inbound link, sitemap entry and indexed URL
+actually uses — returned 200 and served the retired page**, complete with the
+"fiscally sponsored project under Desert Community Foundation" text the same
+deploy had just corrected everywhere else. `?cb=<unique>` returned 404, proving
+the asset was gone from the build and the 200 was a ~23-hour stale edge entry.
+
+**A rule written for the shape you type is not a rule for the shape the site
+serves.** Any path-exact rule — `_redirects`, AI Search path filters, worker
+routes — must be written against the canonical form, **verified live, and
+checked in BOTH forms**. Note also that a redirect rule is evaluated *before*
+asset serving, so the correct rule masks a stale edge entry rather than leaving
+it to expire.
 
 **QUEUED FOR THE VOCABULARY SWEEP — two items, both recorded with their real
 shape:**
