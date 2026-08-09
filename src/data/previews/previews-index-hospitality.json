@@ -2,8 +2,8 @@
  "domain": "Hospitality & Retreat Venues",
  "segment": "hospitality",
  "generated": "2026-07-15",
- "count": 75,
- "indexable": 73,
+ "count": 73,
+ "indexable": 72,
  "sitemap": "https://aicoachellavalley.com/agent-preview/sitemap-previews-hospitality.xml",
  "entries": [
   {
@@ -140,13 +140,6 @@
    "indexable": true
   },
   {
-   "slug": "fantasy-springs-resort-casino",
-   "name": "Fantasy Springs Resort Casino",
-   "city": "Indio",
-   "url": "https://aicoachellavalley.com/agent-preview/hospitality/fantasy-springs-resort-casino",
-   "indexable": true
-  },
-  {
    "slug": "fleur-noire-h-tel",
    "name": "Fleur Noire Hôtel",
    "city": "Palm Springs",
@@ -194,13 +187,6 @@
    "city": "Palm Springs",
    "url": "https://aicoachellavalley.com/agent-preview/hospitality/ingleside-estate",
    "indexable": true
-  },
-  {
-   "slug": "inn-at-palm-springs",
-   "name": "Inn at Palm Springs",
-   "city": "Palm Springs",
-   "url": "https://aicoachellavalley.com/agent-preview/hospitality/inn-at-palm-springs",
-   "indexable": false
   },
   {
    "slug": "korakia-pensione",
