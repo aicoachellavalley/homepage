@@ -2,3 +2,8 @@
 
 # Force 404 on deleted agent-skills path — replaced by /.well-known/skills/
 /.well-known/agent-skills/* 404
+
+# First node retirement (2026-08-08). Pattern C1: delete the .mdx, 301 the
+# live URL, repoint every in-corpus link. AICV measures dead URLs as a defect
+# in other sites; shipping one of our own is not available to us.
+/nodes/sunshinefm-startup-studios /nodes/ai-economy-coachella-valley 301
