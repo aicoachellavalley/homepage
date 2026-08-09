@@ -2,6 +2,95 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-08-08 — .com is commercial. Four passes to say so, and the scope lesson that cost.
+
+**FOUNDER RULING, reversing prior canon.** Neither domain is a legal entity.
+**SunshineFM LLC** (a real California LLC) owns **aicoachellavalley.com** as a
+commercial sub-brand — Stripe account and all charge descriptors are the LLC.
+**Desert Community Foundation** (501(c)(3)) fiscally sponsors
+**aicoachellavalley.org**. AICV is a brand appearing on both sides of that
+ledger; legally it owns nothing and is nothing.
+
+Five commits, **UNPUSHED at time of writing** — `6aa26d1` (machine surfaces),
+`e243b6e` (FAQ structured data), `0b00c90` (visible copy + corpus),
+`b6cb0a7` (DCF nodes scoped to .org), `b20d887` (node retirement).
+Production is uniformly pre-correction, so **there is no public window where
+the layers disagree** — that only becomes true if part of the stack ships
+without the rest. Push them together.
+
+**THE SCOPE LESSON — the reason this took four passes.** Every scope drawn was
+narrower than the actual defect surface:
+
+- **Aug 7** removed *"AICV is a nonprofit"* but deliberately PRESERVED *"AICV
+  is fiscally sponsored"* as true and compliant. Correct against the canon it
+  had; wrong the moment the founder ruling landed.
+- **Piece 1** scoped to entity **NODES**. Entity **CLAIMS** in FAQ structured
+  data — same JSON-LD payload, same page — fell outside it, so each page told
+  an agent two incompatible things.
+- **Piece 1's file list** named `get-agent-ready` and `aiqna`.
+  **`index.astro`'s JSON-LD fell in the seam between two scopes** — the
+  homepage `Organization` node, the most-consumed entity claim on the site,
+  was nearly the last thing still asserting DCF.
+- **Piece 2's file list** missed six corpus instances and three frontmatter
+  fields.
+
+**The generalisation: on .com the boundary is "what an agent can read and
+conclude," and that boundary has been wider than every file list drawn against
+it. Scope by governing test, not by enumeration.** A list is a record of what
+was known when it was written; the test survives contact with what wasn't.
+
+**BODY PROSE AND FRONTMATTER ARE SEPARATE DISTRIBUTION PATHS.** Frontmatter
+ships to `nodes.json` and `briefs.json` regardless of every body fix — an
+`agent_summary` reaches agents directly and survives a clean-looking prose
+sweep silently. Three frontmatter fields were still asserting AICV sponsorship
+*after* every body instance was corrected (`desert-community-foundation`
+description + agent_summary, `cook-street-university-row` agent_summary).
+**Any sponsorship or identity sweep must check both paths, and the check must
+be SHOWN, not asserted** — a "none" reported here was wrong because it
+generalised from a narrow check, and was only correct after an explicit
+field-by-field scan of the shipped feeds printed its results. Both feeds now
+report zero.
+
+**Two corrections worth keeping** (both premises were plausible and both were
+wrong, caught only by checking): `node-zero.mdx` was prioritised as
+highest-risk on a misattribution — it asserts nothing and never did, the
+string belonged to `coachella-valley-ai-events`. And the belief that the site
+was publicly self-contradicting was false: piece 1 was never pushed.
+
+**FIRST NODE RETIREMENT — pattern C1**, recorded inline in `public/_redirects`:
+delete the `.mdx`, 301 the live URL, repoint every in-corpus link rather than
+leaning on the redirect. **A link that works only because of a redirect is a
+latent break.** C3 (unpublish via frontmatter) is not available — nothing
+filters nodes by `status` except `generate-stats.mjs`. Counts are derived and
+fell 81 → 80 with no anchors to bump.
+
+**QUEUED FOR THE VOCABULARY SWEEP — two items, both recorded with their real
+shape:**
+
+1. **Three names, one product, one retired.** The diagnostic is **Agent
+   Preview** in `pricing.json` and `llms.txt`, **Agent-Readiness Review** in
+   ~12 places, and **"AIO Visibility Report" / "AIO VISIBILITY GRADE"** in
+   three downloadable JS export strings in `index.astro`. **The export strings
+   are agent-reachable — a user downloads them** — so this is not merely
+   internal drift. The last *visible* "AIO" on a rendered page was removed in
+   `b6cb0a7`; these are not visible but they ship.
+2. **"AICV" now slides between the BRAND and the .org PROGRAMS inside single
+   sentences written before the split** — e.g. *"DCF is the fiscal sponsor of
+   aicoachellavalley.org, providing the infrastructure under which **AICV**
+   operates its AI workforce…"*. **Scoping objects cannot fix ambiguous
+   subjects; those sentences need rewriting. That is the sweep's actual job**,
+   not a find-and-replace.
+
+**STILL PARKED, deliberately:** `terms.astro` (dated legal doc), the four
+indemnity clauses naming DCF's officers and volunteers (likely REQUIRED by the
+sponsorship agreement — a legal act, not an editorial one), and the
+`37023 Cook Street` PostalAddress blocks (canon says that is DCF's address, so
+it may be a residual affiliation asserted in structured form). Also flagged,
+not fixed: the 2026-03-26 Mirage brief calls SunshineFM Startup Studios *"one
+of our own"* — AICV vouching for its own owner in third-person editorial.
+
+---
+
 ## 2026-08-07 — AICV is not a nonprofit. Twenty-eight surfaces said it was.
 
 Commit `cd2ecaf` (17 files) + `0dcd994` (this entry). **PUSHED AND
