@@ -2,6 +2,56 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-08-10 — Brief filed: the Agent Preview audit piece. Live and edge-verified.
+
+Brief `2026-08-10-agent-preview-audit-1566-pages` filed, pushed (commit
+`6a94918`, range `a9ee3bd..6a94918`) and **edge-verified agent-visible**. Push of
+the `.mdx` alone published every surface; the data artifacts are gitignored and
+CF regenerated them in-cloud, so no `content(data)` commit exists. Local
+`npm run build` passed at **307 pages** before the push, per the build-verification
+rule.
+
+**Verified on the wire, by content and not by status code, polled rather than
+read once.** The deploy took roughly two minutes: four polls returned 404 with
+`briefs.json` at 173, the fifth showed `briefs.json` 174 while the page was still
+404, the sixth was consistent. Then four consecutive stable reads: HTTP 200,
+correct `<title>`, and the distinctive marker "43 is a floor, not a total"
+present twice. `briefs.json` **173 → 174** · `/sitemap.xml` **279 → 280** with
+the brief present · `llms-full.txt` carries the title · JSON-LD `NewsArticle`
+with `datePublished`/`dateModified` `2026-08-10`, canonical url and publisher
+correct · all three Related Nodes return 200.
+
+**The piece leads with the correction, not the completion.** 1,566 pages across
+six merchant categories, 1,362 sitemapped, from 1,744 roster entries. The audit
+found 43 pages that had measured a web address the business does not control and
+called it their website — 27 same-day, **16 wrong since the day their own
+category shipped**, because the audit that found them did not exist yet. "43 is
+a floor, not a total" appears three times by design; `attribution.json` states it
+as `_recall_is_a_floor` and says do not cite 43 as complete.
+
+**Deliberately omitted: a corpus-wide crawler-refused rate.** The 2026-08-08
+finding is that `agent_visibility_class` is partly a function of probe cadence on
+AI-throttling hosts, so a headline rate would assert precision the corpus itself
+disputes. The per-category reports carry their own rates with their own
+denominators.
+
+**No brief-count anchor was bumped, and none should be.** Every count in this
+file and in playbook `STATE.md` sits inside a dated entry, and the live figure is
+derived by `generate-stats.mjs` counting `src/content/briefs/*.mdx` at build
+time. The canon step "update the brief count" is satisfied by this entry.
+
+**Side effect worth knowing: `/sitemap.xml` is now 280, matching AI Search's
+indexed item count exactly. That is a coincidence, not a reconciliation.** The
+279-vs-280 delta was explained and closed on its own merits earlier the same day
+by querying the instance directly. Recorded in playbook `HANDOFF.md` (`c2fadd4`)
+so a future session does not read the matching numbers as a fix.
+
+**DEFERRED, not done: the journal line item.** The briefs canon calls for a
+journal entry in `sunshine-fm/journal/index.html` using the documented marker.
+That is a different repo with no auto-deploy — it needs its own build and
+`wrangler` deploy — and it was outside the authorised scope of this run. It is
+the one open side effect from this publish.
+
 ## 2026-08-08 — Vocabulary sweep, part 1: the product is "Agent Preview". One name.
 
 **FOUNDER RULING.** The free diagnostic had **four** names — `Agent Preview`
