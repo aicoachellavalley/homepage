@@ -1,4 +1,5 @@
 ---
+import Footer from '../components/Footer.astro';
 import Base from '../layouts/Base.astro';
 import briefsData from '../../public/briefs.json';
 import reportsData from '../../public/reports.json';
@@ -427,58 +428,10 @@ const foundingCohortSchema = {
 </div>
 
 <!-- ─── FOOTER ─── -->
-<footer>
-  <div class="foot-inner">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <div class="foot-mark">AICV</div>
-        <div class="foot-name">AI Coachella Valley</div>
-        <div class="foot-full">
-          Intelligence Network · Est. 2025<br>
-          Coachella Valley, California<br>
-          Built for agents. Powered by humans.<br>
-          A product and service of SunshineFM LLC.
-        </div>
-      </div>
-      <div>
-        <div class="foot-cities-label">Serving the Coachella Valley</div>
-        <div class="foot-cities">
-          Palm Springs<span class="foot-sep">·</span>
-          Desert Hot Springs<span class="foot-sep">·</span>
-          Cathedral City<span class="foot-sep">·</span>
-          Rancho Mirage<span class="foot-sep">·</span>
-          Palm Desert<span class="foot-sep">·</span>
-          Indian Wells<span class="foot-sep">·</span>
-          La Quinta<span class="foot-sep">·</span>
-          Indio<span class="foot-sep">·</span>
-          Coachella<span class="foot-sep">·</span>
-          Bermuda Dunes<span class="foot-sep">·</span>
-          Thousand Palms<span class="foot-sep">·</span>
-          Mecca<span class="foot-sep">·</span>
-          Thermal<span class="foot-sep">·</span>
-          Desert Center
-        </div>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <div class="foot-copy">
-        © 2026 AICV · Established 2025 · Coachella Valley, California<br>
-        Built for agents. Powered by humans. · <a href="mailto:sat@aicv.co" style="color:rgba(232,226,208,0.6);text-decoration:none;">sat@aicv.co</a>
-      </div>
-      <div class="foot-links">
-        <a href="/nodes/">Intelligence Network</a>
-        <a href="/briefs/">Briefs</a>
-        <a href="/reports/">Reports</a>
-        <a href="/how-we-do-this/">How We Do This</a>
-        <a href="https://sunshine.fm">SunshineFM</a>
-        <a href="/get-agent-ready/#diagnostic">Agent Preview</a>
-        <a href="https://x.com/CoachellaAI">@CoachellaAI</a>
-        <a href="https://github.com/aicoachellavalley">GitHub</a>
-        <a href="#" onclick="document.getElementById('tosModal').classList.add('on');return false;">Terms of Use</a>
-      </div>
-    </div>
-  </div>
-</footer>
+
+<Footer variant="full">
+  <a slot="links" href="#" onclick="document.getElementById('tosModal').classList.add('on');return false;">Terms of Use</a>
+</Footer>
 
 <!-- ─── TERMS OF USE MODAL ─── -->
 <div class="tos-overlay" id="tosModal" onclick="if(event.target===this)this.classList.remove('on')">
@@ -1571,83 +1524,19 @@ const foundingCohortSchema = {
   .aio-err.on { display: block; }
 
   /* ─── FOOTER ─── */
-  footer {
-    background: var(--pine-dark);
-    padding: 4rem 3rem 2.5rem;
-  }
 
-  .foot-inner { max-width: 1060px; margin: 0 auto; }
 
-  .foot-top {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 4rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid rgba(232,226,208,0.08);
-    margin-bottom: 2rem;
-  }
 
-  .foot-mark {
-    width: 38px; height: 38px;
-    background: var(--volt);
-    border: none;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif;
-    font-weight: 800; font-size: 11px;
-    color: var(--pine);
-    margin-bottom: 0.875rem;
-  }
 
-  .foot-name {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700; font-size: 0.88rem;
-    color: var(--sand); margin-bottom: 0.3rem;
-  }
 
-  .foot-full {
-    font-size: 0.7rem; color: rgba(232,226,208,0.6);
-    font-weight: 300; line-height: 1.6;
-  }
 
-  .foot-cities-label {
-    font-size: 0.6rem; letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(232,226,208,0.6);
-    margin-bottom: 1rem; font-weight: 500;
-  }
 
-  .foot-cities {
-    font-size: 0.8rem;
-    color: rgba(232,226,208,0.4);
-    font-weight: 300;
-    line-height: 2;
-  }
 
-  .foot-sep { color: rgba(232,226,208,0.15); margin: 0 0.4rem; }
 
-  .foot-bottom {
-    display: flex; align-items: center;
-    justify-content: space-between; gap: 2rem;
-  }
 
-  .foot-copy {
-    font-size: 0.72rem;
-    color: rgba(232,226,208,0.6);
-    font-weight: 300;
-    line-height: 1.6;
-  }
 
-  .foot-links { display: flex; gap: 1.75rem; align-items: center; }
 
-  .foot-links a {
-    font-size: 0.72rem;
-    color: rgba(232,226,208,0.6);
-    text-decoration: none;
-    transition: color 0.2s;
-    letter-spacing: 0.02em;
-  }
 
-  .foot-links a:hover { color: var(--volt); }
 
   /* ─── PARTNERS ─── */
   .partners-wrap {
@@ -1821,9 +1710,6 @@ const foundingCohortSchema = {
     .intel-what-inner { padding: 2rem 1.5rem; }
     .result-top { grid-template-columns: 1fr; }
     .partners-section { padding: 3rem 1.5rem; }
-    footer { padding: 2.5rem 1.5rem 2rem; }
-    .foot-top { grid-template-columns: 1fr; gap: 2rem; }
-    .foot-bottom { flex-direction: column; align-items: flex-start; }
     .tos-panel { padding: 2rem 1.5rem; max-height: 90vh; }
   }
 </style>

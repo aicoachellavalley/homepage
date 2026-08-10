@@ -1,0 +1,202 @@
+---
+/**
+ * Footer.astro — the one footer for aicoachellavalley.com.
+ *
+ * Extracted 2026-08-10. Before this, eighteen page files carried their own
+ * <footer>: sixteen distinct normalised shapes, and the CSS was duplicated
+ * across twelve files in six distinct blocks. Every copy fix cost six edits
+ * and the shapes had drifted apart on link sets rather than on copy.
+ *
+ *   variant="full"       identity block + city list + bottom bar. Six pages.
+ *   variant="compact"    bottom bar only. Nine routes.
+ *   <slot />             page-specific line in the bottom bar
+ *                        (nodes/[slug] renders "Last reviewed: <date>" there).
+ *   <slot name="links"/> page-specific trailing nav item. Used ONLY by the
+ *                        four pages carrying the TOS modal, whose trigger this
+ *                        is; canon requires it and the nav must not otherwise
+ *                        vary per page.
+ *
+ * ── THE OWNERSHIP STATEMENT IS LOAD-BEARING ────────────────────────────────
+ * "A product and service of SunshineFM LLC" is the ONLY visible ownership
+ * statement on .com, and canon requires it present: on .com SunshineFM LLC is
+ * the owning entity, and no fiscal-sponsorship or nonprofit language appears
+ * (that framing belongs to .org). See com commits b6cb0a7, 0b00c90, e243b6e
+ * and the deletion pass cd2ecaf.
+ *
+ * It lives in the BOTTOM BAR (founder ruling 2026-08-10), not the identity
+ * block: canon requires it present and visible, not sited in a particular
+ * zone, and legal copy belongs with the copyright line. It therefore renders
+ * on EVERY page — both variants — where before it appeared only on the six
+ * `full` pages. NOTE THE TRAILING PERIOD IS GONE: the string now sits between
+ * middot separators, so it reads "· A product and service of SunshineFM LLC ·".
+ * The positive gate in commit 2 must pin THAT string, not the older one.
+ *
+ * WARNING — NOTHING CURRENTLY FAILS THE BUILD IF YOU DELETE IT. Every check in
+ * scripts/check-pricing.mjs is NEGATIVE — it forbids "nonprofit" on five
+ * identity surfaces and none of them is a .astro file. There is no positive
+ * assertion that this string exists. Do not rely on review to protect it.
+ * A positive gate is proposed separately; until it lands, this comment is the
+ * only guard.
+ *
+ * ── EXEMPT, DO NOT SWEEP IN ────────────────────────────────────────────────
+ * terms.astro          legally scoped, parked pending counsel (com/STATE.md)
+ * aiqna/[slug].astro   programme disclosure, not site furniture
+ * aiqna/index.astro    AIQnA sponsor + media-partner routes, and its own
+ *                      "Powered by SunshineFM LLC" line
+ *
+ * ── CITY GROUPING ──────────────────────────────────────────────────────────
+ * Founder ruling 2026-08-10. Nine incorporated cities; five unincorporated
+ * communities and adjacent areas. Both figures are correct and measure
+ * different things — the JSON-LD on index.astro says "the nine cities", which
+ * this grouping makes consistent rather than contradictory. The five are
+ * listed deliberately: people search their own community by name.
+ */
+const { variant = 'compact', links = [] } = Astro.props;
+
+/** Canonical link set. Same on every page, self-links included — a footer that
+ *  changes shape per page is how the six drifted apart in the first place.
+ *
+ *  TERMS OF USE IS DELIBERATELY ABSENT (founder ruling 2026-08-10, option C).
+ *  Two Terms documents exist and they disagree: the in-page modal says
+ *  SunshineFM LLC six times and names DCF once; /terms/ says DCF three times,
+ *  names SunshineFM zero, carries fiscal-sponsorship language canon forbids on
+ *  .com, and still uses the retired "Agent-Readiness Review" vocabulary.
+ *  Linking /terms/ site-wide would route all fifteen pages at the one page
+ *  carrying the forbidden framing. Terms consolidation is its own pass; until
+ *  it lands the footer nav carries no Terms link at all.
+ *
+ *  The four pages with the TOS modal keep their trigger through <slot />,
+ *  because playbook CLAUDE.md:537 makes the modal mandatory wherever the
+ *  Agent Preview widget is embedded and the footer link was its ONLY trigger. */
+const NAV = [
+  { href: '/nodes/',            label: 'Intelligence Network' },
+  { href: '/briefs/',           label: 'Briefs' },
+  { href: '/reports/',          label: 'Reports' },
+  { href: '/get-agent-ready/',  label: 'Agent Preview' },
+  { href: '/get-agent-ready/',  label: 'Get Agent Ready' },
+];
+const nav = links.length ? links : NAV;
+
+/** Founder ruling 2026-08-10 — see header. */
+const INCORPORATED = [
+  'Palm Springs', 'Desert Hot Springs', 'Cathedral City', 'Rancho Mirage',
+  'Palm Desert', 'Indian Wells', 'La Quinta', 'Indio', 'Coachella',
+];
+const COMMUNITIES = [
+  'Bermuda Dunes', 'Thousand Palms', 'Mecca', 'Thermal', 'Desert Center',
+];
+---
+<footer>
+  <div class="foot-inner">
+    {variant === 'full' && (
+      <div class="foot-top">
+        <div class="foot-brand">
+          <div class="foot-mark">AICV</div>
+          <div class="foot-name">AI Coachella Valley</div>
+          <div class="foot-full">
+            Intelligence Network · Est. 2025<br />
+            Coachella Valley, California<br />
+            Built for agents. Powered by humans.
+          </div>
+        </div>
+        <div class="foot-geo">
+          <div class="foot-cities-label">Nine incorporated cities</div>
+          <div class="foot-cities">
+            {INCORPORATED.map((c, i) => (
+              <><span class="foot-city">{c}</span>{i < INCORPORATED.length - 1 && <span class="foot-sep">·</span>}</>
+            ))}
+          </div>
+          <div class="foot-cities-label foot-cities-label--second">Communities and adjacent areas</div>
+          <div class="foot-cities">
+            {COMMUNITIES.map((c, i) => (
+              <><span class="foot-city">{c}</span>{i < COMMUNITIES.length - 1 && <span class="foot-sep">·</span>}</>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+    <div class="foot-bottom">
+      <div class="foot-copy">
+        © 2026 AICV · A product and service of SunshineFM LLC · <a href="mailto:sat@aicv.co">sat@aicv.co</a><slot />
+      </div>
+      <div class="foot-links">
+        {nav.map((l) => <a href={l.href}>{l.label}</a>)}
+        <slot name="links" />
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Consolidated from the six distinct per-page blocks that preceded this file.
+     Values follow index.astro, which was the most complete of the six. */
+  footer {
+    background: var(--pine-dark, #122B22);
+    color: rgba(232, 226, 208, 0.75);
+    padding: 3rem 1.5rem 2rem;
+    margin-top: 4rem;
+  }
+  .foot-inner { max-width: 1100px; margin: 0 auto; }
+  .foot-top {
+    display: flex; flex-wrap: wrap; gap: 2.5rem;
+    justify-content: space-between; align-items: flex-start;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(232, 226, 208, 0.14);
+  }
+  .foot-brand { flex: 0 0 auto; }
+  .foot-mark {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 1.5rem; letter-spacing: 0.02em; color: var(--volt, #D8FF00);
+  }
+  .foot-name {
+    font-family: 'Syne', sans-serif; font-weight: 600;
+    font-size: 1rem; margin-top: 0.15rem; color: rgba(232, 226, 208, 0.92);
+  }
+  .foot-full { font-size: 0.8rem; line-height: 1.7; margin-top: 0.6rem; }
+  .foot-geo { flex: 1 1 340px; min-width: 0; }
+  .foot-cities-label {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em;
+    color: rgba(232, 226, 208, 0.55); margin-bottom: 0.45rem;
+  }
+  .foot-cities-label--second { margin-top: 1.1rem; }
+  /* FLEX, NOT BLOCK — load-bearing. The city spans are emitted with no
+     whitespace text nodes between them, so in a block container the browser
+     has NO break opportunity and the whole row renders as one unbreakable
+     line that overflows its column (measured: scrollWidth 787 in a 354px
+     container). Flex items wrap on their own boundaries regardless of
+     whitespace, which is what makes the row wrap at all. */
+  .foot-cities {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    font-size: 0.82rem; line-height: 1.9;
+  }
+  /* A city name must never break mid-name — "La Quinta" wrapped after "La"
+     in the pre-extraction footer. The break moves onto the separator. */
+  .foot-city { white-space: nowrap; }
+  .foot-sep { color: rgba(232, 226, 208, 0.35); margin: 0 0.4rem; }
+  .foot-bottom {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    justify-content: space-between; align-items: baseline;
+    padding-top: 1.5rem; font-size: 0.78rem;
+  }
+  .foot-copy { color: rgba(232, 226, 208, 0.6); }
+  .foot-copy a { color: rgba(232, 226, 208, 0.6); text-decoration: none; }
+  .foot-copy a:hover { color: var(--volt, #D8FF00); }
+  .foot-links { display: flex; flex-wrap: wrap; gap: 1.1rem; }
+  /* :global() IS LOAD-BEARING, not a shortcut. Astro scopes component styles
+     by stamping a data attribute on elements in THIS template; slotted content
+     comes from the parent page and never gets it. The TOS modal trigger the
+     four modal pages pass through <slot name="links"> therefore rendered
+     browser-default blue and underlined (measured: rgb(0,0,238), underline).
+     Scoping stays tight: `.foot-links` still carries the scope attribute, so
+     this reaches anchors inside this row and nowhere else. */
+  .foot-links :global(a) {
+    color: rgba(232, 226, 208, 0.75); text-decoration: none;
+    white-space: nowrap;
+  }
+  .foot-links :global(a:hover) { color: var(--volt, #D8FF00); }
+  @media (max-width: 640px) {
+    footer { padding: 2.25rem 1.15rem 1.75rem; }
+    .foot-top { gap: 1.75rem; }
+    .foot-bottom { flex-direction: column; gap: 0.85rem; }
+  }
+</style>

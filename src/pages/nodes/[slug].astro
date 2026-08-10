@@ -1,4 +1,5 @@
 ---
+import Footer from '../../components/Footer.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -215,16 +216,6 @@ const schemaJson = {
     }
     .node-body blockquote p { margin-bottom: 0; }
 
-    .site-footer {
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid var(--sand-dark);
-      font-size: 0.8rem;
-      color: var(--pine-light);
-      line-height: 1.7;
-    }
-    .site-footer a { color: var(--pine); text-decoration: none; }
-    .site-footer a:hover { text-decoration: underline; }
 
     @media (max-width: 640px) {
       .node-title { font-size: 1.5rem; }
@@ -260,10 +251,10 @@ const schemaJson = {
       <Content />
     </div>
 
-    <footer style="margin-top:4rem;padding:2rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:0.8rem;opacity:0.5;">
-      <p>AI Coachella Valley · <a href="https://aicoachellavalley.com" style="color:inherit;">aicoachellavalley.com</a> · <a href="/nodes/" style="color:inherit;">Nodes</a> · <a href="/briefs/" style="color:inherit;">Briefs</a></p>
-      {last_updated && <p style="margin-top:0.5rem;">Last reviewed: {last_updated}</p>}
-    </footer>
+
+<Footer variant="compact">
+  {last_updated && <span> · Last reviewed: {last_updated}</span>}
+</Footer>
   </div>
 
 </body>

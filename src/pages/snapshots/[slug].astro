@@ -1,4 +1,5 @@
 ---
+import Footer from '../../components/Footer.astro';
 export async function getStaticPaths() {
   const files = import.meta.glob('../../data/snapshots/*.json');
   return Object.keys(files).map((path) => {
@@ -782,15 +783,6 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
     }
 
     /* FOOTER */
-    .site-footer {
-      margin-top: 60px;
-      padding-top: 28px;
-      border-top: 1px solid var(--sand-dark);
-      text-align: center;
-    }
-    .site-footer p { font-size: 0.8rem; color: var(--pine-light); line-height: 1.8; }
-    .site-footer a { color: var(--pine); text-decoration: none; }
-    .site-footer a:hover { text-decoration: underline; }
 
     @media (max-width: 700px) {
       .entity-name { font-size: 1.6rem; }
@@ -1059,10 +1051,8 @@ const canonicalUrl = `https://aicoachellavalley.com/snapshots/${slug}/`;
 
     </div><!-- /tab-node -->
 
-    <footer class="site-footer">
-      <p>AI Coachella Valley &nbsp;·&nbsp; <a href="https://aicoachellavalley.com">aicoachellavalley.com</a></p>
-      <p>Building the intelligence layer for the Coachella Valley.</p>
-    </footer>
+
+<Footer variant="compact" />
 
   </div><!-- /page-wrap -->
 

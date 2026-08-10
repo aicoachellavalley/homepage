@@ -1,4 +1,5 @@
 ---
+import Footer from '../../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 
@@ -114,19 +115,8 @@ const canonicalUrl = `https://aicoachellavalley.com/nodes/city/${citySlug}/`;
 </main>
 
 <!-- ─── FOOTER ─── -->
-<footer>
-  <div class="foot-inner">
-    <div class="foot-copy">
-      © 2026 AICV · <a href="mailto:sat@aicv.co">sat@aicv.co</a>
-    </div>
-    <div class="foot-links">
-      <a href="/">Home</a>
-      <a href="/nodes/">Nodes</a>
-      <a href="/reports/">Reports</a>
-      <a href="https://x.com/CoachellaAI">@CoachellaAI</a>
-    </div>
-  </div>
-</footer>
+
+<Footer variant="compact" />
 
 <style is:global>
   /* ─── NAV ─── */
@@ -211,20 +201,11 @@ const canonicalUrl = `https://aicoachellavalley.com/nodes/city/${citySlug}/`;
   .back-link:hover { opacity: 1; }
 
   /* ─── FOOTER ─── */
-  footer { background: var(--pine-dark); padding: 2rem 3rem; border-top: 1px solid rgba(232,226,208,0.06); }
-  .foot-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-  .foot-copy { font-size: 0.72rem; color: rgba(232,226,208,0.5); font-weight: 300; }
-  .foot-copy a { color: rgba(232,226,208,0.5); text-decoration: none; }
-  .foot-links { display: flex; gap: 1.5rem; }
-  .foot-links a { font-size: 0.72rem; color: rgba(232,226,208,0.5); text-decoration: none; transition: color 0.2s; }
-  .foot-links a:hover { color: var(--volt); }
 
   @media (max-width: 860px) {
     nav { padding: 1rem 1.5rem; }
     .page-header { padding: 3rem 1.5rem 2.5rem; }
     .nodes-main { padding: 2rem 1.5rem 4rem; }
-    footer { padding: 1.75rem 1.5rem; }
-    .foot-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
   }
 </style>
 
