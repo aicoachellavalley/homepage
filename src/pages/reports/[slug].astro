@@ -282,6 +282,13 @@ const reportSchema = {
       .site-header { padding: 28px 20px 24px; }
     }
   </style>
+  {/* Favicon — same five tags as Base.astro. Repeated here because this route
+      owns its own <head> and does not use the layout. See Base.astro. */}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
 </head>
 <body>
 

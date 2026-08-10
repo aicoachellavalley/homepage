@@ -46,6 +46,17 @@ const ogImageAbsolute = new URL(ogImage, Astro.site).href;
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   )}
 
+  {/* Favicon. Order matters: SVG first for browsers that take it, PNGs next,
+      .ico last with sizes="any" for the legacy request to /favicon.ico.
+      Same five-tag shape the AIQnA pages already use, unprefixed because this
+      is the site's own mark. TEMPORARY ARTWORK — traced from a raster export
+      pending the licensed face; see public/favicon.svg. */}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
