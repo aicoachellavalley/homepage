@@ -33,8 +33,23 @@ if (/\bAIO\b/.test(llms)) errs.push('llms.txt still says "AIO" — retired vocab
  * is left. A bare AICV-near-nonprofit proximity rule would fail the build on
  * the canonical fiscal-sponsorship string itself, which puts those two words
  * eleven apart and is CORRECT. Strip, then match. */
+/* CARRIERS[0] IS DEAD BY RULING (founder ruling 2026-08-11), NOT DEAD CODE.
+ * It was annotated "the locked string" — the one phrasing whose presence was
+ * mandatory-adjacent, protected from the sweep because it attaches to DCF and
+ * not to AICV. The 2026-08-11 ruling retires fiscal-sponsorship framing from
+ * .com entirely: correctly scoped is no longer sufficient grounds to keep it,
+ * because .com is a commercial surface owned by SunshineFM LLC and does not
+ * carry .org's arrangement even accurately. Measured at ruling time: zero
+ * matches for all three carriers across all ten identity surfaces, so the
+ * stripping pass is a no-op today.
+ * KEPT DELIBERATELY. A carrier that matches nothing costs one regex and makes
+ * the gate WRONG in exactly one direction if deleted: a future surface that
+ * legitimately quotes DCF's own 501(c)(3) status — the DCF node's text, a
+ * report discussing the foundation as a subject — would trip zero-tolerance
+ * and fail the build on a true third-party fact. The array is the gate's
+ * definition of "legitimate", not a whitelist of strings we intend to ship. */
 const CARRIERS = [
-  /501\(c\)\(3\) nonprofit organization/gi, // attaches to DCF — the locked string
+  /501\(c\)\(3\) nonprofit organization/gi, // attaches to DCF — dead by ruling 2026-08-11, kept as a third-party carrier
   /nonprofit organizations/gi,              // third parties, plural
   /community nonprofits/gi,
 ];
