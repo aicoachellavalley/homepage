@@ -31,19 +31,9 @@
           "title": "AICV Intelligence Briefs"
         },
         {
-          "href": "https://aicoachellavalley.com/snapshots.json",
-          "type": "application/json",
-          "title": "AICV Snapshots — public-facing entity assessments"
-        },
-        {
           "href": "https://aicoachellavalley.com/reports.json",
           "type": "application/json",
           "title": "AICV Intelligence Reports — regional analyses"
-        },
-        {
-          "href": "https://aicoachellavalley.com/aiqna.json",
-          "type": "application/json",
-          "title": "AIQnA — weekly community question findings and methodology"
         }
       ],
       "service-meta": [

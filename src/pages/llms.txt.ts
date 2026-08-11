@@ -9,8 +9,8 @@ import pricing from '../data/pricing.json';
  * that a number in it is computed from the thing it describes, so there is no
  * anchor to bump when a tranche ships.
  *
- * Added 2026-08-07. Before that, llms.txt described nodes, briefs, reports and
- * snapshots but never mentioned the preview corpus at all — 707 published pages
+ * Added 2026-08-07. Before that, llms.txt described nodes, briefs and reports
+ * but never mentioned the preview corpus at all — 707 published pages
  * were absent from the one file whose whole job is telling an agent what is here.
  */
 const previewManifests = import.meta.glob<{ default: { domain: string; segment: string; count: number; indexable: number; sitemap: string } }>(
@@ -54,7 +54,6 @@ export const GET: APIRoute = async () => {
 - [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All ${nodes.length} geographic nodes, flat JSON, no JS required
 - [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All ${briefs.length} intelligence briefs, flat JSON, no JS required
 - [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.filter((r) => r.data.report_type !== 'methodology').length} long-form intelligence reports (plus the evergreen census methodology page), flat JSON, no JS required
-- [Snapshots (JSON)](https://aicoachellavalley.com/snapshots.json): AICV Intelligence Council snapshots — scored entity assessments
 - [Agent Previews](https://aicoachellavalley.com/sitemap-index.xml): ${previewPages} published Agent Preview pages across ${previews.length} Coachella Valley categories — a dated, independent measurement of how an AI agent reads one specific local business today. ${previewSitemapped} of the ${previewPages} are sitemapped; the other ${previewWithheld} are deliberately noindexed and reachable by direct link only — businesses whose listed web address is dead, hijacked or parked, and businesses with no website on record. Nothing was measured for those, so they are not offered for indexing. Per-category sitemaps under /agent-preview/, all listed in the sitemap index
 - [MCP desk](https://mcp.aicoachellavalley.com/mcp): Deterministic tools for a specific record — nodes, briefs, reports, economic context, by slug, tag, or date range. JSON-RPC 2.0 over POST
 - [Semantic search](https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp): Open questions about the Coachella Valley, answered from the published corpus
@@ -64,7 +63,6 @@ export const GET: APIRoute = async () => {
   https://aicoachellavalley.com/nodes.json — all geographic nodes
   https://aicoachellavalley.com/briefs.json — all intelligence briefs
   https://aicoachellavalley.com/reports.json — all long-form intelligence reports
-  https://aicoachellavalley.com/snapshots.json — all Intelligence Review snapshots
 ${previews.map((m) => `  ${m.sitemap} — ${m.indexable} of ${m.count} ${m.domain} previews (sitemapped; the rest are noindexed by policy)`).join('\n')}
 
 ## Commercial Tier

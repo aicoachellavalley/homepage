@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // build-static-json.js
-// Generates public/nodes.json, public/briefs.json, public/snapshots.json,
-// and public/reports.json from content files in the com repo.
+// Generates public/nodes.json, public/briefs.json and public/reports.json
+// from content files in the com repo.
+// snapshots.json retired 2026-08-11 — see public/_redirects.
 // Run from ~/AICV/core/com: node scripts/build-static-json.js
 
 const fs = require('fs');
@@ -10,7 +11,6 @@ const path = require('path');
 const COM_ROOT   = path.resolve(__dirname, '..');
 const NODES_DIR  = path.join(COM_ROOT, 'src', 'content', 'nodes');
 const BRIEFS_DIR = path.join(COM_ROOT, 'src', 'content', 'briefs');
-const SNAPS_DIR  = path.join(COM_ROOT, 'src', 'data', 'snapshots');
 const REPORTS_DIR = path.join(COM_ROOT, 'src', 'content', 'reports');
 const AIQNA_DIR  = path.join(COM_ROOT, 'src', 'content', 'aiqna');
 const PUBLIC_DIR = path.join(COM_ROOT, 'public');
@@ -188,47 +188,6 @@ function buildBriefs() {
   });
 
   return briefs;
-}
-
-// --- Build snapshots.json ---
-function buildSnapshots(nodeSlugs) {
-  if (!fs.existsSync(SNAPS_DIR)) return [];
-  const snapshots = [];
-
-  for (const fname of fs.readdirSync(SNAPS_DIR)) {
-    if (!fname.endsWith('.json') || fname.startsWith('_')) continue;
-    const raw = fs.readFileSync(path.join(SNAPS_DIR, fname), 'utf8');
-    let data;
-    try { data = JSON.parse(raw); } catch { continue; }
-
-    const slug = data.slug || fname.replace('.json', '');
-    const nodeSlug = nodeSlugs.has(slug) ? slug : null;
-
-    snapshots.push({
-      slug,
-      entityName:       data.entityName       || '',
-      metaTitle:        data.metaTitle         || '',
-      metaDescription:  data.metaDescription   || '',
-      datePublished:    data.datePublished      || '',
-      dateModified:     data.dateModified       || '',
-      snapshotLocation: data.snapshotLocation   || '',
-      snapshotPeriod:   data.snapshotPeriod     || '',
-      grades:           data.grades             || {},
-      opener:           data.opener             || {},
-      findings:         data.findings           || [],
-      actions:          data.actions            ?? null,
-      top_gaps:         data.top_gaps           ?? null,
-      nodeSlug,
-    });
-  }
-
-  snapshots.sort((a, b) => {
-    if (a.datePublished > b.datePublished) return -1;
-    if (a.datePublished < b.datePublished) return 1;
-    return 0;
-  });
-
-  return snapshots;
 }
 
 // --- Build reports.json ---
@@ -588,17 +547,12 @@ async function main() {
   const nodes    = buildNodes();
   const briefs   = buildBriefs();
 
-  // Build set of node slugs for snapshot nodeSlug lookup
-  const nodeSlugs = new Set(nodes.map(n => n.slug));
-
-  const snapshots = buildSnapshots(nodeSlugs);
   const reports   = buildReports();
   const aiqna     = buildAiqna();
 
   // Serialize
   const nodesJson     = JSON.stringify(nodes,     null, 2);
   const briefsJson    = JSON.stringify(briefs,    null, 2);
-  const snapshotsJson = JSON.stringify(snapshots, null, 2);
   const reportsJson   = JSON.stringify(reports,   null, 2);
   const aiqnaJson     = JSON.stringify(aiqna,     null, 2);
 
@@ -611,13 +565,11 @@ async function main() {
   // Write
   fs.writeFileSync(path.join(PUBLIC_DIR, 'nodes.json'),     nodesJson,     'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'briefs.json'),    briefsJson,    'utf8');
-  fs.writeFileSync(path.join(PUBLIC_DIR, 'snapshots.json'), snapshotsJson, 'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'reports.json'),   reportsJson,   'utf8');
   fs.writeFileSync(path.join(PUBLIC_DIR, 'aiqna.json'),     aiqnaJson,     'utf8');
 
   console.log(`nodes.json     — ${nodes.length} nodes     (${(nodesSize  / 1024).toFixed(1)} KB)`);
   console.log(`briefs.json    — ${briefs.length} briefs   (${(briefsSize / 1024).toFixed(1)} KB)`);
-  console.log(`snapshots.json — ${snapshots.length} snapshots`);
   console.log(`reports.json   — ${reports.length} published reports`);
   console.log(`aiqna.json     — ${aiqna.length} entries (methodology + findings)`);
   console.log(`Output: public/`);
@@ -629,7 +581,6 @@ async function main() {
   await submitToIndexNow([
     "https://aicoachellavalley.com/nodes.json",
     "https://aicoachellavalley.com/briefs.json",
-    "https://aicoachellavalley.com/snapshots.json",
     "https://aicoachellavalley.com/reports.json",
     "https://aicoachellavalley.com/aiqna.json",
   ]);

@@ -26,3 +26,28 @@
 # the links were removed as duplicates rather than repointed.
 /nodes/ai-startup-activity/ /nodes/ai-economy-coachella-valley/ 301
 /nodes/ai-startup-activity /nodes/ai-economy-coachella-valley/ 301
+
+# SURFACE retirement (2026-08-11) — /snapshots/ in full, not a single record.
+# Pattern C1 was written for one node inside a live collection; this is the
+# first time a whole route family goes, so it extends: route template, source
+# data, feed, feed generation, sitemap block, llms.txt entries and the
+# api-catalog entry all removed in the same commit.
+#
+# TARGET IS THE MATCHING NODE, PER SLUG — not the homepage. All three snapshot
+# slugs already have a live node of the same name, and snapshots.json carried
+# `nodeSlug` equal to the slug for all three, so the mapping is the repo's own
+# and needed no invention. A snapshot was a scored assessment OF an entity; the
+# node is the current record for that same entity, which makes these true
+# content redirects rather than a soft landing.
+/snapshots/gardens-on-el-paseo/ /nodes/gardens-on-el-paseo/ 301
+/snapshots/gardens-on-el-paseo /nodes/gardens-on-el-paseo/ 301
+/snapshots/sensei-porcupine-creek/ /nodes/sensei-porcupine-creek/ 301
+/snapshots/sensei-porcupine-creek /nodes/sensei-porcupine-creek/ 301
+/snapshots/visit-greater-palm-springs/ /nodes/visit-greater-palm-springs/ 301
+/snapshots/visit-greater-palm-springs /nodes/visit-greater-palm-springs/ 301
+
+# The FEED is forced to 404, not redirected — same treatment as the retired
+# agent-skills path at the top of this file. A 301 from a JSON endpoint to an
+# HTML page hands a parser something it cannot parse and reports success doing
+# it; 404 is the honest answer for a machine surface that no longer exists.
+/snapshots.json 404

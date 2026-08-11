@@ -6,7 +6,6 @@
 //   src/content/nodes/*.mdx
 //   src/content/briefs/*.mdx
 //   src/content/reports/*.mdx
-//   src/data/snapshots/*.json
 //
 // Writes:
 //   src/data/stats.json         (imported by MDX + page components)
@@ -28,7 +27,7 @@ const countByExt = (dir, ext) =>
 // file count that would silently over-report a draft report or planned node.
 // Node status enum: live | under construction | planned.
 // Report status enum: published | draft.
-// briefs/snapshots have no status field, so they stay raw counts (every file
+// briefs have no status field, so they stay a raw count (every file
 // is, by existence, published).
 const countByStatus = (dir, status) =>
   readdirSync(resolve(repoRoot, dir))
@@ -47,7 +46,6 @@ const stats = {
     nodes:     countByStatus('src/content/nodes', 'live'),
     briefs:    countByExt('src/content/briefs', '.mdx'),
     reports:   countByStatus('src/content/reports', 'published'),
-    snapshots: countByExt('src/data/snapshots', '.json'),
   },
 };
 

@@ -18,11 +18,6 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/cvep-what-happened/',    changefreq: 'monthly', priority: '0.8' },
   ];
 
-  const snapshotFiles = import.meta.glob('../data/snapshots/*.json');
-  const snapshots = Object.keys(snapshotFiles).map((path) =>
-    path.replace('../data/snapshots/', '').replace('.json', '')
-  );
-
   const urlEntries: string[] = [];
 
   // Static pages
@@ -63,15 +58,6 @@ export const GET: APIRoute = async () => {
     const lastmod = entry.data.date;
     urlEntries.push(`  <url>
     <loc>https://aicoachellavalley.com/reports/${slug}/</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>`);
-  }
-
-  // Snapshots
-  for (const slug of snapshots) {
-    urlEntries.push(`  <url>
-    <loc>https://aicoachellavalley.com/snapshots/${slug}/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`);

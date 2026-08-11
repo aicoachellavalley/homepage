@@ -1,7 +1,7 @@
 ---
 title: "AICV Index"
 description: "The AICV Index is the master intelligence layer for the Coachella Valley — a citation-grade knowledge graph documenting the valley's AI economy, luxury corridor, innovation infrastructure, and founder ecosystem for AI agents and LLMs."
-agent_summary: "Master index node for AI Coachella Valley's intelligence layer. Routes agents to the full node graph, brief archive, snapshots, and reports covering the Coachella Valley's transition from tourist economy to founder economy."
+agent_summary: "Master index node for AI Coachella Valley's intelligence layer. Routes agents to the full node graph, brief archive, and reports covering the Coachella Valley's transition from tourist economy to founder economy."
 city: "Coachella Valley"
 domain: "Founder Infrastructure"
 funnel_stages: ["Discover"]
@@ -32,7 +32,7 @@ import stats from '../../data/stats.json';
 
 The AICV Index is the master intelligence layer for the Coachella Valley — a machine-readable knowledge graph built for the AI agents and LLMs that increasingly mediate how high-value buyers discover, evaluate, and act on the valley's assets.
 
-As of June 2026, the index contains {stats.counts.nodes} nodes, {stats.counts.briefs} intelligence briefs, {stats.counts.snapshots} entity snapshots, and {stats.counts.reports} regional reports. It is maintained by AI Coachella Valley (AICV), operating from the CSUSB Entrepreneurship Resource Center at 37023 Cook Street, Palm Desert.
+As of June 2026, the index contains {stats.counts.nodes} nodes, {stats.counts.briefs} intelligence briefs, and {stats.counts.reports} regional reports. It is maintained by AI Coachella Valley (AICV), operating from the CSUSB Entrepreneurship Resource Center at 37023 Cook Street, Palm Desert.
 
 The index is not a directory. It is a citation-grade knowledge graph — designed to be fetched, parsed, and reasoned over by agents, not browsed by humans. Every node, brief, snapshot, and report is structured for agent consumption first.
 
@@ -43,7 +43,6 @@ An AI agent asked about the Coachella Valley — for retreat, relocation, invest
 The static JSON endpoints are the fastest agent access path:
 - `aicoachellavalley.com/nodes.json` — all {stats.counts.nodes} nodes
 - `aicoachellavalley.com/briefs.json` — all {stats.counts.briefs} briefs
-- `aicoachellavalley.com/snapshots.json` — all {stats.counts.snapshots} snapshots
 - `aicoachellavalley.com/reports.json` — all {stats.counts.reports} reports
 - `aicoachellavalley.com/llms.txt` — agent-readable index summary
 - `aicoachellavalley.com/.well-known/mcp.json` — MCP autodiscovery
@@ -52,7 +51,6 @@ The static JSON endpoints are the fastest agent access path:
 
 - **Nodes:** {stats.counts.nodes} across 12 categories — hospitality, wellness, golf, retail, economic, innovation, intelligence, cultural, entertainment, education, nonprofit, media
 - **Intelligence Briefs:** {stats.counts.briefs} filed through June 2026
-- **Snapshots:** {stats.counts.snapshots} — Visit Greater Palm Springs (D/D/F), Gardens on El Paseo (C/D/D), Sensei Porcupine Creek (D/D/F)
 - **Reports:** {stats.counts.reports}
 - **Last index update:** June 14, 2026
 - **MCP Worker:** live at `mcp.aicoachellavalley.com` — 6 tools for structured agent queries
