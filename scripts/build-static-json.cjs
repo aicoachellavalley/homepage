@@ -376,6 +376,71 @@ function generateLlmsFullTxt() {
     text.replace(/\{\s*stats\.counts\.(\w+)\s*\}/g, (m, key) =>
       statsCounts[key] != null ? String(statsCounts[key]) : m);
 
+  /* Strip MDX comments — same reason as renderExpr above, one step further.
+   * `{/* … *\/}` renders as nothing on the page but is authoring history we
+   * keep on disk (source attributions on Key Facts lines, dataset provenance
+   * at the top of census reports). This dump is raw MDX source, so all 169 of
+   * them shipped as literal text to agents. Measured 2026-08-11: 169 across
+   * 35 files — 160 trailing, 9 standalone, 0 multi-line, 0 unclosed.
+   *
+   * FENCE-AWARE, and that is not defensive padding. Inside a fenced code block
+   * MDX treats `{/*` as literal text and RENDERS it, so stripping there would
+   * put llms-full.txt out of sync with the page — the exact failure renderExpr
+   * exists to prevent. Zero comments sit in fences today; this keeps that true
+   * if someone later documents MDX syntax in a report.
+   *
+   * THREE passes, and the order is load-bearing.
+   *   1. PADDED  — a standalone comment sitting between two blank lines is a
+   *      paragraph on its own. Removing just its line leaves the blank above
+   *      AND below, i.e. a doubled gap. Measured on the first cut of this
+   *      function: runs of 3+ consecutive newlines went 5 -> 14. This pass
+   *      takes the comment line and ONE of the two blanks, restoring the
+   *      normal paragraph break.
+   *   2. STANDALONE — a comment alone on its line with content above/below;
+   *      take the whole line or it leaves a blank where content used to be.
+   *   3. TRAILING — take the comment plus the space in front of it, so
+   *      "Opened: December 2022 {/* source *\/}" keeps no dangling space.
+   * All three are anchored on the literal `{/*` opener, so the 29 real JSX
+   * expressions in the corpus ({ label: … } object literals, {stats.counts.X})
+   * cannot match. */
+  const stripMdxComments = (text) => {
+    /* PADDED keeps ONE newline of the three it consumes (the line-ender above,
+     * the blank, and the comment's own line-ender), which is what turns a
+     * doubled gap back into a single paragraph break. Applied in a loop: with
+     * /g the scan resumes after each match, so two padded comments in a row
+     * only collapse one per pass. */
+    const PADDED = /(\r?\n)[ \t]*\r?\n[ \t]*\{\/\*[\s\S]*?\*\/\}[ \t]*\r?\n(?=[ \t]*\r?\n)/g;
+    const STANDALONE = /^[ \t]*\{\/\*[\s\S]*?\*\/\}[ \t]*(?:\r?\n|$)/gm;
+    const TRAILING = /[ \t]*\{\/\*[\s\S]*?\*\/\}/g;
+    const collapsePadded = (s) => {
+      let prev;
+      do { prev = s; s = s.replace(PADDED, '$1'); } while (s !== prev);
+      return s;
+    };
+    const out = [];
+    let prose = [];
+    let inFence = false;
+    const flush = () => {
+      if (prose.length) out.push(
+        collapsePadded(prose.join('\n')).replace(STANDALONE, '').replace(TRAILING, '')
+      );
+      prose = [];
+    };
+    for (const line of text.split('\n')) {
+      if (/^\s*(?:```|~~~)/.test(line)) { flush(); inFence = !inFence; out.push(line); continue; }
+      if (inFence) out.push(line); else prose.push(line);
+    }
+    flush();
+    return out.join('\n');
+  };
+
+  /* TRIM AFTER THE STRIP, not before. A file ending "…text\n\n{/* note *\/}"
+   * is already trimmed as authored — the comment is the last non-whitespace
+   * thing in it — so trimming first and stripping second leaves a trailing
+   * "\n\n" that lands next to the "\n\n---\n\n" section joiner and renders as
+   * a 3-blank-line gap before the separator. Measured: 4 such gaps. */
+  const toFlatText = (content) => renderExpr(stripMdxComments(content).trim());
+
   // Nodes — sorted alphabetically by slug
   const nodeFiles = walkMdx(NODES_DIR).sort((a, b) =>
     path.basename(a).localeCompare(path.basename(b))
@@ -398,19 +463,19 @@ function generateLlmsFullTxt() {
   const nodeSections = nodeFiles.map(filePath => {
     const slug = path.basename(filePath, '.mdx');
     const content = fs.readFileSync(filePath, 'utf8');
-    return `## node: ${slug}\n\n${renderExpr(content.trim())}`;
+    return `## node: ${slug}\n\n${toFlatText(content)}`;
   });
 
   const briefSections = briefFiles.map(filePath => {
     const slug = path.basename(filePath, '.mdx');
     const content = fs.readFileSync(filePath, 'utf8');
-    return `## brief: ${slug}\n\n${renderExpr(content.trim())}`;
+    return `## brief: ${slug}\n\n${toFlatText(content)}`;
   });
 
   const reportSections = reportFiles.map(filePath => {
     const slug = path.basename(filePath, '.mdx');
     const content = fs.readFileSync(filePath, 'utf8');
-    return `## report: ${slug}\n\n${renderExpr(content.trim())}`;
+    return `## report: ${slug}\n\n${toFlatText(content)}`;
   });
 
   const header = [
@@ -483,6 +548,18 @@ function generateLlmsFullTxt() {
 
 // --- IndexNow submission ---
 async function submitToIndexNow(urls) {
+  /* SKIPPABLE FOR LOCAL VERIFICATION (added 2026-08-11).
+   * This function is the script's only outbound call, and the script is the
+   * only thing that regenerates llms-full.txt — so any local check of the dump
+   * used to cost a live "please recrawl" ping for five feed URLs whose content
+   * had not been deployed. Set AICV_NO_INDEXNOW=1 to regenerate silently.
+   * NOT wired to CI or to a NODE_ENV guess: Cloudflare's build must keep
+   * pinging, and inferring intent from the environment is how a real deploy
+   * ends up silently unindexed. Opt out explicitly or not at all. */
+  if (process.env.AICV_NO_INDEXNOW === '1') {
+    console.log(`IndexNow: skipped (AICV_NO_INDEXNOW=1) — ${urls.length} URLs not submitted`);
+    return;
+  }
   // IndexNow key: strict Option 1 — {key}.txt served at the site root, so the
   // protocol's default keyLocation (https://host/{key}.txt) is used; no explicit
   // keyLocation field needed. Reset 2026-06-12 to a fresh hex key (the prior
