@@ -34,11 +34,19 @@ import { join } from 'node:path';
 const OWNERSHIP = 'A product and service of SunshineFM LLC';
 
 /* EXEMPT, and each for a recorded reason — not a convenience list.
- *   terms/      legally scoped, parked pending counsel (com/STATE.md)
  *   aiqna/      programme disclosure; AIQnA carries its own ownership
  *               phrasing ("Powered by SunshineFM LLC") and is a separate
- *               project. If AIQnA ever separates, that string goes with it. */
-const EXEMPT = [/^aiqna\//, /^terms\//];
+ *               project. If AIQnA ever separates, that string goes with it.
+ *
+ * terms/ WAS EXEMPT AND NO LONGER IS (founder ruling 2026-08-11). It was
+ * exempted as "legally scoped, parked pending counsel" — and that exemption
+ * is exactly why /terms/ was the last page on .com asserting fiscal
+ * sponsorship and a 501(c)(3), in a hand-rolled <footer> that named no owner
+ * at all. The counterparty copy is now corrected and the standard ownership
+ * statement is in that footer, so the page is inside the gate. What still
+ * goes to counsel is the DCF indemnity clause, which this gate does not
+ * touch: a parked clause is not grounds to park the whole page. */
+const EXEMPT = [/^aiqna\//];
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
 const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>

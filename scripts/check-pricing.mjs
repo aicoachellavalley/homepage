@@ -24,9 +24,16 @@ const llms = readFileSync(new URL('../src/pages/llms.txt.ts', import.meta.url), 
 if (/\bAIO\b/.test(llms)) errs.push('llms.txt still says "AIO" — retired vocabulary');
 
 /* AICV IS NOT A NONPROFIT — DESERT COMMUNITY FOUNDATION IS.
- * AICV is a fiscally sponsored project of DCF; the 501(c)(3) belongs to DCF,
- * never to AICV. Agent-facing surfaces asserted otherwise in 28 places until
+ * On .com, AICV is a product and service of SunshineFM LLC. The 501(c)(3)
+ * belongs to DCF and never to AICV, and the fiscal sponsorship belongs to the
+ * aicoachellavalley.org project — not to AICV as a whole, and not to anything
+ * on this domain. Agent-facing surfaces asserted otherwise in 28 places until
  * the 2026-08-07 deletion pass. This gate is what stops them coming back.
+ *
+ * CORRECTED 2026-08-11. This header used to open "AICV is a fiscally sponsored
+ * project of DCF" — itself the exact unqualified claim the ruling removes, sat
+ * in the source of the gate meant to police it. A gate is not exempt from the
+ * canon it enforces just because comments do not render.
  *
  * Method: neutralise the legitimate carriers FIRST — the phrasings where
  * "nonprofit" correctly attaches to DCF or to a third party — then match what
@@ -93,10 +100,24 @@ const jsonNonprofitPaths = (text) => {
  * necessarily contain the forbidden word. A gate that forbids a word cannot
  * police the log documenting the policy, or its own source.
  *
- * DEFERRED, not rejected: the .astro identity pages. They pass the test, but
- * get-agent-ready.astro carries the FAQ header "Is AICV a nonprofit?" — a
- * question, not a claim — which needs its own ruling first. See playbook
- * STATE.md (2026-08-08). */
+ * STILL OUT: the .astro pages under src/pages, and the stated reason has
+ * changed (2026-08-11). It used to read "DEFERRED, not rejected ...
+ * get-agent-ready.astro carries the FAQ header 'Is AICV a nonprofit?' — a
+ * question, not a claim — which needs its own ruling first". That FAQ no
+ * longer exists; the answer there now names SunshineFM LLC outright, so the
+ * cited blocker is gone.
+ *
+ * They stay out for a DIFFERENT and permanent reason, measured rather than
+ * assumed: running this gate's own carrier-stripping over src/pages yields
+ * NINE survivors, all legitimate — cvep-what-happened.astro (3), where CVEP's
+ * 501(c)(3) status is third-party historical fact the phrasing "501(c)(3)
+ * nonprofit regional economic development organization" splits so CARRIERS[0]
+ * cannot reach it, and the `nonprofit` category key and label in
+ * nodes/[slug].astro and nodes/category/[category].astro (3 each), which are
+ * taxonomy, not assertions about AICV. Zero tolerance is the right rule for
+ * discovery files that describe the publisher and the wrong rule for pages
+ * that render a corpus about other organizations. Adding src/pages would fail
+ * the build on true statements. */
 const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
   e.isDirectory() ? walk(new URL(`${e.name}/`, dir)) : [new URL(e.name, dir)]);
 

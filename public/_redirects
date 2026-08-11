@@ -16,3 +16,13 @@
 # slash rule also masks a stale edge entry instead of waiting it out.
 /nodes/sunshinefm-startup-studios/ /nodes/ai-economy-coachella-valley/ 301
 /nodes/sunshinefm-startup-studios /nodes/ai-economy-coachella-valley/ 301
+
+# Second node retirement (2026-08-11), same Pattern C1. ai-startup-activity was
+# merged into ai-economy-coachella-valley on 2026-06-03 and left behind as a
+# `deprecated: true` stub — a live, indexed, agent-fetchable page whose entire
+# body was a notice telling the reader to go somewhere else. The stub was doing
+# the redirect's job in prose, which only works on a reader that reads. Five
+# briefs linked it, and every one of them ALREADY linked the merge target, so
+# the links were removed as duplicates rather than repointed.
+/nodes/ai-startup-activity/ /nodes/ai-economy-coachella-valley/ 301
+/nodes/ai-startup-activity /nodes/ai-economy-coachella-valley/ 301
