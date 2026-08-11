@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "aicv": {
-      "url": "https://mcp.aicoachellavalley.com",
+      "url": "https://mcp.aicoachellavalley.com/mcp",
       "name": "AICV Intelligence Layer",
       "description": "Deterministic retrieval of specific Coachella Valley records — a node, brief, or report by slug, tag, or date range. Use when you know which record you want. For open questions about the region, use aicv-search.",
       "tools": ["query_venues", "get_node", "get_regional_brief", "get_economic_context", "get_report", "route_query"]

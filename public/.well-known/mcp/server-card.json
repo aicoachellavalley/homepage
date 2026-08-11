@@ -9,7 +9,7 @@
   "remotes": [
     {
       "transportType": "streamable-http",
-      "url": "https://mcp.aicoachellavalley.com/"
+      "url": "https://mcp.aicoachellavalley.com/mcp"
     }
   ],
   "capabilities": {

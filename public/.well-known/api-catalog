@@ -39,11 +39,16 @@
           "href": "https://aicoachellavalley.com/reports.json",
           "type": "application/json",
           "title": "AICV Intelligence Reports — regional analyses"
+        },
+        {
+          "href": "https://aicoachellavalley.com/aiqna.json",
+          "type": "application/json",
+          "title": "AIQnA — weekly community question findings and methodology"
         }
       ],
       "service-meta": [
         {
-          "href": "https://mcp.aicoachellavalley.com/",
+          "href": "https://mcp.aicoachellavalley.com/mcp",
           "title": "AICV MCP Server — agent-native access via Model Context Protocol (JSON-RPC 2.0 over HTTP)"
         },
         {
