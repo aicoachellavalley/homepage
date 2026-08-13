@@ -2,8 +2,8 @@
  "domain": "Food & Dining",
  "segment": "food-dining",
  "generated": "2026-07-15",
- "count": 440,
- "indexable": 406,
+ "count": 441,
+ "indexable": 407,
  "sitemap": "https://aicoachellavalley.com/agent-preview/sitemap-previews-food-dining.xml",
  "entries": [
   {
@@ -130,6 +130,13 @@
    "name": "Apong's Philly Steak",
    "city": "Cathedral City",
    "url": "https://aicoachellavalley.com/agent-preview/food-dining/apongs-philly-steak",
+   "indexable": true
+  },
+  {
+   "slug": "aqua-bar-grill",
+   "name": "Aqua Bar & Grill",
+   "city": "Desert Hot Springs",
+   "url": "https://aicoachellavalley.com/agent-preview/food-dining/aqua-bar-grill",
    "indexable": true
   },
   {

@@ -2,8 +2,8 @@
  "domain": "Hospitality & Retreat Venues",
  "segment": "hospitality",
  "generated": "2026-07-15",
- "count": 73,
- "indexable": 72,
+ "count": 74,
+ "indexable": 73,
  "sitemap": "https://aicoachellavalley.com/agent-preview/sitemap-previews-hospitality.xml",
  "entries": [
   {
@@ -375,6 +375,13 @@
    "name": "The Chateau at Lake La Quinta",
    "city": "La Quinta",
    "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-chateau-at-lake-la-quinta",
+   "indexable": true
+  },
+  {
+   "slug": "the-destiny-venue",
+   "name": "The Destiny Venue",
+   "city": "Adjacent Communities",
+   "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-destiny-venue",
    "indexable": true
   },
   {
