@@ -1054,8 +1054,13 @@ const foundingCohortSchema = {
   .intel-cta:hover { background: #e8ff33; gap: 0.75rem; }
 
   /* ─── FOCAL BLOCK: STATS + BLUEPRINT ─── */
+  /* The dark band. `.focal-updated` supplies the space above its own text;
+     this mirrors it below the stats panel so the whole group sits centred in
+     the band rather than resting on its bottom edge. Before the blueprint
+     banner was removed (7b6b245) the banner occupied that space. */
   .focal-block {
     background: var(--pine);
+    padding-bottom: 1.75rem;
   }
 
   .focal-updated {
@@ -1070,7 +1075,12 @@ const foundingCohortSchema = {
   .stats-inner {
     max-width: 1060px;
     margin: 0 auto;
-    padding: 1.25rem 3rem 3.5rem;
+    /* SYMMETRIC. Was `1.25rem 3rem 3.5rem` — a 20px/56px split introduced by
+       6468bfc, which tightened the top when the "Updated" line was added above
+       and left the bottom carrying the blueprint banner's share of the space.
+       The banner is gone (7b6b245), so the tail was holding nothing and the
+       cards read as top-aligned in their own tinted panel at 2.8:1. */
+    padding: 2rem 3rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
@@ -1669,12 +1679,14 @@ const foundingCohortSchema = {
     .intel-inner { padding: 2rem 1.5rem; }
     .intel-grid { grid-template-columns: 1fr; }
     .focal-updated { padding: 1.25rem 1.5rem 0; }
+    .focal-block { padding-bottom: 1.25rem; }
     /* Stat bar at phone width. `1fr` is minmax(auto,1fr), so a cell whose
        min-content is wider than its share (2,914 renders ~171px against a
        ~91px content box) pushes its track wider and overflows the row. Three
        bounded changes, stat bar only: tracks may shrink below min-content,
        tighter cell padding, smaller numerals. */
-    .stats-inner { padding: 0.75rem 1.5rem 2rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    /* Symmetric here too — the phone rule carried the same 12px/32px split. */
+    .stats-inner { padding: 1.25rem 1.5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .stat-cell { padding: 1.5rem 0.85rem; min-width: 0; }
     .stat-n { font-size: 1.9rem; letter-spacing: -0.03em; }
     .stat-l { overflow-wrap: anywhere; }
