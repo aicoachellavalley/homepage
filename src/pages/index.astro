@@ -12,6 +12,15 @@ const previewsLive = Object.values(previewManifests)
   .reduce((n, m) => n + (m.default?.count ?? 0), 0);
 const businessesMapped = corpus.businesses_mapped;
 
+/* EVERY stat cell formats through this one function. Applying it per-cell is
+ * what produced the defect it fixes: `businessesMapped` carried
+ * .toLocaleString() and `previewsLive` did not, so the bar rendered "1568"
+ * beside "2,914". Briefs (174) and Reports (13) render identically with or
+ * without it today — they are included because Briefs climbs, and on crossing
+ * 1,000 it would reproduce exactly this. A new cell inherits the format
+ * instead of having to remember it. */
+const stat = (n) => n.toLocaleString('en-US');
+
 // Bar shape RULED 2026-07-25: exactly four cells — Briefs · Reports ·
 // Businesses Mapped · Live Agent Previews. The grid is repeat(4,1fr) desktop
 // and 1fr 1fr phone, so a fifth cell orphans on both. Nodes keep their page
@@ -316,19 +325,19 @@ const foundingCohortSchema = {
   <p class="focal-updated">Updated {lastUpdatedDisplay}</p>
   <div class="stats-inner">
     <div class="stat-cell">
-      <div class="stat-n">{briefCount}</div>
+      <div class="stat-n">{stat(briefCount)}</div>
       <div class="stat-l">AICV Intelligence<br>Briefs Published</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">{reportCount}</div>
+      <div class="stat-n">{stat(reportCount)}</div>
       <div class="stat-l">AICV Intelligence<br>Reports Published</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">{businessesMapped.toLocaleString('en-US')}</div>
+      <div class="stat-n">{stat(businessesMapped)}</div>
       <div class="stat-l">Coachella Valley<br>Businesses Mapped</div>
     </div>
     <div class="stat-cell">
-      <div class="stat-n">{previewsLive}</div>
+      <div class="stat-n">{stat(previewsLive)}</div>
       <div class="stat-l">Businesses with a<br>live Agent Preview</div>
     </div>
   </div>
