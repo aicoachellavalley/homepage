@@ -2,11 +2,24 @@
 import Footer from '../components/Footer.astro';
 import pricing from '../data/pricing.json';
 import Base from '../layouts/Base.astro';
-import nodesData from '../../public/nodes.json';
-import briefsData from '../../public/briefs.json';
 
-const nodeCount = nodesData.length;
-const briefCount = briefsData.length;
+/* HERO STRIP REDUCED 2026-08-19 to "Established 2025". It was
+ * "{nodeCount} nodes · {briefCount} briefs · est. 2025 · Proof of work →".
+ *
+ * The two counts went for three reasons: they are a second place to maintain,
+ * the homepage stat bar already carries them, and as prose inside a <span> they
+ * prove nothing to an agent — the machine-readable claim is nodes.json and
+ * briefs.json, which is where a consumer actually reads them.
+ *
+ * nodes.json and briefs.json were imported for those counts and NOTHING else on
+ * this page — neither feeds its JSON-LD — so both imports and both consts went
+ * with them. The "Proof of work" link to /nodes/node-zero went too: that page is
+ * reached from ~40 other routes, including this page's own nav, so nothing is
+ * orphaned. Checked before removal.
+ *
+ * Kept in frontmatter, not as an HTML comment: this rationale is for whoever
+ * edits the page, and an HTML comment would ship seven lines of it to every
+ * reader of the served document. */
 
 const pageTitle = 'AI Agents in the Coachella Valley — Get Agent Ready | AICV';
 const pageDescription = "How do AI agents see your Coachella Valley business? Free agent-readiness diagnostic from AICV, the region's intelligence network for the agentic internet.";
@@ -354,12 +367,7 @@ const schemaGraph = {
       <p class="gr-sub">AICV is the Coachella Valley's intelligence network for the agentic internet.</p>
       <p class="gr-lead">AICV gives your business a structured, AI-readable profile — so AI tools can understand, discover, and route people to you, without touching your website.</p>
       <div class="gr-stats">
-        <span class="gr-stat">{nodeCount} nodes</span>
-        <span class="gr-dot" aria-hidden="true">·</span>
-        <span class="gr-stat">{briefCount} briefs</span>
-        <span class="gr-dot" aria-hidden="true">·</span>
-        <span class="gr-stat">est. 2025</span>
-        <a href="/nodes/node-zero" class="gr-proof-link">Proof of work →</a>
+        <span class="gr-stat">Established 2025</span>
       </div>
     </div>
     <div class="gr-tool" id="diagnostic">
@@ -2495,9 +2503,12 @@ const schemaGraph = {
   .gr-h1 { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: clamp(2.4rem, 4.6vw, 3.4rem); line-height: 1.08; letter-spacing: -.01em; color: var(--pine-dark); margin: 0 0 1rem; }
   .gr-sub { font-size: 1.05rem; line-height: 1.6; color: var(--pine); margin: 0 0 .6rem; }
   .gr-lead { font-size: 1rem; line-height: 1.7; color: var(--pine); margin: 0 0 .9rem; max-width: none; }
+  /* Still flex with a single child: the wrapper keeps its own vertical rhythm
+     against .gr-lead above it, and gap/wrap simply have nothing to act on.
+     `.gr-dot` and `.gr-proof-link` were the separators and the Node Zero link,
+     both removed with the counts — rules deleted rather than left as dead
+     selectors on a page that inlines its CSS. */
   .gr-stats { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; font-size: .9rem; color: var(--pine); }
-  .gr-dot { color: var(--pine-light); }
-  .gr-proof-link { color: var(--pine-dark); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; margin-left: .4rem; }
 
   /* Tool card */
   .gr-tool { background: #fff; border: .5px solid rgba(18,43,34,.2); border-radius: 12px; padding: 28px 28px 30px; }
