@@ -1,6 +1,12 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import pricing from '../data/pricing.json';
+import claimedData from '../data/previews-claimed.json';
+// @ts-expect-error — the PURE half of the shared helper (no filesystem, no
+// paths), so importing it here cannot reach a `__dirname` that does not exist
+// in Vite's ESM scope. build-static-json.cjs uses the same function via its
+// disk-reading sibling, which is what stops the two surfaces disagreeing.
+import { resolveMembers } from '../../scripts/claimed-members.cjs';
 
 /**
  * Agent Preview tranche manifests — the SAME committed data /sitemap-index.xml
@@ -22,6 +28,29 @@ export const GET: APIRoute = async () => {
   const nodes   = await getCollection('nodes');
   const briefs  = await getCollection('briefs');
   const reports = (await getCollection('reports')).filter((r) => r.data.status === 'published');
+
+  /* VERIFIED MEMBERS (2026-08-19). A merchant who has paid AND had ownership
+   * verified had no named line on any agent-facing surface — previews were
+   * referenced only collectively, so "presence on the AICV network" resolved to
+   * nothing an agent could read. The resolution is shared with llms-full.txt
+   * (scripts/claimed-members.cjs) so the two can never name different members,
+   * and it THROWS if a member has no published page rather than pointing an
+   * agent at a URL that does not exist.
+   *
+   * Name and URL only. The claim census is findings-free by construction, so it
+   * carries nothing the owner supplied — that is the honest scope of what this
+   * surface can assert, and widening it would mean putting owner facts into a
+   * file built not to hold them. */
+  const { members } = resolveMembers(
+    claimedData,
+    Object.values(previewManifests).map((m) => m.default as any)
+  );
+  const membersSection = members.length
+    ? `## Agent Ready Members\n\nBusinesses whose owner has verified ownership of the domain and activated their page. `
+      + `Facts on these pages carry provenance in the page's data island: measured by AICV, or supplied by the verified owner. `
+      + `Verification confirms WHO the owner is, never that what they supplied is accurate.\n\n`
+      + members.map((m) => `  ${m.name} — ${m.city} — ${m.url}`).join('\n') + '\n\n'
+    : '';
 
   /* Sorted largest-first so the ordering is deterministic across builds —
    * import.meta.glob key order is not a contract. */
@@ -65,7 +94,7 @@ export const GET: APIRoute = async () => {
   https://aicoachellavalley.com/reports.json — all long-form intelligence reports
 ${previews.map((m) => `  ${m.sitemap} — ${m.indexable} of ${m.count} ${m.domain} previews (sitemapped; the rest are noindexed by policy)`).join('\n')}
 
-## Commercial Tier
+${membersSection}## Commercial Tier
 
 - [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — four tiers on one ladder:
 ${pricing.tiers.map((t) => `  - ${t.name}: ${t.llms}`).join('\n')}

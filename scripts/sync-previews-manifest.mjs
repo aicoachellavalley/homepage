@@ -46,3 +46,40 @@ for (const f of readdirSync(srcDir).filter((x) => /^previews-index-.+\.json$/.te
   n++;
 }
 console.log(`sync-previews-manifest: ${n} manifest(s) derived from the mva build`);
+
+/* ── VERIFIED MEMBERS (2026-08-19) ──────────────────────────────────────────
+ * The manifests above say what is PUBLISHED. This says who has PAID AND
+ * VERIFIED, which is a different fact and lives in a different place: mva's
+ * previews/claims-snapshot.json, a census of activate's D1 written by
+ * previews/sync-claims.mjs.
+ *
+ * ⚠️ THE SNAPSHOT, NOT claimed.json. claimed.json is hand-written, and mva's
+ * build gate reconciles it against D1 only for the ONE TRANCHE being built — so
+ * a self-serve DNS claim in another category can be Live and correct while
+ * absent from every claimed.json this repo could read. The snapshot is
+ * whole-corpus and covers both verification paths.
+ *
+ * Slugs only. The snapshot is findings-free by construction and carries no
+ * owner-supplied facts, so the honest scope of a named presence is a name and a
+ * URL — both of which come from the manifest entries, joined at build time by
+ * scripts/claimed-members.cjs. */
+const snapPath = resolve(srcDir, '../../previews/claims-snapshot.json');
+if (existsSync(snapPath)) {
+  const snap = JSON.parse(readFileSync(snapPath, 'utf8'));
+  if (!Array.isArray(snap.d1)) {
+    console.error(`  claims-snapshot.json has no d1[] — refusing to sync the member list`);
+    process.exit(1);
+  }
+  const slugs = snap.d1.filter((r) => r.status === 'live').map((r) => r.slug).sort();
+  const outFile = resolve(here, '../src/data/previews-claimed.json');
+  const prev = existsSync(outFile) ? JSON.parse(readFileSync(outFile, 'utf8')) : {};
+  writeFileSync(outFile, JSON.stringify({
+    ...prev,
+    generated: snap.generated,
+    source: snap.source,
+    slugs,
+  }, null, 2) + '\n');
+  console.log(`sync-previews-manifest: ${slugs.length} verified member(s) from claims-snapshot ${String(snap.generated).slice(0, 10)}`);
+} else {
+  console.log(`sync-previews-manifest: no claims-snapshot.json beside mva — member list left as committed`);
+}

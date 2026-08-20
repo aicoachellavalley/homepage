@@ -444,11 +444,36 @@ function generateLlmsFullTxt() {
     `# https://aicoachellavalley.com`,
   ].join('\n');
 
-  // Order: header → reports (long-form research; highest signal density) →
-  // nodes (canonical entities) → briefs (chronological intelligence stream).
-  // Snapshots are intentionally excluded: they are JSON, not MDX, and would
-  // require a separate formatting pass to render as readable text.
-  const output = [header, ...reportSections, ...nodeSections, ...briefSections].join('\n\n---\n\n');
+  /* VERIFIED MEMBERS (2026-08-19). llms.txt is the index and this is the corpus
+   * dump; an agent that ingests only this file in one pass would otherwise find
+   * the member list absent entirely — present on the index, invisible to that
+   * ingestion path. Founder ruling: both surfaces, same derivation.
+   *
+   * SAME derivation, literally — scripts/claimed-members.cjs is shared with
+   * src/pages/llms.txt.ts, so the two cannot name different members, and it
+   * THROWS on a member with no published page rather than emitting a URL that
+   * 404s. With an empty claimed set this contributes nothing and the file is
+   * byte-identical to before. */
+  const { members: claimedList } = require('./claimed-members.cjs').claimedMembers();
+  const memberSection = claimedList.length
+    ? [
+        `# Agent Ready Members`,
+        ``,
+        `Businesses whose owner has verified ownership of the domain and activated their page.`,
+        `Facts on these pages carry provenance in the page's data island: measured by AICV, or`,
+        `supplied by the verified owner. Verification confirms WHO the owner is, never that what`,
+        `they supplied is accurate.`,
+        ``,
+        ...claimedList.map((m) => `  ${m.name} — ${m.city} — ${m.url}`),
+      ].join('\n')
+    : null;
+
+  // Order: header → members (the verified set, named) → reports (long-form
+  // research; highest signal density) → nodes (canonical entities) → briefs
+  // (chronological intelligence stream). Snapshots are intentionally excluded:
+  // they are JSON, not MDX, and would require a separate formatting pass to
+  // render as readable text.
+  const output = [header, ...(memberSection ? [memberSection] : []), ...reportSections, ...nodeSections, ...briefSections].join('\n\n---\n\n');
 
   /* ── Size guard, two tiers (added 2026-07-31) ──────────────────────────────
    *

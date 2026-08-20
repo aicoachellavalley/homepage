@@ -1,0 +1,8 @@
+{
+  "$comment": "VERIFIED MEMBERS — businesses whose owner has paid AND had ownership verified, and whose preview page therefore renders Live. Derived from mva's previews/claims-snapshot.json, which is a census of activate's D1. Written by scripts/sync-previews-manifest.mjs; never by hand.",
+  "$why_not_claimed_json": "mva's previews/claimed.json is hand-written and its build-time reconciliation against D1 is scoped to the ONE tranche being built, so it proves nothing about a self-serve DNS claim in another category. The snapshot is whole-corpus. A cross-tranche surface needs the whole-corpus source.",
+  "$absent_is_not_empty": "A missing or unreadable file throws rather than resolving to zero members — dropping a paid member silently is the failure this file exists to prevent.",
+  "generated": "2026-08-19T22:20:52.739Z",
+  "source": "endpoint",
+  "slugs": []
+}
