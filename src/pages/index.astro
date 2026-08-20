@@ -3,13 +3,31 @@ import Footer from '../components/Footer.astro';
 import Base from '../layouts/Base.astro';
 import briefsData from '../../public/briefs.json';
 import reportsData from '../../public/reports.json';
-import statsData from '../data/stats.json';
 import corpus from '../data/corpus.json';
+import deployed from '../data/previews-deployed.json';
 const previewManifests = import.meta.glob('../data/previews/previews-index-*.json', { eager: true });
 
-// Derived, never literal. Both climb as tranches ship and censuses land.
-const previewsLive = Object.values(previewManifests)
-  .reduce((n, m) => n + (m.default?.count ?? 0), 0);
+/* Derived, never literal — and derived from what is SERVING, not what was
+ * built. The manifests are build artifacts: one appears the moment a tranche
+ * is built, whether or not anyone deployed it, so summing them all counts
+ * pages that may be unreachable. `previews-deployed.json` names the segments
+ * actually serving; a built-but-undeployed tranche is absent there and is not
+ * counted. The cell says "live", so it must not be able to over-claim.
+ *
+ * Throws rather than under-counting on a typo: a segment named as deployed
+ * with no manifest beside it means the two sources disagree, and silently
+ * contributing 0 would read as a smaller corpus rather than as a defect. */
+const manifestBySegment = new Map(
+  Object.entries(previewManifests).map(([path, m]) => [
+    path.match(/previews-index-(.+)\.json$/)[1],
+    m.default,
+  ])
+);
+const previewsLive = deployed.segments.reduce((n, seg) => {
+  const m = manifestBySegment.get(seg);
+  if (!m) throw new Error(`previews-deployed.json lists "${seg}" but no previews-index-${seg}.json exists.`);
+  return n + (m.count ?? 0);
+}, 0);
 const businessesMapped = corpus.businesses_mapped;
 
 /* EVERY stat cell formats through this one function. Applying it per-cell is
@@ -35,13 +53,15 @@ const latestBriefs = briefsData.slice(0, 3);
 // page is not a Report, so it is excluded from the DISPLAYED number only.
 const reportCount = reportsData.filter((r) => r.report_type !== 'methodology').length;
 
-const lastUpdated = new Date(statsData.generated_at);
-const lastUpdatedDisplay = lastUpdated.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  timeZone: 'America/Los_Angeles'
-});
+/* The "Updated <date>" line was DELETED 2026-08-19, along with the
+ * `dateModified` it shared. Both read `stats.generated_at`, which is stamped
+ * by scripts/generate-stats.mjs on every build — so the page asserted freshness
+ * that any rebuild would refresh whether or not a single number had changed.
+ * A build clock is not a data-change date. Nothing replaced it: the honest
+ * per-datum dates already live beside their data (`corpus.updated`, each
+ * manifest's `generated`, previews-deployed.json's `deployed_at`), and one
+ * banner date over four independently-dated cells could only ever be wrong for
+ * three of them. */
 
 const pageTitle = 'AI Coachella Valley — The Intelligence Network for the Coachella Valley';
 const pageDescription = 'AI Coachella Valley (AICV) is the intelligence network helping businesses, venues, institutions, and civic assets across the Coachella Valley become easier for AI systems to understand, cite, recommend, and route. Built for agents. Powered by humans.';
@@ -118,7 +138,6 @@ const orgSchema = {
     "name": "Sat Singh",
     "jobTitle": "Founder"
   },
-  "dateModified": statsData.generated_at,
   "sameAs": [
     "https://x.com/CoachellaAI",
     "https://github.com/aicoachellavalley",
@@ -322,7 +341,6 @@ const foundingCohortSchema = {
 
 <!-- ─── FOCAL BLOCK: STATS + BLUEPRINT ─── -->
 <section class="focal-block">
-  <p class="focal-updated">Updated {lastUpdatedDisplay}</p>
   <div class="stats-inner">
     <div class="stat-cell">
       <div class="stat-n">{stat(briefCount)}</div>
@@ -1054,22 +1072,16 @@ const foundingCohortSchema = {
   .intel-cta:hover { background: #e8ff33; gap: 0.75rem; }
 
   /* ─── FOCAL BLOCK: STATS + BLUEPRINT ─── */
-  /* The dark band. `.focal-updated` supplies the space above its own text;
-     this mirrors it below the stats panel so the whole group sits centred in
-     the band rather than resting on its bottom edge. Before the blueprint
-     banner was removed (7b6b245) the banner occupied that space. */
+  /* The dark band. The space above the stats panel used to come from
+     `.focal-updated`'s own top padding; when that line was deleted (2026-08-19)
+     the identical value moved HERE so the band keeps the symmetry it already
+     had — the group sits centred rather than resting on the top edge. The
+     bottom value is unchanged and the two still mirror each other. Before the
+     blueprint banner was removed (7b6b245) the banner occupied that space. */
   .focal-block {
     background: var(--pine);
+    padding-top: 1.75rem;
     padding-bottom: 1.75rem;
-  }
-
-  .focal-updated {
-    text-align: center;
-    font-size: 0.68rem;
-    color: rgba(232,226,208,0.45);
-    letter-spacing: 0.08em;
-    padding: 1.75rem 3rem 0;
-    margin: 0;
   }
 
   .stats-inner {
@@ -1678,8 +1690,9 @@ const foundingCohortSchema = {
     .intel-block { padding: 0 1.5rem 3.5rem; }
     .intel-inner { padding: 2rem 1.5rem; }
     .intel-grid { grid-template-columns: 1fr; }
-    .focal-updated { padding: 1.25rem 1.5rem 0; }
-    .focal-block { padding-bottom: 1.25rem; }
+    /* Same move as the desktop rule: the 1.25rem that `.focal-updated` used to
+       supply above its text now sits on the band itself. */
+    .focal-block { padding-top: 1.25rem; padding-bottom: 1.25rem; }
     /* Stat bar at phone width. `1fr` is minmax(auto,1fr), so a cell whose
        min-content is wider than its share (2,914 renders ~171px against a
        ~91px content box) pushes its track wider and overflows the row. Three

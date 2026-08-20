@@ -1,0 +1,18 @@
+{
+  "$comment": "WHICH PREVIEW TRANCHES ARE SERVING, as opposed to merely built. The previews-index-*.json manifests next to this file are BUILD artifacts, copied from mva by scripts/sync-previews-manifest.mjs: a manifest exists the moment a tranche is BUILT, and says nothing about whether anyone deployed it. Summing them therefore counts pages that may not be reachable. This file is the deployed half of that pair, and index.astro counts only the segments named here.",
+  "$why": "Measured 2026-08-19: build.mjs is per-tranche, so a change to shared source reaches only the tranches rebuilt that day. Between 2026-08-13 and 2026-08-19 four of six tranches served assets rendered from superseded source while two did not, and no artifact in either repo distinguished the two states. A manifest could not have told you, which is why this file exists.",
+  "$maintenance": "Update this in the same change that deploys the previews worker. Adding a segment asserts it is SERVING — verify on the wire first, do not infer it from a successful build or from the manifest appearing.",
+  "worker": "aicv-previews",
+  "version_id": "e70cecbb-9f18-4c6b-8477-2e63f316b9f3",
+  "deployed_at": "2026-08-19T22:50:03.077Z",
+  "verified_at": "2026-08-19",
+  "verification": "Whole-sweep of every published URL, run twice, UA aicv-deploy-verify-2026-08-19: 1568/1568 HTTP 200, zero redirects, body byte-identical to the deployed dist. Second pass byte-identical to the first, per URL.",
+  "segments": [
+    "food-dining",
+    "hospitality",
+    "home-real-estate",
+    "wellness-healthcare",
+    "family-schooling",
+    "outdoors-recreation"
+  ]
+}
