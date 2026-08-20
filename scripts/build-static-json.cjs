@@ -454,21 +454,42 @@ function generateLlmsFullTxt() {
    * THROWS on a member with no published page rather than emitting a URL that
    * 404s. With an empty claimed set this contributes nothing and the file is
    * byte-identical to before. */
-  const { members: claimedList } = require('./claimed-members.cjs').claimedMembers();
+  const cm = require('./claimed-members.cjs');
+  const { members: claimedList } = cm.claimedMembers();
+  const { attested, selfServe } = cm.partitionMembers(claimedList);
+  const lines = (list) => list.map((m) => `  ${m.name} — ${m.city} — ${m.url}`);
+  /* TWO NAMED GROUPS (founder ruling 2026-08-20) — wording and grouping shared
+   * with llms.txt via partitionMembers(), so the two surfaces cannot describe
+   * the same member differently. */
   const memberSection = claimedList.length
     ? [
         `# Agent Ready Members`,
         ``,
-        `Businesses whose owner has verified ownership of the domain and activated their page.`,
-        `Facts on these pages carry provenance in the page's data island: measured by AICV, or`,
-        `supplied by the verified owner. Verification confirms WHO the owner is, never that what`,
-        `they supplied is accurate.`,
-        ``,
-        ...claimedList.map((m) => `  ${m.name} — ${m.city} — ${m.url}`),
+        `Businesses that have activated a page on the AICV Network. Facts on these pages carry`,
+        `provenance in each page's data island: measured by AICV, or supplied by the business.`,
+        `Two classes, and the distinction is machine-readable on every page as \`status\`:`,
+        ...(attested.length ? [
+          ``,
+          `## Owner-verified — status: claimed_verified`,
+          ``,
+          `AICV verified who the owner is. Verification confirms WHO the owner is, never that`,
+          `what they supplied is accurate.`,
+          ``,
+          ...lines(attested),
+        ] : []),
+        ...(selfServe.length ? [
+          ``,
+          `## Published — status: claimed`,
+          ``,
+          `The business purchased and published this page. AICV did not verify who supplied the`,
+          `facts.`,
+          ``,
+          ...lines(selfServe),
+        ] : []),
       ].join('\n')
     : null;
 
-  // Order: header → members (the verified set, named) → reports (long-form
+  // Order: header → members (both tier groups, named) → reports (long-form
   // research; highest signal density) → nodes (canonical entities) → briefs
   // (chronological intelligence stream). Snapshots are intentionally excluded:
   // they are JSON, not MDX, and would require a separate formatting pass to

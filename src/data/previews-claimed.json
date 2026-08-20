@@ -1,8 +1,10 @@
 {
-  "$comment": "VERIFIED MEMBERS — businesses whose owner has paid AND had ownership verified, and whose preview page therefore renders Live. Derived from mva's previews/claims-snapshot.json, which is a census of activate's D1. Written by scripts/sync-previews-manifest.mjs; never by hand.",
-  "$why_not_claimed_json": "mva's previews/claimed.json is hand-written and its build-time reconciliation against D1 is scoped to the ONE tranche being built, so it proves nothing about a self-serve DNS claim in another category. The snapshot is whole-corpus. A cross-tranche surface needs the whole-corpus source.",
+  "$comment": "MEMBERS — businesses whose owner has PAID and whose preview page therefore renders Live. Derived from mva's previews/claims-snapshot.json, a census of activate's D1. Written by scripts/sync-previews-manifest.mjs; never by hand.",
+  "$two_classes": "FOUNDER RULING 2026-08-20. `tiers` maps slug -> pricing.json tier id. 'agent-ready' is the $500 SELF-SERVE tier: paid and published, with NO ownership attestation. 'agent-ready-business' and 'agent-ready-premium' are ATTESTED: ownership was verified during onboarding. llms.txt and llms-full.txt name the two groups separately, because one heading asserting domain verification over both would be a false attestation on the surface agents read first. An absent entry reads as SELF-SERVE — the weaker claim, which is the only safe default.",
+  "$why_not_claimed_json": "mva's previews/claimed.json is hand-written and is now the ATTESTED store only — self-serve claims never enter it, and its build-time reconciliation is scoped to the ONE tranche being built. The snapshot is whole-corpus and covers both publish paths.",
   "$absent_is_not_empty": "A missing or unreadable file throws rather than resolving to zero members — dropping a paid member silently is the failure this file exists to prevent.",
   "generated": "2026-08-19T22:20:52.739Z",
   "source": "endpoint",
-  "slugs": []
+  "slugs": [],
+  "tiers": {}
 }

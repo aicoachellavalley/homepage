@@ -59,10 +59,17 @@ console.log(`sync-previews-manifest: ${n} manifest(s) derived from the mva build
  * absent from every claimed.json this repo could read. The snapshot is
  * whole-corpus and covers both verification paths.
  *
- * Slugs only. The snapshot is findings-free by construction and carries no
+ * Slugs and TIERS. The snapshot is findings-free by construction and carries no
  * owner-supplied facts, so the honest scope of a named presence is a name and a
  * URL — both of which come from the manifest entries, joined at build time by
- * scripts/claimed-members.cjs. */
+ * scripts/claimed-members.cjs.
+ *
+ * ⚠️ TIER IS NOT A FACT ABOUT THE MERCHANT, it is a fact about what AICV may
+ * ASSERT (founder ruling 2026-08-20). llms.txt names members in two groups —
+ * owner-verified and published — and without this map every member would fall
+ * to the self-serve group, which under-sells the attested tiers on the surface
+ * agents read first. Additive on purpose: `slugs` stays the contract, so
+ * resolveMembers()'s hard-fail guard is untouched. */
 const snapPath = resolve(srcDir, '../../previews/claims-snapshot.json');
 if (existsSync(snapPath)) {
   const snap = JSON.parse(readFileSync(snapPath, 'utf8'));
@@ -70,7 +77,14 @@ if (existsSync(snapPath)) {
     console.error(`  claims-snapshot.json has no d1[] — refusing to sync the member list`);
     process.exit(1);
   }
-  const slugs = snap.d1.filter((r) => r.status === 'live').map((r) => r.slug).sort();
+  const live = snap.d1.filter((r) => r.status === 'live');
+  const slugs = live.map((r) => r.slug).sort();
+  // Only non-null tiers are emitted; an absent entry reads as self-serve
+  // downstream, which is the under-claiming direction.
+  const tiers = Object.fromEntries(slugs.map((sl) => {
+    const row = live.find((r) => r.slug === sl);
+    return [sl, (row && row.tier) || null];
+  }).filter(([, t]) => t));
   const outFile = resolve(here, '../src/data/previews-claimed.json');
   const prev = existsSync(outFile) ? JSON.parse(readFileSync(outFile, 'utf8')) : {};
   writeFileSync(outFile, JSON.stringify({
@@ -78,8 +92,10 @@ if (existsSync(snapPath)) {
     generated: snap.generated,
     source: snap.source,
     slugs,
+    tiers,
   }, null, 2) + '\n');
-  console.log(`sync-previews-manifest: ${slugs.length} verified member(s) from claims-snapshot ${String(snap.generated).slice(0, 10)}`);
+  const att = Object.values(tiers).filter((t) => t !== 'agent-ready').length;
+  console.log(`sync-previews-manifest: ${slugs.length} member(s) from claims-snapshot ${String(snap.generated).slice(0, 10)} — ${att} attested, ${slugs.length - att} self-serve`);
 } else {
   console.log(`sync-previews-manifest: no claims-snapshot.json beside mva — member list left as committed`);
 }

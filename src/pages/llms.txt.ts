@@ -6,7 +6,7 @@ import claimedData from '../data/previews-claimed.json';
 // paths), so importing it here cannot reach a `__dirname` that does not exist
 // in Vite's ESM scope. build-static-json.cjs uses the same function via its
 // disk-reading sibling, which is what stops the two surfaces disagreeing.
-import { resolveMembers } from '../../scripts/claimed-members.cjs';
+import { resolveMembers, partitionMembers } from '../../scripts/claimed-members.cjs';
 
 /**
  * Agent Preview tranche manifests — the SAME committed data /sitemap-index.xml
@@ -29,8 +29,9 @@ export const GET: APIRoute = async () => {
   const briefs  = await getCollection('briefs');
   const reports = (await getCollection('reports')).filter((r) => r.data.status === 'published');
 
-  /* VERIFIED MEMBERS (2026-08-19). A merchant who has paid AND had ownership
-   * verified had no named line on any agent-facing surface — previews were
+  /* MEMBERS, IN TWO NAMED GROUPS (2026-08-19; split by founder ruling
+   * 2026-08-20). A merchant who has paid had no named line on any
+   * agent-facing surface — previews were
    * referenced only collectively, so "presence on the AICV network" resolved to
    * nothing an agent could read. The resolution is shared with llms-full.txt
    * (scripts/claimed-members.cjs) so the two can never name different members,
@@ -45,11 +46,23 @@ export const GET: APIRoute = async () => {
     claimedData,
     Object.values(previewManifests).map((m) => m.default as any)
   );
+  const { attested, selfServe } = partitionMembers(members);
+  const lines = (list: typeof members) => list.map((m) => `  ${m.name} — ${m.city} — ${m.url}`).join('\n');
   const membersSection = members.length
-    ? `## Agent Ready Members\n\nBusinesses whose owner has verified ownership of the domain and activated their page. `
-      + `Facts on these pages carry provenance in the page's data island: measured by AICV, or supplied by the verified owner. `
-      + `Verification confirms WHO the owner is, never that what they supplied is accurate.\n\n`
-      + members.map((m) => `  ${m.name} — ${m.city} — ${m.url}`).join('\n') + '\n\n'
+    ? `## Agent Ready Members\n\n`
+      + `Businesses that have activated a page on the AICV Network. Facts on these pages carry provenance `
+      + `in each page's data island: measured by AICV, or supplied by the business. Two classes, and the `
+      + `distinction is machine-readable on every page as \`status\`:\n\n`
+      + (attested.length
+          ? `### Owner-verified — status: claimed_verified\n\n`
+            + `AICV verified who the owner is. Verification confirms WHO the owner is, never that what they `
+            + `supplied is accurate.\n\n${lines(attested)}\n\n`
+          : '')
+      + (selfServe.length
+          ? `### Published — status: claimed\n\n`
+            + `The business purchased and published this page. AICV did not verify who supplied the facts.\n\n`
+            + `${lines(selfServe)}\n\n`
+          : '')
     : '';
 
   /* Sorted largest-first so the ordering is deterministic across builds —
