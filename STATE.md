@@ -2,6 +2,89 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-08-20 — Tier restructure copy: the $500 stops promising verification. BUILT, NOT DEPLOYED.
+
+**Founder ruling (2026-08-20).** The $500 Agent Ready tier is a HOSTED PAGE, not
+an attestation. Owner-verification moved UP to $2,500 and $10,000, where
+onboarding starts with a call. mva shipped the code in session 1 (`c3125b3`,
+`47cc5d9`, `6fd7800`, `e9fe86f`) — **this repo is the blocker on that deploy**,
+because .com currently promises a verification step the tier no longer has.
+
+**⚠️ ORDER IS LOAD-BEARING: com ships FIRST.** mva's workers must not go live
+while Terms still says "Your page goes Live only after you verify that you own or
+represent the business."
+
+**FOUR SURFACES CORRECTED.**
+- `/get-agent-ready/` "what's included" modal — the owner-verified bullet is
+  DELETED, not substituted. Two real deliverables that were never listed take
+  its place (facts in machine-readable form; named in the index agents read).
+- `/terms/#agent-ready` — effective date **July 25 → August 20, 2026**; the
+  entire "What you must do: verify ownership" section deleted; Timing rewritten
+  (page Live on payment, no queue); Refunds replaced. **"business profile page"
+  is now a DEFINED TERM**, scoped in "What you get" to the one page this tier
+  publishes — not the free preview, not any other page AICV writes. Removal now
+  states that `remove@aicv.co` covers the free preview too.
+- `llms.txt` + `llms-full.txt` — member section SPLIT into two named groups.
+- mva `activate` worker — activation page and success page (own repo).
+
+**THE REFUND PROMISE IS NOW UNCONDITIONAL WITHIN 14 DAYS**, where it was
+conditional ("if your page can't go live, or you change your mind before
+verification"). Deliberate expansion, founder-accepted at current volume.
+
+⚠️ **"EVERY" WAS DROPPED FROM THE REFUND LINE BEFORE IT SHIPPED.** The approved
+wording read "the free preview we publish about **every** business in our
+census". We do not: builds exclude rows (food-dining 453 in → 441 published), the
+Outdoors roster excluded 90 non-commercial entities, and the standing
+home-daycare privacy ruling excludes 46. Harmless in place — anyone reading that
+sentence necessarily HAS a preview, since you can only buy the upgrade to a page
+that exists — but it was going into operative Terms, and a universal quantifier
+in operative terms is the kind of word that gets quoted back. Now "…about
+businesses in our census", on all four surfaces.
+
+The unrelated "every business" claims on `/how-we-do-this/` and in the category
+reports were left alone deliberately: those are about COUNTING a category
+exhaustively, which the censuses do, not about publishing a page for each.
+
+⚠️ **"WE'LL TAKE YOUR PAGE DOWN" MEANS THE CLAIMED PAGE, NOT THE URL.** Traced
+before the wording was set: refund and `/api/admin/removal` both do
+`retractClaim()` + `status='private'` and nothing else. The URL keeps serving —
+it reverts to the unclaimed preview, which is public and, for 1,364 of 1,568
+published pages, indexable. The only true removal is `exclusions.json` →
+`drift_held`, a manual build-time act. Terms therefore defines the term rather
+than implying a takedown the code cannot perform.
+
+**WHY THE MEMBER SECTION IS SPLIT AND NOT NEUTRALLY WORDED.** Neutral wording
+true of both classes has to drop verification entirely — safe, but it erases what
+the upper tiers buy, on the surface agents read first. The risk is asymmetric in
+TIME: self-serve members appear first and automatically (payment publishes),
+attested members need a call. Neutral wording would read fine for months, then
+silently under-sell the first premium customer. `previews-claimed.json` gained an
+ADDITIVE `tiers` map — `slugs` remains the contract, so `resolveMembers()`'s
+hard-fail guard is untouched and an absent tier reads as self-serve (the weaker
+claim). Grouping is shared via `partitionMembers()` so the two surfaces cannot
+describe the same member differently.
+
+**BUYER SURFACES DO NOT NAME `llms.txt`** (founder ruling). "Agent Ready" is the
+promise; a filename invites "what's that?" at the moment the buyer should feel
+the outcome. Terms keeps the concrete version WITH the filenames — a vague
+promise is harder to defend than a specific one, and Terms is where specific
+belongs.
+
+**VERIFIED LOCALLY, positive control first.** Built from HEAD with the changes
+stashed, then rebuilt: **4 of 346 files differ — `get-agent-ready/index.html`,
+`terms/index.html`, and two build TIMESTAMPS** (`stats.json` `generated_at`,
+`llms-full.txt` `# Generated:`), both byte-identical with the stamp line
+excluded. 2 of 302 HTML pages changed, exactly the two intended. `llms.txt`
+unchanged (zero members). Pricing gate ok — 4 tiers, JSON-LD consistent, 10
+identity surfaces clean. Ownership gate ok — 299 non-exempt pages. Corpus sweep
+for residual $500 verification promises: clean.
+
+**llms AGREEMENT PROVEN WITH A FIXTURE, three shapes** — one of each class,
+attested-only, and self-serve-only. Same groups, same members, no member in two
+groups, each named once. The self-serve-only shape emits **zero** occurrences of
+"Owner-verified", which is the false-attestation guard. Fixture removed; the
+committed file is back to zero members.
+
 ## 2026-08-10 — Brief filed: the Agent Preview audit piece. Live and edge-verified.
 
 Brief `2026-08-10-agent-preview-audit-1566-pages` filed, pushed (commit
