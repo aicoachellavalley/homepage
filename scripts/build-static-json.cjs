@@ -178,6 +178,12 @@ function buildBriefs() {
       signal: extractSection(content, 'Signal'),
       agent_signal: extractSection(content, 'Agent Signal'),
       context: extractSection(content, 'Context'),
+      // Emitted so the feed can say a record was corrected. See content.config.ts
+      // for why this is frontmatter rather than a body section: the note used to
+      // sit above ## Signal, where no extractor could see it.
+      ...(Array.isArray(fm.correction) && fm.correction.length
+        ? { correction: fm.correction }
+        : {}),
     });
   }
 
@@ -213,6 +219,12 @@ function buildReports() {
       tags:        Array.isArray(fm.tags)     ? fm.tags     : [],
       sections:    Array.isArray(fm.sections) ? fm.sections : [],
       canonical:   fm.canonical   || '',
+      // Emitted so the feed can say a record was corrected. See content.config.ts
+      // for why this is frontmatter rather than a body section: the note used to
+      // sit above ## Signal, where no extractor could see it.
+      ...(Array.isArray(fm.correction) && fm.correction.length
+        ? { correction: fm.correction }
+        : {}),
     });
   }
 

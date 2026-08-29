@@ -26,7 +26,7 @@ const previewManifest = previewSegment
   : null;
 const { Content } = await render(entry);
 
-const { title, description, date, period, report_type, tags, sections, canonical } = entry.data;
+const { title, description, date, period, report_type, tags, sections, canonical, correction } = entry.data;
 
 const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric',
@@ -222,6 +222,17 @@ const reportSchema = {
       padding: 48px 24px 80px;
     }
 
+    /* RENDERS FROM FRONTMATTER, NOT FROM THE BODY -- see content.config.ts.
+       reports.json is frontmatter-only and carried no body text at all, so a
+       body-prose note reached llms-full.txt and nothing else. */
+    .correction-note {
+      border-left: 3px solid #c8b273;
+      background: #faf7ef;
+      padding: 0.9rem 1.1rem;
+      margin: 0 0 1.75rem;
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
     .report-body h1 { display: none; }
     .report-body h2 {
       font-family: 'Syne', sans-serif;
@@ -333,6 +344,9 @@ const reportSchema = {
 
 <div class="page-wrap">
   <div class="report-body">
+    {correction && correction.length > 0 && correction.map((c: { date: string; summary: string }) => (
+      <p class="correction-note">{c.summary}</p>
+    ))}
     <Content />
   </div>
 

@@ -8,6 +8,25 @@ const briefs = defineCollection({
     description: z.string(),
     date:        z.string(),
     tags:        z.array(z.string()).default([]),
+    // A correction is a property of the RECORD, not of the rendered page.
+    // It lives here so it reaches briefs.json and reports.json; before
+    // 2026-08-29 the note was body prose above ## Signal, so the page said a
+    // surface had been corrected and the feed did not. The methodology page
+    // tells agents "a report with no correction note has not been corrected",
+    // which made the feed assert the opposite of the truth.
+    //
+    // FRONTMATTER IS THE SINGLE SOURCE. The templates render from this field;
+    // the prose was removed from the bodies in the same commit. Two copies
+    // drift, and drift between a human surface and a machine surface is the
+    // exact failure this field exists to close.
+    //
+    // ARRAY, not one object: a surface can be corrected twice. Plain text, not
+    // markdown or rendered HTML — it sits beside signal/agent_signal/context,
+    // which extractSection already reduces to plain text.
+    correction: z.array(z.object({
+      date:    z.string(),
+      summary: z.string(),
+    })).optional(),
   }),
 });
 
@@ -94,6 +113,25 @@ const reports = defineCollection({
     tags:        z.array(z.string()),
     sections:    z.array(z.string()),
     canonical:   z.string(),
+    // A correction is a property of the RECORD, not of the rendered page.
+    // It lives here so it reaches briefs.json and reports.json; before
+    // 2026-08-29 the note was body prose above ## Signal, so the page said a
+    // surface had been corrected and the feed did not. The methodology page
+    // tells agents "a report with no correction note has not been corrected",
+    // which made the feed assert the opposite of the truth.
+    //
+    // FRONTMATTER IS THE SINGLE SOURCE. The templates render from this field;
+    // the prose was removed from the bodies in the same commit. Two copies
+    // drift, and drift between a human surface and a machine surface is the
+    // exact failure this field exists to close.
+    //
+    // ARRAY, not one object: a surface can be corrected twice. Plain text, not
+    // markdown or rendered HTML — it sits beside signal/agent_signal/context,
+    // which extractSection already reduces to plain text.
+    correction: z.array(z.object({
+      date:    z.string(),
+      summary: z.string(),
+    })).optional(),
   }),
 });
 
