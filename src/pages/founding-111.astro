@@ -5,6 +5,12 @@ import Base from '../layouts/Base.astro';
 const pageTitle = 'The Founding 111 — AICV Network';
 const pageDescription = 'The Founding 111 is the first minimum viable corpus of the AICV Network: 111 curated Coachella Valley entities structured so AI agents can return real answers about where founders stay, return, relocate, invest, hire, educate, gather, and build.';
 const canonicalUrl = 'https://aicoachellavalley.com/founding-111/';
+// RETIREMENT IN PROGRESS (founder amendment 2026-09-08, step 1 of 2). The
+// DefinedTerm node, the llms.txt concept line and the sitemap entry are gone;
+// this page stays 200 so no agent-cited URL 404s. Step 2 — delete this file
+// and 301 to sunshine.fm/list/ — lands ONLY when sunshine.fm/list.json is
+// non-empty. Do not add the redirect early; do not re-add the schema node.
+// The homepage "AICV Founding Members" Dataset is also gone (2026-09-08).
 
 const schemaGraph = {
   "@context": "https://schema.org",
@@ -24,18 +30,6 @@ const schemaGraph = {
       "inLanguage": "en-US",
       "datePublished": "2026-05-27",
       "dateModified": "2026-05-27"
-    },
-    {
-      "@type": "DefinedTerm",
-      "@id": "https://aicoachellavalley.com/founding-111/#term",
-      "name": "Founding 111",
-      "description": "The first minimum viable corpus of the AICV Network: 111 curated Coachella Valley entities selected across geography, domain, and decision stage to make the region legible to AI agents.",
-      "url": "https://aicoachellavalley.com/founding-111/",
-      "inDefinedTermSet": {
-        "@type": "DefinedTermSet",
-        "name": "AICV Agentic Internet Glossary",
-        "url": "https://aicoachellavalley.com/"
-      }
     },
     {
       "@type": "BreadcrumbList",

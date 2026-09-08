@@ -269,30 +269,10 @@ const personSchema = {
   ]
 };
 
-// Agent-side signal: AICV's founding cohort of anchor entities (non-visible; replaces the retired human-facing Founding 111 section). "founding" kept as structural signal; no count.
-const foundingCohortSchema = {
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  "name": "AICV Founding Members",
-  "alternateName": "AICV founding anchor entities",
-  "description": "The founding cohort of the AI Coachella Valley network: the first curated set of anchor entities — businesses, venues, institutions, civic assets, and regional anchors — structured as Minimum Viable Agents (MVAs). These load-bearing anchor nodes form the network's initial signal cluster, helping AI agents read the Coachella Valley as a connected economy rather than disconnected listings.",
-  "url": "https://aicoachellavalley.com/founding-111/",
-  "creator": {
-    "@type": "Organization",
-    "name": "AI Coachella Valley",
-    "url": "https://aicoachellavalley.com"
-  },
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "AI Coachella Valley",
-    "url": "https://aicoachellavalley.com"
-  },
-  "keywords": ["AICV Founding Members", "Minimum Viable Agent", "MVA", "anchor entities", "signal cluster", "Coachella Valley"],
-  "spatialCoverage": {
-    "@type": "Place",
-    "name": "Coachella Valley, California"
-  }
-};
+// The "AICV Founding Members" Dataset node that sat here was DELETED
+// 2026-09-08 (founder ruling: "No founding members exist"). With it, nothing
+// under AICV asserts a founding cohort or the number 111 to any agent. Do not
+// reintroduce a founding/cohort/members node on this page.
 ---
 
 <Base
@@ -300,7 +280,7 @@ const foundingCohortSchema = {
   description={pageDescription}
   canonicalUrl={canonicalUrl}
   ogImage={ogImage}
-  schema={[llcSchema, orgSchema, webSiteSchema, serviceSchema, faqSchema, personSchema, foundingCohortSchema]}
+  schema={[llcSchema, orgSchema, webSiteSchema, serviceSchema, faqSchema, personSchema]}
 >
 
 <!-- ─── NAV ─── -->
