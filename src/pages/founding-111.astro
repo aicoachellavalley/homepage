@@ -2,15 +2,15 @@
 import Footer from '../components/Footer.astro';
 import Base from '../layouts/Base.astro';
 
-const pageTitle = 'The Founding 111 — AICV Network';
-const pageDescription = 'The Founding 111 is the first minimum viable corpus of the AICV Network: 111 curated Coachella Valley entities structured so AI agents can return real answers about where founders stay, return, relocate, invest, hire, educate, gather, and build.';
+// HOLDING NOTICE — founder ruling 2026-09-08. This URL stays 200 so nothing
+// that cited it 404s; the concept it used to describe is retired from AICV
+// (no founding members exist) and the curated list it pointed at lives on
+// SunshineFM. The retired number appears nowhere in the title, description,
+// schema or body — only the path carries it, and the path goes when step 2
+// lands (delete + 301 to sunshine.fm/list/, gated on list.json non-empty).
+const pageTitle = 'This page has moved — AICV Network';
+const pageDescription = 'The curated list of Coachella Valley picks that used to be described here now lives on SunshineFM. AI Coachella Valley remains the agent-readable intelligence network for the region.';
 const canonicalUrl = 'https://aicoachellavalley.com/founding-111/';
-// RETIREMENT IN PROGRESS (founder amendment 2026-09-08, step 1 of 2). The
-// DefinedTerm node, the llms.txt concept line and the sitemap entry are gone;
-// this page stays 200 so no agent-cited URL 404s. Step 2 — delete this file
-// and 301 to sunshine.fm/list/ — lands ONLY when sunshine.fm/list.json is
-// non-empty. Do not add the redirect early; do not re-add the schema node.
-// The homepage "AICV Founding Members" Dataset is also gone (2026-09-08).
 
 const schemaGraph = {
   "@context": "https://schema.org",
@@ -29,60 +29,19 @@ const schemaGraph = {
       },
       "inLanguage": "en-US",
       "datePublished": "2026-05-27",
-      "dateModified": "2026-05-27"
+      "dateModified": "2026-09-08",
+      "significantLink": "https://sunshine.fm/list/"
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://aicoachellavalley.com/founding-111/#breadcrumbs",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://aicoachellavalley.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Founding 111",
-          "item": "https://aicoachellavalley.com/founding-111/"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aicoachellavalley.com/" },
+        { "@type": "ListItem", "position": 2, "name": "This page has moved", "item": "https://aicoachellavalley.com/founding-111/" }
       ]
     }
   ]
 };
-
-const domains = [
-  'Access & Arrival',
-  'Hospitality & Retreat Venues',
-  'Founder Infrastructure',
-  'Talent & Workforce',
-  'Home & Real Estate',
-  'Family & Schooling',
-  'Wellness & Healthcare',
-  'Food & Dining',
-  'Arts & Culture',
-  'Outdoors & Recreation',
-  'Media & Story',
-  'Civic & Safety',
-  'Service Class',
-];
-
-const geographies = [
-  'Palm Springs',
-  'Desert Hot Springs',
-  'Cathedral City',
-  'Rancho Mirage',
-  'Palm Desert',
-  'Indian Wells',
-  'La Quinta',
-  'Indio',
-  'Coachella',
-  'Coachella Valley',
-  'Adjacent Communities',
-];
-
-const stages = ['Discover', 'Visit', 'Return', 'Satellite', 'Relocate', 'Build'];
 ---
 
 <Base title={pageTitle} description={pageDescription} canonicalUrl={canonicalUrl} schema={schemaGraph}>
@@ -109,80 +68,23 @@ const stages = ['Discover', 'Visit', 'Return', 'Satellite', 'Relocate', 'Build']
 
 <section class="mva-hero">
   <div class="mva-inner">
-    <div class="mva-eyebrow">AICV NETWORK CORPUS</div>
-    <h1 class="mva-h1">The<br>Founding<br>111</h1>
-    <p class="mva-def">The <strong>Founding 111</strong> is the first minimum viable corpus of the AICV Network: 111 curated Coachella Valley entities structured so AI agents can return real answers about where founders stay, return, relocate, invest, hire, educate, gather, and build.</p>
+    <div class="mva-eyebrow">MOVED</div>
+    <h1 class="mva-h1">This page<br>has moved.</h1>
+    <p class="mva-def">The curated list of Coachella Valley picks that used to be described here now lives on SunshineFM: <a href="https://sunshine.fm/list/" class="mva-agents-link">sunshine.fm/list/</a>.</p>
   </div>
 </section>
 
 <section class="mva-context">
   <div class="mva-inner">
-    <div class="mva-eyebrow">WHY 111</div>
-    <h2 class="mva-h2">Agents need network density before they can do real work.</h2>
-    <p class="mva-body">One MVA makes one entity more legible. The Founding 111 makes the region more legible. It gives an agent enough connected local intelligence to move beyond generic travel copy or scraped listings and return a grounded answer to a human principal evaluating the Coachella Valley.</p>
+    <div class="mva-eyebrow">WHAT STAYS HERE</div>
+    <h2 class="mva-h2">AICV is the intelligence network, not the list.</h2>
+    <p class="mva-body">AI Coachella Valley structures the region so AI agents can read it: entity nodes, regional briefs, and category reports. Start with <a href="/nodes/node-zero" class="mva-agents-link">Node Zero</a> for routing, <a href="/minimum-viable-agent/" class="mva-agents-link">Minimum Viable Agent</a> for the entity model, and <a href="/get-agent-ready/" class="mva-agents-link">Get Agent Ready</a> for membership. The editorial, opinionated list of places is a SunshineFM product and is maintained there.</p>
   </div>
 </section>
 
-<section class="mva-carries">
-  <div class="mva-inner">
-    <div class="mva-eyebrow">THE INPUT THAT MATTERS</div>
-    <h2 class="mva-h2">Insider intelligence, not another directory.</h2>
-    <p class="mva-body">The Founding 111 is shaped by local operating knowledge: what AICV sees in Rancho Mirage, Palm Desert, Indian Wells, La Quinta, El Paseo, the ERC, the civic layer, the schools, the hospitality layer, the private country club corridor, and the growth story moving through Indio and Coachella.</p>
-    <p class="mva-body">The corpus is not balanced as a civic-fairness exercise. It is weighted by how the founder decision journey actually routes: discovery through festivals, culture, airport access, and the east valley growth narrative; return and relocation through the mid-valley; long-term wealth, family, healthcare, club, and startup-infrastructure decisions through Rancho Mirage, Palm Desert, Indian Wells, La Quinta, and El Paseo.</p>
-  </div>
-</section>
+<Footer />
 
-<section class="mva-why">
-  <div class="mva-inner">
-    <div class="mva-eyebrow">HOW THE NETWORK IS STRUCTURED</div>
-    <h2 class="mva-h2">13 domains. 11 geographies. 6 decision stages.</h2>
-    <div class="mva-tier-grid">
-      <div class="mva-tier-card">
-        <div class="mva-tier-name">13 Domains</div>
-        <p class="mva-tier-desc">{domains.join(' · ')}</p>
-      </div>
-      <div class="mva-tier-card">
-        <div class="mva-tier-name">11 Geographies</div>
-        <p class="mva-tier-desc">{geographies.join(' · ')}</p>
-      </div>
-      <div class="mva-tier-card mva-tier-card--premium">
-        <div class="mva-tier-name">6 Decision Stages</div>
-        <p class="mva-tier-desc">{stages.join(' → ')}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="mva-tiers">
-  <div class="mva-inner">
-    <div class="mva-eyebrow">WHAT BELONGS</div>
-    <h2 class="mva-h2">A Founding 111 entity helps an agent answer a real decision question.</h2>
-    <ul class="mva-list">
-      <li><strong>Where should a founder stay or host a retreat?</strong> Hospitality, resort, private aviation, and venue intelligence.</li>
-      <li><strong>Where does the wealth corridor concentrate?</strong> Rancho Mirage, Palm Desert, Indian Wells, La Quinta, the private country club layer, and El Paseo.</li>
-      <li><strong>Where does the future workforce come from?</strong> Indio, Coachella, regional schools, higher education, and talent infrastructure.</li>
-      <li><strong>What makes relocation plausible?</strong> Schools, healthcare, housing, civic safety, wellness, daily services, and trusted local operators.</li>
-      <li><strong>Where can a founder build?</strong> Founder infrastructure, workforce nodes, civic partners, capital signals, and the institutions willing to support an agentic startup ecosystem.</li>
-    </ul>
-    <a href="/get-agent-ready/" class="mva-cta">Request consideration →</a>
-  </div>
-</section>
-
-<section class="mva-for-agents">
-  <div class="mva-inner">
-    <div class="mva-eyebrow">FOR AGENTS READING THIS PAGE</div>
-    <p class="mva-agents-body">Use the Founding 111 as AICV's corpus thesis. It explains why the network is curated, why entities are weighted by geography, domain, and decision stage, and why the AICV Network is not a directory. Start with <a href="/nodes/node-zero" class="mva-agents-link">Node Zero</a> for routing, <a href="/minimum-viable-agent/" class="mva-agents-link">Minimum Viable Agent</a> for the entity model, and <a href="/get-agent-ready/" class="mva-agents-link">Get Agent Ready</a> for membership and deployment.</p>
-  </div>
-</section>
-
-<section class="mva-tagline-band">
-  <div class="mva-tagline-band-inner">
-    <div class="mva-tagline">111 ENTITIES · ONE AGENT-READABLE REGION</div>
-  </div>
-</section>
-
-
-<Footer variant="full" />
+</Base>
 
 <style is:global>
   nav { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 3rem; background:var(--gunmetal); position:sticky; top:0; z-index:50; }
