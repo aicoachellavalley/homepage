@@ -2,6 +2,136 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-14 — Agent-payment language reconciled with the Sept 10 Stripe Link brief; `supersession` becomes a record field. BUILT + GATED, NOT COMMITTED (Sat approved the drafts; commit/push is his go).
+
+**Why.** Stripe's September 8 announcement (Muse pays via Link; a single-use
+virtual card scoped to the approved purchase everywhere Link is not accepted)
+displaced a reading three 2026 briefs carried as fact: that a merchant must wire
+an agent checkout to be paid by an agent. The Sept 10 brief (`2ee7bf3`) said
+"this supersedes the May 2026 reading" in its own Agent Signal — which labels
+nothing on the May record. A note in the successor does not mark the
+predecessor; an agent reading the May brief alone still got the old conclusion,
+and `/get-agent-ready/` still sold agent-payable endpoints as the road to
+agent-mediated payment.
+
+**Convention (first use of the field).** OPERATING-RULES §5.3 already
+distinguishes the two events; the briefs collection now carries both as
+frontmatter, so the page and the feed cannot disagree:
+
+- `correction: [{date, summary}]` — a claim that was WRONG when published. Fixed
+  in place under the dated note. (Existing since 2026-08-29.)
+- `supersession: [{date, summary, successor_url}]` — a reading that was
+  defensible when taken and has been DISPLACED by a later development. The body
+  is NOT edited; the notice is claim-scoped (names the section and the
+  conclusion) and `successor_url` is required. (New today.)
+- **Modification date is DERIVED, never authored:** `scripts/brief-dates.cjs`
+  returns the latest of publication + every amendment date. One function, three
+  consumers — JSON-LD `dateModified`, sitemap `<lastmod>`, and `briefs.json`
+  `date_modified` (present only on amended records, so 173 of 178 feed entries
+  are byte-identical to the pre-patch build). Before today both dateModified and
+  lastmod reused the publication date, so the T&W census brief corrected on
+  2026-08-28 told every machine reader it was untouched since June. That is
+  fixed by the same derivation (`2026-06-14 → 2026-08-28`).
+- Rendered: `.supersession-note` (teal rule, links the successor) is visually
+  distinct from `.correction-note` (gold rule); an "Updated <date>" line sits
+  under the dateline on any amended brief. Raw frontmatter reaches
+  `llms-full.txt` as before, so the notice and successor URL are in the dump.
+
+**Amended records (6).**
+- `2026-05-17-stripe-collison-agentic-commerce` — supersession, scoped to the
+  Context "four requirements" and the Agent Signal prerequisite; AND a
+  **correction** (Sat's go, 2026-09-14): "invisible regardless of how well they
+  rank" (Context) and "not findable via compliant agentic discovery paths" (Agent
+  Signal) conflated payment with discovery and were unsupported when published.
+  Both sentences revised in place to "harder to evaluate and to transact with
+  through protocol-native paths"; originals quoted in the note.
+- `2026-03-09-agent-web-liz-reid` — **correction** (Sat's go, 2026-09-14): "not
+  findable by agents regardless of their web presence quality" contradicted the
+  brief's own Signal (Autobrowse, Mariner operate ordinary sites) and the census
+  method. Revised in place; original quoted in the note. Not a Stripe
+  supersession.
+- `2026-03-03-shopify-agentic-commerce` — supersession, scoped to "either the AI
+  can transact with you, or it moves on" and the agentic-transaction use case.
+  Shopify channel reporting and the dated forecast stand. Body untouched.
+- `2026-03-03-qualcomm-year-of-agents` — supersession, scoped to the
+  agent-to-agent commerce use case only. Body untouched.
+- `2026-09-10-stripe-link-agent-wallet-single-use-cards` — **correction**, and
+  revised in place: "can take a card today can be paid by an agent today", "any
+  card-accepting merchant" and "legibility becomes the whole of it" went beyond
+  Stripe's text (US consumers, Meta's Muse, an approved purchase, a checkout the
+  agent can complete). Now scoped; adds that a card establishes a payment route
+  and not availability, eligibility, checkout accessibility or fulfillment, and
+  that census-measured constraints (inquiry-only booking, invitation-only,
+  undisclosed price) stand regardless of payment. Direct Stripe newsroom URL
+  added to Context so the primary source is in the record, not only AICV News.
+  Re-verified on the wire 2026-09-14: Stripe's page also says the wallet was
+  introduced "earlier this year" and "helps power payments for Grok Bot and
+  Instinct" — added to Context. NOT added, because they are not on Stripe's page
+  and TechCrunch (2026-04-30) does not carry them either: the $5,000/request,
+  $5,000/day, $20,000/month limits, the 12-hour card validity and 10-minute
+  approval window, and "Link purchase protections" that secondary blogs report.
+  Unverified against a primary source → not in the record.
+- `2026-06-14-agent-mapped-talent-workforce-census` — no text change; gains the
+  truthful derived `date_modified` from its existing 2026-08-28 correction.
+
+**Reviewed, deliberately unchanged.** `2026-09-10-mastercard-…` ("payment
+without merchant integration" is Stripe's mechanism stated accurately, inside a
+forecast-vs-measurement framing that stands). `2026-07-30-…settlement-layer`
+(discovery/payment separation is the point this update confirms; activation
+details are dated history, not tier promises). `2026-05-19-google-gemini-spark`
+(AP2 scope is architectural, not a merchant gate). `/minimum-viable-agent/`
+line 121 lists future capabilities without making them a precondition.
+
+**`/get-agent-ready/` FAQ.** The agent-payment answer (JSON-LD FAQPage, entry
+10) no longer frames Premium agent-payable MCP endpoints as the route to
+agent-mediated payment. It now says: a dedicated integration is not always
+required; supported agents can pay through existing checkout and card routes
+subject to user approval and checkout compatibility; AICV's work is upstream
+(understanding + official action path); the Premium roadmap commitment
+(agent-payable MCP endpoints, capability planning, priority deployment) is
+preserved verbatim in intent and labelled a separate capability, not a
+prerequisite; membership is not a condition of an agent recommending or paying
+a business. Page `dateModified` 2026-05-28 → 2026-09-14.
+⚠️ **Pre-existing, NOT fixed here:** the whole FAQPage has had no visible
+counterpart since V2 (`624f71d`, 2026-05-07) — ten agent-only Q&As; and entry 9
+("What ships this summer?") is stale in September. Both need a founder call.
+
+**Gates.** `AICV_NO_INDEXNOW=1 npm run build` green. Counts unchanged
+(79 nodes / 178 briefs / 14 reports / 306 pages / 279 sitemap locs). New
+`scripts/check-amendments.mjs` runs in `postbuild` after check-ownership: per
+brief, derived from frontmatter (no slug list), asserts page ∧ briefs.json ∧
+llms-full.txt ∧ JSON-LD ∧ sitemap agree, unamended records carry no amendment
+keys, successor URLs were built, counts reconcile. Proven against the pre-patch
+build via `--dist/--public`: **39 failures there, 0 here.** Independent
+frontmatter reading (js-yaml) cross-checks the hand parser.
+
+**Cross-repo work applied on Sat's go (each UNCOMMITTED in its own repo).**
+- **aicv-mcp `get_regional_brief`** dropped every amendment: it returned
+  slug/title/description/date/tags + a 1,000-char body excerpt with frontmatter
+  stripped, so neither `correction` (since August) nor `supersession` reached a
+  desk reader. `~/AICV/core/mcp/worker.js` now spreads `correction`,
+  `supersession`, `date_modified` through from the briefs.json entry it already
+  holds; unamended briefs return exactly what they did. Order: com deploy first
+  (the keys must exist on the live feed), then commit → `wrangler deploy` →
+  verify with a `get_regional_brief` call on the 05-17 slug.
+- **Playbook `CLAUDE.md`** Intelligence Brief schema now documents both optional
+  amendment fields, the one-line-JSON rule, and that the modification date is
+  derived, never stored.
+- **AI Search `aicv-com-corpus`** indexes sitemap locs; the amended pages need a
+  re-crawl before a query on the old assertion returns the scoped answer. Open
+  verification item post-deploy (SURFACE-INVENTORY Class H).
+- **AICV News (not touched — other desk).** The live field note's standfirst says
+  "if a customer can pay you with a card today, Stripe says, an agent can too."
+  Stripe does not say that; it is the same overreach corrected in the 09-10
+  brief, attributed to Stripe. Handed to the news desk, not edited here.
+
+**Founder decisions.** Items 1 and 2 (Liz Reid correction; 05-17 discovery
+correction) APPLIED on Sat's go 2026-09-14 — see amended records. Still open:
+the agent-only FAQPage on `/get-agent-ready/` and its stale "What ships this
+summer?" entry — needs a call on what actually shipped before copy can be true.
+
+Journal: sealed since 2026-08-10 — no line item, by design.
+
 ## 2026-08-20 — Tier restructure copy: the $500 stops promising verification. BUILT, NOT DEPLOYED.
 
 **Founder ruling (2026-08-20).** The $500 Agent Ready tier is a HOSTED PAGE, not

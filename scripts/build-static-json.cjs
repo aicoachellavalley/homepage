@@ -7,6 +7,9 @@
 
 const fs = require('fs');
 const path = require('path');
+// Shared with src/pages/briefs/[slug].astro and src/pages/sitemap.xml.ts —
+// one derivation of an amended brief's modification date (see that file).
+const { briefDateModified, briefIsAmended } = require('./brief-dates.cjs');
 
 const COM_ROOT   = path.resolve(__dirname, '..');
 const NODES_DIR  = path.join(COM_ROOT, 'src', 'content', 'nodes');
@@ -183,6 +186,18 @@ function buildBriefs() {
       // sit above ## Signal, where no extractor could see it.
       ...(Array.isArray(fm.correction) && fm.correction.length
         ? { correction: fm.correction }
+        : {}),
+      // Supersession rides the same path, for the same reason. Distinct key,
+      // never folded into `correction`: the two mean different things to a
+      // reader (content.config.ts, OPERATING-RULES §5.3).
+      ...(Array.isArray(fm.supersession) && fm.supersession.length
+        ? { supersession: fm.supersession }
+        : {}),
+      // Present ONLY on amended records, so an unamended brief's feed entry is
+      // byte-identical to what it was before this key existed. Derived, not
+      // authored — scripts/brief-dates.cjs, shared with the page and sitemap.
+      ...(briefIsAmended(fm)
+        ? { date_modified: briefDateModified(fm) }
         : {}),
     });
   }

@@ -7,7 +7,7 @@
     "prebuild": "node scripts/check-pricing.mjs && node scripts/generate-stats.mjs",
     "build": "node scripts/build-static-json.cjs && astro build",
     "preview": "astro preview",
-    "postbuild": "node scripts/check-ownership.mjs"
+    "postbuild": "node scripts/check-ownership.mjs && node scripts/check-amendments.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",

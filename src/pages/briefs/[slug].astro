@@ -1,6 +1,9 @@
 ---
 import Footer from '../../components/Footer.astro';
 import { getCollection, render } from 'astro:content';
+// Same .cjs the build script requires, so this page, briefs.json and the
+// sitemap cannot publish three different modification dates.
+import { briefDateModified, briefIsAmended } from '../../../scripts/brief-dates.cjs';
 
 export async function getStaticPaths() {
   const entries = await getCollection('briefs');
@@ -14,13 +17,21 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 
 const slug        = entry.id.replace(/\.mdx$/, '');
-const { title, description, date, tags, correction } = entry.data;
+const { title, description, date, tags, correction, supersession } = entry.data;
 
 const canonicalUrl = `https://aicoachellavalley.com/briefs/${slug}/`;
 
-const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
+const fmtDate = (iso: string) => new Date(iso + 'T00:00:00').toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric',
 });
+const formattedDate = fmtDate(date);
+
+// Derived from the record's amendment dates, never authored. Until 2026-09-14
+// dateModified reused the publication date, so a brief corrected in August
+// still told every machine reader it was untouched since June.
+const dateModified   = briefDateModified(entry.data);
+const isAmended      = briefIsAmended(entry.data);
+const formattedModified = fmtDate(dateModified);
 
 const briefSchema = {
   '@context': 'https://schema.org',
@@ -28,7 +39,7 @@ const briefSchema = {
   'headline': title,
   'description': description,
   'datePublished': date,
-  'dateModified': date,
+  'dateModified': dateModified,
   'url': `https://aicoachellavalley.com/briefs/${slug}/`,
   'author': {
     '@type': 'Organization',
@@ -114,6 +125,30 @@ const briefSchema = {
       margin: 0 0 1.75rem;
       font-size: 0.94rem;
       line-height: 1.6;
+    }
+    /* Supersession is a different event from correction and must LOOK like
+       one: the reporting below is still true of its date, only the named
+       conclusion has been displaced. Same weight, different colour, and it
+       always carries a link to the successor record. */
+    .supersession-note {
+      border-left: 3px solid #7aa3a6;
+      background: #eef5f5;
+      padding: 0.9rem 1.1rem;
+      margin: 0 0 1.75rem;
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+    .supersession-note a {
+      color: var(--pine, #1e4d4a);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .brief-updated {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pine-light);
+      margin: 6px 0 0;
     }
     .brief-date {
       font-size: 0.75rem;
@@ -256,6 +291,9 @@ const briefSchema = {
   <header class="site-header">
     <div class="inner">
       <p class="brief-date">{formattedDate}</p>
+      {isAmended && (
+        <p class="brief-updated">Updated {formattedModified}</p>
+      )}
       <h1 class="brief-title">{title}</h1>
       {tags && tags.length > 0 && (
         <div class="tag-row">
@@ -269,6 +307,9 @@ const briefSchema = {
 
   <div class="page-wrap">
     <div class="brief-body">
+      {supersession && supersession.length > 0 && supersession.map((s: { date: string; summary: string; successor_url: string }) => (
+        <p class="supersession-note">{s.summary} <a href={s.successor_url}>Read the superseding brief →</a></p>
+      ))}
       {correction && correction.length > 0 && correction.map((c: { date: string; summary: string }) => (
         <p class="correction-note">{c.summary}</p>
       ))}

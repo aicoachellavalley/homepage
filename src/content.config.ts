@@ -27,6 +27,29 @@ const briefs = defineCollection({
       date:    z.string(),
       summary: z.string(),
     })).optional(),
+    // A supersession is NOT a correction, and must never be filed as one to
+    // reuse the rendering. OPERATING-RULES §5.3: supersession is for a reading
+    // that was right when taken and has been displaced by a later development;
+    // correction is for a claim that was wrong when published. A superseded
+    // brief stands unchanged at its own date; the notice points at the
+    // successor that replaces the conclusion. Added 2026-09-14, first use: the
+    // merchant-integration prerequisite in three 2026 agentic-commerce briefs,
+    // displaced by the 2026-09-10 Stripe Link brief.
+    //
+    // Same discipline as `correction`: frontmatter is the single source, an
+    // array, plain text. `successor_url` is the canonical URL of the record
+    // that now holds the conclusion — required, because a supersession that
+    // does not say what superseded it is just a retraction. The summary must be
+    // claim-scoped: name the section and the conclusion it applies to, so the
+    // dated reporting that still stands is not read as withdrawn.
+    //
+    // A brief's modification date is DERIVED from these arrays, never stored:
+    // see scripts/brief-dates.cjs.
+    supersession: z.array(z.object({
+      date:          z.string(),
+      summary:       z.string(),
+      successor_url: z.string().url(),
+    })).optional(),
   }),
 });
 
