@@ -153,8 +153,22 @@ promised a public Ask AICV chat interface, an AICV Network member directory and
 member-scoped query access; none of the three exists on the site (grep of
 src/pages and llms.txt: zero pages), so there was nothing truthful to restate
 and a September page cannot carry a summer promise. FAQPage is now 8 Questions.
-Fix by deleting the claim, never by substituting one. **Still open:** the
-FAQPage has no visible counterpart (agent-only since V2, 2026-05-07).
+Fix by deleting the claim, never by substituting one.
+**VISIBLE FAQ SECTION ADDED (Sat, 2026-09-14, "so AI Search can index it").**
+One `faq` array in the page frontmatter now drives BOTH the FAQPage JSON-LD
+`mainEntity` and a rendered "Frequently asked." section (`#faq`, matching the
+FAQPage `@id` fragment) — the records collection's pattern, so the two
+surfaces cannot drift; proven in dist: 8 visible h3/p pairs == 8 JSON-LD
+Questions, equal in order. Answers are OPEN (h3 + p), not `<details>`: text
+indexers read rendered text and a closed `<details>` is not rendered. One
+deletion in the copy while making it visible: "at the Free AICV Listed tier"
+(a tier name that exists nowhere else on the page since the 2026-08-20
+restructure) removed from the lapse answer; nothing substituted. ⚠️ That
+answer ("What happens if we stop paying?") and its neighbours still use
+pre-restructure vocabulary (Agentic Review portal, Deployment Fee, Tier 4,
+"economic-development platform") — approved copy, now human-visible, needs
+Sat's read against the 2026-08-20 Terms. **AI Search must be re-synced from
+the dashboard before the FAQ appears in the corpus.**
 **AI Search re-synced by Sat from the dashboard, re-queried 2026-09-14 — CLOSED
 with two findings.** Chunk text lives in `chunk.text` (the first probe read
 `content` and saw nothing). On the old-assertion query the top 05-17 chunk is
@@ -177,7 +191,7 @@ co-occurs with fresh wording is a correction note QUOTING the withdrawn sentence
    visible text and the FAQ is JSON-LD only (agent-only since V2, 2026-05-07).
    The "give the FAQ a visible counterpart" item is therefore not cosmetic — it
    is the difference between the answer existing and not existing for the
-   semantic surface. Still open, needs Sat's call.
+   semantic surface. **DONE the same day — see the visible-FAQ block above.**
 Playbook §7.18 (the other session's rule) committed as `4738fa9` on the same
 instruction.
 
