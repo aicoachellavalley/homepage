@@ -185,13 +185,32 @@ co-occurs with fresh wording is a correction note QUOTING the withdrawn sentence
    body chunk on every query tried, but a retriever that lifts one chunk lifts
    it without the caveat. Recorded, not fixed; fixing means either editing
    superseded bodies (convention forbids) or a chunk-level marker (design call).
-2. **The FAQPage is invisible to AI Search entirely.** Neither the old nor the
-   new agent-payment answer is in any chunk; the only `/get-agent-ready/` chunk
-   returned for a payments query is the Terms modal. AI Search indexes rendered
-   visible text and the FAQ is JSON-LD only (agent-only since V2, 2026-05-07).
-   The "give the FAQ a visible counterpart" item is therefore not cosmetic — it
-   is the difference between the answer existing and not existing for the
-   semantic surface. **DONE the same day — see the visible-FAQ block above.**
+2. ~~**The FAQPage is invisible to AI Search entirely.**~~ **WRONG — corrected
+   the same day.** After the SECOND dashboard sync, FAQ-shaped queries returned
+   a `/get-agent-ready/` chunk that IS the FAQPage JSON-LD as text (it carries
+   `"@type":"Question"` and `acceptedAnswer`), so AI Search does index script
+   JSON-LD; my payments query simply had not surfaced that chunk. The chunk
+   was STALE, and that is the real finding: it still held the old payment
+   answer (replaced 10:30), "Free AICV Listed tier" and the deleted "What ships
+   this summer?" entry — the page as it was before this morning's first
+   deploy — and the homepage chunk lacked the "Latest from AICV News" band
+   deployed 14:17. **Two dashboard syncs re-fetched every brief and no static
+   page.** The one difference: briefs carry a sitemap `<lastmod>` (moved to
+   2026-09-14 by the amendments), static pages carried none. The corpus did
+   hold the 2026-08-20 tier copy, so static pages were re-fetched at some
+   point between Aug 20 and today — not by a dashboard sync since.
+   **FIX:** `src/data/page-dates.json` is now the single source for a
+   hand-written page's modification date, read by the page's own JSON-LD
+   `dateModified` AND by `sitemap.xml.ts` `<lastmod>` (pricing.json pattern);
+   index pages derive lastmod from their newest entry; the homepage from the
+   newest of those. MVA and how-we-do-this were hand-set 2026-05-20 /
+   2026-07-17 while git shows both rendered pages last changed 2026-08-10 —
+   set to what git proves. `/cvep-what-happened/` has no date claim and gets
+   none. **Hypothesis, not yet proven: a dashboard sync re-fetches on a moved
+   lastmod.** Sat's THIRD sync tests it; if the visible FAQ and the homepage
+   band then appear, it holds. If not, the crawler's re-fetch trigger is
+   something else and the still-stale static pages become the open item.
+   The visible FAQ section (above) stands on its own merits either way.
 Playbook §7.18 (the other session's rule) committed as `4738fa9` on the same
 instruction.
 

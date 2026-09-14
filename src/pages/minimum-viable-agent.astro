@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Base from '../layouts/Base.astro';
+import pageDates from '../data/page-dates.json';
 
 const pageTitle = 'Minimum Viable Agent (MVA) — AICV';
 const pageDescription = 'A Minimum Viable Agent (MVA) is the foundational agent representation of a Coachella Valley entity on the AICV network — agent-readable, citable, and positioned for the agentic internet.';
@@ -23,7 +24,7 @@ const schemaGraph = {
       },
       "inLanguage": "en-US",
       "datePublished": "2026-05-20",
-      "dateModified": "2026-05-20"
+      "dateModified": pageDates["/minimum-viable-agent/"]
     },
     {
       "@type": "BreadcrumbList",

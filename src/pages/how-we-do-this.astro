@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Base from '../layouts/Base.astro';
+import pageDates from '../data/page-dates.json';
 
 const pageTitle = 'How We Do This — AICV';
 const pageDescription = 'How AI Coachella Valley works, in plain language: we count every business in a category, we come back and measure again, we fix what\'s wrong on the record, and we publish what we find — so the desert gets discovered by the AI agents already reading the web.';
@@ -23,7 +24,7 @@ const schemaGraph = {
       },
       "inLanguage": "en-US",
       "datePublished": "2026-07-17",
-      "dateModified": "2026-07-17"
+      "dateModified": pageDates["/how-we-do-this/"]
     },
     {
       "@type": "BreadcrumbList",
