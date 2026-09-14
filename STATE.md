@@ -155,10 +155,31 @@ src/pages and llms.txt: zero pages), so there was nothing truthful to restate
 and a September page cannot carry a summer promise. FAQPage is now 8 Questions.
 Fix by deleting the claim, never by substituting one. **Still open:** the
 FAQPage has no visible counterpart (agent-only since V2, 2026-05-07).
-**AI Search re-sync still open:** the wrangler OAuth token is rejected by the
-API (10000) and Claude's Chrome extension was not connected this session, so
-the dashboard Sync on `aicv-com-corpus` is Sat's click. Playbook §7.18 (the
-other session's rule) committed as `4738fa9` on the same instruction.
+**AI Search re-synced by Sat from the dashboard, re-queried 2026-09-14 — CLOSED
+with two findings.** Chunk text lives in `chunk.text` (the first probe read
+`content` and saw nothing). On the old-assertion query the top 05-17 chunk is
+the September 14 notice + revised Context (score 0.999); on a query for the
+notices themselves the Qualcomm, 05-17 and Shopify notice chunks rank 0.999;
+the Liz Reid page returns its correction at 1.000. Every "stale" phrase that
+co-occurs with fresh wording is a correction note QUOTING the withdrawn sentence
+— by design.
+1. **Body chunks of SUPERSEDED briefs still carry the original sentence, alone.**
+   Shopify "cannot participate" (0.640) and Qualcomm "cannot complete the sale"
+   (0.430) surface as body chunks without the notice, which sits in the page's
+   first chunk. Supersession does not edit the body, so this is the §7.18
+   atomicity limit at chunk level, not a stale index: the notice outranks the
+   body chunk on every query tried, but a retriever that lifts one chunk lifts
+   it without the caveat. Recorded, not fixed; fixing means either editing
+   superseded bodies (convention forbids) or a chunk-level marker (design call).
+2. **The FAQPage is invisible to AI Search entirely.** Neither the old nor the
+   new agent-payment answer is in any chunk; the only `/get-agent-ready/` chunk
+   returned for a payments query is the Terms modal. AI Search indexes rendered
+   visible text and the FAQ is JSON-LD only (agent-only since V2, 2026-05-07).
+   The "give the FAQ a visible counterpart" item is therefore not cosmetic — it
+   is the difference between the answer existing and not existing for the
+   semantic surface. Still open, needs Sat's call.
+Playbook §7.18 (the other session's rule) committed as `4738fa9` on the same
+instruction.
 
 Journal: sealed since 2026-08-10 — no line item, by design.
 
