@@ -2,7 +2,28 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
-## 2026-09-14 — Agent-payment language reconciled with the Sept 10 Stripe Link brief; `supersession` becomes a record field. BUILT + GATED, NOT COMMITTED (Sat approved the drafts; commit/push is his go).
+## 2026-09-14 — Agent-payment language reconciled with the Sept 10 Stripe Link brief; `supersession` becomes a record field. DEPLOYED — com `238c735` (Pages deployment `46f0f75b`, live within 60 s of push), mcp `b0a3f75` (worker version `0aff2a73`), playbook `cf522c0`.
+
+**Verified on production, 2026-09-14 (Sat's go).** Two consecutive clean
+whole-sweeps (per the fleet-deploy rule): all six amended brief pages carry their
+notices, the Updated line and truthful JSON-LD dates; `/get-agent-ready/` serves
+the rewritten FAQ and `dateModified` 2026-09-14; `briefs.json` = 178 entries,
+6 amended, all supersessions carry `successor_url`; `llms-full.txt` = 178
+brief sections, 3 with supersession and 4 with correction lines; `sitemap.xml`
+= 279 locs with the six lastmods. The live desk (`get_regional_brief`) now
+returns `correction`/`supersession`/`date_modified` on amended briefs and
+nothing extra on unamended ones. **AI Search `aicv-com-corpus` is STALE**: a
+query on the old assertion returns the 05-17 and Shopify pages with pre-deploy
+wording (top chunk score 0.999, stale=true, fresh=false). Query access works;
+resync access does not (the shell token is zone-scoped, wrangler has no
+AutoRAG command) → **open item: trigger a re-crawl from the dashboard, then
+re-query.** Wayback Save Page Now returns 401 today; the Stripe URL still has
+only a 307 capture (2026-09-13) → open.
+
+**Trap met while verifying:** zsh does not word-split an unquoted `$var`, so
+`node desk.mjs $r` passed "2026-09-10 2026-09-10" as ONE argument and the desk
+looked broken (empty, then unfiltered). The desk was fine. Split explicitly
+(`${R% *}` / `${R#* }`) or quote each argument.
 
 **Why.** Stripe's September 8 announcement (Muse pays via Link; a single-use
 virtual card scoped to the approved purchase everywhere Link is not accepted)
