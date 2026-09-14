@@ -5,6 +5,7 @@ import briefsData from '../../public/briefs.json';
 import reportsData from '../../public/reports.json';
 import corpus from '../data/corpus.json';
 import deployed from '../data/previews-deployed.json';
+import { latestFromAicvNews, AICV_NEWS } from '../lib/aicv-news';
 const previewManifests = import.meta.glob('../data/previews/previews-index-*.json', { eager: true });
 
 /* Derived, never literal — and derived from what is SERVING, not what was
@@ -47,6 +48,11 @@ const stat = (n) => n.toLocaleString('en-US');
 
 const briefCount = briefsData.length;
 const latestBriefs = briefsData.slice(0, 3);
+// SUBSCRIBER BAND (founder ruling 2026-09-14): aicv.news is the origin, this
+// site pulls from it. Three newest pieces across News, Views and Field Notes,
+// outbound. Empty on feed failure — the section then does not render at all.
+const aicvNews = await latestFromAicvNews(3);
+const fmtNews = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 // DISPLAY-ONLY filter. reports.json keeps all 13 entries — the surface-health
 // monitor asserts three-way agreement on that feed, so it must not change. The
 // homepage labels this cell "Reports Published", and the evergreen methodology
@@ -385,6 +391,31 @@ const personSchema = {
     </div>
   </section>
 </div>
+
+<!-- ─── LATEST FROM AICV NEWS — a subscriber band; canonical stays at aicv.news ─── -->
+{aicvNews.length > 0 && (
+<div class="news-band-wrap">
+  <section class="news-band-section" aria-label="Latest from AICV News">
+    <div class="briefs-strip-header-row">
+      <div>
+        <div class="briefs-strip-label">Latest from AICV News</div>
+        <p class="news-band-sub">Reported and relayed at <a href={AICV_NEWS} rel="noopener">aicv.news</a>, the publication of AI Coachella Valley, the nonprofit. Read it there.</p>
+      </div>
+      <a href={AICV_NEWS} class="briefs-strip-viewall" rel="noopener">All of AICV News →</a>
+    </div>
+    <div class="briefs-strip-grid">
+      {aicvNews.map((it) => (
+        <a href={it.link} class="briefs-strip-card news-band-card" rel="noopener">
+          <div class="briefs-strip-date">{it.type} · {fmtNews(it.date)}</div>
+          <div class="briefs-strip-title">{it.title}</div>
+          <p class="briefs-strip-desc">{it.description}</p>
+          <span class="news-band-more">Read on AICV News →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</div>
+)}
 
 <!-- ─── AGENT INTENT ─── -->
 <div class="intel-what-wrap">
@@ -796,6 +827,15 @@ const personSchema = {
   .briefs-strip-wrap {
     background: var(--pine-mist);
   }
+  /* Latest from AICV News — the subscriber band (2026-09-14). Reuses the
+     briefs-strip card system so the two strips read as one family; the
+     ground differs so a reader sees these are outbound, not ours. */
+  .news-band-wrap { background: var(--sand, #F3EFE4); }
+  .news-band-section { padding: 4rem 3rem; max-width: 1060px; margin: 0 auto; }
+  .news-band-sub { margin: 0.4rem 0 0; font-size: 0.9rem; color: var(--pine); opacity: 0.75; max-width: 60ch; }
+  .news-band-sub a { color: var(--pine); }
+  .news-band-more { display: block; margin-top: auto; padding-top: 0.75rem; font-size: 0.8rem; color: var(--pine); opacity: 0.7; letter-spacing: 0.02em; }
+  @media (max-width: 720px) { .news-band-section { padding: 3.5rem 1.5rem; } }
   .briefs-strip-section {
     padding: 4rem 3rem;
     max-width: 1060px;
