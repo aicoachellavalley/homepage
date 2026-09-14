@@ -211,6 +211,21 @@ co-occurs with fresh wording is a correction note QUOTING the withdrawn sentence
    band then appear, it holds. If not, the crawler's re-fetch trigger is
    something else and the still-stale static pages become the open item.
    The visible FAQ section (above) stands on its own merits either way.
+   **PROVEN, same day — and the third dashboard sync was not the proof.**
+   `npx wrangler@latest ai-search jobs list aicv-com-corpus` shows ONLY
+   scheduled jobs, one every ~6 h 10 min; **none of Sat's three dashboard
+   clicks created a job.** The 18:10 UTC scheduled job (40 min after the
+   briefs deploy) re-embedded exactly the 6 amended briefs; a job I triggered
+   with `jobs create` (`4b01d319`, 25 s) after the lastmod fix re-embedded
+   exactly 5 — the pages whose new lastmod is newer than the 2026-08-08 index
+   (/, /briefs/, /get-agent-ready/, /minimum-viable-agent/, /how-we-do-this/);
+   nodes/ and reports/ carry July dates and were skipped. A minute later the
+   visible FAQ heading and the new payment answer were in the corpus and the
+   old answer, "AICV Listed" and the summer entry were gone. **Convention from
+   here:** bump `src/data/page-dates.json` whenever a hand-written page's
+   rendered content changes, then either wait ≤6 h or run
+   `npx wrangler@latest ai-search jobs create aicv-com-corpus`. Mechanics
+   recorded in playbook SURFACE-INVENTORY Class H (`c5f39f0`).
 Playbook §7.18 (the other session's rule) committed as `4738fa9` on the same
 instruction.
 
