@@ -147,9 +147,18 @@ frontmatter reading (js-yaml) cross-checks the hand parser.
   brief, attributed to Stripe. Handed to the news desk, not edited here.
 
 **Founder decisions.** Items 1 and 2 (Liz Reid correction; 05-17 discovery
-correction) APPLIED on Sat's go 2026-09-14 — see amended records. Still open:
-the agent-only FAQPage on `/get-agent-ready/` and its stale "What ships this
-summer?" entry — needs a call on what actually shipped before copy can be true.
+correction) APPLIED on Sat's go 2026-09-14 — see amended records.
+**"What ships this summer?" DELETED (Sat's "get up to date", 2026-09-14).** It
+promised a public Ask AICV chat interface, an AICV Network member directory and
+member-scoped query access; none of the three exists on the site (grep of
+src/pages and llms.txt: zero pages), so there was nothing truthful to restate
+and a September page cannot carry a summer promise. FAQPage is now 8 Questions.
+Fix by deleting the claim, never by substituting one. **Still open:** the
+FAQPage has no visible counterpart (agent-only since V2, 2026-05-07).
+**AI Search re-sync still open:** the wrangler OAuth token is rejected by the
+API (10000) and Claude's Chrome extension was not connected this session, so
+the dashboard Sync on `aicv-com-corpus` is Sat's click. Playbook §7.18 (the
+other session's rule) committed as `4738fa9` on the same instruction.
 
 Journal: sealed since 2026-08-10 — no line item, by design.
 
