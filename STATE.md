@@ -225,7 +225,20 @@ co-occurs with fresh wording is a correction note QUOTING the withdrawn sentence
    here:** bump `src/data/page-dates.json` whenever a hand-written page's
    rendered content changes, then either wait ≤6 h or run
    `npx wrangler@latest ai-search jobs create aicv-com-corpus`. Mechanics
-   recorded in playbook SURFACE-INVENTORY Class H (`c5f39f0`).
+   recorded in playbook SURFACE-INVENTORY Class H (`c5f39f0`, scoped in the
+   follow-up commit). **Scope of the proof, so it is not over-read:** a moved
+   lastmod is a SUFFICIENT trigger (two jobs, exact sets). It is not the only
+   one — the 05:50 UTC scheduled job re-embedded 4 files with no lastmod moved,
+   mechanism unidentified. **Homepage caveat:** its corpus copy carries the
+   Sept 10 briefs strip (so it was re-fetched today, by inference in that
+   05:50 job) but NOT the 14:17 "Latest from AICV News" band; the 21:46 job
+   skipped it because its new lastmod (2026-09-14) is not newer than a
+   same-day stored date. Expected to arrive on the next day's cycle or the
+   next lastmod move; not worth forcing — the band is outbound to aicv.news.
+   Job history for the record (UTC, embeds): 09-10 e6c7e6c7 → 4 (the four
+   new briefs; 275→279 files); 09-11..13 → 0; 09-14 05:50 → 4; 12:00 → 0;
+   18:10 → 6 (amended briefs); 21:46 user → 5 (static pages with a newer
+   lastmod). `wrangler ai-search jobs logs` gives counts, never names.
 Playbook §7.18 (the other session's rule) committed as `4738fa9` on the same
 instruction.
 
