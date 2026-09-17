@@ -479,7 +479,10 @@ gate. `/get-agent-ready/` remains the one live diagnostic.
 
 ---
 
-## QUEUED — delete the orphaned homepage diagnostic widget (opened 2026-08-08)
+## DONE 2026-09-16 — deleted the orphaned homepage diagnostic widget (opened 2026-08-08)
+
+**Cleared in `index.astro` (commit this session).** The single orphaned `<script is:inline>` block (197 lines) was removed; the homepage now ships no JS and loads with zero console errors (verified in a browser on production). The original QUEUED note is kept below for the record.
+
 
 **~180 lines of dead JavaScript on `index.astro`.** The widget's MARKUP was
 removed on **2026-04-27 (`472a47c`)** when the diagnostic moved to
