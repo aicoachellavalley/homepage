@@ -25,6 +25,7 @@ import Base from '../layouts/Base.astro';
 const pageTitle = 'AI Agents in the Coachella Valley — Get Agent Ready | AICV';
 const pageDescription = "How do AI agents see your Coachella Valley business? Free agent-readiness diagnostic from AICV, the region's intelligence network for the agentic internet.";
 const canonicalUrl = 'https://aicoachellavalley.com/get-agent-ready/';
+const businessDescription = 'Annual membership in the AICV Network for valley businesses that need to be legible to the agent layer. Includes a Cloudflare agent-readiness diagnostic with an owner-assisted Search, Agent and Training (SAT) policy review, canonical MVA built to Tier 4 infrastructure standard, MCP routing configuration, and agent-to-agent concierge access. SAT review requires the owner or site manager; configuration changes are separately agreed, not automatic.';
 
 /* FAQ — ONE ARRAY, TWO SURFACES (2026-09-14). Rendered as the visible
  * "Questions" section AND as the FAQPage mainEntity in the JSON-LD graph, from
@@ -37,6 +38,10 @@ const canonicalUrl = 'https://aicoachellavalley.com/get-agent-ready/';
  * no straight double quotes (they are emitted verbatim into JSON-LD). */
 const faq = [
   {
+    q: "Does Get Agent Ready check whether Cloudflare blocks agents?",
+    a: "The free diagnostic checks public page reachability, robots.txt preferences for the submitted page, and Content-Signal declarations. It does not log into Cloudflare or verify Search, Agent and Training (SAT) settings. A page loading for our checker is not proof that every crawler can access it. Business and Premium onboarding include an owner-assisted SAT review when the site uses Cloudflare; the owner or site manager confirms settings, mixed-purpose crawler restrictions and individual blocks. Training permission is a separate business choice, not a visibility requirement. The $500 Agent Ready purchase publishes your AICV profile; it does not change or audit your Cloudflare account.",
+  },
+  {
     q: "We already pay for SEO. Why do we need this?",
     a: "Different budget, different layer. SEO optimizes for human eyes on Google search results pages — someone typing a query, clicking a blue link, landing on your site. That work still matters and it isn't what AICV does. AICV operates in the layer agents read when they answer a user's question directly, without surfacing a results page at all. When someone asks Claude or ChatGPT where to hold a corporate retreat in the Coachella Valley, your SEO ranking on Google is irrelevant to that answer. Your presence in the regional substrate agents query is what decides whether you're in the answer. Both budgets are legitimate. They serve different interfaces.",
   },
@@ -46,7 +51,7 @@ const faq = [
   },
   {
     q: "Does AICV touch our website?",
-    a: "No. That's the point. AICV represents members at Tier 4 agent-readiness in parallel to their own sites — members don't modify their websites, change their CMS, or install anything. The work happens entirely in the substrate AICV operates.",
+    a: "No. Your AICV profile is built alongside your site; you don't change your CMS or install anything. What we do look at is the public signals your site already sends — can a page be reached, what robots.txt says, what your Cloudflare crawler settings declare. For Business and Premium, that includes an owner-assisted review of those Cloudflare settings, with you or your site manager in the room. Reviewing is not changing: any configuration work is separately agreed, and private areas stay private.",
   },
   {
     q: "What happens if we stop paying?",
@@ -153,7 +158,7 @@ const schemaGraph = {
       "@type": "Service",
       "@id": "https://aicoachellavalley.com/get-agent-ready/#service-ready",
       "name": "Agent Ready Business",
-      "description": "Annual membership in the AICV Network for valley businesses that need to be legible to the agent layer. Includes combined Cloudflare agent-readiness diagnostic, canonical MVA built to Tier 4 infrastructure standard, MCP routing configuration, and agent-to-agent concierge access.",
+      "description": businessDescription,
       "provider": { "@id": "https://aicoachellavalley.com/#organization" },
       "areaServed": {
         "@type": "Place",
@@ -348,14 +353,14 @@ const schemaGraph = {
     <div class="gr-tool" id="diagnostic">
       <div class="gr-tool-label">Free tool</div>
       <h2 class="gr-tool-h">Can AI see your business?</h2>
-      <p class="gr-tool-sub">See how Claude, ChatGPT, Perplexity, or Gemini read — or miss — your business right now. Plain English.</p>
+      <p class="gr-tool-sub">Check how clearly your public page presents your business, plus observable agent-access signals. Cloudflare account settings require an owner review. <a href="#agent-access">What we check</a>.</p>
     
     <div class="aio-card">
     <label class="aio-input-label gr-sr-only" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
     <form
       id="aio-analyzer"
       toolname="analyze_agent_readiness"
-      tooldescription="Analyzes a public website URL and returns an agent-readiness score, verdict, and specific findings. Use to evaluate how well a site is structured for AI agent interaction."
+      tooldescription="Analyzes a public website URL for content clarity and observable agent-access signals. Returns qualitative findings, not a score. Cloudflare Search, Agent and Training policy is unverified without an owner-assisted account review."
       novalidate
       onsubmit="runAnalysis(event); return false;"
     >
@@ -375,7 +380,7 @@ const schemaGraph = {
     <div class="aio-loading" id="aioLoading">
       <div class="spin"></div>
       <div class="loading-txt">Analyzing your site the way AI systems would…</div>
-      <div class="loading-step" id="loadingStep">Checking crawler access…</div>
+      <div class="loading-step" id="loadingStep">Checking public access signals…</div>
     </div>
   </div>
 
@@ -393,12 +398,32 @@ const schemaGraph = {
           <button class="btn" id="saveCardBtn" aria-label="Download the result card as an image" onclick="saveCard()">⬇ Save card</button>
         </div>
       </div>
-      <div class="aio-post-results">A diagnostic tells you what AI sees today. It doesn't change what AI reads tomorrow. That's what the Network does. Keep scrolling.</div>
+      <div class="aio-post-results">A diagnostic reports what we could observe; it does not change your site or Cloudflare settings. An AICV profile and an owner-assisted account review are separate next steps.</div>
     </div>
   </div>
 </section>
 
-<!-- (Why-networks + how-it-works folded into the condensed persuasion row below the tiers.) -->
+<section class="gr-access-guide" id="agent-access" aria-labelledby="agent-access-title">
+  <div class="gar-v2-inner">
+    <div class="gar-v2-eyebrow">AGENT ACCESS</div>
+    <h2 id="agent-access-title">Can an agent reach your business?</h2>
+    <p>Clear content and useful tools cannot help an agent whose request is blocked. Our free diagnostic checks one public page, its robots preferences and Content-Signal declarations. It does not verify your Cloudflare account settings or guarantee access for every crawler.</p>
+    <p><strong>Find you → Reach you → Understand you → Use your tools → Transact.</strong> These are separate checks, not a promise of ranking, citation or sales.</p>
+    <details>
+      <summary>Check Search, Agent and Training in Cloudflare</summary>
+      <ol>
+        <li>Sign in to Cloudflare and select the correct account and <strong>active domain</strong>. If your host or agency manages it, ask them to check. Repeat for each domain.</li>
+        <li>Open <strong>Security → Settings → Configure AI bot policies → Configurations</strong>. Record Search, Agent and Training: Allow, Block on pages with ads, or Block on all pages. Choose intentionally, save, reopen and confirm.</li>
+        <li>Check any remaining <strong>Block AI bots</strong> and mixed-purpose controls. Blocking Training can also block crawlers used for Search, including Googlebot, Applebot and Bingbot. Training is a separate owner choice, not a requirement for visibility; review that trade-off before changing it.</li>
+        <li>In <strong>AI Crawl Control → Security</strong>, include inactive crawlers and inspect individual block switches. Ask your site manager to check conflicting rules. Keep WAF, DDoS protection, authentication and private areas protected.</li>
+        <li>Check your public <strong>/robots.txt</strong>: it must be text, not your homepage. Reconcile named-bot rules, Content-Signal preferences, Cloudflare-managed robots and Bot Preference Sync. Re-fetch after changes and inspect real crawler traffic/errors; our checker is not a verified Googlebot or ChatGPT visit.</li>
+      </ol>
+      <p>Cloudflare's September 15, 2026 defaults affect new domains and existing Free-plan zones with untouched settings. A current value alone does not prove whether a setting was inherited or deliberately chosen. Record the domain, date, values and who confirmed them.</p>
+      <p>Dashboard labels checked September 15, 2026. Sources: <a href="https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/">Cloudflare AI bot policies</a>, <a href="https://developers.cloudflare.com/ai-crawl-control/configuration/ai-crawl-control-with-bots/">layered blocking rules</a>, <a href="https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/">robots preferences</a>, and <a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-allows-the-agentic-internet-to-flourish-with-a-simple-philosophy-your-content-your-rules/">September 15 defaults</a>.</p>
+    </details>
+    <p><strong>Business and Premium onboarding:</strong> owner-assisted SAT review for Cloudflare sites, with the owner or site manager present. Changes require a separately agreed scope. The $500 Agent Ready profile purchase does not include a Cloudflare account audit or configuration work. <a href="/terms/#agent-access">Agent Access scope</a>.</p>
+  </div>
+</section>
 
 <!-- TIERS -->
 <section class="gar-v2-tiers" id="tiers">
@@ -563,6 +588,7 @@ const schemaGraph = {
       <h2 class="tos-title">Agent Preview — what's included</h2><div class="tos-date">Free · no signup</div></div>
     <div class="tos-body">
       <p>A free, stateless diagnostic showing how an AI agent reads a business today. Nothing is stored. No agent is built — Agent Preview is the free look before an entity joins the network.</p>
+      <p>Includes observable Agent Access signals, not a Cloudflare account audit. Missing or unreadable evidence is marked inconclusive; SAT settings remain unverified. <a href="#agent-access" onclick="document.getElementById('inc-preview').classList.remove('on')">See the access checklist</a>.</p>
       <p>Terms for the free diagnostic: <a href="/terms/#agent-readiness-review">aicoachellavalley.com/terms/</a></p>
     </div>
   </div>
@@ -593,7 +619,7 @@ const schemaGraph = {
     <div class="tos-header"><div class="tos-label">AI Coachella Valley</div>
       <h2 class="tos-title">Agent Ready Business — what's included</h2><div class="tos-date">$2,500 / year · plus $1,000 one-time setup</div></div>
     <div class="tos-body">
-      <p>Annual membership in the AICV Network for valley businesses that need to be legible to the agent layer. Includes combined Cloudflare agent-readiness diagnostic, canonical MVA built to Tier 4 infrastructure standard, MCP routing configuration, and agent-to-agent concierge access.</p>
+      <p>{businessDescription}</p>
       <p>Scope is confirmed on a call before anything is billed. <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Book a call</a>.</p>
     </div>
   </div>
@@ -627,6 +653,8 @@ const schemaGraph = {
 
       <h3>How It Works</h3>
       <p>Your submitted URL is passed to a third-party AI model (Anthropic Claude) via a Cloudflare Worker. Results are generated automatically and returned directly to your browser. AICV does not retain your query or output after your session ends.</p>
+      <h3>Agent Access — scope added September 15, 2026</h3>
+      <p>Public HTTP, robots.txt and Content-Signal checks are code-derived observations, not an authenticated Cloudflare SAT audit. Results may be inconclusive and do not establish access for every crawler. See the <a href="/terms/#agent-access">dated Agent Access scope</a>, including owner-assisted Business and Premium review.</p>
 
       <h3>For Informational, Experimental, and Entertainment Purposes Only</h3>
       <p>Results produced by this tool are AI-generated and provided strictly for informational, experimental, and entertainment purposes. They do not constitute professional SEO, legal, technical, marketing, or business advice of any kind. AICV makes no representations or warranties — express or implied — regarding the accuracy, completeness, reliability, or fitness of results for any particular purpose. Always verify findings independently and consult qualified professionals before making decisions based on tool output.</p>
@@ -1000,6 +1028,17 @@ const schemaGraph = {
     max-width: 720px;
     color: var(--pine);
   }
+  .gr-access-guide { padding: 2.5rem 1.5rem; background: var(--sand); color: var(--pine-dark); }
+  .gr-access-guide h2 { font-family: 'Syne', sans-serif; font-size: 1.5rem; margin: .6rem 0 1rem; }
+  .gr-access-guide p, .gr-access-guide li { font-size: .9rem; line-height: 1.7; margin: .7rem 0; max-width: 85ch; }
+  .gr-access-guide ol { padding-left: 1.4rem; }
+  .gr-access-guide a, .aicv-access a { color: var(--pine); text-decoration: underline; }
+  .gr-access-guide summary { cursor: pointer; font-weight: 600; padding: .75rem 0; }
+  .aicv-access { border-top: 1px solid var(--pine-tint); margin-top: 1.1rem; padding-top: 1rem; overflow-wrap: anywhere; }
+  .aicv-access h3 { font-size: 1rem; margin: 0 0 .5rem; }
+  .aicv-access p, .aicv-access li, .aicv-scope { font-size: .8rem; line-height: 1.55; margin: .6rem 0; }
+  .aicv-access ul { padding-left: 1.2rem; }
+  .aicv-access summary { cursor: pointer; font-size: .8rem; padding: .5rem 0; }
   .aicv-eyebrow { font-size: 0.66rem; letter-spacing: 0.09em; color: #5C6B52; font-weight: 500; }
   .aicv-head {
     display: flex; justify-content: space-between; align-items: baseline;
@@ -2602,7 +2641,7 @@ const schemaGraph = {
   const WORKER_BASE = 'https://aicv-api.sunshinefm.workers.dev';
 
   const STEPS = [
-    "Checking if AI crawlers can access your site…",
+    "Checking public reachability and crawler preferences…",
     "Reading your page content…",
     "Looking for business information…",
     "Checking structured data…",
@@ -2671,7 +2710,7 @@ const schemaGraph = {
         showErr(r.error);
         return;
       }
-      if (!r.verdict || !r.dimensions) throw new Error('Could not read results. Please try again.');
+      if (r.review_status !== 'access-only' && (!r.verdict || !r.dimensions)) throw new Error('Could not read results. Please try again.');
 
       clearInterval(ticker);
       document.getElementById('aioLoading').classList.remove('on');
@@ -2697,7 +2736,35 @@ const schemaGraph = {
   // "Cited" is reserved for premium-tier materials only.
   const RUNGS = ['Invisible', 'Partly visible', 'Visible', 'Agent ready', 'Discoverable'];
 
+  function accessLines(r) {
+    const a = r.agent_access;
+    if (!a) return ['Agent Access was not returned by this diagnostic version. Public access and Cloudflare SAT settings are unverified.'];
+    return [a.summary, `Checked URL: ${a.checked_url}`, `Checked at: ${a.checked_at}`,
+      `Page fetch: ${a.http.note}`, `Robots preferences: ${a.robots.note}`,
+      'Cloudflare SAT: Search — UNVERIFIED; Agent — UNVERIFIED; Training — UNVERIFIED.',
+      a.edge_policy.note,
+      ...(a.robots.crawlers || []).map(c => `${c.agent} (${c.purpose} use examined): ${c.policy} for the checked URL — robots preference only, not enforced access.`),
+      ...(a.content_signals || []).map(s => `Content-Signal (${s.source}; ${s.agents.join(', ')}): ${Object.entries(s.preferences).map(([k,v]) => `${k}=${v}`).join(', ')} — declared preference, not a SAT setting.`),
+      'Training permission is a separate owner choice, not a visibility requirement.', a.next_step];
+  }
+
+  function renderAgentAccess(r) {
+    const lines = accessLines(r);
+    return `<section class="aicv-access" aria-label="Agent Access">
+      <h3>Agent Access — Cloudflare SAT unverified</h3>
+      <p>${esc(lines[0])}</p>
+      <p><strong>Search: UNVERIFIED · Agent: UNVERIFIED · Training: UNVERIFIED</strong></p>
+      <details><summary>Public observations and their limits</summary><ul>${lines.slice(1).map(line => `<li>${esc(line)}</li>`).join('')}</ul></details>
+      <p><a href="#agent-access">How to check Cloudflare with your site manager</a></p>
+    </section>`;
+  }
+
   function renderReview(r) {
+    if (r.review_status === 'access-only') return `<div class="aicv-review">
+      <div class="aicv-eyebrow">AGENT PREVIEW — ACCESS ONLY</div>
+      <h2 class="aicv-biz">Content not assessed</h2>
+      <p class="aicv-url">${esc(r.domain || '')} · ${esc(r.reviewed_date || '')}</p>
+      <p class="aicv-scope">${esc(r.summary || '')}</p>${renderAgentAccess(r)}</div>`;
     const dims = r.dimensions || {};
     const urlLine = [esc(r.domain || ''), esc(r.locality || '')].filter(Boolean).join(' · ');
 
@@ -2735,15 +2802,17 @@ const schemaGraph = {
           <div class="aicv-reviewed">Reviewed ${esc(r.reviewed_date || '')}</div>
         </div>
         <div class="aicv-head-right">
-          <div class="aicv-eyebrow">HOW AGENTS SEE YOU</div>
-          <div class="aicv-verdict">${esc(r.verdict || '')}</div>
+          <div class="aicv-eyebrow">CONTENT ASSESSMENT</div>
+          <div class="aicv-verdict">${esc(r.verdict || '')} — content only</div>
         </div>
       </div>
+      <p class="aicv-scope">${esc(r.visibility_scope || 'Content assessment only; access for every crawler and Cloudflare SAT settings are unverified.')}</p>
       <div class="aicv-ladder">
         <div class="aicv-ladder-track">${rungs}</div>
         <div class="aicv-ladder-net">— the Network —</div>
       </div>
       <div class="aicv-dims">${cards}</div>
+      ${renderAgentAccess(r)}
       ${fixes ? `<div class="aicv-fixes"><div class="aicv-eyebrow aicv-fixes-cap">WHAT YOU COULD FIX YOURSELF</div>${fixes}</div>` : ''}
       <div class="aicv-foot">
         <span class="aicv-foot-meta">Generated by AICV · aicoachellavalley.com · Reviewed ${esc(r.reviewed_date || '')}</span>
@@ -2771,6 +2840,7 @@ const schemaGraph = {
       return { name: DIM_LABELS[k], state: STATE_LABELS[d.state] || (d.state || '').toUpperCase(), note: d.note || '' };
     });
     const fixes = (r.fixes || []).map(f => ({ severity: f.severity, text: f.text }));
+    const accessText = accessLines(r).join('\n');
 
     let output = '';
 
@@ -2784,7 +2854,10 @@ const schemaGraph = {
         business_name: r.business_name,
         locality: r.locality,
         reviewed_date: r.reviewed_date,
-        verdict: r.verdict,
+        verdict: r.verdict ? `${r.verdict} — content only; crawler access not fully verified` : 'Content not assessed',
+        review_status: r.review_status || 'complete',
+        visibility_scope: r.visibility_scope || 'Content not assessed; Cloudflare SAT settings unverified.',
+        agent_access: r.agent_access || { state: 'inconclusive', summary: accessText },
         dimensions: r.dimensions,
         fixes,
         source: 'AICV Agent Preview · aicoachellavalley.com'
@@ -2795,6 +2868,11 @@ const schemaGraph = {
       output = `AGENT PREVIEW\n${r.business_name}\nSite: ${r.domain}${r.locality ? `\nLocation: ${r.locality}` : ''}\nReviewed: ${r.reviewed_date}\nHow agents see you: ${r.verdict}\n\n${r.summary}\n\nTHE FOUR DIMENSIONS\n${dims.map(d => `${d.name} — ${d.state}: ${d.note}`).join('\n')}\n\nWHAT YOU COULD FIX YOURSELF\n${fixes.map(f => `[${f.severity.toUpperCase()}] ${f.text}`).join('\n')}\n\nGenerated by AICV Agent Preview · aicoachellavalley.com · Reviewed ${r.reviewed_date}`;
     }
 
+    if (format !== 'json') {
+      if (r.review_status === 'access-only') output = `AGENT PREVIEW — CONTENT NOT ASSESSED\n${r.domain}\nReviewed: ${r.reviewed_date}\n\n${r.summary}`;
+      else output = output.replace(`How agents see you:** ${r.verdict}`, `Content assessment:** ${r.verdict} — content only; crawler access not fully verified`).replace(`How agents see you: ${r.verdict}`, `Content assessment: ${r.verdict} — content only; crawler access not fully verified`);
+      output += `\n\n${format === 'md' ? '## ' : ''}Agent Access\n\n${accessText}\n\nhttps://aicoachellavalley.com/get-agent-ready/#agent-access`;
+    }
     navigator.clipboard.writeText(output).then(() => {
       const btns = document.querySelectorAll('.aicv-actions .btn');
       btns.forEach(b => {

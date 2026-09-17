@@ -2,6 +2,40 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-15 — Agent Access diagnostic and owner-assisted SAT scope. LOCAL; awaiting commit/deploy approval.
+
+Base HEAD read from disk: `fa6c95f`. Changes are uncommitted and not deployed.
+The result card and Markdown/Text/JSON exports distinguish observable access
+from unverified Cloudflare Search/Agent/Training settings. Blocked/unreadable
+pages can return an access-only report; content-only verdicts carry the access
+limitation. The public checklist is `get-agent-ready/#agent-access`; a dated
+scope supplement is at `terms/#agent-access`. Business/Premium include an
+owner-assisted review where Cloudflare applies; the $500 profile purchase does
+not include an account audit or configuration work. Existing paid terms,
+Stripe link, purchase matching and activation code are unchanged. FAQ visible
+copy and JSON-LD share one array; Business description also shares one string.
+
+Verified September 15: `npm test` 14 passed; production build 306 pages, pricing,
+ownership and amendment gates all passed. Built-output comparison versus a
+fresh pre-edit build: only `get-agent-ready/index.html` and `terms/index.html`
+changed among HTML pages; the page stylesheet was replaced, sitemap date was
+updated, and stats/content-dump differences were generation timestamps only.
+Comparison harness controls: identical input = 0 changes; injected Terms hash
+change = exactly 1 localized change. Stripe URLs compare identical. Corpus
+counts unchanged: 79 nodes, 178 briefs, 14 reports.
+
+Browser QA used a localhost fixture server with the real result renderer, not
+the production paid diagnostic: normal, blocked/access-only and missing-robots
+cases behaved as expected, guide/Terms link worked, and no console warnings or
+errors were observed. Model calls, production rate limits and customer account
+settings were not used or changed. Backend tests/dry-run/live-public-fetch
+evidence live in `../api/STATE.md`; owner checklist in `../playbook/AGENT-ACCESS.md`.
+
+Commit/deploy order after approval: API source/push + Worker deploy first; com
+source/push (auto-deploy only) next; playbook docs/push. Verify live behavior and
+record deployment IDs before replacing this LOCAL status. A fresh public fetch
+alone cannot verify SAT; that remains owner-assisted by design.
+
 ## 2026-09-14 — Agent-payment language reconciled with the Sept 10 Stripe Link brief; `supersession` becomes a record field. DEPLOYED — com `238c735` (Pages deployment `46f0f75b`, live within 60 s of push), mcp `b0a3f75` (worker version `0aff2a73`), playbook `cf522c0`.
 
 **Verified on production, 2026-09-14 (Sat's go).** Two consecutive clean

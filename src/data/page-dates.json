@@ -1,6 +1,6 @@
 {
   "$comment": "SINGLE SOURCE for the modification date of each hand-written page. Read by the page's own JSON-LD (WebPage.dateModified) AND by sitemap.xml.ts (<lastmod>), so the two cannot disagree. Bump the date HERE when a page's rendered content changes. Added 2026-09-14: two AI Search dashboard syncs re-fetched every brief (whose sitemap lastmod had changed) and re-fetched no static page (which carried no lastmod); the corpus served a pre-deploy /get-agent-ready/ for hours. MVA and how-we-do-this were hand-set 2026-05-20 / 2026-07-17 while git shows both rendered pages last changed 2026-08-10 (the ownership-statement sweep, 0d5bfa4 era) — set to what git proves. /cvep-what-happened/ carries no date claim and is deliberately absent.",
-  "/get-agent-ready/": "2026-09-14",
+  "/get-agent-ready/": "2026-09-15",
   "/minimum-viable-agent/": "2026-08-10",
   "/how-we-do-this/": "2026-08-10"
 }
