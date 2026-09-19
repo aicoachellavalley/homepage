@@ -4,6 +4,14 @@
 
 ## 2026-09-19 — Approved release: human homepage and truthful MVA sales examples
 
+**First cloud build held, then corrected:** commit `48f524e` failed before
+deployment because this session put tests before generation of ignored
+`src/data/stats.json`. Existing local generated data masked that dependency.
+Cloudflare kept the previous production build. Generation now runs in
+`pretest`; prebuild checks pricing and invokes that lifecycle. Tests stay
+mandatory rather than being bypassed. A clean tracked-file export is the
+additional verification for the correction.
+
 Supersedes the LOCAL status of the three design/example entries below. Sat
 approved committing, pushing and releasing the accumulated work. Production
 verification/receipt will be recorded after the Git-connected deployment.
