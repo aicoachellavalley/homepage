@@ -2,6 +2,36 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-19 — LIVE: dependency fixes and confirmed-business checkout
+
+Approved source `032f6cd` is merged/pushed to main. GitHub Site and dependency
+gates passed. Git-connected Pages deployment
+`5c1f9d85-4b15-4ba9-94e5-18697d54b8c5` completed successfully at 21:29:44 UTC,
+after the required activation availability endpoint was deployed and verified.
+No manual Pages upload. Final registry audit: zero reported vulnerabilities.
+49 tests, 306 pages and all four content gates pass; upstream directive warnings
+remain recorded below rather than suppressed.
+
+Live QA: homepage, service page and Terms plus 24 distinct same-origin link/asset
+targets respond successfully. Stripe still returns 200 at the unchanged base
+destination. Public host-map bytes are unchanged (SHA-256
+`744369e479931f8bf3ab2c09edafffdf14863fdcf8972e00fd663d2629005d48`).
+
+A real public Brandini diagnostic returned both Palm Springs and Rancho Mirage
+choices. Before confirmation the link carried no slug; selecting Palm Springs
+passed the live availability check and added exactly
+`client_reference_id=brandini-toffee-palm-springs`. Analyze-another cleared the
+selection and restored the base link. No checkout was opened or completed;
+no ownership claim was persisted. Desktop and 390px mobile: no horizontal
+overflow, broken images, or observed console warnings/errors. Viewport restored.
+Local fixture tests additionally cover all 8 Fantasy Springs choices, shared
+host refusal, stale-response races and safe URL editing/reset behavior.
+
+Mirage's corpus/map entry stays intact, but the backend refuses its purchase
+and its preview shows an under-review notice; see mva/STATE.md and the recovery
+runbook. Outstanding monitoring/corpus/maintenance items remain in the debt
+register. This receipt supersedes the pre-release status immediately below.
+
 ## 2026-09-19 — LOCAL: dependency security and confirmed-business checkout
 
 Branch `codex/gar-debt-sept19`, base `382083d`; founder approved commit/push/deploy
