@@ -2,7 +2,22 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
-## 2026-09-19 — Release approved; final preflight passed
+## 2026-09-19 — DEPLOYED and verified: Get Agent Ready + complete node records
+
+Source commit `70ff923`, pushed to homepage/main. Git-triggered Pages deployment
+`1f5265d8-684e-48a7-966e-059c4337ec3d` succeeded. All 79 live node JSON records
+match the local build exactly; live Get Agent Ready and Terms HTML also match.
+Real Chrome checks at 1440, 390 and 320px passed: no overflow open/closed,
+native example toggle works, images load, Stripe URL unchanged, zero console or
+HTTP errors. No production analysis or purchase submitted.
+
+The dependent MCP Worker is now deployed (see its STATE). Both live cards agree
+with the service. Existing aggregate edge metrics can inspect `/nodes/*.json`:
+the post-release read returned 17 sampled path/status groups, all HTTP 200,
+87 reported requests from 18:04:28–18:09:33 UTC. Includes this release's probes;
+not a count of customers or proof of external demand. No new tracker was added.
+
+## 2026-09-19 — Release preflight record
 
 Sat authorized commit, push and deployment. The LOCAL entries below preserve
 the pre-release review record; this entry supersedes their approval status.
