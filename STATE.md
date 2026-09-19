@@ -4,6 +4,32 @@
 
 ## 2026-09-19 — Approved release: human homepage and truthful MVA sales examples
 
+**Released and verified:** implementation `48f524e`, build-order correction
+`af41b8e`, Cloudflare Pages deployment
+`d1babd6f-8053-4821-97b4-80c733ab229d` succeeded. Fresh public verification at
+20:14 UTC: homepage, Get Agent Ready and Terms return 200 with the new content;
+all 23 same-origin link/asset targets extracted from those pages respond
+successfully. All three demo HTML files and both hero WebPs match the committed
+public assets byte-for-byte. Each demo has noindex/nofollow and the intended
+script/form-blocking CSP. Stripe remains
+`https://buy.stripe.com/6oUfZhcZN0hBcEa1we8k801`. Research date is September 14,
+2026, derived from published research, not today's build date.
+
+Live browser QA: desktop/phone layouts have no horizontal overflow or broken
+images; homepage service CTA and native example disclosure work; observed
+console warnings/errors are empty. The legacy Terms modal was also checked
+locally and opens correctly. Diagnostic preflight returns 200 with the com
+origin allowed; no paid analysis or checkout was run. The August 21 Terms retain
+their dated text; the September 19 visibility section explicitly clarifies that
+outside visitation/indexing/citation/recommendation is not guaranteed.
+
+The corrected build also passes from a clean tracked-file export with no
+pre-existing stats (existing installed dependencies reused): 39 tests, 306-page
+build and all four gates. The separate com dependency advisory scan found 10
+flagged packages (1 critical, 8 high, 1 low), not demonstrated exploits; versions,
+deployment-context limits and upgrade acceptance criteria are GAR-08 in the
+playbook debt register. No package upgrade was attempted inside this release.
+
 **First cloud build held, then corrected:** commit `48f524e` failed before
 deployment because this session put tests before generation of ignored
 `src/data/stats.json`. Existing local generated data masked that dependency.
@@ -13,8 +39,8 @@ mandatory rather than being bypassed. A clean tracked-file export is the
 additional verification for the correction.
 
 Supersedes the LOCAL status of the three design/example entries below. Sat
-approved committing, pushing and releasing the accumulated work. Production
-verification/receipt will be recorded after the Git-connected deployment.
+approved committing, pushing and releasing the accumulated work; the receipt
+above confirms the Git-connected deployment, not just the push.
 
 Final cleanup removes “indexed” and “the index agents read first” from the
 offer; the matching activation Worker copy is released separately from mva.
