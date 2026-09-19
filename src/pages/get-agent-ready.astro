@@ -3,6 +3,16 @@ import Footer from '../components/Footer.astro';
 import pricing from '../data/pricing.json';
 import pageDates from '../data/page-dates.json';
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { latestDate, latestResearchDate, formatResearchDate } from '../../scripts/research-dates.mjs';
+
+// Read authored content at build time (also updates in local Astro dev). No
+// browser request or clock-based freshness badge; a rebuild alone changes nothing.
+const [briefs, nodes, reports, records] = await Promise.all([
+  getCollection('briefs'), getCollection('nodes'), getCollection('reports'), getCollection('records'),
+]);
+const researchDate = latestResearchDate({ briefs, nodes, reports, records });
+const pageModified = latestDate([pageDates['/get-agent-ready/'], researchDate]);
 
 /* HERO STRIP REDUCED 2026-08-19 to "Established 2025". It was
  * "{nodeCount} nodes · {briefCount} briefs · est. 2025 · Proof of work →".
@@ -42,6 +52,10 @@ const faq = [
     a: "Your website and SEO still matter. AI agents and assistants introduce another way for customers to find you: asking for a recommendation, comparing businesses, or planning a visit. AICV prepares your business for that agentic internet with a structured profile and local context that AI can read. It complements your existing marketing; it does not guarantee a recommendation, ranking or sale.",
   },
   {
+    q: "What do you mean by guaranteed visibility?",
+    a: "We guarantee visibility to agents on the AICV network: once your purchase is matched to your business, we publish a public, accessible, agent-readable page about you. That is the visibility we provide. We cannot guarantee that an AI service will visit, index, cite or recommend it, or that it will send you customers. Your original website is not changed by publishing your MVA.",
+  },
+  {
     q: "Why is there a Deployment Fee separate from annual membership?",
     a: "Setup is work we do once: assess your business, build your profile and configure the services in your membership. Annual fees keep those services running. Business and Premium start with a call to agree the scope. The $500 Agent Ready purchase is one-time, with no separate setup fee or annual membership.",
   },
@@ -59,7 +73,7 @@ const faq = [
   },
   {
     q: "Can we see an example of the Agentic Review?",
-    a: "Reviews belong to the businesses they assess, so we do not publish them as examples. Start with the free Agent Preview on this page to see the kind of questions we examine. A full Agentic Review goes deeper, with a private assessment, scoring and a roadmap for the business.",
+    a: "Yes. Open See what $500 builds above for a fictional business page and a sample private agent-readiness review. The sample uses the same template as our real previews, without exposing a customer's review. Premium's full Agentic Review goes further, with LLM Council editorial assessment and a roadmap for your business.",
   },
   {
     q: "Who owns AICV?",
@@ -92,7 +106,7 @@ const schemaGraph = {
       },
       "inLanguage": "en-US",
       "datePublished": "2026-04-23",
-      "dateModified": pageDates["/get-agent-ready/"]
+      "dateModified": pageModified
     },
     {
       "@type": "BreadcrumbList",
@@ -483,28 +497,34 @@ const schemaGraph = {
     </div>
   </div>
   <p class="gar-v2-tier-note">Current membership pricing shown. Availability is limited by deployment capacity. Not sure where you fit? <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Book a chat with Sat.</a></p>
+  <p class="gar-visibility-promise"><strong>We guarantee visibility to agents on the AICV network.</strong> Once your purchase is matched to your business, we publish a public, accessible, agent-readable page about you. We can't guarantee that an AI service will visit, index, cite or recommend it. <a href="/terms/#agent-visibility">What visibility means</a>.</p>
   <details class="gar-example" id="profile-example">
     <summary>See what {pricing.tiers[1].price_amount} builds</summary>
-    <div class="gar-example-grid">
-      <div class="gar-example-profile" data-nosnippet>
-        <p class="gar-example-label">Illustrative profile · fictional business</p>
-        <h3>Example Palm Desert Studio</h3>
-        <p>A small movement studio offering private sessions and beginner classes.</p>
-        <dl>
-          <div><dt>Where</dt><dd>Palm Desert, California</dd></div>
-          <div><dt>Hours</dt><dd>Tuesday–Saturday, 9 am–5 pm</dd></div>
-          <div><dt>Next step</dt><dd>The studio’s official booking page</dd></div>
-        </dl>
-        <p class="gar-example-note">Sample facts only, not a customer or a live booking. Your profile uses your business’s details, with owner-supplied facts identified as such.</p>
-      </div>
-      <div class="gar-example-explanation">
-        <h3>A clear introduction to your business—for people and their AI assistants.</h3>
-        <p>Your published AICV profile puts the essentials in one place: who you are, where you are, what you offer and how to reach you. Those details are also available in structured data, so an agent can read them without guessing.</p>
-        <p>A customer’s next step leads to your existing website, phone or booking link. This is a business profile, not a chatbot that takes appointments or payments for you.</p>
-        <p>The one-time purchase also includes your private agent-readiness review. Publication follows purchase-to-business matching. Ongoing service and the owner-assisted Cloudflare review belong to Business or Premium.</p>
-        <a href="/terms/#agent-ready">Read the purchase terms</a>
-      </div>
+    <div class="gar-example-explanation">
+      <h3>Give your business a home on the agentic internet.</h3>
+      <p>A published page built for people, AI agents and assistants — plus a private review showing what needs attention on your existing website. This is our actual MVA page format, with fictional Sample Bistro details.</p>
+      <p>Your MVA brings together who you are, what you offer and how a customer can reach you, with structured data underneath for agents to read. The next step leads to your existing website, phone or booking link. It is not a chatbot that takes appointments or payments for you.</p>
+      <p>Publication follows purchase-to-business matching. Publishing the MVA does not fix your original website: its measured grades stay honest. Ongoing service and the owner-assisted Cloudflare review belong to Business or Premium. <a href="/terms/#agent-ready">Read the purchase terms</a>.</p>
     </div>
+    <div class="gar-example-sample" data-nosnippet>
+      <p class="gar-example-label">Published MVA · fictional business</p>
+      <p>Sample facts, dates and scores only — not a customer or a live booking. Your page uses your business's details, with business-supplied facts identified as such.</p>
+      <p><a href="/get-agent-ready/examples/published.html" target="_blank" rel="noopener">Open the published example full-size ↗</a></p>
+      <iframe src="/get-agent-ready/examples/published.html" title="Fictional Sample Bistro — published $500 MVA" loading="lazy" sandbox="" class="gar-example-frame"></iframe>
+    </div>
+    <details class="gar-example-more">
+      <summary>Compare with the original preview</summary>
+      <p>The public preview gives a business a starting point. Activation publishes the MVA above and unlocks the private review below.</p>
+      <p><a href="/get-agent-ready/examples/preview.html" target="_blank" rel="noopener">Open the preview example full-size ↗</a></p>
+      <iframe src="/get-agent-ready/examples/preview.html" title="Fictional Sample Bistro — before activation" loading="lazy" sandbox="" class="gar-example-frame"></iframe>
+    </details>
+    <details class="gar-example-more">
+      <summary>See a sample private review</summary>
+      <p>Your review explains the findings and what to tackle first on your existing website. Real customer reviews stay private; this one is entirely fictional. It is the $500 agent-readiness review, not Premium's deeper LLM Council review.</p>
+      <p><a href="/get-agent-ready/examples/review.html" target="_blank" rel="noopener">Open the sample review full-size ↗</a></p>
+      <iframe src="/get-agent-ready/examples/review.html" title="Fictional Sample Bistro — sample private agent-readiness review" loading="lazy" sandbox="" class="gar-example-frame"></iframe>
+    </details>
+    <p class="gar-example-browse"><a href="/agent-preview">Browse real business previews →</a> Independent, dated assessments — not customer testimonials. Each preview carries its own review date.</p>
   </details>
   </div>
 </section>
@@ -513,6 +533,9 @@ const schemaGraph = {
 <section class="gr-why">
   <div class="gar-v2-inner">
     <p class="gr-why-lead">The agentic internet isn't five years away — it's reading the web today. AI agents and assistants can help people research, compare and decide. Get your business ready to be part of that conversation.</p>
+    <p class="gr-asof">The agentic internet is still forming beneath our feet. How agents discover, cite and act for customers is evolving. You don't need to wait for it to settle to give your business a clear, readable place in it.
+      {researchDate && <span class="gr-research-date">Latest published research update: <time datetime={researchDate}>{formatResearchDate(researchDate)}</time>. Individual business reviews carry their own dates.</span>}
+    </p>
     <div class="gr-why-grid">
       <div class="gr-col">
         <h3 class="gr-col-h">Why networks win</h3>
@@ -625,9 +648,9 @@ const schemaGraph = {
       <h2 class="tos-title">Agent Ready — what's included</h2><div class="tos-date">$500 one-time</div></div>
     <div class="tos-body">
       <ul>
-        <li><strong>Your page goes Live</strong> — indexed, agent-readable, published on the AICV network once your purchase is matched to your business.</li>
+          <li><strong>Your page goes Live</strong> — publicly accessible, agent-readable, published on the AICV network once your purchase is matched to your business.</li>
         <li><strong>Your facts, in machine-readable form</strong> — description, address, hours, phone and booking link, in your page's structured data, noted as provided by the business.</li>
-        <li><strong>Named in the index agents read first</strong> — when an AI system asks what businesses are in this valley, yours is on the list it reads before anything else.</li>
+          <li><strong>A place on the AICV network</strong> — your business has an AI-readable page agents can discover. Each AI service decides what it reads, cites or recommends.</li>
         <li><strong>Your private agent-readiness review</strong> — the full read of how AI agents see your web presence today. Never published.</li>
       </ul>
       <p>We never touch your website. We match your purchase to your business, then your page publishes — there is no verification step and nothing for you to do.</p>
@@ -1061,19 +1084,21 @@ const schemaGraph = {
   .gr-access-guide summary:focus-visible, .gr-access-guide a:focus-visible { outline: 2px solid var(--pine-dark); outline-offset: 3px; }
   .gar-example { margin-top: 1.5rem; border-top: 1px solid var(--pine); }
   .gar-example > summary { cursor: pointer; padding: 1.25rem 0; font-weight: 600; color: var(--pine-dark); }
-  .gar-example > summary:focus-visible, .gar-example a:focus-visible { outline: 2px solid var(--pine-dark); outline-offset: 4px; }
-  .gar-example-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 2rem; padding-bottom: 1.5rem; }
-  .gar-example-profile { padding: 1.5rem; background: var(--sand); border: 1px solid var(--pine); border-radius: 12px; }
+  .gar-example summary:focus-visible, .gar-example a:focus-visible { outline: 2px solid var(--pine-dark); outline-offset: 4px; }
+  .gar-visibility-promise, .gr-asof { font-size: 1rem; line-height: 1.7; margin: 1.5rem 0; }
+  .gr-research-date { display: block; margin-top: .5rem; font-size: .875rem; }
+  .gar-visibility-promise a { color: var(--pine); text-decoration: underline; }
+  .gar-example-explanation { padding-bottom: 1rem; }
+  .gar-example-sample { min-width: 0; }
   .gar-example h3 { font-family: 'DM Sans', sans-serif; font-size: 1.2rem; line-height: 1.4; margin: .5rem 0 1rem; }
-  .gar-example p, .gar-example dl, .gar-example a { font-size: .95rem; line-height: 1.7; }
+  .gar-example p, .gar-example a { font-size: 1rem; line-height: 1.7; }
   .gar-example p { margin: .75rem 0; }
-  .gar-example .gar-example-label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
-  .gar-example dl > div { display: grid; grid-template-columns: 5rem 1fr; gap: .75rem; margin: .5rem 0; }
-  .gar-example dt { font-weight: 600; }
-  .gar-example dd { margin: 0; }
-  .gar-example .gar-example-note { font-size: .8rem; }
+  .gar-example .gar-example-label { font-size: .875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+  .gar-example-frame { display: block; width: 100%; height: 1100px; border: 1px solid var(--pine-tint); border-radius: 12px; background: var(--pine-mist); }
+  .gar-example-more { padding: 1rem 0; border-bottom: 1px solid var(--pine-tint); }
+  .gar-example-more summary { cursor: pointer; font-size: 1rem; font-weight: 600; padding: .5rem 0; }
+  .gar-example .gar-example-browse { margin: 1.5rem 0; }
   .gar-example a { color: var(--pine); text-decoration: underline; }
-  @media (max-width: 767px) { .gar-example-grid { grid-template-columns: 1fr; gap: 1rem; } }
   .aicv-access { border-top: 1px solid var(--pine-tint); margin-top: 1.1rem; padding-top: 1rem; overflow-wrap: anywhere; }
   .aicv-access h3 { font-size: 1rem; margin: 0 0 .5rem; }
   .aicv-access p, .aicv-access li, .aicv-scope { font-size: .8rem; line-height: 1.55; margin: .6rem 0; }

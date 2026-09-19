@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 
 const read = path => readFileSync(new URL(path, import.meta.url), 'utf8');
 const page = read('../src/pages/get-agent-ready.astro');
@@ -83,16 +84,59 @@ test('payment matching and purchase terms remain explicit', () => {
   assert.match(body, /href="\/terms\/#agent-access"/);
 });
 
+test('sales benefits promise publication, not outside indexing or first-read priority', () => {
+  const visible = body.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ');
+  assert.match(visible, /publicly accessible, agent-readable, published on the AICV network once your purchase is matched to your business/);
+  assert.match(visible, /Each AI service decides what it reads, cites or recommends/);
+  assert.doesNotMatch(visible, /indexed, agent-readable|index agents read first|list it reads before anything else/);
+});
+
 test('example is optional, fictional and does not impersonate a customer or checkout', () => {
-  const example = body.match(/<details class="gar-example"[^>]*>([\s\S]*?)<\/details>/)[1];
+  const example = body.slice(body.indexOf('<details class="gar-example"'), body.indexOf('<!-- CONDENSED PERSUASION'));
   assert.match(example, /See what \{pricing\.tiers\[1\]\.price_amount\} builds/);
-  assert.match(example, /Illustrative profile · fictional business/);
+  assert.match(example, /Published MVA · fictional business/);
   assert.match(example, /not a customer or a live booking/);
   assert.match(example, /not a chatbot that takes appointments or payments/);
   assert.match(example, /Publication follows purchase-to-business matching/);
   assert.match(example, /Cloudflare review belong to Business or Premium/);
   assert.doesNotMatch(example, /<script|<form|application\/ld\+json|buy\.stripe\.com/);
   assert.doesNotMatch(body, /<details class="gar-example"[^>]*\bopen\b/);
+  assert.equal([...example.matchAll(/<iframe /g)].length, 3);
+  assert.equal([...example.matchAll(/loading="lazy" sandbox=""/g)].length, 3);
+  assert.ok(example.indexOf('examples/published.html') < example.indexOf('examples/preview.html'));
+  assert.match(example, /href="\/agent-preview"/);
+  assert.match(example, /not customer testimonials/);
+});
+
+test('guaranteed visibility is scoped consistently in visible copy, FAQ/schema and dated Terms', () => {
+  const answer = faq.find(item => item.q.includes('guaranteed visibility')).a;
+  const terms = read('../src/pages/terms.astro');
+  for (const surface of [body, answer, terms]) {
+    assert.match(surface, /We guarantee visibility to agents on the AICV network/);
+    assert.match(surface, /visit, index, cite or recommend/);
+    assert.match(surface, /purchase is matched to your business/);
+  }
+  assert.match(terms, /id="agent-visibility"/);
+  assert.match(terms, /Effective September 19, 2026/);
+  assert.match(body, /<time datetime=\{researchDate\}>\{formatResearchDate\(researchDate\)\}<\/time>/);
+  assert.match(body, /Latest published research update/);
+  assert.match(body, /Individual business reviews carry their own dates/);
+  assert.doesNotMatch(body, /<time datetime="2026-09-19">/);
+  assert.match(body, /still forming beneath our feet/);
+});
+
+test('generated examples are traceable and fictional, with no callable actions or entity markup', () => {
+  const manifest = JSON.parse(read('../public/get-agent-ready/examples/provenance.json'));
+  assert.equal(manifest.synthetic, true);
+  for (const name of ['published.html', 'preview.html', 'review.html']) {
+    const html = read(`../public/get-agent-ready/examples/${name}`);
+    assert.equal(createHash('sha256').update(html).digest('hex'), manifest.files[name]);
+    assert.match(html, /fictional business/);
+    assert.match(html, /noindex,nofollow/);
+    assert.doesNotMatch(html, /<script\b|<form\b|<a\b|application\/ld\+json|rel="canonical"|buy\.stripe\.com|[?&]token=/);
+  }
+  const headers = read('../public/_headers');
+  assert.match(headers, /\/get-agent-ready\/examples\/\*\n  X-Robots-Tag: noindex, nofollow/);
 });
 
 test('Premium describes work delivered, not a promised citation', () => {

@@ -54,9 +54,10 @@ Deploy:
   Never `wrangler pages deploy` com — a direct upload diverges production from
   origin/main. (See playbook ARCHITECTURE.md → Deployment notes.)
 
-Org site deploy (required after every node addition):
-  cd ~/AICV/core/org && npx wrangler pages deploy . 
-  --project-name aicoachellavalley-org
+Org site deploy (after an approved org source change):
+  Build and push core/org to origin/main; Cloudflare builds and deploys it.
+  Never upload the repository root with Wrangler. Deployment mechanics are
+  canonical in playbook/ARCHITECTURE.md.
 
 ## Companion files (in Claude Project)
 

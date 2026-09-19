@@ -2,6 +2,155 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-19 — Approved release: human homepage and truthful MVA sales examples
+
+Supersedes the LOCAL status of the three design/example entries below. Sat
+approved committing, pushing and releasing the accumulated work. Production
+verification/receipt will be recorded after the Git-connected deployment.
+
+Final cleanup removes “indexed” and “the index agents read first” from the
+offer; the matching activation Worker copy is released separately from mva.
+The controlled promise is a public, agent-readable page after business matching,
+not outside indexing/citation priority. Stripe destination and payment logic
+are unchanged. The approved homepage layout/copy, real-template fictional
+examples, Terms clarification and derived research date are included.
+
+All 39 tests and the 306-page build pass, including pricing, ownership,
+amendments and complete-node-content gates. IndexNow was disabled locally.
+Tests now run automatically in prebuild (including Git-connected deployments).
+Desktop/mobile browser checks: no overflow, broken images or console errors;
+homepage service CTA and example disclosure work. Existing upstream Vite
+unused-import warning remains. The stale com CLAUDE instruction to upload the
+org repo root with Wrangler was corrected to the canonical push-only procedure.
+
+Technical debt and closure criteria now live in
+`core/playbook/TECHNICAL-DEBT.md`, linked from its sole Forward Queue. In
+particular, presentation gates do not cover away the pre-existing payment
+recovery defects reproduced in mva. No claim of zero debt or fresh paid E2E
+verification is made. No private customer data, fleet seed or purchase changed.
+
+## 2026-09-19 — LOCAL follow-on: human reading path through the homepage
+
+Sat found the widened agent-intent paragraph/list visually unhelpful for human
+buyers. Replaced that section with “The search is agentic. The decision is human.”
+and three visible scenarios: plan a visit/retreat, find a home, build a business.
+Each pairs an explicitly illustrative assistant question with the local business
+types involved. Condensed five examples to three; the visit example now reads
+like a visitor's question rather than a founder's research prompt. A concluding
+invitation links to `/get-agent-ready/`, not directly to checkout. No promise of
+recommendations, leads or citations was added. The section now follows the MVA
+explanation, before briefs/news, rather than sitting near the footer.
+
+The desktop rail remains 80% (90rem cap): measured 1,140px of 1,425px usable
+width in a 1,440px browser. Three columns become labeled rows on tablets and a
+single reading column on phones. Semantic headings/list and all examples remain
+in ordinary visible HTML; no new JavaScript, dependencies or imagery. Other
+homepage copy and earlier local changes remain intact. This supersedes the
+earlier entry's unchanged-copy statement for this one section only.
+
+Verified: 38 tests pass, 306-page build and all four gates pass, existing public
+news feed loads, IndexNow disabled. Compared 309 built HTML files (including
+the three demos) against the previous local build: only `index.html` changed.
+Schema/frontmatter and scripts unchanged; all prior links retained plus one
+service-page link. Browser QA at nine widths (320–1920px) found no horizontal
+overflow; desktop/phone visual checks, service CTA and return navigation passed;
+browser errors empty. Existing upstream Vite warning only. Local review:
+`http://127.0.0.1:4322/#what-agents-use`. No commit, push, deploy or purchase.
+
+## 2026-09-19 — LOCAL homepage layout and landscape treatment; awaiting review
+
+Sat's screenshots identified the com homepage: wide headings, narrow body copy,
+an underused green CTA card and stacked section padding. Existing copy, all href
+destinations, frontmatter/schema and client scripts are unchanged. Desktop
+sections now share an 80%-width rail (capped at 90rem). The hero's lead paragraph
+spans the rail, with its two supporting paragraphs side by side; mobile stacks
+them. The green card puts the action beside its copy on desktop. Stats and the
+MVA explanation use tighter vertical spacing. Existing section titles are h2s.
+
+The .org sunrise WebPs were copied byte-for-byte into com as
+`public/hero-network-{960,1920}.webp` (27,318 and 83,744 bytes). A CSS-only dark
+pine overlay and subtle grid give the landscape a more technical treatment;
+no generated imagery, canvas, live-traffic visualization or new frontend JS.
+The .org site was not changed. The homepage phone header now keeps both actions
+on one line and its full brand name accessible to screen readers. Reduced-motion
+users see hero text immediately rather than through the existing entrance effect.
+
+Verified locally: all 35 tests pass; the 306-page production build passes pricing,
+ownership, amendment and complete-node-content gates. Public news feed loaded;
+IndexNow disabled. Source comparison proves homepage words, links and schema
+unchanged. Browser QA of the production build at 11 widths from 320–1920px found
+no horizontal overflow; mobile/desktop hero images load and browser errors are
+empty. Desktop and phone layouts visually reviewed. Existing upstream Vite
+unused-import warning remains. No commits, pushes, deployments or purchases.
+
+Review the built site at `http://127.0.0.1:4322/` (`npm run preview`, not HMR).
+Earlier local Get Agent Ready, Terms and mva work remains intact and uncommitted.
+
+## 2026-09-19 — LOCAL follow-on: research activity date is derived, not hardcoded
+
+Supersedes the hardcoded September 19 context note described below. Sat requested
+automatic freshness tied to ongoing corpus work. The evergreen agentic-internet
+paragraph remains; its caption now says “Latest published research update,”
+derived at build time from brief publication/correction/supersession dates,
+live-node last_updated, published-report publication/corrections, and standing
+record publication/modification dates. It explicitly says individual business
+reviews carry their own dates. No current-time, deploy-time, stats.generated_at
+or file-mtime fallback. Draft reports and non-live nodes do not advance it.
+
+The shared pure helper is `scripts/research-dates.mjs`. Get Agent Ready JSON-LD
+and sitemap lastmod both use the later of this activity date and the authored
+page-copy date. No frontend JS, polling or per-visitor request. Publication of
+dated corpus changes updates the caption on the normal com build/deploy path;
+rebuilding unchanged research leaves it unchanged. Terms effective dates and
+existing preview measurement dates remain fixed. This does NOT start, schedule
+or verify a daily research pipeline, nor consume unpublished/private workflow
+runs or the separate news feed. Latest qualifying local corpus date is currently
+September 14, 2026, not September 19. Local only; no commit, push or deployment.
+
+Verified: 35 com tests and all build gates pass (306 pages). Built caption is
+September 14; WebPage.dateModified and sitemap both remain September 19 because
+that is the later authored page revision. Controls prove new research advances
+the date while draft/planned content and rebuild timestamps cannot. No external
+research job or automation was added.
+
+## 2026-09-19 — LOCAL: actual MVA examples and scoped visibility promise
+
+Base HEAD `d888eff`. Sat approved replacing the generic $500 card with the
+existing MVA format, retaining the page's look and lightweight frontend. The
+optional example shows the published MVA first, with separate native disclosures
+for the original preview and a fictional private review, plus the real preview
+directory link. Three lazy, sandboxed static documents are generated from
+`mva/src/preview-page.js` and the existing allowlisted Sample Bistro fixture by
+`mva/scripts/render-sales-examples.mjs --write`. No real customer review is used.
+The generated `provenance.json` records renderer, fixture, generator and asset
+hashes; run the same script with `--check` before release. com builds independently
+of mva. The demo strips entity schema, scripts and active links, carries noindex,
+and stays out of sitemap, llms-full, nodes and host-map. Header policy is scoped
+only to `/get-agent-ready/examples/*`; Astro dev does not apply Pages headers.
+
+Visibility wording is now explicit in the offer, shared FAQ/JSON-LD and an
+ADDED dated Terms clarification: a public, accessible, agent-readable page on
+the AICV network after purchase matching, not guaranteed visits, indexing,
+citations, recommendations or customers. Original website/Cloudflare work stays
+separate. The September 19 note describes the agentic internet still forming;
+it does not refresh the dates of the existing preview measurements.
+
+Verification: 31 com tests + 7 focused mva tests pass; 306 Astro pages built;
+pricing, ownership, amendment and complete-node-content gates pass. Only Get
+Agent Ready and Terms changed among existing HTML pages. Diagnostic scripts and
+Stripe destinations are byte-identical. All three local sample routes and Terms
+return 200. No new frontend JS/dependencies, no purchase or paid diagnostic.
+Local build disables IndexNow. The final network-enabled build loaded the
+existing public news feed; only the prior Vite unused-import warning remains.
+Browser visual/interaction QA was not rerun in this pass; Sat is reviewing locally.
+
+Review: `http://127.0.0.1:4322/get-agent-ready/#profile-example` (4321 was already
+occupied). No commits, pushes or deployments. Also local in mva: tier/state-aware
+private-review next-step wording. Before any release, approve the visual draft;
+commit mva source/generator and com assets/copy, then push com and deploy only
+`aicv-activate` for the delivery-copy fix. No fleet rebuild, reseed or previews
+Worker deployment is needed: public rendering is unchanged.
+
 ## 2026-09-19 — DEPLOYED and verified: Get Agent Ready + complete node records
 
 Source commit `70ff923`, pushed to homepage/main. Git-triggered Pages deployment

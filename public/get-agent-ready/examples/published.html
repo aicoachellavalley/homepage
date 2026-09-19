@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Published MVA — fictional MVA example · AICV</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+
+<style>
+:root{
+  --volt:#D8FF00;--pine:#1B4332;--pine-light:#2D6A4F;--pine-dark:#122B22;
+  --pine-tint:#C8DDB4;--pine-mist:#E0EDD2;--gunmetal:#1E1E1E;--gunmetal-2:#252525;
+  --snow:#F5F5F5;--sand:#FAFAF7;--sand-light:#FFFFFF;--sand-dark:#E8E5DD;
+  --success:#4ade80;--warning:#fbbf24;--danger:#f87171;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+/* Page ground is the brand's pine-mist tint; the sand cards sit ON it. */
+body{font-family:'DM Sans',sans-serif;background:var(--pine-mist);color:var(--pine);-webkit-font-smoothing:antialiased}
+a{color:var(--pine);text-decoration:underline;text-underline-offset:2px}
+.pv-top{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid var(--sand-dark);background:var(--sand-light)}
+.pv-top-mark{width:26px;height:26px;background:var(--volt);display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:9px;color:var(--pine)}
+.pv-top-name{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;color:var(--pine-dark);letter-spacing:.02em}
+.pv-top-sub{font-size:10px;color:var(--pine-light);letter-spacing:.08em;text-transform:uppercase}
+.pv-main{max-width:760px;margin:0 auto;padding:28px 20px 56px}
+
+.aicv-review{background:var(--sand);border:1px solid var(--pine-tint);border-radius:12px;padding:1.5rem 1.5rem 1.25rem;max-width:720px;color:var(--pine);margin:0 auto}
+.aicv-eyebrow{font-size:.66rem;letter-spacing:.09em;color:#5C6B52;font-weight:500;text-transform:uppercase}
+.aicv-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem;border-bottom:1px solid #DDE7CC;padding-bottom:.9rem}
+.aicv-biz{font-size:1.2rem;font-weight:500;color:var(--pine-dark);margin-top:3px;font-family:'DM Sans',sans-serif;line-height:1.25}
+/* The framed H1: "How AI agents read" sits above the name, so the accessible
+   H1 text is the uncontested phrase while the name stays visually primary. */
+.aicv-biz-pre{display:block;font-size:.72rem;font-weight:500;letter-spacing:.04em;color:#6B7A61;text-transform:none;margin-bottom:1px}
+.aicv-url{font-size:.75rem;color:#6B7A61;margin-top:2px}
+/* The dated measurement IS the attestation claim — it renders prominently. */
+.aicv-reviewed{font-size:.82rem;font-weight:600;color:var(--pine);margin-top:6px}
+.aicv-head-right{text-align:right}
+.aicv-verdict{display:inline-block;background:var(--pine);color:var(--pine-mist);font-size:.8rem;font-weight:500;padding:5px 12px;border-radius:6px;margin-top:4px}
+
+.pv-chip{display:inline-block;font-size:.68rem;font-weight:500;letter-spacing:.04em;padding:4px 10px;border-radius:6px;margin-top:4px;white-space:nowrap}
+.pv-chip--private{color:#6B6350;background:#F1EFE6;border:1px solid #E3E0D2}
+.pv-chip--live{color:var(--pine-mist);background:var(--pine)}
+
+.aicv-ladder{padding:1.2rem 0 .4rem}
+.aicv-ladder-track{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.aicv-ladder-track::before{content:'';position:absolute;top:6px;left:10%;right:50%;border-top:2px solid var(--pine-tint)}
+.aicv-ladder-track::after{content:'';position:absolute;top:6px;left:50%;right:10%;border-top:2px dashed var(--pine-tint)}
+.aicv-rung{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.aicv-rung-dot{width:13px;height:13px;border-radius:50%;background:var(--pine-light)}
+.aicv-rung.is-horizon .aicv-rung-dot{background:var(--sand);border:1.5px dashed var(--pine-light)}
+.aicv-rung.is-active .aicv-rung-dot{background:var(--pine);box-shadow:0 0 0 3px var(--volt)}
+/* NEUTRAL ladder (no marker — the unclaimed public page, founder ruling
+   2026-07-25). Filled dots read as rungs already CLEARED, so an unmarked
+   ladder was rendering as "reached Visible" for every business, including
+   ones with no website at all. Hollow every dot so the row states a journey
+   and claims no position. Zone is still legible: solid ring = the self-serve
+   rungs, dashed ring = the network horizon. */
+.aicv-ladder-track.is-neutral .aicv-rung-dot{background:transparent;border:1.5px solid var(--pine-light)}
+.aicv-ladder-track.is-neutral .aicv-rung.is-horizon .aicv-rung-dot{background:transparent;border:1.5px dashed var(--pine-light)}
+.aicv-ladder-track.is-neutral::before{border-top-style:dashed}
+.aicv-rung-label{font-size:.66rem;color:var(--pine);line-height:1.25;padding:0 4px}
+.aicv-rung.is-horizon .aicv-rung-label{color:#8A9880}
+.aicv-rung.is-active .aicv-rung-label{font-weight:700;color:var(--pine-dark)}
+.aicv-rung-here{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pine);background:var(--volt);padding:1px 6px;border-radius:4px}
+
+.pv-facts{margin-top:1.2rem}
+.pv-facts-cap{margin-bottom:6px}
+.pv-fact{display:flex;gap:12px;padding:9px 0;border-top:1px solid #E4EBD7;align-items:baseline}
+.pv-fact:last-child{border-bottom:1px solid #E4EBD7}
+.pv-fact-l{flex:0 0 110px;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:#8A9880;font-weight:500}
+.pv-fact-v{font-size:.85rem;color:var(--pine-dark);line-height:1.5}
+.pv-fact-src{display:block;font-size:.64rem;color:#8A9880;margin-top:1px}
+.pv-fact-note{font-size:.8rem;color:#6B6350;font-style:italic}
+
+.aicv-dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:1.1rem}
+.aicv-dim{background:var(--cardbg);border:1px solid var(--cardbd);border-radius:10px;padding:.75rem .85rem}
+.st-clear{--cardbg:#F3F7EB;--cardbd:#DDE7CC;--pillbg:#D6E8CF;--pilltx:#2E5B3D;--notec:#5C6B52}
+.st-partial{--cardbg:#FBF8EC;--cardbd:#EAE3C9;--pillbg:#EFE6C8;--pilltx:#84611A;--notec:#6B6350}
+.st-missing{--cardbg:#FBF3EC;--cardbd:#EAD9C9;--pillbg:#F0D9C8;--pilltx:#8A3B1C;--notec:#6B5A4E}
+/* Census-only: nothing was fetched. Deliberately neutral — not a failure tint. */
+.st-unmeasured{--cardbg:#F1F0EA;--cardbd:#E3E1D6;--pillbg:#E3E1D6;--pilltx:#6B6350;--notec:#6B6350}
+/* Rate-limited: the site was asked and declined to answer. Neutral for the same
+   reason st-unmeasured is — this is an absence of evidence, not a finding
+   against the business — but a COOLER neutral so the two read as different
+   facts: nothing was fetched, versus the fetch was declined. */
+.st-unverified{--cardbg:#EEF2F4;--cardbd:#DCE4E8;--pillbg:#DCE4E8;--pilltx:#4A5C66;--notec:#5A6A73}
+.aicv-dim-head{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.aicv-dim-name{font-size:.75rem;font-weight:500;color:var(--pine-dark)}
+.aicv-dim-state{font-size:.6rem;font-weight:700;letter-spacing:.06em;color:var(--pilltx);background:var(--pillbg);padding:2px 7px;border-radius:5px;white-space:nowrap}
+.aicv-dim-note{font-size:.75rem;color:var(--notec);line-height:1.45;margin-top:6px}
+
+/* Locked diagnosis panels — findings not yet claimed. Shapes, contents held. */
+.aicv-dim.is-locked{--cardbg:#F1F0EA;--cardbd:#E3E1D6}
+.aicv-dim.is-locked .aicv-dim-name{color:#8A8A7E}
+.pv-lock{width:12px;height:12px;flex:0 0 auto;opacity:.55}
+.pv-skel{height:8px;border-radius:4px;background:#E3E1D6;margin-top:8px}
+.pv-skel + .pv-skel{margin-top:6px}
+
+.aicv-fixes{margin-top:1.2rem}
+.aicv-fixes-cap{margin-bottom:9px}
+.aicv-fix-row{display:flex;gap:10px;padding:9px 0;border-top:1px solid #E4EBD7}
+.aicv-fix-row:last-child{border-bottom:1px solid #E4EBD7}
+.aicv-sev{flex:0 0 auto;font-size:.6rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:5px;height:fit-content;margin-top:2px}
+.aicv-sev-high{color:#8A3B1C;background:#F0D9C8}
+.aicv-sev-med{color:#84611A;background:#EFE6C8}
+.aicv-sev-low{color:#5C6B52;background:#EDF1E4}
+.aicv-fix-txt{font-size:.79rem;color:#3D4A38;line-height:1.5}
+
+.pv-summary{margin-top:1.2rem;padding:1rem 1.2rem;background:rgba(27,67,50,.05);border-left:3px solid var(--pine);font-size:.9rem;color:var(--pine-dark);line-height:1.6;font-style:italic}
+
+.aicv-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:1.3rem}
+.aicv-foot-meta{font-size:.66rem;color:#8A9880}
+.aicv-foot-meta a{color:#8A9880}
+.pv-foot-sig{font-size:.6rem;color:#A3AF99;margin-top:3px}
+.pv-foot-sig a{color:#A3AF99}
+.aicv-cta{background:var(--volt);color:var(--pine);font-size:.8rem;font-weight:500;padding:9px 16px;border-radius:7px;text-decoration:none}
+.aicv-cta:hover{background:#e8ff33}
+</style>
+<meta name="robots" content="noindex,nofollow">
+<style>
+.demo-note{padding:16px 20px;background:#1B4332;color:#FAFAF7;line-height:1.6;font-size:1rem}
+.demo-note strong{display:block}
+.pv-main{max-width:900px;padding:20px 16px}.aicv-review{max-width:none}
+.pv-fact-v{min-width:0;overflow-wrap:anywhere}.aicv-dims{grid-template-columns:repeat(2,minmax(0,1fr))}
+.aicv-dim-head{flex-wrap:wrap}.aicv-dim-note,.aicv-fix-txt{font-size:.875rem}
+.pv-foot-sig{overflow-wrap:anywhere}
+@media(max-width:480px){.pv-main{padding:12px 8px}.aicv-review{padding:16px 12px}.pv-fact{display:block}.pv-fact-l{display:block;margin-bottom:4px}.aicv-dims{grid-template-columns:1fr}.aicv-rung-label{padding:0 1px;overflow-wrap:anywhere}}
+</style>
+</head>
+<body>
+<aside class="demo-note" data-nosnippet><strong>Published MVA · fictional business</strong>This is the $500 page format, using the same template as our business previews. Sample facts, dates and scores only; not a customer, a live booking or a real assessment. Links inside the sample are inactive.</aside>
+<header class="pv-top">
+    <span  style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <span class="pv-top-mark">AICV</span>
+      <span><span class="pv-top-name">AI Coachella Valley</span><br><span class="pv-top-sub">Intelligence Network</span></span>
+    </span>
+  </header>
+<main class="pv-main">
+<div class="aicv-review">
+    <div class="aicv-head">
+      <div>
+        <div class="aicv-eyebrow">MVA · Agent Ready on the AICV Network</div>
+        <h1 class="aicv-biz">Sample Bistro</h1>
+        <div class="aicv-url">Palm Desert</div>
+        <div class="aicv-reviewed">Reviewed July 15, 2026</div>
+      </div>
+      <div class="aicv-head-right">
+        <div class="aicv-eyebrow">Status</div>
+        <span class="pv-chip pv-chip--live">Live</span>
+      </div>
+    </div>
+    <div class="aicv-ladder">
+    <div class="aicv-ladder-track"><div class="aicv-rung">
+      <span class="aicv-rung-dot"></span>
+      <span class="aicv-rung-label">Invisible</span>
+      
+    </div><div class="aicv-rung">
+      <span class="aicv-rung-dot"></span>
+      <span class="aicv-rung-label">Partly visible</span>
+      
+    </div><div class="aicv-rung">
+      <span class="aicv-rung-dot"></span>
+      <span class="aicv-rung-label">Visible</span>
+      
+    </div><div class="aicv-rung is-active">
+      <span class="aicv-rung-dot"></span>
+      <span class="aicv-rung-label">Agent ready</span>
+      <span class="aicv-rung-here">you are here</span>
+    </div><div class="aicv-rung is-horizon">
+      <span class="aicv-rung-dot"></span>
+      <span class="aicv-rung-label">Discoverable</span>
+      
+    </div></div>
+  </div>
+    <section class="pv-facts">
+    <div class="aicv-eyebrow pv-facts-cap">What agents can read today</div>
+    <div class="pv-fact"><span class="pv-fact-l">About</span><span class="pv-fact-v">A neighborhood bistro for breakfast, lunch and an unhurried afternoon on the patio.<span class="pv-fact-src">provided by the owner</span></span></div><div class="pv-fact"><span class="pv-fact-l">Location</span><span class="pv-fact-v">73000 El Paseo, Palm Desert, CA 92260<span class="pv-fact-src">public records</span></span></div><div class="pv-fact"><span class="pv-fact-l">Phone</span><span class="pv-fact-v">(760) 555-0100<span class="pv-fact-src">public records</span></span></div><div class="pv-fact"><span class="pv-fact-l">Email</span><span class="pv-fact-v"><span >hello@sample-bistro.example</span><span class="pv-fact-src">provided by the owner</span></span></div><div class="pv-fact"><span class="pv-fact-l">Website</span><span class="pv-fact-v"><span >sample-bistro.example</span><span class="pv-fact-src">public records</span></span></div><div class="pv-fact"><span class="pv-fact-l">Hours</span><span class="pv-fact-v">Tuesday–Sunday, 8 AM–3 PM<span class="pv-fact-src">provided by the owner</span></span></div><div class="pv-fact"><span class="pv-fact-l">Booking</span><span class="pv-fact-v"><span >sample-bistro.example</span><span class="pv-fact-src">provided by the owner</span></span></div><div class="pv-fact"><span class="pv-fact-l">Structured data</span><span class="pv-fact-v">Business-entity schema — published on this page<span class="pv-fact-src">this page's machine layer</span></span></div>
+  </section>
+    <section>
+    <div class="aicv-eyebrow" style="margin-top:1.3rem">Agent readiness · sample-bistro.example</div>
+    <div class="aicv-dims"><div class="aicv-dim st-clear">
+      <div class="aicv-dim-head"><span class="aicv-dim-name">Identity</span><span class="aicv-dim-state">CLEAR</span></div>
+      <div class="aicv-dim-note">Name and identity read consistently to an automated visitor.</div>
+    </div><div class="aicv-dim st-missing">
+      <div class="aicv-dim-head"><span class="aicv-dim-name">Structure</span><span class="aicv-dim-state">MISSING/STALE</span></div>
+      <div class="aicv-dim-note">No structured data — the facts aren't marked up for machines.</div>
+    </div><div class="aicv-dim st-partial">
+      <div class="aicv-dim-head"><span class="aicv-dim-name">Substance</span><span class="aicv-dim-state">PARTIAL</span></div>
+      <div class="aicv-dim-note">Readable: hours, location, contact. Not observed: pricing, menu / services.</div>
+    </div><div class="aicv-dim st-partial">
+      <div class="aicv-dim-head"><span class="aicv-dim-name">Credibility</span><span class="aicv-dim-state">PARTIAL</span></div>
+      <div class="aicv-dim-note">The page's most recent date signal is over a year old.</div>
+    </div></div>
+    <div class="aicv-eyebrow" style="margin-top:1.3rem">Published on this page by AICV</div>
+    <ul style="margin:.9rem 0 0;padding:0 0 0 1.1rem;list-style:disc"><li style="font-size:.78rem;color:#5A6A73;line-height:1.6">Identity, contact and location in agent-readable form</li><li style="font-size:.78rem;color:#5A6A73;line-height:1.6">Business-entity schema in this page's JSON-LD</li><li style="font-size:.78rem;color:#5A6A73;line-height:1.6">Business-supplied facts, published as provided</li><li style="font-size:.78rem;color:#5A6A73;line-height:1.6">Measured July 15, 2026</li></ul>
+  </section>
+    <div class="aicv-foot">
+      <div>
+        <div class="aicv-foot-meta">Published by AICV · mapped from public digital sources, measured July 15, 2026</div>
+        <div class="pv-foot-sig">AICV · aicoachellavalley.com · Questions or removal: <span >remove@aicv.co</span></div>
+        
+      </div>
+      
+    </div>
+  </div>
+</main>
+</body>
+</html>

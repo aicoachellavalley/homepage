@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "fixture": "mva/activate/sample-preview.json",
+  "fixture_sha256": "b9e85e68e09e01fecc85cb3ea07877b2b09b4fe627ad600e737b929607965326",
+  "renderer": "mva/src/preview-page.js",
+  "renderer_sha256": "7ee6d7d9745b2f49ac5a2f5ff48bb23138ca2564117dffe73bfd24abb0d9361a",
+  "generator_sha256": "4c1b067b238a8abfbc033127c88dfadcad4d5463251b6edb5b3c040caf16da9a",
+  "note": "Generated examples only. Never add to business indexes, host-map, sitemap or claims. Regenerate from mva with scripts/render-sales-examples.mjs --write; verify with --check.",
+  "files": {
+    "published.html": "2de61ae31a757f745b44c24bef48ea437286ab869850970d4ce69fbafdfc4d1b",
+    "preview.html": "1dd11110902a48d1bbf5e8abfd82daaf2f0222976e0cbecb7ed8e19dcff9bcf9",
+    "review.html": "4b4539da0d8bb0dbe07879f0688cf025ceafbe0021b38afb684e63b10faaf8d2"
+  }
+}

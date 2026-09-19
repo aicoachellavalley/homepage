@@ -13,6 +13,11 @@
 /.well-known/api-catalog
   Content-Type: application/linkset+json
 
+# Fictional sales demos only — never index these as real businesses.
+/get-agent-ready/examples/*
+  X-Robots-Tag: noindex, nofollow
+  Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'none'; form-action 'none'; frame-ancestors 'self'
+
 # Advertise API catalog and MCP server card on all pages (RFC 8288)
 /*
   Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"

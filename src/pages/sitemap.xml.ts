@@ -4,11 +4,13 @@ import { getCollection } from 'astro:content';
 // claimed-members.cjs precedent in llms.txt.ts for why a shared module.
 import { briefDateModified } from '../../scripts/brief-dates.cjs';
 import pageDates from '../data/page-dates.json';
+import { latestDate, latestResearchDate } from '../../scripts/research-dates.mjs';
 
 export const GET: APIRoute = async () => {
   const nodes   = await getCollection('nodes');
   const briefs  = await getCollection('briefs');
   const reports = await getCollection('reports');
+  const records = await getCollection('records');
 
   /* STATIC PAGES CARRY A LASTMOD (2026-09-14). Until today only collection
    * pages did. Two AI Search dashboard syncs that day re-fetched every brief
@@ -25,6 +27,9 @@ export const GET: APIRoute = async () => {
   const nodesLastmod   = maxDate(nodes.map((e) => e.data.last_updated));
   const reportsLastmod = maxDate(reports.filter((e) => e.data.status === 'published').map((e) => e.data.date));
   const pd = pageDates as Record<string, string>;
+  // This page now displays corpus activity. Keep its crawl date aligned with
+  // its JSON-LD when published research advances; never use the build clock.
+  const garLastmod = latestDate([pd['/get-agent-ready/'], latestResearchDate({ briefs, nodes, reports, records })]) || undefined;
   const homeLastmod    = maxDate([briefsLastmod, reportsLastmod, ...Object.keys(pd).filter((k) => k.startsWith('/')).map((k) => pd[k])]);
 
   const staticPages: { url: string; changefreq: string; priority: string; lastmod?: string }[] = [
@@ -32,7 +37,7 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/nodes/',                 changefreq: 'weekly',  priority: '0.9', lastmod: nodesLastmod },
     { url: 'https://aicoachellavalley.com/briefs/',                changefreq: 'weekly',  priority: '0.9', lastmod: briefsLastmod },
     { url: 'https://aicoachellavalley.com/reports/',               changefreq: 'weekly',  priority: '0.9', lastmod: reportsLastmod },
-    { url: 'https://aicoachellavalley.com/get-agent-ready/',       changefreq: 'monthly', priority: '0.9', lastmod: pd['/get-agent-ready/'] },
+    { url: 'https://aicoachellavalley.com/get-agent-ready/',       changefreq: 'monthly', priority: '0.9', lastmod: garLastmod },
     { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8', lastmod: pd['/minimum-viable-agent/'] },
     { url: 'https://aicoachellavalley.com/how-we-do-this/',        changefreq: 'monthly', priority: '0.8', lastmod: pd['/how-we-do-this/'] },
     { url: 'https://aicoachellavalley.com/cvep-what-happened/',    changefreq: 'monthly', priority: '0.8' },

@@ -312,16 +312,22 @@ const personSchema = {
 
 <!-- ─── HERO ─── -->
 <section class="hero">
+  <picture class="hero-landscape" aria-hidden="true">
+    <source media="(max-width: 700px)" srcset="/hero-network-960.webp">
+    <img src="/hero-network-1920.webp" width="1920" height="1080" alt="" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="hero-inner">
   <div class="hero-eyebrow">
     <span class="eyebrow-pip"></span>
     Coachella Valley, California · Est. 2025
   </div>
-  <h1 class="hero-headline">The Intelligence Network<br>for the Coachella Valley</h1>
+  <h1 class="hero-headline">The Intelligence Network<br> for the Coachella Valley</h1>
   <p class="hero-tagline">Designed for the AI Era / <strong>Built for agents. Powered by humans.</strong></p>
   <div class="hero-support-block">
     <p class="hero-support">AICV helps local businesses, venues, institutions, and civic assets become easier for AI systems to understand, cite, recommend, and route.</p>
     <p class="hero-support">Through Minimum Viable Agents, structured nodes, regional briefs, and the AICV Network, AICV is building the agent-readable network for the Coachella Valley.</p>
     <p class="hero-support">AICV is not building another directory. Directories list businesses. AICV structures regional intelligence so AI systems can understand relationships, relevance, geography, intent, and decision context.</p>
+  </div>
   </div>
 </section>
 
@@ -351,7 +357,7 @@ const personSchema = {
 <div class="path-cards-wrap">
   <div class="path-hierarchy">
     <div class="path-primary">
-      <div class="path-primary-title">Make Your Business Visible to AI</div>
+      <h2 class="path-primary-title">Make Your Business Visible to AI</h2>
       <p class="path-primary-desc">Get your Minimum Viable Agent — a structured, AI-readable profile so agents can find, read, and cite your business, without touching your website.</p>
       <a href="/get-agent-ready/#diagnostic" class="path-card-cta">Join the Network →</a>
     </div>
@@ -366,12 +372,61 @@ const personSchema = {
 <div class="intel-what-wrap">
   <section class="intel-what-section">
     <div class="intel-what-inner">
-      <div class="intel-what-header">What is an MVA?</div>
+      <h2 class="intel-what-header">What is an MVA?</h2>
       <p class="intel-what-body">A <strong>Minimum Viable Agent (MVA)</strong> is a structured, AI-readable profile that helps AI systems understand what a business, venue, institution, or regional asset is, where it fits, who it serves, and when it should be considered in AI-assisted search, planning, and decision-making.</p>
       <p class="intel-what-body">One MVA makes an entity more legible. The AICV Network makes the region more legible. <a href="/minimum-viable-agent/">Learn more →</a></p>
     </div>
   </section>
 </div>
+
+<!-- ─── AGENT INTENT ─── -->
+<section class="agent-use-wrap" id="what-agents-use" aria-labelledby="agent-use-title">
+  <div class="agent-use-section">
+    <header class="agent-use-header">
+      <div>
+        <p class="agent-use-eyebrow">What Agents Use AICV For</p>
+        <h2 id="agent-use-title">The search is agentic.<br> The decision is human.</h2>
+      </div>
+      <p class="agent-use-intro">A visitor planning a trip. A family considering a move. A founder looking for a place to build. AI agents and assistants can help them explore the valley. AICV helps those systems understand the people, places, and businesses here.</p>
+    </header>
+
+    <p class="agent-use-caption">For example, someone might ask their assistant…</p>
+    <ul class="agent-use-scenarios">
+      <li class="agent-use-scenario">
+        <h3>Plan a visit or retreat</h3>
+        <p class="agent-use-question">“We’re planning three days in the valley. Where should we stay, eat, and spend our time?”</p>
+        <div class="agent-use-relevance">
+          <p class="agent-use-label">Where local businesses fit</p>
+          <p>Places to stay, eat, meet, and explore.</p>
+        </div>
+      </li>
+      <li class="agent-use-scenario">
+        <h3>Find a place to call home</h3>
+        <p class="agent-use-question">“Where should we spend winters — privacy, wellness, golf, easy access to LA?”</p>
+        <div class="agent-use-relevance">
+          <p class="agent-use-label">Where local businesses fit</p>
+          <p>Real estate, wellness, healthcare, and everyday services.</p>
+        </div>
+      </li>
+      <li class="agent-use-scenario">
+        <h3>Build a business here</h3>
+        <p class="agent-use-question">“Is the Coachella Valley only seasonal, or is there a real business and investment ecosystem?”</p>
+        <div class="agent-use-relevance">
+          <p class="agent-use-label">Where local businesses fit</p>
+          <p>Workspaces, professional services, and local partners.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="agent-use-next">
+      <div>
+        <h3>Help them understand what your business offers.</h3>
+        <p>Get Agent Ready gives your business a structured, AI-readable presence on the AICV network. See what’s included, start with the free check, and choose the level of help you need.</p>
+      </div>
+      <a class="path-card-cta" href="/get-agent-ready/">Explore Get Agent Ready <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
 
 <!-- ─── LATEST BRIEFS ─── -->
 <div class="briefs-strip-wrap">
@@ -416,18 +471,6 @@ const personSchema = {
   </section>
 </div>
 )}
-
-<!-- ─── AGENT INTENT ─── -->
-<div class="intel-what-wrap">
-  <section class="intel-what-section">
-    <div class="intel-what-inner">
-      <div class="intel-what-header">What Agents Use AICV For</div>
-      <p class="intel-what-body">When someone asks an AI where to <strong>stay, retreat, invest, relocate, or build</strong> in the desert, AICV helps the Coachella Valley show up with structured local intelligence.</p>
-      <p class="intel-what-body"><em>"Where should we spend winters — privacy, wellness, golf, easy access to LA?"</em><br><em>"Plan a three-day scouting trip for a founder evaluating Palm Springs, Rancho Mirage, or Palm Desert."</em><br><em>"What venues, clubs, schools, healthcare, and civic anchors matter for a relocation decision?"</em><br><em>"Is the Coachella Valley only seasonal, or is there a real business and investment ecosystem?"</em><br><em>"Where could a founder host a retreat, invest locally, or build a satellite presence in the desert?"</em></p>
-      <p class="intel-what-body">AICV structures the answers through nodes, briefs, MVAs, and the AICV Network — so local businesses, venues, and institutions are part of the citation layer.</p>
-    </div>
-  </section>
-</div>
 
 <!-- ─── PARTNERS ─── -->
 <div class="partners-wrap">
@@ -559,6 +602,7 @@ const personSchema = {
     align-items: center;
     gap: 1.5rem;
   }
+  .nav-aio-btn, .nav-docs-btn { white-space: nowrap; }
 
   .nav-links {
     display: flex;
@@ -583,7 +627,7 @@ const personSchema = {
     border: 1px solid rgba(232,226,208,0.25);
     padding: 0.4rem 0.9rem;
     letter-spacing: 0.04em;
-    transition: all 0.2s;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
     font-weight: 500;
   }
 
@@ -609,9 +653,30 @@ const personSchema = {
 
   /* ─── HERO ─── */
   .hero {
-    padding: 7rem 3rem 5rem;
-    max-width: 1060px;
-    margin: 0 auto;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #081d17;
+  }
+
+  /* Same landscape as .org, reused unmodified. The technical treatment is
+     presentation only: no generated map, implied live traffic, canvas or JS. */
+  .hero-landscape { position: absolute; inset: 0; z-index: 0; }
+  .hero-landscape img { width: 100%; height: 100%; object-fit: cover; object-position: center 68%; filter: saturate(.35) contrast(1.12); }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(90deg, rgba(6,26,20,.94), rgba(9,35,28,.72) 60%, rgba(9,35,28,.40)),
+                linear-gradient(0deg, rgba(6,26,20,.92), transparent 85%);
+  }
+  .hero::after {
+    content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background-image: linear-gradient(rgba(190,224,197,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(190,224,197,.10) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(90deg, transparent 20%, #000);
+  }
+  .hero-inner {
+    position: relative; z-index: 3;
+    padding: clamp(3rem, 5vw, 4.5rem) 0 3rem;
   }
 
   .hero-eyebrow {
@@ -621,9 +686,9 @@ const personSchema = {
     font-size: 0.67rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--pine-light);
+    color: var(--pine-tint);
     font-weight: 500;
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.5rem;
     opacity: 0;
     animation: fadeUp 0.7s ease forwards 0.1s;
   }
@@ -642,7 +707,7 @@ const personSchema = {
     font-size: clamp(2.4rem, 5.5vw, 4.75rem);
     line-height: 1.02;
     letter-spacing: -0.035em;
-    color: var(--pine);
+    color: var(--sand);
     margin-bottom: 1rem;
     opacity: 0;
     animation: fadeUp 0.7s ease forwards 0.2s;
@@ -652,7 +717,7 @@ const personSchema = {
     font-family: 'Syne', sans-serif;
     font-size: clamp(1rem, 2vw, 1.3rem);
     font-weight: 400;
-    color: var(--pine-light);
+    color: var(--pine-mist);
     letter-spacing: 0.01em;
     margin-bottom: 1.25rem;
     opacity: 0;
@@ -660,26 +725,30 @@ const personSchema = {
   }
 
   .hero-tagline strong {
-    color: var(--pine);
+    color: var(--volt);
     font-weight: 600;
   }
 
   .hero-support-block {
-    margin-top: 1.5rem;
-    margin-bottom: 3rem;
-    max-width: 62ch;
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(200,221,180,.28);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 2.5rem;
     opacity: 0;
     animation: fadeUp 0.7s ease forwards 0.4s;
   }
 
   .hero-support {
-    font-size: 0.95rem;
-    color: var(--pine-light);
-    font-weight: 300;
-    line-height: 1.75;
+    font-size: 1rem;
+    color: #e1eade;
+    font-weight: 400;
+    line-height: 1.65;
     margin: 0;
     display: block;
   }
+  .hero-support:first-child { grid-column: 1 / -1; font-size: 1.125rem; color: var(--sand); }
 
   /* ─── PATH CARDS ─── */
   .path-cards-wrap {
@@ -688,12 +757,11 @@ const personSchema = {
 
   /* Three-door hierarchy: one promoted primary + two quiet secondary links. */
   .path-hierarchy {
-    max-width: 1060px;
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 2.75rem;
+    padding: 2rem 0 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1rem;
     opacity: 0;
     animation: fadeUp 0.7s ease forwards 0.5s;
   }
@@ -702,12 +770,14 @@ const personSchema = {
   .path-primary {
     background: var(--pine-light);
     border-top: 3px solid var(--volt);
-    padding: 2rem 2rem 2.15rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-    align-items: flex-start;
+    padding: 1.75rem 2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.7rem 2.5rem;
+    align-items: center;
   }
+  .path-primary-title, .path-primary-desc { grid-column: 1; }
+  .path-primary .path-card-cta { grid-column: 2; grid-row: 1 / span 2; align-self: center; margin: 0; white-space: nowrap; }
 
   .path-primary-title {
     font-family: 'Syne', sans-serif;
@@ -721,21 +791,20 @@ const personSchema = {
   .path-primary-desc {
     font-size: 1rem;
     color: rgba(232,226,208,0.9);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.6;
-    max-width: 54ch;
   }
 
   .path-card-cta {
     display: inline-block;
     margin-top: 0.4rem;
-    font-size: 0.72rem;
+    font-size: 0.875rem;
     font-weight: 700;
     font-family: 'Syne', sans-serif;
     letter-spacing: 0.06em;
     background: var(--volt);
     color: var(--pine);
-    padding: 0.55rem 1.1rem;
+    padding: 0.8rem 1.1rem;
     text-decoration: none;
     transition: background 0.2s, letter-spacing 0.2s;
     align-self: flex-start;
@@ -758,7 +827,8 @@ const personSchema = {
     letter-spacing: 0.01em;
     transition: color 0.15s;
   }
-  .path-secondary-link:hover { color: var(--volt); }
+  .path-secondary-link:hover { color: var(--pine-dark); text-decoration: underline; }
+  .path-hierarchy a:focus-visible, .intel-what-body a:focus-visible { outline: 2px solid var(--pine); outline-offset: 4px; }
 
   /* ─── WHAT IS THE INTELLIGENCE LAYER ─── */
   .intel-what-wrap {
@@ -766,8 +836,7 @@ const personSchema = {
   }
 
   .intel-what-section {
-    padding: 5rem 3rem 4rem;
-    max-width: 1060px;
+    padding: 2rem 0 2.75rem;
     margin: 0 auto;
   }
 
@@ -785,21 +854,43 @@ const personSchema = {
     color: var(--pine);
     letter-spacing: -0.025em;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .intel-what-body {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--pine-dark);
-    font-weight: 300;
-    line-height: 1.85;
-    max-width: 72ch;
+    font-weight: 400;
+    line-height: 1.75;
   }
+  .intel-what-body + .intel-what-body { margin-top: .75rem; }
+  .intel-what-body a { color: var(--pine); text-underline-offset: 3px; }
 
   .intel-what-body strong {
     color: var(--pine);
     font-weight: 600;
   }
+
+  /* Human decisions give the agent examples a scannable, editorial structure.
+     All examples stay visible in HTML: no carousel, tabs or extra JavaScript. */
+  .agent-use-wrap { background: var(--pine-mist); border-block: 1px solid rgba(27,67,50,.12); scroll-margin-top: 6rem; }
+  .agent-use-section { padding-block: 3rem; }
+  .agent-use-header { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem; align-items: end; margin-bottom: 2rem; }
+  .agent-use-eyebrow { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--pine-light); margin-bottom: .75rem; }
+  .agent-use-header h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 2.7vw, 2.5rem); font-weight: 600; line-height: 1.15; letter-spacing: -.03em; color: var(--pine); }
+  .agent-use-intro { font-size: 1rem; line-height: 1.7; }
+  .agent-use-caption { font-size: .8rem; color: var(--pine-light); margin-bottom: .85rem; }
+  .agent-use-scenarios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; gap: 2rem; }
+  .agent-use-scenario { display: flex; flex-direction: column; border-top: 2px solid var(--pine-light); padding-top: 1.15rem; }
+  .agent-use-scenario h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 600; line-height: 1.35; color: var(--pine); margin-bottom: .9rem; }
+  .agent-use-question { font-size: 1.125rem; line-height: 1.6; margin-bottom: 1.25rem; }
+  .agent-use-relevance { margin-top: auto; font-size: .9rem; line-height: 1.6; }
+  .agent-use-label { font-size: .72rem; font-weight: 600; letter-spacing: .03em; color: var(--pine-light); margin-bottom: .25rem; }
+  .agent-use-next { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1.25rem 2.5rem; margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid rgba(27,67,50,.25); }
+  .agent-use-next h3 { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1.15rem; line-height: 1.35; color: var(--pine); margin-bottom: .5rem; }
+  .agent-use-next p { font-size: 1rem; line-height: 1.65; }
+  .agent-use-next .path-card-cta { align-self: center; margin: 0; white-space: nowrap; }
+  .agent-use-next a:focus-visible { outline: 2px solid var(--pine); outline-offset: 4px; }
 
   /* ─── SUNSHINEFM HANDOFF (quiet human-editorial breadcrumb; replaced the Founding 111 section) ─── */
   .sunshine-handoff-wrap {
@@ -1092,36 +1183,25 @@ const personSchema = {
   .intel-cta:hover { background: #e8ff33; gap: 0.75rem; }
 
   /* ─── FOCAL BLOCK: STATS + BLUEPRINT ─── */
-  /* The dark band. The space above the stats panel used to come from
-     `.focal-updated`'s own top padding; when that line was deleted (2026-08-19)
-     the identical value moved HERE so the band keeps the symmetry it already
-     had — the group sits centred rather than resting on the top edge. The
-     bottom value is unchanged and the two still mirror each other. Before the
-     blueprint banner was removed (7b6b245) the banner occupied that space. */
+  /* A compact continuation of the hero, rather than a second padded panel. */
   .focal-block {
     background: var(--pine);
-    padding-top: 1.75rem;
-    padding-bottom: 1.75rem;
+    padding: 0;
+    border-top: 1px solid rgba(200,221,180,.2);
   }
 
   .stats-inner {
-    max-width: 1060px;
     margin: 0 auto;
-    /* SYMMETRIC. Was `1.25rem 3rem 3.5rem` — a 20px/56px split introduced by
-       6468bfc, which tightened the top when the "Updated" line was added above
-       and left the bottom carrying the blueprint banner's share of the space.
-       The banner is gone (7b6b245), so the tail was holding nothing and the
-       cards read as top-aligned in their own tinted panel at 2.8:1. */
-    padding: 2rem 3rem;
+    padding: 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1px;
     background: rgba(245,245,245,0.06);
   }
 
   .stat-cell {
     background: var(--pine);
-    padding: 2rem 2.25rem;
+    padding: 1.5rem 1rem;
     text-align: center;
   }
 
@@ -1703,35 +1783,70 @@ const personSchema = {
   .tos-body a:hover { text-decoration: underline; }
 
   /* ─── RESPONSIVE ─── */
+  /* One shared alignment rail. The old nested padding made an 80%-wide
+     section contain a half-width text column. Keep gutters at the outer edge. */
+  .hero-inner, .stats-inner, .path-hierarchy, .intel-what-section,
+  .briefs-strip-section, .news-band-section, .agent-use-section, .partners-section {
+    width: min(80%, 90rem);
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-eyebrow, .hero-headline, .hero-tagline, .hero-support-block, .path-hierarchy { animation: none; opacity: 1; }
+  }
+  @media (max-width: 1100px) {
+    .nav-links { display: none; }
+  }
   @media (max-width: 860px) {
     nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { padding: 4rem 1.5rem 3rem; }
+    .nav-right { gap: 1rem; }
+    .hero-inner, .stats-inner, .path-hierarchy, .intel-what-section,
+    .briefs-strip-section, .news-band-section, .agent-use-section, .partners-section { width: calc(100% - 3rem); padding-inline: 0; }
+    .hero-inner { padding-block: 3rem 2.25rem; }
+    .hero-headline { font-size: clamp(2rem, 6vw, 3.4rem); }
+    .hero-headline br { display: none; }
+    .hero-support-block { grid-template-columns: 1fr; gap: 1rem; }
+    .hero-support:first-child { font-size: 1.05rem; }
     .intel-block { padding: 0 1.5rem 3.5rem; }
     .intel-inner { padding: 2rem 1.5rem; }
     .intel-grid { grid-template-columns: 1fr; }
-    /* Same move as the desktop rule: the 1.25rem that `.focal-updated` used to
-       supply above its text now sits on the band itself. */
-    .focal-block { padding-top: 1.25rem; padding-bottom: 1.25rem; }
     /* Stat bar at phone width. `1fr` is minmax(auto,1fr), so a cell whose
        min-content is wider than its share (2,914 renders ~171px against a
        ~91px content box) pushes its track wider and overflows the row. Three
        bounded changes, stat bar only: tracks may shrink below min-content,
        tighter cell padding, smaller numerals. */
-    /* Symmetric here too — the phone rule carried the same 12px/32px split. */
-    .stats-inner { padding: 1.25rem 1.5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .stat-cell { padding: 1.5rem 0.85rem; min-width: 0; }
+    .stats-inner { padding: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stat-cell { padding: 1.25rem 0.85rem; min-width: 0; }
     .stat-n { font-size: 1.9rem; letter-spacing: -0.03em; }
     .stat-l { overflow-wrap: anywhere; }
-    .path-hierarchy { padding: 2rem 1.5rem 2.25rem; gap: 1.1rem; }
-    .path-primary { padding: 1.5rem 1.25rem 1.75rem; }
+    .path-hierarchy { padding-block: 1.5rem 1rem; gap: 1.1rem; }
+    .path-primary { padding: 1.5rem; grid-template-columns: 1fr; gap: .75rem; }
+    .path-primary .path-card-cta { grid-column: 1; grid-row: auto; justify-self: start; margin-top: .25rem; }
     .path-primary-title { font-size: 1.2rem; }
     .path-cards-wrap { padding: 0; }
-    .intel-what-section { padding: 3.5rem 1.5rem 0; }
-    .intel-what-inner { padding: 2rem 1.5rem; }
+    .intel-what-section { padding-block: 1.75rem 2rem; }
+    .intel-what-inner { padding: 0; }
+    .agent-use-header { grid-template-columns: 1fr; gap: 1rem; }
+    .agent-use-scenarios { grid-template-columns: 1fr; gap: 1.5rem; }
+    .agent-use-scenario { display: grid; grid-template-columns: 1fr 2fr; gap: 0 1.5rem; }
+    .agent-use-question { margin-bottom: .75rem; }
+    .agent-use-relevance { grid-column: 2; }
+    .agent-use-next { grid-template-columns: 1fr; }
+    .agent-use-next .path-card-cta { justify-self: start; white-space: normal; }
     .result-top { grid-template-columns: 1fr; }
-    .partners-section { padding: 3rem 1.5rem; }
+    .partners-section { padding-block: 3rem; }
     .tos-panel { padding: 2rem 1.5rem; max-height: 90vh; }
+  }
+  @media (max-width: 600px) {
+    nav { padding: .75rem 1rem; gap: .5rem; }
+    /* Keep the full brand name available to screen readers without squeezing
+       the two navigation actions into one-word-per-line columns. */
+    .nav-logo-words { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .nav-right { gap: .5rem; }
+    .nav-aio-btn, .nav-docs-btn { font-size: .6875rem; letter-spacing: 0; padding: .5rem; min-height: 44px; display: flex; align-items: center; }
+    .agent-use-section { padding-block: 2rem; }
+    .agent-use-scenario { display: flex; }
   }
 </style>
 
