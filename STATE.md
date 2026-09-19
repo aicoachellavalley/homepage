@@ -2,6 +2,42 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-19 — LOCAL: dependency security and confirmed-business checkout
+
+Branch `codex/gar-debt-sept19`, base `382083d`; founder approved commit/push/deploy
+on September 19. This entry records pre-release checks, not a deployment receipt.
+Astro 7.3.3 / MDX 8.0.1 / markdown-remark 7.3.1 replace the vulnerable lockfile.
+Unified Markdown and HTML compression are explicit to preserve existing copy
+and spacing. Fresh `npm ci` and registry audit: zero reported vulnerabilities.
+49 tests, 306-page build and all four content gates pass in both the working
+checkout and a clean-source, freshly installed snapshot. Local IndexNow was
+disabled. Upstream Astro/Rolldown emits 274 unsuppressed directive warnings;
+recorded as residual maintenance, not a page failure or zero-debt claim.
+
+The diagnostic lazily loads the unchanged host map after successful analysis,
+shows name/city and all ambiguous/tie-break candidates, and requires an explicit
+choice plus current Worker availability before adding `client_reference_id` to
+the unchanged Stripe URL. No silent host→consent conversion, fuzzy matching or
+automatic navigation. Shared platforms are refused. URL edits/reset invalidate
+consent and stale responses; slower earlier choices cannot overwrite later ones.
+Unconfirmed purchases retain the honest manual-match fallback. No extra frontend
+dependency, accounts, customer storage or SDK. Mobile navigation now has two rows
+instead of squeezing the brand and links together; desktop design is unchanged.
+
+Compared all 309 HTML outputs including examples to the pre-upgrade baseline:
+visible-copy differences only on Get Agent Ready. Comparator identical-input
+and injected-heading controls pass. Desktop and 390px browser QA: no horizontal
+overflow, broken images or observed console errors; Fantasy Springs shows all
+8 choices, Brandini both cities, Yelp refuses, chosen slug reaches the link,
+editing the URL clears it. These used a visibly labeled synthetic diagnostic
+and availability fixture, not model calls or checkout. Production is unchanged.
+
+Release order: mva additive migration and activation Worker first, then review /
+merge / push com main through Git-connected Pages only. The new availability
+endpoint must be live before the UI. See `../../mva/activate/RECOVERY.md` and
+`../playbook/TECHNICAL-DEBT.md`; live alert proof and Mirage corpus disposition
+remain separate gates. Existing production receipt follows.
+
 ## 2026-09-19 — Approved release: human homepage and truthful MVA sales examples
 
 **Released and verified:** implementation `48f524e`, build-order correction

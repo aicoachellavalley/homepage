@@ -412,6 +412,7 @@ const schemaGraph = {
           <button class="btn" id="saveCardBtn" aria-label="Download the result card as an image" onclick="saveCard()">⬇ Save card</button>
         </div>
       </div>
+      <section id="businessMatch" class="business-match" aria-label="Confirm your business" aria-live="polite" hidden></section>
       <div class="aio-post-results">A diagnostic reports what we could observe; it does not change your site or Cloudflare settings. An AICV profile and an owner-assisted account review are separate next steps.</div>
     </div>
   </div>
@@ -460,7 +461,8 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-main">{pricing.tiers[1].price_amount} <span class="gar-v2-tier-price-cadence">{pricing.tiers[1].price_cadence}</span></div>
         <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[1].price_sub}</em></div>
       </div>
-      <a href="https://buy.stripe.com/6oUfZhcZN0hBcEa1we8k801" class="gar-v2-tier-cta gr-cta-volt">Get Agent Ready — $500&nbsp;→</a>
+      <a id="agentReadyPurchase" href="https://buy.stripe.com/6oUfZhcZN0hBcEa1we8k801" class="gar-v2-tier-cta gr-cta-volt">Get Agent Ready — $500&nbsp;→</a>
+      <p class="purchase-match-note">Run the free check above to confirm your business before checkout. Without a confirmed match, a person matches your purchase before your page and private review are released.</p>
       <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-ready').classList.add('on');return false;">What's included</button>
     </div>
 
@@ -2686,6 +2688,14 @@ const schemaGraph = {
     .gr-why-grid { grid-template-columns: 1fr; gap: 28px; }
   }
   @media (max-width: 560px) {
+    /* Keep the full brand and both useful links without squeezing them into
+       three unreadable columns on a phone. Desktop navigation is unchanged. */
+    nav { flex-wrap: wrap; gap: 0.85rem; padding: 0.9rem 1.25rem; }
+    .nav-logo { width: 100%; }
+    .nav-logo-words { min-width: 0; }
+    .nav-logo-sub { font-size: 0.55rem; }
+    .nav-right { width: 100%; justify-content: space-between; gap: 0.75rem; }
+    .nav-aio-btn, .nav-docs-btn { white-space: nowrap; }
     .gar-v2-tier-grid { grid-template-columns: 1fr; }
     .gr-fold { padding: 48px 0 56px; }
   }
@@ -2708,6 +2718,23 @@ const schemaGraph = {
   })();
 </script>
 
+<script>
+  import { mountBusinessMatch } from '../scripts/business-match.mjs';
+  mountBusinessMatch(document);
+</script>
+
+<style>
+  .business-match { margin-top: 1.5rem; padding: 1.5rem; background: var(--pine-mist); color: var(--pine); border-left: 3px solid var(--pine-light); }
+  .business-match[hidden] { display: none; }
+  .business-match :global(h3) { margin: 0 0 .75rem; }
+  .business-match :global(p) { line-height: 1.6; margin: .75rem 0; }
+  .business-match :global(.business-match-options) { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap: 1rem; }
+  .business-match :global(.business-match-option) { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; padding: 1rem; background: var(--sand); }
+  .business-match :global(button) { font: inherit; text-align: left; border: 1px solid var(--pine); border-radius: 3px; padding: .7rem 1rem; background: var(--sand); color: var(--pine); cursor: pointer; margin-top: .5rem; }
+  .business-match :global(a) { color: var(--pine); }
+  .purchase-match-note { font-size: .8rem; line-height: 1.55; margin: .75rem 0 0; }
+</style>
+
 <script is:inline>
   const WORKER_BASE = 'https://aicv-api.sunshinefm.workers.dev';
 
@@ -2722,6 +2749,11 @@ const schemaGraph = {
 
   let ticker;
   let lastResult = null; // last structured review, source of truth for exports
+  let analysisGeneration = 0;
+
+  function clearBusinessMatch() {
+    document.dispatchEvent?.(new CustomEvent('aicv:diagnostic-reset'));
+  }
 
   function norm(s) {
     s = s.trim();
@@ -2735,6 +2767,9 @@ const schemaGraph = {
   }
 
   function resetTool() {
+    analysisGeneration++;
+    lastResult = null;
+    clearBusinessMatch();
     document.getElementById('aioResults').classList.remove('on');
     document.getElementById('aioLoading').classList.remove('on');
     document.getElementById('aioErr').classList.remove('on');
@@ -2744,6 +2779,7 @@ const schemaGraph = {
   }
 
   function showErr(msg) {
+    clearBusinessMatch();
     const el = document.getElementById('aioErr');
     el.textContent = msg;
     el.classList.add('on');
@@ -2753,6 +2789,8 @@ const schemaGraph = {
   }
 
   async function runAnalysis(event) {
+    const generation = ++analysisGeneration;
+    clearBusinessMatch();
     if (event && event.preventDefault) event.preventDefault();
     const url = norm(document.getElementById('urlInput').value);
     if (!url) { showErr('Please enter a valid website address, like yourrestaurant.com'); return; }
@@ -2777,6 +2815,7 @@ const schemaGraph = {
       if (!res.ok) throw new Error('Analysis service unavailable. Please try again in a moment.');
 
       const r = await res.json();
+      if (generation !== analysisGeneration) return;
       if (r.error) {
         showErr(r.error);
         return;
@@ -2788,12 +2827,14 @@ const schemaGraph = {
 
       lastResult = r;
       document.getElementById('reviewCard').innerHTML = renderReview(r);
+      document.dispatchEvent?.(new CustomEvent('aicv:diagnostic-complete', { detail: { url } }));
 
       document.getElementById('aioResults').classList.add('on');
       document.getElementById('analyzeBtn').disabled = false;
       document.getElementById('aioResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     } catch(err) {
+      if (generation !== analysisGeneration) return;
       showErr(err.message || 'Something went wrong. Please try again.');
     }
   }
@@ -2894,6 +2935,15 @@ const schemaGraph = {
 
   document.getElementById('urlInput').addEventListener('keydown', e => {
     if (e.key === 'Enter') runAnalysis();
+  });
+  document.getElementById('urlInput').addEventListener('input', () => {
+    analysisGeneration++;
+    clearBusinessMatch();
+    clearInterval(ticker);
+    lastResult = null;
+    document.getElementById('aioLoading').classList.remove('on');
+    document.getElementById('aioResults').classList.remove('on');
+    document.getElementById('analyzeBtn').disabled = false;
   });
 
   document.addEventListener('keydown', e => {
