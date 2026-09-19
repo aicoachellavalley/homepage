@@ -94,6 +94,7 @@ export const GET: APIRoute = async () => {
 ## Intelligence Network
 
 - [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All ${nodes.length} geographic nodes, flat JSON, no JS required
+- Full node records: append .json to a node path, for example https://aicoachellavalley.com/nodes/node-zero.json — complete readable Markdown, canonical URL and content date; generated with the human page
 - [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All ${briefs.length} intelligence briefs, flat JSON, no JS required
 - [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.filter((r) => r.data.report_type !== 'methodology').length} long-form intelligence reports (plus the evergreen census methodology page), flat JSON, no JS required
 - [Agent Previews](https://aicoachellavalley.com/sitemap-index.xml): ${previewPages} published Agent Preview pages across ${previews.length} Coachella Valley categories — a dated, independent measurement of how an AI agent reads one specific local business today. ${previewSitemapped} of the ${previewPages} are sitemapped; the other ${previewWithheld} are deliberately noindexed and reachable by direct link only — businesses whose listed web address is dead, hijacked or parked, and businesses with no website on record. Nothing was measured for those, so they are not offered for indexing. Per-category sitemaps under /agent-preview/, all listed in the sitemap index

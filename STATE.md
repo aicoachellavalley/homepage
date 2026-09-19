@@ -2,6 +2,130 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-19 — Release approved; final preflight passed
+
+Sat authorized commit, push and deployment. The LOCAL entries below preserve
+the pre-release review record; this entry supersedes their approval status.
+Fresh release check: 29 tests, 306 HTML pages, all pricing/ownership/amendment/
+node-content gates passed. All 79 complete records agree with rendered content.
+Public feed access succeeded on the final network-enabled build; IndexNow was
+disabled for local verification. No payment or production analysis was run.
+Deploy com by Git first; verify node JSON before deploying the dependent MCP
+Worker. Release hashes and live checks will be recorded after deployment.
+
+## 2026-09-19 — Proof example and complete agent records. LOCAL follow-on; no commit/deploy.
+
+Builds on the local page revision below, without discarding it. Added one native,
+initially collapsed “See what $500 builds” example under the tiers; explicitly
+fictional, no customer/entity schema, no live booking or private review exposed.
+Premium promises an assessment/roadmap rather than guaranteed citations. The
+hero, Choose Your Future, Who's already asking, wider layout and lower Cloudflare
+guide remain. No price, Stripe/calendar destination, Terms or client-script change.
+
+Agent fix: `/nodes/[slug].json` emits complete readable Markdown, canonical URL
+and original content date from the same node collection/stats build as the human
+page. Unknown authoring expressions fail rather than leak. The node sections of
+`llms-full.txt` use the same adapter; reports/briefs retain their existing paths.
+`nodes.json` remains the unchanged lightweight metadata index. The MCP Worker
+will consume these records after release; see `../mcp/STATE.md` for the dependency
+order. Public agent instructions/llms index document the new route and remove the
+false 406 claim. No new frontend dependencies or JavaScript.
+
+Verification: 29 com tests pass. Production build: 306 HTML pages plus generated
+node JSON records; pricing, ownership, amendment and the new node-content gate
+pass. All 79 node bodies match rendered human text and bulk export; largest record
+13,630 bytes. Controls: valid comparison passes; injected wrong text fails. Node
+Zero is complete at 12,820 characters, not the former 2,000-character excerpt.
+
+Browser: nine widths 320–1920px, zero overflow with the example both closed and
+open; native keyboard and JavaScript-disabled toggles work. Existing modals,
+anchor navigation, three diagnostic fixtures and export pass; no unexpected
+console errors. Existing hero/tool/card/CTA styles and scripts match the earlier
+baseline. Only Get Agent Ready changes among HTML pages; Terms byte-identical.
+HTML comparison controls: identical=0, injected Terms=1 localized change.
+
+Evidence: `/private/tmp/gar-proof.Jnn7UM/` holds the pre-follow-on build and
+example screenshots; the prior `/private/tmp/gar-before.4v8Ri2/qa-wide.mjs` harness
+also passed. Existing upstream Vite/import and unavailable news-feed warnings
+remain; they are not newly established production outages. Metrics read was
+403/unavailable; the private product baseline records that and the still-unrun
+assistant/Muse tests. Sampled Sensei editorial staleness is queued separately;
+matching exports does not certify the authored facts are current.
+
+Review locally at `http://127.0.0.1:4321/get-agent-ready/`. Nothing committed,
+pushed or deployed. The earlier “no Worker deployment needed” statement below
+applies only to that earlier copy pass, not this dependent backend repair.
+
+## 2026-09-19 — Get Agent Ready copy/layout revision and capability register. LOCAL; not committed or deployed.
+
+Base HEAD: `68cf500`. Revised after Sat reviewed the first local draft: use the
+existing site's voice, not an outcome-first rewrite. Restored the agentic-internet
+hero framing, Choose Your Future, Why networks win and Who's already asking;
+removed the added three-outcome strip. The copy addresses business owners as
+people ready to engage with AI agents and assistants. The internal three-outcome
+framework remains in the capability register, not a compulsory sales template.
+
+Existing pricing cards, tokens, type, diagnostic and purchase destinations remain.
+The Cloudflare guide moved below the offer without losing `#agent-access`, the
+optional checklist or scope limits. Desktop section containers use 80% of the
+viewport from 1100px upward; the old FAQ 72ch and access-guide 85ch caps are gone.
+Mobile keeps the existing gutters/stacking. FAQ answers are shorter, visible and
+shared with JSON-LD. They remain open because the recorded rendered-text search
+dependency has not been superseded by an indexing test of collapsed answers.
+Muse is qualified as planned testing, not a delivered merchant integration. The
+Business description still shares one string between visible copy and Service
+schema. The page/sitemap modification date is September 19.
+
+The internal home is `../playbook/GET-AGENT-READY.md`, linked from MVA.md,
+AGENT-ACCESS.md and CLAUDE.md. It separates Watching / Testing / Offered, names
+evidence, delivery boundaries and the decision owner, and records a bounded
+Muse/Stripe pilot as proposed, not started. No new price, contractual entitlement,
+customer account connection or backend implementation was introduced.
+
+Verification, September 19:
+
+- `npm --prefix /Users/sunshinefm/AICV/core/com test`: 23 passed (existing
+  diagnostic tests plus approved-copy/order/scope/FAQ regression checks).
+- `AICV_NO_INDEXNOW=1 npm --prefix /Users/sunshinefm/AICV/core/com run build`:
+  306 pages; pricing, ownership and amendment gates passed. IndexNow disabled
+  deliberately for local verification. Corpus counts unchanged: 79 nodes,
+  178 briefs, 14 report endpoint entries.
+- Fresh pre-edit versus post-edit builds: only `get-agent-ready/index.html`
+  changed among HTML pages. Comparison controls on the new build: identical
+  inputs = 0; injected Terms change = exactly 1 localized change. Terms stayed
+  byte-identical. Page HTML 66,197 → 63,300 bytes; non-JSON-LD client scripts
+  byte-identical. Stripe and calendar destinations unchanged. No new dependencies.
+- Rendered FAQ answers equal FAQPage answers; visible Business description equals
+  Service description; JSON-LD and sitemap dates agree; local links/anchors resolve.
+- Browser checks at 1920, 1440, 1100, 1024, 900, 768, 560, 390 and 320px found
+  no horizontal overflow. FAQ width measures 80% of the viewport on desktop
+  (1100px+). FAQ answer text is 471 words versus 695 in the pre-edit build,
+  measured from rendered paragraphs. Existing hero/tool/card/CTA/nav colors,
+  fonts, padding and radii match
+  the baseline. Desktop/mobile screenshots inspected. The native checklist,
+  included-scope Close buttons, Terms modal, access anchor and diagnostic focus
+  work. Existing behavior retained: Escape closes Terms, not the included-scope
+  modals; this was confirmed on the pre-edit baseline, not introduced here.
+- Normal, access-only and service-error diagnostic responses were exercised with
+  local fixtures; JSON export retains access evidence. No production diagnostic,
+  reservation, payment or account-setting changes. No unexpected browser errors.
+
+Both before/after local builds had the same upstream Vite unused-import warning
+and unavailable aicv.news feed warning in this environment. Neither is a new
+regression; the homepage output compared identical. This is not a production
+availability finding.
+
+Local QA evidence: `/private/tmp/gar-before.4v8Ri2/` (baseline, `wide-*.png`
+screenshots and `qa-wide.mjs` comparison/browser harness). The preview server is
+localhost-only on port 4321. Sat explicitly requested local-only review; no
+commit, push or deploy is authorized by this revision.
+
+Commit/deploy gate: review and approve the com edits and playbook edits separately.
+Push com only after approval (Git-triggered Pages deployment), verify the page,
+then update release evidence. No Worker deployment is needed. The playbook had
+one pre-existing unpushed commit (`a7c965d`); it was preserved and not pushed by
+this session. September 15 below is a historical entry, not current edit status.
+
 ## 2026-09-15 — Agent Access diagnostic and owner-assisted SAT scope. LOCAL; awaiting commit/deploy approval.
 
 Base HEAD read from disk: `fa6c95f`. Changes are uncommitted and not deployed.

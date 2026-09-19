@@ -10,6 +10,7 @@ const path = require('path');
 // Shared with src/pages/briefs/[slug].astro and src/pages/sitemap.xml.ts —
 // one derivation of an amended brief's modification date (see that file).
 const { briefDateModified, briefIsAmended } = require('./brief-dates.cjs');
+const { nodeContent } = require('./node-content.cjs');
 
 const COM_ROOT   = path.resolve(__dirname, '..');
 const NODES_DIR  = path.join(COM_ROOT, 'src', 'content', 'nodes');
@@ -449,7 +450,10 @@ function generateLlmsFullTxt() {
   const nodeSections = nodeFiles.map(filePath => {
     const slug = path.basename(filePath, '.mdx');
     const content = fs.readFileSync(filePath, 'utf8');
-    return `## node: ${slug}\n\n${toFlatText(content)}`;
+    // Keep provenance/frontmatter in the bulk dump, but use the SAME body as
+    // /nodes/[slug].json and the MCP desk. No imports, unresolved counts or cuts.
+    const frontmatter = content.match(/^---\r?\n[\s\S]*?\r?\n---/)?.[0] || '';
+    return `## node: ${slug}\n\n${frontmatter}\n\n${nodeContent(content, statsCounts)}`;
   });
 
   const briefSections = briefFiles.map(filePath => {

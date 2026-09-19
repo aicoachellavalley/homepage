@@ -25,7 +25,7 @@ import Base from '../layouts/Base.astro';
 const pageTitle = 'AI Agents in the Coachella Valley — Get Agent Ready | AICV';
 const pageDescription = "How do AI agents see your Coachella Valley business? Free agent-readiness diagnostic from AICV, the region's intelligence network for the agentic internet.";
 const canonicalUrl = 'https://aicoachellavalley.com/get-agent-ready/';
-const businessDescription = 'Annual membership in the AICV Network for valley businesses that need to be legible to the agent layer. Includes a Cloudflare agent-readiness diagnostic with an owner-assisted Search, Agent and Training (SAT) policy review, canonical MVA built to Tier 4 infrastructure standard, MCP routing configuration, and agent-to-agent concierge access. SAT review requires the owner or site manager; configuration changes are separately agreed, not automatic.';
+const businessDescription = 'Annual membership that keeps your business represented on the AICV Network. Includes your structured business profile (MVA), maintained discovery infrastructure, MCP routing and agent-to-agent concierge access. The profile is built to our Tier 4 infrastructure standard. For Cloudflare sites, onboarding includes an owner-assisted Search, Agent and Training (SAT) policy review. The owner or site manager confirms the settings; any configuration changes are separately agreed.';
 
 /* FAQ — ONE ARRAY, TWO SURFACES (2026-09-14). Rendered as the visible
  * "Questions" section AND as the FAQPage mainEntity in the JSON-LD graph, from
@@ -38,40 +38,40 @@ const businessDescription = 'Annual membership in the AICV Network for valley bu
  * no straight double quotes (they are emitted verbatim into JSON-LD). */
 const faq = [
   {
-    q: "Does Get Agent Ready check whether Cloudflare blocks agents?",
-    a: "The free diagnostic checks public page reachability, robots.txt preferences for the submitted page, and Content-Signal declarations. It does not log into Cloudflare or verify Search, Agent and Training (SAT) settings. A page loading for our checker is not proof that every crawler can access it. Business and Premium onboarding include an owner-assisted SAT review when the site uses Cloudflare; the owner or site manager confirms settings, mixed-purpose crawler restrictions and individual blocks. Training permission is a separate business choice, not a visibility requirement. The $500 Agent Ready purchase publishes your AICV profile; it does not change or audit your Cloudflare account.",
-  },
-  {
     q: "We already pay for SEO. Why do we need this?",
-    a: "Different budget, different layer. SEO optimizes for human eyes on Google search results pages — someone typing a query, clicking a blue link, landing on your site. That work still matters and it isn't what AICV does. AICV operates in the layer agents read when they answer a user's question directly, without surfacing a results page at all. When someone asks Claude or ChatGPT where to hold a corporate retreat in the Coachella Valley, your SEO ranking on Google is irrelevant to that answer. Your presence in the regional substrate agents query is what decides whether you're in the answer. Both budgets are legitimate. They serve different interfaces.",
+    a: "Your website and SEO still matter. AI agents and assistants introduce another way for customers to find you: asking for a recommendation, comparing businesses, or planning a visit. AICV prepares your business for that agentic internet with a structured profile and local context that AI can read. It complements your existing marketing; it does not guarantee a recommendation, ranking or sale.",
   },
   {
     q: "Why is there a Deployment Fee separate from annual membership?",
-    a: "The Deployment Fee covers the work done once — the diagnostic, the node build, the MCP configuration, the Review (Tier 2), and the portal build. Annual membership keeps everything running. Pricing both honestly is cleaner than bundling setup cost into year-one dues and making year two feel overpriced.",
+    a: "Setup is work we do once: assess your business, build your profile and configure the services in your membership. Annual fees keep those services running. Business and Premium start with a call to agree the scope. The $500 Agent Ready purchase is one-time, with no separate setup fee or annual membership.",
   },
   {
     q: "Does AICV touch our website?",
-    a: "No. Your AICV profile is built alongside your site; you don't change your CMS or install anything. What we do look at is the public signals your site already sends — can a page be reached, what robots.txt says, what your Cloudflare crawler settings declare. For Business and Premium, that includes an owner-assisted review of those Cloudflare settings, with you or your site manager in the room. Reviewing is not changing: any configuration work is separately agreed, and private areas stay private.",
+    a: "No rebuild, no plugin, no change to your CMS. Your AICV profile lives alongside your website and points people to your existing business. We can review access settings with you or your site manager as part of Business or Premium; any changes need a separately agreed scope. Private areas stay private.",
   },
   {
     q: "What happens if we stop paying?",
-    a: "Your canonical node stays published — you remain discoverable. Agent-layer access (concierge, economic-development platform, templatized MCP tools) turns off. Your Agentic Review portal goes private. Rejoining is straightforward; existing node data isn't lost.",
+    a: "If you end an annual membership, your business profile stays published. Membership services — including concierge access and agent tools — stop, and your Agentic Review portal goes private. Your existing profile data is not lost, so you can rejoin without starting over.",
   },
   {
     q: "Who qualifies for membership?",
-    a: "Any valley business, institution, property, or civic entity whose presence strengthens the Network's collective signal. AICV reserves editorial judgment on fit — the Network is a curated signal, not a directory.",
+    a: "Coachella Valley businesses, institutions, properties and civic organizations whose presence strengthens the network. AICV reviews fit: this is a curated regional intelligence network, not a directory anyone can pay to appear in.",
   },
   {
     q: "Can we see an example of the Agentic Review?",
-    a: "The Agentic Review is delivered privately to the business it assesses, so there is no public example. The closest thing you can look at today is an Agent Preview — a free, self-serve page showing how AI agents currently read a specific business. It is a lighter artifact: it shows what agents can see, while the Agentic Review scores what they find and returns a roadmap. The free diagnostic on this page runs one for any URL you enter, and AICV has published Agent Previews for Coachella Valley businesses across six categories, listed in the sitemap index.",
+    a: "Reviews belong to the businesses they assess, so we do not publish them as examples. Start with the free Agent Preview on this page to see the kind of questions we examine. A full Agentic Review goes deeper, with a private assessment, scoring and a roadmap for the business.",
   },
   {
     q: "Who owns AICV?",
-    a: "AICV is a product and service of SunshineFM LLC, a California limited liability company. Membership fees fund the continued build-out of the regional intelligence layer.",
+    a: "AICV is a product and service of SunshineFM LLC, a California limited liability company. Membership fees support the Coachella Valley's intelligence network for the agentic economy.",
   },
   {
-    q: "My business handles bookings or transactions. Will AICV support agent-mediated payments?",
-    a: "A dedicated agent-payment integration is not always required. Supported consumer agents can already pay through a business's existing online checkout and card-payment routes, subject to the user's approval and the checkout's compatibility, so an agent-originated payment does not depend on the business building anything with AICV or anyone else. AICV's work sits upstream of payment: helping agents understand your business, its offers, constraints and supporting evidence, and reach your official booking or ordering path. AICV continues to track agent-payment protocols, including Coinbase's x402 and the Agentic Commerce Protocol (ACP). For Premium members in transaction-driven categories — hospitality, dining, wellness, retail — direct integrations such as agent-payable MCP endpoints remain planned as the standards stabilize and member needs are scoped. Those integrations can improve live availability, booking and order handling; they are separate capabilities, not a prerequisite for an agent-originated payment, and AICV membership is not a condition of an agent recommending or paying your business. Premium members participate in capability planning and receive priority deployment of new agentic commerce surfaces.",
+    q: "Can Cloudflare or our website's security block AI agents?",
+    a: "Yes. A site can work for people and still restrict automated visitors. The free diagnostic checks one public page and its declared crawler preferences, not your private Cloudflare settings or every bot. Business and Premium include an owner-assisted SAT review — Search, Agent and Training — for Cloudflare sites; changes are separately scoped. Training is a separate owner choice, not a visibility requirement. The $500 profile purchase does not include a Cloudflare account audit.",
+  },
+  {
+    q: "Do we need a special checkout for AI customers?",
+    a: "Not necessarily. For supported US customers, Meta's Muse can pay through Stripe's Link wallet or a single-use card, with the customer's approval and subject to the checkout's compatibility. Your existing checkout may be enough. AICV helps agents reach your official booking or ordering path; Muse-specific testing is planned, not an included integration or compatibility guarantee. Direct integrations are separately scoped, with Premium members retaining priority as new capabilities are deployed. AICV membership is not required for an agent to recommend or pay your business.",
   },
 ];
 
@@ -345,7 +345,7 @@ const schemaGraph = {
       <div class="gr-eyebrow">The agentic internet is here</div>
       <h1 class="gr-h1">Get agent ready.</h1>
       <p class="gr-sub">AICV is the Coachella Valley's intelligence network for the agentic internet.</p>
-      <p class="gr-lead">AICV gives your business a structured, AI-readable profile — so AI tools can understand, discover, and route people to you, without touching your website.</p>
+      <p class="gr-lead">AICV gives your business a structured, AI-readable profile — so AI agents and assistants can understand, discover, and route people to you, without touching your website.</p>
       <div class="gr-stats">
         <span class="gr-stat">Established 2025</span>
       </div>
@@ -353,7 +353,7 @@ const schemaGraph = {
     <div class="gr-tool" id="diagnostic">
       <div class="gr-tool-label">Free tool</div>
       <h2 class="gr-tool-h">Can AI see your business?</h2>
-      <p class="gr-tool-sub">Check how clearly your public page presents your business, plus observable agent-access signals. Cloudflare account settings require an owner review. <a href="#agent-access">What we check</a>.</p>
+      <p class="gr-tool-sub">See what AI agents and assistants can learn from your public page — and what may get in their way. Private account settings need an owner review. <a href="#agent-access">What we check</a>.</p>
     
     <div class="aio-card">
     <label class="aio-input-label gr-sr-only" for="urlInput">Enter your website and receive a plain-English diagnostic of how AI systems read your business:</label>
@@ -400,28 +400,6 @@ const schemaGraph = {
       </div>
       <div class="aio-post-results">A diagnostic reports what we could observe; it does not change your site or Cloudflare settings. An AICV profile and an owner-assisted account review are separate next steps.</div>
     </div>
-  </div>
-</section>
-
-<section class="gr-access-guide" id="agent-access" aria-labelledby="agent-access-title">
-  <div class="gar-v2-inner">
-    <div class="gar-v2-eyebrow">AGENT ACCESS</div>
-    <h2 id="agent-access-title">Can an agent reach your business?</h2>
-    <p>Clear content and useful tools cannot help an agent whose request is blocked. Our free diagnostic checks one public page, its robots preferences and Content-Signal declarations. It does not verify your Cloudflare account settings or guarantee access for every crawler.</p>
-    <p><strong>Find you → Reach you → Understand you → Use your tools → Transact.</strong> These are separate checks, not a promise of ranking, citation or sales.</p>
-    <details>
-      <summary>Check Search, Agent and Training in Cloudflare</summary>
-      <ol>
-        <li>Sign in to Cloudflare and select the correct account and <strong>active domain</strong>. If your host or agency manages it, ask them to check. Repeat for each domain.</li>
-        <li>Open <strong>Security → Settings → Configure AI bot policies → Configurations</strong>. Record Search, Agent and Training: Allow, Block on pages with ads, or Block on all pages. Choose intentionally, save, reopen and confirm.</li>
-        <li>Check any remaining <strong>Block AI bots</strong> and mixed-purpose controls. Blocking Training can also block crawlers used for Search, including Googlebot, Applebot and Bingbot. Training is a separate owner choice, not a requirement for visibility; review that trade-off before changing it.</li>
-        <li>In <strong>AI Crawl Control → Security</strong>, include inactive crawlers and inspect individual block switches. Ask your site manager to check conflicting rules. Keep WAF, DDoS protection, authentication and private areas protected.</li>
-        <li>Check your public <strong>/robots.txt</strong>: it must be text, not your homepage. Reconcile named-bot rules, Content-Signal preferences, Cloudflare-managed robots and Bot Preference Sync. Re-fetch after changes and inspect real crawler traffic/errors; our checker is not a verified Googlebot or ChatGPT visit.</li>
-      </ol>
-      <p>Cloudflare's September 15, 2026 defaults affect new domains and existing Free-plan zones with untouched settings. A current value alone does not prove whether a setting was inherited or deliberately chosen. Record the domain, date, values and who confirmed them.</p>
-      <p>Dashboard labels checked September 15, 2026. Sources: <a href="https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/">Cloudflare AI bot policies</a>, <a href="https://developers.cloudflare.com/ai-crawl-control/configuration/ai-crawl-control-with-bots/">layered blocking rules</a>, <a href="https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/">robots preferences</a>, and <a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-allows-the-agentic-internet-to-flourish-with-a-simple-philosophy-your-content-your-rules/">September 15 defaults</a>.</p>
-    </details>
-    <p><strong>Business and Premium onboarding:</strong> owner-assisted SAT review for Cloudflare sites, with the owner or site manager present. Changes require a separately agreed scope. The $500 Agent Ready profile purchase does not include a Cloudflare account audit or configuration work. <a href="/terms/#agent-access">Agent Access scope</a>.</p>
   </div>
 </section>
 
@@ -493,7 +471,7 @@ const schemaGraph = {
       <div class="gar-v2-tier-body">
         <div class="gar-v2-tier-eyebrow">GET CURATED</div>
         <div class="gar-v2-tier-name">Agent Ready Premium</div>
-        <p class="gar-v2-tier-desc">Everything in Business, plus editorial review by the AICV LLM Council — the weight that gets you cited, not just discovered.</p>
+        <p class="gar-v2-tier-desc">Everything in Business, plus editorial review by the AICV LLM Council — a deeper assessment and a practical roadmap for your place in the agentic economy.</p>
       </div>
       <div class="gar-v2-tier-divider"></div>
       <div class="gar-v2-tier-price-block">
@@ -505,24 +483,47 @@ const schemaGraph = {
     </div>
   </div>
   <p class="gar-v2-tier-note">Current membership pricing shown. Availability is limited by deployment capacity. Not sure where you fit? <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Book a chat with Sat.</a></p>
+  <details class="gar-example" id="profile-example">
+    <summary>See what {pricing.tiers[1].price_amount} builds</summary>
+    <div class="gar-example-grid">
+      <div class="gar-example-profile" data-nosnippet>
+        <p class="gar-example-label">Illustrative profile · fictional business</p>
+        <h3>Example Palm Desert Studio</h3>
+        <p>A small movement studio offering private sessions and beginner classes.</p>
+        <dl>
+          <div><dt>Where</dt><dd>Palm Desert, California</dd></div>
+          <div><dt>Hours</dt><dd>Tuesday–Saturday, 9 am–5 pm</dd></div>
+          <div><dt>Next step</dt><dd>The studio’s official booking page</dd></div>
+        </dl>
+        <p class="gar-example-note">Sample facts only, not a customer or a live booking. Your profile uses your business’s details, with owner-supplied facts identified as such.</p>
+      </div>
+      <div class="gar-example-explanation">
+        <h3>A clear introduction to your business—for people and their AI assistants.</h3>
+        <p>Your published AICV profile puts the essentials in one place: who you are, where you are, what you offer and how to reach you. Those details are also available in structured data, so an agent can read them without guessing.</p>
+        <p>A customer’s next step leads to your existing website, phone or booking link. This is a business profile, not a chatbot that takes appointments or payments for you.</p>
+        <p>The one-time purchase also includes your private agent-readiness review. Publication follows purchase-to-business matching. Ongoing service and the owner-assisted Cloudflare review belong to Business or Premium.</p>
+        <a href="/terms/#agent-ready">Read the purchase terms</a>
+      </div>
+    </div>
+  </details>
   </div>
 </section>
 
 <!-- CONDENSED PERSUASION (why networks · what happens · under the hood) -->
 <section class="gr-why">
   <div class="gar-v2-inner">
-    <p class="gr-why-lead">The agentic internet isn't five years away — it's reading the web today, and the businesses already on agent-readable networks are the ones being discovered.</p>
+    <p class="gr-why-lead">The agentic internet isn't five years away — it's reading the web today. AI agents and assistants can help people research, compare and decide. Get your business ready to be part of that conversation.</p>
     <div class="gr-why-grid">
       <div class="gr-col">
         <h3 class="gr-col-h">Why networks win</h3>
-        <p class="gr-col-body">A business optimizing alone is almost invisible. Inside the AICV network it's signal — AI systems reach for trusted regional context, not scattered noise. The network that earns the cluster earns the citation, and your record inherits the lift.</p>
+        <p class="gr-col-body">An AI assistant needs context, not just a business name. AICV connects your profile to research on the Coachella Valley's businesses, institutions and places — helping agents understand where you fit and who you serve. We're building that regional intelligence network here, for the agentic economy.</p>
       </div>
       <div class="gr-col">
         <h3 class="gr-col-h">What happens when you join</h3>
         <ol class="gr-steps">
-          <li>Your agent goes live on the network — answering other agents, around the clock. You don't change your website.</li>
-          <li>Other agents discover you — founder, research, and booking agents read your record and route their humans to you.</li>
-          <li>The cluster compounds — every brief and node AICV adds makes the network more trusted, and your record rises with it.</li>
+          <li>Your agent goes live on the network once your purchase is matched to your business. You don't change your website.</li>
+          <li>AI agents and assistants can read your business's facts and follow your official links — from discovering what you offer to helping a customer take the next step.</li>
+          <li>You're part of a regional network. Your profile sits alongside the local research and relationships AICV continues to build.</li>
         </ol>
       </div>
     </div>
@@ -541,11 +542,33 @@ const schemaGraph = {
   </div>
 </section>
 
-<!-- FAQ — rendered from the same `faq` array as the FAQPage JSON-LD in the
-     frontmatter, so the visible copy and the structured data cannot drift.
-     Every answer is OPEN, not collapsed: text indexers (AI Search included)
-     read rendered text, and the contents of a closed <details> are not
-     rendered. The section id matches the FAQPage @id fragment (#faq). -->
+<!-- Keep the existing deep link and safety boundaries; the how-to is optional. -->
+<section class="gr-access-guide" id="agent-access" aria-labelledby="agent-access-title">
+  <div class="gar-v2-inner">
+    <div class="gar-v2-eyebrow">WHAT WE CHECK</div>
+    <h2 id="agent-access-title">Can an agent reach your business?</h2>
+    <p>The free diagnostic observes one public page and its declared crawler preferences. It cannot verify private Cloudflare settings or guarantee access for every crawler. It does not test bookings or make purchases.</p>
+    <p><strong>Business and Premium onboarding:</strong> owner-assisted SAT review for Cloudflare sites, with the owner or site manager present. Changes require a separately agreed scope. The $500 Agent Ready profile purchase does not include a Cloudflare account audit or configuration work. <a href="/terms/#agent-access">Agent Access scope</a>.</p>
+    <details>
+      <summary>Cloudflare site? Open the access checklist</summary>
+      <p>Search, Agent and Training (SAT) are separate policy choices. A public page loading does not verify these settings.</p>
+      <ol>
+        <li>Sign in to Cloudflare and select the correct account and <strong>active domain</strong>. If your host or agency manages it, ask them to check. Repeat for each domain.</li>
+        <li>Open <strong>Security → Settings → Configure AI bot policies → Configurations</strong>. Record Search, Agent and Training: Allow, Block on pages with ads, or Block on all pages. Choose intentionally, save, reopen and confirm.</li>
+        <li>Check any remaining <strong>Block AI bots</strong> and mixed-purpose controls. Blocking Training can also block crawlers used for Search, including Googlebot, Applebot and Bingbot. Training is a separate owner choice, not a requirement for visibility; review that trade-off before changing it.</li>
+        <li>In <strong>AI Crawl Control → Security</strong>, include inactive crawlers and inspect individual block switches. Ask your site manager to check conflicting rules. Keep WAF, DDoS protection, authentication and private areas protected.</li>
+        <li>Check your public <strong>/robots.txt</strong>: it must be text, not your homepage. Reconcile named-bot rules, Content-Signal preferences, Cloudflare-managed robots and Bot Preference Sync. Re-fetch after changes and inspect real crawler traffic/errors; our checker is not a verified Googlebot or ChatGPT visit.</li>
+      </ol>
+      <p>Cloudflare's September 15, 2026 defaults affect new domains and existing Free-plan zones with untouched settings. A current value alone does not prove whether a setting was inherited or deliberately chosen. Record the domain, date, values and who confirmed them.</p>
+      <p>Dashboard labels checked September 15, 2026. Sources: <a href="https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/">Cloudflare AI bot policies</a>, <a href="https://developers.cloudflare.com/ai-crawl-control/configuration/ai-crawl-control-with-bots/">layered blocking rules</a>, <a href="https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/">robots preferences</a>, and <a href="https://www.cloudflare.com/press/press-releases/2026/cloudflare-allows-the-agentic-internet-to-flourish-with-a-simple-philosophy-your-content-your-rules/">September 15 defaults</a>.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FAQ answers stay visible because the current search pipeline has a recorded
+     rendered-text dependency. Shorter answers and a wider desktop column reduce
+     the reading burden without introducing an unverified indexing change.
+     The visible answers and FAQPage JSON-LD still share the `faq` array. -->
 <section class="gar-v2-faq" id="faq" aria-labelledby="faq-h">
   <div class="gar-v2-inner">
     <div class="gar-v2-eyebrow">QUESTIONS</div>
@@ -558,6 +581,7 @@ const schemaGraph = {
         </div>
       ))}
     </div>
+    <p class="gr-fiscal">On agent payments: <a href="https://stripe.com/newsroom/news/stripe-helps-meta-muse-shop-with-link">Stripe's Muse and Link announcement</a>. Platform availability is separate from an AICV-delivered integration.</p>
   </div>
 </section>
 
@@ -1028,12 +1052,28 @@ const schemaGraph = {
     max-width: 720px;
     color: var(--pine);
   }
-  .gr-access-guide { padding: 2.5rem 1.5rem; background: var(--sand); color: var(--pine-dark); }
-  .gr-access-guide h2 { font-family: 'Syne', sans-serif; font-size: 1.5rem; margin: .6rem 0 1rem; }
-  .gr-access-guide p, .gr-access-guide li { font-size: .9rem; line-height: 1.7; margin: .7rem 0; max-width: 85ch; }
+  .gr-access-guide { padding: 2.5rem 0; background: var(--sand); color: var(--pine-dark); scroll-margin-top: 96px; }
+  .gr-access-guide h2 { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1.5rem; margin: .6rem 0 1rem; }
+  .gr-access-guide p, .gr-access-guide li { font-size: .9rem; line-height: 1.7; margin: .7rem 0; }
   .gr-access-guide ol { padding-left: 1.4rem; }
   .gr-access-guide a, .aicv-access a { color: var(--pine); text-decoration: underline; }
   .gr-access-guide summary { cursor: pointer; font-weight: 600; padding: .75rem 0; }
+  .gr-access-guide summary:focus-visible, .gr-access-guide a:focus-visible { outline: 2px solid var(--pine-dark); outline-offset: 3px; }
+  .gar-example { margin-top: 1.5rem; border-top: 1px solid var(--pine); }
+  .gar-example > summary { cursor: pointer; padding: 1.25rem 0; font-weight: 600; color: var(--pine-dark); }
+  .gar-example > summary:focus-visible, .gar-example a:focus-visible { outline: 2px solid var(--pine-dark); outline-offset: 4px; }
+  .gar-example-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 2rem; padding-bottom: 1.5rem; }
+  .gar-example-profile { padding: 1.5rem; background: var(--sand); border: 1px solid var(--pine); border-radius: 12px; }
+  .gar-example h3 { font-family: 'DM Sans', sans-serif; font-size: 1.2rem; line-height: 1.4; margin: .5rem 0 1rem; }
+  .gar-example p, .gar-example dl, .gar-example a { font-size: .95rem; line-height: 1.7; }
+  .gar-example p { margin: .75rem 0; }
+  .gar-example .gar-example-label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+  .gar-example dl > div { display: grid; grid-template-columns: 5rem 1fr; gap: .75rem; margin: .5rem 0; }
+  .gar-example dt { font-weight: 600; }
+  .gar-example dd { margin: 0; }
+  .gar-example .gar-example-note { font-size: .8rem; }
+  .gar-example a { color: var(--pine); text-decoration: underline; }
+  @media (max-width: 767px) { .gar-example-grid { grid-template-columns: 1fr; gap: 1rem; } }
   .aicv-access { border-top: 1px solid var(--pine-tint); margin-top: 1.1rem; padding-top: 1rem; overflow-wrap: anywhere; }
   .aicv-access h3 { font-size: 1rem; margin: 0 0 .5rem; }
   .aicv-access p, .aicv-access li, .aicv-scope { font-size: .8rem; line-height: 1.55; margin: .6rem 0; }
@@ -2593,16 +2633,22 @@ const schemaGraph = {
   .gr-fiscal { margin-top: 2.5rem; font-size: .8rem; line-height: 1.6; color: var(--pine-light); max-width: 72ch; }
   .gr-fiscal a { color: var(--pine-dark); }
 
-  /* FAQ — visible twin of the FAQPage JSON-LD (see the `faq` const). Alternates
-     background with .gr-why above it; single column at 72ch because the answers
-     are paragraphs, not cards. */
+  /* FAQ — visible twin of FAQPage JSON-LD. Use the full section width;
+     answers are deliberately short instead of boxed into a narrow text column. */
   .gar-v2-faq { background: var(--pine-mist); padding: 56px 0 64px; border-top: 1px dashed rgba(18,43,34,0.12); }
-  .gar-v2-faq-list { max-width: 72ch; }
-  .gar-v2-faq-item { padding: 1.25rem 0; border-top: 1px dashed rgba(18,43,34,0.15); }
+  .gar-v2-faq-list { width: 100%; }
+  .gar-v2-faq-item { padding: 1.1rem 0; border-top: 1px dashed rgba(18,43,34,0.15); }
   .gar-v2-faq-item:first-child { border-top: 0; padding-top: 0; }
   .gar-v2-faq-q { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.05rem; line-height: 1.35; color: var(--pine-dark); margin: 0 0 .6rem; }
-  .gar-v2-faq-a { font-size: .92rem; line-height: 1.65; color: var(--pine); margin: 0; }
+  .gar-v2-faq-a { font-size: .95rem; line-height: 1.65; color: var(--pine); margin: 0; }
+  .gar-v2-faq .gr-fiscal, .gr-why .gr-fiscal { max-width: none; }
   @media (max-width: 640px) { .gar-v2-faq { padding: 40px 0 48px; } }
+
+  /* A shared desktop measure keeps hero, pricing and body copy aligned.
+     Mobile retains the existing 24px gutters and stacked layout. */
+  @media (min-width: 1100px) {
+    .gr-wrap, .gar-v2-inner { width: 80%; max-width: none; padding: 0; }
+  }
 
   /* Focus + motion */
   .gr-fold a:focus-visible, .gr-why a:focus-visible, .gar-v2-tier-cta:focus-visible { outline: 2px solid var(--pine-dark); outline-offset: 2px; }
