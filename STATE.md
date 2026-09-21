@@ -2,6 +2,26 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-21 — APPROVED SOURCE RELEASE: MVA example order
+
+This release supersedes the local-only entry immediately below. The two visual
+examples now follow their real sequence across the page: MVA before activation
+on the left, activated MVA on the right. No copy, price, checkout, service
+scope or business logic changed. Source is being released through `main`;
+Cloudflare production verification follows the push.
+
+## 2026-09-21 — LOCAL ONLY: MVA example order
+
+Working tree is one layout correction ahead of `7b06a7d`; no commit, push or
+deployment. The two examples now read left to right in their natural sequence:
+MVA before activation, then activated MVA. No copy, pricing, checkout, service
+scope or logic changed.
+
+54 tests pass. The 306-page build and ownership, amendment and node-content
+gates pass with IndexNow disabled. Rendered browser check at 532px confirms
+the preview MVA is left, the activated MVA is right, and there is no horizontal
+overflow. Not committed, pushed or deployed.
+
 ## 2026-09-21 — APPROVED SOURCE RELEASE: simpler MVA journey
 
 This approved source release supersedes the local-only entry immediately below.

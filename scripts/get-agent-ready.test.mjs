@@ -148,7 +148,7 @@ test('two visual MVA cards show before and after activation without extra action
   assert.doesNotMatch(example, /<script|<form|<details|<summary|application\/ld\+json|buy\.stripe\.com/);
   const cards = [...example.matchAll(/<article class="gar-example-card">([\s\S]*?)<\/article>/g)];
   assert.equal(cards.length, 2);
-  for (const [index, name] of ['published', 'preview'].entries()) {
+  for (const [index, name] of ['preview', 'published'].entries()) {
     const card = cards[index][1];
     assert.doesNotMatch(card, /<p\b|<ul\b|<li\b/);
     assert.equal([...card.matchAll(/<iframe\b/g)].length, 1);
@@ -157,7 +157,7 @@ test('two visual MVA cards show before and after activation without extra action
     assert.match(card, /loading="lazy" sandbox="" tabindex="-1" scrolling="no"/);
     assert.equal([...card.matchAll(/<a\b/g)].length, 0);
   }
-  assert.ok(example.indexOf('examples/published.html') < example.indexOf('examples/preview.html'));
+  assert.ok(example.indexOf('examples/preview.html') < example.indexOf('examples/published.html'));
   assert.match(example, /href="\/agent-preview"/);
   assert.doesNotMatch(example, /Open the full page|not customer testimonials|fictional Sample Bistro details|not a customer or a live booking/);
   assert.match(example, /The MVA before activation/);
