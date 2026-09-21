@@ -2,6 +2,45 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-21 — APPROVED SOURCE RELEASE: simpler MVA journey
+
+This approved source release supersedes the local-only entry immediately below.
+The customer-facing example is a two-state before/after MVA story, without
+fictional-example framing or extra destinations. Sales-page copy now focuses on
+what customers gain, while the external-platform limitation remains in the
+linked Terms section. The new assistant FAQ names the current major systems
+without promising traffic, recommendation or sales from any of them.
+
+No price, Stripe checkout destination, matching behavior, Terms text,
+Cloudflare account setting, booking/payment integration or corpus content
+changed. Source is being released through `main`; Cloudflare production
+verification follows the push.
+
+## 2026-09-21 — LOCAL ONLY: simplify the MVA before/after story
+
+Working tree is one copy/layout revision ahead of `41ae3ea`; no commit, push or
+deployment. The example is now two non-interactive, side-by-side MVA views:
+before activation and activated. Removed the private-review card, fictional
+Sample Bistro disclaimer and full-page links; the private review remains an
+included, private deliverable rather than a public example.
+
+The $500 purchase-match note is now a simple invitation to run the free check
+and confirm the business. The external-platform outcome limitation was removed
+from the sales page and remains on the linked What Visibility Means Terms
+section. Simplified the Cloudflare and agent-payment wording as requested.
+
+Replaced the agentic-internet section with the approved urgency copy, without a
+research-date badge. Added a shared visible/JSON-LD FAQ naming the current
+assistant set: ChatGPT, Claude/Anthropic, Gemini, Grok, Muse and Perplexity.
+No service scope, pricing, checkout, business matching, Terms, agent/payment
+integration or crawler-access configuration changed.
+
+54 tests pass. The 306-page build and ownership, amendment and node-content
+gates pass with IndexNow disabled and the public news feed available. Browser
+QA at the active 532px width: two example cards, no per-card links, no stale
+copy, 13 rendered FAQ items and no horizontal overflow. Not committed, pushed
+or deployed.
+
 ## 2026-09-21 — APPROVED SOURCE RELEASE: human-first Get Agent Ready
 
 This approved release supersedes the local-only working notes immediately below.

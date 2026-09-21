@@ -73,14 +73,15 @@ test('purchase matching note sits below all four cards and remains associated wi
   assert.equal((offer.match(/id="purchase-match-note"/g) || []).length, 1);
   assert.match(offer, /id="agentReadyPurchase"[^>]+aria-describedby="purchase-match-note"/);
   assert.match(offer, /Buying the \$500 MVA\?/);
-  assert.match(offer, /Without a confirmed match, our team must match your purchase/);
-  assert.match(offer, /before your MVA and private review are released/);
+  assert.match(offer, /confirm your business before checkout/);
+  assert.doesNotMatch(offer, /Without a confirmed match|before your MVA and private review are released/);
 });
 
 test('Cloudflare caveats remain adjacent to the offer and in the FAQ', () => {
   const access = section('agent-access');
   assert.match(access, /cannot verify private Cloudflare settings/);
-  assert.match(access, /does not test bookings or make purchases/);
+  assert.doesNotMatch(access, /does not test bookings or make purchases/);
+  assert.doesNotMatch(access, /You or your site manager join the review; changes are separately agreed/);
   assert.match(access, /\$500 Agent Ready profile purchase does not include a Cloudflare account audit/);
   assert.match(access, /Keep WAF, DDoS protection, authentication and private areas protected/);
   const answer = faq.find(item => item.q.includes('Cloudflare')).a;
@@ -94,7 +95,14 @@ test('agent purchases depend on compatible systems and customer approval, not me
   assert.match(answer, /doesn't manage availability, confirm appointments or take payments itself/);
   assert.match(answer, /Purchases still need the customer's approval/);
   assert.match(answer, /don't need AICV membership/);
-  assert.match(answer, /Muse testing is planned, not yet completed/);
+  assert.doesNotMatch(answer, /Muse testing is planned, not yet completed/);
+});
+
+test('assistant-discovery FAQ names the current set without promising an outcome', () => {
+  const answer = faq.find(item => item.q === 'Which AI assistants is AICV built for?').a;
+  assert.match(answer, /ChatGPT, Claude from Anthropic, Google Gemini, Grok, Muse and Perplexity/);
+  assert.match(answer, /The list keeps growing/);
+  assert.doesNotMatch(answer, /guarantee|recommend|sale/);
 });
 
 test('booking roadmap is shared with both membership panels, not sold as an included feature', () => {
@@ -127,54 +135,49 @@ test('sales benefits promise publication, not outside indexing or first-read pri
   assert.doesNotMatch(visible, /indexed, agent-readable|index agents read first|list it reads before anything else/);
 });
 
-test('three visual example cards use inert miniature pages and one full-page link each', () => {
+test('two visual MVA cards show before and after activation without extra actions', () => {
   const example = body.slice(body.indexOf('<div class="gar-example"'), body.indexOf('<!-- CONDENSED PERSUASION'));
   assert.match(example, /role="region" aria-labelledby="profile-example-title"/);
   assert.match(example, /<h2 id="profile-example-title">/);
   assert.match(example, /See what \{pricing\.tiers\[1\]\.price_amount\} builds/);
-  assert.match(example, /fictional Sample Bistro details/);
-  assert.match(example, /not a customer or a live booking/);
+  assert.match(example, /See your MVA before and after activation/);
   assert.match(example, /existing booking or ordering page/);
   assert.match(example, /your current systems handle the appointment or sale/);
   assert.match(example, /Your website stays as it is/);
   assert.doesNotMatch(example, /purchase-to-business matching|not a chatbot|does not fix/);
   assert.doesNotMatch(example, /<script|<form|<details|<summary|application\/ld\+json|buy\.stripe\.com/);
   const cards = [...example.matchAll(/<article class="gar-example-card">([\s\S]*?)<\/article>/g)];
-  assert.equal(cards.length, 3);
-  for (const [index, name] of ['published', 'preview', 'review'].entries()) {
+  assert.equal(cards.length, 2);
+  for (const [index, name] of ['published', 'preview'].entries()) {
     const card = cards[index][1];
     assert.doesNotMatch(card, /<p\b|<ul\b|<li\b/);
     assert.equal([...card.matchAll(/<iframe\b/g)].length, 1);
     assert.match(card, /class="gar-example-miniature" aria-hidden="true" inert/);
     assert.ok(card.includes(`src="/get-agent-ready/examples/${name}.html"`));
     assert.match(card, /loading="lazy" sandbox="" tabindex="-1" scrolling="no"/);
-    assert.equal([...card.matchAll(/<a\b/g)].length, 1);
-    assert.ok(card.includes(`href="/get-agent-ready/examples/${name}.html"`));
-    assert.match(card, /target="_blank" rel="noopener" aria-label="[^"]+\(new tab\)"/);
-    assert.match(card, />Open the full page ↗<\/a>/);
+    assert.equal([...card.matchAll(/<a\b/g)].length, 0);
   }
   assert.ok(example.indexOf('examples/published.html') < example.indexOf('examples/preview.html'));
   assert.match(example, /href="\/agent-preview"/);
-  assert.match(example, /not customer testimonials/);
+  assert.doesNotMatch(example, /Open the full page|not customer testimonials|fictional Sample Bistro details|not a customer or a live booking/);
   assert.match(example, /The MVA before activation/);
-  assert.match(faq.find(item => item.q.includes('example of the Agentic Review')).a, /Each card links to the full page/);
+  assert.match(faq.find(item => item.q === 'What does the $500 MVA look like?').a, /before and after activation/);
 });
 
-test('guaranteed visibility is scoped consistently in visible copy, FAQ/schema and dated Terms', () => {
+test('guaranteed visibility is clear on the page, with outside-outcome limits on the linked Terms', () => {
   const answer = faq.find(item => item.q.includes('guaranteed visibility')).a;
   const terms = read('../src/pages/terms.astro');
-  for (const surface of [body, answer, terms]) {
+  for (const surface of [body, answer]) {
     assert.match(surface, /We guarantee visibility to agents on the AICV network/);
-    assert.match(surface, /visit, index, cite or recommend/);
     assert.match(surface, /purchase is matched to your business/);
   }
+  assert.doesNotMatch(body + answer, /visit, index, cite or recommend/);
+  assert.match(terms, /visit, index, cite or recommend/);
   assert.match(terms, /id="agent-visibility"/);
   assert.match(terms, /Effective September 19, 2026/);
-  assert.match(body, /<time datetime=\{researchDate\}>\{formatResearchDate\(researchDate\)\}<\/time>/);
-  assert.match(body, /Latest published research update/);
-  assert.match(body, /Individual business reviews carry their own dates/);
-  assert.doesNotMatch(body, /<time datetime="2026-09-19">/);
-  assert.match(body, /still forming beneath our feet/);
+  assert.match(body, /The agentic internet is forming all around us, at a blinding pace/);
+  assert.match(body, /A clear, readable profile is a must-have — table stakes/);
+  assert.doesNotMatch(body, /Latest published research update|Individual business reviews carry their own dates/);
 });
 
 test('generated examples are traceable and fictional, with no callable actions or entity markup', () => {

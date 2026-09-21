@@ -4,7 +4,7 @@ import pricing from '../data/pricing.json';
 import pageDates from '../data/page-dates.json';
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
-import { latestDate, latestResearchDate, formatResearchDate } from '../../scripts/research-dates.mjs';
+import { latestDate, latestResearchDate } from '../../scripts/research-dates.mjs';
 
 // Read authored content at build time (also updates in local Astro dev). No
 // browser request or clock-based freshness badge; a rebuild alone changes nothing.
@@ -61,7 +61,7 @@ const faq = [
   },
   {
     q: "What do you mean by guaranteed visibility?",
-    a: "We guarantee visibility to agents on the AICV network: once your purchase is matched to your business, your MVA is public and readable by agents. We cannot guarantee that an AI service will visit, index, cite or recommend it, or send you customers. Your original website stays unchanged.",
+    a: "We guarantee visibility to agents on the AICV network: once your purchase is matched to your business, your MVA is public and readable by agents. Your original website stays unchanged. See What visibility means for the full scope.",
   },
   {
     q: "What changes when I activate a preview?",
@@ -84,8 +84,8 @@ const faq = [
     a: "Coachella Valley businesses, institutions, properties and civic organizations. We review fit with the regional network; payment alone does not guarantee inclusion.",
   },
   {
-    q: "Can we see an example of the Agentic Review?",
-    a: "Yes. See what $500 builds above shows a fictional MVA before and after activation, plus its private review. Each card links to the full page. These use our real page format, not a customer's data. Premium adds a deeper LLM Council review and action plan.",
+    q: "What does the $500 MVA look like?",
+    a: "The examples above show your MVA before and after activation. Your private review is for you alone, not a public sample. Premium adds a deeper LLM Council review and action plan.",
   },
   {
     q: "Who owns AICV?",
@@ -97,7 +97,11 @@ const faq = [
   },
   {
     q: "Can customers book and pay through AI?",
-    a: "Yes, where their assistant works with your booking or checkout system. Your MVA can point it to your official booking or ordering page; it doesn't manage availability, confirm appointments or take payments itself. Purchases still need the customer's approval. You don't need AICV membership for an assistant to use a compatible checkout. Our Muse testing is planned, not yet completed.",
+    a: "Yes, where their assistant works with your booking or checkout system. Your MVA can point it to your official booking or ordering page; it doesn't manage availability, confirm appointments or take payments itself. Purchases still need the customer's approval. You don't need AICV membership for an assistant to use a compatible checkout.",
+  },
+  {
+    q: "Which AI assistants is AICV built for?",
+    a: "AICV helps your business become easier to understand for ChatGPT, Claude from Anthropic, Google Gemini, Grok, Muse and Perplexity. The list keeps growing.",
   },
   {
     q: "What's next for Business and Premium?",
@@ -513,15 +517,14 @@ const schemaGraph = {
       <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-premium').classList.add('on');return false;">What's included</button>
     </div>
   </div>
-  <p class="purchase-match-note" id="purchase-match-note"><strong>Buying the $500 MVA?</strong> <a href="#diagnostic">Run the free check</a> and confirm your business before checkout. Without a confirmed match, our team must match your purchase before your MVA and private review are released.</p>
+  <p class="purchase-match-note" id="purchase-match-note"><strong>Buying the $500 MVA?</strong> <a href="#diagnostic">Run the free check</a> and confirm your business before checkout.</p>
   <p class="gar-v2-tier-note">We take on only as much work as we can deliver. Questions? <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Talk with Sat.</a></p>
-  <p class="gar-visibility-promise"><strong>We guarantee visibility to agents on the AICV network.</strong> Once your purchase is matched to your business, we publish a public, accessible, agent-readable page about you. We can't guarantee that an AI service will visit, index, cite or recommend it. <a href="/terms/#agent-visibility">What visibility means</a>.</p>
+  <p class="gar-visibility-promise"><strong>We guarantee visibility to agents on the AICV network.</strong> Once your purchase is matched to your business, we publish a public, accessible, agent-readable page about you. <a href="/terms/#agent-visibility">What visibility means</a>.</p>
   <div class="gar-example" id="profile-example" role="region" aria-labelledby="profile-example-title">
     <div class="gar-example-explanation">
       <h2 id="profile-example-title">See what {pricing.tiers[1].price_amount} builds</h2>
-      <p>Your business page, ready for people and agents. Your private review, ready to act on.</p>
+      <p>See your MVA before and after activation.</p>
     </div>
-    <p class="gar-example-fiction" data-nosnippet>Our real page format, with fictional Sample Bistro details — not a customer or a live booking. The first two show the same MVA after and before activation.</p>
     <div class="gar-example-grid">
       <article class="gar-example-card">
         <div class="gar-example-miniature" aria-hidden="true" inert>
@@ -529,7 +532,6 @@ const schemaGraph = {
         </div>
         <div class="gar-example-caption">
           <h3>Your activated MVA</h3>
-          <a class="gar-example-link" href="/get-agent-ready/examples/published.html" target="_blank" rel="noopener" aria-label="Open the full published MVA example (new tab)">Open the full page ↗</a>
         </div>
       </article>
       <article class="gar-example-card">
@@ -538,21 +540,11 @@ const schemaGraph = {
         </div>
         <div class="gar-example-caption">
           <h3>The MVA before activation</h3>
-          <a class="gar-example-link" href="/get-agent-ready/examples/preview.html" target="_blank" rel="noopener" aria-label="Open the full original preview example (new tab)">Open the full page ↗</a>
-        </div>
-      </article>
-      <article class="gar-example-card">
-        <div class="gar-example-miniature" aria-hidden="true" inert>
-          <iframe src="/get-agent-ready/examples/review.html" title="Miniature of the fictional private review" loading="lazy" sandbox="" tabindex="-1" scrolling="no"></iframe>
-        </div>
-        <div class="gar-example-caption">
-          <h3>Your private review</h3>
-          <a class="gar-example-link" href="/get-agent-ready/examples/review.html" target="_blank" rel="noopener" aria-label="Open the full fictional private review (new tab)">Open the full page ↗</a>
         </div>
       </article>
     </div>
     <p class="gar-example-scope">Give AI assistants a clear picture of your business and a way to send customers to you. Your MVA can point to your existing booking or ordering page; your current systems handle the appointment or sale. Your website stays as it is. <a href="/terms/#agent-ready">Purchase terms</a>.</p>
-    <p class="gar-example-browse"><a href="/agent-preview">Browse real business previews →</a> Dated, independent assessments — not customer testimonials.</p>
+    <p class="gar-example-browse"><a href="/agent-preview">Browse real business previews →</a></p>
   </div>
   </div>
 </section>
@@ -560,10 +552,8 @@ const schemaGraph = {
 <!-- CONDENSED PERSUASION (why networks · what happens · under the hood) -->
 <section class="gr-why">
   <div class="gar-v2-inner">
-    <p class="gr-why-lead">Your next customer may ask an AI assistant where to eat, who to hire or where to stay. Give that assistant clear facts about your business and a way to reach you.</p>
-    <p class="gr-asof">The agentic internet is still forming beneath our feet. How agents find and recommend businesses will keep changing. A clear, readable profile is a practical place to start.
-      {researchDate && <span class="gr-research-date">Latest published research update: <time datetime={researchDate}>{formatResearchDate(researchDate)}</time>. Individual business reviews carry their own dates.</span>}
-    </p>
+    <p class="gr-why-lead">Your next customer will most likely be an AI Assistant searching where to eat, who to hire or where to stay. Give that AI Agent and Assistant clear facts about your business and a way to reach you.</p>
+    <p class="gr-asof">The agentic internet is forming all around us, at a blinding pace. How agents find and recommend businesses will keep changing. A clear, readable profile is a must-have — table stakes.</p>
     <div class="gr-why-grid">
       <div class="gr-col">
         <h3 class="gr-col-h">Local knowledge makes the difference</h3>
@@ -598,8 +588,8 @@ const schemaGraph = {
   <div class="gar-v2-inner">
     <div class="gar-v2-eyebrow">WHAT WE CHECK</div>
     <h2 id="agent-access-title">Can an agent reach your business?</h2>
-    <p>A website can work for people but block agents. Our free check reads one public page and its published bot rules. It cannot verify private Cloudflare settings or guarantee access for every crawler. It does not test bookings or make purchases.</p>
-    <p><strong>For Cloudflare sites:</strong> Business and Premium include an owner-assisted SAT review — Search, Agent and Training — at onboarding. You or your site manager join the review; changes are separately agreed. The $500 Agent Ready profile purchase does not include a Cloudflare account audit or configuration work. <a href="/terms/#agent-access">Agent Access scope</a>.</p>
+    <p>A website can work for people but block agents. Our free check reads one public page and its published bot rules. It cannot verify private Cloudflare settings or guarantee access for every crawler.</p>
+    <p><strong>For Cloudflare sites:</strong> Business and Premium include an owner-assisted SAT review — Search, Agent and Training — at onboarding. The $500 Agent Ready profile purchase does not include a Cloudflare account audit or configuration work. <a href="/terms/#agent-access">Agent Access scope</a>.</p>
     <details>
       <summary>Cloudflare site? Open the access checklist</summary>
       <p>Search, Agent and Training (SAT) are separate policy choices. A public page loading does not verify these settings.</p>
@@ -1123,17 +1113,13 @@ const schemaGraph = {
   .gar-example h3 { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; line-height: 1.4; margin: 0 0 .5rem; color: var(--pine-dark); }
   .gar-example p, .gar-example a { font-size: 1rem; line-height: 1.6; }
   .gar-example p { margin: .75rem 0; }
-  .gar-example-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 1.25rem 0; }
+  .gar-example-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 1.25rem 0; }
   .gar-example-card { position: relative; display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--pine-tint); border-radius: 12px; background: var(--sand-light); }
-  /* A non-interactive miniature of the actual example, not another scrolling
-     page. The full-size link is the sole keyboard/pointer action per card. */
+  /* Non-interactive miniature views of the actual before/after examples. */
   .gar-example-miniature { position: relative; overflow: hidden; aspect-ratio: 4 / 5; max-height: 420px; border-radius: 11px 11px 0 0; background: var(--pine-mist); pointer-events: none; }
   .gar-example-miniature iframe { display: block; position: absolute; inset: 0; width: 300%; height: 300%; border: 0; transform: scale(calc(1 / 3)); transform-origin: top left; pointer-events: none; }
   .gar-example-caption { display: flex; flex-direction: column; flex: 1; padding: 16px 18px; border-top: 1px solid var(--pine-tint); }
-  .gar-example .gar-example-link { display: block; margin-top: auto; font-size: .9rem; font-weight: 600; text-underline-offset: .2em; }
-  .gar-example-link::after { content: ''; position: absolute; inset: 0; border-radius: 12px; }
-  .gar-example-card:focus-within { outline: 2px solid var(--pine-dark); outline-offset: 4px; }
-  .gar-example .gar-example-fiction, .gar-example .gar-example-scope, .gar-example .gar-example-browse, .gar-example-scope a, .gar-example-browse a { font-size: .875rem; }
+  .gar-example .gar-example-scope, .gar-example .gar-example-browse, .gar-example-scope a, .gar-example-browse a { font-size: .875rem; }
   .gar-example .gar-example-browse { margin: 1rem 0 0; }
   .gar-example a { color: var(--pine); text-decoration: underline; }
   @media (max-width: 760px) { .gar-example-grid { grid-template-columns: 1fr; } }
