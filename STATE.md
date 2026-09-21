@@ -2,6 +2,142 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-21 — APPROVED SOURCE RELEASE: human-first Get Agent Ready
+
+This approved release supersedes the local-only working notes immediately below.
+It combines the human-first copy pass, pricing-card alignment, three visual MVA
+examples and the honest booking/buying roadmap. It makes no change to pricing,
+the Stripe destination, activation/matching logic, owner verification, hours
+policy, corpus, account settings or a customer's booking/payment systems.
+
+The MVA is now described in customer language: a public business profile that
+helps people and AI assistants understand the business and reach its existing
+website, phone, booking or ordering path. Business and Premium describe direct
+agent booking/buying as a planned, separately agreed integration direction, not
+an included capability. Cloudflare SAT remains owner-assisted in Business and
+Premium. All older local-only notes document the incremental work that this
+release carries forward.
+
+Final source gate: 53 tests pass, with pricing consistency and matching guards.
+Previous full build: 306 pages plus ownership, amendment and node-content gates
+passed with IndexNow disabled. Browser QA confirmed no horizontal overflow on
+the edited page, matching visible/JSON-LD FAQs, aligned tier actions and the
+unchanged Stripe URL. Cloudflare deploys this repository from the pushed main
+branch; production verification belongs in the next receipt.
+
+## 2026-09-19 — LOCAL ONLY: explain bookings without underselling the MVA
+
+Working tree remains at `294d761`; no commit, push or deployment. Replaced the
+example's negative chatbot/website disclaimer with the customer benefit: clear
+business facts and links to existing booking/ordering systems. Simplified the
+$500 detail copy and activation FAQ. Purchase matching, private review,
+unchanged website, Cloudflare tier boundaries and prices remain unchanged.
+
+Added a shared, explicitly planned booking/buying direction to the Business and
+Premium detail panels and FAQ. It is not an included Service description or
+new entitlement: testing, separately agreed work/cost and Premium planning
+priority remain explicit. Muse testing is described as planned, not completed.
+Checked actual MVA booking-link/ReserveAction output against Google's WebMCP
+guide and Stripe's service-booking documentation. Links/structured actions are
+not proof of an implemented calendar or payment connection. No integration,
+account setting, appointment or payment was created.
+
+53 tests, 306 pages and all four gates pass with IndexNow disabled. Rebuilt with
+the public news feed reachable; known upstream directive warnings remain.
+Browser QA: Business panel opens on desktop, Premium panel opens on 390px
+mobile without horizontal overflow, both close. No observed console warnings
+or errors. All 12 visible FAQ answers match JSON-LD; both roadmap paragraphs
+match; Stripe destination and three miniature examples are unchanged.
+Preview: `http://127.0.0.1:4323/get-agent-ready/#profile-example`.
+
+## 2026-09-19 — LOCAL ONLY: clearer human/agent sales copy
+
+Working tree on main at `294d761`; no commit, push or deployment. Tightened the
+Get Agent Ready hero, tier descriptions, next steps, example introduction,
+access explanation, FAQs and offer-detail panels. MVA is defined up front as
+a business profile. Retained agentic-internet/economy language, Choose Your
+Future, Who's already asking, the visual miniatures and pricing-card alignment.
+No design, backend, pricing, checkout destination, hours policy or corpus change.
+Legal Terms and the detailed Cloudflare checklist were not rewritten.
+
+Four card descriptions now use pricing.json directly (13–17 words each).
+All four Service descriptions share text with their human-facing detail panels;
+metadata shares the page description. Updated the shared llms.txt offer copy
+and removed stale citation/day-one-discovery promises. Added an honest FAQ on
+preview versus activated MVA. FAQ answers total 471 words across 11 questions,
+down from 547 across 10 before this pass. Matching, no-owner-verification,
+outside-citation limits, private review and separately scoped account work
+remain explicit. No new service entitlement or payment capability promised.
+
+52 tests, 306-page build and all four gates pass; IndexNow disabled. Existing
+upstream directive warnings remain. Compared all pricing fields to HEAD: equal.
+Browser QA at 1440px/390px: no overflow, broken images or observed console
+warnings/errors; desktop rules/prices/buttons align. All 11 rendered FAQ
+answers exactly match JSON-LD; all four Service descriptions match their
+detail panels. The $500 detail panel opens/closes with correct copy; checkout
+retains the unchanged base URL. Built llms.txt carries the updated offer scope.
+Preview: `http://127.0.0.1:4323/get-agent-ready/`.
+
+## 2026-09-19 — LOCAL ONLY: visual MVA miniatures
+
+Working tree remains on main at `294d761`. Replaced the descriptive paragraphs
+and bullets inside the three example cards with scaled-down views of the actual
+fictional example HTML. Captions are now activated MVA, MVA before activation,
+and private review; the FAQ identifies the first two as states of the same MVA.
+Each card retains one full-page link, also clickable over the miniature.
+
+This supersedes the preceding iteration's iframe removal: these are bounded,
+lazy-loaded, sandboxed, inert miniature views, not full-size scrolling embeds.
+They have no keyboard stop or pointer interaction of their own; readable captions
+and named full-page links remain accessible. No JavaScript/dependency or screenshot
+maintenance pipeline added. Full examples and provenance hashes are unchanged.
+
+50 tests, 306 pages and all four build gates pass (`AICV_NO_INDEXNOW=1`); known
+upstream directive warnings remain. Browser QA: actual 1440px and 846px widths
+show three aligned visual cards; 630px and 390px stack without horizontal
+overflow. All three miniature pages visibly render, no observed console errors
+or warnings. Clicking the first miniature opens the correct full published
+example; the other full-page destinations are unchanged from prior verification.
+Local preview: `http://127.0.0.1:4323/get-agent-ready/#profile-example`.
+Not committed, pushed or deployed; prior local pricing alignment is preserved.
+
+## 2026-09-19 — LOCAL ONLY: three open MVA example cards
+
+Working tree on main at `294d761`, retaining the local pricing alignment below.
+Replaced the outer example disclosure and two nested disclosures with three
+compact, always-visible cards: published MVA, original preview, private review.
+Each has one accessible full-page link. Removed all three embedded iframes;
+full examples and their provenance hashes are unchanged. Updated the shared
+visible/schema FAQ to describe the cards. Fictional-example labeling, purchase
+matching and service-scope caveats remain explicit. No new JavaScript or packages.
+
+50 tests, 306-page build and all four gates pass with `AICV_NO_INDEXNOW=1`.
+Existing upstream directive warnings remain. Browser checks at 1440px and 820px
+show three equal-height cards with aligned links; at 390px they stack without
+horizontal overflow. No observed console warnings/errors. All three links open
+the expected fictional pages; read-only HTTP checks return 200 and expected
+titles/content. Viewport reset. Preview remains available at
+`http://127.0.0.1:4323/get-agent-ready/#profile-example`.
+Not committed, pushed or deployed. Pricing, checkout and full example files
+were not changed by this iteration.
+
+## 2026-09-19 — LOCAL ONLY: pricing-card alignment
+
+Moved the $500 purchase-matching explanation below the four pricing cards;
+its scope and manual-match warning remain explicit, with `aria-describedby`
+connecting it to the unchanged Stripe CTA. Shared grid rows align the dashed
+rules, prices, buttons and details links even when text wraps. Card names can
+wrap instead of overflowing. No prices, offer scope or payment logic changed.
+
+50 tests, 306-page build and all four content gates pass. Final build used
+`AICV_NO_INDEXNOW=1`. Existing upstream directive warnings remain unchanged.
+Browser QA at actual CSS viewport widths 984px (four columns), 846px (two)
+and 390px (one): corresponding rows align, no horizontal overflow, and no
+observed console warnings/errors. The matching note follows the final card.
+Local preview: `http://127.0.0.1:4323/get-agent-ready/#tiers`.
+Not committed, pushed or deployed. Hours and collection-selection questions
+were investigated only; no hours policy, corpus or curation data was changed.
+
 ## 2026-09-19 — LIVE: dependency fixes and confirmed-business checkout
 
 Approved source `032f6cd` is merged/pushed to main. GitHub Site and dependency
