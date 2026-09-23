@@ -32,6 +32,11 @@ test('one Organization description, read from org.json by every page that states
   }
 });
 
+test('llms.txt and the footer carry the decision-engine identity', () => {
+  assert.match(read('../src/pages/llms.txt.ts'), /> \$\{org\.description\}/);
+  assert.match(read('../src/components/Footer.astro'), /Decision Engine · Est\. 2025/);
+});
+
 test('about page is dated and sitemapped from the single date source', () => {
   assert.match(pageDates['/about/'], /^\d{4}-\d{2}-\d{2}$/);
   assert.match(sitemap, /aicoachellavalley\.com\/about\/'.*pd\['\/about\/'\]/);

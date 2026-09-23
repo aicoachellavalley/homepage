@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import pricing from '../data/pricing.json';
+import org from '../data/org.json';
 import claimedData from '../data/previews-claimed.json';
 // @ts-expect-error — the PURE half of the shared helper (no filesystem, no
 // paths), so importing it here cannot reach a `__dirname` that does not exist
@@ -89,7 +90,9 @@ export const GET: APIRoute = async () => {
 
   const body = `# AI Coachella Valley
 
-> The structured intelligence network for the Coachella Valley, California. Purpose-built for AI agents, LLMs, and RAG systems covering economic development, workforce, business relocation, tourism, and regional intelligence. Operated by AI Coachella Valley (AICV).
+> ${org.description}
+
+Purpose-built for AI agents, LLMs and RAG systems helping people decide where to visit, live, work, invest and build in the Coachella Valley, California. The Intelligence Network below is the structured data the decision engine runs on.
 
 ## Intelligence Network
 

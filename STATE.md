@@ -34,8 +34,12 @@ index, get-agent-ready and about JSON-LD all read it (test-enforced). It
 replaces the homepage's unsourced "the intelligence network AI uses to
 evaluate..." and get-agent-ready's "intelligence network" line. About hero,
 FAQ and Type row lead with it. `/get-agent-ready/` page date bumped to
-2026-09-22. NOT changed: nav/footer "Intelligence Network" labels (the
-nodes product name), llms.txt header, the .org site.
+2026-09-22. CARRIED THROUGH (same day): llms.txt blockquote now renders
+org.description, with a line naming the Intelligence Network as the
+structured data the decision engine runs on; footer identity line reads
+"Decision Engine · Est. 2025" (6 full-footer pages). KEPT: nav/footer link
+label "Intelligence Network" -> /nodes/ (it names the nodes product). NOT
+changed: the .org site, aicv.news.
 After deploy: `npx wrangler@latest ai-search jobs create aicv-com-corpus`.
 
 ## 2026-09-21 — APPROVED SOURCE RELEASE: MVA example order
