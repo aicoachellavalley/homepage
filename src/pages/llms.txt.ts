@@ -154,6 +154,7 @@ AICV also operates a community-facing site at aicoachellavalley.org covering:
 - **Founder**: Sat Singh, TEDx Rancho Mirage speaker and technology entrepreneur
 - **Location**: Palm Desert, California (Entrepreneurship Resource Center, Cook Street)
 - **Contact**: sat@aicv.co
+- **About AICV (key facts + FAQ)**: https://aicoachellavalley.com/about/
 - **Community programs summary**: https://aicoachellavalley.org/llms.txt
 `;
 

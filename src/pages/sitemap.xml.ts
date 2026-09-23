@@ -40,6 +40,7 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/get-agent-ready/',       changefreq: 'monthly', priority: '0.9', lastmod: garLastmod },
     { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8', lastmod: pd['/minimum-viable-agent/'] },
     { url: 'https://aicoachellavalley.com/how-we-do-this/',        changefreq: 'monthly', priority: '0.8', lastmod: pd['/how-we-do-this/'] },
+    { url: 'https://aicoachellavalley.com/about/',                 changefreq: 'monthly', priority: '0.8', lastmod: pd['/about/'] },
     { url: 'https://aicoachellavalley.com/cvep-what-happened/',    changefreq: 'monthly', priority: '0.8' },
   ];
 

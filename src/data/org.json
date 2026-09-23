@@ -1,0 +1,37 @@
+{
+  "$comment": "Identity facts rendered VISIBLY on /about/ (key facts list, team, FAQ). Added 2026-09-22. These values already existed in the Organization JSON-LD on index.astro and get-agent-ready.astro and in llms.txt.ts; this file does not add a claim, it gives the visible page one source. index.astro and get-agent-ready.astro still carry their own literals, so scripts/about.test.mjs fails the build if either disagrees with this file. Do not add Notable Clients / Customers Served / Competitors rows here: only facts with a record behind them go on an identity surface.",
+  "name": "AI Coachella Valley",
+  "alternateName": "AICV",
+  "owner": "SunshineFM LLC",
+  "url": "https://aicoachellavalley.com/",
+  "foundingDate": "2025-01-19",
+  "founder": {
+    "name": "Sat Singh",
+    "jobTitle": "Founder",
+    "descriptor": "TEDx Rancho Mirage speaker and technology entrepreneur",
+    "sameAs": [
+      "https://www.linkedin.com/in/satssp/",
+      "https://x.com/CoachellaAI",
+      "https://github.com/aicoachellavalley"
+    ]
+  },
+  "headquarters": {
+    "place": "Entrepreneurship Resource Center",
+    "streetAddress": "37023 Cook Street",
+    "addressLocality": "Palm Desert",
+    "addressRegion": "CA",
+    "postalCode": "92211"
+  },
+  "email": "sat@aicv.co",
+  "cities": [
+    "Palm Springs", "Desert Hot Springs", "Cathedral City", "Rancho Mirage",
+    "Palm Desert", "Indian Wells", "La Quinta", "Indio", "Coachella"
+  ],
+  "social": [
+    { "label": "X", "href": "https://x.com/CoachellaAI" },
+    { "label": "GitHub", "href": "https://github.com/aicoachellavalley" },
+    { "label": "Newsletter", "href": "https://sunshinefm.beehiiv.com" },
+    { "label": "AICV News", "href": "https://aicv.news" },
+    { "label": "Community site", "href": "https://aicoachellavalley.org" }
+  ]
+}

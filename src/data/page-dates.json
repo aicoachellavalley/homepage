@@ -2,5 +2,6 @@
   "$comment": "SINGLE SOURCE for authored copy-change dates of hand-written pages. Read by each page's JSON-LD AND sitemap.xml.ts. Get Agent Ready also displays a derived research activity date: both consumers use the later of its authored date here and latestResearchDate (scripts/research-dates.mjs). New research therefore advances it automatically; a build clock never does. Bump the authored date HERE when page copy changes. Added 2026-09-14: two AI Search dashboard syncs re-fetched every brief (whose sitemap lastmod had changed) and re-fetched no static page (which carried no lastmod); the corpus served a pre-deploy /get-agent-ready/ for hours. MVA and how-we-do-this were hand-set 2026-05-20 / 2026-07-17 while git shows both rendered pages last changed 2026-08-10 (the ownership-statement sweep, 0d5bfa4 era) — set to what git proves. /cvep-what-happened/ carries no date claim and is deliberately absent.",
   "/get-agent-ready/": "2026-09-19",
   "/minimum-viable-agent/": "2026-08-10",
-  "/how-we-do-this/": "2026-08-10"
+  "/how-we-do-this/": "2026-08-10",
+  "/about/": "2026-09-22"
 }

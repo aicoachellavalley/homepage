@@ -1,0 +1,399 @@
+---
+import Footer from '../components/Footer.astro';
+import Base from '../layouts/Base.astro';
+import pageDates from '../data/page-dates.json';
+import org from '../data/org.json';
+import pricing from '../data/pricing.json';
+import corpus from '../data/corpus.json';
+import briefsData from '../../public/briefs.json';
+import reportsData from '../../public/reports.json';
+
+/* ABOUT — the entity page (added 2026-09-22).
+ * /how-we-do-this/ explains the METHOD; this page states the ENTITY: what AICV
+ * is, what it offers, who runs it, and a key-facts list an agent can lift.
+ *
+ * NOTHING ON THIS PAGE IS A LITERAL THAT EXISTS ELSEWHERE.
+ *   identity  → src/data/org.json (checked against index/get-agent-ready JSON-LD
+ *               by scripts/about.test.mjs)
+ *   prices    → src/data/pricing.json (the pricing single source)
+ *   counts    → the same derivations the homepage stat bar uses, same labels,
+ *               same basis: briefs.json length, reports.json minus the
+ *               methodology page, corpus.businesses_mapped ("mapped", NEVER
+ *               "measured")
+ *   FAQ       → one `faq` array renders the visible list AND the FAQPage JSON-LD
+ *
+ * DELIBERATELY ABSENT: named competitors, notable clients, customers served,
+ * projects delivered. No record backs them; an identity page is the last
+ * place to carry an unsourced claim. */
+
+const pageTitle = 'About AICV — AI Coachella Valley';
+const pageDescription = `AI Coachella Valley (AICV) is the Coachella Valley's intelligence network for the agentic internet: it measures how AI assistants read local businesses, publishes that research, and builds agent-readable business profiles. A product and service of ${org.owner}, based in Palm Desert, California.`;
+const canonicalUrl = 'https://aicoachellavalley.com/about/';
+
+const fmt = (n) => n.toLocaleString('en-US');
+const briefCount = briefsData.length;
+const reportCount = reportsData.filter((r) => r.report_type !== 'methodology').length;
+const businessesMapped = corpus.businesses_mapped;
+
+const founded = new Date(`${org.foundingDate}T00:00:00Z`)
+  .toLocaleDateString('en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' });
+const hq = org.headquarters;
+const tier = Object.fromEntries(pricing.tiers.map((t) => [t.id, t]));
+const priceLine = (t) => `${t.price_main}${t.setup ? ` plus $${fmt(t.setup)} one-time setup` : ''}`;
+const cityList = `${org.cities.slice(0, -1).join(', ')} and ${org.cities.at(-1)}`;
+
+const faq = [
+  {
+    q: 'What is AI Coachella Valley?',
+    a: `AI Coachella Valley (AICV) is the Coachella Valley's intelligence network for the agentic internet. We measure how AI assistants read local businesses, publish what we find as dated research, and build agent-readable profiles that help people and AI agents find and understand a business.`,
+  },
+  {
+    q: 'Who owns AICV?',
+    a: `AICV is a product and service of ${org.owner}. It was founded by ${org.founder.name} in ${founded} and is based in ${hq.addressLocality}, California.`,
+  },
+  {
+    q: 'Can a business pay to be included in AICV research?',
+    a: 'No. Our censuses count every business we can find in a category, not whoever signed up, and no one\'s placement is for sale. Paid Agent Ready tiers build and maintain a business\'s own profile on the AICV network; they do not buy a place or a better result in our reports.',
+  },
+  {
+    q: 'How much does AICV cost?',
+    a: `${tier['agent-preview'].name} is free, with no signup. ${tier['agent-ready'].name} is ${priceLine(tier['agent-ready'])}. ${tier['agent-ready-business'].name} is ${priceLine(tier['agent-ready-business'])}, and ${tier['agent-ready-premium'].name} is ${priceLine(tier['agent-ready-premium'])}. Full details are on the Get Agent Ready page.`,
+  },
+  {
+    q: 'Which area does AICV cover?',
+    a: `The Coachella Valley in Riverside County, California: the nine incorporated cities of ${cityList}, plus the valley's unincorporated communities.`,
+  },
+  {
+    q: 'How do I contact AICV?',
+    a: `Email ${org.email}. Business owners can also start with the free Agent Preview, which needs no account.`,
+  },
+];
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://aicoachellavalley.com/about/#webpage",
+      "url": canonicalUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "about": { "@id": "https://aicoachellavalley.com/#organization" },
+      "mainEntity": { "@id": "https://aicoachellavalley.com/#organization" },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://aicoachellavalley.com/#website",
+        "url": "https://aicoachellavalley.com/",
+        "name": "AI Coachella Valley"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2026-09-22",
+      "dateModified": pageDates["/about/"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://aicoachellavalley.com/#organization",
+      "name": org.name,
+      "alternateName": org.alternateName,
+      "url": org.url,
+      "foundingDate": org.foundingDate,
+      "parentOrganization": { "@type": "Organization", "@id": "https://aicoachellavalley.com/#llc", "name": org.owner, "legalName": org.owner },
+      "founder": {
+        "@type": "Person",
+        "name": org.founder.name,
+        "jobTitle": org.founder.jobTitle,
+        "sameAs": org.founder.sameAs
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": hq.streetAddress,
+        "addressLocality": hq.addressLocality,
+        "addressRegion": hq.addressRegion,
+        "postalCode": hq.postalCode,
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Coachella Valley, California",
+        "containsPlace": org.cities.map((name) => ({ "@type": "City", name }))
+      },
+      "contactPoint": { "@type": "ContactPoint", "email": org.email, "contactType": "general inquiries" },
+      "sameAs": org.social.map((s) => s.href)
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://aicoachellavalley.com/about/#faq",
+      "mainEntity": faq.map((f) => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aicoachellavalley.com/about/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aicoachellavalley.com/" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": canonicalUrl }
+      ]
+    }
+  ]
+};
+---
+
+<Base title={pageTitle} description={pageDescription} canonicalUrl={canonicalUrl} schema={schemaGraph}>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">AICV</div>
+    <div class="nav-logo-words">
+      <span class="nav-logo-aicv">AI Coachella Valley</span>
+      <span class="nav-logo-sub">Intelligence Network · Coachella Valley</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="/nodes/node-zero">Intelligence Network</a>
+      <a href="/briefs/">Briefs</a>
+      <a href="/reports/">Reports</a>
+    </div>
+    <a href="/get-agent-ready/#diagnostic" class="nav-aio-btn">Agent Preview →</a>
+    <a href="/nodes/" class="nav-docs-btn">Open Docs →</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ─── HERO: the one-sentence definition ─── -->
+<section class="ab-hero">
+  <div class="ab-inner">
+    <div class="ab-eyebrow">About AICV</div>
+    <h1 class="ab-h1">About AI Coachella Valley</h1>
+    <p class="ab-def">AI Coachella Valley (AICV) is the Coachella Valley's intelligence network for the agentic internet. We measure how AI assistants read the valley's businesses, publish what we find, and build agent-readable profiles for businesses that want to be found accurately.</p>
+  </div>
+</section>
+
+<!-- ─── WHAT AICV DOES ─── -->
+<section class="ab-band ab-band-a">
+  <div class="ab-inner">
+    <h2 class="ab-h2">What AICV does</h2>
+    <div class="ab-grid">
+      <div class="ab-item">
+        <h3 class="ab-h3">Censuses and reports</h3>
+        <p class="ab-body">We take one category at a time, such as restaurants, hotels or wellness, and count every business in it across the valley. Then we measure how an AI agent reads each one and publish the result as a dated report.</p>
+        <a href="/reports/" class="ab-link">Read the reports →</a>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">Intelligence briefs</h3>
+        <p class="ab-body">Short, dated, sourced notes on what is changing in the Coachella Valley's economy and institutions, written so people and AI systems can cite them.</p>
+        <a href="/briefs/" class="ab-link">Read the briefs →</a>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">The Intelligence Network</h3>
+        <p class="ab-body">Structured pages for the valley's cities, sectors and institutions, published as plain HTML and JSON so an AI agent can read them without running any code.</p>
+        <a href="/nodes/" class="ab-link">Open the network →</a>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">{tier['agent-preview'].name}</h3>
+        <p class="ab-body">A free check that shows what an AI agent can learn from one public web page, and what may get in its way. No account, and nothing is stored.</p>
+        <a href="/get-agent-ready/#diagnostic" class="ab-link">Run the free check →</a>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">Agent Ready</h3>
+        <p class="ab-body">We build a business's Minimum Viable Agent (MVA): a public, agent-readable profile on the AICV network that points people and AI assistants to the business's existing website, phone, booking or ordering. Nothing on the business's own website has to change.</p>
+        <a href="/get-agent-ready/" class="ab-link">See Get Agent Ready →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT MAKES IT DIFFERENT ─── -->
+<section class="ab-band ab-band-b">
+  <div class="ab-inner">
+    <h2 class="ab-h2">What makes AICV different</h2>
+    <div class="ab-grid">
+      <div class="ab-item">
+        <h3 class="ab-h3">We count everyone, not a sample</h3>
+        <p class="ab-body">A census covers every business we can find in a category across all nine cities, not just the businesses that signed up. That is why the numbers mean something.</p>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">Inclusion is never for sale</h3>
+        <p class="ab-body">No business can pay to appear in our research or to get a better result in it. Paid tiers build a business's own profile; they do not touch the findings.</p>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">We measure again</h3>
+        <p class="ab-body">We return to the same businesses with the same method to see what changed. Websites change hands, start blocking the systems trying to read them, or go dark, and most owners never find out.</p>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">Corrections are on the record</h3>
+        <p class="ab-body">When we get something wrong, we fix it, date the correction and say what changed. A revised report shows the old numbers beside the new ones.</p>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">Every number shows its base</h3>
+        <p class="ab-body">We never write "most restaurants." Every figure says what it was counted against, and the method is published: <a href="/how-we-do-this/" class="ab-inline-link">How We Do This</a> explains it in plain language.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO AICV IS FOR ─── -->
+<section class="ab-band ab-band-a">
+  <div class="ab-inner">
+    <h2 class="ab-h2">Who AICV is for</h2>
+    <ul class="ab-list">
+      <li><strong>Coachella Valley business owners</strong> who want to know how AI assistants read their business, and to be found accurately.</li>
+      <li><strong>People planning a visit, a move or a business here</strong>, and the AI assistants answering their questions about the valley.</li>
+      <li><strong>Civic, institutional and economic development teams</strong> who need dated, sourced intelligence about the region.</li>
+      <li><strong>Journalists and researchers</strong> who need figures with a stated base and a published method.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─── THE TEAM ─── -->
+<section class="ab-band ab-band-b">
+  <div class="ab-inner">
+    <h2 class="ab-h2">The team behind AICV</h2>
+    <div class="ab-person">
+      <h3 class="ab-h3">{org.founder.name}, {org.founder.jobTitle}</h3>
+      <p class="ab-body">{org.founder.name} founded AI Coachella Valley in {founded}. {org.founder.name.split(' ')[0]} is a {org.founder.descriptor}, based in the Coachella Valley.</p>
+      <p class="ab-social">
+        {org.founder.sameAs.map((href, i) => (
+          <><a href={href} class="ab-inline-link" rel="me">{href.includes('linkedin') ? 'LinkedIn' : href.includes('x.com') ? 'X' : 'GitHub'}</a>{i < org.founder.sameAs.length - 1 && <span class="ab-sep"> · </span>}</>
+        ))}
+      </p>
+    </div>
+    <p class="ab-body">AICV is a product and service of {org.owner}. It works from the {hq.place} in {hq.addressLocality}.</p>
+  </div>
+</section>
+
+<!-- ─── HOW WORKING WITH AICV WORKS ─── -->
+<section class="ab-band ab-band-a">
+  <div class="ab-inner">
+    <h2 class="ab-h2">How working with AICV works</h2>
+    <div class="ab-grid">
+      <div class="ab-item">
+        <h3 class="ab-h3">Start with the free check</h3>
+        <p class="ab-body">{tier['agent-preview'].name} is self-serve. Enter one public web page and see what an AI agent reads. {tier['agent-preview'].price_main}, {tier['agent-preview'].price_sub}.</p>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">{tier['agent-ready'].name}: {tier['agent-ready'].price_main}</h3>
+        <p class="ab-body">Buy online. We match the purchase to your business, then build and publish your MVA and send a private review of what to improve. No annual fee.</p>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">Business and Premium start with a call</h3>
+        <p class="ab-body">{tier['agent-ready-business'].name} is {priceLine(tier['agent-ready-business'])}. {tier['agent-ready-premium'].name} is {priceLine(tier['agent-ready-premium'])}. Both are annual and include ongoing support.</p>
+      </div>
+      <div class="ab-item">
+        <h3 class="ab-h3">Questions</h3>
+        <p class="ab-body">Email <a href={`mailto:${org.email}`} class="ab-inline-link">{org.email}</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── KEY FACTS: a <dl>, so it survives without CSS or JS ─── -->
+<section class="ab-band ab-band-b" id="key-facts">
+  <div class="ab-inner">
+    <h2 class="ab-h2">Key facts</h2>
+    <dl class="ab-facts">
+      <dt>Name</dt><dd>{org.name} ({org.alternateName})</dd>
+      <dt>Type</dt><dd>Regional AI intelligence network and agent-readiness service</dd>
+      <dt>Owned by</dt><dd>{org.owner}. AICV is a product and service of {org.owner}.</dd>
+      <dt>Founded</dt><dd>{founded}</dd>
+      <dt>Founder</dt><dd>{org.founder.name}</dd>
+      <dt>Headquarters</dt><dd>{hq.place}, {hq.streetAddress}, {hq.addressLocality}, {hq.addressRegion} {hq.postalCode}</dd>
+      <dt>Area served</dt><dd>The Coachella Valley, California: {cityList}</dd>
+      <dt>Website</dt><dd><a href={org.url} class="ab-inline-link">aicoachellavalley.com</a></dd>
+      <dt>Core offering</dt><dd>Published research on how AI agents read local businesses, and agent-readable business profiles (Minimum Viable Agents)</dd>
+      <dt>Pricing</dt><dd>{pricing.tiers.map((t, i) => <>{t.name}: {priceLine(t)}{i < pricing.tiers.length - 1 && <br />}</>)}</dd>
+      <dt>Contract terms</dt><dd>{tier['agent-ready'].name} is a one-time purchase with no annual fee. Business and Premium are annual.</dd>
+      <dt>Research published</dt><dd>{fmt(reportCount)} reports and {fmt(briefCount)} intelligence briefs</dd>
+      <dt>Businesses mapped</dt><dd>{fmt(businessesMapped)} Coachella Valley businesses</dd>
+      <dt>Contact</dt><dd><a href={`mailto:${org.email}`} class="ab-inline-link">{org.email}</a></dd>
+      <dt>Elsewhere</dt><dd>{org.social.map((s, i) => <><a href={s.href} class="ab-inline-link">{s.label}</a>{i < org.social.length - 1 && <span class="ab-sep"> · </span>}</>)}</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ─── FAQ: same array as the FAQPage JSON-LD ─── -->
+<section class="ab-band ab-band-a" id="faq">
+  <div class="ab-inner">
+    <h2 class="ab-h2">Frequently asked questions</h2>
+    <div class="ab-faq">
+      {faq.map((f) => (
+        <div class="ab-faq-item">
+          <h3 class="ab-h3">{f.q}</h3>
+          <p class="ab-body">{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer variant="full" />
+
+<style is:global>
+  /* ─── NAV (same block as how-we-do-this) ─── */
+  nav { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 3rem; background:var(--gunmetal); position:sticky; top:0; z-index:50; }
+  .nav-logo { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
+  .nav-logo-mark { width:36px; height:36px; background:var(--volt); display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-weight:800; font-size:11px; color:var(--pine); letter-spacing:0.02em; flex-shrink:0; }
+  .nav-logo-words { display:flex; flex-direction:column; line-height:1; gap:2px; }
+  .nav-logo-aicv { font-family:'Syne',sans-serif; font-weight:800; font-size:0.9rem; color:var(--sand); letter-spacing:0.04em; }
+  .nav-logo-sub { font-size:0.6rem; font-weight:300; color:rgba(232,226,208,0.4); letter-spacing:0.08em; text-transform:uppercase; }
+  .nav-right { display:flex; align-items:center; gap:1.5rem; }
+  .nav-links { display:flex; align-items:center; gap:1.75rem; }
+  .nav-links a { font-size:0.78rem; color:var(--sand); text-decoration:none; letter-spacing:0.03em; transition:color 0.2s; }
+  .nav-links a:hover { color:var(--volt); }
+  .nav-aio-btn { font-size:0.72rem; color:var(--sand); text-decoration:none; border:1px solid rgba(232,226,208,0.25); padding:0.4rem 0.9rem; letter-spacing:0.04em; transition:all 0.2s; font-weight:500; }
+  .nav-aio-btn:hover { background:var(--volt); color:var(--pine); border-color:var(--volt); }
+  .nav-docs-btn { background:var(--volt); color:var(--pine); padding:0.45rem 1.1rem; font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; text-decoration:none; letter-spacing:0.04em; transition:background 0.2s; }
+  .nav-docs-btn:hover { background:var(--pine-tint); }
+
+  /* ─── ABOUT PAGE ─── */
+  .ab-inner { max-width:1060px; margin:0 auto; padding:0 48px; }
+  .ab-eyebrow { font-family:'Syne',sans-serif; font-size:13px; color:var(--pine); margin-bottom:18px; letter-spacing:3px; text-transform:uppercase; font-weight:700; }
+  .ab-hero { background:var(--pine-tint); padding:96px 0 72px; }
+  .ab-h1 { font-family:'Syne',sans-serif; font-size:clamp(44px, 7vw, 80px); font-weight:800; line-height:0.98; letter-spacing:-2px; color:var(--pine-dark); margin:0 0 32px; max-width:820px; }
+  .ab-def { font-family:'DM Sans',sans-serif; font-size:20px; line-height:1.65; color:var(--pine); max-width:680px; margin:0; }
+  .ab-band { padding:72px 0; }
+  .ab-band-a { background:var(--pine-mist); border-top:1px dashed rgba(18,43,34,0.15); }
+  .ab-band-b { background:var(--pine-tint); }
+  .ab-h2 { font-family:'Syne',sans-serif; font-size:clamp(28px, 4vw, 40px); font-weight:700; line-height:1.15; letter-spacing:-1px; color:var(--pine-dark); margin:0 0 32px; }
+  .ab-h3 { font-family:'Syne',sans-serif; font-size:19px; font-weight:700; line-height:1.3; color:var(--pine-dark); margin:0 0 10px; }
+  .ab-body { font-family:'DM Sans',sans-serif; font-size:16px; line-height:1.7; color:var(--pine); max-width:640px; margin:0 0 1rem; }
+  .ab-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:2rem 3rem; }
+  .ab-item .ab-body { margin-bottom:0.75rem; }
+  .ab-link, .ab-inline-link { color:var(--pine-dark); font-weight:600; text-decoration:none; border-bottom:2px solid var(--volt); }
+  .ab-link { font-family:'DM Sans',sans-serif; font-size:15px; }
+  .ab-link:hover, .ab-inline-link:hover { opacity:0.75; }
+  .ab-list { font-family:'DM Sans',sans-serif; font-size:17px; line-height:1.7; color:var(--pine); max-width:720px; margin:0; padding-left:1.25rem; }
+  .ab-list li { margin-bottom:0.75rem; }
+  .ab-list strong { color:var(--pine-dark); }
+  .ab-person { border-left:3px solid var(--volt); padding-left:1.25rem; margin-bottom:1.5rem; }
+  .ab-social { font-family:'DM Sans',sans-serif; font-size:15px; margin:0; }
+  .ab-sep { color:rgba(18,43,34,0.4); }
+  .ab-facts { display:grid; grid-template-columns:200px minmax(0, 1fr); margin:0; font-family:'DM Sans',sans-serif; font-size:16px; line-height:1.6; max-width:860px; border-top:1px solid rgba(18,43,34,0.15); }
+  .ab-facts dt, .ab-facts dd { padding:12px 0; border-bottom:1px solid rgba(18,43,34,0.15); margin:0; }
+  .ab-facts dt { font-weight:700; color:var(--pine-dark); padding-right:1.5rem; }
+  .ab-facts dd { color:var(--pine); overflow-wrap:anywhere; }
+  .ab-faq { display:grid; gap:1.75rem; max-width:720px; }
+
+  @media (max-width: 860px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .ab-inner { padding: 0 16px; }
+    .ab-hero { padding: 64px 0 48px; }
+    .ab-band { padding: 52px 0; }
+    .ab-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+    .ab-facts { grid-template-columns: 1fr; }
+    .ab-facts dt { border-bottom: 0; padding-bottom: 0; }
+  }
+  @media (max-width: 480px) {
+    .nav-aio-btn { display: none; }
+    .ab-h1 { font-size: 40px; letter-spacing: -1px; }
+  }
+</style>
+
+</Base>
