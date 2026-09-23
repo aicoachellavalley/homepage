@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import briefsData from '../../public/briefs.json';
 import reportsData from '../../public/reports.json';
 import corpus from '../data/corpus.json';
+import pricing from '../data/pricing.json';
 import deployed from '../data/previews-deployed.json';
 import { latestFromAicvNews, AICV_NEWS } from '../lib/aicv-news';
 const previewManifests = import.meta.glob('../data/previews/previews-index-*.json', { eager: true });
@@ -164,41 +165,31 @@ const webSiteSchema = {
   }
 };
 
+/* SERVICE (rewritten 2026-09-22). This block described two FREE services
+ * ("Get Included" node profiles and "Submit a Brief") that no longer exist,
+ * contradicting the paid ladder on /get-agent-ready/. Offers now derive from
+ * src/data/pricing.json, the pricing single source, so they cannot drift. */
+const readyTier = pricing.tiers.find((t) => t.id === 'agent-ready');
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "AICV Intelligence Network",
-  "provider": {
-    "@type": "Organization",
-    "name": "AI Coachella Valley"
-  },
-  "serviceType": "Regional AI Intelligence Documentation",
-  "description": "AI Coachella Valley provides two primary services: (1) Get Included — businesses in the Coachella Valley submit their information to receive a structured, AI-readable profile (node) in the regional intelligence dataset, at no cost; (2) Submit a Brief — organizations and economic development partners collaborate to publish timestamped intelligence briefs documenting regional modernization signals. Both services are free and designed to improve regional visibility in foundational AI systems.",
+  "name": "Get Agent Ready",
+  "url": "https://aicoachellavalley.com/get-agent-ready/",
+  "provider": { "@id": "https://aicoachellavalley.com/#organization" },
+  "serviceType": "AI agent readiness for Coachella Valley businesses",
+  "description": "AI Coachella Valley helps Coachella Valley businesses become readable to AI assistants and agents. It starts with Agent Preview, a free check of how an AI agent reads one public web page, and continues with Agent Ready, which builds the business a Minimum Viable Agent (MVA): an agent-readable public profile on the AICV network. Inclusion in AICV research is never for sale.",
   "areaServed": {
     "@type": "Place",
-    "name": "Coachella Valley",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "CA",
-      "addressCountry": "US"
-    }
+    "name": "Coachella Valley, California"
   },
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Get Included — Regional Node Profile",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Structured AI-readable business profile in the Coachella Valley intelligence dataset."
-    },
-    {
-      "@type": "Offer",
-      "name": "Submit a Brief — Intelligence Brief Partnership",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Collaborative publication of regional AI modernization and economic intelligence signals."
-    }
-  ]
+  "offers": pricing.tiers.map((t) => ({
+    "@type": "Offer",
+    "name": t.name,
+    "price": (t.onetime || t.annual).toFixed(2),
+    "priceCurrency": "USD",
+    "description": `${t.blurb} ${t.price_main}${t.price_sub ? `, ${t.price_sub}` : ''}.`,
+    "url": "https://aicoachellavalley.com/get-agent-ready/"
+  }))
 };
 
 const faqSchema = {
@@ -210,7 +201,7 @@ const faqSchema = {
       "name": "What is Agent Preview?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Agent Preview (formerly the AIO Tool) is a free diagnostic from AI Coachella Valley that shows how AI agents and large language models read a website. It reviews four dimensions — identity, structure, substance, and credibility — and returns a plain-English verdict (Invisible, Partly Visible, or Visible to AI) with up to three specific, actionable fixes, stamped with the date of the review."
+        "text": "Agent Preview is a free diagnostic from AI Coachella Valley that shows how AI agents and large language models read a website. It reviews four dimensions — identity, structure, substance, and credibility — and returns a plain-English verdict (Invisible, Partly Visible, or Visible to AI) with up to three specific, actionable fixes, stamped with the date of the review."
       }
     },
     {
@@ -242,7 +233,7 @@ const faqSchema = {
       "name": "How does a business get included in the AI Coachella Valley network?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Businesses, institutions, and civic bodies in the Coachella Valley can request inclusion by contacting AI Coachella Valley at sat@aicv.co. There is no fee for standard inclusion. AICV builds regional node profiles that make the entity readable, citable, and discoverable by AI agents."
+        "text": `No application is needed, and inclusion in AICV research is never for sale: each census counts every business AICV can find in a category. A business that wants its own agent-readable profile, a Minimum Viable Agent (MVA), can buy ${readyTier.name} for ${readyTier.price_main} at aicoachellavalley.com/get-agent-ready/. Questions go to sat@aicv.co.`
       }
     },
     {

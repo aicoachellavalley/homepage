@@ -2,6 +2,36 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-22 — APPROVED SOURCE RELEASE: /about/ + homepage JSON-LD de-stale
+
+Released through `main` on Sat's go; Cloudflare production verification
+follows the push.
+New `/about/`: one-sentence definition, what AICV does, differentiators, who
+it is for, founder, how engagement works, a `<dl>` key-facts list and a
+6-question FAQ (one `faq` array → visible list + FAQPage JSON-LD). Identity
+facts come from new `src/data/org.json`; prices from `pricing.json`; counts
+use the homepage stat-bar derivations (13 reports, 178 briefs, 2,914 mapped).
+Deliberately no competitor names, clients, customers-served or projects rows.
+
+Wired: `page-dates.json` `/about/` = 2026-09-22, sitemap static entry, footer
+NAV "About" (site-wide), one llms.txt line. New `scripts/about.test.mjs` fails
+the build if index/get-agent-ready Organization JSON-LD disagrees with
+org.json. 60 tests pass; build + ownership (304 pages), amendments and
+node-content gates pass with IndexNow disabled. Browser-checked desktop and
+375px: no horizontal overflow, 7 H2s, 15 facts, 6 FAQ items, JSON-LD parses.
+
+Homepage JSON-LD (same release, separate commit): the Service block offered
+two FREE services that no longer exist ("Get Included" node profiles, "Submit
+a Brief"); it now describes Get Agent Ready with offers derived from
+pricing.json. FAQ: dropped "(formerly the AIO Tool)"; the "how does a
+business get included" answer now says research inclusion needs no
+application and is never for sale, and names Agent Ready + price from
+pricing.json. STILL OPEN: the homepage Organization `description` ("the
+intelligence network AI uses to evaluate...") is an unsourced claim and
+differs from get-agent-ready's newer description; "AIO tool" in two dated
+2026 briefs is the published record, left as is.
+After deploy: `npx wrangler@latest ai-search jobs create aicv-com-corpus`.
+
 ## 2026-09-21 — APPROVED SOURCE RELEASE: MVA example order
 
 This release supersedes the local-only entry immediately below. The two visual
