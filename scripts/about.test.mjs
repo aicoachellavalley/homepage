@@ -23,6 +23,15 @@ for (const file of ['index.astro', 'get-agent-ready.astro']) {
   });
 }
 
+test('one Organization description, read from org.json by every page that states it', () => {
+  assert.match(org.description, /decision engine/);
+  for (const file of ['index.astro', 'get-agent-ready.astro', 'about.astro']) {
+    const src = read(`../src/pages/${file}`);
+    assert.match(src, /"description": org\.description/, file);
+    assert.doesNotMatch(src, /intelligence network AI uses to evaluate/, file);
+  }
+});
+
 test('about page is dated and sitemapped from the single date source', () => {
   assert.match(pageDates['/about/'], /^\d{4}-\d{2}-\d{2}$/);
   assert.match(sitemap, /aicoachellavalley\.com\/about\/'.*pd\['\/about\/'\]/);

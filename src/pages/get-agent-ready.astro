@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import pricing from '../data/pricing.json';
+import org from '../data/org.json';
 import pageDates from '../data/page-dates.json';
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
@@ -288,7 +289,7 @@ const schemaGraph = {
       "alternateName": "AICV",
       "url": "https://aicoachellavalley.com/",
       "logo": "https://aicoachellavalley.com/logo.png",
-      "description": "AICV is the Coachella Valley's intelligence network for the agentic internet. We publish structured business profiles and local research that people, AI agents and assistants can read and use.",
+      "description": org.description,
       "foundingDate": "2025-01-19",
       "founder": {
         "@type": "Person",

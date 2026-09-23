@@ -5,6 +5,7 @@ import briefsData from '../../public/briefs.json';
 import reportsData from '../../public/reports.json';
 import corpus from '../data/corpus.json';
 import pricing from '../data/pricing.json';
+import org from '../data/org.json';
 import deployed from '../data/previews-deployed.json';
 import { latestFromAicvNews, AICV_NEWS } from '../lib/aicv-news';
 const previewManifests = import.meta.glob('../data/previews/previews-index-*.json', { eager: true });
@@ -95,7 +96,7 @@ const orgSchema = {
   "parentOrganization": { "@id": "https://aicoachellavalley.com/#llc" },
   "url": "https://aicoachellavalley.com",
   "logo": "https://aicoachellavalley.com/logo.png",
-  "description": "AI Coachella Valley (AICV) is the intelligence network AI uses to evaluate the Coachella Valley for economic development, business relocation, group travel, tourism, and institutional planning. AICV is a product and service of SunshineFM LLC.",
+  "description": org.description,
   "foundingDate": "2025-01-19",
   "foundingLocation": {
     "@type": "Place",

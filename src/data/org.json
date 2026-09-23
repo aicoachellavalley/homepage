@@ -1,7 +1,8 @@
 {
-  "$comment": "Identity facts rendered VISIBLY on /about/ (key facts list, team, FAQ). Added 2026-09-22. These values already existed in the Organization JSON-LD on index.astro and get-agent-ready.astro and in llms.txt.ts; this file does not add a claim, it gives the visible page one source. index.astro and get-agent-ready.astro still carry their own literals, so scripts/about.test.mjs fails the build if either disagrees with this file. Do not add Notable Clients / Customers Served / Competitors rows here: only facts with a record behind them go on an identity surface.",
+  "$comment": "Identity facts rendered VISIBLY on /about/ (key facts list, team, FAQ). Added 2026-09-22. These values already existed in the Organization JSON-LD on index.astro and get-agent-ready.astro and in llms.txt.ts; this file does not add a claim, it gives the visible page one source. index.astro and get-agent-ready.astro still carry their own literals, so scripts/about.test.mjs fails the build if either disagrees with this file. Do not add Notable Clients / Customers Served / Competitors rows here: only facts with a record behind them go on an identity surface. DESCRIPTION (added 2026-09-22, founder positioning: AICV is a decision engine) is the one Organization description: index.astro, get-agent-ready.astro and about.astro all read it. Change it HERE.",
   "name": "AI Coachella Valley",
   "alternateName": "AICV",
+  "description": "AI Coachella Valley (AICV) is the Coachella Valley's decision engine for the agentic internet. We publish dated, sourced research and agent-readable business profiles so people, AI agents and assistants can decide where to visit, live and build in the valley. AICV is a product and service of SunshineFM LLC.",
   "owner": "SunshineFM LLC",
   "url": "https://aicoachellavalley.com/",
   "foundingDate": "2025-01-19",
@@ -24,14 +25,36 @@
   },
   "email": "sat@aicv.co",
   "cities": [
-    "Palm Springs", "Desert Hot Springs", "Cathedral City", "Rancho Mirage",
-    "Palm Desert", "Indian Wells", "La Quinta", "Indio", "Coachella"
+    "Palm Springs",
+    "Desert Hot Springs",
+    "Cathedral City",
+    "Rancho Mirage",
+    "Palm Desert",
+    "Indian Wells",
+    "La Quinta",
+    "Indio",
+    "Coachella"
   ],
   "social": [
-    { "label": "X", "href": "https://x.com/CoachellaAI" },
-    { "label": "GitHub", "href": "https://github.com/aicoachellavalley" },
-    { "label": "Newsletter", "href": "https://sunshinefm.beehiiv.com" },
-    { "label": "AICV News", "href": "https://aicv.news" },
-    { "label": "Community site", "href": "https://aicoachellavalley.org" }
+    {
+      "label": "X",
+      "href": "https://x.com/CoachellaAI"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/aicoachellavalley"
+    },
+    {
+      "label": "Newsletter",
+      "href": "https://sunshinefm.beehiiv.com"
+    },
+    {
+      "label": "AICV News",
+      "href": "https://aicv.news"
+    },
+    {
+      "label": "Community site",
+      "href": "https://aicoachellavalley.org"
+    }
   ]
 }

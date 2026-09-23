@@ -27,7 +27,7 @@ import reportsData from '../../public/reports.json';
  * place to carry an unsourced claim. */
 
 const pageTitle = 'About AICV — AI Coachella Valley';
-const pageDescription = `AI Coachella Valley (AICV) is the Coachella Valley's intelligence network for the agentic internet: it measures how AI assistants read local businesses, publishes that research, and builds agent-readable business profiles. A product and service of ${org.owner}, based in Palm Desert, California.`;
+const pageDescription = org.description;
 const canonicalUrl = 'https://aicoachellavalley.com/about/';
 
 const fmt = (n) => n.toLocaleString('en-US');
@@ -45,7 +45,7 @@ const cityList = `${org.cities.slice(0, -1).join(', ')} and ${org.cities.at(-1)}
 const faq = [
   {
     q: 'What is AI Coachella Valley?',
-    a: `AI Coachella Valley (AICV) is the Coachella Valley's intelligence network for the agentic internet. We measure how AI assistants read local businesses, publish what we find as dated research, and build agent-readable profiles that help people and AI agents find and understand a business.`,
+    a: org.description,
   },
   {
     q: 'Who owns AICV?',
@@ -95,6 +95,7 @@ const schemaGraph = {
       "@id": "https://aicoachellavalley.com/#organization",
       "name": org.name,
       "alternateName": org.alternateName,
+      "description": org.description,
       "url": org.url,
       "foundingDate": org.foundingDate,
       "parentOrganization": { "@type": "Organization", "@id": "https://aicoachellavalley.com/#llc", "name": org.owner, "legalName": org.owner },
@@ -169,7 +170,7 @@ const schemaGraph = {
   <div class="ab-inner">
     <div class="ab-eyebrow">About AICV</div>
     <h1 class="ab-h1">About AI Coachella Valley</h1>
-    <p class="ab-def">AI Coachella Valley (AICV) is the Coachella Valley's intelligence network for the agentic internet. We measure how AI assistants read the valley's businesses, publish what we find, and build agent-readable profiles for businesses that want to be found accurately.</p>
+    <p class="ab-def">AI Coachella Valley (AICV) is the Coachella Valley's decision engine for the agentic internet. We measure how AI assistants read the valley's businesses, publish what we find, and build agent-readable business profiles, so people and the AI agents working for them can decide where to visit, live and build here.</p>
   </div>
 </section>
 
@@ -297,7 +298,7 @@ const schemaGraph = {
     <h2 class="ab-h2">Key facts</h2>
     <dl class="ab-facts">
       <dt>Name</dt><dd>{org.name} ({org.alternateName})</dd>
-      <dt>Type</dt><dd>Regional AI intelligence network and agent-readiness service</dd>
+      <dt>Type</dt><dd>Regional decision engine: published research and an agent-readiness service for Coachella Valley businesses</dd>
       <dt>Owned by</dt><dd>{org.owner}. AICV is a product and service of {org.owner}.</dd>
       <dt>Founded</dt><dd>{founded}</dd>
       <dt>Founder</dt><dd>{org.founder.name}</dd>

@@ -26,10 +26,16 @@ a Brief"); it now describes Get Agent Ready with offers derived from
 pricing.json. FAQ: dropped "(formerly the AIO Tool)"; the "how does a
 business get included" answer now says research inclusion needs no
 application and is never for sale, and names Agent Ready + price from
-pricing.json. STILL OPEN: the homepage Organization `description` ("the
-intelligence network AI uses to evaluate...") is an unsourced claim and
-differs from get-agent-ready's newer description; "AIO tool" in two dated
-2026 briefs is the published record, left as is.
+pricing.json. "AIO tool" in two dated 2026 briefs is the published record, left as is.
+
+POSITIONING (same day, Sat's call): AICV is a DECISION ENGINE. One
+Organization description now lives in `src/data/org.json` `description`;
+index, get-agent-ready and about JSON-LD all read it (test-enforced). It
+replaces the homepage's unsourced "the intelligence network AI uses to
+evaluate..." and get-agent-ready's "intelligence network" line. About hero,
+FAQ and Type row lead with it. `/get-agent-ready/` page date bumped to
+2026-09-22. NOT changed: nav/footer "Intelligence Network" labels (the
+nodes product name), llms.txt header, the .org site.
 After deploy: `npx wrangler@latest ai-search jobs create aicv-com-corpus`.
 
 ## 2026-09-21 — APPROVED SOURCE RELEASE: MVA example order
