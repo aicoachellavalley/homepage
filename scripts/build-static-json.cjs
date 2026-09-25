@@ -134,6 +134,8 @@ function buildNodes() {
     if (!fm.title) continue;
 
     const slug = path.basename(filePath, '.mdx');
+    if (fm.verified === undefined || fm.verified === null || fm.verified === '') NODES_MISSING_VERIFIED_FLAG.push(slug);
+    const fresh = nodeFreshness(fm.last_updated, fm.verified === true || fm.verified === 'true');
 
     nodes.push({
       slug,
@@ -144,7 +146,8 @@ function buildNodes() {
       category: fm.category || '',
       subcategory: fm.subcategory || '',
       status: fm.status || '',
-      verified: fm.verified === true || fm.verified === 'true',
+      verified: fresh.verified,
+      verified_until: fresh.verified_until,
       agent_intent: Array.isArray(fm.agent_intent) ? fm.agent_intent : [],
       domain: fm.domain || '',
       funnel_stages: Array.isArray(fm.funnel_stages) ? fm.funnel_stages : [],
@@ -306,7 +309,11 @@ const BRIEF_AGENT_SIGNAL_CUTOFF = '2026-03-01';
 function validate(nodes, briefs) {
   let warnings = 0;
 
-  const NODE_REQUIRED = ['agent_summary', 'agent_intent', 'status', 'verified', 'domain', 'funnel_stages'];
+  const NODE_REQUIRED = ['agent_summary', 'agent_intent', 'status', 'domain', 'funnel_stages'];
+  for (const slug of NODES_MISSING_VERIFIED_FLAG) {
+    console.warn(`WARN: ${slug} missing verified`);
+    warnings++;
+  }
   for (const node of nodes) {
     for (const field of NODE_REQUIRED) {
       const val = node[field];
@@ -580,6 +587,28 @@ function generateLlmsFullTxt() {
   }
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms-full.txt'), output, 'utf8');
+}
+
+/* --- Node freshness (2026-09-25) ---------------------------------------------
+ * `verified` in a node's frontmatter is an editorial flag set by hand; it never
+ * expired, so nodes.json told readers all 79 nodes were verified while 73 were
+ * more than 90 days old. nodes.json now publishes `verified` true only when the
+ * editorial flag is set AND last_updated is within FRESHNESS_WINDOW_DAYS of the
+ * build, plus `verified_until` (last_updated + window) so a reader can check
+ * freshness itself between rebuilds. The window MUST match the aicv-mcp Worker
+ * (FRESHNESS_WINDOW_DAYS in core/mcp/worker.js), which derives the same answer
+ * at request time. */
+const FRESHNESS_WINDOW_DAYS = 90;
+// Slugs whose frontmatter has no `verified` flag at all. Validation checks the
+// flag's PRESENCE here, because the published value is now legitimately false
+// for any node outside the window.
+const NODES_MISSING_VERIFIED_FLAG = [];
+function nodeFreshness(lastUpdated, editorial, now = Date.now()) {
+  const stamp = typeof lastUpdated === 'string' ? Date.parse(`${lastUpdated}T00:00:00Z`) : NaN;
+  if (!editorial || !Number.isFinite(stamp)) return { verified: false, verified_until: null };
+  const until = new Date(stamp + FRESHNESS_WINDOW_DAYS * 86_400_000).toISOString().slice(0, 10);
+  const age = Math.floor((now - stamp) / 86_400_000);
+  return { verified: age <= FRESHNESS_WINDOW_DAYS, verified_until: until };
 }
 
 // --- IndexNow submission ---
