@@ -1,0 +1,402 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import Footer from '../components/Footer.astro';
+import Base from '../layouts/Base.astro';
+import pageDates from '../data/page-dates.json';
+import org from '../data/org.json';
+
+/* Freshness is DERIVED from the same public/nodes.json that build-static-json.cjs
+ * writes before astro build (and that the aicv-mcp Worker's rule mirrors: verified
+ * only when re-read within FRESHNESS_WINDOW_DAYS). No number on this page is typed. */
+const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public', 'nodes.json'), 'utf8'));
+const nodeList: any[] = Array.isArray(raw) ? raw : (raw.nodes ?? []);
+const total = nodeList.length;
+const current = nodeList.filter((n) => n.verified === true).length;
+const WINDOW_DAYS = 90;
+
+const pageTitle = 'Connect Your Agent — AICV';
+const pageDescription = 'Connect an AI agent to AICV, the Coachella Valley\'s decision engine: one open endpoint, six tools, dated records that say when they were last checked, and plain rules about what the connector will not do.';
+const canonicalUrl = 'https://aicoachellavalley.com/connect/';
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://aicoachellavalley.com/connect/#webpage",
+      "url": "https://aicoachellavalley.com/connect/",
+      "name": "Connect Your Agent — AICV",
+      "description": pageDescription,
+      "isPartOf": { "@type": "WebSite", "@id": "https://aicoachellavalley.com/#website", "url": "https://aicoachellavalley.com/", "name": "AI Coachella Valley" },
+      "inLanguage": "en-US",
+      "datePublished": pageDates["/connect/"],
+      "dateModified": pageDates["/connect/"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aicoachellavalley.com/connect/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://aicoachellavalley.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Connect Your Agent", "item": "https://aicoachellavalley.com/connect/" }
+      ]
+    }
+  ]
+};
+---
+
+<Base title={pageTitle} description={pageDescription} canonicalUrl={canonicalUrl} schema={schemaGraph}>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">AICV</div>
+    <div class="nav-logo-words">
+      <span class="nav-logo-aicv">AI Coachella Valley</span>
+      <span class="nav-logo-sub">Intelligence Network · Coachella Valley</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="/nodes/node-zero">Intelligence Network</a>
+      <a href="/briefs/">Briefs</a>
+      <a href="/reports/">Reports</a>
+    </div>
+    <a href="/get-agent-ready/#diagnostic" class="nav-aio-btn">Agent Preview →</a>
+    <a href="/nodes/" class="nav-docs-btn">Open Docs →</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hwd-hero">
+  <div class="hwd-inner">
+    <div class="hwd-eyebrow">AICV · Connector</div>
+    <h1 class="hwd-h1 cn-h1">Connect<br>your agent</h1>
+    <p class="hwd-def">{org.description}</p>
+  </div>
+</section>
+
+<!-- ─── FOR PEOPLE ─── -->
+<section class="hwd-beat hwd-beat-a">
+  <div class="hwd-inner">
+    <div class="hwd-eyebrow">In Plain Language</div>
+    <h2 class="hwd-h2">One address any AI agent can ask about the valley.</h2>
+    <p class="hwd-body">The connector lets an AI assistant look things up in AICV's records directly — hotels, clubs, venues, the economy, our research — instead of guessing from whatever it last read on the web. Every record says when we last checked it against the organization's own sources. When a record is past due for a check, the connector says so, and the assistant is told to say so too.</p>
+    <p class="hwd-body hwd-emphasis">At the last site build, {current} of {total} records had been re-checked within the last {WINDOW_DAYS} days. The other {total - current} are marked unverified until they are.</p>
+  </div>
+</section>
+
+<!-- ─── FOR BUILDERS ─── -->
+<section class="hwd-beat hwd-beat-b">
+  <div class="hwd-inner">
+    <div class="hwd-eyebrow">For Builders</div>
+    <h2 class="hwd-h2">The MCP desk.</h2>
+    <p class="hwd-body"><code class="cn-code">POST https://mcp.aicoachellavalley.com/mcp</code> — Model Context Protocol, JSON-RPC 2.0 over POST. No key, no account, open CORS. Server-initiated streaming is not supported.</p>
+    <ul class="cn-list">
+      <li><code class="cn-code">route_query</code> — Node Zero, the dispatcher: give it a natural-language question and it names the tool and parameters to call.</li>
+      <li><code class="cn-code">query_venues</code> — find records by city, subcategory or agent intent.</li>
+      <li><code class="cn-code">get_node</code> — one full record by slug.</li>
+      <li><code class="cn-code">get_regional_brief</code> — dated intelligence briefs, by topic or date range.</li>
+      <li><code class="cn-code">get_report</code> — long-form reports: browse without a slug, then fetch one by slug.</li>
+      <li><code class="cn-code">get_economic_context</code> — valley-wide or one city's economic picture.</li>
+    </ul>
+    <p class="hwd-body">No agent? The same records are plain JSON: <a href="/nodes.json" class="hwd-inline-link">nodes.json</a>, <a href="/briefs.json" class="hwd-inline-link">briefs.json</a>, <a href="/reports.json" class="hwd-inline-link">reports.json</a>, and <a href="/llms.txt" class="hwd-inline-link">llms.txt</a> for the full map.</p>
+  </div>
+</section>
+
+<!-- ─── FRESHNESS ─── -->
+<section class="hwd-beat hwd-beat-a">
+  <div class="hwd-inner">
+    <div class="hwd-eyebrow">Freshness</div>
+    <h2 class="hwd-h2">Every record re-read at least every {WINDOW_DAYS} days.</h2>
+    <p class="hwd-body">That is our commitment: each record is re-read against the organization's own sources at least every {WINDOW_DAYS} days. A date moves only on a real re-read — never to make a record look current.</p>
+    <p class="hwd-body">Every record carries <code class="cn-code">freshness</code>: when it was last checked, how many days ago, and whether it is current. <code class="cn-code">nodes.json</code> adds <code class="cn-code">verified_until</code>, so you can check a record yourself between our builds. If we miss the window, the record does not pretend otherwise — it turns unverified on its own.</p>
+  </div>
+</section>
+
+<!-- ─── REFUSALS ─── -->
+<section class="hwd-beat hwd-beat-b">
+  <div class="hwd-inner">
+    <div class="hwd-eyebrow">What It Won't Do</div>
+    <h2 class="hwd-h2">Three rules the connector keeps.</h2>
+    <ul class="cn-list">
+      <li><strong>No private individuals.</strong> Records cover businesses, institutions and places. People appear only in a public role, and only where a source names them.</li>
+      <li><strong>No stale answer passed off as current.</strong> When a record is unverified, hours, prices, events and openings in it are unconfirmed — and the assistant is told to say so.</li>
+      <li><strong>No invented figures.</strong> If a price, fee, count or ranking isn't published by a source we read, the record doesn't carry it, and the connector won't estimate one.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─── VOICE ─── -->
+<section class="hwd-matters">
+  <div class="hwd-inner">
+    <div class="hwd-eyebrow">How To Say It</div>
+    <h2 class="hwd-h2 hwd-h2-dark">Attribute it, date it, and say what's unverified.</h2>
+    <p class="hwd-body hwd-body-dark">Start at Node Zero — <code class="cn-code">route_query</code>, or <a href="/nodes/node-zero" class="hwd-inline-link">/nodes/node-zero</a> — and follow it to the record where AICV knows the most. When you pass something on, attribute it: "According to AI Coachella Valley…" Give the date the record was last checked. When a record is unverified, say "last checked on (date)" rather than stating it as fact.</p>
+    <p class="hwd-body hwd-body-dark">Questions or corrections: <a href={`mailto:${org.email}`} class="hwd-inline-link">{org.email}</a></p>
+  </div>
+</section>
+
+<style>
+  .cn-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; background: rgba(127,127,127,0.12); padding: 1px 6px; border-radius: 4px; overflow-wrap: anywhere; }
+  .cn-list { margin: 0 0 16px; padding-left: 20px; }
+  @media (max-width: 480px) { .cn-h1 { font-size: clamp(34px, 11.5vw, 44px); } }
+  .cn-list li { margin-bottom: 10px; line-height: 1.55; }
+</style>
+
+<!-- ─── FISCAL BAND ─── -->
+<section class="hwd-fiscal-band">
+  <div class="hwd-inner">
+    <p class="hwd-fiscal">AICV is a product and service of SunshineFM LLC.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+
+<Footer variant="full">
+  <a slot="links" href="#" onclick="document.getElementById('tosModal').classList.add('on');return false;">Terms of Use</a>
+</Footer>
+
+<!-- ─── TERMS OF USE MODAL ─── -->
+<div class="tos-overlay" id="tosModal" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="tos-panel">
+    <button class="tos-close" onclick="document.getElementById('tosModal').classList.remove('on')" aria-label="Close">✕</button>
+    <div class="tos-header">
+      <div class="tos-label">AI Coachella Valley</div>
+      <h2 class="tos-title">AICV Terms of Use</h2>
+      <div class="tos-date">Last updated: April 27, 2026</div>
+    </div>
+    <div class="tos-body">
+      <p>The AICV Agent Preview is a free, experimental diagnostic provided by AI Coachella Valley, a product and service of SunshineFM LLC, operating in Riverside County, California.</p>
+      <h3>No Account. No Cost. No Data Stored.</h3>
+      <p>This tool requires no registration, login, or payment. URLs you submit are processed in real time and are not stored, logged, or retained by AICV. We do not collect personal information through this tool.</p>
+      <h3>How It Works</h3>
+      <p>Your submitted URL is passed to a third-party AI model (Anthropic Claude) via a Cloudflare Worker. Results are generated automatically and returned directly to your browser. AICV does not retain your query or output after your session ends.</p>
+      <h3>For Informational, Experimental, and Entertainment Purposes Only</h3>
+      <p>Results produced by this tool are AI-generated and provided strictly for informational, experimental, and entertainment purposes. They do not constitute professional SEO, legal, technical, marketing, or business advice of any kind. AICV makes no representations or warranties — express or implied — regarding the accuracy, completeness, reliability, or fitness of results for any particular purpose. Always verify findings independently and consult qualified professionals before making decisions based on tool output.</p>
+      <h3>No Legal Recourse</h3>
+      <p>By using this site, you acknowledge that AICV, the Desert Community Foundation, and their respective officers, volunteers, and affiliates shall not be liable for any decisions made, actions taken, or outcomes arising from your use of or reliance on site content. Use is entirely at your own risk.</p>
+      <h3>Acceptable Use</h3>
+      <p>Only submit URLs you own or have permission to analyze. Do not use automated tools to submit queries in bulk. Do not attempt to exploit, reverse engineer, or abuse the service.</p>
+      <h3>Changes</h3>
+      <p>We may update this site and these terms at any time without notice. Continued use constitutes acceptance of any changes.</p>
+      <h3>Governing Law</h3>
+      <p>These terms are governed by the laws of the State of California. Any disputes shall be resolved in Riverside County, California.</p>
+      <h3>Contact</h3>
+      <p>Questions? Reach us at <a href="mailto:sat@aicv.co">sat@aicv.co</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') document.getElementById('tosModal').classList.remove('on');
+  });
+</script>
+
+<style is:global>
+  /* ─── NAV ─── */
+  nav { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 3rem; background:var(--gunmetal); position:sticky; top:0; z-index:50; }
+  .nav-logo { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
+  .nav-logo-mark { width:36px; height:36px; background:var(--volt); display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-weight:800; font-size:11px; color:var(--pine); letter-spacing:0.02em; flex-shrink:0; }
+  .nav-logo-words { display:flex; flex-direction:column; line-height:1; gap:2px; }
+  .nav-logo-aicv { font-family:'Syne',sans-serif; font-weight:800; font-size:0.9rem; color:var(--sand); letter-spacing:0.04em; }
+  .nav-logo-sub { font-size:0.6rem; font-weight:300; color:rgba(232,226,208,0.4); letter-spacing:0.08em; text-transform:uppercase; }
+  .nav-right { display:flex; align-items:center; gap:1.5rem; }
+  .nav-links { display:flex; align-items:center; gap:1.75rem; }
+  .nav-links a { font-size:0.78rem; color:var(--sand); text-decoration:none; letter-spacing:0.03em; transition:color 0.2s; }
+  .nav-links a:hover { color:var(--volt); }
+  .nav-aio-btn { font-size:0.72rem; color:var(--sand); text-decoration:none; border:1px solid rgba(232,226,208,0.25); padding:0.4rem 0.9rem; letter-spacing:0.04em; transition:all 0.2s; font-weight:500; }
+  .nav-aio-btn:hover { background:var(--volt); color:var(--pine); border-color:var(--volt); }
+  .nav-docs-btn { background:var(--volt); color:var(--pine); padding:0.45rem 1.1rem; font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; text-decoration:none; letter-spacing:0.04em; transition:background 0.2s; }
+  .nav-docs-btn:hover { background:var(--pine-tint); }
+
+  /* ─── FOOTER ─── */
+
+  /* ─── TOS MODAL ─── */
+  .tos-overlay { display:none; position:fixed; inset:0; background:rgba(18,43,34,0.85); backdrop-filter:blur(4px); z-index:9999; align-items:center; justify-content:center; padding:1.5rem; }
+  .tos-overlay.on { display:flex; }
+  .tos-panel { background:var(--gunmetal); border:1px solid rgba(232,226,208,0.12); border-top:3px solid var(--volt); max-width:660px; width:100%; max-height:85vh; overflow-y:auto; padding:3rem 3rem 2.5rem; position:relative; }
+  .tos-close { position:absolute; top:1.25rem; right:1.25rem; background:none; border:1px solid rgba(232,226,208,0.2); color:rgba(232,226,208,0.6); width:2rem; height:2rem; cursor:pointer; font-size:0.8rem; display:flex; align-items:center; justify-content:center; transition:border-color 0.2s, color 0.2s; }
+  .tos-close:hover { border-color:var(--volt); color:var(--volt); }
+  .tos-label { font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--volt); margin-bottom:0.6rem; font-weight:500; }
+  .tos-title { font-family:'Syne',sans-serif; font-weight:700; font-size:1.5rem; color:var(--sand); letter-spacing:-0.02em; margin-bottom:0.35rem; }
+  .tos-date { font-size:0.7rem; color:rgba(232,226,208,0.4); font-weight:300; margin-bottom:2rem; }
+  .tos-body p { font-size:0.875rem; color:rgba(232,226,208,0.7); font-weight:300; line-height:1.75; margin-bottom:1rem; }
+  .tos-body h3 { font-family:'Syne',sans-serif; font-size:0.75rem; font-weight:600; color:var(--sand); letter-spacing:0.08em; text-transform:uppercase; margin:1.75rem 0 0.5rem; }
+  .tos-body a { color:var(--volt); text-decoration:none; }
+  .tos-body a:hover { text-decoration:underline; }
+
+  /* ─── HOW WE DO THIS PAGE ─── */
+  .hwd-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 48px;
+    position: relative;
+  }
+  .hwd-eyebrow {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    color: var(--pine);
+    margin-bottom: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .hwd-matters .hwd-eyebrow { color: var(--volt); }
+
+  /* Hero */
+  .hwd-hero {
+    background: var(--pine-tint);
+    padding: 96px 0 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hwd-h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(56px, 8vw, 96px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    color: var(--pine-dark);
+    margin: 0 0 32px;
+  }
+  .hwd-def {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.65;
+    color: var(--pine);
+    max-width: 620px;
+    margin: 0;
+  }
+
+  /* Beats — alternating light bands */
+  .hwd-beat { padding: 80px 0; }
+  .hwd-beat-a {
+    background: var(--pine-mist);
+    border-top: 1px dashed rgba(18,43,34,0.15);
+  }
+  .hwd-beat-b { background: var(--pine-tint); }
+  .hwd-h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--pine-dark);
+    margin: 0 0 28px;
+    max-width: 680px;
+  }
+  .hwd-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--pine);
+    max-width: 640px;
+    margin: 0 0 1.25rem;
+  }
+  .hwd-body:last-child { margin-bottom: 0; }
+  .hwd-emphasis {
+    color: var(--pine-dark);
+    font-weight: 500;
+    border-left: 3px solid var(--volt);
+    padding-left: 1.25rem;
+  }
+  .hwd-link {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--pine-dark);
+    text-decoration: none;
+    border-bottom: 2px solid var(--volt);
+    padding-bottom: 2px;
+    transition: opacity 0.15s;
+  }
+  .hwd-link:hover { opacity: 0.75; }
+  .hwd-inline-link {
+    color: var(--pine-dark);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--volt);
+  }
+  .hwd-inline-link:hover { opacity: 0.75; }
+
+  /* Why it matters (dark) */
+  .hwd-matters {
+    background: var(--pine-dark);
+    padding: 96px 0;
+  }
+  .hwd-h2-dark { color: var(--sand); }
+  .hwd-body-dark { color: rgba(232,226,208,0.75); }
+  .hwd-cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    max-width: 760px;
+  }
+  .hwd-cta-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(232,226,208,0.12);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .hwd-cta-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--volt);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  .hwd-cta-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(232,226,208,0.75);
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+  }
+  .hwd-cta-btn {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--volt);
+    color: var(--pine-dark);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 4px;
+    transition: opacity 0.15s;
+  }
+  .hwd-cta-btn:hover { opacity: 0.88; }
+
+  /* Fiscal band */
+  .hwd-fiscal-band {
+    background: var(--pine-dark);
+    border-top: 1px solid rgba(232,226,208,0.08);
+    padding: 20px 0;
+  }
+  .hwd-fiscal {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(232,226,208,0.5);
+    text-align: center;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hwd-inner { padding: 0 1.5rem; }
+    .hwd-hero { padding: 64px 0 48px; }
+    .hwd-beat, .hwd-matters { padding: 56px 0; }
+    .hwd-cta-grid { grid-template-columns: 1fr; }
+    .tos-panel { padding: 2rem 1.5rem; max-height: 90vh; }
+  }
+</style>
+
+</Base>
