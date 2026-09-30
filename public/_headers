@@ -22,3 +22,11 @@
 /*
   Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"
   Link: </.well-known/mcp/server-card.json>; rel="mcp-server"; type="application/json"
+
+# Archived AIQnA pilot and illustrative exports are not active research.
+/aiqna
+  X-Robots-Tag: noindex, follow
+/aiqna/*
+  X-Robots-Tag: noindex, follow
+/aiqna.json
+  X-Robots-Tag: noindex

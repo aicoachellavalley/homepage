@@ -90,7 +90,7 @@ const cloudSize: Record<string, string> = { xl: '32px', lg: '24px', md: '18px', 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title} | AIQnA · AI Coachella Valley</title>
   <meta name="description" content={description} />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href={canonicalUrl} />
 
   <meta property="og:title" content={title} />
@@ -108,8 +108,8 @@ const cloudSize: Record<string, string> = { xl: '32px', lg: '24px', md: '18px', 
   <link rel="apple-touch-icon" href="/aiqna-apple-touch-icon.png" />
   <link rel="icon" href="/aiqna-favicon.ico" sizes="any" />
 
-  <script type="application/ld+json" set:html={JSON.stringify(qaSchema, null, 2)} />
-  <script type="application/ld+json" set:html={JSON.stringify(datasetSchema, null, 2)} />
+  {!isSample && <script type="application/ld+json" set:html={JSON.stringify(qaSchema, null, 2)} />}
+  {!isSample && <script type="application/ld+json" set:html={JSON.stringify(datasetSchema, null, 2)} />}
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -271,7 +271,7 @@ const cloudSize: Record<string, string> = { xl: '32px', lg: '24px', md: '18px', 
   </nav>
 
   {isSample && (
-    <div class="sample-banner">Sample data — illustrative finding for template validation, not real responses</div>
+    <div class="sample-banner">Experimental archive — all response counts, percentages and quotations are illustrative sample data, not real resident responses</div>
   )}
 
   <div class="finding-eyebrow"><span class="brand">A<span class="iq-pivot">I</span><span class="iq-pivot">Q</span>nA</span> · WEEKLY FINDING · {question_id}</div>
@@ -337,12 +337,12 @@ const cloudSize: Record<string, string> = { xl: '32px', lg: '24px', md: '18px', 
   )}
 
   <div class="section-label">Data access</div>
-  <p style="font-size: 14px; color: var(--text-secondary); margin: 0 0 0.5rem;">This finding publishes openly under Creative Commons Attribution 4.0. Attribution to AI Coachella Valley required.</p>
+  <p style="font-size: 14px; color: var(--text-secondary); margin: 0 0 0.5rem;">This archived example uses illustrative sample data. Do not cite its counts, percentages or quotations as collected findings. Attribution to AI Coachella Valley required for reuse under Creative Commons Attribution 4.0.</p>
   <div class="downloads">
     <a class="download-link" href={`/aiqna/${slug}.json`}>↓ JSON</a>
     <a class="download-link" href={`/aiqna/${slug}.csv`}>↓ CSV</a>
     <a class="download-link" href="/aiqna">Methodology</a>
-    <a class="download-link" href="https://aiqna.org">Live experience ↗</a>
+    <a class="download-link" href="/reports/">Active AICV research →</a>
   </div>
 
   <footer class="footer">

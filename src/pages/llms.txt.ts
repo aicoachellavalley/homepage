@@ -100,7 +100,7 @@ Purpose-built for AI agents, LLMs and RAG systems helping people decide where to
 - Full node records: append .json to a node path, for example https://aicoachellavalley.com/nodes/node-zero.json — complete readable Markdown, canonical URL and content date; generated with the human page
 - [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All ${briefs.length} intelligence briefs, flat JSON, no JS required
 - [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.filter((r) => r.data.report_type !== 'methodology').length} long-form intelligence reports (plus the evergreen census methodology page), flat JSON, no JS required
-- [Agent Previews](https://aicoachellavalley.com/sitemap-index.xml): ${previewPages} published Agent Preview pages across ${previews.length} Coachella Valley categories — a dated, independent measurement of how an AI agent reads one specific local business today. ${previewSitemapped} of the ${previewPages} are sitemapped; the other ${previewWithheld} are deliberately noindexed and reachable by direct link only — businesses whose listed web address is dead, hijacked or parked, and businesses with no website on record. Nothing was measured for those, so they are not offered for indexing. Per-category sitemaps under /agent-preview/, all listed in the sitemap index
+- [Agent Previews](https://aicoachellavalley.com/sitemap-index.xml): ${previewPages} published Agent Preview pages across ${previews.length} Coachella Valley categories — a dated business record of what AICV's stated checks observed; consult its measurement date and provenance before relying on it. ${previewSitemapped} of the ${previewPages} are sitemapped; the other ${previewWithheld} are deliberately noindexed and reachable by direct link only — businesses whose listed web address is dead, hijacked or parked, and businesses with no website on record. Nothing was measured for those, so they are not offered for indexing. Per-category sitemaps under /agent-preview/, all listed in the sitemap index
 - [MCP desk](https://mcp.aicoachellavalley.com/mcp): Deterministic tools for a specific record — nodes, briefs, reports, economic context, by slug, tag, or date range. JSON-RPC 2.0 over POST. How to connect, freshness commitment and refusal rules: https://aicoachellavalley.com/connect/
 - [Semantic search](https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp): Open questions about the Coachella Valley, answered from the published corpus
 
@@ -116,6 +116,10 @@ ${membersSection}## Commercial Tier
 - [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — four tiers on one ladder:
 ${pricing.tiers.map((t) => `  - ${t.name}: ${t.llms}`).join('\n')}
   Each paid tier delivers a Minimum Viable Agent (MVA) for the entity — an agent-readable, citable profile built and maintained by AICV. Nothing on the member's own website changes. The page also hosts the free Agent Preview diagnostic.
+
+## Publication and Maintenance
+
+State of AI reports follow a quarterly editorial cadence, published after the quarter closes and sources are reviewed. Category reports and remeasurements publish when research is ready. Briefs are ongoing sourced notes, not a daily publication commitment. Regional nodes have a rolling 30-day source-review target; their dates move only after a real check. The existing 90-day node-verification expiry remains a backstop. Business previews retain their own measurement dates and are not promised monthly remeasurement.
 
 ## Agent Query Patterns
 

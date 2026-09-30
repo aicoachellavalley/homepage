@@ -4,6 +4,36 @@
 
 ## 2026-09-30 — DRAFT: assessment cleanup
 
+Third pass, following Sat's explicit copy approvals, parent `b7833d5`: MVA
+copy now explains the public record, unclaimed starting previews, activation
+and official action links. Premium keeps daily public-signal monitoring from
+service activation, with changes flagged for review; no promised citation.
+Index and plain-language methodology describe measured observations and
+assistant access without universal-authority or discovery claims. State of AI
+uses a quarterly editorial cadence; regional nodes have a rolling 30-day
+source-review target, with the existing 90-day verification expiry retained
+as a backstop. No source-check date was advanced for these copy edits, and no
+monthly remeasurement of every business preview is promised. Corrected the
+innovation-node travel comparison to approximate LA drive / SFO flight times.
+AIQnA is now an experimental archive: historical routes and pilot design are
+preserved, pages/exports are noindexed, sample QA/Dataset JSON-LD is omitted,
+and detached JSON/CSV explicitly identify illustrative data. No research
+counts, original report findings or prices changed.
+
+Live distribution probes: deterministic MCP tools/list succeeds; get_report
+returns complete report text. query_venues returns 79 regional nodes (13 for
+Palm Desert), not the 1,568 business previews. A founder coffee-meeting query
+routes to general economic context. The separate search endpoint returns no
+chunks for the coffee-meeting and Rutina Coffee queries. These are observed
+retrieval gaps, not evidence of assistant adoption or a diagnosis from private
+analytics. Distribution and worker changes need their own follow-up; no
+outside-platform connector submission or production merge occurred here.
+Validation: 66 tests, full build and postbuild gates passed (312 HTML pages,
+5,716 static internal links). Archive robots/schema and sample JSON/CSV
+boundaries checked independently. Final desktop preview verification follows
+the branch upload. Mobile review and private Cloudflare analytics remain
+outside the available verification.
+
 Second pass on the same draft PR, parent `35a5c38`: the homepage now carries
 Team Retreat → Satellite Base → Relocate the Startup → Build, Invest, and
 Belong, with four links into existing regional research. Replaced the service

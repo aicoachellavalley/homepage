@@ -79,8 +79,8 @@ const schemaGraph = {
 <section class="hwd-beat hwd-beat-a">
   <div class="hwd-inner">
     <div class="hwd-eyebrow">In Plain Language</div>
-    <h2 class="hwd-h2">One address any AI agent can ask about the valley.</h2>
-    <p class="hwd-body">The connector lets an AI assistant look things up in AICV's records directly — hotels, clubs, venues, the economy, our research — instead of guessing from whatever it last read on the web. Every record says when we last checked it against the organization's own sources. When a record is past due for a check, the connector says so, and the assistant is told to say so too.</p>
+    <h2 class="hwd-h2">Connect a compatible assistant to the regional research.</h2>
+    <p class="hwd-body">Add the MCP address below to an assistant that supports remote MCP connections. The published tools retrieve regional nodes, briefs, reports and economic context; they do not automatically install AICV in every assistant. Regional nodes and the separate business-preview corpus have different coverage. Each node carries its source-check date, and the connector flags records outside its verification window.</p>
     <p class="hwd-body hwd-emphasis">At the last site build, {current} of {total} records had been re-checked within the last {WINDOW_DAYS} days. The other {total - current} are marked unverified until they are.</p>
   </div>
 </section>
@@ -107,9 +107,9 @@ const schemaGraph = {
 <section class="hwd-beat hwd-beat-a">
   <div class="hwd-inner">
     <div class="hwd-eyebrow">Freshness</div>
-    <h2 class="hwd-h2">Every record re-read at least every {WINDOW_DAYS} days.</h2>
-    <p class="hwd-body">That is our commitment: each record is re-read against the organization's own sources at least every {WINDOW_DAYS} days. A date moves only on a real re-read — never to make a record look current.</p>
-    <p class="hwd-body">Every record carries <code class="cn-code">freshness</code>: when it was last checked, how many days ago, and whether it is current. <code class="cn-code">nodes.json</code> adds <code class="cn-code">verified_until</code>, so you can check a record yourself between our builds. If we miss the window, the record does not pretend otherwise — it turns unverified on its own.</p>
+    <h2 class="hwd-h2">Regional nodes: a rolling 30-day review target.</h2>
+    <p class="hwd-body">We update regional nodes on an ongoing basis and target a source review every 30 days. This describes our editorial review cycle; it does not refresh a record automatically. Source-check dates move only when the underlying sources are actually checked.</p>
+    <p class="hwd-body">The existing {WINDOW_DAYS}-day verification expiry remains a backstop in the node feed and connector. Nodes carry <code class="cn-code">freshness</code> and <code class="cn-code">verified_until</code> so an assistant can assess the date. Reports and business previews retain their own publication and measurement dates; they are not covered by a monthly node-review promise.</p>
   </div>
 </section>
 
