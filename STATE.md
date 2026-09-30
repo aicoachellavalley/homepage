@@ -4,6 +4,15 @@
 
 ## 2026-09-30 — DRAFT: assessment cleanup
 
+Assistant-question follow-up, parent `1a05a28`: the deployed MCP client test
+of "Plan a November leadership retreat for 16 people near Palm Springs"
+exposed an overly strict municipal filter. Nearby retreat wording now returns
+regional candidates and asks for acceptable drive time, without claiming a
+verified radius or travel time. Explicit city arguments and "in/within" city
+wording remain strict. Validation: 83 tests and all build/postbuild gates pass.
+This is assistant-mediated MCP retrieval, not installation into a separate
+assistant account. No production merge occurred.
+
 Fourth pass, authorized by Sat's request to use agents and implement the
 retrieval/distribution follow-up, parent `8369ad4`: added a shared read-only
 local-decision runtime in Cloudflare Pages Functions at `/mcp` and

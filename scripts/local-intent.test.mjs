@@ -62,6 +62,25 @@ test('team retreat uses sourced options, preserves narrow capacity scopes and ex
   assert.match(sixty.limitations.join(' '), /48-guest/);
   assert.equal(resolveLocalIntent({ query: 'A team retreat in Palm Desert' }, catalog).status, 'no_match');
 });
+test('near Palm Springs retreat question includes regional candidates without claiming verified proximity', () => {
+  const question = 'Plan a November leadership retreat for 16 people near Palm Springs.';
+  const result = resolveLocalIntent({ query: question }, catalog);
+  assert.equal(result.intent, 'team-retreat');
+  assert.equal(result.status, 'needs_details');
+  assert.equal(result.city, 'Palm Springs');
+  assert.equal(result.group_size, 16);
+  assert.equal(result.results.length, 3);
+  assert.equal(result.results[0].id, 'node/ritz-carlton');
+  assert.match(result.limitations.join(' '), /proximity and drive times have not been verified/);
+  assert.match(result.next_questions.join(' '), /maximum acceptable drive time/);
+  for (const strict of [
+    { query: question, city: 'Palm Springs' },
+    { query: 'Plan a leadership retreat for 16 people in Palm Springs.' },
+    { query: 'Plan a leadership retreat within Palm Springs, near Palm Springs airport.' },
+    { query: 'Plan a leadership retreat near San Diego.' },
+  ]) assert.equal(resolveLocalIntent(strict, catalog).status, 'no_match');
+  assert.equal(resolveLocalIntent({ query: 'Plan a leadership retreat around Palm Desert.' }, catalog).results.length, 3);
+});
 test('the actual retreat form default resolves the work and overnight trip without requiring the retreat keyword', () => {
   const page = readFileSync(new URL('../src/pages/plan-team-retreat.astro', import.meta.url), 'utf8');
   const defaultQuery = page.match(/<textarea\b[^>]*\bid="retreat-query"[^>]*>([\s\S]*?)<\/textarea>/)?.[1];

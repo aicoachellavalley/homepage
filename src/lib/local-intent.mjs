@@ -107,7 +107,12 @@ export function resolveLocalIntent(input, catalog) {
   if ((!city && /\b(san diego|san francisco|los angeles|new york|london|las vegas)\b/.test(q)) || (city && !CITIES.includes(city))) return { ...base, status: 'no_match', intent: 'outside-coverage', limitations: [...LIMITATIONS, 'The requested location is outside this catalog’s coverage.'] };
   const group = input.group_size ?? (Number(q.match(/\b(\d{1,4})\s*(?:person|people|guest|guests|member|members)\b/)?.[1]) || null);
   if (isTeamRetreatQuestion(q)) {
-    let options = catalog.retreat.options.filter((o) => !city || city === 'Coachella Valley' || o.city === city);
+    // A nearby destination is an anchor, not a municipal boundary. Explicit
+    // city arguments remain strict; regional candidates are not radius matches.
+    const nearby = !input.city && city && city !== 'Coachella Valley'
+      && new RegExp(`\\b(?:near|around|close to|outside(?: of)?) ${normalize(city)}\\b`).test(q)
+      && !new RegExp(`\\b(?:in|within|only in) ${normalize(city)}\\b`).test(q);
+    let options = catalog.retreat.options.filter((o) => nearby || !city || city === 'Coachella Valley' || o.city === city);
     const named = options.filter((o) => q.includes(normalize(o.name)) || q.includes(normalize(o.slug)) || (o.slug === 'ritz-carlton' && q.includes('ritz carlton')) || (o.slug === 'sensei-porcupine-creek' && q.includes('sensei')) || (o.slug === 'grand-hyatt-indian-wells' && q.includes('grand hyatt')));
     if (named.length) options = named;
     if (group && group > 48) {
@@ -125,6 +130,11 @@ export function resolveLocalIntent(input, catalog) {
         checked_at: o.source_checked_at }] }));
     base.regional_context = nodeContext(catalog, ['retreat-economy', 'desert-season', 'aviation-gateway'], city);
     base.unresolved_constraints = ['Dates, current room availability, total budget, room configuration and required accessibility need confirmation with the property.'];
+    if (nearby) {
+      base.limitations.push(`The question uses ${city} as a nearby destination anchor. Options span the Coachella Valley; proximity and drive times have not been verified.`);
+      base.unresolved_constraints.push(`Acceptable distance and drive time from ${city} need confirmation before selecting a venue.`);
+      base.next_questions.push(`What is the maximum acceptable drive time from ${city}?`);
+    }
     if (!group) base.next_questions.push('How many people and how many overnight rooms?');
     base.next_questions.push('What dates, budget and meeting requirements should the property evaluate?');
     return { ...base, status: base.results.length ? 'needs_details' : 'no_match', intent: 'team-retreat', group_size: group };
