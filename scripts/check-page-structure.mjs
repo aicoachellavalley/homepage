@@ -45,6 +45,10 @@ for (const [pathname, page] of pages) {
     if (url.origin !== origin) continue;
     // Served by a different Worker; absence from dist is not a broken link.
     if (/^\/agent-preview(?:\/|$)/.test(url.pathname)) continue;
+    // These routes are compiled from functions/ by Cloudflare Pages, rather
+    // than emitted as static HTML. Require their source, not a blanket skip.
+    const runtimeSources = { '/mcp': 'functions/mcp.js', '/api/resolve-local-intent': 'functions/api/resolve-local-intent.js', '/api/usage': 'functions/api/usage.js' };
+    if (runtimeSources[url.pathname] && existsSync(resolve(root, runtimeSources[url.pathname]))) continue;
     let targetPath = decodeURIComponent(url.pathname);
     const seen = new Set();
     while (redirects.has(targetPath) && !seen.has(targetPath)) {

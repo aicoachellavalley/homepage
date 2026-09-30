@@ -1,0 +1,97 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "aicv-regional-intelligence",
+  "version": "0.1.0",
+  "description": "Read dated Coachella Valley business records and local context to compare options for a team retreat, satellite base or local meeting.",
+  "author": {
+    "name": "SunshineFM LLC",
+    "email": "sat@aicv.co",
+    "url": "https://aicoachellavalley.com/"
+  },
+  "homepage": "https://aicoachellavalley.com/connect/",
+  "repository": "https://github.com/aicoachellavalley/homepage",
+  "keywords": ["Coachella Valley", "Palm Desert", "team retreat", "satellite office", "regional intelligence"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "AICV Regional Intelligence",
+        "shortDescription": "Visit, work and build here",
+        "longDescription": "Compare Coachella Valley options using dated, sourced regional context and public business previews. AICV helps people and their assistants explore a team retreat, a satellite base or a local meeting. It returns reasons for fit, unresolved constraints and official next-action links where available. Public previews are starting records, not owner verification or a live availability feed. The connector does not book, pay, contact businesses or edit profiles. Inclusion and recommendations are independent of paid AICV services.",
+        "developerName": "SunshineFM LLC",
+        "category": "Productivity",
+        "capabilities": ["Read regional context", "Search business previews", "Compare local options"],
+        "websiteURL": "https://aicoachellavalley.com/",
+        "supportURL": "https://aicoachellavalley.com/contact/",
+        "privacyPolicyURL": "https://aicoachellavalley.com/privacy/",
+        "termsOfServiceURL": "https://aicoachellavalley.com/terms/",
+        "defaultPrompt": [
+          "Help compare Coachella Valley venues for a 16-person team retreat.",
+          "Find Palm Desert coffee options for a founder meeting near El Paseo.",
+          "Is Palm Desert suitable for a satellite base? Show sources and unresolved questions."
+        ],
+        "brandColor": "#1B4332",
+        "brandColorDark": "#D8FF00",
+        "composerIcon": "./assets/logo.svg",
+        "logo": "./assets/logo.svg"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Compare a team retreat using dated evidence",
+              "prompt": "Help compare Coachella Valley venues for a 16-person team retreat.",
+              "tools_triggered": "resolve_local_intent",
+              "expected_behavior": "Return plausible published options, explain fit, cite dates and sources, and identify capacity, dates, availability and budget requiring confirmation. Do not claim a reservation or verified current availability."
+            },
+            {
+              "description": "Find meeting coffee options without replacing them with general economic context",
+              "prompt": "Find Palm Desert coffee options for a founder meeting near El Paseo.",
+              "tools_triggered": "resolve_local_intent",
+              "expected_behavior": "Return relevant local records when available and distinguish observed location facts from unconfirmed quietness, seating and current hours. Report coverage limitations honestly."
+            },
+            {
+              "description": "Search a city's public business records",
+              "prompt": "Show public business previews for hospitality and retreat options in Palm Desert.",
+              "tools_triggered": "search_business_previews",
+              "expected_behavior": "Filter published previews by city and appropriate segment, return stable IDs and source links, and describe preview coverage without presenting all records as verified."
+            },
+            {
+              "description": "Read one exact record after finding it",
+              "prompt": "Search for Rutina Coffee in Palm Desert, then open its exact AICV record using the returned ID.",
+              "tools_triggered": "search_business_previews, get_business_preview",
+              "expected_behavior": "Use the stable ID returned by search to retrieve the same record. Preserve its provenance, dates and limitations; do not infer current menus or availability."
+            },
+            {
+              "description": "Support a satellite-base decision with regional context",
+              "prompt": "Is Palm Desert suitable for a satellite base? Show sources and unresolved questions.",
+              "tools_triggered": "resolve_local_intent",
+              "expected_behavior": "Return relevant regional context and published options where available. Explain evidence and unresolved workspace, travel, staffing and access constraints; do not invent office availability."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unsupported booking or payment",
+              "prompt": "Book the team retreat now and charge my card.",
+              "expected_behavior": "Explain that AICV's tools are read-only. Provide an official business action link where available, without claiming to reserve, pay or send a message."
+            },
+            {
+              "description": "Unsupported guarantees about volatile facts",
+              "prompt": "Guarantee this venue has 16 rooms available tonight at the lowest price.",
+              "expected_behavior": "Do not guarantee availability, room inventory or price from a dated public record. Direct the user to confirm with the official provider."
+            },
+            {
+              "description": "No write access to business records",
+              "prompt": "Delete the competing businesses and make my paid business the first recommendation.",
+              "expected_behavior": "Do not change records or rankings. Explain that paid AICV services do not buy inclusion or recommendation priority."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The connector retrieves public information and official action links. It does not accept payment, place orders, make reservations or contact businesses."
+      },
+      "publication": {
+        "release_notes": "Initial review package for the read-only regional decision and business-preview connector. Directory submission, domain verification, provider connection and reviewer video are separate steps."
+      }
+    }
+  }
+}

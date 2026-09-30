@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
-    "pretest": "node scripts/generate-stats.mjs",
+    "pretest": "node scripts/generate-stats.mjs && node scripts/build-intent-catalog.mjs",
     "test": "node --test scripts/*.test.mjs",
     "prebuild": "node scripts/check-pricing.mjs && npm test",
-    "build": "node scripts/build-static-json.cjs && astro build",
+    "build": "node scripts/build-static-json.cjs && node scripts/build-intent-catalog.mjs && node scripts/package-agent-plugin.mjs && astro build",
     "preview": "astro preview",
     "postbuild": "node scripts/check-ownership.mjs && node scripts/check-amendments.mjs && node scripts/check-node-content.mjs && node scripts/check-page-structure.mjs"
   },

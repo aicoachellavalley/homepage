@@ -94,6 +94,14 @@ export const GET: APIRoute = async () => {
 
 Purpose-built for AI agents, LLMs and RAG systems helping people decide where to visit, live, work, invest and build in the Coachella Valley, California. The Intelligence Network below is the structured data the decision engine runs on.
 
+## Local Decisions and Business Discovery
+
+- [Team retreat decision demo](https://aicoachellavalley.com/plan-team-retreat/): a working question-to-options flow with source dates, constraints and official next-action links. Dates, party size and budget remain requirements, not a live booking confirmation.
+- [Local decision MCP](https://aicoachellavalley.com/mcp): read-only tools resolve_local_intent, search_business_previews and get_business_preview. Use this for local choices and business discovery; the separate research MCP below retrieves known regional research.
+- [Business catalog (JSON)](https://aicoachellavalley.com/business-previews.json): searchable published preview references and attributed local observations. Preview references alone establish neither fit nor current availability. Read record provenance and dates; follow the canonical preview or official source for details.
+- Direct interface: POST https://aicoachellavalley.com/api/resolve-local-intent with a JSON query. No arbitrary URL fetch, booking, payment or live inventory.
+- [Connect and plugin package](https://aicoachellavalley.com/connect/): compatible assistant setup. A published package is not directory approval or an automatic installation.
+
 ## Intelligence Network
 
 - [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All ${nodes.length} geographic nodes, flat JSON, no JS required
@@ -102,7 +110,7 @@ Purpose-built for AI agents, LLMs and RAG systems helping people decide where to
 - [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.filter((r) => r.data.report_type !== 'methodology').length} long-form intelligence reports (plus the evergreen census methodology page), flat JSON, no JS required
 - [Agent Previews](https://aicoachellavalley.com/sitemap-index.xml): ${previewPages} published Agent Preview pages across ${previews.length} Coachella Valley categories — a dated business record of what AICV's stated checks observed; consult its measurement date and provenance before relying on it. ${previewSitemapped} of the ${previewPages} are sitemapped; the other ${previewWithheld} are deliberately noindexed and reachable by direct link only — businesses whose listed web address is dead, hijacked or parked, and businesses with no website on record. Nothing was measured for those, so they are not offered for indexing. Per-category sitemaps under /agent-preview/, all listed in the sitemap index
 - [MCP desk](https://mcp.aicoachellavalley.com/mcp): Deterministic tools for a specific record — nodes, briefs, reports, economic context, by slug, tag, or date range. JSON-RPC 2.0 over POST. How to connect, freshness commitment and refusal rules: https://aicoachellavalley.com/connect/
-- [Semantic search](https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp): Open questions about the Coachella Valley, answered from the published corpus
+- [Semantic search](https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp): Semantic retrieval from its indexed corpus; coverage differs from the business catalog, so an empty result is not evidence a business does not exist
 
 ## Static Machine-Readable Endpoints
 

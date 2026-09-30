@@ -1,0 +1,419 @@
+{
+  "source_repository": "https://github.com/aicoachellavalley/agent-ready-palm-desert",
+  "source_path": "data/entities.json",
+  "source_commit": "dfe4f73d80eb30478b063e00f894a2388fa566d6",
+  "snapshot_date": "2026-09-01",
+  "imported_at": "2026-09-30",
+  "date_note": "Snapshot observation date from the demo, not a September 30 recheck of business facts. Local signals are AICV observations; current conditions require confirmation. Numeric demo fit scores are intentionally not imported.",
+  "records": [
+    {
+      "id": "acrisure-arena",
+      "name": "Acrisure Arena",
+      "kind": "node",
+      "recordType": "Event venue",
+      "accessState": "Ticketed",
+      "category": "entertainment",
+      "summary": "The Coachella Valley's first major professional sports and entertainment venue and home of the Coachella Valley Firebirds.",
+      "bestFor": [
+        "retreat",
+        "relocation"
+      ],
+      "agentSignal": "A large-format evening anchor for executive groups and a strong quality-of-life signal for relocating teams.",
+      "localSignal": "Use it to test whether a relocating team can find major-event energy without driving to Los Angeles; it is a regional evening anchor, not a walkable Palm Desert stop.",
+      "constraints": "Event-dependent; confirm the calendar before routing a group.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/acrisure-arena/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "bighorn-golf-club",
+      "name": "Bighorn Golf Club",
+      "kind": "node",
+      "recordType": "Private club",
+      "accessState": "Restricted access",
+      "itineraryEligible": false,
+      "category": "golf",
+      "summary": "Ultra-private, member-owned residential golf community set above the valley floor with two championship courses.",
+      "bestFor": [
+        "relocation",
+        "retreat"
+      ],
+      "agentSignal": "A high-privacy residential and relationship network for principals evaluating the luxury corridor.",
+      "localSignal": "Treat Bighorn as evidence of Palm Desert's private wealth and relationship layer, not as a place an agent can casually recommend without a host.",
+      "constraints": "Private, residency-linked access; not a general-public venue.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/bighorn-golf-club/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "cook-street-university-row",
+      "name": "Cook Street / University Row",
+      "kind": "node",
+      "recordType": "Innovation corridor",
+      "accessState": "Orientation",
+      "category": "innovation",
+      "summary": "The connector between Highway 111 and North Palm Desert, linking university campuses, the ERC, and the city's live-work-play vision.",
+      "bestFor": [
+        "satellite-office",
+        "build"
+      ],
+      "agentSignal": "AICV's first routing choice for founders evaluating a satellite presence or investment in the local innovation layer.",
+      "localSignal": "On the ground, this reads more clearly as a chain of institutional anchors than as a finished innovation district; drive the corridor end to end before judging it.",
+      "constraints": "The corridor has institutional assets but no single active innovation-district operator.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/cook-street-university-row/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "desert-willow-golf-resort",
+      "name": "Desert Willow Golf Resort",
+      "kind": "node",
+      "recordType": "Golf + event venue",
+      "accessState": "Public \u00b7 reservation",
+      "category": "golf",
+      "summary": "Palm Desert's city-owned championship golf and event facility, positioned between private clubs and commercial hotels.",
+      "bestFor": [
+        "retreat",
+        "relocation"
+      ],
+      "agentSignal": "The accessible golf and event anchor when a group needs a Palm Desert experience without private-club access.",
+      "localSignal": "The city-owned format makes Desert Willow one of the clearest places to compare public access with Palm Desert's private-club culture.",
+      "constraints": "Tee times and event capacity are seasonal; verify live availability.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/desert-willow-golf-resort/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "education-corridor",
+      "name": "Education Corridor",
+      "kind": "node",
+      "recordType": "Regional concept",
+      "accessState": "Not a destination",
+      "listedInExplorer": false,
+      "itineraryEligible": false,
+      "category": "education",
+      "summary": "Palm Desert's concentration of higher-education institutions anchoring the Coachella Valley's workforce and AI pipeline.",
+      "bestFor": [
+        "satellite-office",
+        "build",
+        "relocation"
+      ],
+      "agentSignal": "The human-capital layer for founders testing hiring, training, partnerships, or long-term regional presence.",
+      "localSignal": "Do not route to the Education Corridor as if it were a campus. Use it to understand the geography, then choose a specific institution and confirmed contact.",
+      "constraints": "Partnership pathways vary by institution and require direct confirmation.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/education-corridor/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "el-paseo",
+      "name": "El Paseo",
+      "kind": "node",
+      "recordType": "District",
+      "accessState": "Public",
+      "category": "retail",
+      "summary": "A nine-block luxury shopping, dining, and gallery district with more than 300 businesses.",
+      "bestFor": [
+        "retreat",
+        "relocation",
+        "satellite-office"
+      ],
+      "agentSignal": "The daily-life and client-entertainment test for founders evaluating Palm Desert beyond resort walls.",
+      "localSignal": "Don't evaluate El Paseo only as luxury retail. It is also a useful test of whether Palm Desert works for informal meetings, coffee, client hosting, and day-to-day founder life.",
+      "constraints": "Activity is highly seasonal; individual merchants control their own hours and booking paths.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/el-paseo/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "hotel-paseo",
+      "name": "Hotel Paseo, Autograph Collection",
+      "kind": "node",
+      "recordType": "Hotel",
+      "accessState": "Reservation",
+      "category": "hospitality",
+      "summary": "A 150-room boutique hotel one block from El Paseo with meeting capacity for up to 300 guests.",
+      "bestFor": [
+        "retreat",
+        "relocation"
+      ],
+      "agentSignal": "The default boutique accommodation anchor for an El Paseo-centered scouting trip or executive retreat.",
+      "localSignal": "Its scouting value is proximity: a team can use the boutique-scale property as a base and step into El Paseo instead of learning Palm Desert only from inside a resort.",
+      "constraints": "Live room, meeting, and rate availability must be verified with Marriott or the property.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/hotel-paseo/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "jw-marriott-desert-springs",
+      "name": "JW Marriott Desert Springs Resort & Spa",
+      "kind": "node",
+      "recordType": "Resort",
+      "accessState": "Reservation",
+      "category": "hospitality",
+      "summary": "A 450-acre full-service resort with two golf courses, extensive meeting space, tennis, spa, and resort infrastructure.",
+      "bestFor": [
+        "retreat",
+        "relocation"
+      ],
+      "agentSignal": "The first call for large-scale corporate retreats that need conference infrastructure in Palm Desert.",
+      "localSignal": "Use it when logistics need to disappear into one property, but pair it with an off-resort stop or the group may learn very little about everyday Palm Desert.",
+      "constraints": "Large resort format; it is less useful for founders prioritizing a walkable, neighborhood-scale test.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/jw-marriott-desert-springs/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "mccallum-theatre",
+      "name": "McCallum Theatre",
+      "kind": "node",
+      "recordType": "Performance venue",
+      "accessState": "Ticketed",
+      "category": "cultural",
+      "summary": "The Coachella Valley's primary performing-arts venue, presenting Broadway, classical, jazz, comedy, and dance in a 1,127-seat hall.",
+      "bestFor": [
+        "retreat",
+        "relocation"
+      ],
+      "agentSignal": "A cultural-quality anchor for evaluating the valley as a place to retain executives and host evening programming.",
+      "localSignal": "The McCallum helps answer the relocation question 'What would we actually do on a weeknight?'\u2014but only when the performance calendar is active.",
+      "constraints": "The main performance season runs primarily during the cooler months.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/mccallum-theatre/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "north-palm-desert-development-zone",
+      "name": "North Palm Desert Development Zone",
+      "kind": "node",
+      "recordType": "Development area",
+      "accessState": "Planning handoff",
+      "itineraryEligible": false,
+      "category": "economic",
+      "summary": "A 400-plus-acre growth frontier around the university campuses and I-10, targeted for housing, infrastructure, and commercial expansion.",
+      "bestFor": [
+        "build",
+        "satellite-office"
+      ],
+      "agentSignal": "The strongest physical growth container for a founder moving from scouting to site selection.",
+      "localSignal": "The scale is easiest to understand from Cook Street and I-10, but pair the drive with a city briefing because much of the signal is future-facing.",
+      "constraints": "AICV notes active public investment but no active AI or innovation programming in the zone itself.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/north-palm-desert-development-zone/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "palm-desert-economic-development",
+      "name": "Palm Desert Economic Development",
+      "kind": "node",
+      "recordType": "Civic handoff",
+      "accessState": "Appointment",
+      "category": "economic",
+      "summary": "The city's economic-development infrastructure, special projects, and business-recruitment resources.",
+      "bestFor": [
+        "build",
+        "satellite-office"
+      ],
+      "agentSignal": "The civic handoff for incentives, city processes, recruitment resources, and official development conversations.",
+      "localSignal": "Arrive with a defined site, timeline, jobs question, or permitting issue; without a concrete decision, the conversation is likely to remain general.",
+      "constraints": "Treat this as a routing node; current programs and eligibility require city confirmation.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/palm-desert-economic-development/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "gardens-on-el-paseo",
+      "name": "The Gardens on El Paseo",
+      "kind": "node",
+      "recordType": "Retail district",
+      "accessState": "Public",
+      "category": "retail",
+      "summary": "An open-air luxury retail and dining destination anchoring El Paseo with flagship designer boutiques.",
+      "bestFor": [
+        "retreat",
+        "relocation"
+      ],
+      "agentSignal": "A concentrated test of the luxury retail, dining, and client-hosting layer within a walkable district.",
+      "localSignal": "Use The Gardens as more than a luxury-shopping stop: it concentrates coffee, walkability, and client hosting, while its Simon ownership makes the property relevant to larger retail and technology conversations.",
+      "constraints": "The property and individual tenants have separate digital and booking surfaces.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/gardens-on-el-paseo/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "living-desert",
+      "name": "The Living Desert Zoo and Gardens",
+      "kind": "node",
+      "recordType": "Cultural attraction",
+      "accessState": "Ticketed",
+      "category": "cultural",
+      "summary": "A 1,200-acre zoo and botanical garden focused on desert ecosystems, wildlife conservation, and regional flora.",
+      "bestFor": [
+        "retreat",
+        "relocation"
+      ],
+      "agentSignal": "A family and outdoor-quality-of-life anchor that makes a scouting trip feel rooted in the desert rather than in a generic resort.",
+      "localSignal": "This becomes a stronger relocation signal when you use it to test a family weekend routine and Palm Desert's desert identity; locals know to schedule around the heat.",
+      "constraints": "Outdoor conditions and seasonal temperatures should shape visit timing.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/living-desert/",
+      "sourceType": "AICV node"
+    },
+    {
+      "id": "csusb-palm-desert-campus",
+      "name": "CSUSB Palm Desert Campus",
+      "kind": "entity",
+      "recordType": "University campus",
+      "accessState": "Appointment",
+      "category": "education",
+      "summary": "A university anchor on Cook Street and part of the institutional base for entrepreneurship and workforce programming in Palm Desert.",
+      "bestFor": [
+        "satellite-office",
+        "build",
+        "relocation"
+      ],
+      "agentSignal": "Relevant to university partnerships, entrepreneurship programming, and the founder-economy thesis around Cook Street.",
+      "localSignal": "The campus matters through specific introductions and programs, not a generic drive-by tour; pair it with a Cook Street corridor orientation.",
+      "constraints": "Program and partnership availability must be confirmed with the campus.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/education-corridor/",
+      "sourceType": "AICV-cited entity"
+    },
+    {
+      "id": "ucr-palm-desert-center",
+      "name": "UCR Palm Desert Center",
+      "kind": "entity",
+      "recordType": "University center",
+      "accessState": "Appointment",
+      "category": "education",
+      "summary": "A University of California institutional presence in the Cook Street education and innovation corridor.",
+      "bestFor": [
+        "satellite-office",
+        "build"
+      ],
+      "agentSignal": "A potential research, extension, and regional partnership touchpoint for incoming founders.",
+      "localSignal": "Treat UCR as a relationship node whose value appears through the right program or contact, not as an open-ended drop-in destination.",
+      "constraints": "Specific programs and access vary; verify directly with UCR.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/cook-street-university-row/",
+      "sourceType": "AICV-cited entity"
+    },
+    {
+      "id": "college-of-the-desert",
+      "name": "College of the Desert",
+      "kind": "entity",
+      "recordType": "College campus",
+      "accessState": "Appointment",
+      "category": "education",
+      "summary": "The region's community-college anchor and a core part of Palm Desert's education and workforce corridor.",
+      "bestFor": [
+        "satellite-office",
+        "build",
+        "relocation"
+      ],
+      "agentSignal": "Relevant to practical workforce pathways, training partnerships, and long-term talent development.",
+      "localSignal": "College of the Desert is most useful when the founder brings a named workforce or training need instead of asking for a general campus overview.",
+      "constraints": "Workforce partnership scope requires direct institutional confirmation.",
+      "sourceUrl": "https://aicoachellavalley.com/nodes/education-corridor/",
+      "sourceType": "AICV-cited entity"
+    },
+    {
+      "id": "entrepreneurship-resource-center",
+      "name": "Entrepreneurship Resource Center",
+      "kind": "entity",
+      "recordType": "Program location",
+      "accessState": "Event-confirmed",
+      "itineraryEligible": false,
+      "category": "innovation",
+      "summary": "A city-supported small-business center at 37023 Cook Street that also houses AICV's office and sustained AI workshop programming.",
+      "bestFor": [
+        "satellite-office",
+        "build"
+      ],
+      "agentSignal": "For active AI workshops and founder office hours, route to AICV-operated programming at this address\u2014not to the ERC as an independently resourced ecosystem operator.",
+      "localSignal": "AICV operates workshops and founder programming here, which makes this one of the places where Palm Desert's emerging AI community is actually visible in person. Visit only around a confirmed program or introduction.",
+      "constraints": "AICV documents institutional strain and warns against treating the ERC itself as an active, well-resourced founder destination; verify current status before travel.",
+      "sourceUrl": "https://aicoachellavalley.com/briefs/2025-04-01-erc-workshop-series/",
+      "sourceType": "AICV-cited entity"
+    },
+    {
+      "id": "shops-at-palm-desert",
+      "name": "The Shops at Palm Desert",
+      "kind": "entity",
+      "recordType": "Redevelopment site",
+      "accessState": "Planning handoff",
+      "itineraryEligible": false,
+      "category": "economic",
+      "summary": "A major commercial property and redevelopment signal along the Highway 111 corridor, with mixed-use planning work documented by AICV.",
+      "bestFor": [
+        "build",
+        "satellite-office"
+      ],
+      "agentSignal": "A live case study for commercial repositioning and the city's evolving development path.",
+      "localSignal": "Visit to understand a property in transition, not for a polished retail experience; the gap between today's center and the redevelopment vision is the useful signal.",
+      "constraints": "Redevelopment status is time-sensitive; use the latest AICV brief and verify with the city or owner.",
+      "sourceUrl": "https://www.palmdesert.gov/businesses/land-sales",
+      "sourceType": "City of Palm Desert current listing; AICV-cited entity"
+    },
+    {
+      "id": "rutina-coffee",
+      "name": "Rutina Coffee",
+      "kind": "entity",
+      "recordType": "Coffee + meeting stop",
+      "accessState": "Public",
+      "category": "quality-of-life",
+      "summary": "A boutique coffee shop on San Pablo Avenue built around specialty coffee, matcha, design, and community connection.",
+      "bestFor": [
+        "satellite-office",
+        "relocation",
+        "retreat"
+      ],
+      "agentSignal": "A routeable informal meeting stop and useful entry point for evaluating the emerging San Pablo corridor.",
+      "localSignal": "One of AICV's preferred meeting stops: a quieter setting than some busier nearby cafes, with thoughtful coffee and matcha options that make it easy to have an actual conversation.",
+      "constraints": "Hours, seating, and peak-time noise are live conditions; confirm before routing a time-sensitive meeting.",
+      "sourceUrl": "https://www.rutinacafe.com/home",
+      "sourceType": "AICV local signal + official source"
+    },
+    {
+      "id": "sottovoce-cafe",
+      "name": "Sottovoce Cafe at The Gardens",
+      "kind": "entity",
+      "recordType": "Coffee + conversation stop",
+      "accessState": "Public",
+      "category": "quality-of-life",
+      "summary": "An Italian-style coffee and wine bar on the lower level of The Gardens on El Paseo.",
+      "bestFor": [
+        "satellite-office",
+        "relocation",
+        "retreat"
+      ],
+      "agentSignal": "A calm El Paseo meeting option for testing coffee, conversation, and client-hosting life within the district.",
+      "localSignal": "Sottovoce works particularly well when you want good coffee and enough calm to actually have a conversation; it also gives a close-up view of The Gardens as an evolving property signal.",
+      "constraints": "Seating and atmosphere vary by time of day; verify current hours and allow for seasonal El Paseo traffic.",
+      "sourceUrl": "https://www.simon.com/mall/the-gardens-on-el-paseo/stores/sottovoce-cafe",
+      "sourceType": "AICV local signal + official source"
+    },
+    {
+      "id": "hotel-paseo-lobby",
+      "name": "Hotel Paseo Lobby + Cafe Paseo",
+      "kind": "entity",
+      "recordType": "Hotel lobby meeting stop",
+      "accessState": "Public hotel space",
+      "category": "quality-of-life",
+      "summary": "A relaxed lobby and cafe setting at Hotel Paseo with communal seating, coffee, quick bites, and immediate access to El Paseo.",
+      "bestFor": [
+        "satellite-office",
+        "relocation",
+        "retreat"
+      ],
+      "agentSignal": "A low-friction place to meet before or after an El Paseo scouting stop without booking a formal workspace.",
+      "localSignal": "The in-house coffee operation has changed over time, but the lobby remains an easy, comfortable and under-the-radar place to sit down with someone.",
+      "constraints": "This is an informal hotel-lobby option, not a reservable coworking space; confirm current cafe service and respect guest activity.",
+      "sourceUrl": "https://www.hotelpaseo.com/",
+      "sourceType": "AICV local signal + official source"
+    },
+    {
+      "id": "bump-and-grind-trail",
+      "name": "Bump and Grind Trail",
+      "kind": "entity",
+      "recordType": "Outdoor + wellness anchor",
+      "accessState": "Public \u00b7 dawn to dusk",
+      "category": "quality-of-life",
+      "summary": "A popular Palm Desert-area mountain trail used for a compact workout and broad views across the city and Coachella Valley.",
+      "bestFor": [
+        "relocation",
+        "retreat"
+      ],
+      "agentSignal": "The clearest routeable outdoor stop for testing whether desert fitness, terrain, and landscape belong in a founder's weekly life.",
+      "localSignal": "This is AICV's outdoor anchor: a regular local hike that gets you away from the screen and finishes with a view across Palm Desert and the Coachella Valley from east to west.",
+      "constraints": "Desert heat, daylight, trail conditions, parking, and physical ability matter; check current guidance and never route a midday summer hike.",
+      "sourceUrl": "https://www.palmdesert.gov/community/parks",
+      "sourceType": "AICV local signal + official source"
+    }
+  ]
+}

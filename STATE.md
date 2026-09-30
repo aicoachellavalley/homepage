@@ -4,6 +4,37 @@
 
 ## 2026-09-30 — DRAFT: assessment cleanup
 
+Fourth pass, authorized by Sat's request to use agents and implement the
+retrieval/distribution follow-up, parent `8369ad4`: added a shared read-only
+local-decision runtime in Cloudflare Pages Functions at `/mcp` and
+`/api/resolve-local-intent`. It derives 1,568 preview references, nine additional
+attributed Palm Desert observations, and 79 regional nodes from committed
+sources. These are lookup counts, not unique-business or newly checked-fact
+counts. Source dates remain intact. Named/local coffee queries no longer use a
+regional-economy fallback in this doorway; unknown and out-of-coverage queries
+return no match. This does not modify the inaccessible legacy MCP Worker.
+
+Added `/plan-team-retreat/`: an editable question, three primary-source-backed
+resort options, fit/constraints, and a prepared brief for an official group
+planning endpoint. No booking, payment or live-availability execution. Corrected
+Sensei's published group pathway, stay and age policies with a dated targeted
+notice; broader source-review date remains unchanged. Homepage and agent
+access guides link to the decision flow, catalog and new connector.
+
+Prepared a reproducible portable assistant-plugin ZIP, published metadata,
+five positive/three negative reviewer cases, and `/privacy/`. Canonical
+portable schemas validate and the official MCP SDK passes initialization,
+read-only tool discovery and retrieval controls in-process. Directory review,
+publisher/domain verification, recording and provider-account installation
+are separate steps, not claimed as completed. Minimal allowlisted events log
+retrieval outcomes/counts and action-link openings without raw queries or
+identities; no verified-bot, citation, unique-user or booking metric is claimed.
+
+Validation: 81 tests and full build/postbuild gates pass; 314 HTML pages and
+6,058 static internal links checked. Preview network and desktop UI checks
+follow branch upload; main is unchanged. A 30-day review task starts October
+30 in America/Los_Angeles and prepares sourced updates for review.
+
 Third pass, following Sat's explicit copy approvals, parent `b7833d5`: MVA
 copy now explains the public record, unclaimed starting previews, activation
 and official action links. Premium keeps daily public-signal monitoring from

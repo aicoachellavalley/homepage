@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import org from '../data/org.json';
+
+const title = 'Privacy — AICV Regional Intelligence';
+const description = 'How AICV handles requests to its public regional intelligence and read-only assistant connector.';
+const canonicalUrl = `${org.url}privacy/`;
+---
+
+<Base title={title} description={description} canonicalUrl={canonicalUrl}>
+  <nav aria-label="Main navigation"><a href="/">AICV · AI Coachella Valley</a><a href="/connect/">Connect an assistant →</a></nav>
+  <header><p>Effective September 30, 2026</p><h1>Privacy for regional intelligence</h1><p>This notice covers AICV’s public regional intelligence pages and read-only assistant connector at <code>/mcp</code>, comparison API at <code>/api/resolve-local-intent</code>, and limited usage events at <code>/api/usage</code>. AICV is a product and service of {org.owner}.</p></header>
+  <main>
+    <section><h2>What an assistant sends</h2><p>When you use the connector, your assistant sends the question or filters needed to retrieve public AICV records. These can include a place, business name, city or group size. Share only the information needed for the local decision. Do not include passwords, payment details, confidential business information or sensitive personal information.</p></section>
+    <section><h2>What AICV does with that request</h2><p>The connector uses the request to search published records and return relevant facts, source links, dates and limitations. Its application does not save raw questions, create user accounts, or keep a conversation history. Its tools are read-only: they do not change a business record, contact a business, make a reservation or process a payment.</p><p>Application logs may record limited operational events, such as the tool used, whether results were returned, the result count, or an official-action link being opened. These events do not include the raw question, a business name, a destination URL or a client identity. A link-opening event is not evidence of a completed booking.</p><p>Our hosting and network providers may process technical request information, including IP addresses and server logs, to deliver and protect the service. This notice does not claim that those infrastructure logs are absent or specify an unverified retention period.</p></section>
+    <section><h2>Your assistant and business websites</h2><p>Your assistant provider handles your conversation under its own terms and privacy policy. When you open an official business or booking link, that website handles your information under its own policy. AICV does not receive a booking confirmation merely because you follow that link.</p></section>
+    <section><h2>Questions, corrections and other AICV services</h2><p>Email sent to AICV contains the information you choose to share. We use it to respond to your question or correction. Ask us about an email or a published record at <a href={`mailto:${org.email}`}>{org.email}</a>.</p><p>This connector notice does not describe the separate free website diagnostic, business profile purchase, payment provider or experimental AIQnA service. Check the relevant service information and <a href="/terms/">terms</a>, or <a href="/contact/">contact Sat</a> before sharing information with those services.</p></section>
+  </main>
+  <Footer variant="full" />
+</Base>
+
+<style is:global>
+  body { margin: 0; background: #FAFAF7; color: #122B22; font-family: system-ui, sans-serif; }
+  nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; padding: 24px; background: #122B22; }
+  nav a { color: #D8FF00; }
+  header, main { max-width: 760px; padding: 32px 24px; margin: auto; }
+  header { padding-top: 52px; }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; }
+  h2 { font-size: 1.25rem; }
+  p { line-height: 1.75; }
+  section { margin-bottom: 32px; }
+  main a { color: #1B4332; text-underline-offset: 3px; }
+</style>

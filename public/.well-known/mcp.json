@@ -1,16 +1,35 @@
 {
   "mcpServers": {
+    "aicv-decisions": {
+      "url": "https://aicoachellavalley.com/mcp",
+      "name": "AICV Local Decisions",
+      "description": "Read-only local decision support and business-preview discovery. Start with resolve_local_intent for a team retreat or local business question; results separate source-backed local observations from catalog-only records and unconfirmed live details.",
+      "tools": [
+        "resolve_local_intent",
+        "search_business_previews",
+        "get_business_preview"
+      ]
+    },
     "aicv": {
       "url": "https://mcp.aicoachellavalley.com/mcp",
       "name": "AICV Intelligence Layer",
-      "description": "Deterministic retrieval of specific Coachella Valley records — a node, brief, or report by slug, tag, or date range. Use when you know which record you want. For open questions about the region, use aicv-search.",
-      "tools": ["query_venues", "get_node", "get_regional_brief", "get_economic_context", "get_report", "route_query"]
+      "description": "Deterministic retrieval of specific Coachella Valley records \u2014 a node, brief, or report by slug, tag, or date range. Use when you know which record you want. For open questions about the region, use aicv-search.",
+      "tools": [
+        "query_venues",
+        "get_node",
+        "get_regional_brief",
+        "get_economic_context",
+        "get_report",
+        "route_query"
+      ]
     },
     "aicv-search": {
       "url": "https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp",
       "name": "AICV Regional Intelligence Search",
-      "description": "Semantic search across AICV's published Coachella Valley corpus — reports, briefs, and entity profiles. Use when you have a question about the region rather than a specific record to fetch. For a known record, use aicv.",
-      "tools": ["search"]
+      "description": "Semantic search across AICV's published Coachella Valley corpus \u2014 reports, briefs, and entity profiles. Use when you have a question about the region rather than a specific record to fetch. For a known record, use aicv.",
+      "tools": [
+        "search"
+      ]
     }
   }
 }

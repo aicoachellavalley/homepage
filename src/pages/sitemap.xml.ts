@@ -44,6 +44,8 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/connect/',               changefreq: 'monthly', priority: '0.8', lastmod: pd['/connect/'] },
     { url: 'https://aicoachellavalley.com/about/',                 changefreq: 'monthly', priority: '0.8', lastmod: pd['/about/'] },
     { url: 'https://aicoachellavalley.com/contact/',               changefreq: 'monthly', priority: '0.7', lastmod: pd['/contact/'] },
+    { url: 'https://aicoachellavalley.com/plan-team-retreat/',     changefreq: 'monthly', priority: '0.9', lastmod: pd['/plan-team-retreat/'] },
+    { url: 'https://aicoachellavalley.com/privacy/',               changefreq: 'monthly', priority: '0.4', lastmod: pd['/privacy/'] },
     { url: 'https://aicoachellavalley.com/terms/',                 changefreq: 'monthly', priority: '0.5', lastmod: pd['/terms/'] },
     { url: 'https://aicoachellavalley.com/cvep-what-happened/',    changefreq: 'monthly', priority: '0.8' },
   ];
