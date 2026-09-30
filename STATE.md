@@ -16,7 +16,15 @@ Sat's signed data-center report has Person attribution and an About bio link;
 other reports and briefs retain institutional attribution. No named reviewer
 was inferred. Copy-edit dates agree across pages, JSON-LD, reports.json,
 sitemap and llms-full.txt. 66 tests and the full build pass; 312 HTML pages and
-5,696 static internal links pass. Desktop/mobile preview review follows push.
+5,696 static internal links pass. Desktop preview review completed for the
+journey, Contact, service promise/Terms link, and report section navigation.
+Fixed low-contrast publication dates in dark report/brief headers and the
+report back-link. Mobile visual review remains pending: the available browser
+does not expose viewport resizing. Public HTTP reads of the live homepage and
+robots.txt return 200 and bot allowances are present; private Cloudflare SAT
+settings and access for every external crawler remain unverified. The working
+tree for this final review follows uploaded commit `ce4b5f0` (same tree as the
+local second-pass commit). No production merge has occurred.
 
 Prepared on `codex/site-assessment-cleanup-20260930`, based on `74fdca5`;
 not released to `main`. Collection templates emit one H1 while retaining the
@@ -32,7 +40,7 @@ pages and 5,514 static internal links; deliberate duplicate-H1, missing-route
 and missing-anchor controls fail as expected. Preview-service routes are
 excluded; the assessment's 18% figure and live crawler access remain unverified.
 No research counts, findings, membership pricing or service scope changed.
-Browser visual QA remains pending: Chromium was unavailable in this workspace.
+The first-pass browser limitation is resolved for desktop review above.
 
 ## 2026-09-22 — APPROVED SOURCE RELEASE: /about/ + homepage JSON-LD de-stale
 

@@ -148,7 +148,7 @@ const briefSchema = {
       font-size: 0.75rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--pine-light);
+      color: var(--sand-dark);
       margin: 6px 0 0;
     }
     .brief-date {
@@ -156,9 +156,11 @@ const briefSchema = {
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--pine-light);
+      color: var(--sand-dark);
       margin-bottom: 10px;
     }
+    .brief-byline { font-size: 0.85rem; color: var(--sand-dark); margin-bottom: 16px; }
+    .brief-byline a { color: inherit; text-underline-offset: 0.2em; }
     .brief-title {
       font-family: 'Syne', sans-serif;
       font-size: 1.75rem;
@@ -295,7 +297,7 @@ const briefSchema = {
         <p class="brief-updated">Updated {formattedModified}</p>
       )}
       <h1 class="brief-title">{title}</h1>
-      <p class="brief-date">By <a href="/about/">AI Coachella Valley</a></p>
+      <p class="brief-byline">By <a href="/about/">AI Coachella Valley</a></p>
       {tags && tags.length > 0 && (
         <div class="tag-row">
           {tags.map((tag: string) => (
