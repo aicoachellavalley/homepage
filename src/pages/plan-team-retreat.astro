@@ -194,8 +194,16 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
     });
     document.querySelector('#copy-brief')?.addEventListener('click', async () => {
       if (!brief || !copyStatus) return;
-      try { await navigator.clipboard.writeText(brief.value); copyStatus.textContent = 'Brief copied. Nothing has been sent to a venue.'; }
+      let clipboardTimeout: ReturnType<typeof setTimeout>;
+      try {
+        await Promise.race([
+          navigator.clipboard.writeText(brief.value),
+          new Promise((_, reject) => { clipboardTimeout = setTimeout(() => reject(new Error('Clipboard confirmation timed out.')), 2000); }),
+        ]);
+        copyStatus.textContent = 'Brief copied. Nothing has been sent to a venue.';
+      }
       catch { brief.focus(); brief.select(); copyStatus.textContent = 'Your brief is selected. Use your browser’s Copy command.'; }
+      finally { clearTimeout(clipboardTimeout); }
     });
   </script>
   <style>
