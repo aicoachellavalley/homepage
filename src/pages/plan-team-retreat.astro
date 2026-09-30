@@ -36,10 +36,10 @@ const schema = {
     <section id="compare" aria-labelledby="compare-title">
       <p class="eyebrow">Your question, your constraints</p>
       <h2 id="compare-title">What does the team need?</h2>
-      <p>This first comparison covers three researched resorts. Ask about a leadership offsite, a larger team gathering or a wellness retreat. Each answer explains its evidence and what still needs confirmation.</p>
+      <p>This comparison focuses on team retreats at three researched resorts. Ask about a leadership offsite, a larger team gathering or a wellness retreat. Each answer explains its evidence and what still needs confirmation.</p>
       <form id="retreat-form" class="retreat-form">
         <label for="retreat-query">Tell us what you are planning</label>
-        <textarea id="retreat-query" name="query" rows="3" maxlength="1200" required>We’re bringing a leadership team to the Coachella Valley for two nights. We need a private working session and time to reconnect. Which venues should we compare?</textarea>
+        <textarea id="retreat-query" name="query" rows="3" maxlength="1200" required>We’re bringing a leadership team to the Coachella Valley for a two-night retreat. We need a private working session and time to reconnect. Which venues should we compare?</textarea>
         <div class="brief-inputs">
           <label for="retreat-guests">People <input id="retreat-guests" name="group_size" type="number" min="1" max="10000" placeholder="e.g. 12" /></label>
           <label for="retreat-dates">Dates or season <input id="retreat-dates" name="dates" type="text" maxlength="100" placeholder="e.g. November; flexible" /></label>
@@ -149,8 +149,10 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
       const details = [question, dates?.value.trim() ? `Dates: ${dates.value.trim()}.` : '', budget?.value.trim() ? `Budget: ${budget.value.trim()}.` : ''].filter(Boolean).join(' ');
       if (details.length > 1200) { status.textContent = 'Please shorten your question, dates and budget to 1,200 characters combined.'; query.focus(); return; }
       compare.disabled = true; status.textContent = 'Comparing the researched options…'; answer.hidden = true;
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 15000);
       try {
-        const response = await fetch('/api/resolve-local-intent', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({query: details, ...(guests?.value ? {group_size: Number(guests.value)} : {}), limit: 3})});
+        const response = await fetch('/api/resolve-local-intent', {method: 'POST', headers: {'Content-Type': 'application/json'}, signal: controller.signal, body: JSON.stringify({query: details, ...(guests?.value ? {group_size: Number(guests.value)} : {}), limit: 3})});
         if (!response.ok) throw new Error('comparison unavailable');
         const result = await response.json();
         answer.replaceChildren();
@@ -169,13 +171,26 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
           if (item.source_url) { const source = document.createElement('a'); const url = new URL(item.source_url, location.origin); if (url.protocol === 'https:' || url.origin === location.origin) { source.href = url.href; source.textContent = `Source record · ${item.source_checked_at || 'see source date'}`; source.className = 'answer-source'; article.append(source); } }
           answer.append(article);
         }
+        if (!result.results?.length && result.regional_context?.length) {
+          paragraph(answer, 'Your question calls for regional research rather than a venue shortlist. Start with these sources; the retreat comparison remains below.');
+          for (const item of result.regional_context.slice(0, 3)) {
+            const article = document.createElement('article'); article.className = 'answer-option';
+            const name = document.createElement('h4'); name.textContent = item.name; article.append(name);
+            paragraph(article, item.summary || '');
+            if (item.source_url) {
+              const url = new URL(item.source_url, location.origin);
+              if (url.protocol === 'https:' || url.origin === location.origin) { const source = document.createElement('a'); source.href = url.href; source.className = 'answer-source'; source.textContent = `Read the research · ${item.source_checked_at || 'see source date'}`; article.append(source); }
+            }
+            answer.append(article);
+          }
+        }
         list(answer, result.unresolved_constraints || []); list(answer, result.next_questions || []); list(answer, result.limitations || []);
         answer.hidden = false;
-        if (result.results?.length) recordEvent('decision_answer_viewed');
-        status.textContent = result.results?.length ? 'Comparison ready. Review the constraints before choosing.' : 'No suitable match was established. Review the missing details below.';
+        if (result.results?.length || result.regional_context?.length) recordEvent('decision_answer_viewed');
+        status.textContent = result.results?.length ? 'Comparison ready. Review the constraints before choosing.' : result.regional_context?.length ? 'Regional research found. This answer does not establish a venue choice.' : 'No suitable match was established. Review the missing details below.';
       } catch {
         status.textContent = 'The comparison service is unavailable. You can still compare the three sourced options below and prepare a brief.';
-      } finally { compare.disabled = false; }
+      } finally { window.clearTimeout(timeout); compare.disabled = false; }
     });
     document.querySelector('#copy-brief')?.addEventListener('click', async () => {
       if (!brief || !copyStatus) return;

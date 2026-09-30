@@ -8,8 +8,18 @@ export async function onRequest({ request }) {
   if (origin && origin !== new URL(request.url).origin) return new Response(null, { status: 403 });
   if (!(request.headers.get('Content-Type') || '').startsWith('application/json')) return new Response(null, { status: 415 });
   if (Number(request.headers.get('Content-Length') || 0) > 128) return new Response(null, { status: 413 });
-  const bytes = new Uint8Array(await request.arrayBuffer());
-  if (bytes.length > 128) return new Response(null, { status: 413 });
+  const reader = request.body?.getReader();
+  if (!reader) return new Response(null, { status: 400 });
+  const chunks = []; let size = 0;
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    size += value.byteLength;
+    if (size > 128) { await reader.cancel(); return new Response(null, { status: 413 }); }
+    chunks.push(value);
+  }
+  const bytes = new Uint8Array(size); let offset = 0;
+  for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
   let payload;
   try { payload = JSON.parse(new TextDecoder().decode(bytes)); }
   catch { return new Response(null, { status: 400 }); }

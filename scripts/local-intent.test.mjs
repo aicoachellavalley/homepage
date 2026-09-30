@@ -12,6 +12,11 @@ test('catalog exposes all deployed previews, attributed observations and regiona
   assert.equal(catalog.source_counts.published_previews, 1568);
   assert.equal(catalog.source_counts.regional_nodes, 79);
   assert.equal(catalog.previews.filter((r) => r.segment === 'local-observation').length, 9);
+  const preview = catalog.previews.find((r) => r.record_type === 'business-preview');
+  assert.equal(preview.measurement_date, null);
+  assert.match(preview.manifest_generated_at, /^\d{4}-\d{2}-\d{2}$/);
+  assert.equal(preview.publication_verified_at, '2026-08-19');
+  assert.match(preview.measurement_date_note, /no per-entity inspection date/);
   const rutina = getBusinessPreview({ id: 'local/rutina-coffee' }, catalog).record;
   assert.equal(rutina.source_checked_at, '2026-09-01');
   assert.equal(rutina.provenance.imported_at, '2026-09-30');
@@ -56,6 +61,27 @@ test('team retreat uses sourced options, preserves narrow capacity scopes and ex
   assert.match(sixty.results.find((r) => r.id === 'node/ritz-carlton').constraints.join(' '), /Your group exceeds/);
   assert.match(sixty.limitations.join(' '), /48-guest/);
   assert.equal(resolveLocalIntent({ query: 'A team retreat in Palm Desert' }, catalog).status, 'no_match');
+});
+test('the actual retreat form default resolves the work and overnight trip without requiring the retreat keyword', () => {
+  const page = readFileSync(new URL('../src/pages/plan-team-retreat.astro', import.meta.url), 'utf8');
+  const defaultQuery = page.match(/<textarea\b[^>]*\bid="retreat-query"[^>]*>([\s\S]*?)<\/textarea>/)?.[1];
+  assert.ok(defaultQuery, 'The shipped form must supply a default decision question.');
+  // Keep the originally observed browser regression even if page copy evolves.
+  const regressionQuery = 'We’re bringing a leadership team to the Coachella Valley for two nights. We need a private working session and time to reconnect. Which venues should we compare?';
+  for (const decision of [defaultQuery, regressionQuery,
+    'Where can our executive team stay overnight and have a private working session in the Coachella Valley?',
+    'Compare venues for a corporate team gathering with meeting rooms in the Coachella Valley.']) {
+    const result = resolveLocalIntent({ query: decision, group_size: 16 }, catalog);
+    assert.equal(result.intent, 'team-retreat');
+    assert.deepEqual(new Set(result.results.map((r) => r.id)), new Set(['node/ritz-carlton', 'node/grand-hyatt-indian-wells', 'node/sensei-porcupine-creek']));
+    assert.equal(result.results.length, 3);
+    assert.ok(result.results.every((r) => r.record_type === 'researched-retreat-option' && r.official_actions.length === 1 && r.official_actions[0].kind === 'official_group_proposal'));
+  }
+  const coffee = resolveLocalIntent({ query: 'Find a coffee shop for our leadership team meeting in Palm Desert near El Paseo.' }, catalog);
+  assert.equal(coffee.intent, 'local-business');
+  assert.ok(coffee.results.some((r) => r.id === 'local/sottovoce-cafe'));
+  const office = resolveLocalIntent({ query: 'Our leadership team needs a satellite office with meeting rooms in Palm Desert.' }, catalog);
+  assert.equal(office.intent, 'satellite-base');
 });
 test('satellite decision routes research deliberately and calculates freshness at request time', () => {
   const result = resolveLocalIntent({ query: 'Is Palm Desert a satellite office option?' }, catalog);
@@ -107,6 +133,12 @@ test('HTTP doorway returns same result and operational logs contain no queries, 
     assert.equal(JSON.stringify(logs).includes('Palm Desert'), false);
     assert.equal(JSON.stringify(logs).includes('Rutina'), false);
     assert.equal(JSON.stringify(logs).includes(query), false);
+    const satelliteQuery = 'Is Palm Desert a satellite office option?';
+    const satellite = await handleIntentHttp(request({ query: satelliteQuery }), catalog);
+    const satelliteResult = await satellite.json();
+    assert.equal(logs[1].result_count, satelliteResult.results.length + satelliteResult.regional_context.length);
+    assert.ok(logs[1].result_count > 0);
+    assert.equal(JSON.stringify(logs).includes(satelliteQuery), false);
   } finally { console.info = original; }
 });
 test('transaction requests return an explicit no-execution boundary', () => {

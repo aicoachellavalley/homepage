@@ -49,7 +49,8 @@ export async function readBody(request) {
 export function usageEvent(tool, result, transport) {
   if (!TOOLS.some((t) => t.name === tool)) return;
   console.info(JSON.stringify({ event: 'tool_called', tool, outcome: result?.status === 'no_match' || result?.status === 'not_found' ? 'no_match' : result?.error ? 'error' : 'success', transport,
-    result_count: Array.isArray(result?.results) ? result.results.length : result?.record ? 1 : 0 }));
+    result_count: (Array.isArray(result?.results) ? result.results.length : result?.record ? 1 : 0)
+      + (Array.isArray(result?.regional_context) ? result.regional_context.length : 0) }));
 }
 const json = (body, status = 200, extra) => new Response(JSON.stringify(body), { status, headers: responseHeaders(extra) });
 const error = (id, code, message, status = 400) => json({ jsonrpc: '2.0', id, error: { code, message } }, status);

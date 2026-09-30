@@ -86,6 +86,18 @@ export function getBusinessPreview(input, catalog) {
 function nodeContext(catalog, slugs, city) {
   return catalog.nodes.filter((n) => slugs.includes(n.slug) && (!city || city === 'Coachella Valley' || n.city === city || n.city === 'Coachella Valley')).map((n) => publicRecord(n));
 }
+function isTeamRetreatQuestion(q) {
+  // People describe the job they need done, not necessarily our page label.
+  // Keep cafe meetings distinct and avoid treating an office search as a trip.
+  if (/\b(coffee|cafe|cafes|matcha)\b/.test(q)) return false;
+  if (/\b(retreat|offsite|off site)\b/.test(q)) return true;
+  if (/\b(satellite|office|relocat(?:e|ion|ing))\b/.test(q)) return false;
+  const workingGroup = /\b(team|teams|executive|executives|leadership|board|company|corporate)\b/.test(q);
+  const overnightVenue = /\b(night|nights|overnight|stay|stays|resort|resorts|hotel|hotels|room|rooms)\b/.test(q);
+  const workingGathering = /\b(working session|working sessions|workshop|workshops|meeting room|meeting rooms|team gathering|team building|reconnect|off property)\b/.test(q)
+    || (/\b(venue|venues)\b/.test(q) && /\b(session|sessions|meeting|meetings|gathering|gatherings)\b/.test(q));
+  return workingGroup && (overnightVenue || workingGathering);
+}
 export function resolveLocalIntent(input, catalog) {
   validateInput(input);
   const query = input.query;
@@ -94,7 +106,7 @@ export function resolveLocalIntent(input, catalog) {
   const base = { query, city, results: [], regional_context: [], unresolved_constraints: [], next_questions: [], limitations: [...LIMITATIONS] };
   if ((!city && /\b(san diego|san francisco|los angeles|new york|london|las vegas)\b/.test(q)) || (city && !CITIES.includes(city))) return { ...base, status: 'no_match', intent: 'outside-coverage', limitations: [...LIMITATIONS, 'The requested location is outside this catalog’s coverage.'] };
   const group = input.group_size ?? (Number(q.match(/\b(\d{1,4})\s*(?:person|people|guest|guests|member|members)\b/)?.[1]) || null);
-  if (/\b(retreat|offsite|off site)\b/.test(q) && !/\b(coffee|cafe)\b/.test(q)) {
+  if (isTeamRetreatQuestion(q)) {
     let options = catalog.retreat.options.filter((o) => !city || city === 'Coachella Valley' || o.city === city);
     const named = options.filter((o) => q.includes(normalize(o.name)) || q.includes(normalize(o.slug)) || (o.slug === 'ritz-carlton' && q.includes('ritz carlton')) || (o.slug === 'sensei-porcupine-creek' && q.includes('sensei')) || (o.slug === 'grand-hyatt-indian-wells' && q.includes('grand hyatt')));
     if (named.length) options = named;

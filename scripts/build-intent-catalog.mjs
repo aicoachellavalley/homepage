@@ -20,7 +20,9 @@ const previews = deployed.segments.flatMap((segment) => {
   return manifest.entries.map((entry) => ({
     id: `${segment}/${entry.slug}`, name: entry.name, city: entry.city, segment,
     record_type: 'business-preview', source_url: entry.url, preview_url: entry.url,
-    indexable: entry.indexable, measurement_date: manifest.generated,
+    indexable: entry.indexable, manifest_generated_at: manifest.generated,
+    measurement_date: null,
+    measurement_date_note: 'Read the original measurement date and findings at the canonical preview. This manifest contains no per-entity inspection date.',
     publication_verified_at: deployed.verified_at,
     summary: `Dated ${manifest.domain} preview. Open the source for its measured findings and current publication status.`,
     constraints: ['This manifest supplies identity and a preview link; it does not attest business facts, current access or availability.'],

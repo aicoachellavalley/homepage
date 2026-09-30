@@ -30,9 +30,14 @@ are separate steps, not claimed as completed. Minimal allowlisted events log
 retrieval outcomes/counts and action-link openings without raw queries or
 identities; no verified-bot, citation, unique-user or booking metric is claimed.
 
-Validation: 81 tests and full build/postbuild gates pass; 314 HTML pages and
-6,058 static internal links checked. Preview network and desktop UI checks
-follow branch upload; main is unchanged. A 30-day review task starts October
+Validation: 82 tests and full build/postbuild gates pass; 314 HTML pages and
+6,058 static internal links checked. The first preview passes a real-network official MCP SDK connection, tool
+retrieval and negative controls; venue selection and prepared-brief actions
+work in the browser. Browser QA found and prompted a natural-question routing
+regression fix, tested against the actual form default and its original text.
+Final preview interaction checks follow the corrective upload; main remains
+unchanged. One automated static-feed client receives Cloudflare 1010 while
+browser and MCP requests succeed; private security settings need review. A 30-day review task starts October
 30 in America/Los_Angeles and prepares sourced updates for review.
 
 Third pass, following Sat's explicit copy approvals, parent `b7833d5`: MVA
