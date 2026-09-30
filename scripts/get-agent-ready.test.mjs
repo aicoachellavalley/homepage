@@ -164,17 +164,21 @@ test('two visual MVA cards show before and after activation without extra action
   assert.match(faq.find(item => item.q === 'What does the $500 MVA look like?').a, /before and after activation/);
 });
 
-test('guaranteed visibility is clear on the page, with outside-outcome limits on the linked Terms', () => {
-  const answer = faq.find(item => item.q.includes('guaranteed visibility')).a;
+test('the publication promise agrees with the FAQ and current dated Terms', () => {
+  const answer = faq.find(item => item.q === 'What does AICV publish for my business?').a;
   const terms = read('../src/pages/terms.astro');
   for (const surface of [body, answer]) {
-    assert.match(surface, /We guarantee visibility to agents on the AICV network/);
+    assert.match(surface, /We publish your public, agent-readable business profile/);
     assert.match(surface, /purchase is matched to your business/);
+    assert.doesNotMatch(surface, /guaranteed visibility|guarantee visibility/);
   }
-  assert.doesNotMatch(body + answer, /visit, index, cite or recommend/);
+  assert.match(answer, /AI services decide whether to visit, cite or recommend/);
   assert.match(terms, /visit, index, cite or recommend/);
   assert.match(terms, /id="agent-visibility"/);
   assert.match(terms, /Effective September 19, 2026/);
+  assert.match(terms, /id="agent-publication"/);
+  assert.match(terms, /Effective September 30, 2026/);
+  assert.match(body, /href="\/terms\/#agent-publication"/);
   assert.match(body, /The agentic internet is forming all around us, at a blinding pace/);
   assert.match(body, /A clear, readable profile is a must-have — table stakes/);
   assert.doesNotMatch(body, /Latest published research update|Individual business reviews carry their own dates/);

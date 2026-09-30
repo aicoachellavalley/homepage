@@ -27,9 +27,10 @@ export const GET: APIRoute = ({ props }) => {
   if (d.total_responses != null) rows.push(['total', 'Total responses', d.total_responses]);
   for (const c of d.cities ?? []) rows.push(['city_pct_right_call', c.name, c.pct]);
 
-  const csv = rows.map((row) => row.map(csvCell).join(',')).join('\r\n') + '\r\n';
+  const labeledRows = [['status', ...rows[0]], ...rows.slice(1).map((row) => [d.status, ...row])];
+  const csv = labeledRows.map((row) => row.map(csvCell).join(',')).join('\r\n') + '\r\n';
 
   return new Response(csv, {
-    headers: { 'Content-Type': 'text/csv; charset=utf-8' },
+    headers: { 'Content-Type': 'text/csv; charset=utf-8', 'X-Robots-Tag': 'noindex' },
   });
 };

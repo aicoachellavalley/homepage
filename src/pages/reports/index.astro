@@ -51,7 +51,7 @@ const pageSchema = {
   <div class="page-header-inner">
     <div class="page-eyebrow">AI Coachella Valley · Research &amp; Intelligence Reports</div>
     <h1 class="page-title">Reports</h1>
-    <p class="page-desc">Long-form reports on the AI economy, infrastructure, workforce trends, civic readiness, and business intelligence across the Coachella Valley.</p>
+    <p class="page-desc">Research on how AI is changing the valley and what agents can learn about local businesses. State of AI reports follow a quarterly editorial cadence, published after the quarter closes and sources are reviewed. Category reports and remeasurements publish when the research is ready; their findings describe the measurement dates and populations stated in each report.</p>
   </div>
 </header>
 
@@ -71,7 +71,7 @@ const pageSchema = {
               {period      && <span class="badge badge-period">{period}</span>}
               <span class="report-date">{date}</span>
             </div>
-            <a href={`/reports/${slug}/`} class="report-title">{title}</a>
+            <h2 class="report-heading"><a href={`/reports/${slug}/`} class="report-title">{title}</a></h2>
             {description && <p class="report-desc">{description}</p>}
           </li>
         );
@@ -143,6 +143,7 @@ const pageSchema = {
     color: var(--pine); text-decoration: none; letter-spacing: -0.01em;
     transition: color 0.15s; line-height: 1.35; display: block; margin-bottom: 0.25rem;
   }
+  .report-heading { margin: 0; }
   .report-title:hover { color: var(--pine-light); }
   .report-desc { font-size: 0.83rem; color: var(--pine-light); font-weight: 300; line-height: 1.6; max-width: 80ch; }
 

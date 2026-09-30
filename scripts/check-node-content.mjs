@@ -30,9 +30,13 @@ for (const node of index) {
   assert.equal(record.title, node.title);
   assert.equal(record.last_updated, node.last_updated);
   const doc = walk(parse(read(`nodes/${node.slug}/index.html`)));
+  const title = doc.find(n => n.attrs?.some(a => a.name === 'class' && a.value.split(/\s+/).includes('node-title')));
   const body = doc.find(n => n.attrs?.some(a => a.name === 'class' && a.value.split(/\s+/).includes('node-body')));
+  assert.ok(title, `No rendered node title: ${node.slug}`);
   assert.ok(body, `No rendered node body: ${node.slug}`);
-  const machine = textOf(record), human = normalize(htmlText(body));
+  // The manuscript title renders once, in the page header. Compare that title
+  // plus the body against the complete machine record; no content is excluded.
+  const machine = textOf(record), human = normalize(htmlText(title) + htmlText(body));
   if (machine !== human) {
     let at = 0;
     while (machine[at] === human[at] && at < Math.min(machine.length, human.length)) at++;

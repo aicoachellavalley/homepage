@@ -1,5 +1,6 @@
 ---
 import Footer from '../../components/Footer.astro';
+import OmitBodyTitle from '../../components/OmitBodyTitle.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -160,7 +161,6 @@ const schemaJson = {
     }
 
     /* Markdown body styles */
-    .node-body h1 { display: none; } /* title already in header */
     .node-body h2 {
       font-family: 'Syne', sans-serif;
       font-size: 1rem;
@@ -255,7 +255,7 @@ const schemaJson = {
 
   <div class="page-wrap">
     <div class="node-body">
-      <Content />
+      <Content components={{ h1: OmitBodyTitle }} />
     </div>
 
 

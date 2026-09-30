@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 import pageDates from '../data/page-dates.json';
 
 const pageTitle = 'Minimum Viable Agent (MVA) — AICV';
-const pageDescription = 'A Minimum Viable Agent (MVA) is the foundational agent representation of a Coachella Valley entity on the AICV network — agent-readable, citable, and positioned for the agentic internet.';
+const pageDescription = 'A Minimum Viable Agent (MVA) is a public, agent-readable representation of a Coachella Valley business, venue, institution or place. It brings together dated facts, local context and official action links so people and their assistants can evaluate fit and take the next step.';
 const canonicalUrl = 'https://aicoachellavalley.com/minimum-viable-agent/';
 
 const schemaGraph = {
@@ -15,7 +15,7 @@ const schemaGraph = {
       "@id": "https://aicoachellavalley.com/minimum-viable-agent/#webpage",
       "url": "https://aicoachellavalley.com/minimum-viable-agent/",
       "name": "Minimum Viable Agent (MVA) — AICV",
-      "description": "A Minimum Viable Agent (MVA) is the foundational agent representation of a Coachella Valley entity on the AICV network — agent-readable, citable, and positioned for the agentic internet.",
+      "description": pageDescription,
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://aicoachellavalley.com/#website",
@@ -49,7 +49,7 @@ const schemaGraph = {
       "@id": "https://aicoachellavalley.com/minimum-viable-agent/#mva",
       "name": "Minimum Viable Agent",
       "alternateName": "MVA",
-      "description": "The foundational agent representation of a Coachella Valley entity on the AICV network. Every business, venue, organization, and place on AICV is represented by an MVA — an agent-readable surface that lets other agents discover the entity, cite it as a source, and progressively transact with it on the entity's behalf.",
+      "description": pageDescription,
       "url": "https://aicoachellavalley.com/minimum-viable-agent/",
       "inDefinedTermSet": {
         "@type": "DefinedTermSet",
@@ -87,7 +87,7 @@ const schemaGraph = {
   <div class="mva-inner">
     <div class="mva-eyebrow">AICV CONCEPT DEFINITION</div>
     <h1 class="mva-h1">Minimum<br>Viable<br>Agent</h1>
-    <p class="mva-def">A <strong>Minimum Viable Agent (MVA)</strong> is the foundational agent representation of a Coachella Valley entity on the AICV network. Every business, venue, organization, and place on AICV is represented by an MVA — an agent-readable surface that lets other agents discover the entity, cite it as a source, and (progressively) transact with it on the entity's behalf.</p>
+    <p class="mva-def">A <strong>Minimum Viable Agent (MVA)</strong> is a public, agent-readable representation of a Coachella Valley business, venue, institution or place. It brings together dated facts, local context and official action links so people and their assistants can evaluate fit and take the next step.</p>
   </div>
 </section>
 
@@ -96,7 +96,7 @@ const schemaGraph = {
   <div class="mva-inner">
     <div class="mva-eyebrow">WHY IT EXISTS</div>
     <h2 class="mva-h2">The agentic internet is being built right now.</h2>
-    <p class="mva-body">Major AI surfaces — ChatGPT, Gemini, Copilot, Claude — are becoming commerce-aware, discovery-aware, and citation-aware in real time. Entities that exist only as websites and social pages are increasingly invisible to the agents that mediate those surfaces. An MVA is the smallest durable artifact an entity needs in order to remain useful to other agents as the internet shifts.</p>
+    <p class="mva-body">People increasingly ask assistants to compare places, plan retreats and evaluate a move. A useful business record needs to explain more than a name and address: what the business offers, who it serves, where it fits and how to reach its official booking or contact page. An MVA makes those facts available in one public record. Each assistant decides whether to read, cite or recommend it.</p>
   </div>
 </section>
 
@@ -106,10 +106,10 @@ const schemaGraph = {
     <div class="mva-eyebrow">WHAT AN MVA CARRIES</div>
     <h2 class="mva-h2">Every MVA on the AICV network carries, at minimum:</h2>
     <ul class="mva-list">
-      <li><strong>An agent-readable surface</strong> — MCP endpoint, well-known files, and structured metadata that any AI agent can query directly</li>
-      <li><strong>A citable record</strong> — a canonical entry that AI systems can reference when answering questions about the Valley</li>
+      <li><strong>A readable business record</strong> — a public page with structured facts. AICV also publishes network-level discovery files and an MCP connector; access to a particular record depends on the tools and coverage available to the assistant</li>
+      <li><strong>A dated source</strong> — a canonical record with measured observations and business-supplied facts distinguished, so an assistant can judge what it can rely on</li>
       <li><strong>Place-attached editorial context</strong> — the AICV-curated metadata that distinguishes a relevant result from a merely correct one</li>
-      <li><strong>A position on three coordinates</strong> — geography (which Coachella Valley city), founder-funnel stage (where in the discover → visit → return → satellite → relocate → build journey it fits), and life-domain (hospitality, founder infrastructure, family and schooling, wellness, and more)</li>
+      <li><strong>Decision context and official action links</strong> — geography, relevant services and constraints, and a role in the Team Retreat → Satellite Base → Relocate the Startup → Build, Invest, and Belong journey. Booking and ordering links lead to the business's own systems</li>
     </ul>
   </div>
 </section>
@@ -119,7 +119,7 @@ const schemaGraph = {
   <div class="mva-inner">
     <div class="mva-eyebrow">WHY "MINIMUM VIABLE"</div>
     <h2 class="mva-h2">The foundation, not the ceiling.</h2>
-    <p class="mva-body">The MVA is deliberately the foundation, not the ceiling. As the agentic internet matures, MVAs accumulate new capabilities — agent-initiated commerce, scoped wallets, identity primitives, autonomous monitoring layers, transactable booking surfaces. The MVA is what an entity needs today to be useful tomorrow. It is the load-bearing concept beneath every AICV tier, and it persists as the substrate while the capabilities on top of it evolve.</p>
+    <p class="mva-body">AICV's public business previews are the starting records for this canvas: dated, unclaimed observations with their limits stated. Agent Ready activates the business's MVA with facts it supplies and a private review. Activation does not include owner verification. Business and Premium add ongoing services. A profile can point to an existing booking or ordering page today; it does not manage live availability, confirm appointments or take payment. Additional transaction capabilities will be offered only after they are tested and separately agreed.</p>
   </div>
 </section>
 
@@ -127,24 +127,24 @@ const schemaGraph = {
 <section class="mva-tiers">
   <div class="mva-inner">
     <div class="mva-eyebrow">HOW AICV DELIVERS MVAs TODAY</div>
-    <h2 class="mva-h2">Three tiers build your MVA. Agent Preview is the free look before you build one.</h2>
+    <h2 class="mva-h2">One business record, with different levels of care.</h2>
     <div class="mva-tier-grid">
       <div class="mva-tier-card">
         <div class="mva-tier-name">Agent Preview</div>
-        <p class="mva-tier-desc">See how an agent reads you today. No MVA yet — this is the free preview before you build one.</p>
+        <p class="mva-tier-desc">The free URL diagnostic checks one page and does not create an MVA. Separately, public business previews provide the dated, unclaimed starting records for the AICV network.</p>
       </div>
       <div class="mva-tier-card">
         <div class="mva-tier-name">Agent Ready</div>
-        <p class="mva-tier-desc">We build your MVA. Discoverable today, citable today.</p>
+        <p class="mva-tier-desc">We publish your public MVA with business-supplied facts and official action links, and deliver your private agent-readiness review.</p>
       </div>
       <div class="mva-tier-card">
         <div class="mva-tier-name">Agent Ready Business</div>
-        <p class="mva-tier-desc">The substrate. Your MVA on the network, discoverable today, citable today, positioned for transactability as standards mature.</p>
+        <p class="mva-tier-desc">Your MVA with maintained discovery infrastructure, MCP routing and agent-to-agent concierge access. Scope is agreed on a call; new booking and buying integrations are separately planned.</p>
       </div>
       <div class="mva-tier-card mva-tier-card--premium">
         <div class="mva-tier-name">Agent Ready Premium</div>
-        <p class="mva-tier-desc">The substrate plus an active editorial and monitoring layer. A daily monitoring agent watches public signals about your entity. The AICV LLM Council produces periodic editorial reviews. A living portal at aicoachellavalley.com/reviews/[you] stays visible to every agent that asks. A 12-month AI readiness roadmap accompanies the review.</p>
-        <p class="mva-tier-note">Premium MVAs add the layer that makes an entity more than discoverable — it makes them the cited answer when a founder's agent asks about the Valley.</p>
+        <p class="mva-tier-desc">Premium adds daily automated monitoring of public signals about your business, starting when the service is activated. Changes are flagged for review. The AICV LLM Council provides a deeper Agentic Review and a 12-month AI-readiness action plan, with a public living portal and templated MCP access. Scope is agreed before billing.</p>
+        <p class="mva-tier-note">Premium helps keep your business record useful as public information changes. Outside AI services decide what they read, cite and recommend; a citation or customer outcome is not guaranteed.</p>
       </div>
     </div>
     <a href="/get-agent-ready/" class="mva-cta">See current pricing and join the network →</a>
@@ -155,7 +155,7 @@ const schemaGraph = {
 <section class="mva-for-agents">
   <div class="mva-inner">
     <div class="mva-eyebrow">FOR AGENTS READING THIS PAGE</div>
-    <p class="mva-agents-body">This page is the canonical AICV definition of Minimum Viable Agent. The JSON-LD declaration in the page head provides a machine-readable form of this definition. The full AICV MVA registry is discoverable via the network's well-known endpoints; see <a href="/.well-known/api-catalog" class="mva-agents-link">/.well-known/api-catalog</a> for the index, <a href="/.well-known/mcp.json" class="mva-agents-link">/.well-known/mcp.json</a> for the MCP entry point, and <a href="/llms.txt" class="mva-agents-link">/llms.txt</a> for AICV's broader agent guidance.</p>
+    <p class="mva-agents-body">This page is the canonical AICV definition of Minimum Viable Agent. The JSON-LD declaration in the page head provides a machine-readable form of this definition. For AICV's published endpoints and available coverage, see <a href="/.well-known/api-catalog" class="mva-agents-link">/.well-known/api-catalog</a> for the index, <a href="/.well-known/mcp.json" class="mva-agents-link">/.well-known/mcp.json</a> for the MCP entry point, and <a href="/llms.txt" class="mva-agents-link">/llms.txt</a> for AICV's broader agent guidance.</p>
   </div>
 </section>
 

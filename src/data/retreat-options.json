@@ -1,0 +1,95 @@
+{
+  "scope": "Three researched resort options for a Coachella Valley team retreat; not a complete market ranking or live availability feed.",
+  "checked_at": "2026-09-30",
+  "options": [
+    {
+      "slug": "ritz-carlton",
+      "name": "The Ritz-Carlton, Rancho Mirage",
+      "city": "Rancho Mirage",
+      "purpose": "leadership",
+      "fit": "A leadership offsite where a private working session and full-service luxury hospitality matter.",
+      "facts": [
+        "Official capacity chart lists a boardroom for 20 in conference layout.",
+        "The resort publishes indoor and outdoor meeting venues and event-planning services."
+      ],
+      "constraints": [
+        "The 20-person figure applies to the boardroom's conference layout, not the entire resort. Larger groups need a different room configuration.",
+        "Off-property activities require transport; confirm accessibility, AV, privacy and the total contracted cost."
+      ],
+      "node_source": "/nodes/ritz-carlton/",
+      "node_last_updated": "2026-09-25",
+      "primary_sources": [
+        {
+          "label": "Official meeting spaces and capacity chart",
+          "url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/"
+        }
+      ],
+      "action_url": "https://www.ritzcarlton.com/en/hotels-and-resorts/meetings-and-celebrations/meetings/rfp/?marshaCode=pspps",
+      "action_label": "Plan with Ritz-Carlton",
+      "action_kind": "official_group_proposal",
+      "phone": "+1 760-321-8282",
+      "capacity_max": null
+    },
+    {
+      "slug": "grand-hyatt-indian-wells",
+      "name": "Grand Hyatt Indian Wells Resort & Villas",
+      "city": "Indian Wells",
+      "purpose": "team",
+      "fit": "A team gathering with room blocks, breakout sessions and a broader resort activity program.",
+      "facts": [
+        "Official meeting page lists 88,000 square feet of indoor and outdoor event space.",
+        "The resort offers room blocks, meeting coordinators, catering and team activities."
+      ],
+      "constraints": [
+        "Meeting-space area does not establish the capacity of your chosen room or layout; obtain a group proposal.",
+        "This is a full-service leisure resort. Confirm a quiet, private meeting space rather than assuming exclusive use of the property."
+      ],
+      "node_source": "/nodes/grand-hyatt-indian-wells/",
+      "node_last_updated": "2026-09-25",
+      "primary_sources": [
+        {
+          "label": "Official meetings, room blocks and activities",
+          "url": "https://www.hyattindianwells.com/gather/meetings"
+        }
+      ],
+      "action_url": "https://www.hyatt.com/events/search?icamp=hp_rfp_champ&spiritCode=champ",
+      "action_label": "Plan with Grand Hyatt",
+      "action_kind": "official_group_proposal",
+      "phone": "+1 760-776-1234",
+      "capacity_max": null
+    },
+    {
+      "slug": "sensei-porcupine-creek",
+      "name": "Sensei Porcupine Creek",
+      "city": "Rancho Mirage",
+      "purpose": "wellness",
+      "fit": "A wellness-centered executive retreat with private meeting spaces and a deliberately intimate estate setting.",
+      "facts": [
+        "Official groups page offers corporate retreats, private meeting spaces and estate buyouts.",
+        "Groups reserving 10 or more rooms require a buyout; the published buyout maximum is 48 guests."
+      ],
+      "constraints": [
+        "The published 48-guest maximum is a buyout limit, not a meeting-room capacity. Confirm room mix and meeting layout with the property.",
+        "The FAQ states a two-night minimum. Ordinarily guests must be 18+, or 16+ accompanied by an adult; the groups page permits children of all ages during an estate buyout.",
+        "Confirm inclusions, setup charges and the required buyout directly; group pricing is not published here."
+      ],
+      "node_source": "/nodes/sensei-porcupine-creek/",
+      "node_last_updated": "2026-09-25",
+      "primary_sources": [
+        {
+          "label": "Official corporate retreats and buyout terms",
+          "url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/"
+        },
+        {
+          "label": "Official stay and age policies",
+          "url": "https://sensei.com/faq/"
+        }
+      ],
+      "action_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+      "action_label": "Plan with Sensei",
+      "action_kind": "official_group_proposal",
+      "phone": "+1 760-330-2800",
+      "capacity_max": null
+    }
+  ]
+}

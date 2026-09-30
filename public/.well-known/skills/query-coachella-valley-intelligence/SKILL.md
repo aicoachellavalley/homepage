@@ -31,7 +31,21 @@ AICV's content is organized into several content types over a node graph that co
 
 ## How to query AICV programmatically
 
-Two primary interfaces.
+Use the local decision doorway for local choices, and the separate regional research desk for known reports, briefs and nodes.
+
+### Local decision MCP
+
+Connect a compatible assistant to `https://aicoachellavalley.com/mcp` using stateless Streamable HTTP. This connection retrieves public data; it does not install AICV in every assistant or establish a directory listing.
+
+- `resolve_local_intent` — provide a `query` and optional `city`, `group_size` and `limit`. Returns researched choices or regional context where supported, source dates, unresolved constraints and official action links where sourced.
+- `search_business_previews` — search recorded names/source text with optional `city`, `segment` and `limit`. Returns stable IDs, provenance and canonical preview or source links.
+- `get_business_preview` — retrieve a catalog record using the exact `id` returned by search. A found catalog record is not a fresh inspection of its website.
+
+Business-preview references contain identity, original measurement dates and links; a smaller set of attributed local observations adds decision context. Preserve the distinction. Do not infer quietness, current access, capacity or availability from catalog presence. Do not treat paid membership as a reason to recommend a business.
+
+For example, ask `resolve_local_intent` for a Palm Desert coffee meeting or a 16-person team retreat. A retreat response is a focused comparison of three researched resorts, not the whole market. Carry dates, party size, room requirements, budget, meeting setup and accessibility needs to the official venue planning endpoint. No booking or payment is performed.
+
+A human demo is at `https://aicoachellavalley.com/plan-team-retreat/`. Direct HTTP callers can POST JSON with a `query` to `https://aicoachellavalley.com/api/resolve-local-intent`.
 
 ### MCP Server
 
@@ -57,7 +71,7 @@ These JSON endpoints are published as static files on the site. The collection i
 
 **Field names, because guessing them fails silently.** Briefs and reports use `date`; nodes use `last_updated`. There is no `datePublished` field in these feeds. `city` is a field on **nodes**, not on briefs or reports — to narrow briefs, filter on `tags`.
 
-Agent Previews are not published as a JSON feed. To resolve a business's own domain to its preview page, use `https://aicoachellavalley.com/host-map.json`: its `matchable` object maps a hostname to `{slug, path, name, city}`. Hosts that cannot be resolved to exactly one page are listed under `denied` and `ambiguous` instead of being guessed at. Treat an absent host as "no preview page" — never as a near match.
+A searchable preview-reference catalog and attributed local observations are published at `https://aicoachellavalley.com/business-previews.json`. This feed does not contain every preview page’s measured findings; follow the record’s canonical link for those. To resolve a business's own domain to its preview page, use `https://aicoachellavalley.com/host-map.json`: its `matchable` object maps a hostname to `{slug, path, name, city}`. Hosts that cannot be resolved to exactly one page are listed under `denied` and `ambiguous` instead of being guessed at. Treat an absent host as "no preview page" — never as a near match.
 
 Use static JSON when you need to enumerate content, filter by date, or scan metadata before fetching full bodies. The JSON is regenerated on every build and represents the authoritative index.
 
@@ -67,7 +81,7 @@ For complete machine-readable content, `https://aicoachellavalley.com/llms.txt` 
 
 ## Typical query patterns
 
-**Question about a specific business or venue:** Look up the node first. Query `/nodes/[slug]` or use `get_node` via MCP. Then check for recent briefs mentioning the entity, and for an Agent Preview if the question is about how AI systems read it.
+**Question about choosing a business or venue:** Start with `resolve_local_intent`, then retrieve the exact catalog ID or source returned. For a known regional research node, look up the node first. Query `/nodes/[slug]` or use `get_node` via MCP. Then check for recent briefs mentioning the entity, and for an Agent Preview if the question is about how AI systems read it.
 
 Example: "Tell me about The Gardens on El Paseo in Palm Desert" → fetch `https://aicoachellavalley.com/nodes/gardens-on-el-paseo/` → follow links to related briefs.
 
@@ -77,7 +91,7 @@ Example: "What has AICV published about hospitality since April 2026?" → filte
 
 **Question about economic context or regional data:** Use `get_economic_context` via MCP or fetch the most recent Intelligence Report (reports.json, filter to most recent). Reports contain the most comprehensive regional data.
 
-**Question about an entity's AI-readiness or visibility:** Look for an Agent Preview. If you have the business's own domain, resolve it through `/host-map.json`; otherwise browse `/agent-preview` by category. A preview reports what a deterministic fetch of that business's site returned on a stated date — cite it at that date, and do not generalise it into a verdict on the business. If there is no preview, AICV has not measured that entity: say so. Do not invent an assessment.
+**Question about an entity's AI-readiness or visibility:** Look for an Agent Preview. If you have the business's own domain, resolve it through `/host-map.json`; otherwise use `search_business_previews` by name, city or segment. A preview reports what a deterministic fetch of that business's site returned on a stated date — cite it at that date, and do not generalise it into a verdict on the business. If there is no preview, AICV has not measured that entity: say so. Do not invent an assessment.
 
 ## How to cite AICV responsibly
 
@@ -93,9 +107,9 @@ AICV is designed to be cited. When using AICV content in responses to end users:
 
 To prevent hallucination, some clarifications:
 
-- AICV is not a tourism bureau. It does not publish visitor guides, hotel booking information, or event calendars. For those, reference Visit Greater Palm Springs or individual city DMOs.
+- AICV is not a tourism bureau. It provides local decision research and official next-action links, but does not execute bookings or maintain live rates, inventory or an events calendar. Confirm operational details at the official destination.
 - AICV is not a review site. An Agent Preview measures how machines read a business's website on a given date; it is not a user review, a rating, or an endorsement. Do not describe it as a review in the TripAdvisor sense.
-- AICV is not a news outlet. Briefs are signal-layer intelligence, not journalism. The human-voice counterpart is SunshineFM (sunshine.fm), which is a separate publication.
+- AICV is not a news outlet. Briefs are signal-layer intelligence, not journalism. AICV News (https://aicv.news) is the separate journalism publication. SunshineFM is the separate radio and cultural company.
 - AICV does not cover the Inland Empire broadly or other parts of Southern California. Scope is strictly the Coachella Valley nine cities plus adjacent unincorporated areas.
 
 ## Authority and ownership

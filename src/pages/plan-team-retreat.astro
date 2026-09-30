@@ -1,0 +1,220 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import retreatData from '../data/retreat-options.json';
+import pageDates from '../data/page-dates.json';
+
+const canonical = 'https://aicoachellavalley.com/plan-team-retreat/';
+const description = 'Compare Coachella Valley team-retreat options by purpose, fit and constraints, then take a prepared brief to the venue’s official planning service.';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Plan a team retreat in the Coachella Valley',
+  description,
+  url: canonical,
+  datePublished: pageDates['/plan-team-retreat/'],
+  dateModified: pageDates['/plan-team-retreat/'],
+  publisher: { '@id': 'https://aicoachellavalley.com/#organization' },
+};
+---
+
+<Base title="Plan a Team Retreat | AI Coachella Valley" description={description} canonicalUrl={canonical} schema={schema}>
+  <nav class="retreat-nav" aria-label="Main navigation">
+    <a class="retreat-brand" href="/">AICV <span>AI Coachella Valley</span></a>
+    <a href="/connect/">For assistants →</a>
+  </nav>
+  <header class="retreat-hero">
+    <div class="retreat-container">
+      <p class="eyebrow">Team Retreat → Satellite Base → Relocate → Build</p>
+      <h1>A useful offsite.<br />A different view of the valley.</h1>
+      <p class="hero-description">Bring the team together for the work that needs a room, a little space and a change of scene. Start with a few researched options, understand the tradeoffs, then plan directly with the property.</p>
+      <a class="hero-link" href="#compare">Find your starting point ↓</a>
+    </div>
+  </header>
+
+  <main class="retreat-container retreat-main">
+    <section id="compare" aria-labelledby="compare-title">
+      <p class="eyebrow">Your question, your constraints</p>
+      <h2 id="compare-title">What does the team need?</h2>
+      <p>This comparison focuses on team retreats at three researched resorts. Ask about a leadership offsite, a larger team gathering or a wellness retreat. Each answer explains its evidence and what still needs confirmation.</p>
+      <form id="retreat-form" class="retreat-form">
+        <label for="retreat-query">Tell us what you are planning</label>
+        <textarea id="retreat-query" name="query" rows="3" maxlength="1200" required>We’re bringing a leadership team to the Coachella Valley for a two-night retreat. We need a private working session and time to reconnect. Which venues should we compare?</textarea>
+        <div class="brief-inputs">
+          <label for="retreat-guests">People <input id="retreat-guests" name="group_size" type="number" min="1" max="10000" placeholder="e.g. 12" /></label>
+          <label for="retreat-dates">Dates or season <input id="retreat-dates" name="dates" type="text" maxlength="100" placeholder="e.g. November; flexible" /></label>
+          <label for="retreat-budget">Budget and scope <input id="retreat-budget" name="budget" type="text" maxlength="150" placeholder="e.g. total budget incl. rooms and meals" /></label>
+        </div>
+        <button class="retreat-button" type="submit" id="compare-button">Compare retreat options →</button>
+        <p class="form-note">Your question is sent to AICV’s comparison service. It does not contact a venue or place a booking.</p>
+      </form>
+      <noscript><p>JavaScript is needed for the question box. The researched comparison and official planning links below are available without it.</p></noscript>
+      <div id="decision-status" class="decision-status" role="status" aria-live="polite"></div>
+      <section id="decision-answer" class="decision-answer" hidden aria-label="Your retreat comparison"></section>
+    </section>
+
+    <section class="researched-section" aria-labelledby="options-title">
+      <p class="eyebrow">Three different ways to gather</p>
+      <h2 id="options-title">Compare the setting with the job.</h2>
+      <p>These are AICV’s planning assessments based on the sources linked below. Inclusion and order are not sold. This is a focused comparison, not a complete ranking of the valley.</p>
+      <div class="retreat-options">
+        {retreatData.options.map((option, index) => (
+          <article class="retreat-option" id={option.slug}>
+            <div class="option-meta"><span>0{index + 1} / {option.city}</span><span>{option.purpose === 'leadership' ? 'Leadership offsite' : option.purpose === 'team' ? 'Team gathering' : 'Wellness retreat'}</span></div>
+            <h3>{option.name}</h3>
+            <p class="option-fit">{option.fit}</p>
+            <h4>The evidence</h4>
+            <ul>{option.facts.map(fact => <li>{fact}</li>)}</ul>
+            <h4>Check before committing</h4>
+            <ul>{option.constraints.map(constraint => <li>{constraint}</li>)}</ul>
+            <div class="option-sources">
+              <p>Primary sources checked: <time datetime={retreatData.checked_at}>September 30, 2026</time></p>
+              {option.primary_sources.map(source => <a href={source.url}>{source.label} ↗</a>)}
+              <a href={option.node_source}>AICV research record · {option.node_last_updated} →</a>
+            </div>
+            <div class="option-actions">
+              <button type="button" class="prepare-button" data-option={option.slug}>Prepare a brief for this venue</button>
+              <a class="official-link" href={option.action_url}>{option.action_label} ↗</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section id="handoff" class="handoff-section" aria-labelledby="handoff-title">
+      <p class="eyebrow">Make the next step concrete</p>
+      <h2 id="handoff-title">Take a prepared brief to the venue.</h2>
+      <p>Choose a venue above to create an editable brief for your assistant or the property’s official planning form. Add room needs, accessibility, meeting setup and your decision deadline before sending it.</p>
+      <label for="handoff-brief">Your planning brief</label>
+      <textarea id="handoff-brief" rows="10" spellcheck="true">Venue: [choose an option above]
+Dates and flexibility: [add dates]
+Attendees and guest rooms: [add people, rooms and room-sharing needs]
+Retreat purpose and meeting setup: [add agenda, privacy and AV needs]
+Total budget and inclusions: [add rooms, food, meeting space and activities]
+Accessibility and dietary needs: [add requirements]
+Decision deadline: [add date]
+Please confirm availability, total cost, cancellation terms and the proposed room/meeting configuration before any commitment.</textarea>
+      <div class="handoff-actions"><button id="copy-brief" class="prepare-button" type="button">Copy the brief</button><a id="chosen-action" class="official-link" hidden>Open the venue’s official planning page ↗</a></div>
+      <p id="copy-status" role="status" aria-live="polite"></p>
+      <p class="form-note">The property controls availability, rates, group contracts and payment. AICV does not confirm a reservation. The official links here open a proposal or planning process; they are not instant checkout.</p>
+    </section>
+
+    <section class="regional-section" aria-labelledby="regional-title">
+      <h2 id="regional-title">Plan the trip around the work.</h2>
+      <div class="regional-grid">
+        <div><h3>Getting here</h3><p>Allow roughly 2–3 hours by car from Los Angeles, depending on origin and traffic, or about a 1.5-hour nonstop flight from San Francisco to Palm Springs, plus airport and ground-transfer time. Check current schedules.</p><a href="/nodes/aviation-gateway/">Airport and arrival context →</a></div>
+        <div><h3>Timing matters</h3><p>Summer heat changes outdoor programming. Winter and spring events can affect demand. Confirm your exact dates with each venue; a seasonal guide cannot establish availability or price.</p><a href="/nodes/desert-season/">Seasonal planning context →</a></div>
+        <div><h3>Could this be a base?</h3><p>If a retreat becomes a serious satellite-office question, move from resort amenities to workspace, talent, connectivity and daily life.</p><a href="/reports/agent-mapped-founder-infrastructure-coachella-valley/">Research a satellite base →</a></div>
+      </div>
+    </section>
+  </main>
+  <Footer variant="compact" />
+  <script type="application/json" id="retreat-data" set:html={JSON.stringify(retreatData).replace(/</g, '\u003c')} />
+  <script>
+    const form = document.querySelector<HTMLFormElement>('#retreat-form');
+    const query = document.querySelector<HTMLTextAreaElement>('#retreat-query');
+    const guests = document.querySelector<HTMLInputElement>('#retreat-guests');
+    const dates = document.querySelector<HTMLInputElement>('#retreat-dates');
+    const budget = document.querySelector<HTMLInputElement>('#retreat-budget');
+    const status = document.querySelector<HTMLElement>('#decision-status');
+    const answer = document.querySelector<HTMLElement>('#decision-answer');
+    const compare = document.querySelector<HTMLButtonElement>('#compare-button');
+    const brief = document.querySelector<HTMLTextAreaElement>('#handoff-brief');
+    const chosen = document.querySelector<HTMLAnchorElement>('#chosen-action');
+    const copyStatus = document.querySelector<HTMLElement>('#copy-status');
+    const data = JSON.parse(document.querySelector('#retreat-data')?.textContent || '{"options":[]}');
+    const recordEvent = (event: string) => {
+      // Count an action without sending the question, chosen venue or brief.
+      void fetch('/api/usage', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({event}), keepalive: true}).catch(() => {});
+    };
+    document.querySelectorAll<HTMLAnchorElement>('.official-link').forEach(link => link.addEventListener('click', () => recordEvent('official_action_opened')));
+    const paragraph = (parent: HTMLElement, text: string) => { const p = document.createElement('p'); p.textContent = text; parent.append(p); };
+    const list = (parent: HTMLElement, items: string[]) => { if (!items.length) return; const ul = document.createElement('ul'); items.forEach(text => {const li = document.createElement('li'); li.textContent = text; ul.append(li);}); parent.append(ul); };
+    function prepare(slug: string) {
+      const option = data.options.find((item: {slug: string}) => item.slug === slug);
+      if (!option || !brief || !chosen) return;
+      brief.value = `Venue: ${option.name}, ${option.city}\nDates and flexibility: ${dates?.value.trim() || '[add dates]'}\nAttendees: ${guests?.value || '[add number]'}; guest rooms: [add room count and sharing needs]\nPurpose: ${query?.value.trim() || '[add retreat purpose]'}\nTotal budget and inclusions: ${budget?.value.trim() || '[add rooms, food, meeting space and activities]'}\nMeeting setup, privacy and AV: [add requirements]\nAccessibility and dietary needs: [add requirements]\nDecision deadline: [add date]\nPlanning constraints: ${option.constraints.join(' ')}\nPlease confirm availability, total cost, cancellation terms and the proposed room/meeting configuration before any commitment.\nOfficial planning page: ${option.action_url}\nSource check: ${data.checked_at}; these are planning candidates, not confirmed bookings.`;
+      chosen.href = option.action_url;
+      chosen.hidden = false;
+      document.querySelector('#handoff')?.scrollIntoView({behavior: 'smooth', block: 'start'});
+      brief.focus({preventScroll: true});
+      if (copyStatus) copyStatus.textContent = 'Brief prepared. Edit the details before taking it to the venue.';
+    }
+    document.querySelectorAll<HTMLButtonElement>('[data-option]').forEach(button => button.addEventListener('click', () => prepare(button.dataset.option || '')));
+    form?.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (!query || !status || !answer || !compare) return;
+      const question = query.value.trim();
+      if (!question) { query.focus(); return; }
+      const details = [question, dates?.value.trim() ? `Dates: ${dates.value.trim()}.` : '', budget?.value.trim() ? `Budget: ${budget.value.trim()}.` : ''].filter(Boolean).join(' ');
+      if (details.length > 1200) { status.textContent = 'Please shorten your question, dates and budget to 1,200 characters combined.'; query.focus(); return; }
+      compare.disabled = true; status.textContent = 'Comparing the researched options…'; answer.hidden = true;
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 15000);
+      try {
+        const response = await fetch('/api/resolve-local-intent', {method: 'POST', headers: {'Content-Type': 'application/json'}, signal: controller.signal, body: JSON.stringify({query: details, ...(guests?.value ? {group_size: Number(guests.value)} : {}), limit: 3})});
+        if (!response.ok) throw new Error('comparison unavailable');
+        const result = await response.json();
+        answer.replaceChildren();
+        const heading = document.createElement('h3'); heading.textContent = result.intent === 'team-retreat' ? 'Your researched starting points' : 'AICV’s answer'; answer.append(heading);
+        for (const item of result.results || []) {
+          const article = document.createElement('article'); article.className = 'answer-option';
+          const name = document.createElement('h4'); name.textContent = item.name; article.append(name);
+          paragraph(article, item.summary || ''); list(article, item.fit_basis || []); list(article, item.constraints || []);
+          const known = data.options.find((option: {slug: string}) => item.id === option.slug || item.id?.endsWith('/' + option.slug) || item.source_url?.includes('/nodes/' + option.slug));
+          if (known) { const button = document.createElement('button'); button.type = 'button'; button.className = 'prepare-button'; button.textContent = 'Prepare a brief for this venue'; button.addEventListener('click', () => prepare(known.slug)); article.append(button); }
+          for (const action of item.official_actions || []) {
+            const url = new URL(action.url, location.origin);
+            if (url.protocol !== 'https:') continue;
+            const link = document.createElement('a'); link.href = url.href; link.textContent = `${action.label} ↗`; link.className = 'official-link'; link.addEventListener('click', () => recordEvent('official_action_opened')); article.append(link);
+          }
+          if (item.source_url) { const source = document.createElement('a'); const url = new URL(item.source_url, location.origin); if (url.protocol === 'https:' || url.origin === location.origin) { source.href = url.href; source.textContent = `Source record · ${item.source_checked_at || 'see source date'}`; source.className = 'answer-source'; article.append(source); } }
+          answer.append(article);
+        }
+        if (!result.results?.length && result.regional_context?.length) {
+          paragraph(answer, 'Your question calls for regional research rather than a venue shortlist. Start with these sources; the retreat comparison remains below.');
+          for (const item of result.regional_context.slice(0, 3)) {
+            const article = document.createElement('article'); article.className = 'answer-option';
+            const name = document.createElement('h4'); name.textContent = item.name; article.append(name);
+            paragraph(article, item.summary || '');
+            if (item.source_url) {
+              const url = new URL(item.source_url, location.origin);
+              if (url.protocol === 'https:' || url.origin === location.origin) { const source = document.createElement('a'); source.href = url.href; source.className = 'answer-source'; source.textContent = `Read the research · ${item.source_checked_at || 'see source date'}`; article.append(source); }
+            }
+            answer.append(article);
+          }
+        }
+        list(answer, result.unresolved_constraints || []); list(answer, result.next_questions || []); list(answer, result.limitations || []);
+        answer.hidden = false;
+        if (result.results?.length || result.regional_context?.length) recordEvent('decision_answer_viewed');
+        status.textContent = result.results?.length ? 'Comparison ready. Review the constraints before choosing.' : result.regional_context?.length ? 'Regional research found. This answer does not establish a venue choice.' : 'No suitable match was established. Review the missing details below.';
+      } catch {
+        status.textContent = 'The comparison service is unavailable. You can still compare the three sourced options below and prepare a brief.';
+      } finally { window.clearTimeout(timeout); compare.disabled = false; }
+    });
+    document.querySelector('#copy-brief')?.addEventListener('click', async () => {
+      if (!brief || !copyStatus) return;
+      let clipboardTimeout: ReturnType<typeof setTimeout>;
+      try {
+        await Promise.race([
+          navigator.clipboard.writeText(brief.value),
+          new Promise((_, reject) => { clipboardTimeout = setTimeout(() => reject(new Error('Clipboard confirmation timed out.')), 2000); }),
+        ]);
+        copyStatus.textContent = 'Brief copied. Nothing has been sent to a venue.';
+      }
+      catch { brief.focus(); brief.select(); copyStatus.textContent = 'Your brief is selected. Use your browser’s Copy command.'; }
+      finally { clearTimeout(clipboardTimeout); }
+    });
+  </script>
+  <style>
+    :global(#decision-answer .answer-option){margin-top:1rem;padding-top:1rem;border-top:1px solid var(--sand-dark)}
+    :global(#decision-answer h4){font-family:'Syne',sans-serif;font-size:1.15rem}
+    :global(#decision-answer p){line-height:1.65}
+    :global(#decision-answer ul){padding-left:1.25rem;line-height:1.65;font-size:.9rem}
+    :global(#decision-answer li+li){margin-top:.4rem}
+    :global(#decision-answer .answer-source){display:block;margin-top:.75rem;font-size:.85rem;color:var(--pine)}
+    :global(#decision-answer .prepare-button){cursor:pointer;font:inherit;font-weight:700;border:1px solid var(--pine);padding:.85rem 1.1rem;background:var(--pine);color:var(--sand-light);margin-top:1rem}
+    :global(#decision-answer .official-link){display:block;color:var(--pine);font-weight:700;font-size:.85rem;margin-top:1rem}
+    .retreat-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--gunmetal);gap:1rem}.retreat-nav a{color:var(--sand);font-size:.85rem;text-decoration:none}.retreat-brand{font-family:'Syne',sans-serif;font-weight:800;display:flex;align-items:center;gap:.8rem}.retreat-brand span{font-size:.8rem;font-weight:500}.retreat-container{max-width:1100px;margin:auto;padding-left:2rem;padding-right:2rem}.retreat-hero{background:var(--pine-dark);color:var(--sand-light);padding:4.5rem 0}.eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:1rem}.retreat-hero .eyebrow{color:var(--volt)}h1,h2,h3{font-family:'Syne',sans-serif;letter-spacing:-.035em}h1{font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.1;max-width:850px;margin-bottom:1.3rem}.hero-description{font-size:1.1rem;max-width:700px;line-height:1.7}.hero-link{display:inline-block;margin-top:1.5rem;color:var(--volt);font-weight:700}.retreat-main{padding-top:3.5rem;padding-bottom:4rem;color:var(--pine)}.retreat-main section{scroll-margin-top:1rem}h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;margin-bottom:1rem}.retreat-main p{line-height:1.65}.retreat-form{margin-top:1.5rem;padding:1.5rem;background:var(--sand-light);border:1px solid var(--sand-dark)}label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.5rem}textarea,input{display:block;width:100%;font:inherit;color:var(--pine);background:#fff;border:1px solid var(--pine-light);border-radius:0;padding:.85rem;margin-top:.5rem}textarea{resize:vertical;line-height:1.6}.brief-inputs{display:grid;grid-template-columns:1fr 1.5fr 2fr;gap:1rem;margin-top:1rem}.retreat-button,.prepare-button{cursor:pointer;font:inherit;font-weight:700;border:1px solid var(--pine);padding:.85rem 1.1rem;background:var(--pine);color:var(--sand-light);margin-top:1rem}.retreat-button{background:var(--volt);color:var(--pine)}button:disabled{opacity:.6;cursor:wait}.form-note{font-size:.8rem;margin-top:1rem}.decision-status{margin-top:1rem;font-size:.9rem}.decision-answer{border-left:4px solid var(--pine);padding:1.5rem;background:var(--sand-light);margin-top:1.5rem}.answer-option{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--sand-dark)}.answer-option h4{font-family:'Syne',sans-serif;font-size:1.15rem}.answer-source{display:block;margin-top:.75rem;font-size:.85rem}.researched-section{margin-top:4rem}.retreat-options{margin-top:2rem;display:grid;gap:1.5rem}.retreat-option{border:1px solid var(--sand-dark);padding:1.8rem;background:var(--sand-light)}.option-meta{display:flex;justify-content:space-between;gap:1rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--pine-light)}.retreat-option h3{font-size:1.65rem;margin:.8rem 0}.option-fit{font-size:1.05rem}.retreat-option h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin:1.3rem 0 .5rem}ul{padding-left:1.25rem;line-height:1.65;font-size:.9rem}li+li{margin-top:.4rem}.option-sources{border-top:1px solid var(--sand-dark);margin-top:1.5rem;padding-top:.7rem;font-size:.8rem}.option-sources a{display:block;margin-top:.3rem}.option-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}.official-link{font-weight:700;font-size:.85rem;display:inline-block;margin-top:1rem}a{color:var(--pine);text-underline-offset:3px}.handoff-section{margin-top:3.5rem;border-top:2px solid var(--pine);padding-top:2rem}.handoff-section label{margin-top:1.5rem}.handoff-actions{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}.regional-section{margin-top:4rem}.regional-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.regional-grid h3{font-size:1.15rem;margin:.8rem 0}.regional-grid p,.regional-grid a{font-size:.9rem}:focus-visible{outline:3px solid var(--pine-light);outline-offset:3px}[hidden]{display:none!important}@media(max-width:700px){.retreat-nav{padding:1rem}.retreat-brand span{display:none}.retreat-container{padding-left:1.2rem;padding-right:1.2rem}.retreat-hero{padding:3rem 0}.brief-inputs,.regional-grid{grid-template-columns:1fr}.retreat-form,.retreat-option{padding:1.1rem}.option-meta{flex-direction:column;gap:.4rem}.option-actions,.handoff-actions{gap:.4rem}.retreat-options{gap:1rem}.retreat-main{padding-top:2.5rem}.decision-answer{padding:1rem}}
+  </style>
+</Base>

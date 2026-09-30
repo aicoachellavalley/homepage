@@ -10,6 +10,7 @@ const path = require('path');
 // Shared with src/pages/briefs/[slug].astro and src/pages/sitemap.xml.ts —
 // one derivation of an amended brief's modification date (see that file).
 const { briefDateModified, briefIsAmended } = require('./brief-dates.cjs');
+const { reportCopyDate, reportDateModified } = require('./report-dates.cjs');
 const { nodeContent } = require('./node-content.cjs');
 
 const COM_ROOT   = path.resolve(__dirname, '..');
@@ -238,6 +239,9 @@ function buildReports() {
       tags:        Array.isArray(fm.tags)     ? fm.tags     : [],
       sections:    Array.isArray(fm.sections) ? fm.sections : [],
       canonical:   fm.canonical   || '',
+      ...(reportDateModified(slug, fm) !== fm.date
+        ? { date_modified: reportDateModified(slug, fm) }
+        : {}),
       // Emitted so the feed can say a record was corrected. See content.config.ts
       // for why this is frontmatter rather than a body section: the note used to
       // sit above ## Signal, where no extractor could see it.
@@ -472,7 +476,11 @@ function generateLlmsFullTxt() {
   const reportSections = reportFiles.map(filePath => {
     const slug = path.basename(filePath, '.mdx');
     const content = fs.readFileSync(filePath, 'utf8');
-    return `## report: ${slug}\n\n${toFlatText(content)}`;
+    const fm = parseFrontmatter(content);
+    const modified = reportDateModified(slug, fm);
+    const copyDate = reportCopyDate(slug);
+    const editNote = copyDate ? `Copy edited: ${copyDate}; research dates are unchanged.\n` : '';
+    return `## report: ${slug}\n\n${editNote}Last modified: ${modified}\n\n${toFlatText(content)}`;
   });
 
   const header = [
