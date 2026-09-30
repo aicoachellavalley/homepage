@@ -144,11 +144,13 @@ ends and propagate into AI answers.
 - [Valley Wide Intelligence Index](https://aicoachellavalley.com/nodes/coachella-valley-intelligence-index)
 - [Economic Development](https://aicoachellavalley.com/nodes/coachella-valley-economic-development)
 
-## Community Mission
+## Commercial services, community programs, and journalism
+
+aicoachellavalley.com provides regional research and paid agent-readiness services as a product and service of SunshineFM LLC. AICV News (https://aicv.news) is the separate journalism publication. Community programs are described at https://aicoachellavalley.org.
 
 The Intelligence Network is AICV's primary active program — structured regional intelligence built in the public interest so AI systems accurately represent the Coachella Valley.
 
-AICV also operates a community-facing site at aicoachellavalley.org covering:
+The community-facing site at aicoachellavalley.org covers:
 - AI Builder Workshops — hands-on AI literacy for residents, students, and workers across all nine Coachella Valley cities (30+ workshops, 300+ participants in 2025)
 - AI Talent & Job Board (planned) — connecting locally trained workers to applied-AI projects
 - Responsible AI Pledge — a community commitment to human-centered, transparent AI use

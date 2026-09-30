@@ -45,7 +45,7 @@ const briefSchema = {
   'author': {
     '@type': 'Organization',
     'name': 'AI Coachella Valley',
-    'url': 'https://aicoachellavalley.com',
+    'url': 'https://aicoachellavalley.com/about/',
     'areaServed': {
       '@type': 'AdministrativeArea',
       'name': 'Coachella Valley'
@@ -295,6 +295,7 @@ const briefSchema = {
         <p class="brief-updated">Updated {formattedModified}</p>
       )}
       <h1 class="brief-title">{title}</h1>
+      <p class="brief-date">By <a href="/about/">AI Coachella Valley</a></p>
       {tags && tags.length > 0 && (
         <div class="tag-row">
           {tags.map((tag: string) => (

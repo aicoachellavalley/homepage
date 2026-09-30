@@ -2,6 +2,8 @@
 import Footer from '../../components/Footer.astro';
 import OmitBodyTitle from '../../components/OmitBodyTitle.astro';
 import { getCollection, render } from 'astro:content';
+import org from '../../data/org.json';
+import { reportCopyDate, reportDateModified } from '../../../scripts/report-dates.cjs';
 import reportPreviewMap from '../../data/report-preview-map.json';
 const previewManifests = import.meta.glob('../../data/previews/previews-index-*.json', { eager: true });
 
@@ -28,6 +30,20 @@ const previewManifest = previewSegment
 const { Content, headings } = await render(entry);
 
 const { title, description, date, period, report_type, tags, sections, canonical, correction } = entry.data;
+const slug = entry.id.replace(/\.mdx$/, '');
+const dateModified = reportDateModified(slug, entry.data);
+const copyDate = reportCopyDate(slug);
+
+// This first-person report ends with Sat's signed author biography. The other
+// reports are institutionally bylined and include AI-assisted synthesis; do not
+// infer a personal author or named reviewer from who founded the organization.
+const signedBySat = slug === 'data-centers-ai-infrastructure-coachella-valley';
+const author = signedBySat
+  ? { '@type': 'Person', name: org.founder.name, url: 'https://aicoachellavalley.com/about/#team', jobTitle: org.founder.jobTitle, sameAs: org.founder.sameAs }
+  : { '@type': 'Organization', name: org.name, url: 'https://aicoachellavalley.com/about/' };
+const fmtDate = (iso: string) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
+});
 
 const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric',
@@ -65,12 +81,8 @@ const reportSchema = {
   'headline': title,
   'description': description,
   'datePublished': date,
-  'dateModified': date,
-  'author': {
-    '@type': 'Organization',
-    'name': 'AI Coachella Valley',
-    'url': 'https://aicoachellavalley.com/about/',
-  },
+  'dateModified': dateModified,
+  'author': author,
   'publisher': {
     '@type': 'Organization',
     'name': 'AI Coachella Valley',
@@ -103,6 +115,7 @@ const reportSchema = {
   <meta property="og:url" content={canonical} />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content={date} />
+  <meta property="article:modified_time" content={dateModified} />
 
   <script type="application/ld+json" set:html={JSON.stringify(reportSchema, null, 2)} />
 
@@ -184,6 +197,8 @@ const reportSchema = {
     }
     .report-byline { margin: 0 0 16px; font-size: 0.85rem; color: var(--sand-dark); }
     .report-byline a { color: var(--sand-dark); text-decoration: underline; }
+    .report-revision { font-size: 0.8rem; color: var(--sand-dark); line-height: 1.6; margin-bottom: 16px; max-width: 70ch; }
+    .report-summary { font-size: 1rem; line-height: 1.7; color: var(--sand); max-width: 70ch; margin-bottom: 16px; }
 
     .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
     .tag-chip {
@@ -335,8 +350,11 @@ const reportSchema = {
       {period && <span class="badge badge-period">{period}</span>}
     </div>
     <h1 class="report-title">{title}</h1>
-    <p class="report-date">{formattedDate}</p>
-    <p class="report-byline">By <a href="/about/">AI Coachella Valley</a></p>
+    <p class="report-date">Published {formattedDate}</p>
+    <p class="report-byline">By <a href={signedBySat ? '/about/#team' : '/about/'}>{author.name}</a></p>
+    <p class="report-summary">{description}</p>
+    {copyDate && <p class="report-revision">Copy edited {fmtDate(copyDate)}; research dates are unchanged.</p>}
+    {dateModified !== date && dateModified !== copyDate && <p class="report-revision">Updated {fmtDate(dateModified)}; see the dated correction below.</p>}
     {tags && tags.length > 0 && (
       <div class="tag-row">
         {tags.map((tag: string) => (

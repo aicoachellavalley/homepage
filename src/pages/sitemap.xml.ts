@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 // Same .cjs the build script requires — see scripts/brief-dates.cjs and the
 // claimed-members.cjs precedent in llms.txt.ts for why a shared module.
 import { briefDateModified } from '../../scripts/brief-dates.cjs';
+import { reportDateModified } from '../../scripts/report-dates.cjs';
 import pageDates from '../data/page-dates.json';
 import { latestDate, latestResearchDate } from '../../scripts/research-dates.mjs';
 
@@ -25,7 +26,7 @@ export const GET: APIRoute = async () => {
     dates.filter((d): d is string => !!d).reduce((a, b) => (b > a ? b : a), '') || undefined;
   const briefsLastmod  = maxDate(briefs.map((e) => briefDateModified(e.data)));
   const nodesLastmod   = maxDate(nodes.map((e) => e.data.last_updated));
-  const reportsLastmod = maxDate(reports.filter((e) => e.data.status === 'published').map((e) => e.data.date));
+  const reportsLastmod = maxDate(reports.filter((e) => e.data.status === 'published').map((e) => reportDateModified(e.id, e.data)));
   const pd = pageDates as Record<string, string>;
   // This page now displays corpus activity. Keep its crawl date aligned with
   // its JSON-LD when published research advances; never use the build clock.
@@ -35,14 +36,15 @@ export const GET: APIRoute = async () => {
   const staticPages: { url: string; changefreq: string; priority: string; lastmod?: string }[] = [
     { url: 'https://aicoachellavalley.com/',                       changefreq: 'weekly',  priority: '1.0', lastmod: homeLastmod },
     { url: 'https://aicoachellavalley.com/nodes/',                 changefreq: 'weekly',  priority: '0.9', lastmod: nodesLastmod },
-    { url: 'https://aicoachellavalley.com/briefs/',                changefreq: 'weekly',  priority: '0.9', lastmod: briefsLastmod },
-    { url: 'https://aicoachellavalley.com/reports/',               changefreq: 'weekly',  priority: '0.9', lastmod: reportsLastmod },
+    { url: 'https://aicoachellavalley.com/briefs/',                changefreq: 'weekly',  priority: '0.9', lastmod: maxDate([briefsLastmod, pd['/briefs/']]) },
+    { url: 'https://aicoachellavalley.com/reports/',               changefreq: 'weekly',  priority: '0.9', lastmod: maxDate([reportsLastmod, pd['/reports/']]) },
     { url: 'https://aicoachellavalley.com/get-agent-ready/',       changefreq: 'monthly', priority: '0.9', lastmod: garLastmod },
     { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8', lastmod: pd['/minimum-viable-agent/'] },
     { url: 'https://aicoachellavalley.com/how-we-do-this/',        changefreq: 'monthly', priority: '0.8', lastmod: pd['/how-we-do-this/'] },
     { url: 'https://aicoachellavalley.com/connect/',               changefreq: 'monthly', priority: '0.8', lastmod: pd['/connect/'] },
     { url: 'https://aicoachellavalley.com/about/',                 changefreq: 'monthly', priority: '0.8', lastmod: pd['/about/'] },
     { url: 'https://aicoachellavalley.com/contact/',               changefreq: 'monthly', priority: '0.7', lastmod: pd['/contact/'] },
+    { url: 'https://aicoachellavalley.com/terms/',                 changefreq: 'monthly', priority: '0.5', lastmod: pd['/terms/'] },
     { url: 'https://aicoachellavalley.com/cvep-what-happened/',    changefreq: 'monthly', priority: '0.8' },
   ];
 
@@ -86,7 +88,7 @@ export const GET: APIRoute = async () => {
   for (const entry of reports) {
     if (entry.data.status !== 'published') continue;
     const slug    = entry.id.replace(/\.mdx$/, '');
-    const lastmod = entry.data.date;
+    const lastmod = reportDateModified(slug, entry.data);
     urlEntries.push(`  <url>
     <loc>https://aicoachellavalley.com/reports/${slug}/</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>monthly</changefreq>

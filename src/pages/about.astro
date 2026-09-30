@@ -251,12 +251,13 @@ const schemaGraph = {
 </section>
 
 <!-- ─── THE TEAM ─── -->
-<section class="ab-band ab-band-b">
+<section class="ab-band ab-band-b" id="team">
   <div class="ab-inner">
     <h2 class="ab-h2">The team behind AICV</h2>
     <div class="ab-person">
       <h3 class="ab-h3">{org.founder.name}, {org.founder.jobTitle}</h3>
       <p class="ab-body">{org.founder.name} founded AI Coachella Valley in {founded}. {org.founder.name.split(' ')[0]} is a {org.founder.descriptor}, based in the Coachella Valley.</p>
+      <p class="ab-body">Sat is also the AI Beat Reporter for InformedIE (Informed Inland Empire) and the founder of SunshineFM.</p>
       <p class="ab-social">
         {org.founder.sameAs.map((href, i) => (
           <><a href={href} class="ab-inline-link" rel="me">{href.includes('linkedin') ? 'LinkedIn' : href.includes('x.com') ? 'X' : 'GitHub'}</a>{i < org.founder.sameAs.length - 1 && <span class="ab-sep"> · </span>}</>

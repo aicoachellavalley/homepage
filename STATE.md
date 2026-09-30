@@ -4,6 +4,20 @@
 
 ## 2026-09-30 — DRAFT: assessment cleanup
 
+Second pass on the same draft PR, parent `35a5c38`: the homepage now carries
+Team Retreat → Satellite Base → Relocate the Startup → Build, Invest, and
+Belong, with four links into existing regional research. Replaced the service
+page and FAQ's visibility guarantee with the public-profile publication
+promise; added a September 30 Terms clarification while retaining the dated
+September 19 record. Journalism/community links now point to their own sites.
+Shortened all 14 report summaries and the three assessment-priority openings;
+all findings, original publication dates and amendment records are unchanged.
+Sat's signed data-center report has Person attribution and an About bio link;
+other reports and briefs retain institutional attribution. No named reviewer
+was inferred. Copy-edit dates agree across pages, JSON-LD, reports.json,
+sitemap and llms-full.txt. 66 tests and the full build pass; 312 HTML pages and
+5,696 static internal links pass. Desktop/mobile preview review follows push.
+
 Prepared on `codex/site-assessment-cleanup-20260930`, based on `74fdca5`;
 not released to `main`. Collection templates emit one H1 while retaining the
 manuscript titles in machine feeds. Report navigation uses the headings' built
