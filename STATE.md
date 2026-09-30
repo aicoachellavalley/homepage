@@ -2,6 +2,24 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-09-30 — DRAFT: assessment cleanup
+
+Prepared on `codex/site-assessment-cleanup-20260930`, based on `74fdca5`;
+not released to `main`. Collection templates emit one H1 while retaining the
+manuscript titles in machine feeds. Report navigation uses the headings' built
+IDs; 144 links resolve without JavaScript, including the data-center report's
+Introduction after its opening note. Ten legacy paths redirect to current
+records. Added `/contact/` from org.json, footer/sitemap/llms discovery, report
+bylines linked to About, report-index H2s, and clearer newsroom/commercial copy.
+
+Validation: 62 tests and the full build pass; ownership, amendments and complete
+node-content parity gates pass. A new rendered-output gate checks 312 HTML
+pages and 5,514 static internal links; deliberate duplicate-H1, missing-route
+and missing-anchor controls fail as expected. Preview-service routes are
+excluded; the assessment's 18% figure and live crawler access remain unverified.
+No research counts, findings, membership pricing or service scope changed.
+Browser visual QA remains pending: Chromium was unavailable in this workspace.
+
 ## 2026-09-22 — APPROVED SOURCE RELEASE: /about/ + homepage JSON-LD de-stale
 
 Released through `main` on Sat's go; Cloudflare production verification

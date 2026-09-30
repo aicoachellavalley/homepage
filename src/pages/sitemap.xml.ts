@@ -42,6 +42,7 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/how-we-do-this/',        changefreq: 'monthly', priority: '0.8', lastmod: pd['/how-we-do-this/'] },
     { url: 'https://aicoachellavalley.com/connect/',               changefreq: 'monthly', priority: '0.8', lastmod: pd['/connect/'] },
     { url: 'https://aicoachellavalley.com/about/',                 changefreq: 'monthly', priority: '0.8', lastmod: pd['/about/'] },
+    { url: 'https://aicoachellavalley.com/contact/',               changefreq: 'monthly', priority: '0.7', lastmod: pd['/contact/'] },
     { url: 'https://aicoachellavalley.com/cvep-what-happened/',    changefreq: 'monthly', priority: '0.8' },
   ];
 

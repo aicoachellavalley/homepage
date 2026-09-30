@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import org from '../data/org.json';
+import pageDates from '../data/page-dates.json';
+
+const canonicalUrl = `${org.url}contact/`;
+const title = 'Contact AICV — AI Coachella Valley';
+const description = 'Contact Sat Singh at AI Coachella Valley for business services, regional intelligence, questions or corrections.';
+const hq = org.headquarters;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  '@id': `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name: title,
+  description,
+  datePublished: pageDates['/contact/'],
+  dateModified: pageDates['/contact/'],
+  mainEntity: {
+    '@type': 'Organization',
+    '@id': `${org.url}#organization`,
+    name: org.name,
+    url: org.url,
+    email: org.email,
+    parentOrganization: { '@type': 'Organization', name: org.owner },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: hq.streetAddress,
+      addressLocality: hq.addressLocality,
+      addressRegion: hq.addressRegion,
+      postalCode: hq.postalCode,
+      addressCountry: 'US',
+    },
+  },
+};
+---
+
+<Base title={title} description={description} canonicalUrl={canonicalUrl} schema={schema}>
+  <nav class="contact-nav" aria-label="Main navigation">
+    <a href="/" class="contact-logo">AICV <span>AI Coachella Valley</span></a>
+    <div><a href="/about/">About</a><a href="/get-agent-ready/">Get Agent Ready →</a></div>
+  </nav>
+  <header class="contact-header">
+    <div class="contact-inner">
+      <p class="contact-eyebrow">AI Coachella Valley</p>
+      <h1>Contact AICV</h1>
+      <p>Questions about the valley, your business, or something we published? Get in touch.</p>
+    </div>
+  </header>
+  <main class="contact-inner contact-main">
+    <section>
+      <h2>Talk with Sat</h2>
+      <p><strong>{org.founder.name}</strong>, {org.founder.jobTitle}</p>
+      <p><a class="contact-email" href={`mailto:${org.email}`}>{org.email}</a></p>
+      <p>For business services, include your business name and website. For a correction, include the page link and the source we should check.</p>
+    </section>
+    <section>
+      <h2>Based in Palm Desert</h2>
+      <address>{hq.place}<br />{hq.streetAddress}<br />{hq.addressLocality}, {hq.addressRegion} {hq.postalCode}</address>
+    </section>
+    <section>
+      <h2>Start with a free check</h2>
+      <p>See what an AI assistant can read about your business using <a href="/get-agent-ready/#diagnostic">Agent Preview</a>. No account required.</p>
+      <p>AICV is a product and service of {org.owner}. <a href="/about/">Learn about AICV →</a></p>
+    </section>
+  </main>
+  <Footer variant="full" />
+</Base>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+  body { margin: 0; background: #FAFAF7; color: #122B22; font-family: 'DM Sans', sans-serif; }
+  .contact-inner { max-width: 760px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  .contact-nav { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px; background: #1E1E1E; }
+  .contact-nav a { color: #F5F5F5; text-decoration: none; }
+  .contact-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; }
+  .contact-logo span { margin-left: 12px; font-size: 0.8rem; font-weight: 500; }
+  .contact-nav div { display: flex; gap: 24px; font-size: 0.85rem; }
+  .contact-nav div a:last-child { color: #D8FF00; }
+  .contact-header { padding: 56px 0; background: #122B22; color: #F5F5F5; }
+  .contact-eyebrow { color: #D8FF00; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .contact-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3rem); margin: 16px 0; }
+  .contact-header p:last-child { max-width: 52ch; line-height: 1.7; }
+  .contact-main { padding-top: 40px; padding-bottom: 24px; }
+  .contact-main section { margin-bottom: 36px; }
+  .contact-main h2 { font-family: 'Syne', sans-serif; font-size: 1.2rem; }
+  .contact-main p, .contact-main address { max-width: 62ch; line-height: 1.7; }
+  .contact-main address { font-style: normal; }
+  .contact-main a { color: #1B4332; text-underline-offset: 3px; }
+  .contact-email { font-weight: 700; font-size: 1.2rem; overflow-wrap: anywhere; }
+  @media (max-width: 540px) {
+    .contact-nav { flex-wrap: wrap; gap: 16px; }
+    .contact-header { padding: 36px 0; }
+  }
+</style>

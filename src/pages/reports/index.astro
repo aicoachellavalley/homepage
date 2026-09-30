@@ -71,7 +71,7 @@ const pageSchema = {
               {period      && <span class="badge badge-period">{period}</span>}
               <span class="report-date">{date}</span>
             </div>
-            <a href={`/reports/${slug}/`} class="report-title">{title}</a>
+            <h2 class="report-heading"><a href={`/reports/${slug}/`} class="report-title">{title}</a></h2>
             {description && <p class="report-desc">{description}</p>}
           </li>
         );
@@ -143,6 +143,7 @@ const pageSchema = {
     color: var(--pine); text-decoration: none; letter-spacing: -0.01em;
     transition: color 0.15s; line-height: 1.35; display: block; margin-bottom: 0.25rem;
   }
+  .report-heading { margin: 0; }
   .report-title:hover { color: var(--pine-light); }
   .report-desc { font-size: 0.83rem; color: var(--pine-light); font-weight: 300; line-height: 1.6; max-width: 80ch; }
 
