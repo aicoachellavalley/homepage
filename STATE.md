@@ -2,6 +2,27 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-10-01 — APPROVED SOURCE RELEASE: State of AI — Q3 2026
+
+Released through `main` on Sat's go; Cloudflare production verification
+follows the push.
+New report `src/content/reports/state-of-ai-q3-2026.mdx` (`report_type:
+state-of-ai`, period Q3 2026, canonical with trailing slash): nine stories
+(personal agents; the sandbox breaks; the labs hit the brakes; an insider
+goes public; teens and chatbots; robots and work; AI and work; states and
+towns; governments on the world stage) plus two "also in the quarter" items,
+each with What Happened / Why It Matters / What This Means for the Coachella
+Valley. Disclosure paragraph in the body (agent-readiness services; a
+hackathon with an OpenAI sponsor; use of Claude). Every claim was checked
+against a primary source or named outlet; the record and an independent
+editor's two passes are in playbook `workflow-runs/state-of-ai-q3-2026/`.
+reports.json 14 -> 15 entries; sitemap and llms-full carry it (llms.txt lists
+endpoints, not individual reports, as before). Prebuild tests, build and the
+ownership, amendments and node-content gates pass with IndexNow disabled; the
+built page has no fiscal-sponsorship language and the SunshineFM LLC
+ownership footer. Sources are linked live; Wayback saves were rate-limited
+and the snapshots are being added as follow-up commits.
+
 ## 2026-09-22 — APPROVED SOURCE RELEASE: /about/ + homepage JSON-LD de-stale
 
 Released through `main` on Sat's go; Cloudflare production verification
