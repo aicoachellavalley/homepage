@@ -2,6 +2,27 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-10-07 — REVIEW CORRECTION: preserve caller retreat requirements
+
+Sat's independent review of PR #2 reproduced three interpretation defects not
+covered by the original 13 synthetic scenarios: negated room sharing, a meeting
+day erasing an overnight stay, and excluded/replaced venues becoming the sole
+named match. Four regression cases using the supplied phrases failed before
+the fix. The resolver and browser brief now share lodging interpretation;
+negated sharing requests individual rooms, positive night counts retain lodging,
+and explicit venue omissions/alternatives are separate caller requirements.
+Positive named requests still work alongside exclusions. No new research round
+or commercial change was made.
+
+Six added regression tests cover the exact phrases, both inferred and structured
+two-night stays, combined positive/excluded names, and retained structured/day-only
+behavior. Validation: 117 tests pass, zero audit vulnerabilities, full build and
+all publishing gates pass (315 HTML pages / 6,085 static internal links).
+The deployed official-SDK verifier now includes 18 synthetic scenarios; new
+preview and browser receipts follow Git deployment. Prior 13-case receipts are
+historical evidence for their own revisions and did not catch these defects.
+Production remains unchanged; PR #2 still requires Sat's publication review.
+
 ## 2026-10-07 — REVIEW BRANCH: broader retreat decisions
 
 Sat authorized research and implementation through a tested PR and Git-connected

@@ -29,6 +29,11 @@ const scenarios = [
   ['Bermuda-Dunes', { query: 'Retreat at VenueTEN for 16 people', city: 'Bermuda Dunes', group_size: 16, shared_lodging: true }],
   ['unsupported-name', { query: 'Plan an overnight retreat at Palm Canyon Unrecorded Motel for 16 people', group_size: 16 }],
   ['outside-coverage', { query: 'Leadership retreat near San Diego for 16 people', group_size: 16 }],
+  ['not-sharing', { query: 'Leadership retreat for 16 people. We are not sharing rooms', group_size: 16 }],
+  ['overnight-with-meeting-day', { query: 'Leadership retreat for 16 people. Two nights with one day of strategy meetings', group_size: 16, shared_lodging: false }],
+  ['explicit-nights-with-meeting-day', { query: 'Leadership retreat for 16 people. Two nights with one day of strategy meetings', group_size: 16, shared_lodging: false, nights: 2 }],
+  ['exclude-Parker', { query: 'Leadership retreat for 16 people. Exclude Parker', group_size: 16 }],
+  ['alternatives-to-Sensei', { query: 'Wellness retreat for 16 people; alternatives to Sensei', group_size: 16 }],
 ];
 async function call(name, arguments_) {
   const value = await client.callTool({ name, arguments: arguments_ });
@@ -83,6 +88,13 @@ try {
     if (label === 'wellness') assert.ok(r.results.some((v) => /Sensei|Two Bunch/.test(v.name)));
     if (label === 'Bermuda-Dunes') { assert.equal(r.results.length, 1); assert.equal(r.results[0].city, 'Bermuda Dunes'); }
     if (label === 'large') { assert.ok(r.results.some((v) => v.meeting_spaces.some((space) => space.capacity >= 60 && /conference|classroom|schoolroom|u.shape|boardroom/.test(space.layout)))); assert.ok(!r.results.some((v) => /sensei/i.test(v.name))); assert.ok(r.exclusions.some((v) => /sensei/i.test(v.name))); }
+    if (label === 'not-sharing') { assert.equal(r.requirements.shared_lodging, false); assert.equal(r.requirements.rooms, 16); }
+    if (label.endsWith('with-meeting-day')) { assert.equal(r.requirements.day_only, false); assert.equal(r.requirements.nights, 2); assert.equal(r.requirements.rooms, 16); }
+    if (['exclude-Parker', 'alternatives-to-Sensei'].includes(label)) {
+      const id = label === 'exclude-Parker' ? 'node/parker-palm-springs' : 'node/sensei-porcupine-creek';
+      assert.ok(r.results.length >= 3 && r.results.every(v => v.id !== id));
+      assert.ok(r.exclusions.some(v => v.id === id && v.reasons.some(reason => reason.evidence_type === 'caller_requirement')));
+    }
     summary.cases.push({ label, status: r.status, requirements: r.requirements ?? null, selected: r.results.map((v) => ({ id: v.id, name: v.name, city: v.city, source_checked_at: v.source_checked_at, node_last_updated: v.node_last_updated, fit_reasons: v.fit_reasons, unknowns: v.unknowns, official_actions: v.official_actions })), exclusions: r.exclusions ?? [], unestablished_matches: r.unestablished_matches ?? [], supporting_services: r.supporting_services?.map((v) => ({ id: v.id, name: v.name, type: v.service_type, source_checked_at: v.source_checked_at, official_actions: v.official_actions })) ?? [], service_exclusions: r.service_exclusions ?? [], next_questions: r.next_questions, text_structured_agreement: true });
   }
   // Synthetic clarification tightens a returned room-sharing/budget question.

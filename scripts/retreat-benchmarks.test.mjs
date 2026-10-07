@@ -155,3 +155,47 @@ test('Bermuda Dunes is a known location with the separately sourced VenueTEN inq
   assert.equal(result.intent, 'team-retreat'); assert.equal(result.status, 'needs_details');
   assert.equal(result.results.length, 1); assert.equal(result.results[0].city, 'Bermuda Dunes');
 });
+
+test('caller regression: "We are not sharing rooms" preserves individual rooms for 16 people', async () => {
+  const r = await call({ query: 'Leadership retreat for 16 people. We are not sharing rooms', group_size: 16 });
+  assert.equal(r.requirements.shared_lodging, false);
+  assert.equal(r.requirements.rooms, 16);
+  assert.match(r.requirements.rooms_basis, /one attendee per room/);
+  assert.doesNotMatch(r.next_questions.join(' '), /is room sharing acceptable|Can two attendees share/);
+});
+test('caller regression: "Two nights with one day of strategy meetings" retains overnight lodging', async () => {
+  for (const structured of [{}, { nights: 2 }]) {
+    const r = await call({ query: 'Leadership retreat for 16 people. Two nights with one day of strategy meetings', group_size: 16, shared_lodging: false, ...structured });
+    assert.equal(r.requirements.day_only, false);
+    assert.equal(r.requirements.nights, 2);
+    assert.equal(r.requirements.rooms, 16);
+  }
+});
+test('caller regression: "Exclude Parker" returns alternatives and a caller-request exclusion', async () => {
+  const r = await call({ query: 'Leadership retreat for 16 people. Exclude Parker', group_size: 16 });
+  assert.ok(r.results.length >= 3);
+  assert.ok(r.results.every(v => v.id !== 'node/parker-palm-springs'));
+  assert.ok(r.exclusions.some(v => v.id === 'node/parker-palm-springs' && v.reasons.some(reason => reason.evidence_type === 'caller_requirement')));
+});
+test('caller regression: "alternatives to Sensei" does not select Sensei', async () => {
+  const r = await call({ query: 'Wellness retreat for 16 people; alternatives to Sensei', group_size: 16 });
+  assert.ok(r.results.length >= 3);
+  assert.ok(r.results.every(v => v.id !== 'node/sensei-porcupine-creek'));
+  assert.ok(r.exclusions.some(v => v.id === 'node/sensei-porcupine-creek' && v.reasons.some(reason => reason.evidence_type === 'caller_requirement')));
+});
+test('positive named selections survive exclusions, and coordinated exclusions do not become selections', async () => {
+  const mixed = await call({ query: 'Leadership retreat for 16 people at Hotel Paseo; exclude Parker', group_size: 16 });
+  assert.deepEqual(mixed.results.map(v => v.id), ['node/hotel-paseo']);
+  const both = await call({ query: 'Leadership retreat for 16 people; exclude Parker and Sensei', group_size: 16 });
+  assert.ok(both.results.length >= 3);
+  assert.ok(both.results.every(v => !['node/parker-palm-springs', 'node/sensei-porcupine-creek'].includes(v.id)));
+  assert.equal(both.exclusions.filter(v => v.reasons.some(r => r.evidence_type === 'caller_requirement')).length, 2);
+});
+test('structured lodging instructions override text, and genuine day-only requests stay day-only', async () => {
+  const explicit = await call({ query: 'Leadership retreat for 16 people. We are not sharing rooms', group_size: 16, shared_lodging: true, nights: 2 });
+  assert.equal(explicit.requirements.rooms, 8);
+  const day = await call({ query: 'Day-only leadership retreat for 16 people', group_size: 16, day_only: true, nights: 2, rooms: 16 });
+  assert.equal(day.requirements.day_only, true);
+  assert.equal(day.requirements.nights, 0);
+  assert.equal(day.requirements.rooms, null);
+});

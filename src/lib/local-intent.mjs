@@ -1,4 +1,5 @@
 // Pure bounded lookup. AICV records are data, never instructions to the caller.
+import { accommodationRequirements } from './retreat-requirements.mjs';
 export const SEGMENTS = ['food-dining', 'hospitality', 'home-real-estate', 'wellness-healthcare', 'family-schooling', 'outdoors-recreation'];
 const CITIES = ['Palm Springs', 'Cathedral City', 'Rancho Mirage', 'Palm Desert', 'Indian Wells', 'La Quinta', 'Indio', 'Coachella', 'Desert Hot Springs', 'Thousand Palms', 'Bermuda Dunes', 'Adjacent Communities', 'Coachella Valley'];
 const STOP = new Set('a an and are at be best by can find for from get give have here i in is it local me my near of on our place please quiet really shop should some team that the this to us want we what where which with would founder meeting founders option options business businesses ready agent preview answer need'.split(' '));
@@ -130,14 +131,6 @@ export function resolveLocalIntent(input, catalog) {
 }
 
 
-const countFrom = (q, noun) => Number(q.match(new RegExp(`\\b(\\d{1,4})\\s*(?:${noun})\\b`))?.[1]) || null;
-const numberWords = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7 };
-function durationFrom(q) {
-  const numeric = countFrom(q, 'night|nights');
-  if (numeric) return numeric;
-  const word = q.match(/\b(one|two|three|four|five|six|seven) nights?\b/)?.[1];
-  return word ? numberWords[word] : null;
-}
 const actionFor = (o) => [{ url: o.action_url, label: o.action_label, kind: o.action_kind,
   source_url: o.action_source_url ?? o.field_evidence?.action_url?.source_url ?? o.action_url, checked_at: o.action_checked_at ?? o.field_evidence?.action_url?.checked_at ?? o.source_checked_at ?? null }];
 const purposesFor = (o) => [...new Set([o.purpose, ...(o.purposes ?? [])].filter(Boolean))];
@@ -155,11 +148,9 @@ function resolveRetreat(input, catalog, base, q, city, group) {
     && (input.nearby === true || distanceRequest || new RegExp(`\\b(?:near|around|close to|outside(?: of)?) ${cityPattern}\\b`).test(q));
   // Structured city is an explicit municipality, even with nearby:true.
   const strictCity = !!city && city !== 'Coachella Valley' && (!!input.city || directBoundary || !nearby);
-  const shared = input.shared_lodging ?? (/\b(single occupancy|own rooms?|no shar(?:e|ed|ing)|individual rooms?)\b/.test(q) ? false : /\b(shar(?:e|ed|ing) (?:rooms?|accommodation|lodging)|double occupancy|two (?:people|per) (?:per )?room)\b/.test(q) ? true : null);
-  const dayOnly = input.day_only ?? (input.nights === 0 || /\b(day only|day retreat|one day|single day|no overnight|without (?:a )?(?:stay|lodging)|meeting only)\b/.test(q));
-  const nights = dayOnly ? 0 : input.nights ?? durationFrom(q);
-  const requestedRooms = input.rooms ?? countFrom(q, 'rooms?|bedrooms?');
-  const rooms = dayOnly ? null : requestedRooms ?? (group && shared !== null ? Math.ceil(group / (shared ? 2 : 1)) : null);
+  const lodgingRequirements = accommodationRequirements({ ...input, group_size: group });
+  const { shared_lodging: shared, day_only: dayOnly, nights, rooms } = lodgingRequirements;
+  const requestedRooms = lodgingRequirements.rooms_basis === 'explicit' ? rooms : null;
   const purposeText = normalize(input.purpose ?? q);
   const purpose = /wellness|mindfulness|yoga/.test(purposeText) ? 'wellness' : /strategy|executive|leadership|board/.test(purposeText) ? 'leadership' : input.purpose ? purposeText : 'team';
   const budget = input.budget ?? (input.query.match(/\$[\d,]+(?:\.\d{2})?(?:\s*(?:total|per person|per night))?/)?.[0] || (/\b(budget|affordable|economical|cost conscious|practical|inexpensive)\b/.test(q) ? 'budget-conscious; amount and scope unspecified' : null));
@@ -169,15 +160,30 @@ function resolveRetreat(input, catalog, base, q, city, group) {
   const accessibility = input.accessibility ?? (/\b(accessib(?:le|ility)|wheelchair|step free|mobility|ada)\b/.test(q) ? 'Accessibility requirements mentioned; specific needs unresolved.' : null);
   const boutique = /\b(boutique|intimate|small hotel)\b/.test(q);
   const privateProperty = /\b(private (?:estate|property|house)|villa|villas|estate|estates|shared house)\b/.test(q);
-  const requirements = { group_size: group, rooms, rooms_basis: requestedRooms ? 'explicit' : rooms ? shared ? 'planning estimate: two attendees per room; bed configuration unverified' : 'planning estimate: one attendee per room' : null,
-    shared_lodging: shared, day_only: dayOnly, nights, purpose, budget, privacy, accessibility, location: city, nearby: !!nearby && !strictCity };
+  const requirements = { ...lodgingRequirements, purpose, budget, privacy, accessibility, location: city, nearby: !!nearby && !strictCity };
   const excluded = [];
   let candidates = (catalog.retreat?.options ?? []).filter((o) => o.qualified === true);
-  const named = candidates.filter((o) => q.includes(normalize(o.name)) || (normalize(o.name.split(/[,(]/)[0]).length >= 4 && q.includes(normalize(o.name.split(/[,(]/)[0]))) || q.includes(normalize(o.slug)) || (o.aliases ?? []).some((alias) => q.includes(normalize(alias))) || (o.slug === 'sensei-porcupine-creek' && q.includes('sensei')) || (o.slug === 'grand-hyatt-indian-wells' && q.includes('grand hyatt')));
+  const names = (o) => [...new Set([o.name, o.name.split(/[,(]/)[0], o.slug, ...(o.aliases ?? [])].map(normalize).filter(s => s.length >= 4))];
+  const knownNames = candidates.flatMap(names).sort((a, b) => b.length - a.length).join('|');
+  const negativePrefix = new RegExp(`\\b(?:exclude|excluding|avoid|except(?: for)?|alternatives? to|instead of|other than|rather than|apart from|without|not(?: at)?|do not (?:include|recommend|choose|suggest)|don t (?:include|recommend|choose|suggest)) (?:the )?(?:(?:${knownNames}) (?:(?:and|or) )?)*$`);
+  const mentions = candidates.map(o => {
+    let positive = false, negative = false;
+    for (const alias of names(o)) for (const match of q.matchAll(new RegExp(`\\b${alias}\\b`, 'g'))) {
+      const prefix = q.slice(0, match.index);
+      const negatedExclusion = /\b(?:do not|don t|never|not) (?:exclude|avoid) (?:the )?$/.test(prefix);
+      if (!negatedExclusion && negativePrefix.test(prefix)) negative = true;
+      else if (!negatedExclusion) positive = true;
+    }
+    return { o, positive, negative };
+  });
+  for (const { o } of mentions.filter(m => m.negative)) excluded.push({ id: o.id, name: o.name, city: o.city, reasons: [{ reason: 'Excluded at the caller’s request for alternatives or omission.', evidence_type: 'caller_requirement', source_url: null }] });
+  candidates = mentions.filter(m => !m.negative).map(m => m.o);
+  const named = mentions.filter(m => m.positive && !m.negative).map(m => m.o);
   if (named.length) candidates = named;
   const requestedName = q.match(/\b(?:named|called|at) (?:the )?(.+?)(?: in | near | around | for | with |$)/)?.[1];
   const genericTarget = requestedName && (CITIES.some((c) => normalize(c) === requestedName) || /^(?:a |an |our |least |most )/.test(requestedName) || /^(?:(?:small|private|boutique|luxury|practical|affordable) )?(?:hotel|resort|venue|property|estate|home|night)$/.test(requestedName));
-  const namedUnknown = !named.length && (/\b(unrecorded|nonexistent|unknown venue|zzqx|zzq)\b/.test(q) || (requestedName && !genericTarget));
+  const requestedKnown = requestedName && mentions.some(({o}) => names(o).some(alias => new RegExp(`^${alias}\\b`).test(requestedName)));
+  const namedUnknown = !named.length && (/\b(unrecorded|nonexistent|unknown venue|zzqx|zzq)\b/.test(q) || (requestedName && !genericTarget && !requestedKnown));
   if (namedUnknown) {
     return { ...base, status: 'no_match', intent: 'team-retreat', group_size: group, requirements, exclusions: [], supporting_services: [], next_questions: ['What is the exact venue name or its official group-planning URL?'], limitations: [...base.limitations, 'No qualified researched record establishes the named venue. No unrelated venue fallback is returned.'] };
   }
@@ -255,7 +261,7 @@ function resolveRetreat(input, catalog, base, q, city, group) {
   }
   if (excluded.length) base.limitations.push(...excluded.map((e) => `${e.name} ${e.reasons.every((r) => r.evidence_type === 'unknown') ? 'match unestablished' : 'excluded'}: ${e.reasons.map((r) => r.reason).join(' ')}`));
   if (!group) base.next_questions.push('How many attendees need seats in the working session?');
-  if (!dayOnly && !requestedRooms) base.next_questions.push(shared ? 'Can two attendees share, and what separate beds and room count are required?' : 'How many overnight rooms are required, and is room sharing acceptable?');
+  if (!dayOnly && !requestedRooms) base.next_questions.push(shared === false ? 'What room types and bed configurations are needed for the individual rooms?' : shared ? 'Can two attendees share, and what separate beds and room count are required?' : 'How many overnight rooms are required, and is room sharing acceptable?');
   if (nights === null) base.next_questions.push('What dates and number of nights should each operator quote?');
   else base.next_questions.push('What exact dates and flexibility should each operator evaluate?');
   if (budget) base.next_questions.push(`Does ${budget} cover the whole retreat or only lodging, and does it include food, meeting hire, AV, taxes, fees and transport?`);

@@ -124,6 +124,7 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
   <Footer variant="compact" />
   <script type="application/json" id="retreat-data" set:html={JSON.stringify(retreatData).replace(/</g, '\u003c')} />
   <script>
+    import { accommodationRequirements } from '../lib/retreat-requirements.mjs';
     const form = document.querySelector<HTMLFormElement>('#retreat-form');
     const query = document.querySelector<HTMLTextAreaElement>('#retreat-query');
     const guests = document.querySelector<HTMLInputElement>('#retreat-guests');
@@ -151,15 +152,14 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
       // that request. Otherwise derive the brief from the edited form.
       const sameComparison = formSnapshot() === comparedForm;
       const requirement = sameComparison ? comparedRequirements : null;
-      const text = (query?.value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ');
-      const attendees = requirement?.group_size ?? (guests?.value ? Number(guests.value) : Number(text.match(/\b(\d{1,4})\s*(?:person|people|guest|guests|member|members|attendees|employees)\b/)?.[1]) || null);
-      const dayOnly = requirement?.day_only ?? (lodging?.value === 'day' || nights?.value === '0' || /\b(day only|day retreat|one day|single day|no overnight|without (?:a )?(?:stay|lodging)|meeting only)\b/.test(text));
-      const sharing = requirement?.shared_lodging ?? (lodging?.value === 'shared' ? true : lodging?.value === 'single' ? false : /\b(single occupancy|own rooms?|no shar(?:e|ed|ing)|individual rooms?)\b/.test(text) ? false : /\b(shar(?:e|ed|ing) (?:rooms?|accommodation|lodging)|double occupancy|two (?:people|per) (?:per )?room)\b/.test(text) ? true : null);
-      const explicitRooms = rooms?.value ? Number(rooms.value) : Number(text.match(/\b(\d{1,4})\s*(?:rooms?|bedrooms?)\b/)?.[1]) || null;
-      const roomCount = requirement?.rooms ?? explicitRooms ?? (attendees && sharing !== null ? Math.ceil(attendees / (sharing ? 2 : 1)) : null);
-      const roomBasis = requirement?.rooms_basis ?? (!explicitRooms && roomCount ? sharing ? 'planning estimate: two attendees per room; bed configuration unverified' : 'planning estimate: one attendee per room' : null);
-      const words: Record<string, number> = {one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7};
-      const duration = requirement?.nights ?? (nights?.value ? Number(nights.value) : Number(text.match(/\b(\d{1,3}) nights?\b/)?.[1]) || words[text.match(/\b(one|two|three|four|five|six|seven) nights?\b/)?.[1] || ''] || null);
+      const current = accommodationRequirements({
+        query: query?.value || '',
+        ...(guests?.value ? { group_size: Number(guests.value) } : {}),
+        ...(rooms?.value ? { rooms: Number(rooms.value) } : {}),
+        ...(nights?.value ? { nights: Number(nights.value) } : {}),
+        ...(lodging?.value === 'day' ? { day_only: true } : lodging?.value ? { shared_lodging: lodging.value === 'shared' } : {}),
+      });
+      const { group_size: attendees, rooms: roomCount, rooms_basis: roomBasis, shared_lodging: sharing, day_only: dayOnly, nights: duration } = requirement || current;
       return { attendees: attendees || '[add number]', rooms: dayOnly ? 'not required (day-only)' : roomCount ? `${roomCount}${roomBasis?.startsWith('planning estimate') ? ` (${roomBasis}; confirm room count, beds and occupancy)` : ''}` : '[add room count]', accommodation: dayOnly ? 'Day-only; no lodging' : sharing === true ? 'Room sharing acceptable; confirm separate beds and occupancy' : sharing === false ? 'Individual rooms required' : 'Sharing undecided', nights: dayOnly ? '0' : duration ?? '[add nights]', sameComparison };
     }
     const recordEvent = (event: string) => {
