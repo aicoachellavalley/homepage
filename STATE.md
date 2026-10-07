@@ -2,6 +2,37 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-10-07 — AUTHORIZED PRODUCTION RELEASE: local decisions and assessment cleanup
+
+Sat explicitly authorized publishing reviewed homepage PR #1 after installing
+AICV Regional Intelligence as a personal ChatGPT web plugin against the
+September 30 immutable preview. Sat supplied an assistant response reporting
+successful `resolve_local_intent` execution: the three expected retreat venues,
+September 30 venue source checks distinct from September 25 node updates,
+regional context, limitations and exact returned follow-up questions. A second
+response reported a rerun with budget/shared-room/strategy requirements and
+separately identified additional web research. These are user-provided
+assistant test results, not independent inspection of the provider's trace;
+organic discovery, live pricing, booking and public directory approval remain
+unverified. The existing desktop standalone MCP configuration was not removed.
+
+Preparation merges current `main` (`a49d120`) into the reviewed branch, retaining
+the Q3 State of AI report byte-for-byte and both operational-history entries.
+The only merge conflict was competing additions to this file. Combined release
+validation: 83 tests pass; full build plus ownership, amendment, complete-node
+parity and rendered-page gates pass (315 HTML pages, 6,082 internal links).
+The Q3 report matches current main byte-for-byte. Fresh GitHub checks blocked
+publication on four dependency advisories. Compatible lockfile updates fix
+http-cache-semantics 4.2.0 -> 4.3.0, sharp 0.35.4 -> 0.35.5 (with matching
+platform/libvips packages), smol-toml 1.8.0 -> 1.9.0 and source-map-js 1.2.1 ->
+1.2.2. Direct dependency ranges and the CI audit gate remain unchanged; preserved
+platform metadata avoids unrelated lockfile churn. A clean npm ci, npm audit
+--audit-level=low (zero vulnerabilities), all 83 tests and the full build/gates
+pass with the updated lockfile. Production deployment verification follows publication; no additional retreat
+venues, budget ranking or transaction capabilities are introduced in this
+release. The web plugin still uses the tested preview URL until the permanent
+`https://aicoachellavalley.com/mcp` endpoint is verified after publication.
+
 ## 2026-10-01 — APPROVED SOURCE RELEASE: State of AI — Q3 2026
 
 Released through `main` on Sat's go; Cloudflare production verification
@@ -22,6 +53,121 @@ ownership, amendments and node-content gates pass with IndexNow disabled; the
 built page has no fiscal-sponsorship language and the SunshineFM LLC
 ownership footer. Sources are linked live; Wayback saves were rate-limited
 and the snapshots are being added as follow-up commits.
+
+## 2026-09-30 — DRAFT: assessment cleanup
+
+Assistant-question follow-up, parent `1a05a28`: the deployed MCP client test
+of "Plan a November leadership retreat for 16 people near Palm Springs"
+exposed an overly strict municipal filter. Nearby retreat wording now returns
+regional candidates and asks for acceptable drive time, without claiming a
+verified radius or travel time. Explicit city arguments and "in/within" city
+wording remain strict. Validation: 83 tests and all build/postbuild gates pass.
+This is assistant-mediated MCP retrieval, not installation into a separate
+assistant account. No production merge occurred.
+
+Fourth pass, authorized by Sat's request to use agents and implement the
+retrieval/distribution follow-up, parent `8369ad4`: added a shared read-only
+local-decision runtime in Cloudflare Pages Functions at `/mcp` and
+`/api/resolve-local-intent`. It derives 1,568 preview references, nine additional
+attributed Palm Desert observations, and 79 regional nodes from committed
+sources. These are lookup counts, not unique-business or newly checked-fact
+counts. Source dates remain intact. Named/local coffee queries no longer use a
+regional-economy fallback in this doorway; unknown and out-of-coverage queries
+return no match. This does not modify the inaccessible legacy MCP Worker.
+
+Added `/plan-team-retreat/`: an editable question, three primary-source-backed
+resort options, fit/constraints, and a prepared brief for an official group
+planning endpoint. No booking, payment or live-availability execution. Corrected
+Sensei's published group pathway, stay and age policies with a dated targeted
+notice; broader source-review date remains unchanged. Homepage and agent
+access guides link to the decision flow, catalog and new connector.
+
+Prepared a reproducible portable assistant-plugin ZIP, published metadata,
+five positive/three negative reviewer cases, and `/privacy/`. Canonical
+portable schemas validate and the official MCP SDK passes initialization,
+read-only tool discovery and retrieval controls in-process. Directory review,
+publisher/domain verification, recording and provider-account installation
+are separate steps, not claimed as completed. Minimal allowlisted events log
+retrieval outcomes/counts and action-link openings without raw queries or
+identities; no verified-bot, citation, unique-user or booking metric is claimed.
+
+Validation: 82 tests and full build/postbuild gates pass; 314 HTML pages and
+6,058 static internal links checked. The first preview passes a real-network official MCP SDK connection, tool
+retrieval and negative controls; venue selection and prepared-brief actions
+work in the browser. Browser QA found and prompted a natural-question routing
+regression fix, tested against the actual form default and its original text.
+Final preview interaction checks follow the corrective upload; main remains
+unchanged. One automated static-feed client receives Cloudflare 1010 while
+browser and MCP requests succeed; private security settings need review. A 30-day review task starts October
+30 in America/Los_Angeles and prepares sourced updates for review.
+
+Third pass, following Sat's explicit copy approvals, parent `b7833d5`: MVA
+copy now explains the public record, unclaimed starting previews, activation
+and official action links. Premium keeps daily public-signal monitoring from
+service activation, with changes flagged for review; no promised citation.
+Index and plain-language methodology describe measured observations and
+assistant access without universal-authority or discovery claims. State of AI
+uses a quarterly editorial cadence; regional nodes have a rolling 30-day
+source-review target, with the existing 90-day verification expiry retained
+as a backstop. No source-check date was advanced for these copy edits, and no
+monthly remeasurement of every business preview is promised. Corrected the
+innovation-node travel comparison to approximate LA drive / SFO flight times.
+AIQnA is now an experimental archive: historical routes and pilot design are
+preserved, pages/exports are noindexed, sample QA/Dataset JSON-LD is omitted,
+and detached JSON/CSV explicitly identify illustrative data. No research
+counts, original report findings or prices changed.
+
+Live distribution probes: deterministic MCP tools/list succeeds; get_report
+returns complete report text. query_venues returns 79 regional nodes (13 for
+Palm Desert), not the 1,568 business previews. A founder coffee-meeting query
+routes to general economic context. The separate search endpoint returns no
+chunks for the coffee-meeting and Rutina Coffee queries. These are observed
+retrieval gaps, not evidence of assistant adoption or a diagnosis from private
+analytics. Distribution and worker changes need their own follow-up; no
+outside-platform connector submission or production merge occurred here.
+Validation: 66 tests, full build and postbuild gates passed (312 HTML pages,
+5,716 static internal links). Archive robots/schema and sample JSON/CSV
+boundaries checked independently. Final desktop preview verification follows
+the branch upload. Mobile review and private Cloudflare analytics remain
+outside the available verification.
+
+Second pass on the same draft PR, parent `35a5c38`: the homepage now carries
+Team Retreat → Satellite Base → Relocate the Startup → Build, Invest, and
+Belong, with four links into existing regional research. Replaced the service
+page and FAQ's visibility guarantee with the public-profile publication
+promise; added a September 30 Terms clarification while retaining the dated
+September 19 record. Journalism/community links now point to their own sites.
+Shortened all 14 report summaries and the three assessment-priority openings;
+all findings, original publication dates and amendment records are unchanged.
+Sat's signed data-center report has Person attribution and an About bio link;
+other reports and briefs retain institutional attribution. No named reviewer
+was inferred. Copy-edit dates agree across pages, JSON-LD, reports.json,
+sitemap and llms-full.txt. 66 tests and the full build pass; 312 HTML pages and
+5,696 static internal links pass. Desktop preview review completed for the
+journey, Contact, service promise/Terms link, and report section navigation.
+Fixed low-contrast publication dates in dark report/brief headers and the
+report back-link. Mobile visual review remains pending: the available browser
+does not expose viewport resizing. Public HTTP reads of the live homepage and
+robots.txt return 200 and bot allowances are present; private Cloudflare SAT
+settings and access for every external crawler remain unverified. The working
+tree for this final review follows uploaded commit `ce4b5f0` (same tree as the
+local second-pass commit). No production merge has occurred.
+
+Prepared on `codex/site-assessment-cleanup-20260930`, based on `74fdca5`;
+not released to `main`. Collection templates emit one H1 while retaining the
+manuscript titles in machine feeds. Report navigation uses the headings' built
+IDs; 144 links resolve without JavaScript, including the data-center report's
+Introduction after its opening note. Ten legacy paths redirect to current
+records. Added `/contact/` from org.json, footer/sitemap/llms discovery, report
+bylines linked to About, report-index H2s, and clearer newsroom/commercial copy.
+
+Validation: 62 tests and the full build pass; ownership, amendments and complete
+node-content parity gates pass. A new rendered-output gate checks 312 HTML
+pages and 5,514 static internal links; deliberate duplicate-H1, missing-route
+and missing-anchor controls fail as expected. Preview-service routes are
+excluded; the assessment's 18% figure and live crawler access remain unverified.
+No research counts, findings, membership pricing or service scope changed.
+The first-pass browser limitation is resolved for desktop review above.
 
 ## 2026-09-22 — APPROVED SOURCE RELEASE: /about/ + homepage JSON-LD de-stale
 

@@ -1,6 +1,9 @@
 ---
 import Footer from '../../components/Footer.astro';
+import OmitBodyTitle from '../../components/OmitBodyTitle.astro';
 import { getCollection, render } from 'astro:content';
+import org from '../../data/org.json';
+import { reportCopyDate, reportDateModified } from '../../../scripts/report-dates.cjs';
 import reportPreviewMap from '../../data/report-preview-map.json';
 const previewManifests = import.meta.glob('../../data/previews/previews-index-*.json', { eager: true });
 
@@ -24,9 +27,23 @@ const previewSegment = (reportPreviewMap.map as Record<string, string>)[entry.id
 const previewManifest = previewSegment
   ? (Object.values(previewManifests).find((m: any) => m.default.segment === previewSegment) as any)?.default
   : null;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 const { title, description, date, period, report_type, tags, sections, canonical, correction } = entry.data;
+const slug = entry.id.replace(/\.mdx$/, '');
+const dateModified = reportDateModified(slug, entry.data);
+const copyDate = reportCopyDate(slug);
+
+// This first-person report ends with Sat's signed author biography. The other
+// reports are institutionally bylined and include AI-assisted synthesis; do not
+// infer a personal author or named reviewer from who founded the organization.
+const signedBySat = slug === 'data-centers-ai-infrastructure-coachella-valley';
+const author = signedBySat
+  ? { '@type': 'Person', name: org.founder.name, url: 'https://aicoachellavalley.com/about/#team', jobTitle: org.founder.jobTitle, sameAs: org.founder.sameAs }
+  : { '@type': 'Organization', name: org.name, url: 'https://aicoachellavalley.com/about/' };
+const fmtDate = (iso: string) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
+});
 
 const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric',
@@ -46,18 +63,26 @@ function sectionLabel(s: string): string {
   return s.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+// Use the IDs actually emitted by MDX, so navigation works without JavaScript.
+// Named sections match by text; legacy shorthand sections fall back to position.
+// Text matching matters when a report has an opening note outside its contents.
+const bodyHeadings = headings.filter((h) => h.depth === 2);
+const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+const reportSections = sections.map((section: string, index: number) => {
+  const heading = bodyHeadings.find((h) => normalize(h.text) === normalize(section))
+    ?? bodyHeadings[index];
+  if (!heading) throw new Error(`Report ${entry.id}: no heading for section ${section}`);
+  return { id: heading.slug, label: sectionLabel(section) };
+});
+
 const reportSchema = {
   '@context': 'https://schema.org',
   '@type': ['Article', 'Report'],
   'headline': title,
   'description': description,
   'datePublished': date,
-  'dateModified': date,
-  'author': {
-    '@type': 'Organization',
-    'name': 'AI Coachella Valley',
-    'url': 'https://aicoachellavalley.com',
-  },
+  'dateModified': dateModified,
+  'author': author,
   'publisher': {
     '@type': 'Organization',
     'name': 'AI Coachella Valley',
@@ -90,6 +115,7 @@ const reportSchema = {
   <meta property="og:url" content={canonical} />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content={date} />
+  <meta property="article:modified_time" content={dateModified} />
 
   <script type="application/ld+json" set:html={JSON.stringify(reportSchema, null, 2)} />
 
@@ -166,9 +192,13 @@ const reportSchema = {
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--pine-light);
+      color: var(--sand-dark);
       margin-bottom: 16px;
     }
+    .report-byline { margin: 0 0 16px; font-size: 0.85rem; color: var(--sand-dark); }
+    .report-byline a { color: var(--sand-dark); text-decoration: underline; }
+    .report-revision { font-size: 0.8rem; color: var(--sand-dark); line-height: 1.6; margin-bottom: 16px; max-width: 70ch; }
+    .report-summary { font-size: 1rem; line-height: 1.7; color: var(--sand); max-width: 70ch; margin-bottom: 16px; }
 
     .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
     .tag-chip {
@@ -233,7 +263,6 @@ const reportSchema = {
       font-size: 0.94rem;
       line-height: 1.6;
     }
-    .report-body h1 { display: none; }
     .report-body h2 {
       font-family: 'Syne', sans-serif;
       font-size: 1rem;
@@ -312,7 +341,7 @@ const reportSchema = {
   </div>
 </nav>
 
-<a href="/reports/" style="display:inline-block;margin:1.5rem 2rem 0;color:var(--color-volt,#d4ff00);font-size:0.875rem;text-decoration:none;opacity:0.8;">← All Reports</a>
+<a href="/reports/" style="display:inline-block;margin:1.5rem 2rem 0;color:var(--pine);font-size:0.875rem;text-decoration:none;">← All Reports</a>
 
 <header class="site-header">
   <div class="inner">
@@ -321,7 +350,11 @@ const reportSchema = {
       {period && <span class="badge badge-period">{period}</span>}
     </div>
     <h1 class="report-title">{title}</h1>
-    <p class="report-date">{formattedDate}</p>
+    <p class="report-date">Published {formattedDate}</p>
+    <p class="report-byline">By <a href={signedBySat ? '/about/#team' : '/about/'}>{author.name}</a></p>
+    <p class="report-summary">{description}</p>
+    {copyDate && <p class="report-revision">Copy edited {fmtDate(copyDate)}; research dates are unchanged.</p>}
+    {dateModified !== date && dateModified !== copyDate && <p class="report-revision">Updated {fmtDate(dateModified)}; see the dated correction below.</p>}
     {tags && tags.length > 0 && (
       <div class="tag-row">
         {tags.map((tag: string) => (
@@ -335,8 +368,8 @@ const reportSchema = {
 {sections && sections.length > 0 && (
   <nav class="anchor-nav" aria-label="Report sections">
     <div class="anchor-nav-inner">
-      {sections.map((s: string) => (
-        <a href={`#${s}`}>{sectionLabel(s)}</a>
+      {reportSections.map((section) => (
+        <a href={`#${section.id}`}>{section.label}</a>
       ))}
     </div>
   </nav>
@@ -347,7 +380,7 @@ const reportSchema = {
     {correction && correction.length > 0 && correction.map((c: { date: string; summary: string }) => (
       <p class="correction-note">{c.summary}</p>
     ))}
-    <Content />
+    <Content components={{ h1: OmitBodyTitle }} />
   </div>
 
   {previewManifest && (
@@ -372,19 +405,6 @@ const reportSchema = {
 
 <Footer variant="compact" />
 </div>
-
-<script define:vars={{ sections }}>
-  // Assign ids to h2 elements by position — sections[i] maps to the i-th h2.
-  // Position-based is reliable: MDX body order matches frontmatter sections order.
-  //
-  // Overrides MDX's auto-generated kebab-case IDs (2026-06-05 fix). Anchor nav
-  // hrefs are built from the frontmatter `sections` array, so the rendered H2
-  // IDs must match those strings exactly, not the auto-slugified versions.
-  const h2s = document.querySelectorAll('.report-body h2');
-  h2s.forEach((el, i) => {
-    if (sections[i]) el.id = sections[i];
-  });
-</script>
 
 </body>
 </html>

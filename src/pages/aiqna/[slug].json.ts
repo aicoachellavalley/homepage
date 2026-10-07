@@ -40,6 +40,6 @@ export const GET: APIRoute = ({ props }) => {
   };
 
   return new Response(JSON.stringify(body, null, 2), {
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    headers: { 'Content-Type': 'application/json; charset=utf-8', 'X-Robots-Tag': 'noindex' },
   });
 };

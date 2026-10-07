@@ -11,19 +11,24 @@
         {
           "href": "https://aicoachellavalley.com/llms.txt",
           "type": "text/plain",
-          "title": "AICV llms.txt — human-readable content summary"
+          "title": "AICV llms.txt \u2014 human-readable content summary"
         },
         {
           "href": "https://aicoachellavalley.com/llms-full.txt",
           "type": "text/plain",
-          "title": "AICV llms-full.txt — complete agent-readable export"
+          "title": "AICV llms-full.txt \u2014 complete agent-readable export"
+        },
+        {
+          "href": "https://aicoachellavalley.com/plan-team-retreat/",
+          "type": "text/html",
+          "title": "Team retreat decision demo \u2014 source-backed choices and official handoffs"
         }
       ],
       "service-desc": [
         {
           "href": "https://aicoachellavalley.com/nodes.json",
           "type": "application/json",
-          "title": "AICV Nodes — structured entity dataset for the Coachella Valley"
+          "title": "AICV Nodes \u2014 structured entity dataset for the Coachella Valley"
         },
         {
           "href": "https://aicoachellavalley.com/briefs.json",
@@ -33,18 +38,27 @@
         {
           "href": "https://aicoachellavalley.com/reports.json",
           "type": "application/json",
-          "title": "AICV Intelligence Reports — regional analyses"
+          "title": "AICV Intelligence Reports \u2014 regional analyses"
+        },
+        {
+          "href": "https://aicoachellavalley.com/business-previews.json",
+          "type": "application/json",
+          "title": "Searchable business-preview catalog with source-linked local observations; catalog presence is not a suitability or live availability finding"
         }
       ],
       "service-meta": [
         {
+          "href": "https://aicoachellavalley.com/mcp",
+          "title": "AICV local decision MCP \u2014 business-preview discovery and source-backed intent answers"
+        },
+        {
           "href": "https://mcp.aicoachellavalley.com/mcp",
-          "title": "AICV MCP Server — agent-native access via Model Context Protocol (JSON-RPC 2.0 over HTTP)"
+          "title": "AICV MCP Server \u2014 agent-native access via Model Context Protocol (JSON-RPC 2.0 over HTTP)"
         },
         {
           "href": "https://aicoachellavalley.com/.well-known/mcp/server-card.json",
           "type": "application/json",
-          "title": "AICV MCP Server Card — capabilities and tool listing"
+          "title": "AICV MCP Server Card \u2014 capabilities and tool listing"
         }
       ]
     }

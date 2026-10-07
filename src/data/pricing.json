@@ -1,6 +1,6 @@
 {
   "$comment": "SINGLE SOURCE OF TRUTH for the tier ladder. Consumed by get-agent-ready.astro (visible cards + JSON-LD offers) and llms.txt.ts. Change a price HERE only \u2014 never in a page. A build-time assertion in scripts/check-pricing.mjs fails the build if any surface diverges.",
-  "updated": "2026-09-19",
+  "updated": "2026-09-30",
   "tiers": [
     {
       "id": "agent-preview",
@@ -50,7 +50,7 @@
       "setup": 5000,
       "annual": 10000,
       "onetime": 0,
-      "llms": "$5,000 setup + $10,000/yr, starts with a call \u2014 everything in Business plus full LLM Council review (the Agentic Review), 12-month AI-readiness roadmap, public living portal and templated MCP access; no guarantee of outside indexing or citation",
+      "llms": "$5,000 setup + $10,000/yr, starts with a call \u2014 everything in Business plus daily automated public-signal monitoring from service activation, changes flagged for review, full LLM Council review (the Agentic Review), 12-month AI-readiness roadmap, public living portal and templated MCP access; no guarantee of outside indexing or citation",
       "price_amount": "$10,000",
       "price_cadence": "/ year"
     }

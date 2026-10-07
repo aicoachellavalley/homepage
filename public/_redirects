@@ -1,5 +1,28 @@
 /events / 301
 
+# Legacy internal paths still cited by published briefs and records. Preserve
+# the dated manuscripts and send both URL forms to the current public record.
+/nodes/overview /nodes/city/rancho-mirage/ 301
+/nodes/overview/ /nodes/city/rancho-mirage/ 301
+/nodes/csusb-entrepreneurship-resource-center /nodes/education-corridor/ 301
+/nodes/csusb-entrepreneurship-resource-center/ /nodes/education-corridor/ 301
+/intelligence-briefs/2026-03-18-cv-ai-leadership-hiring-cluster /briefs/2026-03-18-cv-ai-leadership-hiring-cluster/ 301
+/intelligence-briefs/2026-03-18-cv-ai-leadership-hiring-cluster/ /briefs/2026-03-18-cv-ai-leadership-hiring-cluster/ 301
+/intelligence-briefs/2026-02-25-claude-code-remote-control /briefs/2026-02-25-claude-code-remote-control/ 301
+/intelligence-briefs/2026-02-25-claude-code-remote-control/ /briefs/2026-02-25-claude-code-remote-control/ 301
+/intelligence-briefs/2026-03-18-cv-creative-economy-hollywood-shift /briefs/2026-03-18-cv-creative-economy-hollywood-shift/ 301
+/intelligence-briefs/2026-03-18-cv-creative-economy-hollywood-shift/ /briefs/2026-03-18-cv-creative-economy-hollywood-shift/ 301
+/intelligence-briefs/2026-02-24-anthropic-rsp-policy-shift /briefs/2026-02-24-anthropic-rsp-policy-shift/ 301
+/intelligence-briefs/2026-02-24-anthropic-rsp-policy-shift/ /briefs/2026-02-24-anthropic-rsp-policy-shift/ 301
+/intelligence-briefs/2026-02-24-structural-unemployment-fed-warning /briefs/2026-02-24-structural-unemployment-fed-warning/ 301
+/intelligence-briefs/2026-02-24-structural-unemployment-fed-warning/ /briefs/2026-02-24-structural-unemployment-fed-warning/ 301
+/intelligence-briefs/2026-02-24-cursor-cloud-agents /briefs/2026-02-24-cursor-cloud-agents/ 301
+/intelligence-briefs/2026-02-24-cursor-cloud-agents/ /briefs/2026-02-24-cursor-cloud-agents/ 301
+/intelligence-briefs/2025-04-01-erc-workshop-series /briefs/2025-04-01-erc-workshop-series/ 301
+/intelligence-briefs/2025-04-01-erc-workshop-series/ /briefs/2025-04-01-erc-workshop-series/ 301
+/intelligence-briefs/2026-03-27-high-desert-art-fair /briefs/2026-03-27-high-desert-art-fair/ 301
+/intelligence-briefs/2026-03-27-high-desert-art-fair/ /briefs/2026-03-27-high-desert-art-fair/ 301
+
 # Force 404 on deleted agent-skills path — replaced by /.well-known/skills/
 /.well-known/agent-skills/* 404
 

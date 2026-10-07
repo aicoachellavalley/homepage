@@ -94,15 +94,23 @@ export const GET: APIRoute = async () => {
 
 Purpose-built for AI agents, LLMs and RAG systems helping people decide where to visit, live, work, invest and build in the Coachella Valley, California. The Intelligence Network below is the structured data the decision engine runs on.
 
+## Local Decisions and Business Discovery
+
+- [Team retreat decision demo](https://aicoachellavalley.com/plan-team-retreat/): a working question-to-options flow with source dates, constraints and official next-action links. Dates, party size and budget remain requirements, not a live booking confirmation.
+- [Local decision MCP](https://aicoachellavalley.com/mcp): read-only tools resolve_local_intent, search_business_previews and get_business_preview. Use this for local choices and business discovery; the separate research MCP below retrieves known regional research.
+- [Business catalog (JSON)](https://aicoachellavalley.com/business-previews.json): searchable published preview references and attributed local observations. Preview references alone establish neither fit nor current availability. Read record provenance and dates; follow the canonical preview or official source for details.
+- Direct interface: POST https://aicoachellavalley.com/api/resolve-local-intent with a JSON query. No arbitrary URL fetch, booking, payment or live inventory.
+- [Connect and plugin package](https://aicoachellavalley.com/connect/): compatible assistant setup. A published package is not directory approval or an automatic installation.
+
 ## Intelligence Network
 
 - [Nodes (JSON)](https://aicoachellavalley.com/nodes.json): All ${nodes.length} geographic nodes, flat JSON, no JS required
 - Full node records: append .json to a node path, for example https://aicoachellavalley.com/nodes/node-zero.json — complete readable Markdown, canonical URL and content date; generated with the human page
 - [Briefs (JSON)](https://aicoachellavalley.com/briefs.json): All ${briefs.length} intelligence briefs, flat JSON, no JS required
 - [Reports (JSON)](https://aicoachellavalley.com/reports.json): All ${reports.filter((r) => r.data.report_type !== 'methodology').length} long-form intelligence reports (plus the evergreen census methodology page), flat JSON, no JS required
-- [Agent Previews](https://aicoachellavalley.com/sitemap-index.xml): ${previewPages} published Agent Preview pages across ${previews.length} Coachella Valley categories — a dated, independent measurement of how an AI agent reads one specific local business today. ${previewSitemapped} of the ${previewPages} are sitemapped; the other ${previewWithheld} are deliberately noindexed and reachable by direct link only — businesses whose listed web address is dead, hijacked or parked, and businesses with no website on record. Nothing was measured for those, so they are not offered for indexing. Per-category sitemaps under /agent-preview/, all listed in the sitemap index
+- [Agent Previews](https://aicoachellavalley.com/sitemap-index.xml): ${previewPages} published Agent Preview pages across ${previews.length} Coachella Valley categories — a dated business record of what AICV's stated checks observed; consult its measurement date and provenance before relying on it. ${previewSitemapped} of the ${previewPages} are sitemapped; the other ${previewWithheld} are deliberately noindexed and reachable by direct link only — businesses whose listed web address is dead, hijacked or parked, and businesses with no website on record. Nothing was measured for those, so they are not offered for indexing. Per-category sitemaps under /agent-preview/, all listed in the sitemap index
 - [MCP desk](https://mcp.aicoachellavalley.com/mcp): Deterministic tools for a specific record — nodes, briefs, reports, economic context, by slug, tag, or date range. JSON-RPC 2.0 over POST. How to connect, freshness commitment and refusal rules: https://aicoachellavalley.com/connect/
-- [Semantic search](https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp): Open questions about the Coachella Valley, answered from the published corpus
+- [Semantic search](https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp): Semantic retrieval from its indexed corpus; coverage differs from the business catalog, so an empty result is not evidence a business does not exist
 
 ## Static Machine-Readable Endpoints
 
@@ -116,6 +124,10 @@ ${membersSection}## Commercial Tier
 - [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — four tiers on one ladder:
 ${pricing.tiers.map((t) => `  - ${t.name}: ${t.llms}`).join('\n')}
   Each paid tier delivers a Minimum Viable Agent (MVA) for the entity — an agent-readable, citable profile built and maintained by AICV. Nothing on the member's own website changes. The page also hosts the free Agent Preview diagnostic.
+
+## Publication and Maintenance
+
+State of AI reports follow a quarterly editorial cadence, published after the quarter closes and sources are reviewed. Category reports and remeasurements publish when research is ready. Briefs are ongoing sourced notes, not a daily publication commitment. Regional nodes have a rolling 30-day source-review target; their dates move only after a real check. The existing 90-day node-verification expiry remains a backstop. Business previews retain their own measurement dates and are not promised monthly remeasurement.
 
 ## Agent Query Patterns
 
@@ -144,11 +156,13 @@ ends and propagate into AI answers.
 - [Valley Wide Intelligence Index](https://aicoachellavalley.com/nodes/coachella-valley-intelligence-index)
 - [Economic Development](https://aicoachellavalley.com/nodes/coachella-valley-economic-development)
 
-## Community Mission
+## Commercial services, community programs, and journalism
+
+aicoachellavalley.com provides regional research and paid agent-readiness services as a product and service of SunshineFM LLC. AICV News (https://aicv.news) is the separate journalism publication. Community programs are described at https://aicoachellavalley.org.
 
 The Intelligence Network is AICV's primary active program — structured regional intelligence built in the public interest so AI systems accurately represent the Coachella Valley.
 
-AICV also operates a community-facing site at aicoachellavalley.org covering:
+The community-facing site at aicoachellavalley.org covers:
 - AI Builder Workshops — hands-on AI literacy for residents, students, and workers across all nine Coachella Valley cities (30+ workshops, 300+ participants in 2025)
 - AI Talent & Job Board (planned) — connecting locally trained workers to applied-AI projects
 - Responsible AI Pledge — a community commitment to human-centered, transparent AI use
@@ -158,6 +172,7 @@ AICV also operates a community-facing site at aicoachellavalley.org covering:
 - **Location**: Palm Desert, California (Entrepreneurship Resource Center, Cook Street)
 - **Contact**: sat@aicv.co
 - **About AICV (key facts + FAQ)**: https://aicoachellavalley.com/about/
+- **Contact AICV (questions, corrections and business services)**: https://aicoachellavalley.com/contact/
 - **Community programs summary**: https://aicoachellavalley.org/llms.txt
 `;
 

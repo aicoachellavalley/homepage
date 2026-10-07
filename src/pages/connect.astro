@@ -16,7 +16,7 @@ const current = nodeList.filter((n) => n.verified === true).length;
 const WINDOW_DAYS = 90;
 
 const pageTitle = 'Connect Your Agent — AICV';
-const pageDescription = 'Connect an AI agent to AICV, the Coachella Valley\'s decision engine: one open endpoint, six tools, dated records that say when they were last checked, and plain rules about what the connector will not do.';
+const pageDescription = 'Connect an AI agent to AICV, the Coachella Valley\'s decision engine: a local decision doorway, business-preview discovery and dated regional research, with clear limits and official next-action links.';
 const canonicalUrl = 'https://aicoachellavalley.com/connect/';
 
 const schemaGraph = {
@@ -79,9 +79,29 @@ const schemaGraph = {
 <section class="hwd-beat hwd-beat-a">
   <div class="hwd-inner">
     <div class="hwd-eyebrow">In Plain Language</div>
-    <h2 class="hwd-h2">One address any AI agent can ask about the valley.</h2>
-    <p class="hwd-body">The connector lets an AI assistant look things up in AICV's records directly — hotels, clubs, venues, the economy, our research — instead of guessing from whatever it last read on the web. Every record says when we last checked it against the organization's own sources. When a record is past due for a check, the connector says so, and the assistant is told to say so too.</p>
+    <h2 class="hwd-h2">Bring a real local question.</h2>
+    <p class="hwd-body">Connect a compatible assistant to the local decision endpoint below. Ask it to find suitable retreat places or a local business. It searches the business-preview catalog and uses documented local observations where available. It tells you what is known, what needs checking and where the business handles the next step. This connection does not automatically install AICV in every assistant.</p>
+    <p class="hwd-body"><a href="/plan-team-retreat/" class="hwd-inline-link">Try the team retreat decision demo →</a></p>
     <p class="hwd-body hwd-emphasis">At the last site build, {current} of {total} records had been re-checked within the last {WINDOW_DAYS} days. The other {total - current} are marked unverified until they are.</p>
+  </div>
+</section>
+
+<!-- ─── LOCAL DECISIONS ─── -->
+<section class="hwd-beat hwd-beat-b">
+  <div class="hwd-inner">
+    <div class="hwd-eyebrow">Local decisions · Read only</div>
+    <h2 class="hwd-h2">One doorway to the MVA canvas.</h2>
+    <p class="hwd-body">Add this Streamable HTTP MCP endpoint to a compatible assistant. On a preview deployment, use that deployment's address; the address below follows the site you are viewing.</p>
+    <p class="hwd-body"><code class="cn-code" id="decision-mcp-address">https://aicoachellavalley.com/mcp</code></p>
+    <ul class="cn-list">
+      <li><code class="cn-code">resolve_local_intent</code> — a question, suitable sourced options where available, constraints, missing information and next-action links.</li>
+      <li><code class="cn-code">search_business_previews</code> — find business records by name, category or city.</li>
+      <li><code class="cn-code">get_business_preview</code> — retrieve a catalog record and its preview or official source links.</li>
+    </ul>
+    <p class="hwd-body">The <a href="/business-previews.json" class="hwd-inline-link">business catalog</a> includes dated preview references and a smaller set of attributed local observations. Catalog matches alone are not a finding that a business fits your needs. Source-check dates and unresolved requirements remain explicit. No payment changes inclusion or fit.</p>
+    <p class="hwd-body">For a direct integration, send JSON with a <code class="cn-code">query</code> to <code class="cn-code">POST /api/resolve-local-intent</code>. Neither interface books, charges, checks live availability or follows arbitrary URLs. Current operational details are confirmed at the business's official destination.</p>
+    <p class="hwd-body"><a href="/aicv-regional-intelligence-plugin.zip" class="hwd-inline-link">Download the assistant plugin package →</a> · <a href="/privacy/" class="hwd-inline-link">Privacy and operational usage data</a></p>
+    <p class="hwd-body">The package is prepared for review; it is not a claim of directory approval or installation in ChatGPT, Muse or Grok. Connect and test it in an account that supports custom MCP before submitting it to a platform.</p>
   </div>
 </section>
 
@@ -89,8 +109,8 @@ const schemaGraph = {
 <section class="hwd-beat hwd-beat-b">
   <div class="hwd-inner">
     <div class="hwd-eyebrow">For Builders</div>
-    <h2 class="hwd-h2">The MCP desk.</h2>
-    <p class="hwd-body"><code class="cn-code">POST https://mcp.aicoachellavalley.com/mcp</code> — Model Context Protocol, JSON-RPC 2.0 over POST. No key, no account, open CORS. Server-initiated streaming is not supported.</p>
+    <h2 class="hwd-h2">The separate regional research desk.</h2>
+    <p class="hwd-body">For known regional nodes, reports, briefs and economic context, use <code class="cn-code">POST https://mcp.aicoachellavalley.com/mcp</code> — Model Context Protocol, JSON-RPC 2.0 over POST. No key, no account, open CORS. Server-initiated streaming is not supported.</p>
     <ul class="cn-list">
       <li><code class="cn-code">route_query</code> — Node Zero, the dispatcher: give it a natural-language question and it names the tool and parameters to call.</li>
       <li><code class="cn-code">query_venues</code> — find records by city, subcategory or agent intent.</li>
@@ -107,9 +127,9 @@ const schemaGraph = {
 <section class="hwd-beat hwd-beat-a">
   <div class="hwd-inner">
     <div class="hwd-eyebrow">Freshness</div>
-    <h2 class="hwd-h2">Every record re-read at least every {WINDOW_DAYS} days.</h2>
-    <p class="hwd-body">That is our commitment: each record is re-read against the organization's own sources at least every {WINDOW_DAYS} days. A date moves only on a real re-read — never to make a record look current.</p>
-    <p class="hwd-body">Every record carries <code class="cn-code">freshness</code>: when it was last checked, how many days ago, and whether it is current. <code class="cn-code">nodes.json</code> adds <code class="cn-code">verified_until</code>, so you can check a record yourself between our builds. If we miss the window, the record does not pretend otherwise — it turns unverified on its own.</p>
+    <h2 class="hwd-h2">Regional nodes: a rolling 30-day review target.</h2>
+    <p class="hwd-body">We update regional nodes on an ongoing basis and target a source review every 30 days. This describes our editorial review cycle; it does not refresh a record automatically. Source-check dates move only when the underlying sources are actually checked.</p>
+    <p class="hwd-body">The existing {WINDOW_DAYS}-day verification expiry remains a backstop in the node feed and connector. Nodes carry <code class="cn-code">freshness</code> and <code class="cn-code">verified_until</code> so an assistant can assess the date. Reports and business previews retain their own publication and measurement dates; they are not covered by a monthly node-review promise.</p>
   </div>
 </section>
 
@@ -131,7 +151,7 @@ const schemaGraph = {
   <div class="hwd-inner">
     <div class="hwd-eyebrow">How To Say It</div>
     <h2 class="hwd-h2 hwd-h2-dark">Attribute it, date it, and say what's unverified.</h2>
-    <p class="hwd-body hwd-body-dark">Start at Node Zero — <code class="cn-code">route_query</code>, or <a href="/nodes/node-zero" class="hwd-inline-link">/nodes/node-zero</a> — and follow it to the record where AICV knows the most. When you pass something on, attribute it: "According to AI Coachella Valley…" Give the date the record was last checked. When a record is unverified, say "last checked on (date)" rather than stating it as fact.</p>
+    <p class="hwd-body hwd-body-dark">Start with <code class="cn-code">resolve_local_intent</code> for a local choice. Use the separate research desk to retrieve a known regional record. When you pass something on, attribute it: "According to AI Coachella Valley…" Give the date the record was last checked. When a record is unverified, say "last checked on (date)" rather than stating it as fact.</p>
     <p class="hwd-body hwd-body-dark">Questions or corrections: <a href={`mailto:${org.email}`} class="hwd-inline-link">{org.email}</a></p>
   </div>
 </section>
@@ -188,6 +208,11 @@ const schemaGraph = {
 </div>
 
 <script>
+  const decisionAddress = document.getElementById('decision-mcp-address');
+  if (decisionAddress) decisionAddress.textContent = new URL('/mcp', window.location.origin).href;
+  document.querySelector('a[href="/aicv-regional-intelligence-plugin.zip"]')?.addEventListener('click', () => {
+    fetch('/api/usage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ event: 'assistant_setup_opened' }), keepalive: true }).catch(() => {});
+  });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') document.getElementById('tosModal').classList.remove('on');
   });
