@@ -3,7 +3,7 @@
     "aicv-decisions": {
       "url": "https://aicoachellavalley.com/mcp",
       "name": "AICV Local Decisions",
-      "description": "Read-only local decision support and business-preview discovery. Start with resolve_local_intent for a team retreat or local business question; results separate source-backed local observations from catalog-only records and unconfirmed live details.",
+      "description": "Read-only local decisions and business-preview discovery. Compare qualified retreat venues against group requirements with dated evidence, documented exclusions, unknowns, follow-up questions, separate supporting services and official business links. Preview identity alone does not establish retreat suitability.",
       "tools": [
         "resolve_local_intent",
         "search_business_previews",

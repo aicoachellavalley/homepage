@@ -2,6 +2,49 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-10-07 — REVIEW BRANCH: broader retreat decisions
+
+Sat authorized research and implementation through a tested PR and Git-connected
+preview, without merging main or publishing production. Branch
+`codex/retreat-decision-coverage-20261007` starts at current main `ece99a1`,
+preserving published PR #1 and the Q3 report. Five agents owned venue research,
+private properties/services, data/provenance, runtime/experience and independent
+evaluation; the lead integrated and checked critical official capacity claims.
+
+The resolver compares 15 qualified venue inquiry pathways and five separate
+supporting-service records. Qualification means documented group-use evidence,
+not confirmed suitability, availability, price or a reservation. The shared
+contract preserves historical node/preview dates, types field evidence and
+requires dated official actions. New research is attributed to October 7;
+imports and builds cannot reset research dates. Three existing nodes receive
+targeted dated clarifications, retaining their September 25 broader update date.
+Research and independent findings are in `research/retreat-*-2026-10-07.*`.
+
+Structured and natural-language requirements cover rooms/sharing, day-only,
+nights, purpose, budget, privacy, accessibility and municipal versus nearby
+wording. Normal shortlists have four options, capped at five, with reasons,
+documented exclusions, unresolved matches, unknowns and follow-up questions.
+Budget changes practical-format trade-offs and questions, without invented
+rates. Published room inventory, event capacity and named working layouts are
+separate. Supporting providers remain separate inquiries. Three read-only MCP
+tools remain; no paid service, database, model call or transaction is introduced.
+Eligibility and ordering remain independent of payment to AICV.
+
+Validation before preview: 111 tests pass, including 13 synthetic scenarios
+through the actual MCP adapter and semantic evidence-contract mutation checks.
+`npm audit --audit-level=low` reports zero vulnerabilities. Full build and
+ownership, amendment, complete-node parity and rendered-page gates pass:
+315 HTML pages and 6,085 static internal links. The Q3 report, pricing,
+service promises and package dependency files are unchanged. Real-network
+official-SDK and human-flow evidence will be recorded after Git preview deploys;
+local adapter results alone do not establish deployment or organic discovery.
+
+Plugin metadata is version 0.2.0. Existing installations must refresh tool
+metadata and use the branch preview endpoint to test this release. The permanent
+production endpoint and previously pinned September 30 preview still represent
+their own deployed revisions until reviewed publication. No directory approval,
+personal assistant installation or completed commerce is claimed.
+
 ## 2026-10-07 — AUTHORIZED PRODUCTION RELEASE: local decisions and assessment cleanup
 
 Sat explicitly authorized publishing reviewed homepage PR #1 after installing

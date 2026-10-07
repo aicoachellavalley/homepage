@@ -5,6 +5,7 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import { validateRetreatContract, validateRetreatDerivation } from './retreat-contract.mjs';
 const require = createRequire(import.meta.url);
 const { nodeContent } = require('./node-content.cjs');
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -59,15 +60,26 @@ const nodes = readdirSync(resolve(root, 'src/content/nodes')).filter((f) => f.en
     editorial_verified: fm(source, 'verified'), subcategory: fm(source, 'subcategory'),
     agent_intent: fm(source, 'agent_intent'), content: nodeContent(source, counts) };
 });
+validateRetreatContract(retreat, { nodes, previews });
+// Exact lookup can return fresh decision evidence under an existing node or
+// preview ID. The original collections and their historical dates stay intact.
+const researched = [...retreat.options, ...retreat.services].map((record) => ({
+  ...record, summary: record.fit,
+  official_actions: [{ url: record.action_url, label: record.action_label,
+    kind: record.action_kind, source_url: record.action_source_url,
+    checked_at: record.action_checked_at }],
+}));
+const uniqueIds = new Set([...previews, ...local, ...nodes, ...researched].map((r) => r.id));
 const catalog = {
-  scope: 'Derived lookup of published business previews, attributed local observations and regional research. Inclusion is independent of payment.',
+  scope: 'Derived lookup of published business previews, attributed local observations, regional research and qualified retreat decision evidence. Inclusion is independent of payment.',
   source_counts: { published_previews: previews.length, additional_local_observations: local.length,
-    regional_nodes: nodes.length, total_lookup_records: previews.length + local.length + nodes.length },
+    regional_nodes: nodes.length, researched_retreat_venues: retreat.options.length,
+    retreat_supporting_services: retreat.services.length, total_lookup_records: uniqueIds.size },
   source_dates_note: observations.date_note,
-  previews: [...previews, ...local], nodes,
-  retreat: { ...retreat, options: retreat.options.map((option) => ({ ...option,
-    source_checked_at: retreat.checked_at })) },
+  previews: [...previews, ...local], nodes, researched_entities: researched,
+  retreat,
 };
+validateRetreatDerivation(catalog, retreat);
 const ids = [...catalog.previews, ...nodes].map((r) => r.id);
 if (new Set(ids).size !== ids.length) throw new Error('Duplicate stable retrieval ID');
 writeFileSync(resolve(root, 'src/data/intent-catalog.json'), JSON.stringify(catalog) + '\n');
@@ -75,5 +87,6 @@ writeFileSync(resolve(root, 'src/data/intent-catalog.json'), JSON.stringify(cata
 writeFileSync(resolve(root, 'public/business-previews.json'), JSON.stringify({
   scope: catalog.scope, source_counts: catalog.source_counts, source_dates_note: catalog.source_dates_note,
   records: catalog.previews,
+  researched_entities: researched,
 }) + '\n');
-console.log(`Intent catalog: ${previews.length} previews, ${local.length} additional local observations, ${nodes.length} regional nodes`);
+console.log(`Intent catalog: ${previews.length} previews, ${local.length} additional local observations, ${nodes.length} regional nodes, ${retreat.options.length} qualified retreat venues, ${retreat.services.length} supporting services`);
