@@ -2,6 +2,52 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-10-07 — AUTHORIZED PRODUCTION RELEASE: local decisions and assessment cleanup
+
+Sat explicitly authorized publishing reviewed homepage PR #1 after installing
+AICV Regional Intelligence as a personal ChatGPT web plugin against the
+September 30 immutable preview. Sat supplied an assistant response reporting
+successful `resolve_local_intent` execution: the three expected retreat venues,
+September 30 venue source checks distinct from September 25 node updates,
+regional context, limitations and exact returned follow-up questions. A second
+response reported a rerun with budget/shared-room/strategy requirements and
+separately identified additional web research. These are user-provided
+assistant test results, not independent inspection of the provider's trace;
+organic discovery, live pricing, booking and public directory approval remain
+unverified. The existing desktop standalone MCP configuration was not removed.
+
+Preparation merges current `main` (`a49d120`) into the reviewed branch, retaining
+the Q3 State of AI report byte-for-byte and both operational-history entries.
+The only merge conflict was competing additions to this file. Combined release
+validation: 83 tests pass; full build plus ownership, amendment, complete-node
+parity and rendered-page gates pass (315 HTML pages, 6,082 internal links).
+The Q3 report matches current main byte-for-byte. Production deployment
+verification follows publication; no additional retreat
+venues, budget ranking or transaction capabilities are introduced in this
+release. The web plugin still uses the tested preview URL until the permanent
+`https://aicoachellavalley.com/mcp` endpoint is verified after publication.
+
+## 2026-10-01 — APPROVED SOURCE RELEASE: State of AI — Q3 2026
+
+Released through `main` on Sat's go; Cloudflare production verification
+follows the push.
+New report `src/content/reports/state-of-ai-q3-2026.mdx` (`report_type:
+state-of-ai`, period Q3 2026, canonical with trailing slash): nine stories
+(personal agents; the sandbox breaks; the labs hit the brakes; an insider
+goes public; teens and chatbots; robots and work; AI and work; states and
+towns; governments on the world stage) plus two "also in the quarter" items,
+each with What Happened / Why It Matters / What This Means for the Coachella
+Valley. Disclosure paragraph in the body (agent-readiness services; a
+hackathon with an OpenAI sponsor; use of Claude). Every claim was checked
+against a primary source or named outlet; the record and an independent
+editor's two passes are in playbook `workflow-runs/state-of-ai-q3-2026/`.
+reports.json 14 -> 15 entries; sitemap and llms-full carry it (llms.txt lists
+endpoints, not individual reports, as before). Prebuild tests, build and the
+ownership, amendments and node-content gates pass with IndexNow disabled; the
+built page has no fiscal-sponsorship language and the SunshineFM LLC
+ownership footer. Sources are linked live; Wayback saves were rate-limited
+and the snapshots are being added as follow-up commits.
+
 ## 2026-09-30 — DRAFT: assessment cleanup
 
 Assistant-question follow-up, parent `1a05a28`: the deployed MCP client test
