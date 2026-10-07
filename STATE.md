@@ -18,8 +18,14 @@ Six added regression tests cover the exact phrases, both inferred and structured
 two-night stays, combined positive/excluded names, and retained structured/day-only
 behavior. Validation: 117 tests pass, zero audit vulnerabilities, full build and
 all publishing gates pass (315 HTML pages / 6,085 static internal links).
-The deployed official-SDK verifier now includes 18 synthetic scenarios; new
-preview and browser receipts follow Git deployment. Prior 13-case receipts are
+The deployed official-SDK verifier passes all 18 synthetic scenarios and retained
+follow-up/negative controls at 23:38 UTC against
+[the refreshed immutable preview](https://d652d6d4.aicoachellavalley-homepage.pages.dev/plan-team-retreat/)
+for commit `03d4e01`; GitHub and Cloudflare checks pass. The receipt is
+`research/retreat-interpretation-preview-results.json`. Browser QA verifies the
+exact phrases in the brief before/after comparison, explicit two-night input,
+both venue omissions, combined requirements, copying and retained genuine
+day-only behavior. No console errors were observed. Prior 13-case receipts are
 historical evidence for their own revisions and did not catch these defects.
 Production remains unchanged; PR #2 still requires Sat's publication review.
 
