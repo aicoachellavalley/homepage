@@ -21,8 +21,14 @@ the Q3 State of AI report byte-for-byte and both operational-history entries.
 The only merge conflict was competing additions to this file. Combined release
 validation: 83 tests pass; full build plus ownership, amendment, complete-node
 parity and rendered-page gates pass (315 HTML pages, 6,082 internal links).
-The Q3 report matches current main byte-for-byte. Production deployment
-verification follows publication; no additional retreat
+The Q3 report matches current main byte-for-byte. Fresh GitHub checks blocked
+publication on four dependency advisories. Compatible lockfile updates fix
+http-cache-semantics 4.2.0 -> 4.3.0, sharp 0.35.4 -> 0.35.5 (with matching
+platform/libvips packages), smol-toml 1.8.0 -> 1.9.0 and source-map-js 1.2.1 ->
+1.2.2. Direct dependency ranges and the CI audit gate remain unchanged; preserved
+platform metadata avoids unrelated lockfile churn. A clean npm ci, npm audit
+--audit-level=low (zero vulnerabilities), all 83 tests and the full build/gates
+pass with the updated lockfile. Production deployment verification follows publication; no additional retreat
 venues, budget ranking or transaction capabilities are introduced in this
 release. The web plugin still uses the tested preview URL until the permanent
 `https://aicoachellavalley.com/mcp` endpoint is verified after publication.
