@@ -35,9 +35,29 @@ through the actual MCP adapter and semantic evidence-contract mutation checks.
 `npm audit --audit-level=low` reports zero vulnerabilities. Full build and
 ownership, amendment, complete-node parity and rendered-page gates pass:
 315 HTML pages and 6,085 static internal links. The Q3 report, pricing,
-service promises and package dependency files are unchanged. Real-network
-official-SDK and human-flow evidence will be recorded after Git preview deploys;
-local adapter results alone do not establish deployment or organic discovery.
+service promises and package dependency files are unchanged.
+
+[Review PR #2](https://github.com/aicoachellavalley/homepage/pull/2) has passing
+GitHub and Cloudflare checks for implementation commit `f01cd75`.
+Its [immutable Git preview](https://e4fca50e.aicoachellavalley-homepage.pages.dev/plan-team-retreat/)
+passes the official MCP SDK network check on October 7 at 23:17 UTC: server
+0.2.0 discovery, all 13 synthetic scenarios, text/structured agreement,
+eight-room/budget clarification, booking/payment boundary, unknown-record and
+coffee controls, and three InvalidParams rejections. Receipt and independent
+review are in `research/retreat-preview-results.json` and the evaluation report.
+Public `/.well-known/mcp.json` is readable and deliberately retains canonical
+production service URLs; branch review clients must select the preview `/mcp`.
+
+Browser QA verified the default executive comparison, sharing/budget changes,
+private estates with separate chef/AV inquiries, strict Palm Desert day-only
+results, required access questions and unsupported named-venue no-match.
+A selected Courtyard Palm Desert brief preserves the synthetic dates, eight
+rooms, budget, constraints and official planning URL; copying confirms nothing
+was sent. Following the link reaches the correct Marriott event page and its
+official planning pathway, without submitting an inquiry. Browser review caught
+stale overnight counts in a day-only prepared brief; a targeted correction and
+final preview recheck follow. These are synthetic read-only checks, not organic
+assistant discovery or operator confirmation.
 
 Plugin metadata is version 0.2.0. Existing installations must refresh tool
 metadata and use the branch preview endpoint to test this release. The permanent

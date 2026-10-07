@@ -142,6 +142,26 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
     const copyStatus = document.querySelector<HTMLElement>('#copy-status');
     const data = JSON.parse(document.querySelector('#retreat-data')?.textContent || '{"options":[]}');
     const comparisonNotes = new Map<string, string[]>();
+    type BriefRequirements = { group_size: number | null; rooms: number | null; rooms_basis: string | null; shared_lodging: boolean | null; day_only: boolean; nights: number | null };
+    let comparedRequirements: BriefRequirements | null = null;
+    let comparedForm = '';
+    const formSnapshot = () => JSON.stringify([query?.value, guests?.value, rooms?.value, nights?.value, lodging?.value, dates?.value, budget?.value, privacy?.value, accessibility?.value]);
+    function briefAccommodation() {
+      // Use returned requirements only while every current form value matches
+      // that request. Otherwise derive the brief from the edited form.
+      const sameComparison = formSnapshot() === comparedForm;
+      const requirement = sameComparison ? comparedRequirements : null;
+      const text = (query?.value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ');
+      const attendees = requirement?.group_size ?? (guests?.value ? Number(guests.value) : Number(text.match(/\b(\d{1,4})\s*(?:person|people|guest|guests|member|members|attendees|employees)\b/)?.[1]) || null);
+      const dayOnly = requirement?.day_only ?? (lodging?.value === 'day' || nights?.value === '0' || /\b(day only|day retreat|one day|single day|no overnight|without (?:a )?(?:stay|lodging)|meeting only)\b/.test(text));
+      const sharing = requirement?.shared_lodging ?? (lodging?.value === 'shared' ? true : lodging?.value === 'single' ? false : /\b(single occupancy|own rooms?|no shar(?:e|ed|ing)|individual rooms?)\b/.test(text) ? false : /\b(shar(?:e|ed|ing) (?:rooms?|accommodation|lodging)|double occupancy|two (?:people|per) (?:per )?room)\b/.test(text) ? true : null);
+      const explicitRooms = rooms?.value ? Number(rooms.value) : Number(text.match(/\b(\d{1,4})\s*(?:rooms?|bedrooms?)\b/)?.[1]) || null;
+      const roomCount = requirement?.rooms ?? explicitRooms ?? (attendees && sharing !== null ? Math.ceil(attendees / (sharing ? 2 : 1)) : null);
+      const roomBasis = requirement?.rooms_basis ?? (!explicitRooms && roomCount ? sharing ? 'planning estimate: two attendees per room; bed configuration unverified' : 'planning estimate: one attendee per room' : null);
+      const words: Record<string, number> = {one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7};
+      const duration = requirement?.nights ?? (nights?.value ? Number(nights.value) : Number(text.match(/\b(\d{1,3}) nights?\b/)?.[1]) || words[text.match(/\b(one|two|three|four|five|six|seven) nights?\b/)?.[1] || ''] || null);
+      return { attendees: attendees || '[add number]', rooms: dayOnly ? 'not required (day-only)' : roomCount ? `${roomCount}${roomBasis?.startsWith('planning estimate') ? ` (${roomBasis}; confirm room count, beds and occupancy)` : ''}` : '[add room count]', accommodation: dayOnly ? 'Day-only; no lodging' : sharing === true ? 'Room sharing acceptable; confirm separate beds and occupancy' : sharing === false ? 'Individual rooms required' : 'Sharing undecided', nights: dayOnly ? '0' : duration ?? '[add nights]', sameComparison };
+    }
     const recordEvent = (event: string) => {
       // Count an action without sending the question, chosen venue or brief.
       void fetch('/api/usage', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({event}), keepalive: true}).catch(() => {});
@@ -152,7 +172,8 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
     function prepare(slug: string) {
       const option = data.options.find((item: {slug: string}) => item.slug === slug);
       if (!option || !brief || !chosen) return;
-      brief.value = `Venue: ${option.name}, ${option.city || 'city unresolved'}\nDates and flexibility: ${dates?.value.trim() || '[add dates]'}\nAttendees: ${guests?.value || '[add number]'}; guest rooms: ${rooms?.value || '[add room count]'}; accommodation: ${lodging?.selectedOptions[0]?.text || '[add sharing needs]'}; nights: ${nights?.value || '[add nights]'}\nPurpose: ${query?.value.trim() || '[add retreat purpose]'}\nTotal budget and inclusions: ${budget?.value.trim() || '[add rooms, food, meeting space and activities]'}\nMeeting setup, privacy and AV: ${privacy?.value || '[add requirements]'}\nAccessibility and dietary needs: ${accessibility?.value.trim() || '[add requirements]'}\nDecision deadline: [add date]\nPlanning constraints: ${[...option.constraints, ...(comparisonNotes.get(option.id) || [])].join(' ')}\nPlease confirm availability, total cost, cancellation terms and the proposed room/meeting configuration before any commitment.\nOfficial planning page: ${option.action_url}\nSource check: ${option.source_checked_at || 'see linked sources'}; these are planning candidates, not confirmed bookings.`;
+      const accommodation = briefAccommodation();
+      brief.value = `Venue: ${option.name}, ${option.city || 'city unresolved'}\nDates and flexibility: ${dates?.value.trim() || '[add dates]'}\nAttendees: ${accommodation.attendees}; guest rooms: ${accommodation.rooms}; accommodation: ${accommodation.accommodation}; nights: ${accommodation.nights}\nPurpose: ${query?.value.trim() || '[add retreat purpose]'}\nTotal budget and inclusions: ${budget?.value.trim() || '[add rooms, food, meeting space and activities]'}\nMeeting setup, privacy and AV: ${privacy?.value || '[add requirements]'}\nAccessibility and dietary needs: ${accessibility?.value.trim() || '[add requirements]'}\nDecision deadline: [add date]\nPlanning constraints: ${[...option.constraints, ...(accommodation.sameComparison ? comparisonNotes.get(option.id) || [] : [])].join(' ')}\nPlease confirm availability, total cost, cancellation terms and the proposed room/meeting configuration before any commitment.\nOfficial planning page: ${option.action_url}\nSource check: ${option.source_checked_at || 'see linked sources'}; these are planning candidates, not confirmed bookings.`;
       chosen.href = option.action_url;
       chosen.hidden = false;
       document.querySelector('#handoff')?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -167,6 +188,7 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
       if (!question) { query.focus(); return; }
       const details = [question, dates?.value.trim() ? `Dates: ${dates.value.trim()}.` : '', budget?.value.trim() ? `Budget: ${budget.value.trim()}.` : ''].filter(Boolean).join(' ');
       if (details.length > 1200) { status.textContent = 'Please shorten your question, dates and budget to 1,200 characters combined.'; query.focus(); return; }
+      const submittedForm = formSnapshot();
       compare.disabled = true; status.textContent = 'Comparing the researched options…'; answer.hidden = true;
       const controller = new AbortController();
       const timeout = window.setTimeout(() => controller.abort(), 15000);
@@ -174,6 +196,8 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
         const response = await fetch('/api/resolve-local-intent', {method: 'POST', headers: {'Content-Type': 'application/json'}, signal: controller.signal, body: JSON.stringify({query: details, ...(guests?.value ? {group_size: Number(guests.value)} : {}), ...(rooms?.value ? {rooms: Number(rooms.value)} : {}), ...(nights?.value ? {nights: Number(nights.value)} : {}), ...(lodging?.value === 'day' ? {day_only: true} : lodging?.value ? {shared_lodging: lodging.value === 'shared'} : {}), ...(budget?.value.trim() ? {budget: budget.value.trim()} : {}), ...(privacy?.value ? {privacy: privacy.value} : {}), ...(accessibility?.value.trim() ? {accessibility: accessibility.value.trim()} : {}), limit: 4})});
         if (!response.ok) throw new Error('comparison unavailable');
         const result = await response.json();
+        comparedForm = submittedForm;
+        comparedRequirements = result.requirements || null;
         comparisonNotes.clear();
         for (const item of result.results || []) comparisonNotes.set(item.id, [...(item.unknowns || []), ...(item.conflicts || []).map((conflict: {reason: string}) => conflict.reason)]);
         answer.replaceChildren();
