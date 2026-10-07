@@ -38,9 +38,9 @@ ownership, amendment, complete-node parity and rendered-page gates pass:
 service promises and package dependency files are unchanged.
 
 [Review PR #2](https://github.com/aicoachellavalley/homepage/pull/2) has passing
-GitHub and Cloudflare checks for implementation commit `f01cd75`.
-Its [immutable Git preview](https://e4fca50e.aicoachellavalley-homepage.pages.dev/plan-team-retreat/)
-passes the official MCP SDK network check on October 7 at 23:17 UTC: server
+GitHub and Cloudflare checks for corrected implementation commit `1966546`.
+Its [immutable Git preview](https://d8e42533.aicoachellavalley-homepage.pages.dev/plan-team-retreat/)
+passes the repeated official MCP SDK network check on October 7 at 23:20 UTC: server
 0.2.0 discovery, all 13 synthetic scenarios, text/structured agreement,
 eight-room/budget clarification, booking/payment boundary, unknown-record and
 coffee controls, and three InvalidParams rejections. Receipt and independent
@@ -55,9 +55,11 @@ A selected Courtyard Palm Desert brief preserves the synthetic dates, eight
 rooms, budget, constraints and official planning URL; copying confirms nothing
 was sent. Following the link reaches the correct Marriott event page and its
 official planning pathway, without submitting an inquiry. Browser review caught
-stale overnight counts in a day-only prepared brief; a targeted correction and
-final preview recheck follow. These are synthetic read-only checks, not organic
-assistant discovery or operator confirmation.
+stale overnight counts in a day-only prepared brief. The corrected preview
+passes the full build/audit again and browser checks verify no lodging/zero
+nights despite earlier room/night inputs, conditional sharing estimates and
+discarded stale comparison notes after form edits. These are synthetic read-only
+checks, not organic assistant discovery or operator confirmation.
 
 Plugin metadata is version 0.2.0. Existing installations must refresh tool
 metadata and use the branch preview endpoint to test this release. The permanent

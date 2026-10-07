@@ -1,6 +1,6 @@
 {
-  "endpoint": "https://e4fca50e.aicoachellavalley-homepage.pages.dev/mcp",
-  "checked_at": "2026-10-07T23:17:26.092Z",
+  "endpoint": "https://d8e42533.aicoachellavalley-homepage.pages.dev/mcp",
+  "checked_at": "2026-10-07T23:20:56.914Z",
   "transport": "official MCP SDK Streamable HTTP",
   "synthetic": true,
   "discovery": {
@@ -1699,6 +1699,6 @@
     }
   },
   "passed": true,
-  "source_commit": "f01cd75",
-  "source_commit_note": "Git commit associated with the immutable Cloudflare Pages deployment, supplied by the lead; not inferred from MCP server version."
+  "source_commit": "1966546",
+  "deployment_provenance": "Lead verified Git-connected Cloudflare deployment d8e42533-a0a6-4321-9491-cf4db384b379 is the preview for commit 1966546; evaluator-reviewed client method retained."
 }
