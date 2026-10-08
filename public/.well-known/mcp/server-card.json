@@ -20,7 +20,7 @@
   "tools": [
     {
       "name": "resolve_local_intent",
-      "description": "Resolve a local question using published business records and sourced local observations, with missing information and official next-action paths made explicit."
+      "description": "Compare qualified retreat venues across group, lodging, day-only, budget, privacy, accessibility and location requirements. Returns dated evidence, conflicts, unknowns, follow-up questions, separate supporting services and official business links; no booking or payment."
     },
     {
       "name": "search_business_previews",

@@ -51,16 +51,20 @@ test('unknown name and outside city queries return no matches rather than unrela
 test('team retreat uses sourced options, preserves narrow capacity scopes and excludes known 48-person buyout limit', () => {
   const sixteen = resolveLocalIntent({ query: 'A leadership team retreat for 16 people', group_size: 16 }, catalog);
   assert.equal(sixteen.intent, 'team-retreat');
-  assert.equal(sixteen.results.length, 3);
-  assert.equal(sixteen.results[0].id, 'node/ritz-carlton');
-  assert.match(sixteen.results[0].constraints.join(' '), /not the entire resort/);
-  assert.ok(sixteen.results.every((r) => r.official_actions[0].checked_at === '2026-09-30'));
-  const sixty = resolveLocalIntent({ query: 'A team retreat for 60 people' }, catalog);
+  assert.ok(sixteen.results.length >= 3 && sixteen.results.length <= 5);
+  const namedRitz = resolveLocalIntent({ query: 'Leadership retreat at Ritz-Carlton for 16 people', group_size: 16 }, catalog);
+  assert.ok(namedRitz.results.some((r) => r.id === 'node/ritz-carlton'));
+  assert.match(namedRitz.results[0].constraints.join(' '), /Boardroom|working|layout/);
+  assert.ok(sixteen.results.every((r) => r.official_actions[0].checked_at === r.source_checked_at));
+  const sixty = resolveLocalIntent({ query: 'A team retreat for 60 people', limit: 20 }, catalog);
   assert.equal(sixty.group_size, 60);
   assert.equal(sixty.results.some((r) => r.id === 'node/sensei-porcupine-creek'), false);
-  assert.match(sixty.results.find((r) => r.id === 'node/ritz-carlton').constraints.join(' '), /Your group exceeds/);
+  const namedLarge = resolveLocalIntent({ query: 'Leadership retreat at Ritz-Carlton for 60 people', group_size: 60 }, catalog);
+  assert.ok(namedLarge.results.length === 1);
+  assert.ok(namedLarge.results[0].meeting_spaces.some((s) => s.capacity >= 60) || namedLarge.results[0].unknowns.some((u) => /60|20-person/.test(u)));
   assert.match(sixty.limitations.join(' '), /48-guest/);
-  assert.equal(resolveLocalIntent({ query: 'A team retreat in Palm Desert' }, catalog).status, 'no_match');
+  assert.ok(resolveLocalIntent({ query: 'A team retreat in Palm Desert' }, catalog).results.every((r) => r.city === 'Palm Desert'));
+  assert.ok(resolveLocalIntent({ query: 'A team retreat in Palm Desert' }, catalog).results.length > 0);
 });
 test('near Palm Springs retreat question includes regional candidates without claiming verified proximity', () => {
   const question = 'Plan a November leadership retreat for 16 people near Palm Springs.';
@@ -69,8 +73,8 @@ test('near Palm Springs retreat question includes regional candidates without cl
   assert.equal(result.status, 'needs_details');
   assert.equal(result.city, 'Palm Springs');
   assert.equal(result.group_size, 16);
-  assert.equal(result.results.length, 3);
-  assert.equal(result.results[0].id, 'node/ritz-carlton');
+  assert.ok(result.results.length >= 3 && result.results.length <= 5);
+  assert.ok(result.results.some((r) => r.city !== 'Palm Springs'));
   assert.match(result.limitations.join(' '), /proximity and drive times have not been verified/);
   assert.match(result.next_questions.join(' '), /maximum acceptable drive time/);
   for (const strict of [
@@ -78,8 +82,12 @@ test('near Palm Springs retreat question includes regional candidates without cl
     { query: 'Plan a leadership retreat for 16 people in Palm Springs.' },
     { query: 'Plan a leadership retreat within Palm Springs, near Palm Springs airport.' },
     { query: 'Plan a leadership retreat near San Diego.' },
-  ]) assert.equal(resolveLocalIntent(strict, catalog).status, 'no_match');
-  assert.equal(resolveLocalIntent({ query: 'Plan a leadership retreat around Palm Desert.' }, catalog).results.length, 3);
+  ]) {
+    const answer = resolveLocalIntent(strict, catalog);
+    if (strict.query.includes('San Diego')) assert.equal(answer.status, 'no_match');
+    else { assert.ok(answer.results.length > 0); assert.ok(answer.results.every((r) => r.city === 'Palm Springs')); }
+  }
+  assert.ok(resolveLocalIntent({ query: 'Plan a leadership retreat around Palm Desert.' }, catalog).results.some((r) => r.city !== 'Palm Desert'));
 });
 test('the actual retreat form default resolves the work and overnight trip without requiring the retreat keyword', () => {
   const page = readFileSync(new URL('../src/pages/plan-team-retreat.astro', import.meta.url), 'utf8');
@@ -92,8 +100,9 @@ test('the actual retreat form default resolves the work and overnight trip witho
     'Compare venues for a corporate team gathering with meeting rooms in the Coachella Valley.']) {
     const result = resolveLocalIntent({ query: decision, group_size: 16 }, catalog);
     assert.equal(result.intent, 'team-retreat');
-    assert.deepEqual(new Set(result.results.map((r) => r.id)), new Set(['node/ritz-carlton', 'node/grand-hyatt-indian-wells', 'node/sensei-porcupine-creek']));
-    assert.equal(result.results.length, 3);
+    assert.ok(result.results.length > 0);
+    assert.ok(result.results.every((r) => catalog.retreat.options.some((o) => o.id === r.id && o.qualified === true)));
+    assert.ok(result.results.length >= 3 && result.results.length <= 5);
     assert.ok(result.results.every((r) => r.record_type === 'researched-retreat-option' && r.official_actions.length === 1 && r.official_actions[0].kind === 'official_group_proposal'));
   }
   const coffee = resolveLocalIntent({ query: 'Find a coffee shop for our leadership team meeting in Palm Desert near El Paseo.' }, catalog);

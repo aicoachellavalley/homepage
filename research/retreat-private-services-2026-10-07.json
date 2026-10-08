@@ -1,0 +1,1011 @@
+{
+  "schema_version": 1,
+  "research_checked_at": "2026-10-07",
+  "scope": "Private retreat properties and separately selectable supporting providers; inquiry evidence only.",
+  "research_method": {
+    "skill": "Exa Search",
+    "sources_reviewed": 64,
+    "search_calls": 11,
+    "fetch_pages": 20,
+    "provider_discovery": "Lead inspected Stripe Directory prerequisite. CLI/directory connection unavailable; no Directory verification performed. Official-source Exa research continued under explicit user authorization.",
+    "historical_dates": "Preview manifest date 2026-07-15 remains historical; targeted source checks do not reverify whole previews.",
+    "no_transactions": true
+  },
+  "venues": [
+    {
+      "slug": "the-old-polo-estate",
+      "name": "Old Polo Estate",
+      "city": null,
+      "category": "private-lodging",
+      "lodging_type": "estate",
+      "purpose": "Executive or team retreat",
+      "purposes": [
+        "strategy",
+        "team-building",
+        "private-property"
+      ],
+      "fit": "Operator explicitly offers corporate retreats; layout, contract and availability need an official proposal.",
+      "facts": [
+        "Corporate retreats and leadership offsites are explicitly offered.",
+        "Published event maximum is 200; no named working-room seating layout was found.",
+        "Official FAQ describes exclusive estate access."
+      ],
+      "constraints": [
+        "Overnight sources conflict: corporate page says 28; FAQ says main estate 20 with optional lodging approximately 60. A confirmed lodging plan is required.",
+        "City conflicts across official pages; no distance or drive-time claim is adopted.",
+        "Minimum stay, bedroom/bed mix, working-room layout, accessibility and cancellation terms were not found.",
+        "Outside vendors are allowed subject to rules; DJs require approval, bartenders require licensing and insurance.",
+        "Pets are prohibited; smoking/vaping is restricted to the parking lot."
+      ],
+      "primary_sources": [
+        {
+          "label": "Corporate retreat pathway",
+          "url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Published policies and conflicting lodging/city",
+          "url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "node_source": null,
+      "node_last_updated": null,
+      "action_url": "https://oldpolo.com/corporate",
+      "action_label": "Official retreat inquiry",
+      "action_kind": "inquiry",
+      "phone": "+1 (877) 920-0952",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "meeting_capacity": null,
+      "meeting_capacity_layout": null,
+      "meeting_spaces": [],
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [],
+        "source_url": null
+      },
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "buyout",
+      "accessibility_notes": [
+        "Specific access needs require operator confirmation."
+      ],
+      "budget_notes": [
+        "Affordability is unknown; request an itemized quote for the required footprint, dates and services."
+      ],
+      "exclusion_rules": [],
+      "field_sources": [
+        {
+          "field": "business_group_use",
+          "value": true,
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "event_capacity",
+          "value": 200,
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "corporate_page_city",
+          "value": "Coachella",
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "faq_city",
+          "value": "Indio",
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "corporate_page_overnight_capacity",
+          "value": 28,
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "faq_main_estate_overnight_capacity",
+          "value": 20,
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "faq_optional_overnight_capacity",
+          "value": "approximately 60 with optional casitas/Airstreams",
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "privacy",
+          "value": "exclusive estate access",
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "vendor_and_guest_rules",
+          "value": "Approved DJs; licensed/insured bartenders; no pets; smoking in designated parking lot area only.",
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "action_url",
+          "value": "https://oldpolo.com/corporate",
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        }
+      ],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown"
+        },
+        "affordability": {
+          "evidence_type": "unknown"
+        },
+        "cancellation": {
+          "evidence_type": "unknown"
+        },
+        "city": {
+          "evidence_type": "unknown",
+          "reason": "Official pages conflict."
+        },
+        "guest_capacity": {
+          "evidence_type": "unknown",
+          "reason": "Official lodging footprints conflict."
+        }
+      },
+      "existing_entity_id": "the-old-polo-estate",
+      "preview_url": "https://aicoachellavalley.com/agent-preview/hospitality/the-old-polo-estate",
+      "historical_preview_city": "Indio",
+      "location_conflict": true,
+      "city_notes": "Corporate/home pages identify Coachella; official FAQ identifies Indio. Confirm municipality before applying a strict city filter."
+    },
+    {
+      "slug": "frederick-loewe-estate",
+      "name": "Frederick Loewe Estate",
+      "city": "Palm Springs",
+      "category": "private-lodging",
+      "lodging_type": "estate",
+      "purpose": "Executive or team retreat",
+      "purposes": [
+        "strategy",
+        "team-building",
+        "private-property"
+      ],
+      "fit": "Operator explicitly offers corporate retreats; layout, contract and availability need an official proposal.",
+      "facts": [
+        "Operator offers executive retreats and corporate events.",
+        "Four bedrooms, two king beds, four queen beds and two single sleeper sofas are published.",
+        "Dining room seats 14; this is a dining capacity, not a verified strategy meeting layout."
+      ],
+      "constraints": [
+        "Corporate use has a two-day minimum; overnight lodging is additional. Vacation stays have a separate three-night minimum.",
+        "Event page lists 225 cocktails/dinner and 500+ cocktail reception only; neither establishes a named working-room capacity.",
+        "Overnight guest maximum is not explicitly published; do not convert bed inventory to guest occupancy.",
+        "Parking inside the gate is limited to four vehicles.",
+        "Exclusive-use scope, meeting AV, accessible routes and cancellation terms need confirmation."
+      ],
+      "primary_sources": [
+        {
+          "label": "Corporate use and event minimum",
+          "url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Lodging configuration and vacation minimum",
+          "url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry form",
+          "url": "https://frederickloeweestate.com/contact/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "node_source": null,
+      "node_last_updated": null,
+      "action_url": "https://frederickloeweestate.com/contact/",
+      "action_label": "Official retreat inquiry",
+      "action_kind": "inquiry",
+      "phone": null,
+      "bedrooms": 4,
+      "guest_capacity": null,
+      "meeting_capacity": null,
+      "meeting_capacity_layout": null,
+      "meeting_spaces": [],
+      "lodging": {
+        "room_count": null,
+        "bedrooms": 4,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Two bedrooms each with one king bed",
+          "Two bedrooms each with two queen beds",
+          "Two single sleeper sofas in the living room"
+        ],
+        "source_url": "https://frederickloeweestate.com/vacation-experience/"
+      },
+      "minimum_nights": null,
+      "vacation_offer_minimum_nights": 3,
+      "minimum_nights_notes": "Vacation offer requires three nights. Corporate event offer requires two days with lodging additional; applicability of vacation minimum to a negotiated corporate lodging contract is unknown.",
+      "day_use": "inquiry",
+      "privacy": "unknown",
+      "accessibility_notes": [
+        "Specific access needs require operator confirmation."
+      ],
+      "budget_notes": [
+        "Affordability is unknown; request an itemized quote for the required footprint, dates and services."
+      ],
+      "exclusion_rules": [],
+      "field_sources": [
+        {
+          "field": "business_group_use",
+          "value": true,
+          "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "city",
+          "value": "Palm Springs",
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "bedrooms",
+          "value": 4,
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "lodging.room_configurations",
+          "value": [
+            "Two bedrooms each with one king bed",
+            "Two bedrooms each with two queen beds",
+            "Two single sleeper sofas in the living room"
+          ],
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "vacation_offer_minimum_nights",
+          "value": 3,
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "minimum_event_days",
+          "value": 2,
+          "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "event_capacity_cocktails_dinner",
+          "value": 225,
+          "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "event_capacity_standing_cocktails",
+          "value": "500+",
+          "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "dining_room_capacity",
+          "value": 14,
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "parking_inside_gate_vehicles",
+          "value": 4,
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "action_url",
+          "value": "https://frederickloeweestate.com/contact/",
+          "source_url": "https://frederickloeweestate.com/contact/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        }
+      ],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown"
+        },
+        "affordability": {
+          "evidence_type": "unknown"
+        },
+        "cancellation": {
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "evidence_type": "unknown",
+          "reason": "Private estate setting is published; exclusive contract scope requires confirmation."
+        }
+      },
+      "existing_entity_id": null,
+      "privacy_notes": "Private estate positioning is published; exclusive estate contract scope/buyout terms were not found.",
+      "minimum_event_days": 2
+    },
+    {
+      "slug": "venueten-casa-del-lujo-estate-lujo-villa",
+      "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+      "city": "Bermuda Dunes",
+      "category": "private-lodging",
+      "lodging_type": "estate",
+      "purpose": "Executive or team retreat",
+      "purposes": [
+        "strategy",
+        "team-building",
+        "private-property"
+      ],
+      "fit": "Operator explicitly offers corporate retreats; layout, contract and availability need an official proposal.",
+      "facts": [
+        "Corporate retreat pathway describes exclusive property use.",
+        "Full two-residence lodging footprint has 12 bedrooms and published occupancy of 40.",
+        "Great Room is a named 5,000-square-foot gathering area; no working layout capacity is published."
+      ],
+      "constraints": [
+        "Published venue event maximum 175 does not establish a meeting layout or overnight occupancy.",
+        "40 overnight guests requires both residences; bedrooms are shared at maximum occupancy and complete bed mix is not published.",
+        "Minimum stay and cancellation terms were not found.",
+        "Licensed/insured caterers and liability insurance certificates are required; confirm rules for corporate use.",
+        "FAQ restricts amplified sound after midnight and requires lower sound after 10 p.m.",
+        "FAQ makes a general accessibility claim; verify specific lodging, restroom and meeting routes. Guest house 2 has stairs."
+      ],
+      "primary_sources": [
+        {
+          "label": "Explicit corporate and exclusive use",
+          "url": "https://venueten.com/corporate-retreats",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Current lodging footprint and location",
+          "url": "https://venueten.com/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Published capacities and policies",
+          "url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Guest house configuration/stairs",
+          "url": "https://venueten.com/vacation-rentals/casa-de-lujo",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry form",
+          "url": "https://venueten.com/contact",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "node_source": null,
+      "node_last_updated": null,
+      "action_url": "https://venueten.com/contact",
+      "action_label": "Official retreat inquiry",
+      "action_kind": "inquiry",
+      "phone": "+1 (442) 394-0133",
+      "bedrooms": 12,
+      "guest_capacity": 40,
+      "meeting_capacity": null,
+      "meeting_capacity_layout": null,
+      "meeting_spaces": [],
+      "lodging": {
+        "room_count": null,
+        "bedrooms": 12,
+        "guest_capacity": 40,
+        "room_configurations": [
+          "Casa de Lujo: seven bedrooms, published maximum 24 overnight guests",
+          "Lujo Villa: five bedrooms, published maximum 16 overnight guests",
+          "Casa de Lujo guest house 1: one queen; guest house 2: two queens and stairs to private entrance"
+        ],
+        "source_url": "https://venueten.com/faqs/"
+      },
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "buyout",
+      "accessibility_notes": [
+        "FAQ says most space is accessible, without route/room details.",
+        "Casa de Lujo guest house 2 has a stair approach; the full property's specific wheelchair access remains unverified."
+      ],
+      "budget_notes": [
+        "Affordability is unknown; request an itemized quote for the required footprint, dates and services."
+      ],
+      "exclusion_rules": [],
+      "field_sources": [
+        {
+          "field": "business_group_use",
+          "value": true,
+          "source_url": "https://venueten.com/corporate-retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "city",
+          "value": "Bermuda Dunes",
+          "source_url": "https://venueten.com/contact",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "privacy",
+          "value": "entire property reserved for retreat",
+          "source_url": "https://venueten.com/corporate-retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "lodging.bedrooms",
+          "value": 12,
+          "source_url": "https://venueten.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "lodging.guest_capacity",
+          "value": 40,
+          "source_url": "https://venueten.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "lodging.room_configurations",
+          "value": [
+            "Casa de Lujo: seven bedrooms, published maximum 24 overnight guests",
+            "Lujo Villa: five bedrooms, published maximum 16 overnight guests"
+          ],
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "event_capacity",
+          "value": 175,
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "great_room_area_sq_ft",
+          "value": 5000,
+          "source_url": "https://venueten.com/venue",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "vendor_policy",
+          "value": "Licensed/insured caterers; liability COIs; confirm corporate applicability",
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "sound_policy",
+          "value": "Lower sound after 10 p.m.; no amplified sound after midnight",
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "accessibility_general_claim",
+          "value": "Most modern space accessible; no specific routes supplied",
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "guest_house_2_access",
+          "value": "Small flight of stairs at entrance",
+          "source_url": "https://venueten.com/vacation-rentals/casa-de-lujo",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "action_url",
+          "value": "https://venueten.com/contact",
+          "source_url": "https://venueten.com/contact",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        }
+      ],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown"
+        },
+        "affordability": {
+          "evidence_type": "unknown"
+        },
+        "cancellation": {
+          "evidence_type": "unknown"
+        }
+      },
+      "existing_entity_id": "venueten-casa-del-lujo-estate-lujo-villa",
+      "preview_url": "https://aicoachellavalley.com/agent-preview/hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+      "historical_preview_city": "Adjacent Communities"
+    }
+  ],
+  "services": [
+    {
+      "slug": "cardiff-limousine-transportation",
+      "name": "Cardiff Limousine & Transportation",
+      "city": "Palm Desert",
+      "service_type": "transport",
+      "tags": [
+        "airport-transfer",
+        "offsite-transport",
+        "group-shuttle"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "Corporate limousine and charter bus transportation serves Palm Springs, Palm Desert and surrounding cities."
+      ],
+      "constraints": [
+        "Confirm vehicle seat count, luggage space, accessible boarding, itinerary and quote; no live vehicle availability is supplied."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.cardifflimo.com/corporate-and-convention/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry",
+          "url": "https://www.cardifflimo.com/contact/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.cardifflimo.com/contact/",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_sources": [
+        {
+          "field": "service_type",
+          "value": "transport",
+          "source_url": "https://www.cardifflimo.com/corporate-and-convention/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "offering",
+          "value": [
+            "Corporate limousine and charter bus transportation serves Palm Springs, Palm Desert and surrounding cities."
+          ],
+          "source_url": "https://www.cardifflimo.com/corporate-and-convention/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "action_url",
+          "value": "https://www.cardifflimo.com/contact/",
+          "source_url": "https://www.cardifflimo.com/contact/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        }
+      ],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown"
+        },
+        "affordability": {
+          "evidence_type": "unknown"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown"
+        }
+      }
+    },
+    {
+      "slug": "no-worries-private-chefs",
+      "name": "No Worries Private Chefs",
+      "city": "Palm Springs",
+      "service_type": "dining",
+      "tags": [
+        "private-chef",
+        "wellness-meals",
+        "multi-day-catering",
+        "dietary-requirements"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "On-site corporate, wellness and yoga retreat catering is offered for groups up to 35.",
+        "Services cover one-night meals through weeklong retreats in named Coachella Valley cities."
+      ],
+      "constraints": [
+        "Operator must confirm kitchen/service requirements, dietary needs and date availability; host venue must permit outside catering."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry",
+          "url": "https://www.noworriescali.com/contact",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.noworriescali.com/contact",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_sources": [
+        {
+          "field": "service_type",
+          "value": "dining",
+          "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "offering",
+          "value": [
+            "On-site corporate, wellness and yoga retreat catering is offered for groups up to 35.",
+            "Services cover one-night meals through weeklong retreats in named Coachella Valley cities."
+          ],
+          "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "action_url",
+          "value": "https://www.noworriescali.com/contact",
+          "source_url": "https://www.noworriescali.com/contact",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "capacity_max",
+          "value": 35,
+          "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        }
+      ],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown"
+        },
+        "affordability": {
+          "evidence_type": "unknown"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown"
+        }
+      },
+      "capacity_max": 35
+    },
+    {
+      "slug": "icon-presentations",
+      "name": "Icon Presentations",
+      "city": "Indio",
+      "service_type": "av",
+      "tags": [
+        "meeting-av",
+        "presentation",
+        "sound",
+        "video",
+        "equipment-rental"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "Conference AV, staging, equipment rental, event production and RFP/room-drawing support are published."
+      ],
+      "constraints": [
+        "Confirm event site, room layout, power/connectivity, technical crew and equipment quote; inventory and price are unknown."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.icon-presentations.com/",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_sources": [
+        {
+          "field": "service_type",
+          "value": "av",
+          "source_url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "offering",
+          "value": [
+            "Conference AV, staging, equipment rental, event production and RFP/room-drawing support are published."
+          ],
+          "source_url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "action_url",
+          "value": "https://www.icon-presentations.com/",
+          "source_url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        }
+      ],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown"
+        },
+        "affordability": {
+          "evidence_type": "unknown"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown"
+        }
+      }
+    },
+    {
+      "slug": "they-improv-palm-springs",
+      "name": "THEY improv — Palm Springs service area",
+      "city": null,
+      "service_type": "facilitation",
+      "tags": [
+        "team-building",
+        "communication",
+        "leadership-workshop",
+        "conflict-resolution"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "Customized corporate team workshops and leadership/communication training are offered across the Coachella Valley.",
+        "Provider comes to the selected venue; no food or venue is included."
+      ],
+      "constraints": [
+        "This is a team workshop provider, not verified strategic-planning facilitation.",
+        "Provider requires suitable lighting, room to move and a quiet space; confirm group limit, schedule, accessible participation and quote."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_sources": [
+        {
+          "field": "service_type",
+          "value": "facilitation",
+          "source_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "offering",
+          "value": [
+            "Customized corporate team workshops and leadership/communication training are offered across the Coachella Valley.",
+            "Provider comes to the selected venue; no food or venue is included."
+          ],
+          "source_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "action_url",
+          "value": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "source_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        }
+      ],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown"
+        },
+        "affordability": {
+          "evidence_type": "unknown"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown"
+        }
+      }
+    },
+    {
+      "slug": "red-jeep-tours-desert-adventures",
+      "name": "Red Jeep Tours (Desert Adventures)",
+      "city": "Palm Desert",
+      "service_type": "activities",
+      "tags": [
+        "team-building",
+        "guided-tour",
+        "private-group",
+        "offsite-activity"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "Private group San Andreas Fault programs publish 15–100 guests; double rounds can serve up to 150.",
+        "Published per-Jeep occupancy is seven; photo-riddle team-building add-on is offered."
+      ],
+      "constraints": [
+        "Morning tours September–June; afternoon tours late September–early May and discouraged above forecast 105°F.",
+        "Advance reservations are required; signed contract/50% deposit and per-Jeep billing apply.",
+        "Mobility accommodations are described; wheelchair boarding and each attendee's access needs require confirmation.",
+        "Pickup scope and fees differ by city. Confirm current pricing, cancellation policy, heat plan and venue itinerary."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry",
+          "url": "https://www.red-jeep.com/contact/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.red-jeep.com/contact/",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_sources": [
+        {
+          "field": "service_type",
+          "value": "activities",
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "offering",
+          "value": [
+            "Private group San Andreas Fault programs publish 15–100 guests; double rounds can serve up to 150.",
+            "Published per-Jeep occupancy is seven; photo-riddle team-building add-on is offered."
+          ],
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "action_url",
+          "value": "https://www.red-jeep.com/contact/",
+          "source_url": "https://www.red-jeep.com/contact/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        {
+          "field": "group_capacity",
+          "value": "15–100; up to 150 via double rounds",
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        }
+      ],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown"
+        },
+        "affordability": {
+          "evidence_type": "unknown"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown"
+        }
+      },
+      "existing_entity_id": "red-jeep-tours-desert-adventures",
+      "preview_url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/red-jeep-tours-desert-adventures",
+      "alias_existing_entity_ids": [
+        "desert-adventures-jeep-tours"
+      ],
+      "capacity_min": 15,
+      "capacity_max": 100
+    }
+  ],
+  "coverage_gaps": [
+    "No property offers a verified named working-room layout capacity in this set.",
+    "Old Polo municipal and lodging-capacity contradictions need operator resolution before strict filters or occupancy promises.",
+    "Full sleeping-bed configurations, accessible routes and cancellation terms remain incomplete.",
+    "Dedicated strategic-planning facilitator not qualified in this initial service set; facilitation provider is explicitly scoped to team workshops.",
+    "No live availability, itemized retreat quotes, affordability, travel distance/time or supported package relationships are inferred."
+  ]
+}

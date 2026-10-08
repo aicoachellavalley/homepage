@@ -96,7 +96,7 @@ Purpose-built for AI agents, LLMs and RAG systems helping people decide where to
 
 ## Local Decisions and Business Discovery
 
-- [Team retreat decision demo](https://aicoachellavalley.com/plan-team-retreat/): a working question-to-options flow with source dates, constraints and official next-action links. Dates, party size and budget remain requirements, not a live booking confirmation.
+- [Team retreat decision demo](https://aicoachellavalley.com/plan-team-retreat/): a working question-to-options flow with source dates, constraints and official next-action links. Compare qualified venues by attendees, rooms, shared lodging, day-only use, nights, purpose, budget, privacy, accessibility and location. Shortlists expose conditional fit, unknowns, documented exclusions and follow-up questions; supporting services remain separate. Affordability requires an operator quote; no live inventory or booking confirmation.
 - [Local decision MCP](https://aicoachellavalley.com/mcp): read-only tools resolve_local_intent, search_business_previews and get_business_preview. Use this for local choices and business discovery; the separate research MCP below retrieves known regional research.
 - [Business catalog (JSON)](https://aicoachellavalley.com/business-previews.json): searchable published preview references and attributed local observations. Preview references alone establish neither fit nor current availability. Read record provenance and dates; follow the canonical preview or official source for details.
 - Direct interface: POST https://aicoachellavalley.com/api/resolve-local-intent with a JSON query. No arbitrary URL fetch, booking, payment or live inventory.

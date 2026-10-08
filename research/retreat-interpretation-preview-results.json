@@ -1,0 +1,2453 @@
+{
+  "endpoint": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/mcp",
+  "checked_at": "2026-10-07T23:38:42.560Z",
+  "transport": "official MCP SDK Streamable HTTP",
+  "synthetic": true,
+  "discovery": {
+    "server": {
+      "name": "aicv-local-intelligence",
+      "version": "0.2.0",
+      "websiteUrl": "https://aicoachellavalley.com"
+    },
+    "capabilities": {
+      "tools": {
+        "listChanged": false
+      }
+    },
+    "tool_names": [
+      "resolve_local_intent",
+      "search_business_previews",
+      "get_business_preview"
+    ],
+    "resolver_fields": [
+      "query",
+      "city",
+      "limit",
+      "group_size",
+      "rooms",
+      "shared_lodging",
+      "day_only",
+      "nights",
+      "purpose",
+      "budget",
+      "privacy",
+      "accessibility",
+      "nearby"
+    ],
+    "read_only": true
+  },
+  "cases": [
+    {
+      "label": "executive",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": 2,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": "private-working-room",
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "node/parker-palm-springs",
+          "name": "Parker Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": "2026-09-25",
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "A documented private-room or buyout pathway supports the working-session requirement.",
+            "Published working-layout evidence: Murphy Room, classroom, up to 33; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Confirm acoustic privacy, dedicated room access and other guests during the proposed session.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.parkerpalmsprings.com/events",
+              "label": "Plan with Parker",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.parkerpalmsprings.com/events",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Confirm acoustic privacy, dedicated room access and other guests during the proposed session.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Confirm acoustic privacy, dedicated room access and other guests during the proposed session.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Confirm acoustic privacy, dedicated room access and other guests during the proposed session.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "How many overnight rooms are required, and is room sharing acceptable?",
+        "What exact dates and flexibility should each operator evaluate?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "shared-budget",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": 8,
+        "rooms_basis": "planning estimate: two attendees per room; bed configuration unverified",
+        "shared_lodging": true,
+        "day_only": false,
+        "nights": 2,
+        "purpose": "leadership",
+        "budget": "$25,000 total",
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup.",
+            "The format supports comparing a simpler meeting or lodging scope; this is not a verified lower price."
+          ],
+          "unknowns": [
+            "A 8-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Shared lodging remains conditional on the actual beds, occupancy rules and attendees\u2019 consent; bedroom totals do not establish bed configurations.",
+            "Affordability for $25,000 total is unknown. Request an itemized quote for lodging, meeting hire, food, AV, tax, fees and transport; no rates are inferred from positioning.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup.",
+            "The format supports comparing a simpler meeting or lodging scope; this is not a verified lower price."
+          ],
+          "unknowns": [
+            "A 8-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Shared lodging remains conditional on the actual beds, occupancy rules and attendees\u2019 consent; bedroom totals do not establish bed configurations.",
+            "Affordability for $25,000 total is unknown. Request an itemized quote for lodging, meeting hire, food, AV, tax, fees and transport; no rates are inferred from positioning.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/fairfield-palm-desert",
+          "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Fairfield Room, conference, up to 18; confirm its availability and actual setup.",
+            "The format supports comparing a simpler meeting or lodging scope; this is not a verified lower price."
+          ],
+          "unknowns": [
+            "A 8-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Shared lodging remains conditional on the actual beds, occupancy rules and attendees\u2019 consent; bedroom totals do not establish bed configurations.",
+            "Affordability for $25,000 total is unknown. Request an itemized quote for lodging, meeting hire, food, AV, tax, fees and transport; no rates are inferred from positioning.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "label": "Plan with Fairfield Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/residence-inn-palm-desert",
+          "name": "Residence Inn by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Mariposa Lily, conference, up to 36; confirm its availability and actual setup.",
+            "The format supports comparing a simpler meeting or lodging scope; this is not a verified lower price."
+          ],
+          "unknowns": [
+            "A 8-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Shared lodging remains conditional on the actual beds, occupancy rules and attendees\u2019 consent; bedroom totals do not establish bed configurations.",
+            "Affordability for $25,000 total is unknown. Request an itemized quote for lodging, meeting hire, food, AV, tax, fees and transport; no rates are inferred from positioning.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+              "label": "Plan with Residence Inn Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "retreat/frederick-loewe-estate",
+          "name": "Frederick Loewe Estate",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Requested 8 separate rooms exceed the published 4 bedrooms.",
+              "evidence_type": "published_fact",
+              "source_url": "https://frederickloeweestate.com/vacation-experience/"
+            }
+          ]
+        }
+      ],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "Can two attendees share, and what separate beds and room count are required?",
+        "What exact dates and flexibility should each operator evaluate?",
+        "Does $25,000 total cover the whole retreat or only lodging, and does it include food, meeting hire, AV, taxes, fees and transport?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "wellness",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": 2,
+        "purpose": "wellness",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "node/sensei-porcupine-creek",
+          "name": "Sensei Porcupine Creek",
+          "city": "Rancho Mirage",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": "2026-09-25",
+          "fit_reasons": [
+            "AICV's planning assessment identifies wellness as a use case; this is a judgment based on the linked evidence."
+          ],
+          "unknowns": [
+            "No sourced working-room layout establishes seating for all 16 attendees. Ask for a named room and layout; theater/reception or lodging totals do not prove it.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+              "label": "Plan with Sensei",
+              "kind": "official_group_proposal",
+              "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "hospitality/two-bunch-palms-resort-spa",
+          "name": "Two Bunch Palms",
+          "city": "Desert Hot Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies wellness as a use case; this is a judgment based on the linked evidence."
+          ],
+          "unknowns": [
+            "No sourced working-room layout establishes seating for all 16 attendees. Ask for a named room and layout; theater/reception or lodging totals do not prove it.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://twobunchpalms.com/events/",
+              "label": "Plan with Two Bunch Palms",
+              "kind": "official_group_proposal",
+              "source_url": "https://twobunchpalms.com/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [],
+      "unestablished_matches": [],
+      "supporting_services": [
+        {
+          "id": "outdoors-recreation/red-jeep-tours-desert-adventures",
+          "name": "Red Jeep Tours (Desert Adventures)",
+          "type": "activities",
+          "source_checked_at": "2026-10-07",
+          "official_actions": [
+            {
+              "url": "https://www.red-jeep.com/contact/",
+              "label": "Official service inquiry",
+              "kind": "inquiry",
+              "source_url": "https://www.red-jeep.com/contact/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "service_exclusions": [],
+      "next_questions": [
+        "How many overnight rooms are required, and is room sharing acceptable?",
+        "What exact dates and flexibility should each operator evaluate?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "boutique",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": null,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "The documented property format matches the boutique preference.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "node/hotel-paseo",
+          "name": "Hotel Paseo, Autograph Collection",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": "2026-09-25",
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "The documented property format matches the boutique preference.",
+            "Published working-layout evidence: Paseo A / Paseo B, conference, up to 38; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.hotelpaseo.com/meetings-weddings/start-planning/",
+              "label": "Plan with Hotel Paseo",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.hotelpaseo.com/meetings-weddings/start-planning/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "node/parker-palm-springs",
+          "name": "Parker Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": "2026-09-25",
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "The documented property format matches the boutique preference.",
+            "Published working-layout evidence: Murphy Room, classroom, up to 33; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.parkerpalmsprings.com/events",
+              "label": "Plan with Parker",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.parkerpalmsprings.com/events",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "How many overnight rooms are required, and is room sharing acceptable?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "private",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": 8,
+        "rooms_basis": "planning estimate: two attendees per room; bed configuration unverified",
+        "shared_lodging": true,
+        "day_only": false,
+        "nights": null,
+        "purpose": "team",
+        "budget": null,
+        "privacy": "exclusive-use",
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "hospitality/the-old-polo-estate",
+          "name": "Old Polo Estate",
+          "city": null,
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies team as a use case; this is a judgment based on the linked evidence.",
+            "A dedicated group-property pathway matches the private-property preference.",
+            "A published buyout or exclusive-use pathway exists; contracted exclusivity is unconfirmed."
+          ],
+          "unknowns": [
+            "No sourced working-room layout establishes seating for all 16 attendees. Ask for a named room and layout; theater/reception or lodging totals do not prove it.",
+            "A 8-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Shared lodging remains conditional on the actual beds, occupancy rules and attendees\u2019 consent; bedroom totals do not establish bed configurations.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://oldpolo.com/corporate",
+              "label": "Official retreat inquiry",
+              "kind": "inquiry",
+              "source_url": "https://oldpolo.com/corporate",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+          "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+          "city": "Bermuda Dunes",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies team as a use case; this is a judgment based on the linked evidence.",
+            "A dedicated group-property pathway matches the private-property preference.",
+            "A published buyout or exclusive-use pathway exists; contracted exclusivity is unconfirmed."
+          ],
+          "unknowns": [
+            "No sourced working-room layout establishes seating for all 16 attendees. Ask for a named room and layout; theater/reception or lodging totals do not prove it.",
+            "A 8-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Shared lodging remains conditional on the actual beds, occupancy rules and attendees\u2019 consent; bedroom totals do not establish bed configurations.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://venueten.com/contact",
+              "label": "Official retreat inquiry",
+              "kind": "inquiry",
+              "source_url": "https://venueten.com/contact",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "node/parker-palm-springs",
+          "name": "Parker Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": "2026-09-25",
+          "fit_reasons": [
+            "AICV's planning assessment identifies team as a use case; this is a judgment based on the linked evidence.",
+            "A published buyout or exclusive-use pathway exists; contracted exclusivity is unconfirmed.",
+            "Published working-layout evidence: Murphy Room, classroom, up to 33; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 8-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Shared lodging remains conditional on the actual beds, occupancy rules and attendees\u2019 consent; bedroom totals do not establish bed configurations.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.parkerpalmsprings.com/events",
+              "label": "Plan with Parker",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.parkerpalmsprings.com/events",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies team as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exclusive use of the whole property is not established; a private meeting room is insufficient evidence of a buyout.",
+            "A 8-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Shared lodging remains conditional on the actual beds, occupancy rules and attendees\u2019 consent; bedroom totals do not establish bed configurations.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "retreat/frederick-loewe-estate",
+          "name": "Frederick Loewe Estate",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Requested 8 separate rooms exceed the published 4 bedrooms.",
+              "evidence_type": "published_fact",
+              "source_url": "https://frederickloeweestate.com/vacation-experience/"
+            }
+          ]
+        }
+      ],
+      "unestablished_matches": [],
+      "supporting_services": [
+        {
+          "id": "service/no-worries-private-chefs",
+          "name": "No Worries Private Chefs",
+          "type": "dining",
+          "source_checked_at": "2026-10-07",
+          "official_actions": [
+            {
+              "url": "https://www.noworriescali.com/contact",
+              "label": "Official service inquiry",
+              "kind": "inquiry",
+              "source_url": "https://www.noworriescali.com/contact",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "service/icon-presentations",
+          "name": "Icon Presentations",
+          "type": "av",
+          "source_checked_at": "2026-10-07",
+          "official_actions": [
+            {
+              "url": "https://www.icon-presentations.com/",
+              "label": "Official service inquiry",
+              "kind": "inquiry",
+              "source_url": "https://www.icon-presentations.com/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "service_exclusions": [],
+      "next_questions": [
+        "Can two attendees share, and what separate beds and room count are required?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?",
+        "Is an entire-property buyout required, or would a dedicated private working room meet the privacy need?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "day-only",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": true,
+        "nights": 0,
+        "purpose": "team",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies team as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Day-only group access and any required lodging commitment need an official proposal.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies team as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Day-only group access and any required lodging commitment need an official proposal.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies team as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Day-only group access and any required lodging commitment need an official proposal.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/fairfield-palm-desert",
+          "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies team as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Fairfield Room, conference, up to 18; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Day-only group access and any required lodging commitment need an official proposal.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "label": "Plan with Fairfield Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "What exact dates and flexibility should each operator evaluate?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "large",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 60,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": null,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "node/jw-marriott-desert-springs",
+          "name": "JW Marriott Desert Springs Resort & Spa",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": "2026-09-25",
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: 3 Sinatra Ballroom Salons (combined), conference, up to 75; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+              "label": "Plan with JW Marriott",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "node/ritz-carlton",
+          "name": "The Ritz-Carlton, Rancho Mirage",
+          "city": "Rancho Mirage",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": "2026-09-25",
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Salon I, conference, up to 60; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+              "label": "Plan with Ritz-Carlton",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence."
+          ],
+          "unknowns": [
+            "No sourced working-room layout establishes seating for all 60 attendees. Ask for a named room and layout; theater/reception or lodging totals do not prove it.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence."
+          ],
+          "unknowns": [
+            "No sourced working-room layout establishes seating for all 60 attendees. Ask for a named room and layout; theater/reception or lodging totals do not prove it.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "node/sensei-porcupine-creek",
+          "name": "Sensei Porcupine Creek",
+          "city": "Rancho Mirage",
+          "reasons": [
+            {
+              "reason": "Requested headcount exceeds the published 48-guest estate-buyout maximum.",
+              "evidence_type": "published_fact",
+              "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/"
+            }
+          ]
+        },
+        {
+          "id": "hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+          "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+          "city": "Bermuda Dunes",
+          "reasons": [
+            {
+              "reason": "Requested 60 overnight attendees exceed the published 40-guest lodging limit.",
+              "evidence_type": "published_fact",
+              "source_url": "https://venueten.com/"
+            }
+          ]
+        }
+      ],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "How many overnight rooms are required, and is room sharing acceptable?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "accessibility",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": null,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": null,
+        "accessibility": "Two wheelchair users need step-free rooms and meeting routes",
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Required accessibility: Two wheelchair users need step-free rooms and meeting routes Confirm the exact guest rooms, step-free routes, restrooms, meeting setup and transport; a general accessibility statement does not prove this itinerary fits.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Required accessibility: Two wheelchair users need step-free rooms and meeting routes Confirm the exact guest rooms, step-free routes, restrooms, meeting setup and transport; a general accessibility statement does not prove this itinerary fits.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Required accessibility: Two wheelchair users need step-free rooms and meeting routes Confirm the exact guest rooms, step-free routes, restrooms, meeting setup and transport; a general accessibility statement does not prove this itinerary fits.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/fairfield-palm-desert",
+          "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Fairfield Room, conference, up to 18; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Required accessibility: Two wheelchair users need step-free rooms and meeting routes Confirm the exact guest rooms, step-free routes, restrooms, meeting setup and transport; a general accessibility statement does not prove this itinerary fits.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "label": "Plan with Fairfield Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "How many overnight rooms are required, and is room sharing acceptable?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?",
+        "Which mobility, hearing, vision or other access requirements must the venue verify for this itinerary?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "strict-city",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": null,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": "Palm Desert",
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/fairfield-palm-desert",
+          "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Fairfield Room, conference, up to 18; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "label": "Plan with Fairfield Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "node/hotel-paseo",
+          "name": "Hotel Paseo, Autograph Collection",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": "2026-09-25",
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Paseo A / Paseo B, conference, up to 38; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.hotelpaseo.com/meetings-weddings/start-planning/",
+              "label": "Plan with Hotel Paseo",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.hotelpaseo.com/meetings-weddings/start-planning/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "node/jw-marriott-desert-springs",
+          "name": "JW Marriott Desert Springs Resort & Spa",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": "2026-09-25",
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Director 1, conference, up to 22; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+              "label": "Plan with JW Marriott",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "node/ritz-carlton",
+          "name": "The Ritz-Carlton, Rancho Mirage",
+          "city": "Rancho Mirage",
+          "reasons": [
+            {
+              "reason": "Outside the explicit Palm Desert city boundary.",
+              "evidence_type": "published_fact",
+              "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/"
+            }
+          ]
+        },
+        {
+          "id": "node/grand-hyatt-indian-wells",
+          "name": "Grand Hyatt Indian Wells Resort & Villas",
+          "city": "Indian Wells",
+          "reasons": [
+            {
+              "reason": "Outside the explicit Palm Desert city boundary.",
+              "evidence_type": "published_fact",
+              "source_url": "https://www.hyattindianwells.com/gather/meetings"
+            }
+          ]
+        },
+        {
+          "id": "node/sensei-porcupine-creek",
+          "name": "Sensei Porcupine Creek",
+          "city": "Rancho Mirage",
+          "reasons": [
+            {
+              "reason": "Outside the explicit Palm Desert city boundary.",
+              "evidence_type": "published_fact",
+              "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/"
+            }
+          ]
+        },
+        {
+          "id": "node/parker-palm-springs",
+          "name": "Parker Palm Springs",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Outside the explicit Palm Desert city boundary.",
+              "evidence_type": "published_fact",
+              "source_url": "https://www.parkerpalmsprings.com/events"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Outside the explicit Palm Desert city boundary.",
+              "evidence_type": "published_fact",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/"
+            }
+          ]
+        },
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Outside the explicit Palm Desert city boundary.",
+              "evidence_type": "published_fact",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/"
+            }
+          ]
+        },
+        {
+          "id": "hospitality/two-bunch-palms-resort-spa",
+          "name": "Two Bunch Palms",
+          "city": "Desert Hot Springs",
+          "reasons": [
+            {
+              "reason": "Outside the explicit Palm Desert city boundary.",
+              "evidence_type": "published_fact",
+              "source_url": "https://twobunchpalms.com/events/"
+            }
+          ]
+        },
+        {
+          "id": "retreat/frederick-loewe-estate",
+          "name": "Frederick Loewe Estate",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Outside the explicit Palm Desert city boundary.",
+              "evidence_type": "published_fact",
+              "source_url": "https://frederickloeweestate.com/vacation-experience/"
+            }
+          ]
+        },
+        {
+          "id": "hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+          "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+          "city": "Bermuda Dunes",
+          "reasons": [
+            {
+              "reason": "Outside the explicit Palm Desert city boundary.",
+              "evidence_type": "published_fact",
+              "source_url": "https://venueten.com/contact"
+            }
+          ]
+        }
+      ],
+      "unestablished_matches": [
+        {
+          "id": "hospitality/the-old-polo-estate",
+          "name": "Old Polo Estate",
+          "city": null,
+          "reasons": [
+            {
+              "reason": "City is unresolved; no strict Palm Desert match can be established.",
+              "evidence_type": "unknown",
+              "source_url": null
+            }
+          ]
+        }
+      ],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "How many overnight rooms are required, and is room sharing acceptable?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "nearby",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": null,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": "Palm Springs",
+        "nearby": true
+      },
+      "selected": [
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/fairfield-palm-desert",
+          "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Fairfield Room, conference, up to 18; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "label": "Plan with Fairfield Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [],
+      "unestablished_matches": [],
+      "supporting_services": [
+        {
+          "id": "service/cardiff-limousine-transportation",
+          "name": "Cardiff Limousine & Transportation",
+          "type": "transport",
+          "source_checked_at": "2026-10-07",
+          "official_actions": [
+            {
+              "url": "https://www.cardifflimo.com/contact/",
+              "label": "Official service inquiry",
+              "kind": "inquiry",
+              "source_url": "https://www.cardifflimo.com/contact/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "service_exclusions": [],
+      "next_questions": [
+        "What is the maximum acceptable drive time from Palm Springs?",
+        "How many overnight rooms are required, and is room sharing acceptable?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "Bermuda-Dunes",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": 8,
+        "rooms_basis": "planning estimate: two attendees per room; bed configuration unverified",
+        "shared_lodging": true,
+        "day_only": false,
+        "nights": null,
+        "purpose": "team",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": "Bermuda Dunes",
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+          "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+          "city": "Bermuda Dunes",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies team as a use case; this is a judgment based on the linked evidence."
+          ],
+          "unknowns": [
+            "No sourced working-room layout establishes seating for all 16 attendees. Ask for a named room and layout; theater/reception or lodging totals do not prove it.",
+            "A 8-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Shared lodging remains conditional on the actual beds, occupancy rules and attendees\u2019 consent; bedroom totals do not establish bed configurations.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://venueten.com/contact",
+              "label": "Official retreat inquiry",
+              "kind": "inquiry",
+              "source_url": "https://venueten.com/contact",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "Can two attendees share, and what separate beds and room count are required?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "unsupported-name",
+      "status": "no_match",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": null,
+        "purpose": "team",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [],
+      "exclusions": [],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "What is the exact venue name or its official group-planning URL?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "outside-coverage",
+      "status": "no_match",
+      "requirements": null,
+      "selected": [],
+      "exclusions": [],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "not-sharing",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": 16,
+        "rooms_basis": "planning estimate: one attendee per room",
+        "shared_lodging": false,
+        "day_only": false,
+        "nights": null,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/fairfield-palm-desert",
+          "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Fairfield Room, conference, up to 18; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "label": "Plan with Fairfield Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "retreat/frederick-loewe-estate",
+          "name": "Frederick Loewe Estate",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Requested 16 separate rooms exceed the published 4 bedrooms.",
+              "evidence_type": "published_fact",
+              "source_url": "https://frederickloeweestate.com/vacation-experience/"
+            }
+          ]
+        },
+        {
+          "id": "hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+          "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+          "city": "Bermuda Dunes",
+          "reasons": [
+            {
+              "reason": "Requested 16 separate rooms exceed the published 12 bedrooms.",
+              "evidence_type": "published_fact",
+              "source_url": "https://venueten.com/"
+            }
+          ]
+        }
+      ],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "What room types and bed configurations are needed for the individual rooms?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "overnight-with-meeting-day",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": 16,
+        "rooms_basis": "planning estimate: one attendee per room",
+        "shared_lodging": false,
+        "day_only": false,
+        "nights": 2,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/fairfield-palm-desert",
+          "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Fairfield Room, conference, up to 18; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "label": "Plan with Fairfield Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "retreat/frederick-loewe-estate",
+          "name": "Frederick Loewe Estate",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Requested 16 separate rooms exceed the published 4 bedrooms.",
+              "evidence_type": "published_fact",
+              "source_url": "https://frederickloeweestate.com/vacation-experience/"
+            }
+          ]
+        },
+        {
+          "id": "hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+          "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+          "city": "Bermuda Dunes",
+          "reasons": [
+            {
+              "reason": "Requested 16 separate rooms exceed the published 12 bedrooms.",
+              "evidence_type": "published_fact",
+              "source_url": "https://venueten.com/"
+            }
+          ]
+        }
+      ],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "What room types and bed configurations are needed for the individual rooms?",
+        "What exact dates and flexibility should each operator evaluate?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "explicit-nights-with-meeting-day",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": 16,
+        "rooms_basis": "planning estimate: one attendee per room",
+        "shared_lodging": false,
+        "day_only": false,
+        "nights": 2,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/fairfield-palm-desert",
+          "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Fairfield Room, conference, up to 18; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "A 16-room requirement does not establish an available room block; confirm dates, bed mix and shared-room acceptance.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "label": "Plan with Fairfield Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "retreat/frederick-loewe-estate",
+          "name": "Frederick Loewe Estate",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Requested 16 separate rooms exceed the published 4 bedrooms.",
+              "evidence_type": "published_fact",
+              "source_url": "https://frederickloeweestate.com/vacation-experience/"
+            }
+          ]
+        },
+        {
+          "id": "hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+          "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+          "city": "Bermuda Dunes",
+          "reasons": [
+            {
+              "reason": "Requested 16 separate rooms exceed the published 12 bedrooms.",
+              "evidence_type": "published_fact",
+              "source_url": "https://venueten.com/"
+            }
+          ]
+        }
+      ],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "What room types and bed configurations are needed for the individual rooms?",
+        "What exact dates and flexibility should each operator evaluate?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "exclude-Parker",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": null,
+        "purpose": "leadership",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/fairfield-palm-desert",
+          "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies leadership as a use case; this is a judgment based on the linked evidence.",
+            "Published working-layout evidence: Fairfield Room, conference, up to 18; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "label": "Plan with Fairfield Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "node/parker-palm-springs",
+          "name": "Parker Palm Springs",
+          "city": "Palm Springs",
+          "reasons": [
+            {
+              "reason": "Excluded at the caller\u2019s request for alternatives or omission.",
+              "evidence_type": "caller_requirement",
+              "source_url": null
+            }
+          ]
+        }
+      ],
+      "unestablished_matches": [],
+      "supporting_services": [],
+      "service_exclusions": [],
+      "next_questions": [
+        "How many overnight rooms are required, and is room sharing acceptable?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    },
+    {
+      "label": "alternatives-to-Sensei",
+      "status": "needs_details",
+      "requirements": {
+        "group_size": 16,
+        "rooms": null,
+        "rooms_basis": null,
+        "shared_lodging": null,
+        "day_only": false,
+        "nights": null,
+        "purpose": "wellness",
+        "budget": null,
+        "privacy": null,
+        "accessibility": null,
+        "location": null,
+        "nearby": false
+      },
+      "selected": [
+        {
+          "id": "hospitality/two-bunch-palms-resort-spa",
+          "name": "Two Bunch Palms",
+          "city": "Desert Hot Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "AICV's planning assessment identifies wellness as a use case; this is a judgment based on the linked evidence."
+          ],
+          "unknowns": [
+            "No sourced working-room layout establishes seating for all 16 attendees. Ask for a named room and layout; theater/reception or lodging totals do not prove it.",
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://twobunchpalms.com/events/",
+              "label": "Plan with Two Bunch Palms",
+              "kind": "official_group_proposal",
+              "source_url": "https://twobunchpalms.com/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/ace-hotel-palm-springs",
+          "name": "Ace Hotel & Swim Club Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "Published working-layout evidence: The Clubhouse 1st Floor, boardroom, up to 32; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "label": "Plan with Ace Hotel",
+              "kind": "official_group_proposal",
+              "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-desert",
+          "name": "Courtyard by Marriott Palm Desert",
+          "city": "Palm Desert",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "Published working-layout evidence: Desert Mallow, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "label": "Plan with Courtyard Palm Desert",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        },
+        {
+          "id": "retreat/courtyard-palm-springs",
+          "name": "Courtyard by Marriott Palm Springs",
+          "city": "Palm Springs",
+          "source_checked_at": "2026-10-07",
+          "node_last_updated": null,
+          "fit_reasons": [
+            "Published working-layout evidence: Sunrise - Room A, conference, up to 20; confirm its availability and actual setup."
+          ],
+          "unknowns": [
+            "Exact-date availability, total quote, cancellation terms and required setup remain with the operator."
+          ],
+          "official_actions": [
+            {
+              "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "label": "Plan with Courtyard Palm Springs",
+              "kind": "official_group_proposal",
+              "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "node/sensei-porcupine-creek",
+          "name": "Sensei Porcupine Creek",
+          "city": "Rancho Mirage",
+          "reasons": [
+            {
+              "reason": "Excluded at the caller\u2019s request for alternatives or omission.",
+              "evidence_type": "caller_requirement",
+              "source_url": null
+            }
+          ]
+        }
+      ],
+      "unestablished_matches": [],
+      "supporting_services": [
+        {
+          "id": "outdoors-recreation/red-jeep-tours-desert-adventures",
+          "name": "Red Jeep Tours (Desert Adventures)",
+          "type": "activities",
+          "source_checked_at": "2026-10-07",
+          "official_actions": [
+            {
+              "url": "https://www.red-jeep.com/contact/",
+              "label": "Official service inquiry",
+              "kind": "inquiry",
+              "source_url": "https://www.red-jeep.com/contact/",
+              "checked_at": "2026-10-07"
+            }
+          ]
+        }
+      ],
+      "service_exclusions": [],
+      "next_questions": [
+        "How many overnight rooms are required, and is room sharing acceptable?",
+        "What dates and number of nights should each operator quote?",
+        "What total budget and included costs should the operators quote?"
+      ],
+      "text_structured_agreement": true
+    }
+  ],
+  "limitations": [
+    "Synthetic read-only retrieval, not an independent assistant account installation, organic discovery, live availability, operator attestation or booking."
+  ],
+  "followup": {
+    "kind": "synthetic clarification; not actual assistant conversation",
+    "requirements": {
+      "group_size": 16,
+      "rooms": 8,
+      "rooms_basis": "explicit",
+      "shared_lodging": true,
+      "day_only": false,
+      "nights": 2,
+      "purpose": "leadership",
+      "budget": "$25,000 whole retreat",
+      "privacy": "private-working-room",
+      "accessibility": null,
+      "location": "Palm Springs",
+      "nearby": true
+    },
+    "selected_ids": [
+      "retreat/courtyard-palm-desert",
+      "retreat/courtyard-palm-springs",
+      "retreat/fairfield-palm-desert",
+      "node/parker-palm-springs"
+    ],
+    "next_questions": [
+      "What is the maximum acceptable drive time from Palm Springs?",
+      "What exact dates and flexibility should each operator evaluate?",
+      "Does $25,000 whole retreat cover the whole retreat or only lodging, and does it include food, meeting hire, AV, taxes, fees and transport?"
+    ]
+  },
+  "transaction_boundary": {
+    "kind": "synthetic unsupported booking/payment request",
+    "status": "needs_details",
+    "read_only_boundary": [
+      "This is a read-only lookup of dated records, not live availability, prices or booking execution."
+    ],
+    "no_transaction_claims": true,
+    "selected_ids": [
+      "node/hotel-paseo"
+    ],
+    "official_handoff_kinds": [
+      "official_group_proposal"
+    ]
+  },
+  "negative_controls": {
+    "unknown_record": "not_found",
+    "coffee_intent": "local-business",
+    "unknown_tool": {
+      "rejected": true,
+      "json_rpc_error_code": -32602,
+      "message": "MCP error -32602: Unknown tool."
+    },
+    "malformed_rooms": {
+      "rejected": true,
+      "json_rpc_error_code": -32602,
+      "message": "MCP error -32602: rooms must be a bounded nonnegative integer (rooms at least 1)."
+    },
+    "malformed_shared_lodging": {
+      "rejected": true,
+      "json_rpc_error_code": -32602,
+      "message": "MCP error -32602: shared_lodging must be a boolean."
+    }
+  },
+  "passed": true,
+  "source_commit": "03d4e01",
+  "deployment_provenance": "Git-connected Cloudflare preview d652d6d4-b1a9-46fd-a5d7-bd3fc6ce1a34, verified by deployment listing and passing PR checks.",
+  "browser_review": {
+    "synthetic": true,
+    "method": "Lead-operated Codex browser on the same immutable preview",
+    "verified": [
+      "Not-sharing and two-night/one-day wording preserve 16 individual rooms and two nights in briefs before and after comparison",
+      "Structured two-night input also retains lodging in comparison and brief",
+      "Exclude Parker returns four alternatives and a caller-request exclusion",
+      "Alternatives to Sensei returns four alternatives and a caller-request exclusion",
+      "Explicit day-only still removes lodging and uses zero nights despite earlier inputs",
+      "Combined wording preserves individual rooms, two nights and omission of Parker",
+      "Brief copy confirms nothing sent to a venue; no browser console errors observed"
+    ]
+  }
+}

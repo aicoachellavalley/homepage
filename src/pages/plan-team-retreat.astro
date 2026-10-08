@@ -36,14 +36,21 @@ const schema = {
     <section id="compare" aria-labelledby="compare-title">
       <p class="eyebrow">Your question, your constraints</p>
       <h2 id="compare-title">What does the team need?</h2>
-      <p>This comparison focuses on team retreats at three researched resorts. Ask about a leadership offsite, a larger team gathering or a wellness retreat. Each answer explains its evidence and what still needs confirmation.</p>
+      <p>Compare researched resorts, hotels, private group properties and meeting venues. Describe the work and the constraints; each shortlist explains the evidence, exclusions and details that remain unresolved. Change the requirements to see a different comparison.</p>
       <form id="retreat-form" class="retreat-form">
         <label for="retreat-query">Tell us what you are planning</label>
         <textarea id="retreat-query" name="query" rows="3" maxlength="1200" required>We’re bringing a leadership team to the Coachella Valley for a two-night retreat. We need a private working session and time to reconnect. Which venues should we compare?</textarea>
         <div class="brief-inputs">
           <label for="retreat-guests">People <input id="retreat-guests" name="group_size" type="number" min="1" max="10000" placeholder="e.g. 12" /></label>
+          <label for="retreat-rooms">Overnight rooms <input id="retreat-rooms" name="rooms" type="number" min="1" max="10000" placeholder="e.g. 8" /></label>
+          <label for="retreat-nights">Nights <input id="retreat-nights" name="nights" type="number" min="0" max="365" placeholder="e.g. 2" /></label>
           <label for="retreat-dates">Dates or season <input id="retreat-dates" name="dates" type="text" maxlength="100" placeholder="e.g. November; flexible" /></label>
           <label for="retreat-budget">Budget and scope <input id="retreat-budget" name="budget" type="text" maxlength="150" placeholder="e.g. total budget incl. rooms and meals" /></label>
+        </div>
+        <div class="brief-inputs">
+          <label for="retreat-lodging">Accommodation <select id="retreat-lodging"><option value="">Sharing undecided</option><option value="shared">Room sharing acceptable</option><option value="single">Individual rooms required</option><option value="day">Day-only; no lodging</option></select></label>
+          <label for="retreat-privacy">Privacy <select id="retreat-privacy"><option value="">Tell us in your question</option><option value="private-working-room">Dedicated private working room</option><option value="exclusive-use">Entire-property exclusive use</option></select></label>
+          <label for="retreat-accessibility">Accessibility needs <input id="retreat-accessibility" maxlength="400" placeholder="e.g. step-free routes and accessible rooms" /></label>
         </div>
         <button class="retreat-button" type="submit" id="compare-button">Compare retreat options →</button>
         <p class="form-note">Your question is sent to AICV’s comparison service. It does not contact a venue or place a booking.</p>
@@ -54,13 +61,13 @@ const schema = {
     </section>
 
     <section class="researched-section" aria-labelledby="options-title">
-      <p class="eyebrow">Three different ways to gather</p>
+      <p class="eyebrow">Different ways to gather</p>
       <h2 id="options-title">Compare the setting with the job.</h2>
-      <p>These are AICV’s planning assessments based on the sources linked below. Inclusion and order are not sold. This is a focused comparison, not a complete ranking of the valley.</p>
+      <p>These are AICV’s planning assessments based on the sources linked below. Inclusion and order are not sold. These qualified inquiry pathways cover several retreat formats. Availability, affordability and the exact working setup remain conditional. Supporting services appear separately below.</p>
       <div class="retreat-options">
         {retreatData.options.map((option, index) => (
           <article class="retreat-option" id={option.slug}>
-            <div class="option-meta"><span>0{index + 1} / {option.city}</span><span>{option.purpose === 'leadership' ? 'Leadership offsite' : option.purpose === 'team' ? 'Team gathering' : 'Wellness retreat'}</span></div>
+            <div class="option-meta"><span>{String(index + 1).padStart(2, '0')} / {option.city || 'City unresolved'}</span><span>{option.category || option.purpose}</span></div>
             <h3>{option.name}</h3>
             <p class="option-fit">{option.fit}</p>
             <h4>The evidence</h4>
@@ -68,9 +75,9 @@ const schema = {
             <h4>Check before committing</h4>
             <ul>{option.constraints.map(constraint => <li>{constraint}</li>)}</ul>
             <div class="option-sources">
-              <p>Primary sources checked: <time datetime={retreatData.checked_at}>September 30, 2026</time></p>
-              {option.primary_sources.map(source => <a href={source.url}>{source.label} ↗</a>)}
-              <a href={option.node_source}>AICV research record · {option.node_last_updated} →</a>
+              <p>Primary sources checked: <time datetime={option.source_checked_at}>{option.source_checked_at || 'See individual source dates'}</time></p>
+              {option.primary_sources.map(source => <a href={source.url}>{source.label}{source.checked_at ? ` · ${source.checked_at}` : ''} ↗</a>)}
+              {option.node_source && <a href={option.node_source}>AICV research record · {option.node_last_updated} →</a>}
             </div>
             <div class="option-actions">
               <button type="button" class="prepare-button" data-option={option.slug}>Prepare a brief for this venue</button>
@@ -79,6 +86,12 @@ const schema = {
           </article>
         ))}
       </div>
+    </section>
+
+    <section class="researched-section" aria-labelledby="services-title">
+      <p class="eyebrow">Complete the brief</p><h2 id="services-title">Supporting services</h2>
+      <p>These providers have separate official inquiry pathways. Confirm venue permission, availability, scope, accessibility and total cost with each provider; they are not a combined package.</p>
+      <div class="retreat-options">{(retreatData.services || []).map(service => <article class="retreat-option"><p class="eyebrow">{service.service_type}</p><h3>{service.name}</h3><p>{service.fit}</p><ul>{service.constraints.map(item => <li>{item}</li>)}</ul><p class="form-note">Source check: {service.source_checked_at}</p>{service.primary_sources.map(source => <p><a href={source.url}>{source.label} ↗</a></p>)}<a class="official-link" href={service.action_url}>{service.action_label} ↗</a></article>)}</div>
     </section>
 
     <section id="handoff" class="handoff-section" aria-labelledby="handoff-title">
@@ -111,9 +124,15 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
   <Footer variant="compact" />
   <script type="application/json" id="retreat-data" set:html={JSON.stringify(retreatData).replace(/</g, '\u003c')} />
   <script>
+    import { accommodationRequirements } from '../lib/retreat-requirements.mjs';
     const form = document.querySelector<HTMLFormElement>('#retreat-form');
     const query = document.querySelector<HTMLTextAreaElement>('#retreat-query');
     const guests = document.querySelector<HTMLInputElement>('#retreat-guests');
+    const rooms = document.querySelector<HTMLInputElement>('#retreat-rooms');
+    const nights = document.querySelector<HTMLInputElement>('#retreat-nights');
+    const lodging = document.querySelector<HTMLSelectElement>('#retreat-lodging');
+    const privacy = document.querySelector<HTMLSelectElement>('#retreat-privacy');
+    const accessibility = document.querySelector<HTMLInputElement>('#retreat-accessibility');
     const dates = document.querySelector<HTMLInputElement>('#retreat-dates');
     const budget = document.querySelector<HTMLInputElement>('#retreat-budget');
     const status = document.querySelector<HTMLElement>('#decision-status');
@@ -123,6 +142,26 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
     const chosen = document.querySelector<HTMLAnchorElement>('#chosen-action');
     const copyStatus = document.querySelector<HTMLElement>('#copy-status');
     const data = JSON.parse(document.querySelector('#retreat-data')?.textContent || '{"options":[]}');
+    const comparisonNotes = new Map<string, string[]>();
+    type BriefRequirements = { group_size: number | null; rooms: number | null; rooms_basis: string | null; shared_lodging: boolean | null; day_only: boolean; nights: number | null };
+    let comparedRequirements: BriefRequirements | null = null;
+    let comparedForm = '';
+    const formSnapshot = () => JSON.stringify([query?.value, guests?.value, rooms?.value, nights?.value, lodging?.value, dates?.value, budget?.value, privacy?.value, accessibility?.value]);
+    function briefAccommodation() {
+      // Use returned requirements only while every current form value matches
+      // that request. Otherwise derive the brief from the edited form.
+      const sameComparison = formSnapshot() === comparedForm;
+      const requirement = sameComparison ? comparedRequirements : null;
+      const current = accommodationRequirements({
+        query: query?.value || '',
+        ...(guests?.value ? { group_size: Number(guests.value) } : {}),
+        ...(rooms?.value ? { rooms: Number(rooms.value) } : {}),
+        ...(nights?.value ? { nights: Number(nights.value) } : {}),
+        ...(lodging?.value === 'day' ? { day_only: true } : lodging?.value ? { shared_lodging: lodging.value === 'shared' } : {}),
+      });
+      const { group_size: attendees, rooms: roomCount, rooms_basis: roomBasis, shared_lodging: sharing, day_only: dayOnly, nights: duration } = requirement || current;
+      return { attendees: attendees || '[add number]', rooms: dayOnly ? 'not required (day-only)' : roomCount ? `${roomCount}${roomBasis?.startsWith('planning estimate') ? ` (${roomBasis}; confirm room count, beds and occupancy)` : ''}` : '[add room count]', accommodation: dayOnly ? 'Day-only; no lodging' : sharing === true ? 'Room sharing acceptable; confirm separate beds and occupancy' : sharing === false ? 'Individual rooms required' : 'Sharing undecided', nights: dayOnly ? '0' : duration ?? '[add nights]', sameComparison };
+    }
     const recordEvent = (event: string) => {
       // Count an action without sending the question, chosen venue or brief.
       void fetch('/api/usage', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({event}), keepalive: true}).catch(() => {});
@@ -133,7 +172,8 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
     function prepare(slug: string) {
       const option = data.options.find((item: {slug: string}) => item.slug === slug);
       if (!option || !brief || !chosen) return;
-      brief.value = `Venue: ${option.name}, ${option.city}\nDates and flexibility: ${dates?.value.trim() || '[add dates]'}\nAttendees: ${guests?.value || '[add number]'}; guest rooms: [add room count and sharing needs]\nPurpose: ${query?.value.trim() || '[add retreat purpose]'}\nTotal budget and inclusions: ${budget?.value.trim() || '[add rooms, food, meeting space and activities]'}\nMeeting setup, privacy and AV: [add requirements]\nAccessibility and dietary needs: [add requirements]\nDecision deadline: [add date]\nPlanning constraints: ${option.constraints.join(' ')}\nPlease confirm availability, total cost, cancellation terms and the proposed room/meeting configuration before any commitment.\nOfficial planning page: ${option.action_url}\nSource check: ${data.checked_at}; these are planning candidates, not confirmed bookings.`;
+      const accommodation = briefAccommodation();
+      brief.value = `Venue: ${option.name}, ${option.city || 'city unresolved'}\nDates and flexibility: ${dates?.value.trim() || '[add dates]'}\nAttendees: ${accommodation.attendees}; guest rooms: ${accommodation.rooms}; accommodation: ${accommodation.accommodation}; nights: ${accommodation.nights}\nPurpose: ${query?.value.trim() || '[add retreat purpose]'}\nTotal budget and inclusions: ${budget?.value.trim() || '[add rooms, food, meeting space and activities]'}\nMeeting setup, privacy and AV: ${privacy?.value || '[add requirements]'}\nAccessibility and dietary needs: ${accessibility?.value.trim() || '[add requirements]'}\nDecision deadline: [add date]\nPlanning constraints: ${[...option.constraints, ...(accommodation.sameComparison ? comparisonNotes.get(option.id) || [] : [])].join(' ')}\nPlease confirm availability, total cost, cancellation terms and the proposed room/meeting configuration before any commitment.\nOfficial planning page: ${option.action_url}\nSource check: ${option.source_checked_at || 'see linked sources'}; these are planning candidates, not confirmed bookings.`;
       chosen.href = option.action_url;
       chosen.hidden = false;
       document.querySelector('#handoff')?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -148,20 +188,25 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
       if (!question) { query.focus(); return; }
       const details = [question, dates?.value.trim() ? `Dates: ${dates.value.trim()}.` : '', budget?.value.trim() ? `Budget: ${budget.value.trim()}.` : ''].filter(Boolean).join(' ');
       if (details.length > 1200) { status.textContent = 'Please shorten your question, dates and budget to 1,200 characters combined.'; query.focus(); return; }
+      const submittedForm = formSnapshot();
       compare.disabled = true; status.textContent = 'Comparing the researched options…'; answer.hidden = true;
       const controller = new AbortController();
       const timeout = window.setTimeout(() => controller.abort(), 15000);
       try {
-        const response = await fetch('/api/resolve-local-intent', {method: 'POST', headers: {'Content-Type': 'application/json'}, signal: controller.signal, body: JSON.stringify({query: details, ...(guests?.value ? {group_size: Number(guests.value)} : {}), limit: 3})});
+        const response = await fetch('/api/resolve-local-intent', {method: 'POST', headers: {'Content-Type': 'application/json'}, signal: controller.signal, body: JSON.stringify({query: details, ...(guests?.value ? {group_size: Number(guests.value)} : {}), ...(rooms?.value ? {rooms: Number(rooms.value)} : {}), ...(nights?.value ? {nights: Number(nights.value)} : {}), ...(lodging?.value === 'day' ? {day_only: true} : lodging?.value ? {shared_lodging: lodging.value === 'shared'} : {}), ...(budget?.value.trim() ? {budget: budget.value.trim()} : {}), ...(privacy?.value ? {privacy: privacy.value} : {}), ...(accessibility?.value.trim() ? {accessibility: accessibility.value.trim()} : {}), limit: 4})});
         if (!response.ok) throw new Error('comparison unavailable');
         const result = await response.json();
+        comparedForm = submittedForm;
+        comparedRequirements = result.requirements || null;
+        comparisonNotes.clear();
+        for (const item of result.results || []) comparisonNotes.set(item.id, [...(item.unknowns || []), ...(item.conflicts || []).map((conflict: {reason: string}) => conflict.reason)]);
         answer.replaceChildren();
         const heading = document.createElement('h3'); heading.textContent = result.intent === 'team-retreat' ? 'Your researched starting points' : 'AICV’s answer'; answer.append(heading);
         for (const item of result.results || []) {
           const article = document.createElement('article'); article.className = 'answer-option';
           const name = document.createElement('h4'); name.textContent = item.name; article.append(name);
-          paragraph(article, item.summary || ''); list(article, item.fit_basis || []); list(article, item.constraints || []);
-          const known = data.options.find((option: {slug: string}) => item.id === option.slug || item.id?.endsWith('/' + option.slug) || item.source_url?.includes('/nodes/' + option.slug));
+          paragraph(article, item.summary || ''); list(article, item.fit_reasons || []); list(article, item.fit_basis || []); list(article, item.constraints || []); if (item.unknowns?.length) { paragraph(article, 'Still to confirm'); list(article, item.unknowns); }
+          const known = data.options.find((option: {slug: string; id?: string}) => item.id === option.id || item.id === option.slug || item.id?.endsWith('/' + option.slug) || item.source_url?.includes('/nodes/' + option.slug));
           if (known) { const button = document.createElement('button'); button.type = 'button'; button.className = 'prepare-button'; button.textContent = 'Prepare a brief for this venue'; button.addEventListener('click', () => prepare(known.slug)); article.append(button); }
           for (const action of item.official_actions || []) {
             const url = new URL(action.url, location.origin);
@@ -184,12 +229,15 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
             answer.append(article);
           }
         }
+        if (result.exclusions?.length || result.service_exclusions?.length) { paragraph(answer, 'Documented exclusions'); list(answer, [...(result.exclusions || []), ...(result.service_exclusions || [])].map((item: {name: string; reasons: {reason: string}[]}) => `${item.name}: ${item.reasons.map(reason => reason.reason).join(' ')}`)); }
+        if (result.unestablished_matches?.length) { paragraph(answer, 'Matches not established because evidence is missing'); list(answer, result.unestablished_matches.map((item: {name: string; reasons: {reason: string}[]}) => `${item.name}: ${item.reasons.map(reason => reason.reason).join(' ')}`)); }
+        if (result.supporting_services?.length) { paragraph(answer, 'Separate services relevant to this brief'); for (const service of result.supporting_services) { const article = document.createElement('article'); article.className = 'answer-option'; paragraph(article, `${service.name}: ${service.summary}`); list(article, service.constraints || []); for (const action of service.official_actions || []) { const url = new URL(action.url); if (url.protocol === 'https:') { const link = document.createElement('a'); link.href = url.href; link.textContent = `${action.label} ↗`; link.className = 'official-link'; link.addEventListener('click', () => recordEvent('official_action_opened')); article.append(link); } } answer.append(article); } }
         list(answer, result.unresolved_constraints || []); list(answer, result.next_questions || []); list(answer, result.limitations || []);
         answer.hidden = false;
         if (result.results?.length || result.regional_context?.length) recordEvent('decision_answer_viewed');
         status.textContent = result.results?.length ? 'Comparison ready. Review the constraints before choosing.' : result.regional_context?.length ? 'Regional research found. This answer does not establish a venue choice.' : 'No suitable match was established. Review the missing details below.';
       } catch {
-        status.textContent = 'The comparison service is unavailable. You can still compare the three sourced options below and prepare a brief.';
+        status.textContent = 'The comparison service is unavailable. You can still compare the sourced options below and prepare a brief.';
       } finally { window.clearTimeout(timeout); compare.disabled = false; }
     });
     document.querySelector('#copy-brief')?.addEventListener('click', async () => {
@@ -215,6 +263,6 @@ Please confirm availability, total cost, cancellation terms and the proposed roo
     :global(#decision-answer .answer-source){display:block;margin-top:.75rem;font-size:.85rem;color:var(--pine)}
     :global(#decision-answer .prepare-button){cursor:pointer;font:inherit;font-weight:700;border:1px solid var(--pine);padding:.85rem 1.1rem;background:var(--pine);color:var(--sand-light);margin-top:1rem}
     :global(#decision-answer .official-link){display:block;color:var(--pine);font-weight:700;font-size:.85rem;margin-top:1rem}
-    .retreat-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--gunmetal);gap:1rem}.retreat-nav a{color:var(--sand);font-size:.85rem;text-decoration:none}.retreat-brand{font-family:'Syne',sans-serif;font-weight:800;display:flex;align-items:center;gap:.8rem}.retreat-brand span{font-size:.8rem;font-weight:500}.retreat-container{max-width:1100px;margin:auto;padding-left:2rem;padding-right:2rem}.retreat-hero{background:var(--pine-dark);color:var(--sand-light);padding:4.5rem 0}.eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:1rem}.retreat-hero .eyebrow{color:var(--volt)}h1,h2,h3{font-family:'Syne',sans-serif;letter-spacing:-.035em}h1{font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.1;max-width:850px;margin-bottom:1.3rem}.hero-description{font-size:1.1rem;max-width:700px;line-height:1.7}.hero-link{display:inline-block;margin-top:1.5rem;color:var(--volt);font-weight:700}.retreat-main{padding-top:3.5rem;padding-bottom:4rem;color:var(--pine)}.retreat-main section{scroll-margin-top:1rem}h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;margin-bottom:1rem}.retreat-main p{line-height:1.65}.retreat-form{margin-top:1.5rem;padding:1.5rem;background:var(--sand-light);border:1px solid var(--sand-dark)}label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.5rem}textarea,input{display:block;width:100%;font:inherit;color:var(--pine);background:#fff;border:1px solid var(--pine-light);border-radius:0;padding:.85rem;margin-top:.5rem}textarea{resize:vertical;line-height:1.6}.brief-inputs{display:grid;grid-template-columns:1fr 1.5fr 2fr;gap:1rem;margin-top:1rem}.retreat-button,.prepare-button{cursor:pointer;font:inherit;font-weight:700;border:1px solid var(--pine);padding:.85rem 1.1rem;background:var(--pine);color:var(--sand-light);margin-top:1rem}.retreat-button{background:var(--volt);color:var(--pine)}button:disabled{opacity:.6;cursor:wait}.form-note{font-size:.8rem;margin-top:1rem}.decision-status{margin-top:1rem;font-size:.9rem}.decision-answer{border-left:4px solid var(--pine);padding:1.5rem;background:var(--sand-light);margin-top:1.5rem}.answer-option{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--sand-dark)}.answer-option h4{font-family:'Syne',sans-serif;font-size:1.15rem}.answer-source{display:block;margin-top:.75rem;font-size:.85rem}.researched-section{margin-top:4rem}.retreat-options{margin-top:2rem;display:grid;gap:1.5rem}.retreat-option{border:1px solid var(--sand-dark);padding:1.8rem;background:var(--sand-light)}.option-meta{display:flex;justify-content:space-between;gap:1rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--pine-light)}.retreat-option h3{font-size:1.65rem;margin:.8rem 0}.option-fit{font-size:1.05rem}.retreat-option h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin:1.3rem 0 .5rem}ul{padding-left:1.25rem;line-height:1.65;font-size:.9rem}li+li{margin-top:.4rem}.option-sources{border-top:1px solid var(--sand-dark);margin-top:1.5rem;padding-top:.7rem;font-size:.8rem}.option-sources a{display:block;margin-top:.3rem}.option-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}.official-link{font-weight:700;font-size:.85rem;display:inline-block;margin-top:1rem}a{color:var(--pine);text-underline-offset:3px}.handoff-section{margin-top:3.5rem;border-top:2px solid var(--pine);padding-top:2rem}.handoff-section label{margin-top:1.5rem}.handoff-actions{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}.regional-section{margin-top:4rem}.regional-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.regional-grid h3{font-size:1.15rem;margin:.8rem 0}.regional-grid p,.regional-grid a{font-size:.9rem}:focus-visible{outline:3px solid var(--pine-light);outline-offset:3px}[hidden]{display:none!important}@media(max-width:700px){.retreat-nav{padding:1rem}.retreat-brand span{display:none}.retreat-container{padding-left:1.2rem;padding-right:1.2rem}.retreat-hero{padding:3rem 0}.brief-inputs,.regional-grid{grid-template-columns:1fr}.retreat-form,.retreat-option{padding:1.1rem}.option-meta{flex-direction:column;gap:.4rem}.option-actions,.handoff-actions{gap:.4rem}.retreat-options{gap:1rem}.retreat-main{padding-top:2.5rem}.decision-answer{padding:1rem}}
+    .retreat-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--gunmetal);gap:1rem}.retreat-nav a{color:var(--sand);font-size:.85rem;text-decoration:none}.retreat-brand{font-family:'Syne',sans-serif;font-weight:800;display:flex;align-items:center;gap:.8rem}.retreat-brand span{font-size:.8rem;font-weight:500}.retreat-container{max-width:1100px;margin:auto;padding-left:2rem;padding-right:2rem}.retreat-hero{background:var(--pine-dark);color:var(--sand-light);padding:4.5rem 0}.eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:1rem}.retreat-hero .eyebrow{color:var(--volt)}h1,h2,h3{font-family:'Syne',sans-serif;letter-spacing:-.035em}h1{font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.1;max-width:850px;margin-bottom:1.3rem}.hero-description{font-size:1.1rem;max-width:700px;line-height:1.7}.hero-link{display:inline-block;margin-top:1.5rem;color:var(--volt);font-weight:700}.retreat-main{padding-top:3.5rem;padding-bottom:4rem;color:var(--pine)}.retreat-main section{scroll-margin-top:1rem}h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;margin-bottom:1rem}.retreat-main p{line-height:1.65}.retreat-form{margin-top:1.5rem;padding:1.5rem;background:var(--sand-light);border:1px solid var(--sand-dark)}label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.5rem}textarea,input,select{display:block;width:100%;font:inherit;color:var(--pine);background:#fff;border:1px solid var(--pine-light);border-radius:0;padding:.85rem;margin-top:.5rem}textarea{resize:vertical;line-height:1.6}.brief-inputs{display:grid;grid-template-columns:1fr 1.5fr 2fr;gap:1rem;margin-top:1rem}.retreat-button,.prepare-button{cursor:pointer;font:inherit;font-weight:700;border:1px solid var(--pine);padding:.85rem 1.1rem;background:var(--pine);color:var(--sand-light);margin-top:1rem}.retreat-button{background:var(--volt);color:var(--pine)}button:disabled{opacity:.6;cursor:wait}.form-note{font-size:.8rem;margin-top:1rem}.decision-status{margin-top:1rem;font-size:.9rem}.decision-answer{border-left:4px solid var(--pine);padding:1.5rem;background:var(--sand-light);margin-top:1.5rem}.answer-option{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--sand-dark)}.answer-option h4{font-family:'Syne',sans-serif;font-size:1.15rem}.answer-source{display:block;margin-top:.75rem;font-size:.85rem}.researched-section{margin-top:4rem}.retreat-options{margin-top:2rem;display:grid;gap:1.5rem}.retreat-option{border:1px solid var(--sand-dark);padding:1.8rem;background:var(--sand-light)}.option-meta{display:flex;justify-content:space-between;gap:1rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--pine-light)}.retreat-option h3{font-size:1.65rem;margin:.8rem 0}.option-fit{font-size:1.05rem}.retreat-option h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin:1.3rem 0 .5rem}ul{padding-left:1.25rem;line-height:1.65;font-size:.9rem}li+li{margin-top:.4rem}.option-sources{border-top:1px solid var(--sand-dark);margin-top:1.5rem;padding-top:.7rem;font-size:.8rem}.option-sources a{display:block;margin-top:.3rem}.option-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}.official-link{font-weight:700;font-size:.85rem;display:inline-block;margin-top:1rem}a{color:var(--pine);text-underline-offset:3px}.handoff-section{margin-top:3.5rem;border-top:2px solid var(--pine);padding-top:2rem}.handoff-section label{margin-top:1.5rem}.handoff-actions{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}.regional-section{margin-top:4rem}.regional-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.regional-grid h3{font-size:1.15rem;margin:.8rem 0}.regional-grid p,.regional-grid a{font-size:.9rem}:focus-visible{outline:3px solid var(--pine-light);outline-offset:3px}[hidden]{display:none!important}@media(max-width:700px){.retreat-nav{padding:1rem}.retreat-brand span{display:none}.retreat-container{padding-left:1.2rem;padding-right:1.2rem}.retreat-hero{padding:3rem 0}.brief-inputs,.regional-grid{grid-template-columns:1fr}.retreat-form,.retreat-option{padding:1.1rem}.option-meta{flex-direction:column;gap:.4rem}.option-actions,.handoff-actions{gap:.4rem}.retreat-options{gap:1rem}.retreat-main{padding-top:2.5rem}.decision-answer{padding:1rem}}
   </style>
 </Base>

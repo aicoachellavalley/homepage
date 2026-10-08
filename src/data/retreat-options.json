@@ -1,95 +1,4461 @@
 {
-  "scope": "Three researched resort options for a Coachella Valley team retreat; not a complete market ranking or live availability feed.",
+  "schema_version": 2,
+  "scope": "Fifteen researched Coachella Valley retreat venues and five separate supporting services; payment-independent comparison, not a complete market ranking or live availability feed.",
   "checked_at": "2026-09-30",
+  "checked_at_note": "Retained original three-option research date. Current checks are recorded per option, field, primary source and official action; no global freshness reset.",
+  "research_updated_at": "2026-10-07",
+  "research_method": {
+    "tool": "Exa",
+    "sources_reviewed": 95,
+    "definition": "Sum of numResults requested in Exa search calls, including candidates later excluded; direct fetches are additional.",
+    "workstreams": 5,
+    "provider_discovery": "Stripe Directory prerequisites were inspected by lead. Directory/CLI unavailable; no Directory verification performed and no commerce infrastructure installed.",
+    "verification": "Published official-source desk research; no business contact, attestation, on-site inspection or availability lookup.",
+    "qualification": "Official business/brand group or meeting pathway and on-property lodging. Named layouts qualify working-session capacity only where explicitly published.",
+    "source_date_note": "2026-10-07 is the research check date, not venue inspection, original publication or availability date."
+  },
+  "coverage_gaps": [
+    "No private-estate property in the separate private-lodging research subset establishes a named working-room layout capacity; hotel/resort layouts are listed where sourced.",
+    "Old Polo municipal and lodging-capacity contradictions need operator resolution before strict filters or occupancy promises.",
+    "Full sleeping-bed configurations, accessible routes and cancellation terms remain incomplete.",
+    "Dedicated strategic-planning facilitator not qualified in this initial service set; facilitation provider is explicitly scoped to team workshops.",
+    "No live availability, itemized retreat quotes, affordability, travel distance/time or supported package relationships are inferred."
+  ],
   "options": [
     {
+      "category": "resort",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": 20,
+      "meeting_capacity_layout": "conference",
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
       "slug": "ritz-carlton",
       "name": "The Ritz-Carlton, Rancho Mirage",
       "city": "Rancho Mirage",
       "purpose": "leadership",
-      "fit": "A leadership offsite where a private working session and full-service luxury hospitality matter.",
+      "purposes": [
+        "leadership",
+        "team"
+      ],
+      "tier": "luxury",
+      "fit": "Executive offsite with a published 20-person conference boardroom and full-service meeting planning.",
       "facts": [
-        "Official capacity chart lists a boardroom for 20 in conference layout.",
-        "The resort publishes indoor and outdoor meeting venues and event-planning services."
+        "The Boardroom is published for 20 in conference layout and 12 in U-shape.",
+        "Morningside is published for 26 conference, 18 U-shape and 30 classroom.",
+        "Salon I publishes 60 conference, 54 u-shape, 90 classroom."
       ],
       "constraints": [
-        "The 20-person figure applies to the boardroom's conference layout, not the entire resort. Larger groups need a different room configuration.",
-        "Off-property activities require transport; confirm accessibility, AV, privacy and the total contracted cost."
+        "A 16-person U-shape session does not fit The Boardroom; request Morningside or another suitable room.",
+        "Confirm quietness, exclusive room use and all-in group pricing."
       ],
-      "node_source": "/nodes/ritz-carlton/",
-      "node_last_updated": "2026-09-25",
+      "meeting_spaces": [
+        {
+          "name": "The Boardroom",
+          "layout": "conference",
+          "capacity": 20,
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "The Boardroom",
+          "layout": "u-shape",
+          "capacity": 12,
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Morningside",
+          "layout": "conference",
+          "capacity": 26,
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Morningside",
+          "layout": "u-shape",
+          "capacity": 18,
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Salon I",
+          "layout": "conference",
+          "capacity": 60,
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "source_layout_label": "conference",
+          "review_note": "Lead independently re-fetched the official capacity chart on 2026-10-07; these named layouts supplement the original research handoff."
+        },
+        {
+          "name": "Salon I",
+          "layout": "u-shape",
+          "capacity": 54,
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "source_layout_label": "u-shape",
+          "review_note": "Lead independently re-fetched the official capacity chart on 2026-10-07; these named layouts supplement the original research handoff."
+        },
+        {
+          "name": "Salon I",
+          "layout": "classroom",
+          "capacity": 90,
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "source_layout_label": "schoolroom",
+          "review_note": "Lead independently re-fetched the official capacity chart on 2026-10-07; these named layouts supplement the original research handoff."
+        }
+      ],
       "primary_sources": [
         {
           "label": "Official meeting spaces and capacity chart",
-          "url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/"
+          "url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
         }
       ],
-      "action_url": "https://www.ritzcarlton.com/en/hotels-and-resorts/meetings-and-celebrations/meetings/rfp/?marshaCode=pspps",
+      "node_source": "/nodes/ritz-carlton/",
+      "node_last_updated": "2026-09-25",
+      "action_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
       "action_label": "Plan with Ritz-Carlton",
-      "action_kind": "official_group_proposal",
       "phone": "+1 760-321-8282",
-      "capacity_max": null
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Hotel accommodations coordinated by event planners; specific block inventory unknown."
+        ],
+        "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "phone": {
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-09-30",
+          "evidence_type": "published_fact"
+        },
+        "city": {
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "node/ritz-carlton",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://aicoachellavalley.com/nodes/ritz-carlton/",
+      "positioning": "luxury",
+      "aliases": [
+        "Ritz-Carlton",
+        "The Ritz-Carlton Rancho Mirage"
+      ],
+      "research_enrichment_note": "Lead source review added named larger working-room layouts from the same official chart on 2026-10-07. This does not establish a property-wide capacity or available booking."
     },
     {
+      "category": "resort",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": 18,
+      "meeting_capacity_layout": "boardroom",
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
       "slug": "grand-hyatt-indian-wells",
       "name": "Grand Hyatt Indian Wells Resort & Villas",
       "city": "Indian Wells",
       "purpose": "team",
-      "fit": "A team gathering with room blocks, breakout sessions and a broader resort activity program.",
+      "purposes": [
+        "team",
+        "leadership"
+      ],
+      "tier": "full-service-resort",
+      "fit": "Team gathering with room blocks, catering and smaller named boardroom layouts within a larger resort.",
       "facts": [
-        "Official meeting page lists 88,000 square feet of indoor and outdoor event space.",
-        "The resort offers room blocks, meeting coordinators, catering and team activities."
+        "Official meeting page offers room blocks, dedicated meeting coordinators and catering.",
+        "Official capacity chart lists Hibiscus A or B for 18 boardroom and 18 U-shape; Primrose is 14 boardroom."
       ],
       "constraints": [
-        "Meeting-space area does not establish the capacity of your chosen room or layout; obtain a group proposal.",
-        "This is a full-service leisure resort. Confirm a quiet, private meeting space rather than assuming exclusive use of the property."
+        "Primrose's 14-person boardroom does not fit 16; request Hibiscus A/B, Lupine or Desertbell and confirm setup.",
+        "The capacity chart represents maximum room sets; room blocks and quietness require confirmation."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "Hibiscus A or B",
+          "layout": "boardroom",
+          "capacity": 18,
+          "source_url": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/documents/2024/11/01/1004/Grand-Hyatt-Indian-Wells-Resort-and-Spa-Capacity-Chart-English.pdf",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Hibiscus A or B",
+          "layout": "u-shape",
+          "capacity": 18,
+          "source_url": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/documents/2024/11/01/1004/Grand-Hyatt-Indian-Wells-Resort-and-Spa-Capacity-Chart-English.pdf",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Lupine / Desertbell",
+          "layout": "boardroom",
+          "capacity": 18,
+          "source_url": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/documents/2024/11/01/1004/Grand-Hyatt-Indian-Wells-Resort-and-Spa-Capacity-Chart-English.pdf",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Primrose",
+          "layout": "boardroom",
+          "capacity": 14,
+          "source_url": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/documents/2024/11/01/1004/Grand-Hyatt-Indian-Wells-Resort-and-Spa-Capacity-Chart-English.pdf",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official meetings and room blocks",
+          "url": "https://www.hyattindianwells.com/gather/meetings",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official Hyatt capacity chart",
+          "url": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/documents/2024/11/01/1004/Grand-Hyatt-Indian-Wells-Resort-and-Spa-Capacity-Chart-English.pdf",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
       ],
       "node_source": "/nodes/grand-hyatt-indian-wells/",
       "node_last_updated": "2026-09-25",
-      "primary_sources": [
-        {
-          "label": "Official meetings, room blocks and activities",
-          "url": "https://www.hyattindianwells.com/gather/meetings"
-        }
-      ],
-      "action_url": "https://www.hyatt.com/events/search?icamp=hp_rfp_champ&spiritCode=champ",
+      "action_url": "https://www.hyattindianwells.com/gather/meetings",
       "action_label": "Plan with Grand Hyatt",
-      "action_kind": "official_group_proposal",
       "phone": "+1 760-776-1234",
-      "capacity_max": null
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Rooms, suites and villas; request block and bed configuration."
+        ],
+        "source_url": "https://www.hyattindianwells.com/gather/meetings",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://www.hyattindianwells.com/gather/meetings",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://assets.hyatt.com/content/dam/hyatt/hyattdam/documents/2024/11/01/1004/Grand-Hyatt-Indian-Wells-Resort-and-Spa-Capacity-Chart-English.pdf",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://www.hyattindianwells.com/gather/meetings",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://www.hyattindianwells.com/gather/meetings",
+            "https://assets.hyatt.com/content/dam/hyatt/hyattdam/documents/2024/11/01/1004/Grand-Hyatt-Indian-Wells-Resort-and-Spa-Capacity-Chart-English.pdf"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "phone": {
+          "source_url": "https://www.hyattindianwells.com/gather/meetings",
+          "checked_at": "2026-09-30",
+          "evidence_type": "published_fact"
+        },
+        "city": {
+          "source_url": "https://www.hyattindianwells.com/gather/meetings",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.hyattindianwells.com/gather/meetings",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.hyattindianwells.com/gather/meetings",
+        "checked_at": "2026-10-07"
+      },
+      "id": "node/grand-hyatt-indian-wells",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.hyattindianwells.com/gather/meetings",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://aicoachellavalley.com/nodes/grand-hyatt-indian-wells/",
+      "positioning": "full-service-resort",
+      "aliases": [
+        "Grand Hyatt",
+        "Hyatt Indian Wells"
+      ]
     },
     {
+      "category": "resort",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": null,
+      "meeting_capacity_layout": null,
+      "buyout_required_room_count": 10,
+      "minimum_nights": 2,
+      "day_use": "unknown",
+      "privacy": "buyout",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [
+        {
+          "kind": "minimum_nights",
+          "value": 2,
+          "reason": "Official FAQ requires a two-night minimum.",
+          "source_url": "https://sensei.com/faq/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "kind": "buyout_room_threshold",
+          "value": 10,
+          "reason": "10 or more rooms require an estate buyout.",
+          "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
       "slug": "sensei-porcupine-creek",
       "name": "Sensei Porcupine Creek",
       "city": "Rancho Mirage",
       "purpose": "wellness",
-      "fit": "A wellness-centered executive retreat with private meeting spaces and a deliberately intimate estate setting.",
+      "purposes": [
+        "wellness",
+        "leadership"
+      ],
+      "tier": "luxury-wellness",
+      "fit": "Wellness-centered executive retreat with designated private meetings and a published estate buyout pathway.",
       "facts": [
-        "Official groups page offers corporate retreats, private meeting spaces and estate buyouts.",
-        "Groups reserving 10 or more rooms require a buyout; the published buyout maximum is 48 guests."
+        "Groups reserving 10 or more rooms require a buyout; the published buyout maximum is 48 guests.",
+        "Official accommodations page lists ten Estate Rooms, four Casitas and eight standalone Villas."
       ],
       "constraints": [
-        "The published 48-guest maximum is a buyout limit, not a meeting-room capacity. Confirm room mix and meeting layout with the property.",
-        "The FAQ states a two-night minimum. Ordinarily guests must be 18+, or 16+ accompanied by an adult; the groups page permits children of all ages during an estate buyout.",
-        "Confirm inclusions, setup charges and the required buyout directly; group pricing is not published here."
+        "The 48-guest buyout maximum is not a working meeting-room capacity; named room/layout capacity is unknown.",
+        "Two-night minimum; ordinary stays require 18+, or 16+ accompanied by an adult. Children of all ages are welcome during a buyout.",
+        "Shared rooms may keep a group below the 10-room buyout threshold only if the property's accepted room mix allows it; obtain confirmation."
+      ],
+      "meeting_spaces": [],
+      "primary_sources": [
+        {
+          "label": "Official corporate groups and buyout terms",
+          "url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official FAQ",
+          "url": "https://sensei.com/faq/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official accommodations",
+          "url": "https://sensei.com/retreats/porcupine-creek/resort/accommodations/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
       ],
       "node_source": "/nodes/sensei-porcupine-creek/",
       "node_last_updated": "2026-09-25",
-      "primary_sources": [
-        {
-          "label": "Official corporate retreats and buyout terms",
-          "url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/"
-        },
-        {
-          "label": "Official stay and age policies",
-          "url": "https://sensei.com/faq/"
-        }
-      ],
       "action_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
       "action_label": "Plan with Sensei",
-      "action_kind": "official_group_proposal",
       "phone": "+1 760-330-2800",
-      "capacity_max": null
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "10 Estate Rooms",
+          "4 Casitas",
+          "8 standalone Villas; one-, two- and four-bedroom options described."
+        ],
+        "source_url": "https://sensei.com/retreats/porcupine-creek/resort/accommodations/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07",
+        "accommodation_units": 22
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "lodging": {
+          "source_url": "https://sensei.com/retreats/porcupine-creek/resort/accommodations/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "published_fact",
+          "checked_at": "2026-10-07",
+          "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+            "https://sensei.com/faq/",
+            "https://sensei.com/retreats/porcupine-creek/resort/accommodations/"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": "https://sensei.com/faq/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "buyout_required_room_count": {
+          "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "phone": {
+          "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "city": {
+          "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Published accommodation units include multi-bedroom villas; separate room inventory is unresolved."
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "lodging.accommodation_units": {
+          "source_url": "https://sensei.com/retreats/porcupine-creek/resort/accommodations/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "node/sensei-porcupine-creek",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+      "minimum_nights_scope": "property-stay",
+      "buyout": {
+        "required_at_rooms": 10,
+        "guest_capacity_max": 48,
+        "source_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+        "checked_at": "2026-10-07",
+        "evidence_type": "published_fact"
+      },
+      "record_type": "researched-retreat-option",
+      "source_url": "https://aicoachellavalley.com/nodes/sensei-porcupine-creek/",
+      "positioning": "luxury-wellness",
+      "aliases": [
+        "Sensei"
+      ]
+    },
+    {
+      "category": "hotel",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": 38,
+      "meeting_capacity_layout": "conference",
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
+      "slug": "hotel-paseo",
+      "name": "Hotel Paseo, Autograph Collection",
+      "city": "Palm Desert",
+      "purpose": "leadership",
+      "purposes": [
+        "leadership",
+        "team"
+      ],
+      "tier": "boutique",
+      "fit": "Boutique hotel option with a divisible ballroom suitable for a 16-person working meeting.",
+      "facts": [
+        "Palm Boardroom is conference 14, U-shape 12 and reception 16.",
+        "Paseo A / Paseo B each publishes conference 38, U-shape 48 and classroom 80."
+      ],
+      "constraints": [
+        "Do not use Palm Boardroom's reception 16 to support a 16-person strategy meeting; use a ballroom section and confirm configuration.",
+        "Published catering is exclusive to the hotel's culinary team; obtain complete rental and catering minimums."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "The Palm Boardroom",
+          "layout": "conference",
+          "capacity": 14,
+          "source_url": "https://www.hotelpaseo.com/meetings-weddings/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "The Palm Boardroom",
+          "layout": "u-shape",
+          "capacity": 12,
+          "source_url": "https://www.hotelpaseo.com/meetings-weddings/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Paseo A / Paseo B",
+          "layout": "conference",
+          "capacity": 38,
+          "source_url": "https://www.hotelpaseo.com/meetings-weddings/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Paseo A / Paseo B",
+          "layout": "u-shape",
+          "capacity": 48,
+          "source_url": "https://www.hotelpaseo.com/meetings-weddings/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official meetings and capacity chart",
+          "url": "https://www.hotelpaseo.com/meetings-weddings/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official group planning form",
+          "url": "https://www.hotelpaseo.com/meetings-weddings/start-planning/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official hotel fact sheet",
+          "url": "https://www.hotelpaseo.com/site/assets/files/1/ada_checked_2025_hotel_paseo_fact_sheet.pdf",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
+      ],
+      "node_source": "/nodes/hotel-paseo/",
+      "node_last_updated": "2026-09-25",
+      "action_url": "https://www.hotelpaseo.com/meetings-weddings/start-planning/",
+      "action_label": "Plan with Hotel Paseo",
+      "phone": "+1 760-340-9001",
+      "lodging": {
+        "room_count": 150,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Rooms and suites; double occupancy and room block unknown."
+        ],
+        "source_url": "https://www.hotelpaseo.com/site/assets/files/1/ada_checked_2025_hotel_paseo_fact_sheet.pdf",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://www.hotelpaseo.com/meetings-weddings/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://www.hotelpaseo.com/meetings-weddings/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://www.hotelpaseo.com/site/assets/files/1/ada_checked_2025_hotel_paseo_fact_sheet.pdf",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://www.hotelpaseo.com/meetings-weddings/",
+            "https://www.hotelpaseo.com/meetings-weddings/start-planning/",
+            "https://www.hotelpaseo.com/site/assets/files/1/ada_checked_2025_hotel_paseo_fact_sheet.pdf"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "phone": {
+          "source_url": "https://www.hotelpaseo.com/meetings-weddings/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "city": {
+          "source_url": "https://www.hotelpaseo.com/meetings-weddings/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.hotelpaseo.com/meetings-weddings/start-planning/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "source_url": "https://www.hotelpaseo.com/site/assets/files/1/ada_checked_2025_hotel_paseo_fact_sheet.pdf",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.hotelpaseo.com/meetings-weddings/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "node/hotel-paseo",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.hotelpaseo.com/meetings-weddings/start-planning/",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://aicoachellavalley.com/nodes/hotel-paseo/",
+      "positioning": "boutique",
+      "tags": [
+        "boutique"
+      ],
+      "aliases": [
+        "Hotel Paseo"
+      ]
+    },
+    {
+      "category": "hotel",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": null,
+      "meeting_capacity_layout": null,
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "buyout",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
+      "slug": "parker-palm-springs",
+      "name": "Parker Palm Springs",
+      "city": "Palm Springs",
+      "purpose": "leadership",
+      "purposes": [
+        "leadership",
+        "team"
+      ],
+      "tier": "luxury-boutique",
+      "fit": "Design-led creative offsite with an official executive-retreat and estate-takeover pathway; strategy layout remains an inquiry.",
+      "facts": [
+        "Official property events page offers executive retreats, creative offsites and full-estate takeovers.",
+        "Official Leading Hotels member listing names Murphy Room with classroom 33 and theater 40."
+      ],
+      "constraints": [
+        "No conference/boardroom capacity was established from property-owned sources; confirm a working layout for 16.",
+        "Leading Hotels' chart repeats Ballroom A with different areas and uses zero in some layouts; do not infer omitted capacities.",
+        "An estate takeover is an inquiry option, not a promise that an ordinary stay includes exclusivity."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "Murphy Room",
+          "layout": "classroom",
+          "capacity": 33,
+          "source_url": "https://www.lhw.com/hotel/Parker-Palm-Springs-CA-USA/event-venues",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Murphy Room",
+          "layout": "theater",
+          "capacity": 40,
+          "source_url": "https://www.lhw.com/hotel/Parker-Palm-Springs-CA-USA/event-venues",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official retreat and events planning",
+          "url": "https://www.parkerpalmsprings.com/events",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official Leading Hotels member capacity listing",
+          "url": "https://www.lhw.com/hotel/Parker-Palm-Springs-CA-USA/event-venues",
+          "checked_at": "2026-10-07",
+          "quality": "Official marketing consortium member listing; published hotel capacities, not an independent inspection. Working/conference capacity omitted."
+        }
+      ],
+      "node_source": "/nodes/parker-palm-springs/",
+      "node_last_updated": "2026-09-25",
+      "action_url": "https://www.parkerpalmsprings.com/events",
+      "action_label": "Plan with Parker",
+      "phone": "+1 760-770-5000",
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "On-property hotel accommodations; fresh official numerical inventory not established in reviewed events sources."
+        ],
+        "source_url": "https://www.parkerpalmsprings.com/events",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://www.parkerpalmsprings.com/events",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://www.lhw.com/hotel/Parker-Palm-Springs-CA-USA/event-venues",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://www.parkerpalmsprings.com/events",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.parkerpalmsprings.com/events",
+          "checked_at": "2026-10-07",
+          "reason": "Published full estate takeover inquiry pathway; contractual exclusivity and availability are unconfirmed."
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://www.parkerpalmsprings.com/events",
+            "https://www.lhw.com/hotel/Parker-Palm-Springs-CA-USA/event-venues"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "phone": {
+          "source_url": "https://www.parkerpalmsprings.com/events",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "city": {
+          "source_url": "https://www.parkerpalmsprings.com/events",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.parkerpalmsprings.com/events",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.parkerpalmsprings.com/events",
+        "checked_at": "2026-10-07"
+      },
+      "id": "node/parker-palm-springs",
+      "preview_reference": {
+        "id": "hospitality/parker-palm-springs",
+        "url": "https://aicoachellavalley.com/agent-preview/hospitality/parker-palm-springs",
+        "manifest_generated_at": "2026-07-15",
+        "recorded_city": "Palm Springs",
+        "note": "Historical publication reference; not a fresh venue inspection."
+      },
+      "preview_url": "https://aicoachellavalley.com/agent-preview/hospitality/parker-palm-springs",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.parkerpalmsprings.com/events",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://aicoachellavalley.com/nodes/parker-palm-springs/",
+      "positioning": "luxury-boutique",
+      "tags": [
+        "boutique"
+      ],
+      "aliases": [
+        "Parker"
+      ]
+    },
+    {
+      "category": "resort",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": 22,
+      "meeting_capacity_layout": "conference",
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
+      "slug": "jw-marriott-desert-springs",
+      "name": "JW Marriott Desert Springs Resort & Spa",
+      "city": "Palm Desert",
+      "purpose": "team",
+      "purposes": [
+        "team",
+        "leadership"
+      ],
+      "tier": "full-service-resort",
+      "fit": "Large resort with published smaller Director meeting-room layouts for a focused team session.",
+      "facts": [
+        "Director 1 is published for 22 conference, 25 U-shape and 40 classroom.",
+        "Director A is published for 28 conference and 28 U-shape.",
+        "3 Sinatra Ballroom Salons (combined) publishes 75 conference, 70 u-shape, 120 classroom."
+      ],
+      "constraints": [
+        "Convention-resort scale does not itself rule out an intimate meeting; secure a dedicated small room and confirm surrounding events.",
+        "Official event-area prose and summary use different aggregate totals; this evidence uses named rooms rather than an aggregate area claim."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "Director 1",
+          "layout": "conference",
+          "capacity": 22,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Director 1",
+          "layout": "u-shape",
+          "capacity": 25,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Director A",
+          "layout": "conference",
+          "capacity": 28,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "3 Sinatra Ballroom Salons (combined)",
+          "layout": "conference",
+          "capacity": 75,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "source_layout_label": "conference",
+          "review_note": "Lead independently re-fetched the official capacity chart on 2026-10-07; these named layouts supplement the original research handoff."
+        },
+        {
+          "name": "3 Sinatra Ballroom Salons (combined)",
+          "layout": "u-shape",
+          "capacity": 70,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "source_layout_label": "u-shape",
+          "review_note": "Lead independently re-fetched the official capacity chart on 2026-10-07; these named layouts supplement the original research handoff."
+        },
+        {
+          "name": "3 Sinatra Ballroom Salons (combined)",
+          "layout": "classroom",
+          "capacity": 120,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "source_layout_label": "schoolroom",
+          "review_note": "Lead independently re-fetched the official capacity chart on 2026-10-07; these named layouts supplement the original research handoff."
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official named-room capacity chart and planning",
+          "url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
+      ],
+      "node_source": "/nodes/jw-marriott-desert-springs/",
+      "node_last_updated": "2026-09-25",
+      "action_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+      "action_label": "Plan with JW Marriott",
+      "phone": null,
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Hotel guest rooms; room block and bed configurations require inquiry."
+        ],
+        "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "city": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "node/jw-marriott-desert-springs",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/events/",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://aicoachellavalley.com/nodes/jw-marriott-desert-springs/",
+      "positioning": "full-service-resort",
+      "aliases": [
+        "JW Marriott",
+        "Desert Springs Resort"
+      ],
+      "research_enrichment_note": "Lead source review added named larger working-room layouts from the same official chart on 2026-10-07. This does not establish a property-wide capacity or available booking."
+    },
+    {
+      "category": "hotel",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": 20,
+      "meeting_capacity_layout": "conference",
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
+      "slug": "courtyard-palm-desert",
+      "name": "Courtyard by Marriott Palm Desert",
+      "city": "Palm Desert",
+      "purpose": "team",
+      "purposes": [
+        "team",
+        "leadership"
+      ],
+      "tier": "practical-hotel",
+      "fit": "Practical hotel meeting candidate with Desert Mallow conference and U-shape layouts for 20.",
+      "facts": [
+        "Desert Mallow is published for conference 20, U-shape 20 and classroom 30.",
+        "Official event page offers on-site catering and meeting Wi-Fi."
+      ],
+      "constraints": [
+        "Desert Star and Desert Candle each hold only 12 in conference layout; request Desert Mallow for 16.",
+        "Practical is a service-format judgment; no total cost advantage has been verified."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "Desert Mallow",
+          "layout": "conference",
+          "capacity": 20,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Desert Mallow",
+          "layout": "u-shape",
+          "capacity": 20,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Desert Star",
+          "layout": "conference",
+          "capacity": 12,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Desert Candle",
+          "layout": "conference",
+          "capacity": 12,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official events and capacity chart",
+          "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official lodging and room block pathway",
+          "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/rooms/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
+      ],
+      "action_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+      "action_label": "Plan with Courtyard Palm Desert",
+      "phone": null,
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Guest rooms; King Suite with sofa bed described; exact shared-bed configuration requires inquiry."
+        ],
+        "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/rooms/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/rooms/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+            "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/rooms/"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "city": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "retreat/courtyard-palm-desert",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/",
+      "positioning": "practical-hotel",
+      "tags": [
+        "practical-meeting-hotel"
+      ],
+      "aliases": [
+        "Courtyard Palm Desert"
+      ]
+    },
+    {
+      "category": "hotel",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": 18,
+      "meeting_capacity_layout": "conference",
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
+      "slug": "fairfield-palm-desert",
+      "name": "Fairfield by Marriott Inn & Suites Palm Desert Coachella Valley",
+      "city": "Palm Desert",
+      "purpose": "team",
+      "purposes": [
+        "team",
+        "leadership"
+      ],
+      "tier": "practical-hotel",
+      "fit": "Small hotel meeting option where the published conference layout fits a 16-person team.",
+      "facts": [
+        "Fairfield Room is published for conference 18, U-shape 15 and classroom 15.",
+        "Official events page offers room blocks of 10 or more and catering from nearby restaurants."
+      ],
+      "constraints": [
+        "For 16 people, use conference layout; U-shape and classroom are published for only 15.",
+        "Confirm room dimensions, AV clearance and catering logistics; 18 is a published maximum, not a reservation."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "Fairfield Room",
+          "layout": "conference",
+          "capacity": 18,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Fairfield Room",
+          "layout": "u-shape",
+          "capacity": 15,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Fairfield Room",
+          "layout": "classroom",
+          "capacity": 15,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official events and capacity chart",
+          "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official rooms and room blocks",
+          "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/rooms/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
+      ],
+      "action_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+      "action_label": "Plan with Fairfield Palm Desert",
+      "phone": null,
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Rooms and suites; two-bed configuration not established in reviewed page."
+        ],
+        "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/rooms/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/rooms/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+            "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/rooms/"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "city": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "retreat/fairfield-palm-desert",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/",
+      "positioning": "practical-hotel",
+      "tags": [
+        "practical-meeting-hotel"
+      ],
+      "aliases": [
+        "Fairfield Palm Desert"
+      ]
+    },
+    {
+      "category": "hotel",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": 36,
+      "meeting_capacity_layout": "conference",
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
+      "slug": "residence-inn-palm-desert",
+      "name": "Residence Inn by Marriott Palm Desert",
+      "city": "Palm Desert",
+      "purpose": "team",
+      "purposes": [
+        "team",
+        "leadership"
+      ],
+      "tier": "practical-hotel",
+      "fit": "All-suite lodging with kitchens and a named meeting room with room for a working team.",
+      "facts": [
+        "Mariposa Lily is published for conference 36, U-shape 34 and classroom 50.",
+        "Official rooms page describes fully equipped kitchens, separate living/sleeping/working spaces and sofa beds."
+      ],
+      "constraints": [
+        "Blue Sage conference capacity is 10 and does not fit 16; request Mariposa Lily or ballroom.",
+        "Sofa beds establish a published accommodation feature, not a guaranteed shared-room block; confirm bed comfort and mix."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "Mariposa Lily",
+          "layout": "conference",
+          "capacity": 36,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Mariposa Lily",
+          "layout": "u-shape",
+          "capacity": 34,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Blue Sage",
+          "layout": "conference",
+          "capacity": 10,
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official events and capacity chart",
+          "url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official all-suite lodging",
+          "url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/rooms/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
+      ],
+      "action_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+      "action_label": "Plan with Residence Inn Palm Desert",
+      "phone": null,
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Apartment-style suites with full kitchens, separate living/sleeping/working spaces and sofa beds."
+        ],
+        "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/rooms/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/rooms/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+            "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/rooms/"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "city": {
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "retreat/residence-inn-palm-desert",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/",
+      "positioning": "practical-hotel",
+      "tags": [
+        "practical-meeting-hotel"
+      ],
+      "aliases": [
+        "Residence Inn Palm Desert"
+      ]
+    },
+    {
+      "category": "hotel",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": 20,
+      "meeting_capacity_layout": "conference",
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Official page publishes coffee break $12/person and lunch $25/person. These are component prices, not a current group quote; taxes, fees, room rental and lodging remain unknown."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
+      "slug": "courtyard-palm-springs",
+      "name": "Courtyard by Marriott Palm Springs",
+      "city": "Palm Springs",
+      "purpose": "team",
+      "purposes": [
+        "team",
+        "leadership"
+      ],
+      "tier": "practical-hotel",
+      "fit": "Palm Springs hotel meeting option with two named rooms each published for 20 conference/U-shape.",
+      "facts": [
+        "Sunrise - Room A and Cactus - Room B each publish conference 20, U-shape 20 and classroom 24.",
+        "Official event page offers group rates for 10 or more rooms and rentable AV equipment."
+      ],
+      "constraints": [
+        "Sunset conference capacity is 10 and does not fit 16.",
+        "Published catering prices are component prices only and do not establish a total group budget or date-specific quote."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "Sunrise - Room A",
+          "layout": "conference",
+          "capacity": 20,
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Sunrise - Room A",
+          "layout": "u-shape",
+          "capacity": 20,
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Cactus - Room B",
+          "layout": "conference",
+          "capacity": 20,
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Sunset",
+          "layout": "conference",
+          "capacity": 10,
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official meetings and capacity chart",
+          "url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
+      ],
+      "action_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+      "action_label": "Plan with Courtyard Palm Springs",
+      "phone": null,
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Hotel room blocks of 10+ offered; exact bed mix requires inquiry."
+        ],
+        "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "public_cost_evidence": [
+        {
+          "item": "Catering coffee break",
+          "amount": 12,
+          "currency": "USD",
+          "unit": "per person",
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "item": "Catering lunch",
+          "amount": 25,
+          "currency": "USD",
+          "unit": "per person",
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "city": {
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "retreat/courtyard-palm-springs",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/",
+      "positioning": "practical-hotel",
+      "tags": [
+        "practical-meeting-hotel"
+      ],
+      "aliases": [
+        "Courtyard Palm Springs"
+      ]
+    },
+    {
+      "category": "hotel",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": 32,
+      "meeting_capacity_layout": "boardroom",
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
+      "slug": "ace-hotel-palm-springs",
+      "name": "Ace Hotel & Swim Club Palm Springs",
+      "city": "Palm Springs",
+      "purpose": "team",
+      "purposes": [
+        "team",
+        "leadership"
+      ],
+      "tier": "boutique",
+      "fit": "Creative team offsite with published Clubhouse boardroom layouts and official private meeting planning.",
+      "facts": [
+        "Clubhouse 1st Floor publishes boardroom 32 and U-shape 30; Clubhouse 2nd Floor publishes boardroom 26.",
+        "Official Standard Double room has two double beds."
+      ],
+      "constraints": [
+        "Clubhouse 1st Floor overlooks pool activities; confirm acoustic privacy and concurrent events for confidential strategy work.",
+        "Named capacity chart must govern setup; marketing narrative also uses a general 'up to 100' seating figure. Shared double-room availability requires confirmation."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "The Clubhouse 1st Floor",
+          "layout": "boardroom",
+          "capacity": 32,
+          "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "The Clubhouse 1st Floor",
+          "layout": "u-shape",
+          "capacity": 30,
+          "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "Clubhouse 2nd Floor",
+          "layout": "boardroom",
+          "capacity": 26,
+          "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official named-room capacity chart",
+          "url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official corporate meeting planning",
+          "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official Standard Double room",
+          "url": "https://acehotel.com/palm-springs/rooms/standard-double/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
+      ],
+      "action_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+      "action_label": "Plan with Ace Hotel",
+      "phone": "+1 760-325-9900",
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Standard Double with two double beds."
+        ],
+        "source_url": "https://acehotel.com/palm-springs/rooms/standard-double/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://acehotel.com/palm-springs/rooms/standard-double/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+            "https://acehotel.com/palm-springs/private-spaces/meetings/",
+            "https://acehotel.com/palm-springs/rooms/standard-double/"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "phone": {
+          "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "city": {
+          "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "retreat/ace-hotel-palm-springs",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://acehotel.com/palm-springs/private-spaces/rooms-specs/",
+      "positioning": "boutique",
+      "tags": [
+        "boutique"
+      ],
+      "aliases": [
+        "Ace Hotel",
+        "Ace Hotel and Swim Club"
+      ]
+    },
+    {
+      "category": "hotel",
+      "lodging_type": "hotel-rooms",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "capacity_max": null,
+      "meeting_capacity": null,
+      "meeting_capacity_layout": null,
+      "buyout_required_room_count": null,
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "shared-property",
+      "accessibility_notes": [
+        "Confirm accessible meeting layout, step-free routes and accessible room availability with the property."
+      ],
+      "budget_notes": [
+        "Total group cost and date-specific availability are unknown; obtain a written quote covering rooms, meeting rental, AV, catering, taxes, fees and service charges."
+      ],
+      "exclusion_rules": [
+        {
+          "kind": "minimum_age",
+          "value": 18,
+          "reason": "Official FAQ requires every guest to be 18 or older.",
+          "source_url": "https://twobunchpalms.com/faq/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "checked_at": "2026-10-07",
+      "action_kind": "official_group_proposal",
+      "slug": "two-bunch-palms",
+      "name": "Two Bunch Palms",
+      "city": "Desert Hot Springs",
+      "purpose": "wellness",
+      "purposes": [
+        "wellness",
+        "team"
+      ],
+      "tier": "wellness-boutique",
+      "fit": "Wellness retreat with on-site accommodation, corporate View Point meeting pathway and group catering; working capacity requires inquiry.",
+      "facts": [
+        "Official events page lists 65 rooms: 35 King Rooms, 16 Double Rooms and 14 suites.",
+        "Glass House is published for gatherings of no more than 15; View Point is offered for corporate meetings but no seating layout is published."
+      ],
+      "constraints": [
+        "Glass House does not support 16 people. View Point's working-session capacity and AV must be confirmed.",
+        "Adults only, all guests 18+; Lawn & Courtyard available only with partial/full buyouts.",
+        "Day Retreat and Mineral Soak Day Pass availability is limited; they do not establish meeting-room access.",
+        "Rates exclude taxes, gratuity and additional guest charges; official FAQ lists a wellness fee. Obtain contracted group totals.",
+        "Individual wellness day access does not establish group meeting access; request a group proposal."
+      ],
+      "meeting_spaces": [
+        {
+          "name": "The Glass House",
+          "layout": "gathering-unspecified",
+          "capacity": 15,
+          "source_url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        {
+          "name": "View Point",
+          "layout": "conference",
+          "capacity": null,
+          "source_url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        }
+      ],
+      "primary_sources": [
+        {
+          "label": "Official retreats, rooms and spaces",
+          "url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official age and cost policies",
+          "url": "https://twobunchpalms.com/faq/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        },
+        {
+          "label": "Official day retreat pathway",
+          "url": "https://twobunchpalms.com/offers/",
+          "checked_at": "2026-10-07",
+          "quality": "Property or official hotel-brand publication; vendor describes its own facilities and policies, not independent inspection."
+        }
+      ],
+      "action_url": "https://twobunchpalms.com/events/",
+      "action_label": "Plan with Two Bunch Palms",
+      "phone": "+1 760-676-5000",
+      "lodging": {
+        "room_count": 65,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [
+          "35 King Rooms",
+          "16 Double Rooms",
+          "14 suites"
+        ],
+        "source_url": "https://twobunchpalms.com/events/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "day_use_notes": "Individual wellness day access is published; group day meeting use remains an inquiry.",
+      "field_evidence": {
+        "identity": {
+          "source_url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "meeting_spaces": {
+          "source_url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging": {
+          "source_url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "fit": {
+          "basis": "Editorial assessment of published group services and room/layout evidence; no price or quality ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "budget": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "accessibility": {
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "privacy": {
+          "basis": "Shared hotel inventory or buyout pathway; quietness, confidentiality and exclusive access require contract confirmation.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "basis": "Planning implications of the published room/layout and policy evidence; exact published restrictions separately sourced in exclusion_rules and primary_sources.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "source_urls": [
+            "https://twobunchpalms.com/events/",
+            "https://twobunchpalms.com/faq/",
+            "https://twobunchpalms.com/offers/"
+          ],
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "tier": {
+          "basis": "Descriptive service format; not a price ranking.",
+          "evidence_type": "judgment",
+          "checked_at": "2026-10-07"
+        },
+        "minimum_nights": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "buyout_required_room_count": {
+          "source_url": null,
+          "checked_at": "2026-10-07",
+          "evidence_type": "unknown"
+        },
+        "phone": {
+          "source_url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "city": {
+          "source_url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "action_url": {
+          "evidence_type": "published_fact",
+          "source_url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "source_url": "https://twobunchpalms.com/events/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        },
+        "positioning": {
+          "evidence_type": "judgment",
+          "basis": "Descriptive format based on published facilities; not a price ranking.",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://twobunchpalms.com/events/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "hospitality/two-bunch-palms-resort-spa",
+      "preview_reference": {
+        "id": "hospitality/two-bunch-palms-resort-spa",
+        "url": "https://aicoachellavalley.com/agent-preview/hospitality/two-bunch-palms-resort-spa",
+        "manifest_generated_at": "2026-07-15",
+        "recorded_city": "Desert Hot Springs",
+        "note": "Historical publication reference; not a fresh venue inspection."
+      },
+      "preview_url": "https://aicoachellavalley.com/agent-preview/hospitality/two-bunch-palms-resort-spa",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://twobunchpalms.com/events/",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://twobunchpalms.com/events/",
+      "positioning": "wellness-boutique",
+      "tags": [
+        "boutique"
+      ],
+      "aliases": [
+        "Two Bunch Palms",
+        "Two Bunch Palms Resort & Spa"
+      ]
+    },
+    {
+      "slug": "the-old-polo-estate",
+      "name": "Old Polo Estate",
+      "city": null,
+      "category": "private-lodging",
+      "lodging_type": "estate",
+      "purpose": "Executive or team retreat",
+      "purposes": [
+        "strategy",
+        "team-building",
+        "private-property"
+      ],
+      "fit": "Operator explicitly offers corporate retreats; layout, contract and availability need an official proposal.",
+      "facts": [
+        "Corporate retreats and leadership offsites are explicitly offered.",
+        "Published event maximum is 200; no named working-room seating layout was found.",
+        "Official FAQ describes exclusive estate access."
+      ],
+      "constraints": [
+        "Overnight sources conflict: corporate page says 28; FAQ says main estate 20 with optional lodging approximately 60. A confirmed lodging plan is required.",
+        "City conflicts across official pages; no distance or drive-time claim is adopted.",
+        "Minimum stay, bedroom/bed mix, working-room layout, accessibility and cancellation terms were not found.",
+        "Outside vendors are allowed subject to rules; DJs require approval, bartenders require licensing and insurance.",
+        "Pets are prohibited; smoking/vaping is restricted to the parking lot."
+      ],
+      "primary_sources": [
+        {
+          "label": "Corporate retreat pathway",
+          "url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Published policies and conflicting lodging/city",
+          "url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "node_source": null,
+      "node_last_updated": null,
+      "action_url": "https://oldpolo.com/corporate",
+      "action_label": "Official retreat inquiry",
+      "action_kind": "inquiry",
+      "phone": "+1 (877) 920-0952",
+      "bedrooms": null,
+      "guest_capacity": null,
+      "meeting_capacity": null,
+      "meeting_capacity_layout": null,
+      "meeting_spaces": [],
+      "lodging": {
+        "room_count": null,
+        "bedrooms": null,
+        "guest_capacity": null,
+        "room_configurations": [],
+        "source_url": null,
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "buyout",
+      "accessibility_notes": [
+        "Specific access needs require operator confirmation."
+      ],
+      "budget_notes": [
+        "Affordability is unknown; request an itemized quote for the required footprint, dates and services."
+      ],
+      "exclusion_rules": [],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "city": {
+          "evidence_type": "unknown",
+          "reason": "Official pages conflict.",
+          "checked_at": "2026-10-07"
+        },
+        "guest_capacity": {
+          "evidence_type": "unknown",
+          "reason": "Official lodging footprints conflict.",
+          "checked_at": "2026-10-07"
+        },
+        "business_group_use": {
+          "value": true,
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "event_capacity": {
+          "value": 200,
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "corporate_page_city": {
+          "value": "Coachella",
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "faq_city": {
+          "value": "Indio",
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "corporate_page_overnight_capacity": {
+          "value": 28,
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "faq_main_estate_overnight_capacity": {
+          "value": 20,
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "faq_optional_overnight_capacity": {
+          "value": "approximately 60 with optional casitas/Airstreams",
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "privacy": {
+          "value": "exclusive estate access",
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "vendor_and_guest_rules": {
+          "value": "Approved DJs; licensed/insured bartenders; no pets; smoking in designated parking lot area only.",
+          "source_url": "https://oldpolo.com/faqs",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "action_url": {
+          "value": "https://oldpolo.com/corporate",
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "identity": {
+          "evidence_type": "published_fact",
+          "source_url": "https://oldpolo.com/corporate",
+          "checked_at": "2026-10-07"
+        },
+        "fit": {
+          "evidence_type": "judgment",
+          "basis": "Planning assessment based on the linked official offerings; no price, quality or availability ranking.",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "evidence_type": "judgment",
+          "basis": "Planning implications; published restrictions are separately sourced.",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "evidence_type": "published_fact",
+          "source_urls": [
+            "https://oldpolo.com/corporate",
+            "https://oldpolo.com/faqs"
+          ],
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "reason": "Official lodging footprints conflict.",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "meeting_spaces": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No named working-layout capacity established."
+        },
+        "minimum_nights": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        }
+      },
+      "existing_entity_id": "the-old-polo-estate",
+      "preview_url": "https://aicoachellavalley.com/agent-preview/hospitality/the-old-polo-estate",
+      "historical_preview_city": "Indio",
+      "location_conflict": true,
+      "city_notes": "Corporate/home pages identify Coachella; official FAQ identifies Indio. Confirm municipality before applying a strict city filter.",
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://oldpolo.com/corporate",
+        "checked_at": "2026-10-07"
+      },
+      "id": "hospitality/the-old-polo-estate",
+      "preview_reference": {
+        "id": "hospitality/the-old-polo-estate",
+        "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-old-polo-estate",
+        "manifest_generated_at": "2026-07-15",
+        "recorded_city": "Indio",
+        "note": "Historical publication reference; not a fresh venue inspection."
+      },
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://oldpolo.com/corporate",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://oldpolo.com/corporate",
+      "aliases": [
+        "Old Polo",
+        "The Old Polo Estate"
+      ]
+    },
+    {
+      "slug": "frederick-loewe-estate",
+      "name": "Frederick Loewe Estate",
+      "city": "Palm Springs",
+      "category": "private-lodging",
+      "lodging_type": "estate",
+      "purpose": "Executive or team retreat",
+      "purposes": [
+        "strategy",
+        "team-building",
+        "private-property"
+      ],
+      "fit": "Operator explicitly offers corporate retreats; layout, contract and availability need an official proposal.",
+      "facts": [
+        "Operator offers executive retreats and corporate events.",
+        "Four bedrooms, two king beds, four queen beds and two single sleeper sofas are published.",
+        "Dining room seats 14; this is a dining capacity, not a verified strategy meeting layout."
+      ],
+      "constraints": [
+        "Corporate use has a two-day minimum; overnight lodging is additional. Vacation stays have a separate three-night minimum.",
+        "Event page lists 225 cocktails/dinner and 500+ cocktail reception only; neither establishes a named working-room capacity.",
+        "Overnight guest maximum is not explicitly published; do not convert bed inventory to guest occupancy.",
+        "Parking inside the gate is limited to four vehicles.",
+        "Exclusive-use scope, meeting AV, accessible routes and cancellation terms need confirmation."
+      ],
+      "primary_sources": [
+        {
+          "label": "Corporate use and event minimum",
+          "url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Lodging configuration and vacation minimum",
+          "url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry form",
+          "url": "https://frederickloeweestate.com/contact/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "node_source": null,
+      "node_last_updated": null,
+      "action_url": "https://frederickloeweestate.com/contact/",
+      "action_label": "Official retreat inquiry",
+      "action_kind": "inquiry",
+      "phone": null,
+      "bedrooms": 4,
+      "guest_capacity": null,
+      "meeting_capacity": null,
+      "meeting_capacity_layout": null,
+      "meeting_spaces": [],
+      "lodging": {
+        "room_count": null,
+        "bedrooms": 4,
+        "guest_capacity": null,
+        "room_configurations": [
+          "Two bedrooms each with one king bed",
+          "Two bedrooms each with two queen beds",
+          "Two single sleeper sofas in the living room"
+        ],
+        "source_url": "https://frederickloeweestate.com/vacation-experience/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07"
+      },
+      "minimum_nights": null,
+      "vacation_offer_minimum_nights": 3,
+      "minimum_nights_notes": "Vacation offer requires three nights. Corporate event offer requires two days with lodging additional; applicability of vacation minimum to a negotiated corporate lodging contract is unknown.",
+      "day_use": "inquiry",
+      "privacy": "unknown",
+      "accessibility_notes": [
+        "Specific access needs require operator confirmation."
+      ],
+      "budget_notes": [
+        "Affordability is unknown; request an itemized quote for the required footprint, dates and services."
+      ],
+      "exclusion_rules": [],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "privacy": {
+          "evidence_type": "unknown",
+          "reason": "Private estate setting is published; exclusive contract scope requires confirmation.",
+          "checked_at": "2026-10-07"
+        },
+        "business_group_use": {
+          "value": true,
+          "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "city": {
+          "value": "Palm Springs",
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "bedrooms": {
+          "value": 4,
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "lodging.room_configurations": {
+          "value": [
+            "Two bedrooms each with one king bed",
+            "Two bedrooms each with two queen beds",
+            "Two single sleeper sofas in the living room"
+          ],
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "vacation_offer_minimum_nights": {
+          "value": 3,
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "minimum_event_days": {
+          "value": 2,
+          "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "event_capacity_cocktails_dinner": {
+          "value": 225,
+          "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "event_capacity_standing_cocktails": {
+          "value": "500+",
+          "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "dining_room_capacity": {
+          "value": 14,
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "parking_inside_gate_vehicles": {
+          "value": 4,
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "action_url": {
+          "value": "https://frederickloeweestate.com/contact/",
+          "source_url": "https://frederickloeweestate.com/contact/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "identity": {
+          "evidence_type": "published_fact",
+          "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+          "checked_at": "2026-10-07"
+        },
+        "fit": {
+          "evidence_type": "judgment",
+          "basis": "Planning assessment based on the linked official offerings; no price, quality or availability ranking.",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "evidence_type": "judgment",
+          "basis": "Planning implications; published restrictions are separately sourced.",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "evidence_type": "published_fact",
+          "source_urls": [
+            "https://frederickloeweestate.com/corporate-events-retreats/",
+            "https://frederickloeweestate.com/vacation-experience/",
+            "https://frederickloeweestate.com/contact/"
+          ],
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.bedrooms": {
+          "evidence_type": "published_fact",
+          "source_url": "https://frederickloeweestate.com/vacation-experience/",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.guest_capacity": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "meeting_spaces": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No named working-layout capacity established."
+        },
+        "minimum_nights": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        }
+      },
+      "existing_entity_id": null,
+      "privacy_notes": "Private estate positioning is published; exclusive estate contract scope/buyout terms were not found.",
+      "minimum_event_days": 2,
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "retreat/frederick-loewe-estate",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://frederickloeweestate.com/contact/",
+      "vacation_offer_minimum_nights_scope": "vacation-rental-offer-only",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://frederickloeweestate.com/corporate-events-retreats/",
+      "aliases": [
+        "Frederick Loewe",
+        "Loewe Estate"
+      ]
+    },
+    {
+      "slug": "venueten-casa-del-lujo-estate-lujo-villa",
+      "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+      "city": "Bermuda Dunes",
+      "category": "private-lodging",
+      "lodging_type": "estate",
+      "purpose": "Executive or team retreat",
+      "purposes": [
+        "strategy",
+        "team-building",
+        "private-property"
+      ],
+      "fit": "Operator explicitly offers corporate retreats; layout, contract and availability need an official proposal.",
+      "facts": [
+        "Corporate retreat pathway describes exclusive property use.",
+        "Full two-residence lodging footprint has 12 bedrooms and published occupancy of 40.",
+        "Great Room is a named 5,000-square-foot gathering area; no working layout capacity is published."
+      ],
+      "constraints": [
+        "Published venue event maximum 175 does not establish a meeting layout or overnight occupancy.",
+        "40 overnight guests requires both residences; bedrooms are shared at maximum occupancy and complete bed mix is not published.",
+        "Minimum stay and cancellation terms were not found.",
+        "Licensed/insured caterers and liability insurance certificates are required; confirm rules for corporate use.",
+        "FAQ restricts amplified sound after midnight and requires lower sound after 10 p.m.",
+        "FAQ makes a general accessibility claim; verify specific lodging, restroom and meeting routes. Guest house 2 has stairs."
+      ],
+      "primary_sources": [
+        {
+          "label": "Explicit corporate and exclusive use",
+          "url": "https://venueten.com/corporate-retreats",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Current lodging footprint and location",
+          "url": "https://venueten.com/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Published capacities and policies",
+          "url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Guest house configuration/stairs",
+          "url": "https://venueten.com/vacation-rentals/casa-de-lujo",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry form",
+          "url": "https://venueten.com/contact",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "node_source": null,
+      "node_last_updated": null,
+      "action_url": "https://venueten.com/contact",
+      "action_label": "Official retreat inquiry",
+      "action_kind": "inquiry",
+      "phone": "+1 (442) 394-0133",
+      "bedrooms": 12,
+      "guest_capacity": 40,
+      "meeting_capacity": null,
+      "meeting_capacity_layout": null,
+      "meeting_spaces": [],
+      "lodging": {
+        "room_count": null,
+        "bedrooms": 12,
+        "guest_capacity": 40,
+        "room_configurations": [
+          "Casa de Lujo: seven bedrooms, published maximum 24 overnight guests",
+          "Lujo Villa: five bedrooms, published maximum 16 overnight guests",
+          "Casa de Lujo guest house 1: one queen; guest house 2: two queens and stairs to private entrance"
+        ],
+        "source_url": "https://venueten.com/",
+        "available_room_block": null,
+        "checked_at": "2026-10-07",
+        "capacity_scope": "Both Casa de Lujo and Lujo Villa; contracted access and actual available rooms unconfirmed."
+      },
+      "minimum_nights": null,
+      "day_use": "inquiry",
+      "privacy": "buyout",
+      "accessibility_notes": [
+        "FAQ says most space is accessible, without route/room details.",
+        "Casa de Lujo guest house 2 has a stair approach; the full property's specific wheelchair access remains unverified."
+      ],
+      "budget_notes": [
+        "Affordability is unknown; request an itemized quote for the required footprint, dates and services."
+      ],
+      "exclusion_rules": [],
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "business_group_use": {
+          "value": true,
+          "source_url": "https://venueten.com/corporate-retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "city": {
+          "value": "Bermuda Dunes",
+          "source_url": "https://venueten.com/contact",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "privacy": {
+          "value": "entire property reserved for retreat",
+          "source_url": "https://venueten.com/corporate-retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "lodging.bedrooms": {
+          "value": 12,
+          "source_url": "https://venueten.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "lodging.guest_capacity": {
+          "value": 40,
+          "source_url": "https://venueten.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "lodging.room_configurations": {
+          "value": [
+            "Casa de Lujo: seven bedrooms, published maximum 24 overnight guests",
+            "Lujo Villa: five bedrooms, published maximum 16 overnight guests"
+          ],
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "event_capacity": {
+          "value": 175,
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "great_room_area_sq_ft": {
+          "value": 5000,
+          "source_url": "https://venueten.com/venue",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "vendor_policy": {
+          "value": "Licensed/insured caterers; liability COIs; confirm corporate applicability",
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "sound_policy": {
+          "value": "Lower sound after 10 p.m.; no amplified sound after midnight",
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "accessibility_general_claim": {
+          "value": "Most modern space accessible; no specific routes supplied",
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "guest_house_2_access": {
+          "value": "Small flight of stairs at entrance",
+          "source_url": "https://venueten.com/vacation-rentals/casa-de-lujo",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "action_url": {
+          "value": "https://venueten.com/contact",
+          "source_url": "https://venueten.com/contact",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "identity": {
+          "evidence_type": "published_fact",
+          "source_url": "https://venueten.com/corporate-retreats",
+          "checked_at": "2026-10-07"
+        },
+        "fit": {
+          "evidence_type": "judgment",
+          "basis": "Planning assessment based on the linked official offerings; no price, quality or availability ranking.",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "evidence_type": "judgment",
+          "basis": "Planning implications; published restrictions are separately sourced.",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "evidence_type": "published_fact",
+          "source_urls": [
+            "https://venueten.com/corporate-retreats",
+            "https://venueten.com/",
+            "https://venueten.com/faqs/",
+            "https://venueten.com/vacation-rentals/casa-de-lujo",
+            "https://venueten.com/contact"
+          ],
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "value": "Most modern space accessible; no specific routes supplied",
+          "source_url": "https://venueten.com/faqs/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote.",
+          "reason": "General operator claim; guest house 2 has stairs; exact itinerary access unconfirmed."
+        },
+        "lodging.room_count": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "lodging.available_room_block": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No live availability lookup."
+        },
+        "meeting_spaces": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "No named working-layout capacity established."
+        },
+        "minimum_nights": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "day_use": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Group day-only access requires operator confirmation."
+        }
+      },
+      "existing_entity_id": "venueten-casa-del-lujo-estate-lujo-villa",
+      "preview_url": "https://aicoachellavalley.com/agent-preview/hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+      "historical_preview_city": "Adjacent Communities",
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://venueten.com/corporate-retreats",
+        "checked_at": "2026-10-07"
+      },
+      "id": "hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+      "preview_reference": {
+        "id": "hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+        "url": "https://aicoachellavalley.com/agent-preview/hospitality/venueten-casa-del-lujo-estate-lujo-villa",
+        "manifest_generated_at": "2026-07-15",
+        "recorded_city": "Adjacent Communities",
+        "note": "Historical publication reference; not a fresh venue inspection."
+      },
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://venueten.com/contact",
+      "record_type": "researched-retreat-option",
+      "source_url": "https://venueten.com/corporate-retreats",
+      "aliases": [
+        "VenueTEN",
+        "Venue Ten",
+        "Casa de Lujo",
+        "Lujo Villa"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "slug": "cardiff-limousine-transportation",
+      "name": "Cardiff Limousine & Transportation",
+      "city": "Palm Desert",
+      "service_type": "transport",
+      "tags": [
+        "airport-transfer",
+        "offsite-transport",
+        "group-shuttle"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "Corporate limousine and charter bus transportation serves Palm Springs, Palm Desert and surrounding cities."
+      ],
+      "constraints": [
+        "Confirm vehicle seat count, luggage space, accessible boarding, itinerary and quote; no live vehicle availability is supplied."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.cardifflimo.com/corporate-and-convention/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry",
+          "url": "https://www.cardifflimo.com/contact/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.cardifflimo.com/contact/",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "service_type": {
+          "value": "transport",
+          "source_url": "https://www.cardifflimo.com/corporate-and-convention/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "offering": {
+          "value": [
+            "Corporate limousine and charter bus transportation serves Palm Springs, Palm Desert and surrounding cities."
+          ],
+          "source_url": "https://www.cardifflimo.com/corporate-and-convention/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "action_url": {
+          "value": "https://www.cardifflimo.com/contact/",
+          "source_url": "https://www.cardifflimo.com/contact/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "identity": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.cardifflimo.com/corporate-and-convention/",
+          "checked_at": "2026-10-07"
+        },
+        "city": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.cardifflimo.com/corporate-and-convention/",
+          "checked_at": "2026-10-07"
+        },
+        "fit": {
+          "evidence_type": "judgment",
+          "basis": "Planning assessment based on the linked official offerings; no price, quality or availability ranking.",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "evidence_type": "judgment",
+          "basis": "Planning implications; published restrictions are separately sourced.",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "evidence_type": "published_fact",
+          "source_urls": [
+            "https://www.cardifflimo.com/corporate-and-convention/",
+            "https://www.cardifflimo.com/contact/"
+          ],
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "service_area": {
+          "evidence_type": "published_fact",
+          "value": [
+            "Palm Desert",
+            "Palm Springs"
+          ],
+          "source_url": "https://www.cardifflimo.com/corporate-and-convention/",
+          "checked_at": "2026-10-07",
+          "scope": "Named service/pickup towns explicitly published on the official offering page. Address acceptance, transport logistics and fees require proposal.",
+          "review_note": "Data/provenance source review re-read this official page on 2026-10-07."
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.cardifflimo.com/corporate-and-convention/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "service/cardiff-limousine-transportation",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.cardifflimo.com/contact/",
+      "record_type": "retreat-supporting-service",
+      "source_url": "https://www.cardifflimo.com/corporate-and-convention/",
+      "service_area": [
+        "Palm Desert",
+        "Palm Springs"
+      ],
+      "service_area_notes": "Surrounding Southern California cities are also mentioned generally; only explicitly named Palm Springs and Palm Desert are used in strict city matching."
+    },
+    {
+      "slug": "no-worries-private-chefs",
+      "name": "No Worries Private Chefs",
+      "city": "Palm Springs",
+      "service_type": "dining",
+      "tags": [
+        "private-chef",
+        "wellness-meals",
+        "multi-day-catering",
+        "dietary-requirements"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "On-site corporate, wellness and yoga retreat catering is offered for groups up to 35.",
+        "Services cover one-night meals through weeklong retreats in named Coachella Valley cities."
+      ],
+      "constraints": [
+        "Operator must confirm kitchen/service requirements, dietary needs and date availability; host venue must permit outside catering."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry",
+          "url": "https://www.noworriescali.com/contact",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.noworriescali.com/contact",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "service_type": {
+          "value": "dining",
+          "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "offering": {
+          "value": [
+            "On-site corporate, wellness and yoga retreat catering is offered for groups up to 35.",
+            "Services cover one-night meals through weeklong retreats in named Coachella Valley cities."
+          ],
+          "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "action_url": {
+          "value": "https://www.noworriescali.com/contact",
+          "source_url": "https://www.noworriescali.com/contact",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "capacity_max": {
+          "value": 35,
+          "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "identity": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07"
+        },
+        "city": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07"
+        },
+        "fit": {
+          "evidence_type": "judgment",
+          "basis": "Planning assessment based on the linked official offerings; no price, quality or availability ranking.",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "evidence_type": "judgment",
+          "basis": "Planning implications; published restrictions are separately sourced.",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "evidence_type": "published_fact",
+          "source_urls": [
+            "https://www.noworriescali.com/what-we-do/retreats",
+            "https://www.noworriescali.com/contact"
+          ],
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "service_area": {
+          "evidence_type": "published_fact",
+          "value": [
+            "Palm Springs",
+            "Joshua Tree",
+            "Indio",
+            "Palm Desert",
+            "Desert Hot Springs",
+            "La Quinta",
+            "Cathedral City"
+          ],
+          "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+          "checked_at": "2026-10-07",
+          "scope": "Named service/pickup towns explicitly published on the official offering page. Address acceptance, transport logistics and fees require proposal.",
+          "review_note": "Data/provenance source review re-read this official page on 2026-10-07."
+        }
+      },
+      "capacity_max": 35,
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+        "checked_at": "2026-10-07"
+      },
+      "id": "service/no-worries-private-chefs",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.noworriescali.com/contact",
+      "record_type": "retreat-supporting-service",
+      "source_url": "https://www.noworriescali.com/what-we-do/retreats",
+      "service_area": [
+        "Palm Springs",
+        "Joshua Tree",
+        "Indio",
+        "Palm Desert",
+        "Desert Hot Springs",
+        "La Quinta",
+        "Cathedral City"
+      ]
+    },
+    {
+      "slug": "icon-presentations",
+      "name": "Icon Presentations",
+      "city": "Indio",
+      "service_type": "av",
+      "tags": [
+        "meeting-av",
+        "presentation",
+        "sound",
+        "video",
+        "equipment-rental"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "Conference AV, staging, equipment rental, event production and RFP/room-drawing support are published."
+      ],
+      "constraints": [
+        "Confirm event site, room layout, power/connectivity, technical crew and equipment quote; inventory and price are unknown."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.icon-presentations.com/",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "service_type": {
+          "value": "av",
+          "source_url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "offering": {
+          "value": [
+            "Conference AV, staging, equipment rental, event production and RFP/room-drawing support are published."
+          ],
+          "source_url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "action_url": {
+          "value": "https://www.icon-presentations.com/",
+          "source_url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "identity": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07"
+        },
+        "city": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.icon-presentations.com/",
+          "checked_at": "2026-10-07"
+        },
+        "fit": {
+          "evidence_type": "judgment",
+          "basis": "Planning assessment based on the linked official offerings; no price, quality or availability ranking.",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "evidence_type": "judgment",
+          "basis": "Planning implications; published restrictions are separately sourced.",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "evidence_type": "published_fact",
+          "source_urls": [
+            "https://www.icon-presentations.com/"
+          ],
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.icon-presentations.com/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "service/icon-presentations",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.icon-presentations.com/",
+      "record_type": "retreat-supporting-service",
+      "source_url": "https://www.icon-presentations.com/"
+    },
+    {
+      "slug": "they-improv-palm-springs",
+      "name": "THEY improv \u2014 Palm Springs service area",
+      "city": null,
+      "service_type": "facilitation",
+      "tags": [
+        "team-building",
+        "communication",
+        "leadership-workshop",
+        "conflict-resolution"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "Customized corporate team workshops and leadership/communication training are offered across the Coachella Valley.",
+        "Provider comes to the selected venue; no food or venue is included."
+      ],
+      "constraints": [
+        "This is a team workshop provider, not verified strategic-planning facilitation.",
+        "Provider requires suitable lighting, room to move and a quiet space; confirm group limit, schedule, accessible participation and quote."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "service_type": {
+          "value": "facilitation",
+          "source_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "offering": {
+          "value": [
+            "Customized corporate team workshops and leadership/communication training are offered across the Coachella Valley.",
+            "Provider comes to the selected venue; no food or venue is included."
+          ],
+          "source_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "action_url": {
+          "value": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "source_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "identity": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+          "checked_at": "2026-10-07"
+        },
+        "city": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07",
+          "reason": "Municipality unresolved in reviewed sources."
+        },
+        "fit": {
+          "evidence_type": "judgment",
+          "basis": "Planning assessment based on the linked official offerings; no price, quality or availability ranking.",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "evidence_type": "judgment",
+          "basis": "Planning implications; published restrictions are separately sourced.",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "evidence_type": "published_fact",
+          "source_urls": [
+            "https://www.theyimprov.com/palm-springs-team-building.htm"
+          ],
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+        "checked_at": "2026-10-07"
+      },
+      "id": "service/they-improv-palm-springs",
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.theyimprov.com/palm-springs-team-building.htm",
+      "record_type": "retreat-supporting-service",
+      "source_url": "https://www.theyimprov.com/palm-springs-team-building.htm"
+    },
+    {
+      "slug": "red-jeep-tours-desert-adventures",
+      "name": "Red Jeep Tours (Desert Adventures)",
+      "city": "Palm Desert",
+      "service_type": "activities",
+      "tags": [
+        "team-building",
+        "guided-tour",
+        "private-group",
+        "offsite-activity"
+      ],
+      "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
+      "facts": [
+        "Private group San Andreas Fault programs publish 15\u2013100 guests; double rounds can serve up to 150.",
+        "Published per-Jeep occupancy is seven; photo-riddle team-building add-on is offered."
+      ],
+      "constraints": [
+        "Morning tours September\u2013June; afternoon tours late September\u2013early May and discouraged above forecast 105\u00b0F.",
+        "Advance reservations are required; signed contract/50% deposit and per-Jeep billing apply.",
+        "Mobility accommodations are described; wheelchair boarding and each attendee's access needs require confirmation.",
+        "Pickup scope and fees differ by city. Confirm current pricing, cancellation policy, heat plan and venue itinerary."
+      ],
+      "primary_sources": [
+        {
+          "label": "Official service offering",
+          "url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        },
+        {
+          "label": "Official inquiry",
+          "url": "https://www.red-jeep.com/contact/",
+          "checked_at": "2026-10-07",
+          "quality": "Official operator"
+        }
+      ],
+      "source_checked_at": "2026-10-07",
+      "action_url": "https://www.red-jeep.com/contact/",
+      "action_label": "Official service inquiry",
+      "action_kind": "inquiry",
+      "field_evidence": {
+        "availability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "affordability": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "venue_compatibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "service_type": {
+          "value": "activities",
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "offering": {
+          "value": [
+            "Private group San Andreas Fault programs publish 15\u2013100 guests; double rounds can serve up to 150.",
+            "Published per-Jeep occupancy is seven; photo-riddle team-building add-on is offered."
+          ],
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "action_url": {
+          "value": "https://www.red-jeep.com/contact/",
+          "source_url": "https://www.red-jeep.com/contact/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "group_capacity": {
+          "value": "15\u2013100; up to 150 via double rounds",
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "identity": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07"
+        },
+        "city": {
+          "evidence_type": "published_fact",
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07"
+        },
+        "fit": {
+          "evidence_type": "judgment",
+          "basis": "Planning assessment based on the linked official offerings; no price, quality or availability ranking.",
+          "checked_at": "2026-10-07"
+        },
+        "constraints": {
+          "evidence_type": "judgment",
+          "basis": "Planning implications; published restrictions are separately sourced.",
+          "checked_at": "2026-10-07"
+        },
+        "facts": {
+          "evidence_type": "published_fact",
+          "source_urls": [
+            "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+            "https://www.red-jeep.com/contact/"
+          ],
+          "checked_at": "2026-10-07"
+        },
+        "cancellation": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "evidence_type": "unknown",
+          "checked_at": "2026-10-07"
+        },
+        "capacity_min": {
+          "value": 15,
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "capacity_max": {
+          "value": 100,
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "evidence_type": "published_fact",
+          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+        },
+        "service_area": {
+          "evidence_type": "published_fact",
+          "value": [
+            "Rancho Mirage",
+            "Palm Desert",
+            "Indian Wells",
+            "La Quinta",
+            "Palm Springs",
+            "Cathedral City",
+            "Indio",
+            "Thermal"
+          ],
+          "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+          "checked_at": "2026-10-07",
+          "scope": "Named service/pickup towns explicitly published on the official offering page. Address acceptance, transport logistics and fees require proposal.",
+          "review_note": "Data/provenance source review re-read this official page on 2026-10-07."
+        }
+      },
+      "existing_entity_id": "red-jeep-tours-desert-adventures",
+      "preview_url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/red-jeep-tours-desert-adventures",
+      "alias_existing_entity_ids": [
+        "desert-adventures-jeep-tours"
+      ],
+      "capacity_min": 15,
+      "capacity_max": 100,
+      "qualified": true,
+      "qualification_basis": "Published official group or meeting inquiry pathway; desk research only.",
+      "qualification_evidence": {
+        "evidence_type": "published_fact",
+        "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+        "checked_at": "2026-10-07"
+      },
+      "id": "outdoors-recreation/red-jeep-tours-desert-adventures",
+      "preview_reference": {
+        "id": "outdoors-recreation/red-jeep-tours-desert-adventures",
+        "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/red-jeep-tours-desert-adventures",
+        "manifest_generated_at": "2026-07-23",
+        "recorded_city": "Palm Desert",
+        "note": "Historical publication reference; not a fresh venue inspection."
+      },
+      "action_checked_at": "2026-10-07",
+      "action_source_url": "https://www.red-jeep.com/contact/",
+      "record_type": "retreat-supporting-service",
+      "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
+      "service_area": [
+        "Rancho Mirage",
+        "Palm Desert",
+        "Indian Wells",
+        "La Quinta",
+        "Palm Springs",
+        "Cathedral City",
+        "Indio",
+        "Thermal"
+      ],
+      "service_area_notes": "Published pickup rates/scope differ: West Indio to Monroe Street; Palm Springs/Cathedral City and East Indio/Thermal have additional pickup fees. Exact address needs confirmation."
     }
   ]
 }

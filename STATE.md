@@ -2,6 +2,98 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-10-07 — REVIEW CORRECTION: preserve caller retreat requirements
+
+Sat's independent review of PR #2 reproduced three interpretation defects not
+covered by the original 13 synthetic scenarios: negated room sharing, a meeting
+day erasing an overnight stay, and excluded/replaced venues becoming the sole
+named match. Four regression cases using the supplied phrases failed before
+the fix. The resolver and browser brief now share lodging interpretation;
+negated sharing requests individual rooms, positive night counts retain lodging,
+and explicit venue omissions/alternatives are separate caller requirements.
+Positive named requests still work alongside exclusions. No new research round
+or commercial change was made.
+
+Six added regression tests cover the exact phrases, both inferred and structured
+two-night stays, combined positive/excluded names, and retained structured/day-only
+behavior. Validation: 117 tests pass, zero audit vulnerabilities, full build and
+all publishing gates pass (315 HTML pages / 6,085 static internal links).
+The deployed official-SDK verifier passes all 18 synthetic scenarios and retained
+follow-up/negative controls at 23:38 UTC against
+[the refreshed immutable preview](https://d652d6d4.aicoachellavalley-homepage.pages.dev/plan-team-retreat/)
+for commit `03d4e01`; GitHub and Cloudflare checks pass. The receipt is
+`research/retreat-interpretation-preview-results.json`. Browser QA verifies the
+exact phrases in the brief before/after comparison, explicit two-night input,
+both venue omissions, combined requirements, copying and retained genuine
+day-only behavior. No console errors were observed. Prior 13-case receipts are
+historical evidence for their own revisions and did not catch these defects.
+Production remains unchanged; PR #2 still requires Sat's publication review.
+
+## 2026-10-07 — REVIEW BRANCH: broader retreat decisions
+
+Sat authorized research and implementation through a tested PR and Git-connected
+preview, without merging main or publishing production. Branch
+`codex/retreat-decision-coverage-20261007` starts at current main `ece99a1`,
+preserving published PR #1 and the Q3 report. Five agents owned venue research,
+private properties/services, data/provenance, runtime/experience and independent
+evaluation; the lead integrated and checked critical official capacity claims.
+
+The resolver compares 15 qualified venue inquiry pathways and five separate
+supporting-service records. Qualification means documented group-use evidence,
+not confirmed suitability, availability, price or a reservation. The shared
+contract preserves historical node/preview dates, types field evidence and
+requires dated official actions. New research is attributed to October 7;
+imports and builds cannot reset research dates. Three existing nodes receive
+targeted dated clarifications, retaining their September 25 broader update date.
+Research and independent findings are in `research/retreat-*-2026-10-07.*`.
+
+Structured and natural-language requirements cover rooms/sharing, day-only,
+nights, purpose, budget, privacy, accessibility and municipal versus nearby
+wording. Normal shortlists have four options, capped at five, with reasons,
+documented exclusions, unresolved matches, unknowns and follow-up questions.
+Budget changes practical-format trade-offs and questions, without invented
+rates. Published room inventory, event capacity and named working layouts are
+separate. Supporting providers remain separate inquiries. Three read-only MCP
+tools remain; no paid service, database, model call or transaction is introduced.
+Eligibility and ordering remain independent of payment to AICV.
+
+Validation before preview: 111 tests pass, including 13 synthetic scenarios
+through the actual MCP adapter and semantic evidence-contract mutation checks.
+`npm audit --audit-level=low` reports zero vulnerabilities. Full build and
+ownership, amendment, complete-node parity and rendered-page gates pass:
+315 HTML pages and 6,085 static internal links. The Q3 report, pricing,
+service promises and package dependency files are unchanged.
+
+[Review PR #2](https://github.com/aicoachellavalley/homepage/pull/2) has passing
+GitHub and Cloudflare checks for corrected implementation commit `1966546`.
+Its [immutable Git preview](https://d8e42533.aicoachellavalley-homepage.pages.dev/plan-team-retreat/)
+passes the repeated official MCP SDK network check on October 7 at 23:20 UTC: server
+0.2.0 discovery, all 13 synthetic scenarios, text/structured agreement,
+eight-room/budget clarification, booking/payment boundary, unknown-record and
+coffee controls, and three InvalidParams rejections. Receipt and independent
+review are in `research/retreat-preview-results.json` and the evaluation report.
+Public `/.well-known/mcp.json` is readable and deliberately retains canonical
+production service URLs; branch review clients must select the preview `/mcp`.
+
+Browser QA verified the default executive comparison, sharing/budget changes,
+private estates with separate chef/AV inquiries, strict Palm Desert day-only
+results, required access questions and unsupported named-venue no-match.
+A selected Courtyard Palm Desert brief preserves the synthetic dates, eight
+rooms, budget, constraints and official planning URL; copying confirms nothing
+was sent. Following the link reaches the correct Marriott event page and its
+official planning pathway, without submitting an inquiry. Browser review caught
+stale overnight counts in a day-only prepared brief. The corrected preview
+passes the full build/audit again and browser checks verify no lodging/zero
+nights despite earlier room/night inputs, conditional sharing estimates and
+discarded stale comparison notes after form edits. These are synthetic read-only
+checks, not organic assistant discovery or operator confirmation.
+
+Plugin metadata is version 0.2.0. Existing installations must refresh tool
+metadata and use the branch preview endpoint to test this release. The permanent
+production endpoint and previously pinned September 30 preview still represent
+their own deployed revisions until reviewed publication. No directory approval,
+personal assistant installation or completed commerce is claimed.
+
 ## 2026-10-07 — AUTHORIZED PRODUCTION RELEASE: local decisions and assessment cleanup
 
 Sat explicitly authorized publishing reviewed homepage PR #1 after installing
