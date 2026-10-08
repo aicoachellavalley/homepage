@@ -128,7 +128,7 @@ test('half-hour shorthand and explicit decimal duration survive comparison and b
     const input = { query: `Meeting room at The Hive for ${text}` };
     const r = resolveLocalIntent(input, catalog);
     assert.equal(r.requirements.duration_hours, 0.5, text);
-    assert.ok(workspaceBrief(input, r.results[0], r.requirements).includes('Duration: 0.5 hours')); 
+    assert.ok(workspaceBrief(input, r.results[0], r.requirements).includes('Duration: 0.5 hours'));
   }
 });
 test('numeric ranges, negative durations and malformed headcounts do not acquire an invented exact value', () => {

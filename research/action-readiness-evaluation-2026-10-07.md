@@ -17,7 +17,7 @@ All sources checked October 7. These source reads do not verify operation, facil
 
 ## Runtime and mock review
 
-**Final focused result: 16 independent workspace/adversarial tests, seven shared-quantity regression tests and 25 transaction tests pass.** The evaluator also ran the mock CLI, reviewed the browser demo source and checked the semantic contract mutations below. The lead owns full repository/build gates, actual browser execution and preview network verification; those are not asserted by this review.
+**Final focused result: 16 independent workspace/adversarial tests, eight shared-requirement regression tests and 25 transaction tests pass.** The evaluator also ran the mock CLI, reviewed the browser demo source and checked the semantic contract mutations below. The lead owns full repository/build gates, actual browser execution and preview network verification; those are not asserted by this review.
 
 ## Initial adversarial findings sent to authors
 
@@ -57,3 +57,12 @@ Additional independent probes found edge cases beyond that first fix: `.5 hours`
 Final follow-up verification: `node --test scripts/workspace-adversarial.test.mjs scripts/decision-requirements.test.mjs` passes **23/23** (16 independent scenarios plus seven shared-quantity regressions). The reported `.5`/`0.5`, signed/ranged duration and malformed-headcount defects are fixed; fractional comparison and generated brief agree. The prior transaction verification remains **25/25** and was not broadly repeated after an unrelated parsing change. The lead owns current full-build gates and fresh immutable-preview/browser confirmation. No unresolved defect from the reported focused scenarios remains; general free-text interpretation is still conservative and does not promise arbitrary natural-language understanding.
 
 Integration follow-up: the lead replaced raw internal-field JSON in prepared inquiries with readable requirement labels. Focused semantic assertions retain headcount, duration, budget scope, privacy, accessibility and requested action, while original caller text and conflict messages remain explicit. The lead reran all 23 focused decision checks; exact final browser rendering is in the integration receipt.
+
+
+## Final two-city comparison and readable brief review
+
+The lead's integration check found that “Compare Palm Desert and Palm Springs as a startup satellite base” initially narrowed to one city. Shared location handling now keeps both requested municipalities, treats an explicit structured city as a narrowing with a visible conflict, excludes published physical options outside a strict two-city comparison and reports missing city coverage without inventing a workspace. Regional-nearby wording retains its unverified proximity boundary.
+
+Independent final run of `node --test scripts/workspace-adversarial.test.mjs scripts/decision-requirements.test.mjs` passes **24/24** (16 independent cases and eight shared-requirement regressions). The new two-city test verifies both municipalities in the result and brief, explicit single-city narrowing, and the missing physical-workspace record for Indio. A separate ephemeral semantic check confirms that the readable brief retains the original request, both city names, exact free-text privacy, accessibility and working-setup constraints, plus the official-handoff next step. Readable labels replace raw requirement JSON without dropping the tested fields. The evaluator made no runtime change and no new broad research.
+
+This is the final focused integration checkpoint: all reported resolver/brief/parser defects are corrected in the tested cases. Prior **25/25** transaction verification remains applicable; provider authority, live inventory/commerce and arbitrary natural-language interpretation remain outside what these checks establish. The lead owns the full 166-test/build/gate receipt and fresh-preview browser/network evidence.

@@ -34,7 +34,7 @@ Four Exa SEARCH checks and baseline crawl receipts are separate evidence. Versio
 WebMCP support was unvalidated and no registration was implemented. Nothing sent.
 Research, discovery failures, independent findings and precise activation
 permissions live in the targeted `research/*2026-10-07*` handoffs; README holds
-one concise gap map. Local validation:165 tests pass, zero audit vulnerabilities, full build and
+one concise gap map. Local validation: 166 tests pass, zero audit vulnerabilities, full build and
 all repository gates pass (317 HTML pages / 6,113 static internal links). IndexNow
 submission was disabled for this review build. The unrelated external news feed
 was unreachable in the sandbox; the build recorded its existing graceful fallback.
@@ -42,7 +42,9 @@ Initial deployed SDK check passed 18 retreat + 13 workspace scenarios. Browser Q
 caught 1.5 hours becoming 5 in a brief; shared raw-number parsing now retains
 fractional duration, preserves zero-night stays and grouped integer headcounts,
 and leaves ranges/negative/malformed quantities unresolved. Independent follow-up
-passes 23 focused decision tests. Final immutable-preview receipts follow below. Prepared workspace briefs
+passes 24 focused decision tests. A two-city comparison now retains both municipalities, exposes explicit narrowing
+and reports unrepresented-city coverage instead of choosing one city silently.
+Final immutable-preview receipts follow below. Prepared workspace briefs
 use readable requirement labels and retain literal caller text, with semantic
 checks for headcount, fractional duration, budget scope, privacy/accessibility
 and the requested action instead of serializing internal fields for operators. Production remains unchanged.

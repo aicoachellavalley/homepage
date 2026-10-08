@@ -37,6 +37,9 @@ const LIMITATIONS = [
 ];
 function cityFrom(input) {
   if (input.city) return CITIES.find((c) => normalize(c) === normalize(input.city)) ?? input.city;
+  const localQuery=normalize(input.query??'').replace(/coachella valley/g,'');
+  const locations=CITIES.filter(c=>!['Coachella Valley','Adjacent Communities'].includes(c) && new RegExp(`\\b${normalize(c)}\\b`).test(localQuery));
+  if(locations.length>1 && /\b(compare|versus|vs|or|and)\b/.test(localQuery))return null;
   return [...CITIES].sort((a, b) => b.length - a.length).find((c) => new RegExp(`\\b${normalize(c)}\\b`).test(normalize(input.query ?? ''))) ?? null;
 }
 function terms(query, city) {
@@ -169,7 +172,7 @@ function resolveRetreat(input, catalog, base, q, city, group) {
   const boutique = /\b(boutique|intimate|small hotel)\b/.test(q);
   const privateProperty = /\b(private (?:estate|property|house)|villa|villas|estate|estates|shared house)\b/.test(q);
   const generalRequirements=decisionRequirements(input,group);
-  const requirements = { ...generalRequirements,...lodgingRequirements, purpose, budget, privacy, accessibility, location: city, nearby: !!nearby && !strictCity };
+  const requirements = { ...generalRequirements,...lodgingRequirements,...location, purpose, budget, privacy, accessibility, location: city, nearby: !!nearby && !strictCity };
   const excluded = [];
   let candidates = (catalog.retreat?.options ?? []).filter((o) => o.qualified === true);
   const names = (o) => [...new Set([o.name, o.name.split(/[,(]/)[0], o.slug, ...(o.aliases ?? [])].map(normalize).filter(s => s.length >= 4))];
@@ -192,6 +195,7 @@ function resolveRetreat(input, catalog, base, q, city, group) {
     const reject = (reason, source_url) => conflicts.push({ reason, evidence_type: 'published_fact', source_url: source_url ?? o.primary_sources?.[0]?.url ?? null });
     if (strictCity && !o.city) conflicts.push({ reason: `City is unresolved; no strict ${city} match can be established.`, evidence_type: 'unknown', source_url: null });
     else if (strictCity && normalize(o.city) !== normalize(city)) reject(`Outside the explicit ${city} city boundary.`, o.field_evidence?.city?.source_url);
+    if(location.multi_city_scope && o.city && !location.query_locations.includes(o.city)) reject(`Outside the requested city comparison (${location.query_locations.join(' / ')}).`,o.field_evidence?.city?.source_url);
     const lodging = o.lodging ?? {};
     const guestMax = lodging.guest_capacity ?? o.guest_capacity;
     const buyoutGuestMax = o.buyout?.guest_capacity_max;
@@ -253,6 +257,7 @@ function resolveRetreat(input, catalog, base, q, city, group) {
   base.unestablished_matches = excluded.filter((e) => e.reasons.every((r) => r.evidence_type === 'unknown'));
   base.regional_context = nodeContext(catalog, ['retreat-economy', 'desert-season', 'aviation-gateway'], strictCity ? city : null);
   base.unresolved_constraints = ['Dates, current room availability, total budget, room configuration and required accessibility need confirmation with the property.'];
+  if(location.multiple_locations && !input.city)base.unresolved_constraints.push(`Requested city comparison: ${location.query_locations.join(' and ')}; current proximity and travel times are unverified.`);
   if(['transaction','agent_assisted'].includes(requirements.required_action)) base.unresolved_constraints.push('Requested action exceeds the official handoff capability; no reservation, payment or request has been made.');
   if (nearby && !strictCity) {
     base.limitations.push(`The question uses ${city ?? 'the requested location'} as a nearby destination anchor. Options span the Coachella Valley; proximity and drive times have not been verified.`);

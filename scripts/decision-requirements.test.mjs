@@ -48,3 +48,16 @@ test('sub-hour decimals survive and ranges, signs and malformed grouping stay un
   }
   assert.equal(quantityFromQuery('12,34 people','people'),null);
 });
+
+test('a two-city satellite comparison retains both municipalities and flags explicit narrowing',()=>{
+  const input={query:'Compare Palm Desert and Palm Springs as a startup satellite base'};
+  const r=resolveLocalIntent(input,catalog);
+  assert.equal(r.intent,'satellite-base');assert.equal(r.requirements.strict_city,false);
+  assert.deepEqual(new Set(r.requirements.query_locations),new Set(['Palm Desert','Palm Springs']));
+  assert.ok(r.results.some(o=>o.city==='Palm Desert'));assert.ok(r.results.some(o=>o.city==='Palm Springs'));
+  assert.match(workspaceBrief(input,r.results[0],r.requirements),/Location: Palm Springs; Palm Desert/);
+  const partial=resolveLocalIntent({query:'Compare Palm Desert and Indio workspaces'},catalog);
+  assert.ok(partial.results.every(o=>['Palm Desert','Indio'].includes(o.city)));assert.match(partial.unresolved_constraints.join(' '),/No qualified physical workspace record was established for Indio/);
+  const narrow=resolveLocalIntent({...input,city:'Palm Desert'},catalog);
+  assert.ok(narrow.results.every(o=>o.city==='Palm Desert'));assert.match(narrow.requirement_conflicts.join(' '),/multiple locations/);
+});

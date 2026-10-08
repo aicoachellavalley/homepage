@@ -101,7 +101,7 @@ production publication and live action capability require separate authorization
 
 Run `scripts/verify-regional-preview.mjs --endpoint https://<immutable-preview>/mcp
 --sdk-path /path/to/node_modules/@modelcontextprotocol/sdk` with an external
-official SDK installation. It retains 18 retreat scenarios and adds 13 workspace
+official SDK installation. It retains 18 retreat scenarios and adds 14 workspace
 scenarios, identity checks and negative controls. A new review PR is stacked on
 unmerged PR #2; merging it into that review branch does not authorize main publication.
 

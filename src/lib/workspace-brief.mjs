@@ -7,7 +7,7 @@ export function workspaceBrief(input, option, comparedRequirements) {
   const budget=requirements.budget_amount!==null && requirements.budget_amount!==undefined ? `${requirements.budget_amount} ${requirements.budget_currency ?? 'currency unresolved'} (${enumDisplay(requirements.budget_scope)})` : display(requirements.budget);
   return ['Workspace / founder-support inquiry — prepared only; nothing sent or reserved.',`Operator/program: ${option.name}`,`Original request: ${input.query}`,
     `Decision: ${enumDisplay(requirements.decision)}`,`Workspace type: ${enumDisplay(requirements.workspace_type)}`,
-    `Location: ${display(requirements.location)}${requirements.strict_city?' (strict city boundary)':requirements.nearby?' (regional anchor; proximity unverified)':''}`,
+    `Location: ${display(requirements.location ?? (requirements.multiple_locations?requirements.query_locations.join('; '):null))}${requirements.strict_city?' (strict city boundary)':requirements.nearby?' (regional anchor; proximity unverified)':''}`,
     `People: ${display(requirements.group_size)}`,`Duration: ${display(requirements.duration_hours)} hours; ${display(requirements.duration_days)} days`,
     `Budget: ${budget}; complete price unconfirmed`, `Working setup: ${display(requirements.working_setup)}`,
     `Access: ${enumDisplay(requirements.workspace_access)}`,`Privacy: ${display(requirements.privacy)}`,`Accessibility: ${display(requirements.accessibility)}`,

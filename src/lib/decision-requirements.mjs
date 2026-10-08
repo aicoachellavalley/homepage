@@ -16,9 +16,13 @@ export function locationRequirements(input, city) {
   const explicit = city && new RegExp(`\\b(?:in|within|only in) ${c}\\b`).test(q);
   const distance = city && new RegExp(`\\b(?:within \\d+ (?:miles?|minutes?)|\\d+ (?:miles?|minutes?)(?: drive)?|drive time) (?:of |from |to )?${c}\\b`).test(q);
   const nearby = !input.city && !!city && city !== 'Coachella Valley' && !explicit && (input.nearby === true || distance || new RegExp(`\\b(?:near|around|close to|outside(?: of)?) ${c}\\b`).test(q));
-  const queryCity=['Desert Hot Springs','Cathedral City','Rancho Mirage','Palm Springs','Palm Desert','Indian Wells','La Quinta','Coachella','Indio','Thousand Palms','Bermuda Dunes'].find(name=>new RegExp(`\\b${normalizeDecision(name)}\\b`).test(q));
+  const query_locations=['Desert Hot Springs','Cathedral City','Rancho Mirage','Palm Springs','Palm Desert','Indian Wells','La Quinta','Coachella','Indio','Thousand Palms','Bermuda Dunes'].filter(name=>new RegExp(`\\b${normalizeDecision(name)}\\b`).test(q.replace(/coachella valley/g,'')));
+  const queryCity=query_locations[0];
+  const multiple_locations=query_locations.length>1 && /\b(compare|versus|vs|or|and)\b/.test(q);
   const location_conflicts=input.city && queryCity && normalizeDecision(queryCity)!==normalizeDecision(input.city)?[`Structured city ${input.city} differs from query location ${queryCity}; structured city is strict. Clarify the intended boundary or regional anchor.`]:[];
-  return { location_conflicts,location: city, nearby: !!nearby, strict_city: !!city && city !== 'Coachella Valley' && (!!input.city || explicit || !nearby), distance_unverified: !!distance };
+  if(input.city && multiple_locations)location_conflicts.push('The query compares multiple locations; the structured city narrows to one municipality. Clarify whether that narrowing is intended.');
+  const multi_city_scope=multiple_locations && !input.city && input.nearby!==true && !query_locations.some(name=>new RegExp(`\\b(?:near|around|close to) ${normalizeDecision(name)}\\b`).test(q));
+  return { multi_city_scope,query_locations,multiple_locations,location_conflicts,location: city, nearby: !!nearby, strict_city: !!city && city !== 'Coachella Valley' && (!!input.city || explicit || !nearby), distance_unverified: !!distance };
 }
 export function entityRequirements(input, records) {
   const q = normalizeDecision(input.query);
