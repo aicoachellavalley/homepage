@@ -1,0 +1,175 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+const description = 'A local mock demonstration of a shared-desk offer, buyer approval, payment verification and operator booking confirmation. No real transactions.';
+---
+<Base title="Local Mock Booking Pilot | AI Coachella Valley" description={description} canonicalUrl="https://aicoachellavalley.com/action-pilot/" robots="noindex, follow">
+  <nav class="pilot-nav" aria-label="Main navigation"><a href="/">AICV · AI Coachella Valley</a><a href="/choose-workspace/">Workspace evidence →</a></nav>
+  <main class="pilot-wrap">
+    <p class="eyebrow">Team Retreat → Satellite Base → Relocate → Build</p>
+    <h1>A booking pathway,<br />ready to inspect.</h1>
+    <p class="lead">LOCAL / MOCK ONLY. Every offer, availability check, hold, payment, booking reference and refund below is fictional. Nothing is sent to a business or payment provider.</p>
+    <section class="evidence" aria-labelledby="real-title">
+      <h2 id="real-title">The provisional real-world candidate</h2>
+      <p>The Hive in Palm Springs publishes a $30 drop-in shared desk for a day. Desks are first-come, first-served, with a phone reservation option. Its published weekday hours are 9am–5pm. AICV checked the <a href="https://www.thehivecoworking.com/memberships">official memberships page</a> on October 7, 2026.</p>
+      <p><strong>Real total price, inventory, cancellation terms, booking authority and integration remain unknown.</strong> The official handoff is usable; this demo does not establish an operator connection or Stripe usage by The Hive.</p>
+    </section>
+    <section class="demo" aria-labelledby="demo-title">
+      <p class="eyebrow">Synthetic fixture · shared desk · one person</p>
+      <h2 id="demo-title">Walk through the mock purchase</h2>
+      <p>The fixture has one fictional desk per weekday. The invented total is $33: $30 base + $3 synthetic tax + $0 fees. The $3 is a test value, not a tax calculation or an operator claim. No private room or verified accessibility is included.</p>
+      <form id="mock-quote-form">
+        <label for="mock-date">Fictional visit date <input id="mock-date" type="date" required /></label>
+        <p>One person · shared desk · 9am–5pm · America/Los_Angeles</p>
+        <button type="submit">1. Check mock availability and quote</button>
+      </form>
+      <div id="mock-offer" class="offer" hidden></div>
+      <div id="mock-approval-section" hidden>
+        <label class="check"><input id="mock-approve" type="checkbox" /> I approve this exact fictional date, scope, $33 total and displayed mock terms.</label>
+        <button id="mock-execute" type="button" disabled>2. Approve and create mock hold/payment</button>
+      </div>
+      <section id="mock-events" hidden aria-labelledby="events-title">
+        <h3 id="events-title">3. Verify payment and operator acceptance</h3>
+        <p>A browser success screen cannot confirm a booking. Confirmation requires a verified synthetic payment event and the mock operator’s booking acceptance.</p>
+        <div class="button-grid">
+          <button id="mock-browser" type="button">Visit mock success screen</button>
+          <button id="mock-pending" type="button">Simulate delayed payment</button>
+          <button id="mock-paid" type="button">Verify synthetic paid event</button>
+          <button id="mock-failed" type="button">Verify synthetic failed event</button>
+          <button id="mock-operator" type="button">Mock operator accepts booking</button>
+          <button id="mock-conflict" type="button">Mock operator reports conflict</button>
+          <button id="mock-retry" type="button">Retry identical mock execution</button>
+          <button id="mock-expire" type="button">Advance mock clock 11 minutes</button>
+        </div>
+        <label class="check"><input id="mock-cancel-approve" type="checkbox" /> I approve cancelling this fictional booking and any full mock refund.</label>
+        <button id="mock-cancel" type="button" disabled>Cancel / refund mock booking</button>
+      </section>
+      <p id="mock-status" class="status" role="status" aria-live="polite">Start with a synthetic quote. No real booking or payment will be made.</p>
+      <div id="mock-state" class="state" hidden></div>
+      <details><summary>Mock action log</summary><ol id="mock-log"></ol></details>
+      <button id="mock-reset" type="button" class="secondary">Reset local simulation</button>
+      <noscript><p>JavaScript is needed to run this local simulation. The official memberships source remains available above.</p></noscript>
+    </section>
+    <section class="evidence" aria-labelledby="activation-title">
+      <h2 id="activation-title">What operator activation needs</h2>
+      <p>Sat’s review and the operator’s written authorization; its supported reservation/payment interface and authorized isolated sandbox; complete prices and terms; authoritative inventory holds and booking status; server-side authenticated approval, durable retries, verified provider events, cancellation/refund support, and observed end-to-end fulfillment.</p>
+      <p>This browser demo keeps everything in local memory. Its public fake signing key only demonstrates synthetic event integrity. Production transaction authority and verification must live on a secured server. No live action tools, card forms or WebMCP transaction registrations are added.</p>
+      <a href="/connect/">Current read-only assistant access →</a>
+    </section>
+  </main>
+  <Footer />
+</Base>
+
+<script>
+  import { createMockTransactionAdapter, MOCK_REQUEST } from '../lib/transaction-pilot.mjs';
+  const el = (id: string) => document.getElementById(id)!;
+  const dateInput = el('mock-date') as HTMLInputElement;
+  const approve = el('mock-approve') as HTMLInputElement;
+  const cancelApprove = el('mock-cancel-approve') as HTMLInputElement;
+  let offset = 0;
+  let adapter = createMockTransactionAdapter({ now: () => Date.now() + offset });
+  let offer: any, approval: any, booking: any, busy = false;
+  const money = (cents: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(cents / 100);
+  function futureWeekday() {
+    const date = new Date(); date.setUTCDate(date.getUTCDate() + 7);
+    while ([0, 6].includes(date.getUTCDay())) date.setUTCDate(date.getUTCDate() + 1);
+    return date.toISOString().slice(0, 10);
+  }
+  dateInput.value = futureWeekday();
+  function record(message: string) {
+    el('mock-status').textContent = message;
+    const item = document.createElement('li'); item.textContent = message; el('mock-log').append(item);
+  }
+  function show(state: any) {
+    booking = state; el('mock-state').hidden = false;
+    const box = el('mock-state'); box.replaceChildren();
+    for (const [label, value] of [
+      ['Mock status', state.status], ['Payment', state.payment_status],
+      ['Verified synthetic payment', state.verified_payment ? 'Yes' : 'No'], ['Mock operator', state.operator_status],
+      ['Fictional confirmation', state.confirmation || 'None'],
+      ['Reservation / payment counts', `${adapter.diagnostics().bookings} / ${adapter.diagnostics().payment_sessions}`],
+      ['Mock refund', state.refund ? money(state.refund.amount_cents) : 'None'],
+    ]) { const p = document.createElement('p'); p.textContent = `${label}: ${value}`; box.append(p); }
+  }
+  async function run(label: string, action: () => any) {
+    if (busy) return; busy = true;
+    try { const state = await action(); if (state?.booking_id) show(state); record(`${label}: ${state?.status || 'complete'} · LOCAL/MOCK ONLY.`); }
+    catch (error) { record(`Mock action stopped: ${(error as Error).message}. Nothing was sent.`); }
+    finally { busy = false; }
+  }
+  function invalidateQuote() {
+    offer = null; approval = null; approve.checked = false;
+    (el('mock-execute') as HTMLButtonElement).disabled = true;
+    el('mock-offer').hidden = true; el('mock-approval-section').hidden = true;
+  }
+  dateInput.addEventListener('change', invalidateQuote);
+  el('mock-quote-form').addEventListener('submit', event => {
+    event.preventDefault();
+    run('Synthetic quote', () => {
+      invalidateQuote(); offer = adapter.getOffer({ ...MOCK_REQUEST, date: dateInput.value });
+      const box = el('mock-offer'); box.replaceChildren(); box.hidden = false;
+      for (const text of [`FICTIONAL OFFER · ${offer.request.date}, 09:00–17:00 Pacific · one shared desk`,
+        `${money(offer.base_cents)} base + ${money(offer.tax_cents)} invented tax + ${money(offer.fee_cents)} fees = ${money(offer.total_cents)} total`,
+        offer.terms, 'Quote expires in 5 minutes; fictional hold lasts 10 minutes after execution.']) {
+        const p = document.createElement('p'); p.textContent = text; box.append(p);
+      }
+      el('mock-approval-section').hidden = false;
+    });
+  });
+  approve.addEventListener('change', () => { (el('mock-execute') as HTMLButtonElement).disabled = !approve.checked || !offer; });
+  el('mock-execute').addEventListener('click', () => run('Mock hold/payment created', () => {
+    if (!approve.checked) throw new Error('exact-approval-required');
+    approval = adapter.approveOffer(offer.id, { explicit_approval: true, total_cents: offer.total_cents, currency: offer.currency, terms_version: offer.terms_version });
+    const result = adapter.executePayment(offer.id, approval.id, 'demo-execution');
+    el('mock-events').hidden = false; dateInput.disabled = true;
+    (el('mock-execute') as HTMLButtonElement).disabled = true;
+    (el('mock-quote-form').querySelector('button') as HTMLButtonElement).disabled = true;
+    approve.disabled = true; return result;
+  }));
+  for (const [name, action] of [
+    ['browser', () => adapter.browserSuccess(booking.booking_id)],
+    ['pending', async () => adapter.verifyEvent(await adapter.makeSyntheticEvent(booking.booking_id, 'pending'))],
+    ['paid', async () => adapter.verifyEvent(await adapter.makeSyntheticEvent(booking.booking_id, 'paid'))],
+    ['failed', async () => adapter.verifyEvent(await adapter.makeSyntheticEvent(booking.booking_id, 'failed'))],
+    ['operator', () => adapter.setMockOperatorStatus(booking.booking_id, 'confirmed')],
+    ['conflict', () => adapter.setMockOperatorStatus(booking.booking_id, 'conflict')],
+    ['retry', () => adapter.executePayment(offer.id, approval.id, 'demo-execution')],
+    ['expire', () => { offset += 660000; adapter.expireHolds(); return adapter.reconcileBooking(booking.booking_id); }],
+  ] as const) el(`mock-${name}`).addEventListener('click', () => run(`Mock ${name}`, action));
+  cancelApprove.addEventListener('change', () => { (el('mock-cancel') as HTMLButtonElement).disabled = !cancelApprove.checked; });
+  el('mock-cancel').addEventListener('click', () => run('Mock cancellation', () => adapter.cancelBooking(booking.booking_id, { explicit_approval: cancelApprove.checked, idempotency_key: 'demo-cancellation' })));
+  el('mock-reset').addEventListener('click', () => {
+    if (busy) return;
+    offset = 0; adapter = createMockTransactionAdapter({ now: () => Date.now() + offset }); booking = null;
+    invalidateQuote(); dateInput.disabled = false; dateInput.value = futureWeekday(); approve.disabled = false;
+    cancelApprove.checked = false; (el('mock-cancel') as HTMLButtonElement).disabled = true;
+    (el('mock-quote-form').querySelector('button') as HTMLButtonElement).disabled = false;
+    el('mock-events').hidden = true; el('mock-state').hidden = true; el('mock-log').replaceChildren();
+    record('Local simulation reset. No real transactions exist.');
+  });
+</script>
+
+<style>
+  :global(body) { margin:0; font-family:var(--font-sans,Arial,sans-serif); background:#f5f3ed; color:#193c34; }
+  .pilot-nav { max-width:1080px; margin:auto; padding:28px; display:flex; justify-content:space-between; gap:20px; }
+  a { color:#17634d; text-underline-offset:4px; }
+  .pilot-wrap { max-width:900px; margin:35px auto 80px; padding:0 24px; }
+  .eyebrow { text-transform:uppercase; font-size:12px; letter-spacing:1.5px; }
+  h1 { font-size:clamp(38px,6vw,64px); line-height:1.07; margin:20px 0; font-weight:500; }
+  h2 { font-size:28px; line-height:1.2; font-weight:500; } h3 { font-size:22px; }
+  p { line-height:1.7; } .lead { font-size:19px; max-width:760px; }
+  .evidence { border-top:1px solid #b7c5bd; margin-top:38px; padding:18px 0; }
+  .demo { background:white; padding:28px; margin:25px 0; border:1px solid #d1d9d2; border-radius:12px; }
+  input[type=date] { display:block; padding:12px; margin:8px 0; font:inherit; border:1px solid #7a978c; border-radius:6px; }
+  button { font:inherit; padding:12px 16px; background:#205e4c; color:white; border:1px solid #205e4c; border-radius:6px; cursor:pointer; margin:8px 0; }
+  button:disabled { opacity:.45; cursor:default; } button:hover:not(:disabled) { background:#164333; }
+  .button-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .button-grid button { margin:0; text-align:left; }
+  .check { display:flex; align-items:flex-start; gap:10px; line-height:1.6; margin:22px 0 8px; }
+  .check input { margin-top:5px; }
+  .offer,.state { border:1px solid #adc6b7; border-radius:8px; padding:14px 20px; margin:20px 0; background:#f4f8f2; }
+  .state p { margin:5px 0; } .status { background:#f8eac9; padding:14px; border-radius:6px; }
+  details { margin:22px 0; } summary { cursor:pointer; } li { margin:10px 0; line-height:1.5; }
+  .secondary { background:transparent; color:#205e4c; }
+  @media(max-width:600px) { .button-grid { grid-template-columns:1fr; } .demo { padding:18px; } .pilot-nav { flex-wrap:wrap; } }
+</style>

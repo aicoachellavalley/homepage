@@ -1,14 +1,16 @@
 // Pure bounded lookup. AICV records are data, never instructions to the caller.
 import { accommodationRequirements } from './retreat-requirements.mjs';
+import { entityRequirements, decisionRequirements, locationRequirements } from './decision-requirements.mjs';
+import { workspaceIntent, resolveWorkspace } from './workspace-decision.mjs';
 export const SEGMENTS = ['food-dining', 'hospitality', 'home-real-estate', 'wellness-healthcare', 'family-schooling', 'outdoors-recreation'];
 const CITIES = ['Palm Springs', 'Cathedral City', 'Rancho Mirage', 'Palm Desert', 'Indian Wells', 'La Quinta', 'Indio', 'Coachella', 'Desert Hot Springs', 'Thousand Palms', 'Bermuda Dunes', 'Adjacent Communities', 'Coachella Valley'];
 const STOP = new Set('a an and are at be best by can find for from get give have here i in is it local me my near of on our place please quiet really shop should some team that the this to us want we what where which with would founder meeting founders option options business businesses ready agent preview answer need'.split(' '));
 export const normalize = (value) => String(value).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
 export function validateInput(input, tool = 'resolve_local_intent') {
   if (!input || typeof input !== 'object' || Array.isArray(input)) throw new TypeError('Arguments must be an object.');
-  const allowed = tool === 'get_business_preview' ? ['id'] : tool === 'search_business_previews' ? ['query', 'city', 'segment', 'limit'] : ['query', 'city', 'group_size', 'rooms', 'shared_lodging', 'day_only', 'nights', 'purpose', 'budget', 'privacy', 'accessibility', 'nearby', 'limit'];
+  const allowed = tool === 'get_business_preview' ? ['id'] : tool === 'search_business_previews' ? ['query', 'city', 'segment', 'limit'] : ['query', 'city', 'group_size', 'rooms', 'shared_lodging', 'day_only', 'nights', 'purpose', 'budget', 'privacy', 'accessibility', 'nearby', 'limit', 'decision', 'workspace_type', 'workspace_access', 'duration_hours', 'duration_days', 'budget_amount', 'budget_scope', 'working_setup', 'requested_entities', 'excluded_entities', 'required_action'];
   if (Object.keys(input).some((k) => !allowed.includes(k))) throw new TypeError('Unknown argument.');
-  for (const [key, max] of [['query', 1200], ['city', 80], ['id', 160], ['purpose', 160], ['budget', 200], ['privacy', 160], ['accessibility', 400]]) {
+  for (const [key, max] of [['query', 1200], ['city', 80], ['id', 160], ['purpose', 160], ['budget', 200], ['privacy', 160], ['accessibility', 400], ['working_setup', 200]]) {
     if (input[key] !== undefined && (typeof input[key] !== 'string' || input[key].length > max || !input[key].trim())) throw new TypeError(`${key} must be a nonempty string of at most ${max} characters.`);
   }
   if (tool === 'resolve_local_intent' && !input.query) throw new TypeError('query is required.');
@@ -21,6 +23,10 @@ export function validateInput(input, tool = 'resolve_local_intent') {
   for (const key of ['shared_lodging', 'day_only', 'nearby']) {
     if (input[key] !== undefined && typeof input[key] !== 'boolean') throw new TypeError(`${key} must be a boolean.`);
   }
+  const enums = { decision:['team-retreat','workspace','satellite-base','founder-support'], workspace_type:['coworking','meeting-room','office','virtual-office','founder-support'], workspace_access:['day-pass','member','appointment','public'], budget_scope:['total','per-person','per-hour','per-day'],required_action:['information','official_handoff','agent_assisted','transaction'] };
+  for(const [key,values] of Object.entries(enums)) if(input[key] !== undefined && !values.includes(input[key])) throw new TypeError(`Unknown ${key}.`);
+  for(const key of ['duration_hours','duration_days','budget_amount']) if(input[key] !== undefined && (typeof input[key] !== 'number' || !Number.isFinite(input[key]) || input[key] < (key === 'budget_amount' ? 0 : 0.25) || input[key] > (key === 'budget_amount' ? 100000000 : 365) || (key === 'duration_days' && !Number.isInteger(input[key])))) throw new TypeError(`${key} must be a bounded number.`);
+  for(const key of ['requested_entities','excluded_entities']) if(input[key] !== undefined && (!Array.isArray(input[key]) || input[key].length > 10 || input[key].some(v=>typeof v !== 'string'||!v.trim()||v.length>160))) throw new TypeError(`${key} must contain at most ten bounded entity names or IDs.`);
   if (input.segment !== undefined && !SEGMENTS.includes(input.segment)) throw new TypeError('Unknown segment.');
   return input;
 }
@@ -55,8 +61,9 @@ export function searchBusinessPreviews(input, catalog) {
   const tokens = terms(query, city);
   const coffee = /\b(coffee|cafe|cafes|matcha)\b/.test(normalize(query));
   const q = normalize(query);
-  const namedAnywhere = catalog.previews.filter((r) => normalize(r.name).length > 4 && q.includes(normalize(r.name)));
-  const candidates = catalog.previews.filter((r) => (!city || city === 'Coachella Valley' || normalize(r.city) === normalize(city)) && (!input.segment || r.segment === input.segment));
+  const searchable = [...catalog.previews.filter(o=>!(catalog.workspace?.options??[]).some(w=>w.id===o.id)),...(catalog.workspace?.options??[]).map(o=>(catalog.researched_entities??[]).find(r=>r.id===o.id)??o)];
+  const namedAnywhere = searchable.filter((r) => normalize(r.name).length > 4 && q.includes(normalize(r.name)));
+  const candidates = searchable.filter((r) => (!city || city === 'Coachella Valley' || normalize(r.city) === normalize(city)) && (!input.segment || r.segment === input.segment));
   if (city && city !== 'Coachella Valley' && namedAnywhere.length && namedAnywhere.every((r) => normalize(r.city) !== normalize(city))) {
     return { status: 'no_match', count: 0, total_matches: 0, city, results: [], catalog: catalog.source_counts,
       limitations: [...LIMITATIONS, 'The named record is not recorded in the requested city.'] };
@@ -113,7 +120,13 @@ export function resolveLocalIntent(input, catalog) {
   const base = { query, city, results: [], regional_context: [], unresolved_constraints: [], next_questions: [], limitations: [...LIMITATIONS] };
   if ((!city && /\b(san diego|san francisco|los angeles|new york|london|las vegas)\b/.test(q)) || (city && !CITIES.includes(city))) return { ...base, status: 'no_match', intent: 'outside-coverage', limitations: [...LIMITATIONS, 'The requested location is outside this catalog’s coverage.'] };
   const group = input.group_size ?? (Number(q.match(/\b(\d{1,4})\s*(?:person|people|guest|guests|member|members|attendees|employees)\b/)?.[1]) || null);
-  if (isTeamRetreatQuestion(q)) {
+  const workspace = workspaceIntent(input,q);
+  if(workspace) {
+    const result=resolveWorkspace(input,catalog,base,q,city,group,workspace);
+    if(workspace==='satellite-base' || workspace==='founder-support') result.regional_context=nodeContext(catalog,['palm-desert-economic-development','coachella-valley-economic-development','cook-street-university-row','workforce-talent','innovation-economy','north-palm-desert-development-zone'],city);
+    return result;
+  }
+  if (input.decision === 'team-retreat' || isTeamRetreatQuestion(q)) {
     return resolveRetreat(input, catalog, base, q, city, group);
   }
   if (/\b(satellite|relocat(?:e|ion|ing)|startup|workforce|econom(?:y|ic)|invest|investment|university|universities)\b/.test(q) && !/\b(coffee|cafe|restaurant)\b/.test(q)) {
@@ -141,49 +154,35 @@ function workingSpaces(o) {
   }).filter((s) => /conference|boardroom|u[_ -]?shape|classroom|schoolroom|working/.test(normalize(s.layout)) && Number.isFinite(s.capacity));
 }
 function resolveRetreat(input, catalog, base, q, city, group) {
-  const cityPattern = city ? normalize(city) : '';
-  const directBoundary = city && new RegExp(`\\b(?:in|within|only in) ${cityPattern}\\b`).test(q);
-  const distanceRequest = city && new RegExp(`\\b(?:within \\d+ (?:miles?|minutes?)|\\d+ (?:miles?|minutes?)(?: drive)?|drive time) (?:of |from |to )?${cityPattern}\\b`).test(q);
-  const nearby = !input.city && !!city && city !== 'Coachella Valley' && !directBoundary
-    && (input.nearby === true || distanceRequest || new RegExp(`\\b(?:near|around|close to|outside(?: of)?) ${cityPattern}\\b`).test(q));
-  // Structured city is an explicit municipality, even with nearby:true.
-  const strictCity = !!city && city !== 'Coachella Valley' && (!!input.city || directBoundary || !nearby);
+  const location=locationRequirements(input,city);
+  const nearby=location.nearby,strictCity=location.strict_city,distanceRequest=location.distance_unverified;
   const lodgingRequirements = accommodationRequirements({ ...input, group_size: group });
   const { shared_lodging: shared, day_only: dayOnly, nights, rooms } = lodgingRequirements;
   const requestedRooms = lodgingRequirements.rooms_basis === 'explicit' ? rooms : null;
   const purposeText = normalize(input.purpose ?? q);
   const purpose = /wellness|mindfulness|yoga/.test(purposeText) ? 'wellness' : /strategy|executive|leadership|board/.test(purposeText) ? 'leadership' : input.purpose ? purposeText : 'team';
-  const budget = input.budget ?? (input.query.match(/\$[\d,]+(?:\.\d{2})?(?:\s*(?:total|per person|per night))?/)?.[0] || (/\b(budget|affordable|economical|cost conscious|practical|inexpensive)\b/.test(q) ? 'budget-conscious; amount and scope unspecified' : null));
+  const budget = input.budget ?? (input.budget_amount !== undefined ? `${input.budget_amount} USD (${input.budget_scope ?? 'scope unresolved'})` : null) ?? (input.query.match(/\$[\d,]+(?:\.\d{2})?(?:\s*(?:total|per person|per night))?/)?.[0] || (/\b(budget|affordable|economical|cost conscious|practical|inexpensive)\b/.test(q) ? 'budget-conscious; amount and scope unspecified' : null));
   const budgetSensitive = !!budget || /\b(practical|affordable|economical)\b/.test(q);
   const privacy = input.privacy ?? (/\b(exclusive|buyout|buy out|entire property|private (?:estate|property))\b/.test(q) ? 'exclusive-use' : /\b(private|privacy|confidential|quiet)\b/.test(q) ? 'private-working-room' : null);
   const exclusive = /exclusive|buyout|buy out|entire property|private estate/.test(normalize(privacy ?? ''));
   const accessibility = input.accessibility ?? (/\b(accessib(?:le|ility)|wheelchair|step free|mobility|ada)\b/.test(q) ? 'Accessibility requirements mentioned; specific needs unresolved.' : null);
   const boutique = /\b(boutique|intimate|small hotel)\b/.test(q);
   const privateProperty = /\b(private (?:estate|property|house)|villa|villas|estate|estates|shared house)\b/.test(q);
-  const requirements = { ...lodgingRequirements, purpose, budget, privacy, accessibility, location: city, nearby: !!nearby && !strictCity };
+  const generalRequirements=decisionRequirements(input,group);
+  const requirements = { ...generalRequirements,...lodgingRequirements, purpose, budget, privacy, accessibility, location: city, nearby: !!nearby && !strictCity };
   const excluded = [];
   let candidates = (catalog.retreat?.options ?? []).filter((o) => o.qualified === true);
   const names = (o) => [...new Set([o.name, o.name.split(/[,(]/)[0], o.slug, ...(o.aliases ?? [])].map(normalize).filter(s => s.length >= 4))];
-  const knownNames = candidates.flatMap(names).sort((a, b) => b.length - a.length).join('|');
-  const negativePrefix = new RegExp(`\\b(?:exclude|excluding|avoid|except(?: for)?|alternatives? to|instead of|other than|rather than|apart from|without|not(?: at)?|do not (?:include|recommend|choose|suggest)|don t (?:include|recommend|choose|suggest)) (?:the )?(?:(?:${knownNames}) (?:(?:and|or) )?)*$`);
-  const mentions = candidates.map(o => {
-    let positive = false, negative = false;
-    for (const alias of names(o)) for (const match of q.matchAll(new RegExp(`\\b${alias}\\b`, 'g'))) {
-      const prefix = q.slice(0, match.index);
-      const negatedExclusion = /\b(?:do not|don t|never|not) (?:exclude|avoid) (?:the )?$/.test(prefix);
-      if (!negatedExclusion && negativePrefix.test(prefix)) negative = true;
-      else if (!negatedExclusion) positive = true;
-    }
-    return { o, positive, negative };
-  });
-  for (const { o } of mentions.filter(m => m.negative)) excluded.push({ id: o.id, name: o.name, city: o.city, reasons: [{ reason: 'Excluded at the caller’s request for alternatives or omission.', evidence_type: 'caller_requirement', source_url: null }] });
-  candidates = mentions.filter(m => !m.negative).map(m => m.o);
-  const named = mentions.filter(m => m.positive && !m.negative).map(m => m.o);
-  if (named.length) candidates = named;
+  const entityRules=entityRequirements(input,candidates);
+  const mentions=entityRules.candidates.map(o=>({o}));
+  excluded.push(...entityRules.exclusions);
+  candidates=entityRules.candidates;
+  const named=entityRules.named;
+  requirements.requirement_conflicts.push(...generalRequirements.requirement_conflicts,...location.location_conflicts,...entityRules.conflicts);
   const requestedName = q.match(/\b(?:named|called|at) (?:the )?(.+?)(?: in | near | around | for | with |$)/)?.[1];
   const genericTarget = requestedName && (CITIES.some((c) => normalize(c) === requestedName) || /^(?:a |an |our |least |most )/.test(requestedName) || /^(?:(?:small|private|boutique|luxury|practical|affordable) )?(?:hotel|resort|venue|property|estate|home|night)$/.test(requestedName));
-  const requestedKnown = requestedName && mentions.some(({o}) => names(o).some(alias => new RegExp(`^${alias}\\b`).test(requestedName)));
-  const namedUnknown = !named.length && (/\b(unrecorded|nonexistent|unknown venue|zzqx|zzq)\b/.test(q) || (requestedName && !genericTarget && !requestedKnown));
+  const requestedKnown = requestedName && (catalog.retreat?.options??[]).some(o => names(o).some(alias => new RegExp(`^${alias}\\b`).test(requestedName)));
+  const namedUnknown = entityRules.unknown_requested.length > 0 || !named.length && (/\b(unrecorded|nonexistent|unknown venue|zzqx|zzq)\b/.test(q) || (requestedName && !genericTarget && !requestedKnown));
   if (namedUnknown) {
     return { ...base, status: 'no_match', intent: 'team-retreat', group_size: group, requirements, exclusions: [], supporting_services: [], next_questions: ['What is the exact venue name or its official group-planning URL?'], limitations: [...base.limitations, 'No qualified researched record establishes the named venue. No unrelated venue fallback is returned.'] };
   }
@@ -254,6 +253,7 @@ function resolveRetreat(input, catalog, base, q, city, group) {
   base.unestablished_matches = excluded.filter((e) => e.reasons.every((r) => r.evidence_type === 'unknown'));
   base.regional_context = nodeContext(catalog, ['retreat-economy', 'desert-season', 'aviation-gateway'], strictCity ? city : null);
   base.unresolved_constraints = ['Dates, current room availability, total budget, room configuration and required accessibility need confirmation with the property.'];
+  if(['transaction','agent_assisted'].includes(requirements.required_action)) base.unresolved_constraints.push('Requested action exceeds the official handoff capability; no reservation, payment or request has been made.');
   if (nearby && !strictCity) {
     base.limitations.push(`The question uses ${city ?? 'the requested location'} as a nearby destination anchor. Options span the Coachella Valley; proximity and drive times have not been verified.`);
     if (distanceRequest) base.unresolved_constraints.push('The requested distance or drive-time boundary cannot be applied because sourced distances and travel times are absent.');
@@ -282,6 +282,7 @@ function resolveRetreat(input, catalog, base, q, city, group) {
     primary_sources: o.primary_sources ?? [], field_evidence: o.field_evidence ?? {}, official_actions: actionFor(o) }));
   if (base.supporting_services.length) base.limitations.push('Supporting services are separate inquiry pathways, not a combined bookable package or confirmed availability.');
   return { ...base, status: base.results.length ? 'needs_details' : 'no_match', intent: 'team-retreat', group_size: group, requirements,
+    requirement_conflicts:requirements.requirement_conflicts,
     selection_method: 'Payment-independent evidence and preference comparison; unknown requirements remain conditional. A published working-layout match is preferred; total inventory is not current availability.',
     qualified_candidates_considered: candidates.length };
 }

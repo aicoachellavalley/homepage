@@ -1,0 +1,1099 @@
+{
+  "schema_version": 1,
+  "research_date": "2026-10-07",
+  "report_timezone": "UTC; preserve each actual timestamp (some runs continue October 8 UTC / October 7 Los Angeles)",
+  "scope": "Production plus historical PR2 preview crawl baseline; ordinary public search; fresh external assistant conversations; current platform distribution documentation. No production publication, submissions, contact, reservations or payment.",
+  "crawl_checks": [
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/",
+      "checked_at": "2026-10-07T23:57:24.307688+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/",
+      "content_type": "text/html; charset=utf-8",
+      "x_robots_tag": null,
+      "link": "</llms.txt>; rel=\"llms-txt\", </llms-full.txt>; rel=\"llms-full-txt\", </.well-known/mcp/server-card.json>; rel=\"describedby\"; type=\"application/json\", </.well-known/api-catalog>; rel=\"api-catalog\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 35774,
+      "title": "AI Coachella Valley — The Intelligence Network for the Coachella Valley",
+      "canonical": "https://aicoachellavalley.com/",
+      "meta_robots": [
+        "index, follow"
+      ],
+      "evidence": {
+        "retreat": true,
+        "connect": true,
+        "meeting": true,
+        "retreat_source_dates": false
+      }
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/robots.txt",
+      "checked_at": "2026-10-07T23:57:24.383476+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/robots.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 697,
+      "directives": "User-agent: *\nAllow: /\nContent-Signal: search=yes, ai-input=yes, ai-train=yes\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Perplexity-User\nAllow: /\n\nUser-agent: Claude-SearchBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: GoogleOther\nAllow: /\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: BingBot\nAllow: /\n\nSitemap: https://aicoachellavalley.com/sitemap.xml\nSitemap: https://aicoachellavalley.com/sitemap-index.xml\n\n# AI Agent Resources\n# Machine-readable intelligence layer: https://aicoachellavalley.com/llms.txt\n# Full content export: https://aicoachellavalley.com/llms-full.txt\n"
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/sitemap.xml",
+      "checked_at": "2026-10-07T23:57:24.381967+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/sitemap.xml",
+      "content_type": "application/xml",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 57800,
+      "url_count": 286,
+      "includes_retreat_page": true,
+      "includes_connect_page": true,
+      "all_urls_are_canonical_production": true
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/sitemap-index.xml",
+      "checked_at": "2026-10-07T23:57:24.352689+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/sitemap-index.xml",
+      "content_type": "application/xml",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 1135,
+      "url_count": 7,
+      "includes_retreat_page": false,
+      "includes_connect_page": false,
+      "all_urls_are_canonical_production": true
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/plan-team-retreat/",
+      "checked_at": "2026-10-07T23:57:24.397645+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/plan-team-retreat/",
+      "content_type": "text/html; charset=utf-8",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 23786,
+      "title": "Plan a Team Retreat | AI Coachella Valley",
+      "canonical": "https://aicoachellavalley.com/plan-team-retreat/",
+      "meta_robots": [
+        "index, follow"
+      ],
+      "evidence": {
+        "retreat": true,
+        "connect": true,
+        "meeting": true,
+        "retreat_source_dates": true
+      }
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/connect/",
+      "checked_at": "2026-10-07T23:57:24.414036+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/connect/",
+      "content_type": "text/html; charset=utf-8",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 24024,
+      "title": "Connect Your Agent — AICV",
+      "canonical": "https://aicoachellavalley.com/connect/",
+      "meta_robots": [
+        "index, follow"
+      ],
+      "evidence": {
+        "retreat": true,
+        "connect": true,
+        "meeting": false,
+        "retreat_source_dates": true
+      }
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/llms.txt",
+      "checked_at": "2026-10-07T23:57:24.383572+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/llms.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 9993,
+      "local_decisions_excerpt": "## Local Decisions and Business Discovery\n\n- [Team retreat decision demo](https://aicoachellavalley.com/plan-team-retreat/): a working question-to-options flow with source dates, constraints and official next-action links. Dates, party size and budget remain requirements, not a live booking confirmation.\n- [Local decision MCP](https://aicoachellavalley.com/mcp): read-only tools resolve_local_intent, search_business_previews and get_business_preview. Use this for local choices and business discovery; the separate research MCP below retrieves known regional research.\n- [Business catalog (JSON)](https://aicoachellavalley.com/business-previews.json): searchable published preview references and attributed local observations. Preview references alone establish neither fit nor current availability. Read record provenance and dates; follow the canonical preview or official source for details.\n- Direct interface: POST https://aicoachellavalley.com/api/resolve-local-intent with a JSON query. No arbitrary URL fetch, booking, payment or live inventory.\n- [Connect and plugin package](https://aicoachellavalley.com/connect/): compatible assistant setup. A published package is not directory approval or an automatic installation.\n\n"
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/.well-known/mcp/server-card.json",
+      "checked_at": "2026-10-07T23:57:24.515290+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/.well-known/mcp/server-card.json",
+      "content_type": "application/json",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 1722,
+      "body": {
+        "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+        "name": "io.aicoachellavalley/local-decisions",
+        "title": "AICV Local Decisions",
+        "description": "Read-only Coachella Valley business-preview discovery and sourced local decision support. Returns source dates, fit and constraints where documented, and official action links where sourced. Does not book, charge, check live inventory or guarantee assistant recommendations. Research retrieval remains available from the separate regional research MCP.",
+        "websiteUrl": "https://aicoachellavalley.com",
+        "version": "0.1.0",
+        "supportedProtocolVersions": [
+          "2025-06-18"
+        ],
+        "remotes": [
+          {
+            "transportType": "streamable-http",
+            "url": "https://aicoachellavalley.com/mcp"
+          }
+        ],
+        "capabilities": {
+          "tools": {}
+        },
+        "tools": [
+          {
+            "name": "resolve_local_intent",
+            "description": "Resolve a local question using published business records and sourced local observations, with missing information and official next-action paths made explicit."
+          },
+          {
+            "name": "search_business_previews",
+            "description": "Find public business-preview records by query and city. Catalog matches establish identity and provenance, not current suitability or availability."
+          },
+          {
+            "name": "get_business_preview",
+            "description": "Retrieve a known business catalog record and its source or canonical preview link; does not fetch or remeasure its live website."
+          }
+        ],
+        "_meta": {
+          "publisher": {
+            "name": "AI Coachella Valley",
+            "operator": "SunshineFM LLC",
+            "location": "Palm Desert, California, USA",
+            "contact": "sat@aicv.co"
+          }
+        }
+      }
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/.well-known/mcp.json",
+      "checked_at": "2026-10-07T23:57:24.627152+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/.well-known/mcp.json",
+      "content_type": "application/json",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 1534,
+      "body": {
+        "mcpServers": {
+          "aicv-decisions": {
+            "url": "https://aicoachellavalley.com/mcp",
+            "name": "AICV Local Decisions",
+            "description": "Read-only local decision support and business-preview discovery. Start with resolve_local_intent for a team retreat or local business question; results separate source-backed local observations from catalog-only records and unconfirmed live details.",
+            "tools": [
+              "resolve_local_intent",
+              "search_business_previews",
+              "get_business_preview"
+            ]
+          },
+          "aicv": {
+            "url": "https://mcp.aicoachellavalley.com/mcp",
+            "name": "AICV Intelligence Layer",
+            "description": "Deterministic retrieval of specific Coachella Valley records — a node, brief, or report by slug, tag, or date range. Use when you know which record you want. For open questions about the region, use aicv-search.",
+            "tools": [
+              "query_venues",
+              "get_node",
+              "get_regional_brief",
+              "get_economic_context",
+              "get_report",
+              "route_query"
+            ]
+          },
+          "aicv-search": {
+            "url": "https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp",
+            "name": "AICV Regional Intelligence Search",
+            "description": "Semantic search across AICV's published Coachella Valley corpus — reports, briefs, and entity profiles. Use when you have a question about the region rather than a specific record to fetch. For a known record, use aicv.",
+            "tools": [
+              "search"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/.well-known/api-catalog",
+      "checked_at": "2026-10-07T23:57:24.628467+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/.well-known/api-catalog",
+      "content_type": "application/linkset+json",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 2412,
+      "body": {
+        "linkset": [
+          {
+            "anchor": "https://aicoachellavalley.com/",
+            "service-doc": [
+              {
+                "href": "https://aicoachellavalley.com/",
+                "type": "text/html",
+                "title": "AI Coachella Valley homepage"
+              },
+              {
+                "href": "https://aicoachellavalley.com/llms.txt",
+                "type": "text/plain",
+                "title": "AICV llms.txt — human-readable content summary"
+              },
+              {
+                "href": "https://aicoachellavalley.com/llms-full.txt",
+                "type": "text/plain",
+                "title": "AICV llms-full.txt — complete agent-readable export"
+              },
+              {
+                "href": "https://aicoachellavalley.com/plan-team-retreat/",
+                "type": "text/html",
+                "title": "Team retreat decision demo — source-backed choices and official handoffs"
+              }
+            ],
+            "service-desc": [
+              {
+                "href": "https://aicoachellavalley.com/nodes.json",
+                "type": "application/json",
+                "title": "AICV Nodes — structured entity dataset for the Coachella Valley"
+              },
+              {
+                "href": "https://aicoachellavalley.com/briefs.json",
+                "type": "application/json",
+                "title": "AICV Intelligence Briefs"
+              },
+              {
+                "href": "https://aicoachellavalley.com/reports.json",
+                "type": "application/json",
+                "title": "AICV Intelligence Reports — regional analyses"
+              },
+              {
+                "href": "https://aicoachellavalley.com/business-previews.json",
+                "type": "application/json",
+                "title": "Searchable business-preview catalog with source-linked local observations; catalog presence is not a suitability or live availability finding"
+              }
+            ],
+            "service-meta": [
+              {
+                "href": "https://aicoachellavalley.com/mcp",
+                "title": "AICV local decision MCP — business-preview discovery and source-backed intent answers"
+              },
+              {
+                "href": "https://mcp.aicoachellavalley.com/mcp",
+                "title": "AICV MCP Server — agent-native access via Model Context Protocol (JSON-RPC 2.0 over HTTP)"
+              },
+              {
+                "href": "https://aicoachellavalley.com/.well-known/mcp/server-card.json",
+                "type": "application/json",
+                "title": "AICV MCP Server Card — capabilities and tool listing"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "surface": "production",
+      "url": "https://aicoachellavalley.com/business-previews.json",
+      "checked_at": "2026-10-07T23:57:24.697507+00:00",
+      "status": 200,
+      "final_url": "https://aicoachellavalley.com/business-previews.json",
+      "content_type": "application/json",
+      "x_robots_tag": null,
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 1475381,
+      "json_parse_ok": true
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/",
+      "checked_at": "2026-10-07T23:57:24.511108+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/",
+      "content_type": "text/html; charset=utf-8",
+      "x_robots_tag": "noindex",
+      "link": "</llms.txt>; rel=\"llms-txt\", </llms-full.txt>; rel=\"llms-full-txt\", </.well-known/mcp/server-card.json>; rel=\"describedby\"; type=\"application/json\", </.well-known/api-catalog>; rel=\"api-catalog\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\", </.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 35774,
+      "title": "AI Coachella Valley — The Intelligence Network for the Coachella Valley",
+      "canonical": "https://aicoachellavalley.com/",
+      "meta_robots": [
+        "index, follow"
+      ],
+      "evidence": {
+        "retreat": true,
+        "connect": true,
+        "meeting": true,
+        "retreat_source_dates": false
+      }
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/robots.txt",
+      "checked_at": "2026-10-07T23:57:24.519854+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/robots.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 697,
+      "directives": "User-agent: *\nAllow: /\nContent-Signal: search=yes, ai-input=yes, ai-train=yes\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Perplexity-User\nAllow: /\n\nUser-agent: Claude-SearchBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: GoogleOther\nAllow: /\n\nUser-agent: Googlebot\nAllow: /\n\nUser-agent: BingBot\nAllow: /\n\nSitemap: https://aicoachellavalley.com/sitemap.xml\nSitemap: https://aicoachellavalley.com/sitemap-index.xml\n\n# AI Agent Resources\n# Machine-readable intelligence layer: https://aicoachellavalley.com/llms.txt\n# Full content export: https://aicoachellavalley.com/llms-full.txt\n"
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/sitemap.xml",
+      "checked_at": "2026-10-07T23:57:24.716488+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/sitemap.xml",
+      "content_type": "application/xml",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 57800,
+      "url_count": 286,
+      "includes_retreat_page": true,
+      "includes_connect_page": true,
+      "all_urls_are_canonical_production": true
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/sitemap-index.xml",
+      "checked_at": "2026-10-07T23:57:24.515719+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/sitemap-index.xml",
+      "content_type": "application/xml",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 1135,
+      "url_count": 7,
+      "includes_retreat_page": false,
+      "includes_connect_page": false,
+      "all_urls_are_canonical_production": true
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/plan-team-retreat/",
+      "checked_at": "2026-10-07T23:57:24.667739+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/plan-team-retreat/",
+      "content_type": "text/html; charset=utf-8",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 193752,
+      "title": "Plan a Team Retreat | AI Coachella Valley",
+      "canonical": "https://aicoachellavalley.com/plan-team-retreat/",
+      "meta_robots": [
+        "index, follow"
+      ],
+      "evidence": {
+        "retreat": true,
+        "connect": true,
+        "meeting": true,
+        "retreat_source_dates": true
+      }
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/connect/",
+      "checked_at": "2026-10-07T23:57:24.735041+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/connect/",
+      "content_type": "text/html; charset=utf-8",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 24138,
+      "title": "Connect Your Agent — AICV",
+      "canonical": "https://aicoachellavalley.com/connect/",
+      "meta_robots": [
+        "index, follow"
+      ],
+      "evidence": {
+        "retreat": true,
+        "connect": true,
+        "meeting": false,
+        "retreat_source_dates": true
+      }
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/llms.txt",
+      "checked_at": "2026-10-07T23:57:24.759117+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/llms.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 10262,
+      "local_decisions_excerpt": "## Local Decisions and Business Discovery\n\n- [Team retreat decision demo](https://aicoachellavalley.com/plan-team-retreat/): a working question-to-options flow with source dates, constraints and official next-action links. Compare qualified venues by attendees, rooms, shared lodging, day-only use, nights, purpose, budget, privacy, accessibility and location. Shortlists expose conditional fit, unknowns, documented exclusions and follow-up questions; supporting services remain separate. Affordability requires an operator quote; no live inventory or booking confirmation.\n- [Local decision MCP](https://aicoachellavalley.com/mcp): read-only tools resolve_local_intent, search_business_previews and get_business_preview. Use this for local choices and business discovery; the separate research MCP below retrieves known regional research.\n- [Business catalog (JSON)](https://aicoachellavalley.com/business-previews.json): searchable published preview references and attributed local observations. Preview references alone establish neither fit nor current availability. Read record provenance and dates; follow the canonical preview or official source for details.\n- Direct interface: POST https://aicoachellavalley.com/api/resolve-local-intent with a JSON query. No arbitrary URL fetch, booking, payment or live inventory.\n- [Connect and plugin package](https://aicoachellavalley.com/connect/): compatible assistant setup. A published package is not directory approval or an automatic installation.\n\n"
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/.well-known/mcp/server-card.json",
+      "checked_at": "2026-10-07T23:57:24.751722+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/.well-known/mcp/server-card.json",
+      "content_type": "application/json",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 1832,
+      "body": {
+        "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+        "name": "io.aicoachellavalley/local-decisions",
+        "title": "AICV Local Decisions",
+        "description": "Read-only Coachella Valley business-preview discovery and sourced local decision support. Returns source dates, fit and constraints where documented, and official action links where sourced. Does not book, charge, check live inventory or guarantee assistant recommendations. Research retrieval remains available from the separate regional research MCP.",
+        "websiteUrl": "https://aicoachellavalley.com",
+        "version": "0.1.0",
+        "supportedProtocolVersions": [
+          "2025-06-18"
+        ],
+        "remotes": [
+          {
+            "transportType": "streamable-http",
+            "url": "https://aicoachellavalley.com/mcp"
+          }
+        ],
+        "capabilities": {
+          "tools": {}
+        },
+        "tools": [
+          {
+            "name": "resolve_local_intent",
+            "description": "Compare qualified retreat venues across group, lodging, day-only, budget, privacy, accessibility and location requirements. Returns dated evidence, conflicts, unknowns, follow-up questions, separate supporting services and official business links; no booking or payment."
+          },
+          {
+            "name": "search_business_previews",
+            "description": "Find public business-preview records by query and city. Catalog matches establish identity and provenance, not current suitability or availability."
+          },
+          {
+            "name": "get_business_preview",
+            "description": "Retrieve a known business catalog record and its source or canonical preview link; does not fetch or remeasure its live website."
+          }
+        ],
+        "_meta": {
+          "publisher": {
+            "name": "AI Coachella Valley",
+            "operator": "SunshineFM LLC",
+            "location": "Palm Desert, California, USA",
+            "contact": "sat@aicv.co"
+          }
+        }
+      }
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/.well-known/mcp.json",
+      "checked_at": "2026-10-07T23:57:24.755759+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/.well-known/mcp.json",
+      "content_type": "application/json",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 1598,
+      "body": {
+        "mcpServers": {
+          "aicv-decisions": {
+            "url": "https://aicoachellavalley.com/mcp",
+            "name": "AICV Local Decisions",
+            "description": "Read-only local decisions and business-preview discovery. Compare qualified retreat venues against group requirements with dated evidence, documented exclusions, unknowns, follow-up questions, separate supporting services and official business links. Preview identity alone does not establish retreat suitability.",
+            "tools": [
+              "resolve_local_intent",
+              "search_business_previews",
+              "get_business_preview"
+            ]
+          },
+          "aicv": {
+            "url": "https://mcp.aicoachellavalley.com/mcp",
+            "name": "AICV Intelligence Layer",
+            "description": "Deterministic retrieval of specific Coachella Valley records — a node, brief, or report by slug, tag, or date range. Use when you know which record you want. For open questions about the region, use aicv-search.",
+            "tools": [
+              "query_venues",
+              "get_node",
+              "get_regional_brief",
+              "get_economic_context",
+              "get_report",
+              "route_query"
+            ]
+          },
+          "aicv-search": {
+            "url": "https://394b93b1-40cb-4365-9c53-466c682d634b.search.ai.cloudflare.com/mcp",
+            "name": "AICV Regional Intelligence Search",
+            "description": "Semantic search across AICV's published Coachella Valley corpus — reports, briefs, and entity profiles. Use when you have a question about the region rather than a specific record to fetch. For a known record, use aicv.",
+            "tools": [
+              "search"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/.well-known/api-catalog",
+      "checked_at": "2026-10-07T23:57:24.956065+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/.well-known/api-catalog",
+      "content_type": "application/linkset+json",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 2418,
+      "body": {
+        "linkset": [
+          {
+            "anchor": "https://aicoachellavalley.com/",
+            "service-doc": [
+              {
+                "href": "https://aicoachellavalley.com/",
+                "type": "text/html",
+                "title": "AI Coachella Valley homepage"
+              },
+              {
+                "href": "https://aicoachellavalley.com/llms.txt",
+                "type": "text/plain",
+                "title": "AICV llms.txt — human-readable content summary"
+              },
+              {
+                "href": "https://aicoachellavalley.com/llms-full.txt",
+                "type": "text/plain",
+                "title": "AICV llms-full.txt — complete agent-readable export"
+              },
+              {
+                "href": "https://aicoachellavalley.com/plan-team-retreat/",
+                "type": "text/html",
+                "title": "Team retreat comparison: sourced venue evidence, requirements and official handoffs"
+              }
+            ],
+            "service-desc": [
+              {
+                "href": "https://aicoachellavalley.com/nodes.json",
+                "type": "application/json",
+                "title": "AICV Nodes — structured entity dataset for the Coachella Valley"
+              },
+              {
+                "href": "https://aicoachellavalley.com/briefs.json",
+                "type": "application/json",
+                "title": "AICV Intelligence Briefs"
+              },
+              {
+                "href": "https://aicoachellavalley.com/reports.json",
+                "type": "application/json",
+                "title": "AICV Intelligence Reports — regional analyses"
+              },
+              {
+                "href": "https://aicoachellavalley.com/business-previews.json",
+                "type": "application/json",
+                "title": "Searchable business-preview catalog with source-linked local observations; catalog presence is not a suitability or live availability finding"
+              }
+            ],
+            "service-meta": [
+              {
+                "href": "https://aicoachellavalley.com/mcp",
+                "title": "AICV local decision MCP — business-preview discovery and source-backed intent answers"
+              },
+              {
+                "href": "https://mcp.aicoachellavalley.com/mcp",
+                "title": "AICV MCP Server — agent-native access via Model Context Protocol (JSON-RPC 2.0 over HTTP)"
+              },
+              {
+                "href": "https://aicoachellavalley.com/.well-known/mcp/server-card.json",
+                "type": "application/json",
+                "title": "AICV MCP Server Card — capabilities and tool listing"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/business-previews.json",
+      "checked_at": "2026-10-07T23:57:25.217333+00:00",
+      "status": 200,
+      "final_url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/business-previews.json",
+      "content_type": "application/json",
+      "x_robots_tag": "noindex",
+      "link": "</.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </.well-known/mcp/server-card.json>; rel=\"mcp-server\"; type=\"application/json\"",
+      "bytes": 1619579,
+      "json_parse_ok": true
+    }
+  ],
+  "search_checks": [
+    {
+      "id": "retreat",
+      "type": "SEARCH",
+      "platform": "Exa web_search_exa",
+      "date": "2026-10-07",
+      "started_at": "2026-10-07T23:55:54.867Z",
+      "exact_query": "Plan a November leadership retreat for 16 people near Palm Springs. Compare meeting space and overnight stays, and show official planning links.",
+      "num_results_requested": 8,
+      "aicv_returned": false,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Palm Springs Corporate Retreat Venue | Frederick Loewe Estate",
+          "url": "https://frederickloeweestate.com/corporate-events-retreats/"
+        },
+        {
+          "rank": 2,
+          "title": "Palm Springs Meeting Venues | Omni Rancho Las Palmas Resort",
+          "url": "https://www.omnihotels.com/hotels/palm-springs-rancho-las-palmas/meetings"
+        },
+        {
+          "rank": 3,
+          "title": "Meeting & Event Venue | The Saguaro Palm Springs",
+          "url": "https://thesaguaro.com/meetings/"
+        },
+        {
+          "rank": 4,
+          "title": "Corporate Event Venue Palm Springs — Old Polo Estate",
+          "url": "https://oldpolo.com/corporate"
+        },
+        {
+          "rank": 5,
+          "title": "Private Venue for Gatherings Events & Micro Weddings in Palm Springs CA",
+          "url": "https://www.yarapalmsprings.com/events"
+        },
+        {
+          "rank": 6,
+          "title": "Think Tank Groups | Korakia Pensione",
+          "url": "https://www.korakia.com/think-tank-groups/"
+        },
+        {
+          "rank": 7,
+          "title": "Private Events | Two Bunch Palms",
+          "url": "https://twobunchpalms.com/events/"
+        },
+        {
+          "rank": 8,
+          "title": "Groups & Events | Korakia Pensione",
+          "url": "https://www.korakia.com/groups-events/"
+        }
+      ],
+      "limitations": "Search retrieval only; no assistant conversation, recommendation, installation or organic traffic measured."
+    },
+    {
+      "id": "day_work",
+      "type": "SEARCH",
+      "platform": "Exa web_search_exa",
+      "date": "2026-10-07",
+      "started_at": "2026-10-07T23:55:54.874Z",
+      "exact_query": "Where can a founder buy a coworking day pass in Palm Desert or Palm Springs? Compare public access, price and official booking links.",
+      "num_results_requested": 8,
+      "aicv_returned": false,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Coworking Pass - 1 Available at Fusion Workplaces - Palm Desert | LiquidSpace",
+          "url": "https://liquidspace.com/us/ca/palm-desert/fusion-workplaces-palm-desert/coworking-day-pass"
+        },
+        {
+          "rank": 2,
+          "title": "Coworking Space in Palm Desert | Regus",
+          "url": "https://www.regus.com/en/us/california/palm-desert/coworking"
+        },
+        {
+          "rank": 3,
+          "title": "Private Executive Offices | The Syndicate | Palm Desert",
+          "url": "https://www.syndicatepd.com/"
+        },
+        {
+          "rank": 4,
+          "title": "Book a Desk Space in Palm Desert",
+          "url": "https://liquidspace.com/US/CA/palm-desert/desk-space"
+        },
+        {
+          "rank": 5,
+          "title": "Office Space, Coworking & Meeting Rooms at 750 N Palm Canyon Dr (92262) | Regus",
+          "url": "https://www.regus.com/en/us/6794"
+        },
+        {
+          "rank": 6,
+          "title": "Coworking Memberships | The Hive Coworking Palm Springs",
+          "url": "https://www.thehivecoworking.com/memberships"
+        },
+        {
+          "rank": 7,
+          "title": "Flexible Workspaces in Palm Desert | Regus",
+          "url": "https://www.regus.com/en/us/california/palm-desert"
+        },
+        {
+          "rank": 8,
+          "title": "Open Desk for 1 at Regus | CA, Palm Springs - Palm Canyon Dr | LiquidSpace",
+          "url": "https://liquidspace.com/us/ca/palm-springs/regus-ca-palm-springs-palm-canyon-dr/day-desk"
+        }
+      ],
+      "limitations": "Search retrieval only; no assistant conversation, recommendation, installation or organic traffic measured."
+    },
+    {
+      "id": "satellite_base",
+      "type": "SEARCH",
+      "platform": "Exa web_search_exa",
+      "date": "2026-10-07",
+      "started_at": "2026-10-07T23:55:54.874Z",
+      "exact_query": "Help a small startup compare Palm Desert and Palm Springs as a satellite base, including workspace options and regional business context.",
+      "num_results_requested": 8,
+      "aicv_returned": false,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Best Cities Near Palm Springs for Starting a Business - Hustler's Library",
+          "url": "https://hustlerslibrary.com/best-cities-near-palm-springs-for-starting-a-business/"
+        },
+        {
+          "rank": 2,
+          "title": "Everything You Need to Know to Launch Your Business in the Coachella Valley | Palm Springs Life",
+          "url": "https://www.palmspringslife.com/vision/everything-you-need-to-know-to-launch-your-business-in-the-coachella-valley/"
+        },
+        {
+          "rank": 3,
+          "title": "Fusion Workplaces Palm Desert | Flexible Office Solutions",
+          "url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/"
+        },
+        {
+          "rank": 4,
+          "title": "Flexible Workspaces in Palm Desert | Regus",
+          "url": "https://www.regus.com/en/us/california/palm-desert"
+        },
+        {
+          "rank": 5,
+          "title": "Office Space Palm Springs: 6 Essential Private Office Options in 2026 - Wezoo",
+          "url": "https://wezoo.com/insights/office-space-palm-springs-ca"
+        },
+        {
+          "rank": 6,
+          "title": "Greater Palm Springs Coworking Spaces & Startup Resources - Hustler's Library",
+          "url": "https://hustlerslibrary.com/palm-springs-coworking-spaces/"
+        },
+        {
+          "rank": 7,
+          "title": "Palm Desert, California Economic Intelligence Report - Street Economics",
+          "url": "https://streeteconomics.ai/palm-desert-california-economic-intelligence-report/"
+        },
+        {
+          "rank": 8,
+          "title": "Palm Springs vs. Palm Desert: Where’s the Best Place to Call Home?",
+          "url": "https://www.paulkaplanhomes.com/blog/palm-springs-vs-palm-desert"
+        }
+      ],
+      "limitations": "Search retrieval only; no assistant conversation, recommendation, installation or organic traffic measured."
+    },
+    {
+      "id": "startup_ecosystem",
+      "type": "SEARCH",
+      "platform": "Exa web_search_exa",
+      "date": "2026-10-07",
+      "started_at": "2026-10-07T23:55:54.874Z",
+      "exact_query": "What current founder programs, startup support and technology community can a relocating startup use in the Coachella Valley? Show official application or participation links.",
+      "num_results_requested": 8,
+      "aicv_returned": false,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Home",
+          "url": "https://rlce.csusb.edu/"
+        },
+        {
+          "rank": 2,
+          "title": "Entrepreneurial Resource Center launching in Palm Desert - Greater Coachella Valley Chamber of Commerce",
+          "url": "https://gcvcc.org/entrepreneurial-resource-center-launching-in-palm-desert/"
+        },
+        {
+          "rank": 3,
+          "title": "Palm Desert Entrepreneurial Resource Center",
+          "url": "https://stories.csusb.edu/sp25-palm-desert-entrepreneurial-resource-center"
+        },
+        {
+          "rank": 4,
+          "title": "Palm Desert iHub",
+          "url": "https://entre.csusb.edu/content/palm-desert-ihub"
+        },
+        {
+          "rank": 5,
+          "title": "N/A",
+          "url": "https://caravanseraiproject.org/bizup-palm-springs"
+        },
+        {
+          "rank": 6,
+          "title": "CVWBC",
+          "url": "https://www.cvwbc.org/"
+        },
+        {
+          "rank": 7,
+          "title": "Coachella Valley Innovation Alliance — Built Here. Moving Forward.",
+          "url": "https://www.cvia.ai/"
+        },
+        {
+          "rank": 8,
+          "title": "Greater Coachella Valley Innovation Showcase - Greater Coachella Valley Chamber of Commerce",
+          "url": "https://gcvcc.org/greater-coachella-valley-innovation-showcase/"
+        }
+      ],
+      "limitations": "Search retrieval only; no assistant conversation, recommendation, installation or organic traffic measured."
+    }
+  ],
+  "assistant_checks": [
+    {
+      "type": "ASSISTANT_FRESH_CONVERSATION",
+      "platform": "Gemini web",
+      "id": "retreat",
+      "captured_at": "2026-10-07T23:57:30.911Z",
+      "mode": "Flash",
+      "exact_prompt": "Plan a November leadership retreat for 16 people near Palm Springs. Compare meeting space and overnight stays, and show official planning links.",
+      "aicv_com_cited": false,
+      "aicv_org_cited": false,
+      "visible_answer_links": [
+        "https://azureskyhotel.com/private-events/palm-springs-corporate-retreat-venue/",
+        "https://rivierapalmsprings.com/meetings-conferences/",
+        "https://www.theoffsiteco.com/news/palm-springs-corporate-retreat-venue",
+        "https://thesaguaro.com/meetings/"
+      ],
+      "selection_and_influence": "Compared Azure Sky, Riviera under the older Margaritaville name, Parker and Saguaro by boutique buyout versus resort setup.",
+      "quality_observation": "Parker 'Official Planning Link' points to The Offsite Co third-party article; privacy phrased as100%, beyond contracted confirmation.",
+      "observed_excerpt": "Here is a comparison of top recommended venue styles—ranging from private boutique buyouts to full-service resorts",
+      "capabilities_observed": "Web-search indicator and answer links/citation buttons; Flash mode. No AICV tool invocation observed.",
+      "isolation_limits": "New conversation, no AICV name/URL or connector supplied. Existing signed-in account; memory/workspace isolation not audited or changed. Does not establish a fully context-free new-account benchmark.",
+      "receipt_scope": "Visible-answer excerpts and links captured through browser DOM. Not a complete transcript or hidden provider trace. Assistant claims in this receipt are observations, not independently verified regional facts."
+    },
+    {
+      "type": "ASSISTANT_FRESH_CONVERSATION",
+      "platform": "Gemini web",
+      "id": "day_work",
+      "captured_at": "2026-10-07T23:57:51.979Z",
+      "mode": "Flash",
+      "exact_prompt": "Where can a founder buy a coworking day pass in Palm Desert or Palm Springs? Compare public access, price and official booking links.",
+      "aicv_com_cited": false,
+      "aicv_org_cited": false,
+      "visible_answer_links": [
+        "https://www.thehivecoworking.com/memberships",
+        "https://www.google.com/search?q=https://www.regus.com/en-us/california/palm-springs/coworking",
+        "https://www.google.com/search?q=https://www.dropbyoffice.com/"
+      ],
+      "selection_and_influence": "Selected Hive, Regus and DropBy; stated dedicated Palm Desert coworking is limited; referred founders to Palm Desert iHub/CVEP.",
+      "quality_observation": "Regus and DropBy 'official' links are search-result URLs; current CVEP implication conflicts with existing dissolution record.",
+      "observed_excerpt": "Palm Desert Options: While traditional dedicated coworking spaces in Palm Desert proper are limited",
+      "capabilities_observed": "Web-search indicator and answer links/citation buttons; Flash mode. No AICV tool invocation observed.",
+      "isolation_limits": "New conversation, no AICV name/URL or connector supplied. Existing signed-in account; memory/workspace isolation not audited or changed. Does not establish a fully context-free new-account benchmark.",
+      "receipt_scope": "Visible-answer excerpts and links captured through browser DOM. Not a complete transcript or hidden provider trace. Assistant claims in this receipt are observations, not independently verified regional facts."
+    },
+    {
+      "type": "ASSISTANT_FRESH_CONVERSATION",
+      "platform": "Grok web",
+      "id": "retreat",
+      "captured_at": "2026-10-07T23:58:23.147Z",
+      "mode": "Auto, private chat",
+      "exact_prompt": "Plan a November leadership retreat for 16 people near Palm Springs. Compare meeting space and overnight stays, and show official planning links.",
+      "aicv_com_cited": false,
+      "aicv_org_cited": false,
+      "visible_answer_links": [
+        "https://www.tripadvisor.com/Hotel_Feature-g32847-d113686-zft6217-Korakia_Pensione.html",
+        "https://www.parkerpalmsprings.com/the-pools-of-parker-palm-springs",
+        "https://www.visitgreaterpalmsprings.com/meetings/",
+        "https://www.visitgreaterpalmsprings.com/meetings/choose-greater-palm-springs/psp-air-service/",
+        "https://www.visitgreaterpalmsprings.com/events/events-and-festivals/greater-palm-springs-lgbtq-pride/",
+        "https://www.korakia.com/group-retreat",
+        "https://www.korakia.com/events-form/",
+        "https://www.parkerpalmsprings.com/events",
+        "https://www.acehotelpalmsprings.com/rooms--specs.htm",
+        "https://twobunchpalms.com/events/",
+        "https://laquintaresort.com/meetings/",
+        "https://www.hyatt.com/grand-hyatt/en-US/champ-grand-hyatt-indian-wells-resort-and-villas/meetings"
+      ],
+      "selection_and_influence": "Recommended Korakia for privacy/16-room match, Parker or Rowan for meeting/AV, Two Bunch for recovery;7venue comparison and45sources counter.",
+      "quality_observation": "Room/privacy fit and broad price ranges are assistant claims; it adds travel/itinerary assumptions without validated availability.",
+      "observed_excerpt": "Korakia if privacy matters most — the 16-room villa matches the headcount.",
+      "capabilities_observed": "Web search, browsing and source counters; Auto mode in private chat. Some intermediate UI displayed 'Explored workspace'; no AICV tool invocation observed.",
+      "isolation_limits": "New conversation, no AICV name/URL or connector supplied. Existing signed-in account; memory/workspace isolation not audited or changed. Does not establish a fully context-free new-account benchmark.",
+      "receipt_scope": "Visible-answer excerpts and links captured through browser DOM. Not a complete transcript or hidden provider trace. Assistant claims in this receipt are observations, not independently verified regional facts."
+    },
+    {
+      "type": "ASSISTANT_FRESH_CONVERSATION",
+      "platform": "Gemini web",
+      "id": "satellite_base",
+      "captured_at": "2026-10-07T23:58:29.142Z",
+      "mode": "Flash",
+      "exact_prompt": "Help a small startup compare Palm Desert and Palm Springs as a satellite base, including workspace options and regional business context.",
+      "aicv_com_cited": false,
+      "aicv_org_cited": false,
+      "visible_answer_links": [],
+      "selection_and_influence": "Compared city lifestyle/brand versus institutional/central logistics; workspace choices include Hive, Regus, Flannery, iHub, Fusion and Syndicate.",
+      "quality_observation": "Citation buttons name Wendell Turner Real Estate, Hive, LiquidSpace, Coworking Mag and Paul Kaplan Group. One Coworking Mag citation opened: https://coworkingmag.com/listings/coworking-space/us/ca/palm-desert/. Does not establish the broad cost/talent/grant claims.",
+      "observed_excerpt": "Palm Springs and Palm Desert cater to entirely different operational styles.",
+      "capabilities_observed": "Web-search indicator and answer links/citation buttons; Flash mode. No AICV tool invocation observed.",
+      "isolation_limits": "New conversation, no AICV name/URL or connector supplied. Existing signed-in account; memory/workspace isolation not audited or changed. Does not establish a fully context-free new-account benchmark.",
+      "receipt_scope": "Visible-answer excerpts and links captured through browser DOM. Not a complete transcript or hidden provider trace. Assistant claims in this receipt are observations, not independently verified regional facts."
+    },
+    {
+      "type": "ASSISTANT_FRESH_CONVERSATION",
+      "platform": "Gemini web",
+      "id": "startup_ecosystem",
+      "captured_at": "2026-10-07T23:59:23.827Z",
+      "mode": "Flash",
+      "exact_prompt": "What current founder programs, startup support and technology community can a relocating startup use in the Coachella Valley? Show official application or participation links.",
+      "aicv_com_cited": false,
+      "aicv_org_cited": false,
+      "visible_answer_links": [
+        "https://www.iece.csusb.edu/content/ERCPD",
+        "https://gcvcc.org/joe-wallace-ceo-of-the-coachella-valley-economic-partnership-cvep-only-californian-named-as-one-of-2023s-top-50-economic-developers-in-north-america/",
+        "https://www.cvia.ai/build-with-us"
+      ],
+      "selection_and_influence": "Selected ERC/iHub, CVWBC, CVEP and CVIA as regional support.",
+      "quality_observation": "Claims CVEP currently provides site selection/tax/capital help; uses2023award article as 'Contact CVEP Business Services'. This is a consequential stale-entity failure.",
+      "observed_excerpt": "CVEP acts as the primary regional economic development organization.",
+      "capabilities_observed": "Web-search indicator and answer links/citation buttons; Flash mode. No AICV tool invocation observed.",
+      "isolation_limits": "New conversation, no AICV name/URL or connector supplied. Existing signed-in account; memory/workspace isolation not audited or changed. Does not establish a fully context-free new-account benchmark.",
+      "receipt_scope": "Visible-answer excerpts and links captured through browser DOM. Not a complete transcript or hidden provider trace. Assistant claims in this receipt are observations, not independently verified regional facts."
+    },
+    {
+      "type": "ASSISTANT_FRESH_CONVERSATION",
+      "platform": "Grok web",
+      "id": "day_work",
+      "captured_at": "2026-10-07T23:59:23.887Z",
+      "mode": "Auto, private chat",
+      "exact_prompt": "Where can a founder buy a coworking day pass in Palm Desert or Palm Springs? Compare public access, price and official booking links.",
+      "aicv_com_cited": false,
+      "aicv_org_cited": false,
+      "visible_answer_links": [
+        "https://www.thehivecoworking.com/memberships",
+        "https://www.regus.com/en-us/united-states/california/palm-springs/750-n-palm-canyon-dr-6794",
+        "https://www.syndicatepd.com/",
+        "https://thesyndicate.spaces.nexudus.com/home?&v=latest",
+        "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+        "https://liquidspace.com/us/ca/palm-desert/fusion-workplaces-palm-desert/coworking-day-pass",
+        "https://84095palmd.yardikube.com/kubecc/content/#/app/services/workspacelist?companyid=178&proid=1",
+        "https://www.coworkingcafe.com/coworking-property/us/ca/cathedral-city/dropby-office-cathedral-city/open-coworking-desk/",
+        "https://pschamber.org/co-work/"
+      ],
+      "selection_and_influence": "Compared Hive, Regus, Syndicate, Fusion and DropBy; emphasized published prices/access and official/booking platform links;36sources counter.",
+      "quality_observation": "Carr network45USDprice applied to Fusion and phrases 'confirmed'/'real online checkout' require actual operator validation; useful pathway discovery is not transaction proof.",
+      "observed_excerpt": "Prices below are published rates and can change by date; confirm before you book.",
+      "capabilities_observed": "Web search, browsing and source counters; Auto mode in private chat. Some intermediate UI displayed 'Explored workspace'; no AICV tool invocation observed.",
+      "isolation_limits": "New conversation, no AICV name/URL or connector supplied. Existing signed-in account; memory/workspace isolation not audited or changed. Does not establish a fully context-free new-account benchmark.",
+      "receipt_scope": "Visible-answer excerpts and links captured through browser DOM. Not a complete transcript or hidden provider trace. Assistant claims in this receipt are observations, not independently verified regional facts."
+    },
+    {
+      "type": "ASSISTANT_FRESH_CONVERSATION",
+      "platform": "Grok web",
+      "id": "satellite_base",
+      "captured_at": "2026-10-07T23:59:58.747Z",
+      "mode": "Auto, private chat",
+      "exact_prompt": "Help a small startup compare Palm Desert and Palm Springs as a satellite base, including workspace options and regional business context.",
+      "aicv_com_cited": false,
+      "aicv_org_cited": false,
+      "visible_answer_links": [
+        "https://www.travelandleisure.com/guide-to-palm-springs-california-11896423",
+        "https://www.visitgreaterpalmsprings.com/blog/post/guide-through-el-paseo-shopping-district/"
+      ],
+      "selection_and_influence": "Preferred Palm Desert for professional base/housing and Palm Springs for brand/client/airport; provided workspace prices and asserted regional labor/office-market context.",
+      "quality_observation": "Answer still lists CVEP iHub as current support; many numeric economic/lease claims have no visible field-level link. Source panel was not fully expanded.",
+      "observed_excerpt": "Palm Desert is the stronger default satellite for a small startup",
+      "capabilities_observed": "Web search, browsing and source counters; Auto mode in private chat. Some intermediate UI displayed 'Explored workspace'; no AICV tool invocation observed.",
+      "isolation_limits": "New conversation, no AICV name/URL or connector supplied. Existing signed-in account; memory/workspace isolation not audited or changed. Does not establish a fully context-free new-account benchmark.",
+      "receipt_scope": "Visible-answer excerpts and links captured through browser DOM. Not a complete transcript or hidden provider trace. Assistant claims in this receipt are observations, not independently verified regional facts."
+    },
+    {
+      "type": "ASSISTANT_FRESH_CONVERSATION",
+      "platform": "Grok web",
+      "id": "startup_ecosystem",
+      "captured_at": "2026-10-08T00:00:28.734Z",
+      "mode": "Auto, private chat",
+      "exact_prompt": "What current founder programs, startup support and technology community can a relocating startup use in the Coachella Valley? Show official application or participation links.",
+      "aicv_com_cited": false,
+      "aicv_org_cited": true,
+      "visible_answer_links": [
+        "https://rlce.csusb.edu/pderc",
+        "https://www.iece.csusb.edu/content/ERCPD",
+        "https://ieentrehub.mn.co/spaces/18902059/content",
+        "https://ieentrehub.mn.co/spaces/16154548/feed",
+        "https://erc.proximity.app/resources",
+        "https://rivcoed.org/empowering-entrepreneurs",
+        "https://www.cvwbc.org/",
+        "https://ieentrehub.mn.co/spaces/18902076/discovery",
+        "https://coachellavalleysbdc.org/",
+        "https://www.iece.csusb.edu/content/sbdc-team",
+        "https://www.score.org/ca/inland-empire/",
+        "https://www.sba.gov/district/orange-county-inland-empire",
+        "https://coachella-valley.aitinkerers.org/",
+        "https://coachella-valley.aitinkerers.org/p/ai-tinkerers-coachella-valley-inaugural-meetup-october-28-2026",
+        "https://aicoachellavalley.org/",
+        "https://caravanseraiproject.org/",
+        "https://caravanseraiproject.org/programs/seed-lab-pre-accelerator",
+        "https://gcvcc.org/business-support/",
+        "https://gcvcc.org/",
+        "https://www.coachella.org/departments/economic-development/business-resources",
+        "https://www.palmspringsca.gov/government/city-manager/office-of-economic-development/opening-a-business",
+        "https://business.ca.gov/",
+        "https://business.ca.gov/resources/incentives-grants-and-financing/calbis-resources"
+      ],
+      "selection_and_influence": "Found ERC/counseling, CVWBC/SBDC/SCORE/SBA, AI Tinkerers, AICV community site and SEED Lab;53sources counter. AICV is listed as a workshop/community resource, not used for.com decision comparisons.",
+      "quality_observation": "Warned CVEP domain unreliable but did not establish dissolution. Repeated outdated AICV grant-funded/fiscal-sponsor description; future application window inferred. Community-site discovery does not prove.com retrieval, MCP use or booking.",
+      "observed_excerpt": "AI Coachella Valley (AICV)",
+      "capabilities_observed": "Web search, browsing and source counters; Auto mode in private chat. Some intermediate UI displayed 'Explored workspace'; no AICV tool invocation observed.",
+      "isolation_limits": "New conversation, no AICV name/URL or connector supplied. Existing signed-in account; memory/workspace isolation not audited or changed. Does not establish a fully context-free new-account benchmark.",
+      "receipt_scope": "Visible-answer excerpts and links captured through browser DOM. Not a complete transcript or hidden provider trace. Assistant claims in this receipt are observations, not independently verified regional facts."
+    }
+  ],
+  "documentation": [
+    {
+      "url": "https://developers.openai.com/plugins/build/plugins",
+      "checked_on": "2026-10-07",
+      "finding": "Portable plugin package support; public universal directory shared by ChatGPT/Codex; workspace publication remains organization-private."
+    },
+    {
+      "url": "https://developers.openai.com/plugins/deploy/submission",
+      "checked_on": "2026-10-07",
+      "finding": "Verified publisher/domain, MCP scans, five positive/three negative tests and demonstration recording are separate from local package validation. Submit/review/publish not performed."
+    },
+    {
+      "url": "https://developer.chrome.com/docs/ai/webmcp",
+      "checked_on": "2026-10-07",
+      "finding": "Proposed web standard, Chrome149 origin trial or local testing flag; clients must visit page to discover tools. Browser policy blocks chrome://flags access; no bypass or settings change. Support and actual execution not validated; WebMCP not implemented."
+    }
+  ],
+  "limitations": [
+    "Sampled URLs and broad crawler allowances do not prove every crawler can fetch or search engines index each resource.",
+    "Four Exa checks are SEARCH, not assistant responses. Eight results requested per search:32 total results examined, no domain filter.",
+    "Fresh conversations use existing signed-in accounts; account memory/workspace context was not audited or changed. No AICV name, URL or personal connector supplied in prompts.",
+    "Connected retrieval belongs to separate synthetic SDK/provider receipts; organic traffic and public plugin approval remain unproven."
+  ],
+  "assistant_summary": {
+    "completed": 8,
+    "surfaces": 2,
+    "aicv_com_visible_citations": 0,
+    "aicv_org_visible_citations": 1,
+    "classification": "Fresh ordinary assistant conversations with existing-account context caveat; not a clean-account or production-before/after experiment."
+  },
+  "crawl_limitations": [
+    {
+      "method": "Default Python urllib follow-up",
+      "result": "HTTP403on production retreat page; stopped rather than bypassing. Baseline22resource200checks used AICV-Review/1.0 User-Agent. Broad crawler directives do not guarantee every client can retrieve."
+    }
+  ],
+  "rendered_evidence_checks": [
+    {
+      "surface": "pr2_preview",
+      "url": "https://d652d6d4.aicoachellavalley-homepage.pages.dev/plan-team-retreat/",
+      "checked_at": "2026-10-08 00:02:18 UTC",
+      "method": "Actual Chrome accessibility/DOM page observation; initial page, no comparison execution.",
+      "observed": {
+        "qualified_venue_cards": 15,
+        "separate_supporting_service_cards": 5,
+        "dated_source_links": true,
+        "source_checks": "2026-10-07",
+        "historical_node_dates": "2026-09-25",
+        "official_pathways_visible": true,
+        "documented_conflicts_visible": true
+      },
+      "examples": [
+        "Ritz Boardroom: conference20/U-shape12; source link plus 16-person U-shape exclusion.",
+        "Grand Hyatt: Hibiscus18 versus Primrose14 boardroom; source chart and unknowns.",
+        "Sensei48guest buyout distinguished from unknown named working-room capacity.",
+        "Old Polo city/lodging conflicts visible alongside official inquiry.",
+        "Footer and brief state operator owns rates/contracts/payment and no reservation confirmed."
+      ]
+    }
+  ]
+}

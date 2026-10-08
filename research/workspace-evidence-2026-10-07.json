@@ -1,0 +1,1237 @@
+{
+  "checked_at": "2026-10-07",
+  "schema_version": 1,
+  "directory_lookup": {
+    "status": "unavailable",
+    "reason": "Stripe CLI absent; connected Stripe tools have no Directory lookup. Current setup documentation read via Exa; no account or CLI/commerce infrastructure installed.",
+    "setup_source": "https://stripe.directory",
+    "checked_at": "2026-10-07"
+  },
+  "research_method": {
+    "search_provider": "Exa",
+    "search_workstreams": 4,
+    "sources_reviewed": 30,
+    "note": "Sum of requested numResults across four searches (10+10+5+5). Results are candidate discovery; only official pages qualify records. Direct source reads and web spot checks are separate."
+  },
+  "audit": {
+    "preview_manifests": 6,
+    "published_preview_count": 1568,
+    "preview_publication_verified_at": "2026-08-19",
+    "matching_workspace_operator_previews": 0,
+    "local_observation_date": "2026-09-01",
+    "local_import_date": "2026-09-30",
+    "retreat_research_repeated": false,
+    "unchanged_historical_nodes": {
+      "palm-desert-economic-development": "2026-09-25",
+      "indio-economic-development": "2026-09-25",
+      "coachella-valley-economic-development": "2026-07-29"
+    }
+  },
+  "options": [
+    {
+      "id": "workspace/the-hive-coworking",
+      "slug": "the-hive-coworking",
+      "name": "The Hive Coworking",
+      "city": "Palm Springs",
+      "kind": "coworking",
+      "purposes": [
+        "day-work",
+        "meeting",
+        "satellite-base",
+        "small-team-office"
+      ],
+      "facts": [
+        {
+          "text": "Drop-in desk: $30 for a day; desks are first-come first-served, or call to reserve a specific spot.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Conference room: $25/hour; comfortable seating for eight, not a documented maximum occupancy.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/conference-room-rentals",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Anyone can sign up to rent the conference room through the website.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Company suites accommodate up to six employees; office and suite pricing periods and minimum commitments need confirmation.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "1801 E Tahquitz Canyon Way, Suite 100; weekdays 9am–5pm, after-hours by appointment.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "constraints": [
+        "Comfortable seating for eight is not a fire-code or maximum occupancy limit.",
+        "A published drop-in price does not guarantee a desk or reserve inventory.",
+        "Memberships page contains placeholder text; reconfirm prices and terms with operator."
+      ],
+      "unknowns": [
+        "Current date-specific availability",
+        "Tax, fees and complete checkout total",
+        "Cancellation/refund policy",
+        "Step-free route, accessible restroom and requested accommodations",
+        "Office/suite rate period and minimum term",
+        "Booking/payment API and authoritative confirmation"
+      ],
+      "source_checked_at": "2026-10-07",
+      "targeted_check_date": "2026-10-07",
+      "node_last_updated": null,
+      "primary_sources": [
+        {
+          "label": "Memberships and access",
+          "url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "label": "Conference room",
+          "url": "https://www.thehivecoworking.com/conference-room-rentals",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "field_evidence": {
+        "city": {
+          "value": "Palm Springs",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        "access": {
+          "value": {
+            "day_pass": true,
+            "day_pass_reservation": "first-come first-served or call",
+            "meeting_room": "public rental via website",
+            "hours": "Monday–Friday 09:00–17:00",
+            "after_hours": "appointment"
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        "capacity": {
+          "value": {
+            "meeting_room": 8,
+            "basis": "comfortable seating, not maximum occupancy",
+            "coworking_total": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/conference-room-rentals",
+          "checked_at": "2026-10-07"
+        },
+        "price": {
+          "value": {
+            "amount": 30,
+            "currency": "USD",
+            "scope": "per-day",
+            "product": "drop-in desk",
+            "tax_included": null,
+            "other_offers": [
+              {
+                "amount": 25,
+                "currency": "USD",
+                "scope": "per-hour",
+                "product": "conference room",
+                "tax_included": null
+              }
+            ]
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        "duration": {
+          "value": {
+            "day_pass": "one day",
+            "meeting_room": "hourly; longer sessions mentioned",
+            "minimum_office_term": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        "privacy": {
+          "value": {
+            "private_offices_offered": true,
+            "company_suites_offered": true,
+            "exclusive_meeting_use": null,
+            "acoustic_privacy": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "eligibility": {
+          "value": {
+            "meeting_room": "anyone can sign up",
+            "membership_required_for_day_pass": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "official_actions": [
+        {
+          "url": "https://www.thehivecoworking.com/memberships",
+          "label": "Review day-pass and membership terms",
+          "kind": "information",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "url": "https://members.thehivecoworking.com/login",
+          "label": "Open official booking portal",
+          "kind": "booking",
+          "source_url": "https://www.thehivecoworking.com/memberships",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "action_capability": "official_handoff",
+      "qualified": true,
+      "availability": {
+        "value": null,
+        "evidence_type": "unknown",
+        "source_url": null,
+        "checked_at": null
+      },
+      "aliases": [
+        "Hive",
+        "The Hive",
+        "The Hive Coworking Palm Springs"
+      ]
+    },
+    {
+      "id": "workspace/fusion-workplaces-palm-desert",
+      "slug": "fusion-workplaces-palm-desert",
+      "name": "Fusion Workplaces Palm Desert",
+      "city": "Palm Desert",
+      "kind": "office",
+      "purposes": [
+        "day-work",
+        "meeting",
+        "satellite-base",
+        "small-team-office",
+        "virtual-office"
+      ],
+      "facts": [
+        {
+          "text": "74-710 Highway 111, Suite 102; offers shared/dedicated workspaces, secluded offices, meeting rooms and day offices.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Address virtual-office plan: $119/month. Essential: $249/month with eight meeting-room hours/month.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Virtual-office packages advertise 24/7 access to meeting rooms or day offices; standalone visitor access must be confirmed.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Operator advertises internet and meeting technology; no performance test was conducted.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "constraints": [
+        "Virtual-office price is not the price of an occupied office or a day desk.",
+        "Package access claims do not establish after-hours access for unaffiliated visitors.",
+        "Third-party reseller capacities/rates were not promoted to operator-verified terms."
+      ],
+      "unknowns": [
+        "Named room capacities",
+        "Standalone meeting/day-desk/office price and all-in quote",
+        "Membership requirement for standalone bookings",
+        "Specific day availability",
+        "Physical accessibility and requested accommodations",
+        "Minimum office term and cancellation/refund terms"
+      ],
+      "source_checked_at": "2026-10-07",
+      "targeted_check_date": "2026-10-07",
+      "node_last_updated": null,
+      "primary_sources": [
+        {
+          "label": "Palm Desert operator page",
+          "url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "field_evidence": {
+        "city": {
+          "value": "Palm Desert",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        },
+        "access": {
+          "value": {
+            "meeting_room": "official reservation portal",
+            "office": "tour/inquiry",
+            "virtual_office_package_access": "24/7 meeting-room or day-office access advertised",
+            "walk_in_day_pass": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        },
+        "capacity": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "price": {
+          "value": {
+            "amount": 119,
+            "currency": "USD",
+            "scope": "per-month",
+            "product": "Address virtual-office plan, not coworking day pass",
+            "tax_included": null,
+            "other_offers": [
+              {
+                "amount": 249,
+                "currency": "USD",
+                "scope": "per-month",
+                "product": "Essential virtual-office plan including eight room hours/month",
+                "tax_included": null
+              }
+            ]
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        },
+        "duration": {
+          "value": {
+            "meeting_room": "one hour to several days described",
+            "package_billing": "monthly",
+            "minimum_office_commitment": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        },
+        "privacy": {
+          "value": {
+            "private_offices_offered": true,
+            "private_meeting_rooms_advertised": true,
+            "contractual_exclusive_use": null,
+            "acoustic_privacy": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "eligibility": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        }
+      },
+      "official_actions": [
+        {
+          "url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "label": "Request workspace tour or quote",
+          "kind": "tour",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "url": "https://84095palmd.yardikube.com/kubecc/content/",
+          "label": "Open official meeting-room portal",
+          "kind": "booking",
+          "source_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "action_capability": "official_handoff",
+      "qualified": true,
+      "availability": {
+        "value": null,
+        "evidence_type": "unknown",
+        "source_url": null,
+        "checked_at": null
+      },
+      "aliases": [
+        "Fusion",
+        "Fusion Workplaces"
+      ]
+    },
+    {
+      "id": "workspace/regus-750-n-palm-canyon",
+      "slug": "regus-750-n-palm-canyon",
+      "name": "Regus — 750 N Palm Canyon Dr",
+      "city": "Palm Springs",
+      "kind": "coworking",
+      "purposes": [
+        "day-work",
+        "meeting",
+        "satellite-base",
+        "small-team-office",
+        "virtual-office"
+      ],
+      "facts": [
+        {
+          "text": "750 N Palm Canyon Dr, Palm Springs; official page offers cowork day passes, meeting rooms, day offices and team offices.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Published starting prices: day coworking $85/day, meeting room $99/hour, day office $229/person/day.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Centre page provides quote, tour, meeting-room and cowork-day-pass pathways; final quote and availability remain operator-controlled.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "The centre page offers a virtual-office purchase pathway; a virtual address is not a physical desk.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "constraints": [
+        "All prices are starting rates, not complete offers.",
+        "Low per-person/day team-office headline rates are not a day-office or walk-in quote.",
+        "No booking inventory or private room capacity was inspected."
+      ],
+      "unknowns": [
+        "Current opening hours and day-pass access restrictions",
+        "Specific room/team-office capacity",
+        "Tax, fees, minimum commitments and full checkout price",
+        "Physical accessibility and requested accommodations",
+        "Cancellation/refund policy and live provider API"
+      ],
+      "source_checked_at": "2026-10-07",
+      "targeted_check_date": "2026-10-07",
+      "node_last_updated": null,
+      "primary_sources": [
+        {
+          "label": "Specific Regus centre",
+          "url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "field_evidence": {
+        "city": {
+          "value": "Palm Springs",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        },
+        "access": {
+          "value": {
+            "day_pass": "book a cowork day pass",
+            "meeting_room": "book a meeting room",
+            "office": "quote or tour",
+            "membership_requirement": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        },
+        "capacity": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "price": {
+          "value": {
+            "amount": 85,
+            "currency": "USD",
+            "scope": "per-day",
+            "product": "day coworking",
+            "starting_from": true,
+            "tax_included": null,
+            "other_offers": [
+              {
+                "amount": 99,
+                "currency": "USD",
+                "scope": "per-hour",
+                "product": "meeting room",
+                "starting_from": true,
+                "tax_included": null
+              },
+              {
+                "amount": 229,
+                "currency": "USD",
+                "scope": "per-person-per-day",
+                "product": "day office",
+                "starting_from": true,
+                "tax_included": null
+              }
+            ]
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        },
+        "duration": {
+          "value": {
+            "cowork_day_pass": "day",
+            "meeting_room": "hour",
+            "day_office": "day",
+            "minimum_team_office_commitment": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        },
+        "privacy": {
+          "value": {
+            "day_office": "private office advertised",
+            "team_offices_offered": true,
+            "meeting_exclusivity": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "eligibility": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        }
+      },
+      "official_actions": [
+        {
+          "url": "https://www.regus.com/en/us/6794",
+          "label": "Choose official cowork-day-pass or meeting booking",
+          "kind": "booking",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "url": "https://www.regus.com/en/us/6794",
+          "label": "Request official centre quote or tour",
+          "kind": "tour",
+          "source_url": "https://www.regus.com/en/us/6794",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "action_capability": "official_handoff",
+      "qualified": true,
+      "availability": {
+        "value": null,
+        "evidence_type": "unknown",
+        "source_url": null,
+        "checked_at": null
+      },
+      "aliases": [
+        "Regus",
+        "Regus Palm Springs",
+        "Palm Springs Regus"
+      ]
+    },
+    {
+      "id": "local/entrepreneurship-resource-center",
+      "slug": "entrepreneurship-resource-center",
+      "name": "Palm Desert Entrepreneurial Resource Center",
+      "city": "Palm Desert",
+      "kind": "coworking",
+      "purposes": [
+        "day-work",
+        "meeting",
+        "satellite-base",
+        "small-team-office",
+        "founder-support"
+      ],
+      "facts": [
+        {
+          "text": "37023 Cook Street, Suite 102; published coworking, office, meeting and event space plus business counseling and training.",
+          "evidence_type": "published_fact",
+          "source_url": "https://rlce.csusb.edu/pderc",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Current page lists weekdays 9am–6pm and weekends closed; older homepage says weekdays 9am–5pm and separately lists Saturday 9am–5pm. Hours conflict.",
+          "evidence_type": "published_fact",
+          "source_url": "https://rlce.csusb.edu/pderc",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Older official workspace page advertises a ten-person Poppy room and mini-offices; current room configuration and access were not established.",
+          "evidence_type": "published_fact",
+          "source_url": "https://entre.csusb.edu/content/ihub-office",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "AICV September 1 observation reports institutional strain and recommends a confirmed program or introduction before travel. New official published claims do not independently resolve that warning.",
+          "evidence_type": "observation",
+          "source_url": "https://aicoachellavalley.com/briefs/2025-04-01-erc-workshop-series/",
+          "checked_at": "2026-09-01"
+        }
+      ],
+      "constraints": [
+        "Published official offerings are not an independent inspection or assurance of current operational capacity.",
+        "Legacy iHub branding and inventory may be stale; do not treat ten seats or private offices as confirmed current inventory.",
+        "AICV observation and official operator claims remain distinct."
+      ],
+      "unknowns": [
+        "Current operating hours (conflicting official pages)",
+        "Current room seating/private-office inventory",
+        "Day access price and minimum commitments",
+        "Physical accessibility, floor access and requested accommodations",
+        "Current program capacity, dates and rental availability",
+        "Booking/payment behavior"
+      ],
+      "source_checked_at": "2026-10-07",
+      "targeted_check_date": "2026-10-07",
+      "node_last_updated": null,
+      "primary_sources": [
+        {
+          "label": "Current Palm Desert ERC page",
+          "url": "https://rlce.csusb.edu/pderc",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "label": "Older RLCE homepage",
+          "url": "https://rlce.csusb.edu/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "label": "Legacy workspace details",
+          "url": "https://entre.csusb.edu/content/ihub-office",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "field_evidence": {
+        "city": {
+          "value": "Palm Desert",
+          "evidence_type": "published_fact",
+          "source_url": "https://rlce.csusb.edu/pderc",
+          "checked_at": "2026-10-07"
+        },
+        "access": {
+          "value": {
+            "workspace": "contact centre for current rental details",
+            "hours_conflict": true,
+            "claims": [
+              {
+                "hours": "Monday–Friday 09:00–18:00; weekends closed",
+                "source_url": "https://rlce.csusb.edu/pderc"
+              },
+              {
+                "hours": "weekday 09:00–17:00; Saturday footer 09:00–17:00",
+                "source_url": "https://rlce.csusb.edu/"
+              }
+            ]
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://rlce.csusb.edu/pderc",
+          "checked_at": "2026-10-07"
+        },
+        "capacity": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "price": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "duration": {
+          "value": {
+            "legacy_day_rentals": true,
+            "monthly_office_inquiry": true,
+            "current_minimum_term": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://entre.csusb.edu/content/ihub-office",
+          "checked_at": "2026-10-07"
+        },
+        "privacy": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "accessibility": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "eligibility": {
+          "value": {
+            "published_audience": "aspiring and established entrepreneurs, remote workers and businesses",
+            "specific_workspace_eligibility": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://rlce.csusb.edu/pderc",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "official_actions": [
+        {
+          "url": "https://rlce.csusb.edu/pderc",
+          "label": "Check current centre offerings and rental contact",
+          "kind": "inquiry",
+          "source_url": "https://rlce.csusb.edu/pderc",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "action_capability": "official_handoff",
+      "qualified": true,
+      "availability": {
+        "value": null,
+        "evidence_type": "unknown",
+        "source_url": null,
+        "checked_at": null
+      },
+      "observation_date": "2026-09-01",
+      "related_node_ids": [
+        "node/palm-desert-economic-development",
+        "node/coachella-valley-economic-development"
+      ],
+      "aliases": [
+        "Palm Desert ERC",
+        "Entrepreneurship Resource Center"
+      ]
+    },
+    {
+      "id": "founder-support/coachella-valley-womens-business-center",
+      "slug": "coachella-valley-womens-business-center",
+      "name": "Coachella Valley Women’s Business Center",
+      "city": "Palm Desert",
+      "kind": "founder-support",
+      "purposes": [
+        "founder-support",
+        "business-start",
+        "business-growth",
+        "ecosystem"
+      ],
+      "facts": [
+        {
+          "text": "37023 Cook Street, Suite 102, Palm Desert. Counseling is offered online or in person; ask intake about current city locations and availability.",
+          "evidence_type": "published_fact",
+          "source_url": "https://cvwbc.org/business-counseling/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "No-cost in-person counseling is advertised in Indio, Cathedral City and Beaumont; intake matches an advisor to business goals.",
+          "evidence_type": "published_fact",
+          "source_url": "https://cvwbc.org/business-counseling/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "SBA-funded programs are open to the public on a nondiscriminatory basis; reasonable accommodations require at least two weeks’ advance request.",
+          "evidence_type": "published_fact",
+          "source_url": "https://cvwbc.org/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "constraints": [
+        "Women-focused mission does not establish women-only eligibility for all services.",
+        "Counseling fee evidence must not be generalized to every workshop/cohort.",
+        "Calendar link does not confirm a currently available appointment."
+      ],
+      "unknowns": [
+        "Specific cohort eligibility, application windows and costs",
+        "Counseling session duration after intake",
+        "Physical accessibility at each location",
+        "Advisor availability and confirmed appointment"
+      ],
+      "source_checked_at": "2026-10-07",
+      "targeted_check_date": "2026-10-07",
+      "node_last_updated": null,
+      "primary_sources": [
+        {
+          "label": "Official counseling",
+          "url": "https://cvwbc.org/business-counseling/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "label": "Official program and access disclosures",
+          "url": "https://cvwbc.org/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "field_evidence": {
+        "city": {
+          "value": "Palm Desert",
+          "evidence_type": "published_fact",
+          "source_url": "https://cvwbc.org/business-counseling/",
+          "checked_at": "2026-10-07"
+        },
+        "access": {
+          "value": {
+            "method": "intake appointment and consultant matching",
+            "format": [
+              "online",
+              "in person"
+            ],
+            "city_locations": "confirm with intake"
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://cvwbc.org/business-counseling/",
+          "checked_at": "2026-10-07"
+        },
+        "capacity": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "price": {
+          "value": {
+            "amount": 0,
+            "currency": "USD",
+            "scope": "in-person-counseling",
+            "product": "published city counseling",
+            "tax_included": null,
+            "other_program_fees": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://cvwbc.org/business-counseling/",
+          "checked_at": "2026-10-07"
+        },
+        "duration": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "privacy": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "accessibility": {
+          "value": {
+            "accommodation_request_lead_days": 14,
+            "physical_accessibility": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://cvwbc.org/",
+          "checked_at": "2026-10-07"
+        },
+        "eligibility": {
+          "value": {
+            "audience": "aspiring entrepreneurs and small business owners",
+            "SBA_funded_programs": "public on nondiscriminatory basis",
+            "specific_cohort_requirements": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://cvwbc.org/",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "official_actions": [
+        {
+          "url": "https://calendly.com/cvwbc-info",
+          "label": "Open official intake appointment pathway",
+          "kind": "appointment",
+          "source_url": "https://cvwbc.org/business-counseling/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "url": "https://cvwbc.org/business-counseling/",
+          "label": "Review counseling and city-location access",
+          "kind": "information",
+          "source_url": "https://cvwbc.org/business-counseling/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "action_capability": "official_handoff",
+      "qualified": true,
+      "availability": {
+        "value": null,
+        "evidence_type": "unknown",
+        "source_url": null,
+        "checked_at": null
+      },
+      "aliases": [
+        "CVWBC"
+      ]
+    },
+    {
+      "id": "founder-support/ocie-sbdc",
+      "slug": "ocie-sbdc",
+      "name": "Orange County Inland Empire SBDC — regional counseling",
+      "city": "Coachella Valley",
+      "kind": "founder-support",
+      "purposes": [
+        "founder-support",
+        "business-start",
+        "business-growth",
+        "ecosystem"
+      ],
+      "facts": [
+        {
+          "text": "Network offers no-cost small-business consulting across Orange, Riverside and San Bernardino counties.",
+          "evidence_type": "published_fact",
+          "source_url": "https://ociesmallbusiness.org/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Riverside County service coverage supports routing Coachella Valley founders to intake; this is a service-area inference, not a verified local office.",
+          "evidence_type": "judgment",
+          "source_url": "https://ociesmallbusiness.org/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Initial intake is a 15-minute phone call to match a consultant; this is not the duration of subsequent consulting.",
+          "evidence_type": "published_fact",
+          "source_url": "https://ociesmallbusiness.org/schedule-an-appointment/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "Startup one-on-one consultations are described as confidential, with business planning and capital-preparation guidance.",
+          "evidence_type": "published_fact",
+          "source_url": "https://ociesmallbusiness.org/ready-to-start/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "constraints": [
+        "This is a service-area option, not a verified local coworking or walk-in SBDC office.",
+        "Startup/capital advice is not promised funding or a guaranteed grant.",
+        "No-cost consulting does not establish all training is free."
+      ],
+      "unknowns": [
+        "Assigned consultant and local in-person location",
+        "Specific cohort eligibility and application windows",
+        "Accessibility/accommodations and counseling duration",
+        "Current appointment availability"
+      ],
+      "source_checked_at": "2026-10-07",
+      "targeted_check_date": "2026-10-07",
+      "node_last_updated": null,
+      "primary_sources": [
+        {
+          "label": "Service geography and no-cost consulting",
+          "url": "https://ociesmallbusiness.org/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "label": "Official intake appointment",
+          "url": "https://ociesmallbusiness.org/schedule-an-appointment/",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "label": "Startup consulting scope",
+          "url": "https://ociesmallbusiness.org/ready-to-start/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "field_evidence": {
+        "city": {
+          "value": {
+            "service_area": "Riverside County, including Coachella Valley",
+            "physical_local_office_verified": false
+          },
+          "evidence_type": "judgment",
+          "source_url": "https://ociesmallbusiness.org/",
+          "checked_at": "2026-10-07"
+        },
+        "access": {
+          "value": {
+            "method": "schedule phone intake; advisor matching",
+            "intake_minutes": 15
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://ociesmallbusiness.org/schedule-an-appointment/",
+          "checked_at": "2026-10-07"
+        },
+        "capacity": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "price": {
+          "value": {
+            "amount": 0,
+            "currency": "USD",
+            "scope": "consulting",
+            "product": "small-business one-on-one consulting",
+            "tax_included": null,
+            "all_training_fees": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://ociesmallbusiness.org/",
+          "checked_at": "2026-10-07"
+        },
+        "duration": {
+          "value": {
+            "intake_minutes": 15,
+            "consultation_minutes": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://ociesmallbusiness.org/schedule-an-appointment/",
+          "checked_at": "2026-10-07"
+        },
+        "privacy": {
+          "value": {
+            "consulting": "confidential per operator",
+            "workspace_privacy": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://ociesmallbusiness.org/ready-to-start/",
+          "checked_at": "2026-10-07"
+        },
+        "accessibility": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "eligibility": {
+          "value": {
+            "audience": "aspiring entrepreneurs and existing small businesses",
+            "geography": [
+              "Orange County",
+              "Riverside County",
+              "San Bernardino County"
+            ],
+            "program_specific_rules": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://ociesmallbusiness.org/schedule-an-appointment/",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "official_actions": [
+        {
+          "url": "https://ociesmallbusiness.org/schedule-an-appointment/",
+          "label": "Schedule official SBDC intake",
+          "kind": "appointment",
+          "source_url": "https://ociesmallbusiness.org/",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "action_capability": "official_handoff",
+      "qualified": true,
+      "availability": {
+        "value": null,
+        "evidence_type": "unknown",
+        "source_url": null,
+        "checked_at": null
+      },
+      "geography_scope": "service-area",
+      "aliases": [
+        "OCIE SBDC",
+        "Orange County Inland Empire SBDC"
+      ]
+    },
+    {
+      "id": "founder-support/indio-business-connect",
+      "slug": "indio-business-connect",
+      "name": "Indio Business Connect",
+      "city": "Indio",
+      "kind": "founder-support",
+      "purposes": [
+        "founder-support",
+        "business-start",
+        "business-growth",
+        "ecosystem"
+      ],
+      "facts": [
+        {
+          "text": "City-funded program provides free membership, business resources, networking and partner counseling for the Indio business community.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "City advertises no-cost twelve-week Spanish-language ¡Tú Sí Puedes! for Indio-based businesses, and an English counterpart through CVWBC; current cohort dates are unknown.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        },
+        {
+          "text": "City lists CVWBC and OCIE SBDC as partners; partner programs retain their own intake and eligibility.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "constraints": [
+        "Program publication does not establish an open cohort, immediate admission or an office reservation.",
+        "Confirm qualifying Indio business status before assuming eligibility.",
+        "City page was readable through Exa extraction; direct web fetch returned 403."
+      ],
+      "unknowns": [
+        "Current intake form and application periods",
+        "Current counseling appointment location/schedule",
+        "Rules for pre-business residents or companies relocating from outside Indio",
+        "Specific program accessibility and accommodations"
+      ],
+      "source_checked_at": "2026-10-07",
+      "targeted_check_date": "2026-10-07",
+      "node_last_updated": null,
+      "primary_sources": [
+        {
+          "label": "City of Indio official program",
+          "url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "field_evidence": {
+        "city": {
+          "value": "Indio",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        },
+        "access": {
+          "value": {
+            "membership": "join city program",
+            "partner_services": "follow official partner intake",
+            "walk_in_schedule": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        },
+        "capacity": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "price": {
+          "value": {
+            "amount": 0,
+            "currency": "USD",
+            "scope": "membership",
+            "product": "Indio Business Connect",
+            "tax_included": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        },
+        "duration": {
+          "value": {
+            "TSP_program_weeks": 12,
+            "membership_term": null,
+            "current_cohort_dates": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        },
+        "privacy": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "accessibility": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "eligibility": {
+          "value": {
+            "program_geography": "Indio business community",
+            "TSP": "Indio-based businesses, Spanish-speaking entrepreneurs",
+            "out_of_city_eligibility": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        }
+      },
+      "official_actions": [
+        {
+          "url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "label": "Review membership and official partner pathways",
+          "kind": "inquiry",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        }
+      ],
+      "action_capability": "official_handoff",
+      "qualified": true,
+      "availability": {
+        "value": null,
+        "evidence_type": "unknown",
+        "source_url": null,
+        "checked_at": null
+      },
+      "related_node_ids": [
+        "node/indio-economic-development"
+      ],
+      "aliases": [
+        "Indio Business Connect"
+      ]
+    }
+  ],
+  "not_qualified": [
+    {
+      "name": "Palm Springs iHub / CVEP",
+      "reason": "Existing node documents CVEP dissolution; current Palm Springs iHub status unresolved. No active workspace claim added."
+    },
+    {
+      "name": "Palm Desert Executive Offices reseller listings",
+      "reason": "Fusion operator occupies same street address. Reseller names/capacities/prices not merged as current operator-attested rates."
+    },
+    {
+      "name": "Festival Plaza Executive Suites",
+      "reason": "Reseller result found, but six-to-eight qualified records reached without relying on unverified third-party room pricing."
+    }
+  ],
+  "pilot": {
+    "candidate_id": "workspace/the-hive-coworking",
+    "status": "provisional-local-mock-only",
+    "offer": "Published $30 day desk or $25/hour conference room with eight comfortable seats.",
+    "required_confirmation": [
+      "Operator authorization and supported integration",
+      "Live availability/reservation authority",
+      "Complete quote including taxes/fees",
+      "Terms, cancellation and refund policy",
+      "Verified payment and authoritative confirmation behavior"
+    ]
+  }
+}

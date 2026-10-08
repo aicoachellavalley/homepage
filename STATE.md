@@ -2,6 +2,44 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-10-07 — REVIEW BRANCH: regional decisions and mock transaction pilot
+
+Sat authorized two bounded workstreams: regional discovery/decision readiness
+and one operator-compatible transaction pathway through a review PR/preview.
+PR #2 remained open at head `955a7df`; the isolated branch
+`codex/regional-action-readiness-20261007` starts there without merging main.
+The original checkout's uncommitted Q3 report remains untouched. Lead integration
+and three specialists covered discovery, sources/independent runtime evaluation,
+and transaction research/implementation with assigned file ownership.
+
+Seven qualified workspace/founder-support pathways now have eight typed evidence
+fields, dated primary sources/actions, access/price scopes and explicit unknowns.
+The ERC retains its canonical ID and September 1 observation; all historical
+node/preview dates remain unchanged. New human page `/choose-workspace/` shares
+records and requirements with three read-only MCP tools. Expanded structured
+fields, shared entity/location logic, conflict reporting and prepared briefs
+preserve the caller's requirements. No paid ranking or commercial promises change.
+
+The provisional Hive day-pass workflow is LOCAL/MOCK ONLY: synthetic inventory,
+full fixture price, approval, atomic in-instance hold/session, idempotent retries,
+verified fake events, booking/payment reconciliation and approved mock refunds.
+It confirms only after verified payment plus authoritative mock operator status.
+No live credentials, transaction tools, operator contact or provider sandbox exist.
+Real compatibility remains unvalidated. `/action-pilot/` is noindex, outside sitemap.
+
+Eight fresh conversations on Gemini/Grok returned zero AICV.com citations and
+one AICV.org community mention; account memory/workspace isolation remains unproven.
+Four Exa SEARCH checks and baseline crawl receipts are separate evidence. Version
+0.3.0 package and distribution drafts await account-level review/submission;
+WebMCP support was unvalidated and no registration was implemented. Nothing sent.
+Research, discovery failures, independent findings and precise activation
+permissions live in the targeted `research/*2026-10-07*` handoffs; README holds
+one concise gap map. Local validation:156 tests pass, zero audit vulnerabilities, full build and
+all repository gates pass (317 HTML pages / 6,113 static internal links). IndexNow
+submission was disabled for this review build. The unrelated external news feed
+was unreachable in the sandbox; the build recorded its existing graceful fallback.
+Deployed/network/browser receipts will be recorded below before review handoff. Production remains unchanged.
+
 ## 2026-10-07 — REVIEW CORRECTION: preserve caller retreat requirements
 
 Sat's independent review of PR #2 reproduced three interpretation defects not

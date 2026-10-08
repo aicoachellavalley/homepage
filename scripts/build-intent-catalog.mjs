@@ -13,6 +13,8 @@ const read = (path) => JSON.parse(readFileSync(resolve(root, path), 'utf8'));
 const deployed = read('src/data/previews-deployed.json');
 const observations = read('src/data/local-intent-observations.json');
 const retreat = read('src/data/retreat-options.json');
+const workspace = read('src/data/workspace-options.json');
+import { validateWorkspaceContract } from './workspace-contract.mjs';
 const counts = read('src/data/stats.json').counts;
 const origin = 'https://aicoachellavalley.com';
 const previews = deployed.segments.flatMap((segment) => {
@@ -69,15 +71,17 @@ const researched = [...retreat.options, ...retreat.services].map((record) => ({
     kind: record.action_kind, source_url: record.action_source_url,
     checked_at: record.action_checked_at }],
 }));
+validateWorkspaceContract(workspace,{existing:[...previews,...local,...nodes]});
+researched.push(...workspace.options.map(o=>({...o,record_type:'researched-workspace-option',summary:o.facts.map(f=>f.text).join(' ')})));
 const uniqueIds = new Set([...previews, ...local, ...nodes, ...researched].map((r) => r.id));
 const catalog = {
-  scope: 'Derived lookup of published business previews, attributed local observations, regional research and qualified retreat decision evidence. Inclusion is independent of payment.',
+  scope: 'Derived lookup of published business previews, attributed local observations, regional research and qualified retreat, workspace and founder-support decision evidence. Inclusion is independent of payment.',
   source_counts: { published_previews: previews.length, additional_local_observations: local.length,
     regional_nodes: nodes.length, researched_retreat_venues: retreat.options.length,
-    retreat_supporting_services: retreat.services.length, total_lookup_records: uniqueIds.size },
+    retreat_supporting_services: retreat.services.length, qualified_workspace_options:workspace.options.length, total_lookup_records: uniqueIds.size },
   source_dates_note: observations.date_note,
   previews: [...previews, ...local], nodes, researched_entities: researched,
-  retreat,
+  retreat, workspace,
 };
 validateRetreatDerivation(catalog, retreat);
 const ids = [...catalog.previews, ...nodes].map((r) => r.id);

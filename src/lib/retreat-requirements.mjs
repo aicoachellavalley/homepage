@@ -11,6 +11,11 @@ export function accommodationRequirements(input) {
   const group = input.group_size ?? count('person|people|guests?|members?|attendees|employees');
   const explicitRooms = input.rooms ?? count('rooms?|bedrooms?');
   const rooms = dayOnly ? null : explicitRooms ?? (group && shared !== null ? Math.ceil(group / (shared ? 2 : 1)) : null);
-  return { group_size: group, rooms, rooms_basis: dayOnly ? null : explicitRooms ? 'explicit' : rooms ? shared ? 'planning estimate: two attendees per room; bed configuration unverified' : 'planning estimate: one attendee per room' : null,
+  const conflicts=[];
+  const queryDuration=count('nights?') ?? words[q.match(/\b(one|two|three|four|five|six|seven) nights?\b/)?.[1]] ?? null;
+  if(input.nights !== undefined && queryDuration !== null && input.nights !== queryDuration) conflicts.push('Structured nights differ from the query; clarify before requesting a quote.');
+  if(input.day_only === true && (duration ?? 0)>0) conflicts.push('Day-only and overnight nights conflict; day-only is selected by the explicit field, but clarification is required.');
+  if(input.shared_lodging === true && individual) conflicts.push('Sharing allowed conflicts with the request for individual rooms; structured sharing is selected, but clarification is required.');
+  return { requirement_conflicts:conflicts, group_size: group, rooms, rooms_basis: dayOnly ? null : explicitRooms ? 'explicit' : rooms ? shared ? 'planning estimate: two attendees per room; bed configuration unverified' : 'planning estimate: one attendee per room' : null,
     shared_lodging: shared, day_only: dayOnly, nights: dayOnly ? 0 : duration };
 }

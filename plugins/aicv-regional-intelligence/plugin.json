@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "aicv-regional-intelligence",
-  "version": "0.2.0",
-  "description": "Compare researched Coachella Valley retreat venues against group requirements, with field-level evidence, constraints, questions and official action links.",
+  "version": "0.3.0",
+  "description": "Compare sourced Coachella Valley retreat, workspace, satellite-base and founder-support options with dated evidence, unresolved requirements and official pathways.",
   "author": {
     "name": "SunshineFM LLC",
     "email": "sat@aicv.co",
@@ -22,13 +22,13 @@
       "interface": {
         "displayName": "AICV Regional Intelligence",
         "shortDescription": "Visit, work and build here",
-        "longDescription": "Compare Coachella Valley retreat venues against headcount, room needs, sharing, day-only or overnight plans, purpose, privacy, accessibility and city requirements. Results explain documented conflicts and unresolved needs, preserve source dates, and link to official business planning channels. Supporting providers are separate options, not a bookable package. Budget changes planning questions and trade-offs; affordability and live availability require official quotes. Public previews establish identity and provenance, not verified suitability. Tools are read-only and do not contact businesses, book or pay. Inclusion and ranking are independent of payment to AICV.",
+        "longDescription": "Compare Coachella Valley retreat venues, coworking and day work, meeting rooms, satellite-base workspace and founder support using sourced regional evidence. Preserve headcount, lodging or workspace access and duration, budget scope, working setup, privacy, accessibility, location, requested and excluded entities, and the required official action. Results distinguish published operator claims, planning judgments, conflicts and unknowns, retaining source dates and official booking, tour, quote, membership or application links where evidenced. Published room inventory, meeting seating and live availability are separate. Supporting retreat providers are separate inquiries. Public business previews establish identity and provenance, not researched suitability. Three tools remain read-only: no contact, live availability lookup, reservation or payment. A separate local mock action pilot is not a live operator integration or a plugin capability. Inclusion and ranking are independent of payment to AICV.",
         "developerName": "SunshineFM LLC",
         "category": "Productivity",
         "capabilities": [
           "Read regional context",
           "Search business previews",
-          "Compare local options"
+          "Compare sourced local options"
         ],
         "websiteURL": "https://aicoachellavalley.com/",
         "supportURL": "https://aicoachellavalley.com/contact/",
@@ -36,8 +36,8 @@
         "termsOfServiceURL": "https://aicoachellavalley.com/terms/",
         "defaultPrompt": [
           "Compare a 16-person strategy retreat near Palm Springs, then adjust for shared rooms and a $25,000 total budget.",
-          "Find Palm Desert coffee options for a founder meeting near El Paseo.",
-          "Is Palm Desert suitable for a satellite base? Show sources and unresolved questions."
+          "Find a Palm Desert coworking day pass with published price and an official pathway.",
+          "Compare a satellite base and founder support in Palm Desert and Palm Springs with sources and unknowns."
         ],
         "brandColor": "#1B4332",
         "brandColorDark": "#D8FF00",
@@ -54,10 +54,10 @@
               "expected_behavior": "Return a manageable shortlist drawn from qualified retreat records, dated evidence and official business links. Repeat with shared rooms and a $25,000 budget: adjust room needs and quote questions, without inventing affordability. Explicit privacy, capacity and city constraints must change matches, exclusions or unresolved needs."
             },
             {
-              "description": "Synthetic scenario: Find meeting coffee options without replacing them with general economic context",
-              "prompt": "Find Palm Desert coffee options for a founder meeting near El Paseo.",
+              "description": "Synthetic scenario: Compare coworking day access and preserve official action requirements",
+              "prompt": "Find a Palm Desert coworking day pass for one founder. Show published price, access restrictions and an official booking pathway.",
               "tools_triggered": "resolve_local_intent",
-              "expected_behavior": "Return relevant local records when available and distinguish observed location facts from unconfirmed quietness, seating and current hours. Report coverage limitations honestly."
+              "expected_behavior": "Return qualified workspace evidence where available, source dates, published price scope and access restrictions. Separate missing live availability and unknown total price from documented facts. Preserve the requested official action; a handoff is not a reservation or payment."
             },
             {
               "description": "Synthetic scenario: Search a city's public business records",
@@ -72,10 +72,10 @@
               "expected_behavior": "Use the stable ID returned by search to retrieve the same record. Preserve its provenance, dates and limitations; do not infer current menus or availability."
             },
             {
-              "description": "Synthetic scenario: Support a satellite-base decision with regional context",
-              "prompt": "Is Palm Desert suitable for a satellite base? Show sources and unresolved questions.",
+              "description": "Synthetic scenario: Support satellite-base and founder decisions with current regional evidence",
+              "prompt": "Compare Palm Desert and Palm Springs as a startup satellite base. Show workspace options, founder-support pathways, sources and unresolved questions.",
               "tools_triggered": "resolve_local_intent",
-              "expected_behavior": "Return relevant regional context and published options where available. Explain evidence and unresolved workspace, travel, staffing and access constraints; do not invent office availability."
+              "expected_behavior": "Return qualified workspace and founder support evidence where available and sourced regional context. Preserve access, duration, group, budget-scope and location requirements on follow-up. Distinguish appointments, memberships, tours and program eligibility from public day access. Do not invent office availability or treat historical CVEP support as current."
             }
           ],
           "negative": [
@@ -100,7 +100,7 @@
         "commerce_description": "The connector retrieves public information and official action links. It does not accept payment, place orders, make reservations or contact businesses."
       },
       "publication": {
-        "release_notes": "Retreat comparison update: qualified venues, separate supporting services, structured constraints and source-backed follow-ups. Refresh the personal connector or preview ZIP to discover the expanded tool inputs. Directory submission, publisher verification and approval remain separate."
+        "release_notes": "Version 0.3.0 adds sourced workspace, satellite-base and founder-support decisions alongside retreat comparison, structured requirements and official handoffs. Three read-only tools remain; the separate mock action pilot cannot book or charge an operator. Refresh personal connector metadata or a tested preview ZIP. Public directory submission, publisher/domain verification, reviewer demonstrations and publication approval remain separate."
       }
     }
   }
