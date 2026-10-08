@@ -13,6 +13,49 @@ const hiveId = 'workspace/the-hive-coworking';
 const regusId = 'workspace/regus-750-n-palm-canyon';
 const fusionId = 'workspace/fusion-workplaces-palm-desert';
 const ercId = 'local/entrepreneurship-resource-center';
+const cvwbcId = 'founder-support/coachella-valley-womens-business-center';
+const sbdcId = 'founder-support/ocie-sbdc';
+
+test('Indio founder support uses sourced service cities independently of headquarters', () => {
+  const input={query:'Find founder support in Indio',decision:'founder-support',city:'Indio'};
+  const r=resolveLocalIntent(input,catalog);
+  assert.ok(ids(r).includes(cvwbcId));
+  assert.ok(ids(r).includes(sbdcId));
+  const cvwbc=r.results.find(o=>o.id===cvwbcId);
+  assert.equal(cvwbc.city,'Palm Desert');
+  assert.equal(cvwbc.field_evidence.service_geography.evidence_type,'published_fact');
+  assert.match(cvwbc.unknowns.join(' '),/exact appointment location/);
+  assert.match(workspaceBrief(input,cvwbc,r.requirements),/Location: Indio \(service coverage; appointment location unconfirmed\)/);
+});
+test('regional counseling remains an attributed service-area inference, not a Palm Springs office', () => {
+  const r=resolveLocalIntent({query:'Find founder support in Palm Springs',decision:'founder-support',city:'Palm Springs'},catalog);
+  assert.deepEqual(ids(r),[sbdcId]);
+  const o=r.results[0];
+  assert.equal(o.field_evidence.service_geography.evidence_type,'judgment');
+  assert.equal(o.field_evidence.service_geography.value.physical_office_verified_by_coverage,false);
+  assert.match(o.fit_reasons.map(f=>f.reason).join(' '),/does not establish a local office/);
+});
+test('founder service coverage works across compared cities without relaxing physical workspace boundaries', () => {
+  const support=resolveLocalIntent({query:'Compare founder support in Palm Springs and Indio',decision:'founder-support'},catalog);
+  assert.ok(ids(support).includes(cvwbcId));
+  assert.ok(ids(support).includes(sbdcId));
+  const workspace=resolveLocalIntent({query:'Find a coworking desk in Indio',decision:'workspace',city:'Indio'},catalog);
+  assert.deepEqual(workspace.results,[]);
+  assert.ok(workspace.exclusions.some(o=>o.id===cvwbcId));
+});
+test('unsupported founder geography stays unmatched even for a requested named program', () => {
+  const r=resolveLocalIntent({query:'Find founder support',decision:'founder-support',city:'San Diego',requested_entities:['CVWBC']},catalog);
+  assert.equal(r.status,'no_match');
+  assert.deepEqual(r.results,[]);
+});
+test('workspace contract rejects service coverage without provenance or with invented office verification', async () => {
+  const {validateWorkspaceContract}=await import('./workspace-contract.mjs');
+  for(const change of [f=>{f.source_url=null;},f=>{f.value.physical_office_verified_by_coverage=true;}]){
+    const invalid=structuredClone(workspace);
+    change(invalid.options.find(o=>o.id===cvwbcId).field_evidence.service_geography);
+    assert.throws(()=>validateWorkspaceContract(invalid,{existing:[...catalog.previews,...catalog.nodes]}));
+  }
+});
 
 test('published day-pass comparison includes both operators without claiming a reservation', () => {
   const r = resolveLocalIntent({ query: 'Find a Palm Springs day pass', workspace_access: 'day-pass' }, catalog);

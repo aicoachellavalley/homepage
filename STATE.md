@@ -2,6 +2,27 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-10-08 — AUTHORIZED RELEASE PREPARATION: PR #2 and PR #3
+
+Sat explicitly authorized merging the reviewed retreat and workspace changes.
+Two PR #3 review findings are corrected before release: editing any workspace
+requirement clears the prepared brief and disables copying until a new inquiry
+is prepared; a defensive snapshot check also blocks stale copying and stale
+in-flight comparison responses. Founder decisions use separately typed service
+geography, retaining CVWBC's published Indio/Cathedral City/Beaumont counseling
+and SBDC's attributed regional service-area inference. Physical workspace city
+filters remain strict; service coverage does not establish an office, eligibility
+or an available appointment. Source-check and observation dates are unchanged.
+
+Five added regression tests cover service cities versus headquarters, attributed
+regional coverage, compared cities, retained physical-workspace exclusions,
+unsupported geography and provenance/office-claim guards. Local release checks:
+171 tests pass, full build and all repository gates pass, and dependency audit
+reports zero vulnerabilities. Browser and deployed validation follow the new
+commit. PR #2 must merge first; PR #3 will then target main. Live payments,
+operator outreach and public plugin-directory submission are not authorized by
+this release and remain unexecuted. The booking pilot remains LOCAL/MOCK ONLY.
+
 ## 2026-10-07 — REVIEW BRANCH: regional decisions and mock transaction pilot
 
 Sat authorized two bounded workstreams: regional discovery/decision readiness

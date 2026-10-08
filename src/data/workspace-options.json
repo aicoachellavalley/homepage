@@ -160,6 +160,12 @@
           "evidence_type": "published_fact",
           "source_url": "https://www.thehivecoworking.com/memberships",
           "checked_at": "2026-10-07"
+        },
+        "service_geography": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
         }
       },
       "official_actions": [
@@ -327,6 +333,12 @@
           "checked_at": null
         },
         "eligibility": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
+        },
+        "service_geography": {
           "value": null,
           "evidence_type": "unknown",
           "source_url": null,
@@ -510,6 +522,12 @@
           "evidence_type": "unknown",
           "source_url": null,
           "checked_at": null
+        },
+        "service_geography": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
         }
       },
       "official_actions": [
@@ -682,6 +700,12 @@
           "evidence_type": "published_fact",
           "source_url": "https://rlce.csusb.edu/pderc",
           "checked_at": "2026-10-07"
+        },
+        "service_geography": {
+          "value": null,
+          "evidence_type": "unknown",
+          "source_url": null,
+          "checked_at": null
         }
       },
       "official_actions": [
@@ -837,6 +861,23 @@
           },
           "evidence_type": "published_fact",
           "source_url": "https://cvwbc.org/",
+          "checked_at": "2026-10-07"
+        },
+        "service_geography": {
+          "value": {
+            "cities": [
+              "Indio",
+              "Cathedral City",
+              "Beaumont"
+            ],
+            "delivery": [
+              "in person",
+              "online"
+            ],
+            "physical_office_verified_by_coverage": false
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://cvwbc.org/business-counseling/",
           "checked_at": "2026-10-07"
         }
       },
@@ -1012,6 +1053,31 @@
           "evidence_type": "published_fact",
           "source_url": "https://ociesmallbusiness.org/schedule-an-appointment/",
           "checked_at": "2026-10-07"
+        },
+        "service_geography": {
+          "value": {
+            "cities": [
+              "Desert Hot Springs",
+              "Cathedral City",
+              "Rancho Mirage",
+              "Palm Springs",
+              "Palm Desert",
+              "Indian Wells",
+              "La Quinta",
+              "Coachella",
+              "Indio",
+              "Thousand Palms",
+              "Bermuda Dunes"
+            ],
+            "delivery": [
+              "phone intake; consultant delivery requires confirmation"
+            ],
+            "basis": "Coachella Valley service-area inference from published Riverside County coverage; not a verified local office",
+            "physical_office_verified_by_coverage": false
+          },
+          "evidence_type": "judgment",
+          "source_url": "https://ociesmallbusiness.org/",
+          "checked_at": "2026-10-07"
         }
       },
       "official_actions": [
@@ -1152,6 +1218,20 @@
             "program_geography": "Indio business community",
             "TSP": "Indio-based businesses, Spanish-speaking entrepreneurs",
             "out_of_city_eligibility": null
+          },
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-07"
+        },
+        "service_geography": {
+          "value": {
+            "cities": [
+              "Indio"
+            ],
+            "delivery": [
+              "city program and partner intake"
+            ],
+            "physical_office_verified_by_coverage": false
           },
           "evidence_type": "published_fact",
           "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",

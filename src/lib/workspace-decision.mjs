@@ -16,9 +16,10 @@ export function resolveWorkspace(input,catalog,base,q,city,group,intent) {
   const entities=entityRequirements(input,all), exclusions=[...entities.exclusions];
   requirements.requirement_conflicts.push(...location.location_conflicts,...entities.conflicts);
   const positive=positiveRequirementText(q);
-  const founder=intent==='founder-support';
+  const founder=intent==='founder-support' || input.workspace_type==='founder-support';
   const requestedKind=input.workspace_type ?? (founder?'founder-support': /meeting room|conference room|boardroom/.test(positive)?'meeting-room':/virtual office/.test(positive)?'virtual-office':/private office|physical office|office lease|office space/.test(positive)?'office':null);
   requirements.workspace_type=requestedKind;
+  requirements.location_basis=founder?'service-geography':'physical-workspace';
   const unresolved=[...requirements.unresolved_quantities];
   if(entities.unknown_requested.length) return {...base,intent,status:'no_match',requirements,exclusions,next_questions:[`No qualified record establishes: ${entities.unknown_requested.join(', ')}. Provide the exact name or official URL.`],requirement_conflicts:requirements.requirement_conflicts};
   if(entities.unknown_excluded.length) unresolved.push(`Unrecognized exclusions retained for clarification: ${entities.unknown_excluded.join(', ')}.`);
@@ -31,8 +32,12 @@ export function resolveWorkspace(input,catalog,base,q,city,group,intent) {
   const ranked=entities.candidates.map(o=>{
     const reasons=[],unknowns=[...o.unknowns],conflicts=[];
     const publishedCity=o.field_evidence.city.evidence_type==='published_fact';
-    if(location.strict_city && (!publishedCity || normalize(o.city)!==normalize(city))) conflicts.push({reason:publishedCity?`Outside explicit ${city} city boundary.`:`No published physical ${city} location established; service-area evidence is insufficient.`,evidence_type:publishedCity?'published_fact':'unknown',source_url:o.field_evidence.city.source_url});
-    if(location.multi_city_scope && publishedCity && !location.query_locations.includes(o.city)) conflicts.push({reason:`Outside the requested city comparison (${location.query_locations.join(' / ')}).`,evidence_type:'published_fact',source_url:o.field_evidence.city.source_url});
+    const geography=o.field_evidence.service_geography;
+    const serviceCities=founder && geography && geography.evidence_type!=='unknown' ? geography.value.cities : [];
+    const matchesCity=name=>(publishedCity && normalize(o.city)===normalize(name)) || serviceCities.some(served=>normalize(served)===normalize(name));
+    if(location.strict_city && !matchesCity(city)) conflicts.push({reason:founder?`No sourced founder-support location or service coverage established for ${city}.`:publishedCity?`Outside explicit ${city} city boundary.`:`No published physical ${city} location established; service-area evidence is insufficient.`,evidence_type:founder?'unknown':publishedCity?'published_fact':'unknown',source_url:geography?.source_url??o.field_evidence.city.source_url});
+    if(location.multi_city_scope && !location.query_locations.some(matchesCity)) conflicts.push({reason:`Outside the requested city comparison (${location.query_locations.join(' / ')}).`,evidence_type:'unknown',source_url:founder?geography?.source_url??o.field_evidence.city.source_url:o.field_evidence.city.source_url});
+    if(founder && serviceCities.length){reasons.push({reason:'Founder-support service coverage: '+serviceCities.join(', ')+'. This does not establish a local office or available appointment.',evidence_type:geography.evidence_type,source_url:geography.source_url,checked_at:geography.checked_at});unknowns.push('Confirm eligibility, online versus in-person delivery, exact appointment location and availability; service coverage is not a walk-in office.');}
     const access=o.field_evidence.access.value ?? {}, purposes=o.purposes ?? [];
     if(founder && o.kind!=='founder-support' && !purposes.includes('founder-support')) conflicts.push({reason:'Not a sourced founder-support program.',evidence_type:'published_fact',source_url:o.primary_sources[0].url});
     if(intent==='satellite-base' && o.kind==='founder-support') conflicts.push({reason:'Founder support does not establish a physical satellite workspace.',evidence_type:'unknown',source_url:null});
