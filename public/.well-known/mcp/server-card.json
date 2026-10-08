@@ -2,9 +2,9 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.aicoachellavalley/local-decisions",
   "title": "AICV Local Decisions",
-  "description": "Read-only Coachella Valley business-preview discovery and sourced local decision support. Returns source dates, fit and constraints where documented, and official action links where sourced. Does not book, charge, check live inventory or guarantee assistant recommendations. Research retrieval remains available from the separate regional research MCP.",
+  "description": "Read-only Coachella Valley retreat, workspace, satellite-base and founder-support decision evidence plus business-preview discovery. Returns dated sources, conditional fit, constraints, unknowns and official operator handoffs. Does not contact, book, charge, check live inventory or guarantee recommendations. The mock action pilot is separate from these tools.",
   "websiteUrl": "https://aicoachellavalley.com",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "supportedProtocolVersions": [
     "2025-06-18"
   ],
@@ -20,7 +20,7 @@
   "tools": [
     {
       "name": "resolve_local_intent",
-      "description": "Compare qualified retreat venues across group, lodging, day-only, budget, privacy, accessibility and location requirements. Returns dated evidence, conflicts, unknowns, follow-up questions, separate supporting services and official business links; no booking or payment."
+      "description": "Compare sourced retreat, workspace, satellite-base and founder-support options against structured requirements. Preserve group, lodging or workspace access/duration, budget scope, working setup, privacy, accessibility, location, requested/excluded entities and required official action. Return dated evidence, conflicts, unknowns and official handoffs; no booking or payment."
     },
     {
       "name": "search_business_previews",

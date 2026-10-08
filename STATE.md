@@ -2,6 +2,94 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-10-08 — AUTHORIZED RELEASE PREPARATION: PR #2 and PR #3
+
+Sat explicitly authorized merging the reviewed retreat and workspace changes.
+Two PR #3 review findings are corrected before release: editing any workspace
+requirement clears the prepared brief and disables copying until a new inquiry
+is prepared; a defensive snapshot check also blocks stale copying and stale
+in-flight comparison responses. Founder decisions use separately typed service
+geography, retaining CVWBC's published Indio/Cathedral City/Beaumont counseling
+and SBDC's attributed regional service-area inference. Physical workspace city
+filters remain strict; service coverage does not establish an office, eligibility
+or an available appointment. Source-check and observation dates are unchanged.
+
+Five added regression tests cover service cities versus headquarters, attributed
+regional coverage, compared cities, retained physical-workspace exclusions,
+unsupported geography and provenance/office-claim guards. Local release checks:
+171 tests pass, full build and all repository gates pass, and dependency audit
+reports zero vulnerabilities. Browser and deployed validation follow the new
+commit. PR #2 must merge first; PR #3 will then target main. Live payments,
+operator outreach and public plugin-directory submission are not authorized by
+this release and remain unexecuted. The booking pilot remains LOCAL/MOCK ONLY.
+
+## 2026-10-07 — REVIEW BRANCH: regional decisions and mock transaction pilot
+
+Sat authorized two bounded workstreams: regional discovery/decision readiness
+and one operator-compatible transaction pathway through a review PR/preview.
+PR #2 remained open at head `955a7df`; the isolated branch
+`codex/regional-action-readiness-20261007` starts there without merging main.
+The original checkout's uncommitted Q3 report remains untouched. Lead integration
+and three specialists covered discovery, sources/independent runtime evaluation,
+and transaction research/implementation with assigned file ownership.
+
+Seven qualified workspace/founder-support pathways now have eight typed evidence
+fields, dated primary sources/actions, access/price scopes and explicit unknowns.
+The ERC retains its canonical ID and September 1 observation; all historical
+node/preview dates remain unchanged. New human page `/choose-workspace/` shares
+records and requirements with three read-only MCP tools. Expanded structured
+fields, shared entity/location logic, conflict reporting and prepared briefs
+preserve the caller's requirements. No paid ranking or commercial promises change.
+
+The provisional Hive day-pass workflow is LOCAL/MOCK ONLY: synthetic inventory,
+full fixture price, approval, atomic in-instance hold/session, idempotent retries,
+verified fake events, booking/payment reconciliation and approved mock refunds.
+It confirms only after verified payment plus authoritative mock operator status.
+No live credentials, transaction tools, operator contact or provider sandbox exist.
+Real compatibility remains unvalidated. `/action-pilot/` is noindex, outside sitemap.
+
+Eight fresh conversations on Gemini/Grok returned zero AICV.com citations and
+one AICV.org community mention; account memory/workspace isolation remains unproven.
+Four Exa SEARCH checks and baseline crawl receipts are separate evidence. Version
+0.3.0 package and distribution drafts await account-level review/submission;
+WebMCP support was unvalidated and no registration was implemented. Nothing sent.
+Research, discovery failures, independent findings and precise activation
+permissions live in the targeted `research/*2026-10-07*` handoffs; README holds
+one concise gap map. Local validation: 166 tests pass, zero audit vulnerabilities, full build and
+all repository gates pass (317 HTML pages / 6,113 static internal links). IndexNow
+submission was disabled for this review build. The unrelated external news feed
+was unreachable in the sandbox; the build recorded its existing graceful fallback.
+Initial deployed SDK check passed 18 retreat + 13 workspace scenarios. Browser QA
+caught 1.5 hours becoming 5 in a brief; shared raw-number parsing now retains
+fractional duration, preserves zero-night stays and grouped integer headcounts,
+and leaves ranges/negative/malformed quantities unresolved. Independent follow-up
+passes 24 focused decision tests. A two-city comparison now retains both municipalities, exposes explicit narrowing
+and reports unrepresented-city coverage instead of choosing one city silently.
+Final immutable-preview receipts are in
+`research/regional-preview-results-2026-10-07.json`. Prepared workspace briefs
+use readable requirement labels and retain literal caller text, with semantic
+checks for headcount, fractional duration, budget scope, privacy/accessibility
+and the requested action instead of serializing internal fields for operators.
+
+[PR #3](https://github.com/aicoachellavalley/homepage/pull/3) is stacked on the
+unmerged PR #2 review branch. The tested immutable functional commit is `0013edd`
+at https://5ffe4896.aicoachellavalley-homepage.pages.dev/choose-workspace/.
+Official SDK validation passed 18 retreat + 14 workspace scenarios, identity and
+negative controls at 00:22 UTC on October 8. Nine HTTP resources returned 200;
+all seven published workspace records exactly match source fields. Sitemap and
+mock noindex boundaries, plugin version 0.3.0 and three read-only tools pass.
+Actual final-browser QA retains both cities, six people, 1.5 hours and literal
+privacy/accessibility requirements in the readable prepared brief. Copying sends
+nothing. Mock success navigation cannot confirm; verified synthetic payment
+waits for mock operator acceptance; retries retain one reservation/payment.
+Earlier browser cancellation/refund and expired-hold/late-payment cases are
+identified by their own preview revisions in the receipt. All three CI checks
+at the functional commit passed. Review ZIP uses this tested preview endpoint;
+the public canonical package still targets production and is not a new release.
+Subsequent receipt/documentation commits do not change the tested runtime.
+Production remains unchanged; operator compatibility, full totals/terms and
+actual fulfillment are unproven. Nothing was contacted, submitted, booked or paid.
+
 ## 2026-10-07 — REVIEW CORRECTION: preserve caller retreat requirements
 
 Sat's independent review of PR #2 reproduced three interpretation defects not

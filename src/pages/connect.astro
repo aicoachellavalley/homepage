@@ -16,7 +16,7 @@ const current = nodeList.filter((n) => n.verified === true).length;
 const WINDOW_DAYS = 90;
 
 const pageTitle = 'Connect Your Agent — AICV';
-const pageDescription = 'Connect an AI agent to AICV, the Coachella Valley\'s decision engine: a local decision doorway, business-preview discovery and dated regional research, with clear limits and official next-action links.';
+const pageDescription = 'Connect an assistant to compare Coachella Valley retreats, coworking, meeting rooms, satellite-base workspace and founder support using dated evidence and official handoffs. Read-only tools.';
 const canonicalUrl = 'https://aicoachellavalley.com/connect/';
 
 const schemaGraph = {
@@ -81,7 +81,7 @@ const schemaGraph = {
     <div class="hwd-eyebrow">In Plain Language</div>
     <h2 class="hwd-h2">Bring a real local question.</h2>
     <p class="hwd-body">Connect a compatible assistant to the local decision endpoint below. Ask it to compare a retreat by attendees, overnight rooms or day-only use, sharing, duration, purpose, budget, privacy, accessibility and location, or find a local business. It searches the business-preview catalog and uses documented local observations where available. It tells you what is known, what needs checking and where the business handles the next step. This connection does not automatically install AICV in every assistant.</p>
-    <p class="hwd-body"><a href="/plan-team-retreat/" class="hwd-inline-link">Try the team retreat decision demo →</a></p>
+    <p class="hwd-body"><a href="/plan-team-retreat/" class="hwd-inline-link">Compare team retreat venues →</a> · <a href="/choose-workspace/" class="hwd-inline-link">Compare workspace and founder-support pathways →</a></p>
     <p class="hwd-body hwd-emphasis">At the last site build, {current} of {total} records had been re-checked within the last {WINDOW_DAYS} days. The other {total - current} are marked unverified until they are.</p>
   </div>
 </section>
@@ -90,18 +90,19 @@ const schemaGraph = {
 <section class="hwd-beat hwd-beat-b">
   <div class="hwd-inner">
     <div class="hwd-eyebrow">Local decisions · Read only</div>
-    <h2 class="hwd-h2">One doorway to the MVA canvas.</h2>
+    <h2 class="hwd-h2">Compare a place to meet, work or build.</h2>
     <p class="hwd-body">Add this Streamable HTTP MCP endpoint to a compatible assistant. On a preview deployment, use that deployment's address; the address below follows the site you are viewing.</p>
     <p class="hwd-body"><code class="cn-code" id="decision-mcp-address">https://aicoachellavalley.com/mcp</code></p>
     <ul class="cn-list">
-      <li><code class="cn-code">resolve_local_intent</code> — a question, suitable sourced options where available, constraints, missing information and next-action links.</li>
+      <li><code class="cn-code">resolve_local_intent</code> — compare researched retreat venues, coworking and day work, meeting rooms, satellite-base workspace and founder support; preserve requirements, dated evidence, constraints and official action links.</li>
       <li><code class="cn-code">search_business_previews</code> — find business records by name, category or city.</li>
       <li><code class="cn-code">get_business_preview</code> — retrieve a catalog record and its preview or official source links.</li>
     </ul>
     <p class="hwd-body">The <a href="/business-previews.json" class="hwd-inline-link">business catalog</a> includes dated preview references and a smaller set of attributed local observations. Catalog matches alone are not a finding that a business fits your needs. Source-check dates and unresolved requirements remain explicit. No payment changes inclusion or fit.</p>
     <p class="hwd-body">For a direct integration, send JSON with a <code class="cn-code">query</code> to <code class="cn-code">POST /api/resolve-local-intent</code>. Neither interface books, charges, checks live availability or follows arbitrary URLs. Current operational details are confirmed at the business's official destination.</p>
     <p class="hwd-body"><a href="/aicv-regional-intelligence-plugin.zip" class="hwd-inline-link">Download the assistant plugin package →</a> · <a href="/privacy/" class="hwd-inline-link">Privacy and operational usage data</a></p>
-    <p class="hwd-body">The package is prepared for review; it is not a claim of directory approval or installation in ChatGPT, Muse or Grok. Connect and test it in an account that supports custom MCP before submitting it to a platform.</p>
+    <p class="hwd-body">The package is prepared for review. Personal installation connects one account; workspace sharing stays inside that organization. OpenAI's public plugin directory is a separate reviewed distribution route shared by ChatGPT and Codex. A download or connection does not establish public approval, search visibility or a recommendation. <a href="https://developers.openai.com/plugins/build/plugins" class="hwd-inline-link">Official distribution guidance →</a></p>
+    <p class="hwd-body">The live tools provide information and official handoffs. The separate <a href="/action-pilot/" class="hwd-inline-link">mock booking workflow</a> demonstrates offer review and confirmation states using synthetic inventory and payment events. It cannot reserve or charge a real operator and is not a transaction tool in this plugin.</p>
   </div>
 </section>
 

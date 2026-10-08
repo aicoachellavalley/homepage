@@ -50,6 +50,7 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/cvep-what-happened/',    changefreq: 'monthly', priority: '0.8' },
   ];
 
+  staticPages.push(...['/choose-workspace/'].map(path=>({url:'https://aicoachellavalley.com'+path,changefreq:'monthly',priority:'0.8',lastmod:pd[path]})));
   const urlEntries: string[] = [];
 
   // Static pages

@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import data from '../data/workspace-options.json';
+import pageDates from '../data/page-dates.json';
+const canonical='https://aicoachellavalley.com/choose-workspace/';
+const description='Compare sourced Coachella Valley coworking, day work, meeting-room, satellite-office and founder-support options, with access requirements and official next steps.';
+const schema={'@context':'https://schema.org','@type':'WebPage',name:'Choose a workspace or founder-support pathway',url:canonical,description,dateModified:pageDates['/choose-workspace/'],publisher:{'@id':'https://aicoachellavalley.com/#organization'}};
+---
+<Base title="Workspaces & Founder Support | AI Coachella Valley" description={description} canonicalUrl={canonical} schema={schema}>
+  <nav aria-label="Main navigation"><a href="/">AICV · AI Coachella Valley</a><a href="/plan-team-retreat/">Team retreats</a><a href="/connect/">Connect your assistant</a></nav>
+  <header><p class="eyebrow">Team Retreat → Satellite Base → Relocate → Build</p><h1>Find a place to work.<br />Find a way into the valley.</h1><p>Start with the access you need: a desk for a day, a room for a working session, an office to explore, or a founder-support program. Compare published evidence and ask the operator to confirm the details.</p></header>
+  <main>
+    <section aria-labelledby="compare-heading"><h2 id="compare-heading">What do you need?</h2><p>Seven researched pathways. Published access and prices have a scope; current availability, complete totals and suitability remain unconfirmed. Inclusion and ranking are independent of payment to AICV.</p>
+      <form id="workspace-form">
+        <label>Your request<textarea id="query" maxlength="1200" required rows="3">Find a coworking day pass near Palm Springs for one person.</textarea></label>
+        <div class="fields">
+          <label>Decision<select id="decision"><option value="workspace">Workspace</option><option value="satellite-base">Satellite base</option><option value="founder-support">Founder support</option></select></label>
+          <label>Workspace type<select id="workspace_type"><option value="">From your request</option><option value="coworking">Coworking</option><option value="meeting-room">Meeting room</option><option value="office">Office</option><option value="virtual-office">Virtual office</option><option value="founder-support">Founder support</option></select></label>
+          <label>Access<select id="workspace_access"><option value="">Unspecified</option><option value="day-pass">Day pass</option><option value="member">Membership</option><option value="appointment">Appointment</option><option value="public">Public</option></select></label>
+          <label>Strict city<select id="city"><option value="">Use request / regional anchor</option>{['Palm Springs','Palm Desert','Indio','Coachella','Coachella Valley'].map(c=><option value={c}>{c}</option>)}</select></label>
+          <label>People<input id="group_size" type="number" min="1" max="10000" /></label>
+          <label>Hours<input id="duration_hours" type="number" min="0.25" max="365" step="0.25" /></label>
+          <label>Days<input id="duration_days" type="number" min="1" max="365" /></label>
+          <label>Budget amount (USD)<input id="budget_amount" type="number" min="0" max="100000000" /></label>
+          <label>Budget scope<select id="budget_scope"><option value="">Unspecified</option><option value="total">Total</option><option value="per-person">Per person</option><option value="per-hour">Per hour</option><option value="per-day">Per day</option></select></label>
+          <label>Working setup<input id="working_setup" maxlength="200" placeholder="e.g. six laptops and a display" /></label>
+          <label>Privacy<input id="privacy" maxlength="160" placeholder="e.g. confidential discussion" /></label>
+          <label>Accessibility<input id="accessibility" maxlength="400" placeholder="e.g. step-free entrance and restroom" /></label>
+          <label>Requested names or IDs<input id="requested_entities" maxlength="1200" placeholder="Separate with semicolons" /></label>
+          <label>Excluded names or IDs<input id="excluded_entities" maxlength="1200" placeholder="Separate with semicolons" /></label>
+          <label>Required next step<select id="required_action"><option value="information">Information</option><option value="official_handoff">Official handoff</option><option value="agent_assisted">Agent-assisted action</option><option value="transaction">Confirmed transaction</option></select></label>
+        </div><button id="compare" type="submit">Compare pathways →</button>
+      </form><p id="status" role="status" aria-live="polite"></p><div id="answer" hidden></div>
+    </section>
+    <section id="handoff"><h2>Prepare your official inquiry</h2><p>Review and copy the brief. Nothing is sent, purchased or reserved.</p><label>Prepared brief<textarea id="brief" rows="10" readonly></textarea></label><button id="copy" type="button" disabled>Copy brief</button><p id="copy-status" role="status"></p></section>
+    <section aria-labelledby="evidence-heading"><h2 id="evidence-heading">Published evidence, with its limits</h2><div class="cards">{data.options.map(o=><article id={o.slug}><p class="eyebrow">{o.city} · {o.kind} · official handoff</p><h3>{o.name}</h3><ul>{o.facts.map(f=><li>{f.text} <a href={f.source_url}>Source</a> · {f.evidence_type} · {f.checked_at}</li>)}</ul><h4>Constraints and unresolved details</h4><ul>{[...o.constraints,...o.unknowns].map(t=><li>{t}</li>)}</ul><p>Targeted source check: {o.source_checked_at}. Published evidence is not an independent facility inspection or live inventory.</p>{o.official_actions.map(a=><p><a href={a.url}>{a.label} ↗</a> · checked {a.checked_at}</p>)}<button type="button" data-prepare={o.id}>Prepare an inquiry</button></article>)}</div></section>
+    <section><h2>From a choice to a confirmed action</h2><p>These records provide official handoff. A complete transaction also needs an operator-controlled offer, inventory, buyer approval, payment and authoritative confirmation.</p><a href="/action-pilot/">Explore the mock day-pass workflow →</a><p>The pilot uses synthetic availability and payment events. It cannot reserve or charge through an operator.</p><a href="/reports/agent-mapped-founder-infrastructure-coachella-valley/">Read the regional founder-infrastructure context →</a></section>
+  </main><Footer />
+  <script>
+    import data from '../data/workspace-options.json';
+    import { workspaceBrief } from '../lib/workspace-brief.mjs';
+    const form=document.querySelector<HTMLFormElement>('#workspace-form')!;
+    const answer=document.querySelector<HTMLDivElement>('#answer')!;
+    const status=document.querySelector<HTMLParagraphElement>('#status')!;
+    const brief=document.querySelector<HTMLTextAreaElement>('#brief')!;
+    const button=document.querySelector<HTMLButtonElement>('#compare')!;
+    const copyButton=document.querySelector<HTMLButtonElement>('#copy')!;
+    const copyStatus=document.querySelector<HTMLParagraphElement>('#copy-status')!;
+    let briefSnapshot:string|null=null;
+    let last:{snapshot:string,requirements:Record<string,unknown>}|null=null;
+    const input=()=>{
+      const values:Record<string,any>={query:(document.querySelector('#query') as HTMLTextAreaElement).value.trim()};
+      for(const key of ['decision','workspace_type','workspace_access','city','budget_scope','working_setup','privacy','accessibility','required_action']) {const value=(document.getElementById(key) as HTMLInputElement).value.trim();if(value)values[key]=value;}
+      for(const key of ['group_size','duration_hours','duration_days','budget_amount']) {const value=(document.getElementById(key) as HTMLInputElement).value;if(value!=='')values[key]=Number(value);}
+      for(const key of ['requested_entities','excluded_entities']){const value=(document.getElementById(key) as HTMLInputElement).value.trim();if(value)values[key]=value.split(';').map(s=>s.trim()).filter(Boolean);}
+      return values;
+    };
+    const invalidateBrief=()=>{briefSnapshot=null;brief.value='';copyButton.disabled=true;copyStatus.textContent='Requirements changed. Prepare a new inquiry before copying.';};
+    const changed=()=>{if(briefSnapshot!==null && briefSnapshot!==JSON.stringify(input()))invalidateBrief();if(last && last.snapshot!==JSON.stringify(input())){last=null;answer.hidden=true;status.textContent='Requirements changed. Compare again for updated options.';}};
+    form.addEventListener('input',changed);
+    form.addEventListener('change',changed);
+    const prepare=(id:string)=>{const option=data.options.find(o=>o.id===id);if(!option)return;const current=input();brief.value=workspaceBrief(current,option,last?.snapshot===JSON.stringify(current)?last.requirements:undefined);briefSnapshot=JSON.stringify(current);copyButton.disabled=false;copyStatus.textContent='';document.querySelector('#handoff')?.scrollIntoView({behavior:'smooth'});};
+    document.querySelectorAll<HTMLButtonElement>('[data-prepare]').forEach(b=>b.addEventListener('click',()=>prepare(b.dataset.prepare!)));
+    const paragraph=(parent:HTMLElement,text:string)=>{const p=document.createElement('p');p.textContent=text;parent.append(p);};
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();button.disabled=true;last=null;answer.hidden=true;status.textContent='Comparing dated evidence…';const values=input();
+      try {const response=await fetch('/api/resolve-local-intent',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(values),signal:AbortSignal.timeout(15000)});const result=await response.json();if(!response.ok)throw new Error(result.error??'Comparison unavailable');
+        if(JSON.stringify(values)!==JSON.stringify(input())){status.textContent='Requirements changed during comparison. Compare again for updated options.';return;}
+        answer.replaceChildren();last={snapshot:JSON.stringify(values),requirements:result.requirements};
+        for(const text of [...(result.requirement_conflicts??[]),...(result.unresolved_constraints??[])])paragraph(answer,text);
+        for(const item of result.results??[]) {const card=document.createElement('article'),h=document.createElement('h3');h.textContent=item.name;card.append(h);paragraph(card,item.conditional_fit);for(const reason of item.fit_reasons??[])paragraph(card,reason.reason);for(const text of item.unknowns??[])paragraph(card,text);const b=document.createElement('button');b.type='button';b.textContent='Prepare an inquiry';b.addEventListener('click',()=>prepare(item.id));card.append(b);for(const action of item.official_actions??[]){const url=new URL(action.url);if(url.protocol==='https:'){const a=document.createElement('a');a.href=url.href;a.textContent=action.label+' ↗';card.append(a);}}answer.append(card);}
+        for(const item of result.exclusions??[])paragraph(answer,`${item.name}: ${item.reasons.map((r:{reason:string})=>r.reason).join(' ')}`);
+        for(const text of result.next_questions??[])paragraph(answer,text);
+        answer.hidden=false;status.textContent=result.results?.length?'Comparison ready; review unknowns and conflicts.':'No qualified match established; clarify the request.';
+      } catch(error){status.textContent=error instanceof Error?error.message:'Comparison unavailable. Published evidence below remains available.';}finally{button.disabled=false;}
+    });
+    copyButton.addEventListener('click',async()=>{if(briefSnapshot===null || briefSnapshot!==JSON.stringify(input())){invalidateBrief();return;}try{await navigator.clipboard.writeText(brief.value);copyStatus.textContent='Copied. Nothing sent or reserved.';}catch{brief.focus();brief.select();copyStatus.textContent='Brief selected; use your browser’s Copy command.';}});
+  </script>
+  <style>
+    nav{display:flex;gap:2rem;flex-wrap:wrap;background:var(--gunmetal);padding:1.4rem 2rem}nav a{color:var(--sand-light)}header{background:var(--pine-dark);color:var(--sand-light);padding:4rem max(1.2rem,calc((100vw - 1050px)/2))}header p{max-width:760px;font-size:1.1rem;line-height:1.7}h1,h2,h3{font-family:'Syne',sans-serif;letter-spacing:-.03em}h1{font-size:clamp(2.2rem,5vw,4.3rem);line-height:1.12;margin:1rem 0}h2{font-size:2rem;margin-bottom:1rem}h3{font-size:1.5rem;margin:1rem 0}.eyebrow{font-size:.75rem!important;font-weight:700;text-transform:uppercase;letter-spacing:.1em}main{max-width:1100px;margin:auto;padding:3rem 1.5rem;color:var(--pine)}section+section{margin-top:4rem}p,li{line-height:1.7}form,article{padding:1.5rem;border:1px solid var(--sand-dark);background:var(--sand-light);margin-top:1.5rem}.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}label{display:block;font-size:.85rem;font-weight:700}input,textarea,select{display:block;width:100%;font:inherit;padding:.8rem;margin:.5rem 0;background:white;color:var(--pine);border:1px solid var(--pine-light)}button{font:inherit;font-weight:700;padding:.8rem 1rem;background:var(--pine);color:var(--sand-light);border:1px solid var(--pine);cursor:pointer;margin-top:1rem}button:disabled{opacity:.6}ul{padding-left:1.25rem}a{color:var(--pine);text-underline-offset:3px}article a{margin-right:1rem}article h4{margin-top:1.3rem}#answer{margin-top:2rem}#status{margin-top:1rem}[hidden]{display:none!important}:focus-visible{outline:3px solid var(--volt);outline-offset:3px}@media(max-width:700px){.fields{grid-template-columns:1fr}nav{gap:1rem;padding:1rem}header{padding:3rem 1.2rem}main{padding:2.5rem 1.2rem}article,form{padding:1rem}}
+  </style>
+</Base>

@@ -116,7 +116,8 @@ test('satellite decision routes research deliberately and calculates freshness a
   assert.equal(result.intent, 'satellite-base');
   assert.ok(result.regional_context.some((r) => r.id === 'node/cook-street-university-row'));
   assert.ok(result.regional_context.every((r) => typeof r.freshness === 'string'));
-  assert.deepEqual(result.results, []);
+  assert.ok(result.results.length > 0);
+  assert.ok(result.results.every(r=>r.action_capability==='official_handoff'));
 });
 test('MCP handshake, initialized notification, tool schemas and all three tools work in stable JSON transport', async () => {
   const init = await handleMcp(request(rpc('initialize', { protocolVersion: '2025-11-25', capabilities: {}, clientInfo: { name: 'aicv-test', version: '1' } })), catalog);
