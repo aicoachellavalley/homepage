@@ -10,8 +10,8 @@ test('fractional meeting duration survives shared comparison and prepared inquir
   const r=resolveLocalIntent(input,catalog);
   assert.equal(r.requirements.duration_hours,1.5);
   const brief=workspaceBrief(input,r.results[0],r.requirements);
-  assert.ok(brief.includes('"duration_hours":1.5'));
-  assert.ok(workspaceBrief(input,r.results[0]).includes('"duration_hours":1.5'));
+  assert.ok(brief.includes('Duration: 1.5 hours'));
+  assert.ok(workspaceBrief(input,r.results[0]).includes('Duration: 1.5 hours'));
 });
 test('fractional duration conflict preserves structured value and reports source discrepancy',()=>{
   const r=resolveLocalIntent({query:'Coworking room for 1.5 hours',duration_hours:2},catalog);

@@ -42,7 +42,10 @@ Initial deployed SDK check passed 18 retreat + 13 workspace scenarios. Browser Q
 caught 1.5 hours becoming 5 in a brief; shared raw-number parsing now retains
 fractional duration, preserves zero-night stays and grouped integer headcounts,
 and leaves ranges/negative/malformed quantities unresolved. Independent follow-up
-passes 23 focused decision tests. Final immutable-preview receipts follow below. Production remains unchanged.
+passes 23 focused decision tests. Final immutable-preview receipts follow below. Prepared workspace briefs
+use readable requirement labels and retain literal caller text, with semantic
+checks for headcount, fractional duration, budget scope, privacy/accessibility
+and the requested action instead of serializing internal fields for operators. Production remains unchanged.
 
 ## 2026-10-07 — REVIEW CORRECTION: preserve caller retreat requirements
 

@@ -103,7 +103,7 @@ test('higher action request and generated brief preserve requirements while rema
   assert.match(r.unresolved_constraints.join(' '), /execution exceeds official_handoff/);
   const brief = workspaceBrief(input, r.results[0], r.requirements);
   assert.match(brief, /prepared only; nothing sent or reserved/);
-  assert.ok(brief.includes(JSON.stringify(r.requirements)));
+  assert.match(brief,/People: 9/);assert.match(brief,/Duration: 3 hours/);assert.match(brief,/Budget: 200 USD \(total\)/);assert.match(brief,/Privacy: confidential board discussion/);assert.match(brief,/Accessibility: step-free route required/);assert.match(brief,/Required next step: transaction/);
   assert.match(brief, /current availability unknown/);
   assert.equal(r.results[0].action_capability, 'official_handoff');
 });
@@ -128,7 +128,7 @@ test('half-hour shorthand and explicit decimal duration survive comparison and b
     const input = { query: `Meeting room at The Hive for ${text}` };
     const r = resolveLocalIntent(input, catalog);
     assert.equal(r.requirements.duration_hours, 0.5, text);
-    assert.ok(workspaceBrief(input, r.results[0], r.requirements).includes('"duration_hours":0.5'));
+    assert.ok(workspaceBrief(input, r.results[0], r.requirements).includes('Duration: 0.5 hours')); 
   }
 });
 test('numeric ranges, negative durations and malformed headcounts do not acquire an invented exact value', () => {
