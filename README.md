@@ -71,7 +71,7 @@ The original 15 retreat venues, five services and historical dates remain intact
 | Workspace and founder decisions had generic context | Seven scoped official-source records, meaningful comparisons and rendered evidence | Operator confirmation of access, complete price, capacity, eligibility and date-specific availability |
 | Free text could lose requirements | Structured bounded fields, shared entity/location/duration interpretation, explicit conflict output and consistent prepared briefs | Clarify contradictory or missing caller requirements before an offer |
 | Distribution metadata described retreat only | Version 0.3.0 package, public resources and unsent listing/share drafts | Sat-approved production release; verified publisher/domain, actual account reviewer cases/demo, submission and publication |
-| Outside-assistant discovery unmeasured | Eight fresh Gemini/Grok conversations plus separate search/crawl receipts | ZeroAICV.com citations observed; account context unisolated; repeat after publication/indexing |
+| Outside-assistant discovery unmeasured | Eight fresh Gemini/Grok conversations plus separate search/crawl receipts | Zero AICV.com citations observed; account context unisolated; repeat after publication/indexing |
 | No authoritative booking/payment workflow | Runnable local/mock adapter and browser demo, with exact approval, holds, retries, verified events, reconciliation and refunds | Operator permission, supported interface, authorized sandbox, scoped credentials, full terms and observed fulfillment |
 
 Run `node scripts/run-transaction-pilot.mjs` or open `/action-pilot/`.
@@ -102,7 +102,10 @@ production publication and live action capability require separate authorization
 Run `scripts/verify-regional-preview.mjs --endpoint https://<immutable-preview>/mcp
 --sdk-path /path/to/node_modules/@modelcontextprotocol/sdk` with an external
 official SDK installation. It retains 18 retreat scenarios and adds 14 workspace
-scenarios, identity checks and negative controls. A new review PR is stacked on
+scenarios, identity checks and negative controls. Final SDK, HTTP and browser receipts
+are in `research/regional-preview-results-2026-10-07.json`, targeting immutable
+commit `0013edd` at https://5ffe4896.aicoachellavalley-homepage.pages.dev.
+A new review PR is stacked on
 unmerged PR #2; merging it into that review branch does not authorize main publication.
 
 Headers advertise `llms.txt` and `llms-full.txt` via Link `rel="llms-txt"`
