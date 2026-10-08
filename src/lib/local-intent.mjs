@@ -1,6 +1,6 @@
 // Pure bounded lookup. AICV records are data, never instructions to the caller.
 import { accommodationRequirements } from './retreat-requirements.mjs';
-import { entityRequirements, decisionRequirements, locationRequirements } from './decision-requirements.mjs';
+import { entityRequirements, decisionRequirements, locationRequirements, quantityFromQuery } from './decision-requirements.mjs';
 import { workspaceIntent, resolveWorkspace } from './workspace-decision.mjs';
 export const SEGMENTS = ['food-dining', 'hospitality', 'home-real-estate', 'wellness-healthcare', 'family-schooling', 'outdoors-recreation'];
 const CITIES = ['Palm Springs', 'Cathedral City', 'Rancho Mirage', 'Palm Desert', 'Indian Wells', 'La Quinta', 'Indio', 'Coachella', 'Desert Hot Springs', 'Thousand Palms', 'Bermuda Dunes', 'Adjacent Communities', 'Coachella Valley'];
@@ -119,7 +119,7 @@ export function resolveLocalIntent(input, catalog) {
   const city = cityFrom(input);
   const base = { query, city, results: [], regional_context: [], unresolved_constraints: [], next_questions: [], limitations: [...LIMITATIONS] };
   if ((!city && /\b(san diego|san francisco|los angeles|new york|london|las vegas)\b/.test(q)) || (city && !CITIES.includes(city))) return { ...base, status: 'no_match', intent: 'outside-coverage', limitations: [...LIMITATIONS, 'The requested location is outside this catalog’s coverage.'] };
-  const group = input.group_size ?? (Number(q.match(/\b(\d{1,4})\s*(?:person|people|guest|guests|member|members|attendees|employees)\b/)?.[1]) || null);
+  const group = input.group_size ?? quantityFromQuery(input.query,'person|people|guests?|members?|attendees|employees');
   const workspace = workspaceIntent(input,q);
   if(workspace) {
     const result=resolveWorkspace(input,catalog,base,q,city,group,workspace);

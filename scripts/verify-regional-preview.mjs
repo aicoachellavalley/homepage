@@ -100,7 +100,7 @@ try {
   const workspaceCases=[
     ['day-pass',{query:'Find a coworking day pass in Palm Springs',workspace_access:'day-pass'}],
     ['strict-Palm-Desert-day',{query:'Find a coworking day pass in Palm Desert',workspace_access:'day-pass'}],
-    ['comfortable-not-maximum',{query:'Meeting room at The Hive for 9 people',workspace_type:'meeting-room',group_size:9}],
+    ['comfortable-not-maximum',{query:'Meeting room at The Hive for 9 people for 1.5 hours',workspace_type:'meeting-room',group_size:9}],
     ['virtual-office',{query:'Find a virtual office in Palm Springs',workspace_type:'virtual-office'}],
     ['satellite-base',{query:'Evaluate a satellite base in Palm Desert',decision:'satellite-base'}],
     ['founder-support',{query:'Find founder support in Palm Desert',decision:'founder-support'}],
@@ -118,7 +118,7 @@ try {
     if(['strict-Palm-Desert-day','unknown-requested'].includes(label)) {assert.equal(r.status,'no_match');assert.equal(r.results.length,0);}
     else {assert.ok(r.results.length>0&&r.results.length<=5);for(const o of r.results){assert.equal(o.action_capability,'official_handoff');assert.ok(o.field_evidence);assert.ok(o.unknowns.length);assert.ok(o.official_actions.every(a=>a.url.startsWith('https://')&&a.checked_at));}}
     if(label==='day-pass')assert.ok(r.results.some(o=>o.id==='workspace/regus-750-n-palm-canyon'));
-    if(label==='comfortable-not-maximum'){assert.equal(r.results[0].id,'workspace/the-hive-coworking');assert.match(r.results[0].unknowns.join(' '),/9 attendees/);}
+    if(label==='comfortable-not-maximum'){assert.equal(r.requirements.duration_hours,1.5);assert.equal(r.results[0].id,'workspace/the-hive-coworking');assert.match(r.results[0].unknowns.join(' '),/9 attendees/);}
     if(label==='virtual-office')assert.ok(r.results.every(o=>o.purposes.includes('virtual-office')));
     if(label==='exclude-Hive'){assert.ok(r.results.every(o=>o.id!=='workspace/the-hive-coworking'));assert.ok(r.exclusions.some(o=>o.id==='workspace/the-hive-coworking'));}
     if(label==='exact-Regus'){assert.equal(r.results.length,1);assert.equal(r.results[0].id,'workspace/regus-750-n-palm-canyon');}

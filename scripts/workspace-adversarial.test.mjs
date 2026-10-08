@@ -122,3 +122,20 @@ test('contract rejects legacy room inventory masquerading as a current unknown c
   corrupted.options.find(o => o.id === ercId).field_evidence.capacity.value = { meeting_room: 10 };
   assert.throws(() => validateWorkspaceContract(corrupted, { existing: [...catalog.previews, ...catalog.nodes] }), /Unknown evidence must have null value/);
 });
+
+test('half-hour shorthand and explicit decimal duration survive comparison and brief', () => {
+  for (const text of ['.5 hours', '0.5 hours']) {
+    const input = { query: `Meeting room at The Hive for ${text}` };
+    const r = resolveLocalIntent(input, catalog);
+    assert.equal(r.requirements.duration_hours, 0.5, text);
+    assert.ok(workspaceBrief(input, r.results[0], r.requirements).includes('"duration_hours":0.5'));
+  }
+});
+test('numeric ranges, negative durations and malformed headcounts do not acquire an invented exact value', () => {
+  for (const text of ['1-2 hours', '-1.5 hours']) {
+    const r = resolveLocalIntent({ query: `Coworking desk for ${text}` }, catalog);
+    assert.equal(r.requirements.duration_hours, null, text);
+  }
+  const malformed = resolveLocalIntent({ query: 'Meeting room for 12,34 people' }, catalog);
+  assert.equal(malformed.requirements.group_size, null);
+});

@@ -1,5 +1,15 @@
 // Shared interpretation for read-only decisions and browser-generated briefs.
 export const normalizeDecision = (s) => String(s ?? '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+export function quantityFromQuery(query, nouns, { integer=true, max=10000, min=1 }={}) {
+  // Preserve decimal punctuation before general text normalization. Commas
+  // within a number are separators; a decimal person/room count is unresolved.
+  const text=String(query ?? '').toLowerCase();
+  const match=text.match(new RegExp(`(?<![\\w.,+−–—-])(\\d+(?:,\\d{3})*(?:\\.\\d+)?|\\.\\d+)\\s*(?:${nouns})\\b`));
+  const before=match ? text.slice(0,match.index) : '';
+  if(/(?:\bbetween\s+\d+(?:\.\d+)?\s+and\s*|\b\d+(?:\.\d+)?\s*(?:to|or|through|[-−–—])\s*|(?:^|\s)[-−]\s*|\b(?:not|no|without|excluding|up to|at least|at most|more than|less than|minimum|maximum)\s*)$/.test(before)) return null;
+  const value=match ? Number(match[1].replaceAll(',','')) : null;
+  return value!==null && value>=min && value<=max && (!integer || Number.isInteger(value)) ? value : null;
+}
 export function positiveRequirementText(q) { return q.replace(/\b(?:not|no|without|do not need|don t need) (?:a |an )?(?:private office|virtual office|meeting room|day pass|shared desk|coworking|privacy|private|quiet|confidential)\b/g,' '); }
 export function locationRequirements(input, city) {
   const q = normalizeDecision(input.query), c = normalizeDecision(city);
@@ -17,6 +27,18 @@ export function entityRequirements(input, records) {
   const negative = new RegExp(`\\b(?:exclude|excluding|avoid|except(?: for)?|alternatives? to|instead of|other than|rather than|apart from|without|not(?: at)?|do not (?:include|recommend|choose|suggest)|don t (?:include|recommend|choose|suggest)) (?:the )?(?:(?:${aliases}) (?:(?:and|or) )?)*$`);
   const resolved = values => (values ?? []).map(v => ({ value:v, record:records.find(o => names(o).includes(normalizeDecision(v))) }));
   const requested = resolved(input.requested_entities), omitted = resolved(input.excluded_entities);
+  const targetMatch=q.match(/\b(?:named|called|at) (?:the )?(.+?)(?: in | near | around | for | with |$)/);
+  if(targetMatch) {
+    const target=targetMatch[1];
+    const known=records.some(o=>names(o).some(alias=>target===alias || target.startsWith(alias+' ')));
+    const generic=/^(?:a |an |any |our |least |most |\d)|^(?:coworking|workspaces?|offices?|hotels?|resorts?|venues?|desks?|meeting rooms?)$/.test(target);
+    const place=['Palm Springs','Palm Desert','Cathedral City','Rancho Mirage','Indian Wells','La Quinta','Indio','Coachella','Desert Hot Springs','Coachella Valley','Thousand Palms','Bermuda Dunes'].some(c=>normalizeDecision(c)===target);
+    if(!known && !generic && !place) {
+      const before=q.slice(0,targetMatch.index);
+      if(/(?:not|instead of|alternatives? to|other than)$/.test(before.trim())) omitted.push({value:target});
+      else requested.push({value:target});
+    }
+  }
   const mentions = records.map(o => {
     let positive = requested.some(r => r.record?.id === o.id), excluded = omitted.some(r => r.record?.id === o.id);
     for (const alias of names(o)) for (const m of q.matchAll(new RegExp(`\\b${alias}\\b`, 'g'))) {
@@ -40,11 +62,13 @@ export function decisionRequirements(input, group) {
   const conflicts=[];
   if(input.budget_amount !== undefined && currencyAmount && input.budget_amount !== Number(currencyAmount.replaceAll(',',''))) conflicts.push('Structured budget amount differs from the query. Structured amount is used; clarify before requesting an offer.');
   if(input.budget_scope && inferredScope && input.budget_scope !== inferredScope) conflicts.push('Structured budget scope differs from the query. Structured scope is used; clarify before requesting an offer.');
-  const queryGroup=Number(q.match(/\b(\d{1,4}) (?:person|people|guests?|members?|attendees|employees)\b/)?.[1])||null;
-  const queryHours=Number(q.match(/\b(\d+(?:\.\d+)?) hours?\b/)?.[1])||null;
-  const queryDays=Number(q.match(/\b(\d+) days?\b/)?.[1])||null;
+  const queryGroup=quantityFromQuery(input.query,'person|people|guests?|members?|attendees|employees');
+  const queryHours=quantityFromQuery(input.query,'hours?',{integer:false,max:365,min:0.25});
+  const queryDays=quantityFromQuery(input.query,'days?',{max:365});
   for(const [key,queryValue] of [['group_size',queryGroup],['duration_hours',queryHours],['duration_days',queryDays]]) if(input[key] !== undefined && queryValue!==null && input[key]!==queryValue) conflicts.push(`Structured ${key} differs from the query; clarify before an offer. Structured value is used.`);
-  const hours = input.duration_hours ?? (Number(q.match(/\b(\d+(?:\.\d+)?) hours?\b/)?.[1]) || null);
-  const days = input.duration_days ?? (Number(q.match(/\b(\d+) days?\b/)?.[1]) || (/day pass|day work/.test(q)?1:null));
-  return { decision:input.decision ?? null,workspace_type:input.workspace_type ?? null,location:input.city ?? null,nearby:input.nearby ?? false,group_size:group ?? queryGroup, duration_hours:hours,duration_days:days,budget:input.budget ?? null,budget_amount:amount,budget_scope:input.budget_scope ?? inferredScope,budget_currency:amount !== null?'USD':null,privacy:input.privacy ?? (/private|privacy|confidential|quiet/.test(positive)?'Requested; exact acoustic/dedicated access needs unresolved.':null),accessibility:input.accessibility ?? (/wheelchair|accessib|step free|mobility/.test(q)?'Specific accessibility needs require confirmation.':null),working_setup:input.working_setup ?? null,workspace_access:input.workspace_access ?? (/day pass|drop in/.test(positive)?'day-pass':null),required_action:input.required_action ?? 'information',requested_entities:input.requested_entities ?? [],excluded_entities:input.excluded_entities ?? [],requirement_conflicts:conflicts };
+  const hours = input.duration_hours ?? queryHours;
+  const days = input.duration_days ?? (queryDays ?? (/day pass|day work/.test(positive)?1:null));
+  const unresolved_quantities=[];
+  if(input.duration_hours===undefined && queryHours===null && /\bhours?\b/.test(q)) unresolved_quantities.push('No exact supported hour duration is established; clarify the range or supply duration_hours.');
+  return { unresolved_quantities,decision:input.decision ?? null,workspace_type:input.workspace_type ?? null,location:input.city ?? null,nearby:input.nearby ?? false,group_size:group ?? queryGroup, duration_hours:hours,duration_days:days,budget:input.budget ?? null,budget_amount:amount,budget_scope:input.budget_scope ?? inferredScope,budget_currency:amount !== null?'USD':null,privacy:input.privacy ?? (/private|privacy|confidential|quiet/.test(positive)?'Requested; exact acoustic/dedicated access needs unresolved.':null),accessibility:input.accessibility ?? (/wheelchair|accessib|step free|mobility/.test(q)?'Specific accessibility needs require confirmation.':null),working_setup:input.working_setup ?? null,workspace_access:input.workspace_access ?? (/day pass|drop in/.test(positive)?'day-pass':null),required_action:input.required_action ?? 'information',requested_entities:input.requested_entities ?? [],excluded_entities:input.excluded_entities ?? [],requirement_conflicts:conflicts };
 }

@@ -4,6 +4,7 @@ export function workspaceIntent(input, q) {
   if(input.decision === 'team-retreat') return null;
   if(input.workspace_type || input.workspace_access) return input.workspace_type==='founder-support'?'founder-support':'workspace';
   if(/\b(retreat|offsite|off site)\b/.test(q)) return null;
+  if(/meeting room|conference room|boardroom/.test(q) && !/team|executive|leadership|board meeting|company|corporate/.test(q)) return 'workspace';
   if(/cowork|co work|day pass|day work|drop in desk|meeting room rental|rent (?:a )?meeting room|hourly meeting|virtual office|private office|physical office|office space|office lease|workspace/.test(q)) return 'workspace';
   if(/founder support|business counseling|business counselling|startup support|business mentoring|small business help|business resource|business assistance/.test(q)) return 'founder-support';
   if(/satellite|relocat(?:e|ion|ing)/.test(q)) return 'satellite-base';
@@ -18,7 +19,7 @@ export function resolveWorkspace(input,catalog,base,q,city,group,intent) {
   const founder=intent==='founder-support';
   const requestedKind=input.workspace_type ?? (founder?'founder-support': /meeting room|conference room|boardroom/.test(positive)?'meeting-room':/virtual office/.test(positive)?'virtual-office':/private office|physical office|office lease|office space/.test(positive)?'office':null);
   requirements.workspace_type=requestedKind;
-  const unresolved=[];
+  const unresolved=[...requirements.unresolved_quantities];
   if(entities.unknown_requested.length) return {...base,intent,status:'no_match',requirements,exclusions,next_questions:[`No qualified record establishes: ${entities.unknown_requested.join(', ')}. Provide the exact name or official URL.`],requirement_conflicts:requirements.requirement_conflicts};
   if(entities.unknown_excluded.length) unresolved.push(`Unrecognized exclusions retained for clarification: ${entities.unknown_excluded.join(', ')}.`);
   if(requirements.workspace_access && requirements.workspace_access!=='day-pass') unresolved.push(`Requested ${requirements.workspace_access} access needs operator confirmation of membership, eligibility and appointment terms.`);
