@@ -39,8 +39,11 @@ test('llms.txt and the footer carry the decision-engine identity', () => {
 
 test('about page is dated and sitemapped from the single date source', () => {
   assert.match(pageDates['/about/'], /^\d{4}-\d{2}-\d{2}$/);
-  assert.match(sitemap, /aicoachellavalley\.com\/about\/'.*pd\['\/about\/'\]/);
-  assert.match(page, /"dateModified": pageDates\["\/about\/"\]/);
+  // The page renders live brief/report counts, so both surfaces take the later
+  // of the authored date and the newest counted publication (content-dates.cjs).
+  assert.match(sitemap, /aicoachellavalley\.com\/about\/'.*maxDate\(\[pd\['\/about\/'\], countsDate\]\)/);
+  assert.match(page, /const dateModified = latest\(\[pageDates\['\/about\/'\], countedSetDate\(briefsData, reportsData\)\]\)/);
+  assert.match(page, /"dateModified": dateModified/);
 });
 
 test('key facts are a definition list and the FAQ has one source', () => {

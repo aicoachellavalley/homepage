@@ -12,6 +12,7 @@ const path = require('path');
 const { briefDateModified, briefIsAmended } = require('./brief-dates.cjs');
 const { reportCopyDate, reportDateModified } = require('./report-dates.cjs');
 const { nodeContent } = require('./node-content.cjs');
+const { countedSetDate, nodeDateModified } = require('./content-dates.cjs');
 
 const COM_ROOT   = path.resolve(__dirname, '..');
 const NODES_DIR  = path.join(COM_ROOT, 'src', 'content', 'nodes');
@@ -128,6 +129,9 @@ function extractSection(content, sectionName) {
 function buildNodes() {
   const files = walkMdx(NODES_DIR);
   const nodes = [];
+  // Same derivation as sitemap.xml.ts and the node page (content-dates.cjs).
+  const fmOf = (dir) => walkMdx(dir).map((f) => parseFrontmatter(fs.readFileSync(f, 'utf8')));
+  const countsDate = countedSetDate(fmOf(BRIEFS_DIR), fmOf(REPORTS_DIR));
 
   for (const filePath of files) {
     const content = fs.readFileSync(filePath, 'utf8');
@@ -153,6 +157,7 @@ function buildNodes() {
       domain: fm.domain || '',
       funnel_stages: Array.isArray(fm.funnel_stages) ? fm.funnel_stages : [],
       last_updated: fm.last_updated || '',
+      date_modified: nodeDateModified(fm, content.replace(/^---[\s\S]*?\n---/, ''), countsDate),
     });
   }
 

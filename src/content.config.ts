@@ -88,6 +88,10 @@ const nodes = defineCollection({
     verified:      z.boolean(),
     status:        z.enum(['live', 'under construction', 'planned']),
     last_updated:  z.string().optional(),
+    // Date of the latest published edit made AFTER the last review. Never a
+    // substitute for last_updated, which is the verification date and drives
+    // the 90-day freshness window (scripts/content-dates.cjs).
+    last_modified: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   }),
 });
 

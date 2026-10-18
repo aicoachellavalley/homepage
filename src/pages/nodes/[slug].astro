@@ -2,6 +2,7 @@
 import Footer from '../../components/Footer.astro';
 import OmitBodyTitle from '../../components/OmitBodyTitle.astro';
 import { getCollection, render } from 'astro:content';
+import { countedSetDate, nodeDateModified } from '../../../scripts/content-dates.cjs';
 
 export async function getStaticPaths() {
   const entries = await getCollection('nodes');
@@ -16,6 +17,14 @@ const { Content } = await render(entry);
 
 const slug = entry.id.replace(/\.mdx$/, '');
 const { title, description, city, category, subcategory, last_updated } = entry.data;
+// "Last reviewed" is the verification date; an edit or a changed live count
+// after it is shown separately, never by moving the review date.
+const countsDate = countedSetDate(
+  (await getCollection('briefs')).map((e) => e.data),
+  (await getCollection('reports')).map((e) => e.data),
+);
+const dateModified = nodeDateModified(entry.data, entry.body, countsDate);
+const updatedAfterReview = dateModified && last_updated && dateModified > last_updated ? dateModified : '';
 
 const canonicalUrl = `https://aicoachellavalley.com/nodes/${slug}/`;
 const pageTitle    = `${title} — AICV Intelligence Node`;
@@ -261,6 +270,7 @@ const schemaJson = {
 
 <Footer variant="compact">
   {last_updated && <span> · Last reviewed: {last_updated}</span>}
+  {updatedAfterReview && <span> · Updated: {updatedAfterReview}</span>}
 </Footer>
   </div>
 

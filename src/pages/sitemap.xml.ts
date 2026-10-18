@@ -6,6 +6,7 @@ import { briefDateModified } from '../../scripts/brief-dates.cjs';
 import { reportDateModified } from '../../scripts/report-dates.cjs';
 import pageDates from '../data/page-dates.json';
 import { latestDate, latestResearchDate } from '../../scripts/research-dates.mjs';
+import { countedSetDate, nodeDateModified } from '../../scripts/content-dates.cjs';
 
 export const GET: APIRoute = async () => {
   const nodes   = await getCollection('nodes');
@@ -25,7 +26,11 @@ export const GET: APIRoute = async () => {
   const maxDate = (dates: (string | undefined)[]) =>
     dates.filter((d): d is string => !!d).reduce((a, b) => (b > a ? b : a), '') || undefined;
   const briefsLastmod  = maxDate(briefs.map((e) => briefDateModified(e.data)));
-  const nodesLastmod   = maxDate(nodes.map((e) => e.data.last_updated));
+  // Nodes: review date, any later edit, and for count-rendering nodes the
+  // newest counted publication — see scripts/content-dates.cjs.
+  const countsDate     = countedSetDate(briefs.map((e) => e.data), reports.map((e) => e.data));
+  const nodeLastmod    = (e: (typeof nodes)[number]) => nodeDateModified(e.data, e.body, countsDate) || undefined;
+  const nodesLastmod   = maxDate(nodes.map(nodeLastmod));
   const reportsLastmod = maxDate(reports.filter((e) => e.data.status === 'published').map((e) => reportDateModified(e.id, e.data)));
   const pd = pageDates as Record<string, string>;
   // This page now displays corpus activity. Keep its crawl date aligned with
@@ -42,7 +47,7 @@ export const GET: APIRoute = async () => {
     { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8', lastmod: pd['/minimum-viable-agent/'] },
     { url: 'https://aicoachellavalley.com/how-we-do-this/',        changefreq: 'monthly', priority: '0.8', lastmod: pd['/how-we-do-this/'] },
     { url: 'https://aicoachellavalley.com/connect/',               changefreq: 'monthly', priority: '0.8', lastmod: pd['/connect/'] },
-    { url: 'https://aicoachellavalley.com/about/',                 changefreq: 'monthly', priority: '0.8', lastmod: pd['/about/'] },
+    { url: 'https://aicoachellavalley.com/about/',                 changefreq: 'monthly', priority: '0.8', lastmod: maxDate([pd['/about/'], countsDate]) },
     { url: 'https://aicoachellavalley.com/contact/',               changefreq: 'monthly', priority: '0.7', lastmod: pd['/contact/'] },
     { url: 'https://aicoachellavalley.com/plan-team-retreat/',     changefreq: 'monthly', priority: '0.9', lastmod: pd['/plan-team-retreat/'] },
     { url: 'https://aicoachellavalley.com/privacy/',               changefreq: 'monthly', priority: '0.4', lastmod: pd['/privacy/'] },
@@ -65,7 +70,7 @@ export const GET: APIRoute = async () => {
   // Nodes
   for (const entry of nodes) {
     const slug    = entry.id.replace(/\.mdx$/, '');
-    const lastmod = entry.data.last_updated;
+    const lastmod = nodeLastmod(entry);
     urlEntries.push(`  <url>
     <loc>https://aicoachellavalley.com/nodes/${slug}/</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>monthly</changefreq>

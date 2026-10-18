@@ -7,6 +7,7 @@ import pricing from '../data/pricing.json';
 import corpus from '../data/corpus.json';
 import briefsData from '../../public/briefs.json';
 import reportsData from '../../public/reports.json';
+import { countedSetDate, latest } from '../../scripts/content-dates.cjs';
 
 /* ABOUT — the entity page (added 2026-09-22).
  * /how-we-do-this/ explains the METHOD; this page states the ENTITY: what AICV
@@ -34,6 +35,9 @@ const fmt = (n) => n.toLocaleString('en-US');
 const briefCount = briefsData.length;
 const reportCount = reportsData.filter((r) => r.report_type !== 'methodology').length;
 const businessesMapped = corpus.businesses_mapped;
+// The counts above change when a brief or report is published, so this page's
+// modification date includes the newest one. Same derivation as sitemap.xml.ts.
+const dateModified = latest([pageDates['/about/'], countedSetDate(briefsData, reportsData)]);
 
 const founded = new Date(`${org.foundingDate}T00:00:00Z`)
   .toLocaleDateString('en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' });
@@ -88,7 +92,7 @@ const schemaGraph = {
       },
       "inLanguage": "en-US",
       "datePublished": "2026-09-22",
-      "dateModified": pageDates["/about/"]
+      "dateModified": dateModified
     },
     {
       "@type": "Organization",
