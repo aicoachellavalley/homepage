@@ -1,0 +1,75 @@
+---
+/**
+ * WebMcpTools — exposes AICV's public MCP desk to in-browser agents through
+ * WebMCP (Web Machine Learning CG draft, document.modelContext.registerTool).
+ * Added 2026-10-17.
+ *
+ * WHAT IT IS. A thin bridge, not a second implementation. When the browser
+ * offers WebMCP, the page asks the live desk (mcp.aicoachellavalley.com) which
+ * tools it serves and registers each one, prefixed `aicv_`, with the desk's
+ * own description and input schema. Calling a tool calls the desk. So the page
+ * can never advertise a tool the desk does not answer, and a desk outage means
+ * no tools are registered rather than tools that fail.
+ *
+ * WHAT IT IS NOT. Every desk tool is a read of published AICV research; the
+ * tools are registered readOnlyHint. No login, no write, nothing the visitor
+ * types is sent anywhere except as the arguments of the call the agent makes.
+ * The desk logs the call envelope (method, tool name, user agent, ray id,
+ * country), never the arguments.
+ *
+ * COST TO ORDINARY VISITORS: none. Without WebMCP support the script stops at
+ * the feature test and makes no request.
+ */
+---
+<script>
+  const DESK = 'https://mcp.aicoachellavalley.com/mcp';
+
+  type DeskTool = { name: string; description?: string; inputSchema?: object };
+  type ModelContext = { registerTool: (tool: object, options?: object) => Promise<void> };
+
+  // The current draft puts the API on document; earlier Chrome builds used navigator.
+  const mc: ModelContext | undefined =
+    (document as any).modelContext ?? (navigator as any).modelContext;
+
+  let seq = 0;
+  async function rpc(method: string, params?: object) {
+    const res = await fetch(DESK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ jsonrpc: '2.0', id: ++seq, method, ...(params ? { params } : {}) }),
+    });
+    if (!res.ok) throw new Error(`AICV desk returned HTTP ${res.status}`);
+    const body = await res.json();
+    if (body.error) throw new Error(body.error.message || 'AICV desk error');
+    return body.result;
+  }
+
+  async function registerDeskTools(ctx: ModelContext) {
+    let tools: DeskTool[];
+    try {
+      tools = (await rpc('tools/list')).tools ?? [];
+    } catch {
+      return; // desk unreachable: register nothing rather than tools that fail
+    }
+    for (const t of tools) {
+      // Wrapped so a synchronous throw in an early implementation is caught too.
+      Promise.resolve().then(() => ctx.registerTool({
+        name: `aicv_${t.name}`,
+        title: `AICV: ${t.name.replace(/_/g, ' ')}`,
+        description: `${t.description ?? ''} Read-only; answered live by AICV's public MCP desk (https://mcp.aicoachellavalley.com/mcp).`.trim(),
+        inputSchema: t.inputSchema ?? { type: 'object', properties: {} },
+        annotations: { readOnlyHint: true },
+        async execute(input: object) {
+          const result = await rpc('tools/call', { name: t.name, arguments: input ?? {} });
+          const text = (result?.content ?? []).filter((c: any) => c.type === 'text').map((c: any) => c.text).join('\n');
+          let data: unknown = text;
+          try { data = JSON.parse(text); } catch { /* the desk returned plain text */ }
+          if (result?.isError) throw new Error(typeof data === 'string' ? data : JSON.stringify(data));
+          return data;
+        },
+      })).catch(() => { /* duplicate or rejected registration: leave the page usable */ });
+    }
+  }
+
+  if (mc && typeof mc.registerTool === 'function') registerDeskTools(mc);
+</script>

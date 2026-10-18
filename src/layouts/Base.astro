@@ -1,4 +1,6 @@
 ---
+import WebMcpTools from '../components/WebMcpTools.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -64,6 +66,7 @@ const ogImageAbsolute = new URL(ogImage, Astro.site).href;
 </head>
 <body>
   <slot />
+  <WebMcpTools />
 </body>
 </html>
 
