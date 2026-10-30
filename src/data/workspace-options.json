@@ -1133,12 +1133,18 @@
           "evidence_type": "published_fact",
           "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
           "checked_at": "2026-10-07"
+        },
+        {
+          "text": "City advertises free business-related workspaces and a conference room at Indio Business Connect Center, 45222 Towne Street; contact IndioBusinessConnectCenter@indio.org or 760-541-4475 to request a reservation. Capacity, eligibility and date-specific availability require direct confirmation.",
+          "evidence_type": "published_fact",
+          "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+          "checked_at": "2026-10-30"
         }
       ],
       "constraints": [
         "Program publication does not establish an open cohort, immediate admission or an office reservation.",
         "Confirm qualifying Indio business status before assuming eligibility.",
-        "City page was readable through Exa extraction; direct web fetch returned 403."
+        "Targeted October 30, 2026 recheck: official city page returned readable HTTP 200 content; the earlier October 7 direct-fetch 403 remains a historical observation."
       ],
       "unknowns": [
         "Current intake form and application periods",
@@ -1147,7 +1153,7 @@
         "Specific program accessibility and accommodations"
       ],
       "source_checked_at": "2026-10-07",
-      "targeted_check_date": "2026-10-07",
+      "targeted_check_date": "2026-10-30",
       "node_last_updated": null,
       "primary_sources": [
         {
@@ -1241,10 +1247,10 @@
       "official_actions": [
         {
           "url": "https://www.indio.org/departments/economic-development/indio-business-connect",
-          "label": "Review membership and official partner pathways",
+          "label": "Review city program and workspace reservation instructions",
           "kind": "inquiry",
           "source_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
-          "checked_at": "2026-10-07"
+          "checked_at": "2026-10-30"
         }
       ],
       "action_capability": "official_handoff",

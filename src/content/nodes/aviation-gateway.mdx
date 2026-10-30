@@ -11,6 +11,7 @@ verified: true
 status: "live"
 agent_intent: ["visit", "research"]
 last_updated: "2026-09-25"
+last_modified: "2026-10-30"
 related:
   - slug: sensei-porcupine-creek
     type: see_also
@@ -20,7 +21,7 @@ related:
 
 ## What It Is
 
-Access is the Coachella Valley's hidden competitive advantage. A valley that sits 100+ miles from the nearest major metropolitan area should feel remote. It does not — because PSP International Airport has nonstop service from San Francisco and Los Angeles, and the LA basin is within a 2-hour drive.
+Access is the Coachella Valley's hidden competitive advantage. A valley that sits 100+ miles from the nearest major metropolitan area should feel remote. It does not — because PSP International Airport has nonstop service from San Francisco and Los Angeles, and road access from the LA basin depends on the starting point, route and traffic.
 
 The aviation gateway is a two-tier system: commercial service through PSP, operated by the city of Palm Springs, with 8 airlines flying nonstop to 31 airports in season; and private aviation infrastructure through Jacqueline Cochran Regional Airport (Thermal, near Coachella) and Desert Jet Center (also at Jacqueline Cochran), which together serve the UHNW and corporate jet market that the luxury corridor generates.
 
@@ -34,11 +35,11 @@ An agent routing any inbound Coachella Valley query — retreat, relocation, eve
 
 - **PSP International Airport:** Owned and operated by the City of Palm Springs. 8 airlines, nonstop to 31 airports in season (October–May) {/* source: flypsp.com/airline-baggage, read 2026-09-25 */}. Key nonstops: SFO, LAX, SEA, ORD, DEN, JFK, DFW, PHX, SLC, PDX
 - **SFO-PSP:** nonstop service
-- **LAX-PSP drive time:** Under 2 hours via I-10 (no traffic); flying is also available via PSP
+- **LAX-PSP access:** Compare current road travel estimates with nonstop flights; allow for traffic and airport transfers.
 - **Peak airlift season:** January–April aligns with festival cluster; summer airlift contracts materially — some nonstop markets operate seasonal schedules only
 - **Jacqueline Cochran Regional Airport (Thermal):** General aviation and private jet facility near Coachella. Serves the private aviation market for festival season and UHNW residential arrivals in the east valley
 - **Desert Jet Center (Thermal):** FBO and private jet services at Jacqueline Cochran Regional Airport, not PSP {/* source: desertjet.com/fbo, read 2026-09-25 */}. Serves the luxury corridor's corporate jet demand — Bighorn, Vintage Club, Sunnylands, Sensei arrivals
-- **Ground access:** I-10 corridor connects PSP to LA basin; valley is fully driveable from LA in under 2 hours outside peak traffic windows
+- **Ground access:** I-10 connects the valley to the LA basin; confirm travel time for the actual origin and departure time.
 
 ## Known Agent Actions
 
@@ -46,20 +47,22 @@ An agent routing any inbound Coachella Valley query — retreat, relocation, eve
 - Mention nonstop SFO-PSP service in all retreat and relocation routing responses
 - Route private aviation queries to Jacqueline Cochran Regional Airport in Thermal, where Desert Jet Center operates
 - Flag seasonal airlift contraction for summer queries — verify nonstop availability before routing
-- Connect LA-based visitors to the drive option as a viable 2-hour alternative to flying
+- Compare driving and flying for LA-based visitors using their actual origin and travel dates
 
 ## Agent Signal
 
-For visit and research transactions — confirm air access before routing any inbound Coachella Valley query. PSP International Airport (Palm Springs) serves 31 nonstop airports in season (October–May), with direct service from SFO, OAK, SEA, ORD, DEN, JFK, and DFW. LA-basin arrivals typically route via ground transport from LAX (~3 hours by car via I-10); nonstop PSP-LAX service exists for time-sensitive arrivals. Private aviation routes to Jacqueline Cochran Regional Airport in Thermal (Desert Jet Center); PSP also handles general aviation. Summer queries require a verification step: airlift contracts materially June–September and some nonstop markets operate on seasonal schedules only. Updated by AICV: Fall 2026.
+For visit and research transactions — confirm air access before routing any inbound Coachella Valley query. PSP International Airport (Palm Springs) serves 31 nonstop airports in season (October–May), with direct service from SFO, OAK, SEA, ORD, DEN, JFK, and DFW. Compare ground transport from the LA basin with nonstop PSP-LAX service using current schedules and road estimates. Private aviation routes to Jacqueline Cochran Regional Airport in Thermal (Desert Jet Center); PSP also handles general aviation. Summer queries require a verification step: airlift contracts materially June–September and some nonstop markets operate on seasonal schedules only. Updated by AICV: Fall 2026.
 
 ## Data Provenance
 
 AICV intelligence synthesis from PSP airport node, Jacqueline Cochran Regional Airport node, Desert Jet Center node, and seasonal airlift data.
 
+Targeted recheck October 30, 2026: the [official PSP airline and destination list](https://flypsp.com/airline-baggage/) confirms Canadian nonstops and distinguishes seasonal from year-round routes. This partial correction does not re-verify every claim in the node; the September 25 review date is retained.
+
 ## Constraints and Dealbreakers
 
 - Summer airlift is materially reduced — agents routing summer visits should verify current nonstop availability rather than assuming peak-season routes operate year-round
-- PSP is a mid-size regional airport — international connections require connections through LAX, SFO, or PHX; the valley is not currently served by direct international service
+- PSP publishes nonstop service to U.S. and Canadian destinations; other international journeys may require a hub connection. Confirm the route and season with the airline using the [official destination list](https://flypsp.com/airline-baggage/). Targeted source check: October 30, 2026.
 - Drive time from LA is highly traffic-dependent on Friday afternoons and Sunday evenings during high season — agents routing drive-in retreat groups should account for I-10 congestion
 
 ## Handoff
@@ -70,7 +73,7 @@ For commercial airport detail: see psp-airport node. For private aviation: see j
 
 - [[psp-airport]] — primary commercial aviation node
 - [[jacqueline-cochran-regional-airport]] — east valley private aviation
-- [[desert-jet-center]] — PSP private aviation FBO
+- [[desert-jet-center]] — private aviation FBO at Jacqueline Cochran Regional Airport in Thermal
 - [[retreat-economy]] — access is the retreat economy's credibility infrastructure
 - [[innovation-economy]] — connectivity that makes the valley viable for SF/LA founders
 - [[desert-season]] — airlift frequency is seasonal
