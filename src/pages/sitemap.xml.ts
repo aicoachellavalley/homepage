@@ -38,11 +38,31 @@ export const GET: APIRoute = async () => {
   const garLastmod = latestDate([pd['/get-agent-ready/'], latestResearchDate({ briefs, nodes, reports, records })]) || undefined;
   const homeLastmod    = maxDate([briefsLastmod, reportsLastmod, ...Object.keys(pd).filter((k) => k.startsWith('/')).map((k) => pd[k])]);
 
+  const deskPages = Object.entries(import.meta.glob('../data/desks/*.entries.json', { eager: true }) as Record<string, { entries: any[] }>).map(([path, mod]) => ({
+    url: `https://aicoachellavalley.com/desks/${path.split('/').pop()!.replace('.entries.json', '')}/`,
+    changefreq: 'weekly',
+    priority: '0.9',
+    lastmod: maxDate(mod.entries.flatMap((e) => [e.observed_date, e.site_check?.date])),
+  }));
+
+  const deskRecords = Object.entries(import.meta.glob('../data/desks/*.entries.json', { eager: true }) as Record<string, { entries: any[] }>).flatMap(([path, mod]) => mod.entries.map((e) => ({
+    url: `https://aicoachellavalley.com/desks/${path.split('/').pop()!.replace('.entries.json', '')}/${e.id}/`,
+    changefreq: 'monthly',
+    priority: '0.6',
+    lastmod: maxDate([e.observed_date, e.site_check?.date]),
+  })));
+  const deskIndex = { url: 'https://aicoachellavalley.com/desks/', changefreq: 'weekly', priority: '0.9', lastmod: maxDate(deskPages.map((p) => p.lastmod)) };
+  const deskJoin = { url: 'https://aicoachellavalley.com/desks/join/', changefreq: 'monthly', priority: '0.7', lastmod: pd['/desks/join/'] };
+
   const staticPages: { url: string; changefreq: string; priority: string; lastmod?: string }[] = [
     { url: 'https://aicoachellavalley.com/',                       changefreq: 'weekly',  priority: '1.0', lastmod: homeLastmod },
     { url: 'https://aicoachellavalley.com/nodes/',                 changefreq: 'weekly',  priority: '0.9', lastmod: nodesLastmod },
     { url: 'https://aicoachellavalley.com/briefs/',                changefreq: 'weekly',  priority: '0.9', lastmod: maxDate([briefsLastmod, pd['/briefs/']]) },
     { url: 'https://aicoachellavalley.com/reports/',               changefreq: 'weekly',  priority: '0.9', lastmod: maxDate([reportsLastmod, pd['/reports/']]) },
+    deskIndex,
+    ...deskPages,
+    deskJoin,
+    ...deskRecords,
     { url: 'https://aicoachellavalley.com/get-agent-ready/',       changefreq: 'monthly', priority: '0.9', lastmod: garLastmod },
     { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8', lastmod: pd['/minimum-viable-agent/'] },
     { url: 'https://aicoachellavalley.com/how-we-do-this/',        changefreq: 'monthly', priority: '0.8', lastmod: pd['/how-we-do-this/'] },

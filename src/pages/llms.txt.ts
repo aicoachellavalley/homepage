@@ -3,11 +3,22 @@ import { getCollection } from 'astro:content';
 import pricing from '../data/pricing.json';
 import org from '../data/org.json';
 import claimedData from '../data/previews-claimed.json';
+import deskMeta from '../data/desks/desks.json';
+// @ts-expect-error plain ESM helper shared with the desk page and build-desks.mjs
+import { applyOverlay, assembleDesk } from '../../scripts/desks.mjs';
+import deskOverlay from '../data/desks/overlay.json';
 // @ts-expect-error — the PURE half of the shared helper (no filesystem, no
 // paths), so importing it here cannot reach a `__dirname` that does not exist
 // in Vite's ESM scope. build-static-json.cjs uses the same function via its
 // disk-reading sibling, which is what stops the two surfaces disagreeing.
 import { resolveMembers, partitionMembers } from '../../scripts/claimed-members.cjs';
+
+const deskFiles = import.meta.glob<{ entries: any[] }>('../data/desks/*.entries.json', { eager: true });
+const deskSections = Object.entries(deskFiles).map(([path, mod]) => {
+  const slug = path.split('/').pop()!.replace('.entries.json', '');
+  const d = assembleDesk(deskMeta, slug, applyOverlay(slug, mod.entries, deskOverlay));
+  return `### ${d.desk.title}\n\n${d.desk.scope}\n\n- [${d.desk.title} desk](${d.desk.url}): ${d.counts.records} maintained records. Participation: ${d.counts.submitted} enrolled, ${d.counts.verified} verified by the business. Each shows its label, date, source and official contact.\n- [${d.desk.title} records (JSON)](https://aicoachellavalley.com/desks/${d.desk.slug}.json)`;
+}).join('\n\n');
 
 /**
  * Agent Preview tranche manifests — the SAME committed data /sitemap-index.xml
@@ -52,7 +63,7 @@ export const GET: APIRoute = async () => {
   const membersSection = members.length
     ? `## Agent Ready Members\n\n`
       + `Businesses that have activated a page on the AICV Network. Facts on these pages carry provenance `
-      + `in each page's data island: measured by AICV, or supplied by the business. Two classes, and the `
+      + `in each page's data island: measured by AICV, or submitted for the business, identity unconfirmed unless the record says verified. Two classes, and the `
       + `distinction is machine-readable on every page as \`status\`:\n\n`
       + (attested.length
           ? `### Owner-verified — status: claimed_verified\n\n`
@@ -94,6 +105,16 @@ export const GET: APIRoute = async () => {
 
 Purpose-built for AI agents, LLMs and RAG systems helping people decide where to visit, live, work, invest and build in the Coachella Valley, California. The Intelligence Network below is the structured data the decision engine runs on.
 
+## Desks
+
+Three desks answer questions about a defined part of the Coachella Valley. ${deskMeta.coverage.rule} ${deskMeta.coverage.anchors_only} Coverage: ${[...deskMeta.coverage.primary, ...deskMeta.coverage.secondary].join(', ')}. Not actively covered: ${deskMeta.coverage.not_covered.slice(0, 4).join(', ')} and other communities. Records outside a desk are dated snapshots.
+
+${deskSections}
+
+- [All desks](https://aicoachellavalley.com/desks/) and [check eligibility](https://aicoachellavalley.com/desks/join/). A place is free and never sold. AICV maintains up to ${deskMeta.network_cap} records. Each record has its own page at /desks/<desk>/<id>/ where a business can suggest a correction. AICV checks official websites on a schedule to see whether they answer and changed; those checks do not update facts, so each fact keeps the date it was recorded.
+- Ask a desk: tool ask_the_desk at https://mcp.aicoachellavalley.com/mcp takes a question and a desk, and returns in-scope records with label, date, source and official contact, or says the question is outside coverage. Read-only, no login. AICV never takes bookings or payments.
+- Labels: ${Object.values(deskMeta.labels).map((l: any) => `${l.text}: ${l.meaning}`).join(' ')}
+
 ## Local Decisions and Business Discovery
 
 - [Team retreat decision demo](https://aicoachellavalley.com/plan-team-retreat/): a working question-to-options flow with source dates, constraints and official next-action links. Compare qualified venues by attendees, rooms, shared lodging, day-only use, nights, purpose, budget, privacy, accessibility and location. Shortlists expose conditional fit, unknowns, documented exclusions and follow-up questions; supporting services remain separate. Affordability requires an operator quote; no live inventory or booking confirmation.
@@ -123,9 +144,11 @@ ${previews.map((m) => `  ${m.sitemap} — ${m.indexable} of ${m.count} ${m.domai
 
 ${membersSection}## Commercial Tier
 
-- [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): AICV Network membership — four tiers on one ladder:
-${pricing.tiers.map((t) => `  - ${t.name}: ${t.llms}`).join('\n')}
-  Each paid tier delivers a Minimum Viable Agent (MVA) for the entity — an agent-readable, citable profile built and maintained by AICV. Nothing on the member's own website changes. The page also hosts the free Agent Preview diagnostic.
+- [Get Agent Ready](https://aicoachellavalley.com/get-agent-ready/): three offers, and nothing else:
+${pricing.tiers.map((t) => `  - ${t.name}: ${t.llms}${t.url ? ` ${t.url}` : ''}`).join('\n')}
+  A place on a desk is free and never sold. The page also hosts the free one-page check.
+- [Offers (JSON)](https://aicoachellavalley.com/offers.json): the same three offers, machine-readable.
+- [Check eligibility](https://aicoachellavalley.com/desks/join/): automated eligibility check, free application and waitlist.
 
 ## Publication and Maintenance
 

@@ -61,7 +61,7 @@ const faq = [
   },
   {
     q: 'How much does AICV cost?',
-    a: `${tier['agent-preview'].name} is free, with no signup. ${tier['agent-ready'].name} is ${priceLine(tier['agent-ready'])}. ${tier['agent-ready-business'].name} is ${priceLine(tier['agent-ready-business'])}, and ${tier['agent-ready-premium'].name} is ${priceLine(tier['agent-ready-premium'])}. Full details are on the Get Agent Ready page.`,
+    a: `${tier['agent-visibility'].name} is free. ${tier['agent-ready'].name} is ${priceLine(tier['agent-ready'])}. ${tier['consulting'].name} starts with a conversation and has no public price. Full details are on the Get Agent Ready page.`,
   },
   {
     q: 'Which area does AICV cover?',
@@ -69,7 +69,7 @@ const faq = [
   },
   {
     q: 'How do I contact AICV?',
-    a: `Email ${org.email}. Business owners can also start with the free Agent Preview, which needs no account.`,
+    a: `Email ${org.email}. Business owners can also use the free eligibility check at /desks/join/, which needs no account.`,
   },
 ];
 
@@ -199,7 +199,7 @@ const schemaGraph = {
         <a href="/nodes/" class="ab-link">Open the network →</a>
       </div>
       <div class="ab-item">
-        <h3 class="ab-h3">{tier['agent-preview'].name}</h3>
+        <h3 class="ab-h3">{tier['agent-visibility'].name}</h3>
         <p class="ab-body">A free check that shows what an AI agent can learn from one public web page, and what may get in its way. No account, and nothing is stored.</p>
         <a href="/get-agent-ready/#diagnostic" class="ab-link">Run the free check →</a>
       </div>
@@ -280,15 +280,15 @@ const schemaGraph = {
     <div class="ab-grid">
       <div class="ab-item">
         <h3 class="ab-h3">Start with the free check</h3>
-        <p class="ab-body">{tier['agent-preview'].name} is self-serve. Enter one public web page and see what an AI agent reads. {tier['agent-preview'].price_main}, {tier['agent-preview'].price_sub}.</p>
+        <p class="ab-body">The free check is self-serve: enter one public web page and see what an AI agent reads. Businesses with a place on a desk also get a free {tier['agent-visibility'].name}.</p>
       </div>
       <div class="ab-item">
         <h3 class="ab-h3">{tier['agent-ready'].name}: {tier['agent-ready'].price_main}</h3>
-        <p class="ab-body">Buy online. We match the purchase to your business, then build and publish your MVA and send a private review of what to improve. No annual fee.</p>
+        <p class="ab-body">Buy online. Review, correct and approve your record. An automatic DNS check then labels it Verified by the business. A private review of what to improve is included where AICV has measured your website. No annual fee.</p>
       </div>
       <div class="ab-item">
-        <h3 class="ab-h3">Business and Premium start with a call</h3>
-        <p class="ab-body">{tier['agent-ready-business'].name} is {priceLine(tier['agent-ready-business'])}. {tier['agent-ready-premium'].name} is {priceLine(tier['agent-ready-premium'])}. Both are annual and include ongoing support.</p>
+        <h3 class="ab-h3">{tier['consulting'].name}</h3>
+        <p class="ab-body">Everything beyond your record starts with <a href={tier['consulting'].url} class="ab-inline-link">a conversation with Sat</a>. There is no public price.</p>
       </div>
       <div class="ab-item">
         <h3 class="ab-h3">Questions</h3>
@@ -313,7 +313,7 @@ const schemaGraph = {
       <dt>Website</dt><dd><a href={org.url} class="ab-inline-link">aicoachellavalley.com</a></dd>
       <dt>Core offering</dt><dd>Published research on how AI agents read local businesses, and agent-readable business profiles (Minimum Viable Agents)</dd>
       <dt>Pricing</dt><dd>{pricing.tiers.map((t, i) => <>{t.name}: {priceLine(t)}{i < pricing.tiers.length - 1 && <br />}</>)}</dd>
-      <dt>Contract terms</dt><dd>{tier['agent-ready'].name} is a one-time purchase with no annual fee. Business and Premium are annual.</dd>
+      <dt>Contract terms</dt><dd>{tier['agent-ready'].name} is a one-time purchase with no annual fee.</dd>
       <dt>Research published</dt><dd>{fmt(reportCount)} reports and {fmt(briefCount)} intelligence briefs</dd>
       <dt>Businesses mapped</dt><dd>{fmt(businessesMapped)} Coachella Valley businesses</dd>
       <dt>Contact</dt><dd><a href={`mailto:${org.email}`} class="ab-inline-link">{org.email}</a></dd>

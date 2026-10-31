@@ -38,13 +38,9 @@ const pageDescription = "Help AI agents and assistants understand your Coachella
 const canonicalUrl = 'https://aicoachellavalley.com/get-agent-ready/';
 // Human-facing details and machine-readable Service descriptions share the
 // same text. Short card copy comes from pricing.json, alongside the prices.
-const previewDescription = 'A free check of what an AI agent can read on one public web page. No signup, nothing stored, and no changes to your website. It does not build or activate an MVA.';
-const readyDescription = 'Your Minimum Viable Agent (MVA): a public, agent-readable business profile on the AICV network, plus a private review of what to improve. We confirm which business your purchase is for before publishing. Pay once, with no annual fee or separate setup fee.';
-const businessDescription = 'Your MVA with ongoing care for its discovery tools. Includes maintained discovery infrastructure, MCP routing (a way for agents to find and use your information) and agent-to-agent concierge access. For Cloudflare sites, onboarding includes an owner-assisted Search, Agent and Training (SAT) review. You or your site manager confirm the settings; configuration changes are separately agreed.';
-const premiumDescription = 'Everything in Business, plus daily automated monitoring of public signals about your business from service activation, with changes flagged for review. A deeper Agentic Review by the AICV LLM Council and a 12-month AI-readiness action plan guide the work. Includes a public living portal and templated MCP access for agents. Scope is agreed before billing.';
-// A planned direction, not a Service entitlement. Keep the FAQ and both paid
-// membership detail panels in sync; do not imply a tested merchant integration.
-const commerceRoadmap = "We want customers to be able to ask their AI assistant to book with you or buy from you. That's a planned next step for Business and Premium, not included today. We'll test what works with your existing systems and agree the work and cost with you before offering it. Premium has priority for integration planning.";
+const previewDescription = "A record of public facts about your business, observed by AICV, for businesses with a place on a desk. It is labeled Observed by AICV with the date recorded, and AICV checks your official website on a schedule. Those checks do not update the facts. It is free and never depends on buying anything. Separately, the free check on this page reads one public web page, with no signup and nothing stored.";
+const readyDescription = 'You review, correct and approve your record. Once an automatic DNS check shows you control your domain, it is labeled Verified by the business, gets the full profile, and the desk answers questions about your business from it. Includes a private review of what to improve where AICV has measured your website. Pay once, with no annual fee.';
+const consultingDescription = 'Everything beyond your record: substantial AI work for your business, scoped together in a conversation with Sat. There is no public price and it is not self-serve.';
 
 /* FAQ — ONE ARRAY, TWO SURFACES (2026-09-14). Rendered as the visible
  * "Questions" section AND as the FAQPage mainEntity in the JSON-LD graph, from
@@ -62,31 +58,27 @@ const faq = [
   },
   {
     q: "What does AICV publish for my business?",
-    a: "We publish your public, agent-readable business profile. Once your purchase is matched to your business, your MVA is available on the AICV network with your business facts and official contact or booking links. Your original website stays unchanged. AI services decide whether to visit, cite or recommend it. See the profile publication scope in our Terms.",
+    a: "If your business has a place on a desk, AICV publishes a dated record of public facts it observed, labeled Observed by AICV. It never says you confirmed something you did not. Your website stays unchanged, and AI services decide whether to visit, cite or recommend it.",
   },
   {
-    q: "What changes when I activate a preview?",
-    a: "It's the same business page, activated as your MVA with facts you supply and your private review of what to improve. Some previews are already public and readable by agents. Your MVA helps people and assistants understand your business and follow your contact or booking links. Your website stays as it is.",
+    q: "What changes when I buy Agent Ready?",
+    a: "You review, correct and approve your record. Your changes show beside the record as submitted information, identity unconfirmed. Once an automatic DNS check shows you control your domain, the record is labeled Verified by the business, gets the full profile, and the desk answers from it. Paying alone does not change the label. You also get a private review of what to improve.",
   },
   {
-    q: "What do the setup and annual fees cover?",
-    a: "Setup covers the initial assessment, profile and service configuration. Annual fees keep your membership services running. Business and Premium start with a call to agree the work before billing. The $500 MVA is a one-time purchase with no separate setup fee or annual fee.",
+    q: "Does buying get my business onto a desk?",
+    a: "No. A place is free and is never sold. A business qualifies by being open, located in coverage, fitting a desk and having an official contact. Use the eligibility check to see where you stand. Any business with a place can also suggest corrections for free from its record page. Agent Ready is for a business that already has a place.",
+  },
+  {
+    q: "What if my business is outside the coverage area?",
+    a: "The eligibility check tells you and offers a waitlist, at no cost. Any existing Agent Preview page stays online as a dated snapshot.",
   },
   {
     q: "Does AICV touch our website?",
-    a: "No rebuild or plugin. Your MVA lives on AICV and links to your website. For Cloudflare sites, Business and Premium include an access review with you or your site manager. Any changes need a separately agreed scope. Private areas stay private.",
+    a: "No rebuild or plugin. Your record lives on AICV and links to your website. The ownership check uses one DNS record that you or your site manager adds, and you can remove it after it clears.",
   },
   {
-    q: "What happens if we stop paying?",
-    a: "Your profile stays published. Annual services, including concierge access and agent tools, stop, and your Agentic Review portal goes private. Your profile data is kept if you return. The $500 MVA has no annual fee.",
-  },
-  {
-    q: "Who qualifies for membership?",
-    a: "Coachella Valley businesses, institutions, properties and civic organizations. We review fit with the regional network; payment alone does not guarantee inclusion.",
-  },
-  {
-    q: "What does the $500 MVA look like?",
-    a: "The examples above show your MVA before and after activation. Your private review is for you alone, not a public sample. Premium adds a deeper LLM Council review and action plan.",
+    q: "What does the $500 record look like?",
+    a: "The examples above show a record before and after activation. Your private review is for you alone, not a public sample.",
   },
   {
     q: "Who owns AICV?",
@@ -94,19 +86,15 @@ const faq = [
   },
   {
     q: "Can Cloudflare or our website's security block AI agents?",
-    a: "Yes. A site can work for people but block agents. Our free check cannot verify private Cloudflare settings. Business and Premium include an owner-assisted SAT review — Search, Agent and Training — for Cloudflare sites; changes are separately scoped. Training is a separate owner choice, not a visibility requirement. The $500 profile purchase does not include a Cloudflare account audit.",
+    a: "Yes. A site can work for people but block agents. Our free check cannot verify private Cloudflare settings. Search, Agent and Training are separate owner choices, and training is not a visibility requirement. The $500 purchase does not include a Cloudflare account audit.",
   },
   {
     q: "Can customers book and pay through AI?",
-    a: "Yes, where their assistant works with your booking or checkout system. Your MVA can point it to your official booking or ordering page; it doesn't manage availability, confirm appointments or take payments itself. Purchases still need the customer's approval. You don't need AICV membership for an assistant to use a compatible checkout.",
+    a: "Yes, where their assistant works with your booking or checkout system. Your record can point it to your official booking or ordering page; it doesn't manage availability, confirm appointments or take payments itself. Purchases still need the customer's approval. You don't need anything from AICV for an assistant to use a compatible checkout. AICV never takes bookings or payments.",
   },
   {
     q: "Which AI assistants is AICV built for?",
     a: "AICV helps your business become easier to understand for ChatGPT, Claude from Anthropic, Google Gemini, Grok, Muse and Perplexity. The list keeps growing.",
-  },
-  {
-    q: "What's next for Business and Premium?",
-    a: commerceRoadmap,
   },
 ];
 
@@ -181,85 +169,23 @@ const schemaGraph = {
       "offers": [
         {
           "@type": "Offer",
-          "name": "Agent Ready — One-Time Build",
+          "name": "Agent Ready — One-Time",
           "price": "500.00",
           "priceCurrency": "USD",
           "description": readyDescription,
+          "url": pricing.tiers[1].url,
           "availability": "https://schema.org/InStock"
         }
       ]
     },
     {
       "@type": "Service",
-      "@id": "https://aicoachellavalley.com/get-agent-ready/#service-ready",
-      "name": "Agent Ready Business",
-      "description": businessDescription,
+      "@id": "https://aicoachellavalley.com/get-agent-ready/#service-consulting",
+      "name": "Consulting",
+      "description": consultingDescription,
       "provider": { "@id": "https://aicoachellavalley.com/#organization" },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Coachella Valley, California"
-      },
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Agent Ready Business — Deployment Fee",
-          "price": "1000.00",
-          "priceCurrency": "USD",
-          "description": "One-time Deployment Fee covering diagnostic, MVA build, and MCP integration.",
-          "availability": "https://schema.org/InStock"
-        },
-        {
-          "@type": "Offer",
-          "name": "Agent Ready Business — Annual Membership",
-          "price": "2500.00",
-          "priceCurrency": "USD",
-          "description": "Annual membership fee for ongoing Network access.",
-          "availability": "https://schema.org/InStock",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "2500.00",
-            "priceCurrency": "USD",
-            "billingDuration": "P1Y",
-            "unitText": "annual"
-          }
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://aicoachellavalley.com/get-agent-ready/#service-reviewed",
-      "name": "Agent Ready Premium",
-      "description": premiumDescription,
-      "provider": { "@id": "https://aicoachellavalley.com/#organization" },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Coachella Valley, California"
-      },
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Agent Ready Premium — Deployment Fee",
-          "price": "5000.00",
-          "priceCurrency": "USD",
-          "description": "One-time Deployment Fee covering diagnostic, MVA build, MCP integration, Agentic Review, and portal build.",
-          "availability": "https://schema.org/InStock"
-        },
-        {
-          "@type": "Offer",
-          "name": "Agent Ready Premium — Annual Membership",
-          "price": "10000.00",
-          "priceCurrency": "USD",
-          "description": "Annual membership fee for ongoing Network access, monitoring, and LLM Council editorial reviews.",
-          "availability": "https://schema.org/InStock",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "10000.00",
-            "priceCurrency": "USD",
-            "billingDuration": "P1Y",
-            "unitText": "annual"
-          }
-        }
-      ]
+      "areaServed": { "@type": "Place", "name": "Coachella Valley, California" },
+      "url": "https://calendar.app.google/AHgC8z8rGoYZ1Eju5"
     },
     {
       "@type": "FAQPage",
@@ -360,6 +286,7 @@ const schemaGraph = {
     <div class="nav-links">
       <a href="/nodes/node-zero">Intelligence Network</a>
       <a href="/minimum-viable-agent/">MVAs</a>
+      <a href="/desks/">Desks</a>
       <a href="/briefs/">Briefs</a>
       <a href="/reports/">Reports</a>
     </div>
@@ -445,20 +372,12 @@ const schemaGraph = {
   <div class="gar-v2-eyebrow">CHOOSE YOUR FUTURE</div>
   <h2 class="gar-v2-tiers-h">Start free. Build when you're ready.</h2>
 
-  <div class="gar-v2-booking-strip">
-    <div class="gar-v2-booking-text">
-      <div class="gar-v2-booking-title">Not sure where you fit?</div>
-      <div class="gar-v2-booking-sub">Book a call. Let's figure it out.</div>
-    </div>
-    <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-booking-btn">Book →</a>
-  </div>
-  
   <div class="gar-v2-tier-grid">
-    <!-- TIER 0: Agent Preview -->
+    <!-- TIER 0: Agent Visibility card -->
     <div class="gar-v2-tier-card">
       <div class="gar-v2-tier-body">
         <div class="gar-v2-tier-eyebrow">SEE</div>
-        <div class="gar-v2-tier-name">Agent Preview</div>
+        <div class="gar-v2-tier-name">Agent Visibility card</div>
         <p class="gar-v2-tier-desc">{pricing.tiers[0].blurb}</p>
       </div>
       <div class="gar-v2-tier-divider"></div>
@@ -466,7 +385,7 @@ const schemaGraph = {
         <div class="gar-v2-tier-price-main">{pricing.tiers[0].price_amount}</div>
         <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[0].price_sub}</em></div>
       </div>
-      <a href="#diagnostic" class="gar-v2-tier-cta">Check your website&nbsp;→</a>
+      <a href="/desks/join/" class="gar-v2-tier-cta">Check eligibility&nbsp;→</a>
       <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-preview').classList.add('on');return false;">What's included</button>
     </div>
 
@@ -486,40 +405,24 @@ const schemaGraph = {
       <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-ready').classList.add('on');return false;">What's included</button>
     </div>
 
-    <!-- TIER 2: Agent Ready Business -->
+    <!-- TIER 2: Consulting -->
     <div class="gar-v2-tier-card gar-v2-tier-ready">
       <div class="gar-v2-tier-body">
-        <div class="gar-v2-tier-eyebrow">GET SERVICED</div>
-        <div class="gar-v2-tier-name">Agent Ready Business</div>
+        <div class="gar-v2-tier-eyebrow">GO FURTHER</div>
+        <div class="gar-v2-tier-name">Consulting</div>
         <p class="gar-v2-tier-desc">{pricing.tiers[2].blurb}</p>
       </div>
       <div class="gar-v2-tier-divider"></div>
       <div class="gar-v2-tier-price-block">
-        <div class="gar-v2-tier-price-main">{pricing.tiers[2].price_amount} <span class="gar-v2-tier-price-cadence">{pricing.tiers[2].price_cadence}</span></div>
+        <div class="gar-v2-tier-price-main">{pricing.tiers[2].price_amount}</div>
         <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[2].price_sub}</em></div>
       </div>
-      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Book a Call&nbsp;→</a>
-      <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-business').classList.add('on');return false;">What's included</button>
-    </div>
-
-    <!-- TIER 3: Agent Ready Premium -->
-    <div class="gar-v2-tier-card gar-v2-tier-reviewed">
-      <div class="gar-v2-tier-body">
-        <div class="gar-v2-tier-eyebrow">GET CURATED</div>
-        <div class="gar-v2-tier-name">Agent Ready Premium</div>
-        <p class="gar-v2-tier-desc">{pricing.tiers[3].blurb}</p>
-      </div>
-      <div class="gar-v2-tier-divider"></div>
-      <div class="gar-v2-tier-price-block">
-        <div class="gar-v2-tier-price-main">{pricing.tiers[3].price_amount} <span class="gar-v2-tier-price-cadence">{pricing.tiers[3].price_cadence}</span></div>
-        <div class="gar-v2-tier-price-setup"><em>{pricing.tiers[3].price_sub}</em></div>
-      </div>
-      <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Request Premium&nbsp;→</a>
-      <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-premium').classList.add('on');return false;">What's included</button>
+      <a href={pricing.tiers[2].url} target="_blank" rel="noopener noreferrer" class="gar-v2-tier-cta">Book a conversation with Sat&nbsp;→</a>
+      <button type="button" class="gar-v2-tier-inc" onclick="document.getElementById('inc-consulting').classList.add('on');return false;">What's included</button>
     </div>
   </div>
-  <p class="purchase-match-note" id="purchase-match-note"><strong>Buying the $500 MVA?</strong> <a href="#diagnostic">Run the free check</a> and confirm your business before checkout.</p>
-  <p class="gar-v2-tier-note">We take on only as much work as we can deliver. Questions? <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Talk with Sat.</a></p>
+  <p class="purchase-match-note" id="purchase-match-note"><strong>Buying Agent Ready?</strong> <a href="/desks/join/">Check eligibility</a> and confirm your business before checkout. A place is free and is not what you are buying.</p>
+  <p class="gar-v2-tier-note">We take on only as much work as we can deliver. Questions? Email <a href="mailto:sat@aicv.co">sat@aicv.co</a>.</p>
   <p class="gar-visibility-promise"><strong>We publish your public, agent-readable business profile.</strong> Once your purchase is matched to your business, your MVA is available on the AICV network. <a href="/terms/#agent-publication">What we publish</a>.</p>
   <div class="gar-example" id="profile-example" role="region" aria-labelledby="profile-example-title">
     <div class="gar-example-explanation">
@@ -590,7 +493,7 @@ const schemaGraph = {
     <div class="gar-v2-eyebrow">WHAT WE CHECK</div>
     <h2 id="agent-access-title">Can an agent reach your business?</h2>
     <p>A website can work for people but block agents. Our free check reads one public page and its published bot rules. It cannot verify private Cloudflare settings or guarantee access for every crawler.</p>
-    <p><strong>For Cloudflare sites:</strong> Business and Premium include an owner-assisted SAT review — Search, Agent and Training — at onboarding. The $500 Agent Ready profile purchase does not include a Cloudflare account audit or configuration work. <a href="/terms/#agent-access">Agent Access scope</a>.</p>
+    <p><strong>For Cloudflare sites:</strong> Search, Agent and Training are separate settings that you control. The $500 Agent Ready purchase does not include a Cloudflare account audit or configuration work. <a href="/terms/#agent-access">Agent Access scope</a>.</p>
     <details>
       <summary>Cloudflare site? Open the access checklist</summary>
       <p>Search, Agent and Training (SAT) are separate policy choices. A public page loading does not verify these settings.</p>
@@ -646,12 +549,12 @@ const schemaGraph = {
      injected on click, so agents and no-JS readers see it too. Copy is drawn
      from already-approved sources only: the activation page (mva/activate)
      for Agent Ready, and this page's own published Service descriptions for
-     the other three. ── -->
+     the others. ── -->
 <div class="tos-overlay" id="inc-preview" onclick="if(event.target===this)this.classList.remove('on')">
   <div class="tos-panel">
     <button class="tos-close" onclick="document.getElementById('inc-preview').classList.remove('on')" aria-label="Close">✕</button>
     <div class="tos-header"><div class="tos-label">AI Coachella Valley</div>
-      <h2 class="tos-title">Agent Preview — what's included</h2><div class="tos-date">Free · no signup</div></div>
+      <h2 class="tos-title">Agent Visibility card — what's included</h2><div class="tos-date">Free · never conditional on buying</div></div>
     <div class="tos-body">
       <p>{previewDescription}</p>
       <p>We check public access signals, not private Cloudflare settings. When the evidence is missing or unreadable, we say so. SAT settings remain unverified. <a href="#agent-access" onclick="document.getElementById('inc-preview').classList.remove('on')">What we check</a>.</p>
@@ -668,10 +571,11 @@ const schemaGraph = {
     <div class="tos-body">
       <p>{readyDescription}</p>
       <ul>
-        <li><strong>Business facts agents can read</strong> — description, address, hours, phone and booking link, with facts you supply labeled as provided by the business.</li>
-        <li><strong>Your private agent-readiness review</strong> — what agents can read on your website, what's missing and what to improve. Never published.</li>
+        <li><strong>Your record, reviewed by you</strong> — correct and approve its facts, description, hours, phone and booking link. Your changes show beside the record, labeled identity unconfirmed, until the ownership check clears.</li>
+        <li><strong>Verified by the business</strong> — one DNS record proves you control your domain. The check is automatic. After it clears, the label changes and the desk answers from your record.</li>
+        <li><strong>Your private agent-readiness review</strong> — what agents can read on your website, what's missing and what to improve. Never published. Included where AICV has measured your website; your record page says so before you buy.</li>
       </ul>
-      <p>We match your purchase to your business, then your page publishes. Without a confirmed business, our team completes the match first. The $500 purchase does not include owner verification.</p>
+      <p>We match your purchase to your business. Paying alone never changes the label. If you skip the DNS check, your changes stay labeled identity unconfirmed and do not replace the record.</p>
       <p>Your website stays unchanged. Each AI service decides what it reads, cites or recommends.</p>
       <p>Full refund within 14 days — email <a href="mailto:billing@aicv.co">billing@aicv.co</a> and we'll take your page down from the AICV Network. Your business returns to the free preview we publish about businesses in our census.</p>
       <p>Full purchase terms: <a href="/terms/#agent-ready">aicoachellavalley.com/terms/</a></p>
@@ -679,30 +583,14 @@ const schemaGraph = {
   </div>
 </div>
 
-<div class="tos-overlay" id="inc-business" onclick="if(event.target===this)this.classList.remove('on')">
+<div class="tos-overlay" id="inc-consulting" onclick="if(event.target===this)this.classList.remove('on')">
   <div class="tos-panel">
-    <button class="tos-close" onclick="document.getElementById('inc-business').classList.remove('on')" aria-label="Close">✕</button>
+    <button class="tos-close" onclick="document.getElementById('inc-consulting').classList.remove('on')" aria-label="Close">✕</button>
     <div class="tos-header"><div class="tos-label">AI Coachella Valley</div>
-      <h2 class="tos-title">Agent Ready Business — what's included</h2><div class="tos-date">$2,500 / year · plus $1,000 one-time setup</div></div>
+      <h2 class="tos-title">Consulting — what's included</h2><div class="tos-date">No public price</div></div>
     <div class="tos-body">
-      <p>{businessDescription}</p>
-      <h3>Looking ahead: let customers book and buy through AI</h3>
-      <p>{commerceRoadmap}</p>
-      <p>Scope is confirmed on a call before anything is billed. <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Book a call</a>.</p>
-    </div>
-  </div>
-</div>
-
-<div class="tos-overlay" id="inc-premium" onclick="if(event.target===this)this.classList.remove('on')">
-  <div class="tos-panel">
-    <button class="tos-close" onclick="document.getElementById('inc-premium').classList.remove('on')" aria-label="Close">✕</button>
-    <div class="tos-header"><div class="tos-label">AI Coachella Valley</div>
-      <h2 class="tos-title">Agent Ready Premium — what's included</h2><div class="tos-date">$10,000 / year · plus $5,000 one-time setup</div></div>
-    <div class="tos-body">
-      <p>{premiumDescription}</p>
-      <h3>Looking ahead: let customers book and buy through AI</h3>
-      <p>{commerceRoadmap}</p>
-      <p>Scope is confirmed on a call before anything is billed. <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5" target="_blank" rel="noopener noreferrer">Request Premium</a>.</p>
+      <p>{consultingDescription}</p>
+      <p><a href={pricing.tiers[2].url} target="_blank" rel="noopener noreferrer">Book a conversation with Sat</a>.</p>
     </div>
   </div>
 </div>
@@ -724,7 +612,7 @@ const schemaGraph = {
       <h3>How It Works</h3>
       <p>Your submitted URL is passed to a third-party AI model (Anthropic Claude) via a Cloudflare Worker. Results are generated automatically and returned directly to your browser. AICV does not retain your query or output after your session ends.</p>
       <h3>Agent Access — scope added September 15, 2026</h3>
-      <p>Public HTTP, robots.txt and Content-Signal checks are code-derived observations, not an authenticated Cloudflare SAT audit. Results may be inconclusive and do not establish access for every crawler. See the <a href="/terms/#agent-access">dated Agent Access scope</a>, including owner-assisted Business and Premium review.</p>
+      <p>Public HTTP, robots.txt and Content-Signal checks are code-derived observations, not an authenticated Cloudflare SAT audit. Results may be inconclusive and do not establish access for every crawler. See the <a href="/terms/#agent-access">dated Agent Access scope</a>.</p>
 
       <h3>For Informational, Experimental, and Entertainment Purposes Only</h3>
       <p>Results produced by this tool are AI-generated and provided strictly for informational, experimental, and entertainment purposes. They do not constitute professional SEO, legal, technical, marketing, or business advice of any kind. AICV makes no representations or warranties — express or implied — regarding the accuracy, completeness, reliability, or fitness of results for any particular purpose. Always verify findings independently and consult qualified professionals before making decisions based on tool output.</p>
@@ -2068,7 +1956,7 @@ const schemaGraph = {
 
   .gar-v2-tier-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
     gap: 16px;
     align-items: stretch;
   }

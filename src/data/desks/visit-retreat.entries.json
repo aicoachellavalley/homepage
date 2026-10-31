@@ -1,0 +1,3066 @@
+{
+ "entries": [
+  {
+   "id": "97-lake-shore-kirkwood-collection-rancho-mirage",
+   "name": "97 Lake Shore (Kirkwood Collection)",
+   "city": "Rancho Mirage",
+   "address": "97 Lake Shore Dr, Rancho Mirage, CA 92270",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.kirkwoodcollection.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/97-lake-shore-kirkwood-collection",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Boutique & lifestyle hotel/inn",
+    "Private dock/lake access",
+    "Hot tub/spa",
+    "Gym",
+    "Pet-friendly",
+    "Patio"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "ace-hotel-and-swim-club-palm-springs-palm-springs",
+   "name": "Ace Hotel and Swim Club Palm Springs",
+   "city": "Palm Springs",
+   "address": "701 East Palm Canyon Drive, Palm Springs, CA",
+   "category": "stay",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://acehotel.com/palm-springs/private-spaces/meetings/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Boutique & lifestyle hotel/inn",
+    "About 179 rooms",
+    "Event or meeting space on site",
+    "Pools (Swim Club - adults-only, and Commune - all ages)",
+    "Spa (Feel Good Spa, organic treatments)",
+    "Restaurant (King's Highway)",
+    "Bar (The Amigo Room)",
+    "Event space"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "acrisure-arena-palm-desert",
+   "name": "Acrisure Arena",
+   "city": "Palm Desert",
+   "address": null,
+   "category": "activities",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-09-25",
+   "official_contact": {
+    "url": "https://www.acrisurearena.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/nodes/acrisure-arena/",
+    "name": "AICV node record"
+   },
+   "description": "Acrisure Arena is the Coachella Valley's first major professional sports venue—11,000-seat indoor arena in Palm Desert, home to the AHL's Coachella Valley Firebirds, extending the valley's event economy year-round beyond the April festival window.",
+   "facts": [],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "agua-caliente-cultural-museum-palm-springs",
+   "name": "Agua Caliente Cultural Museum",
+   "city": "Palm Springs",
+   "address": null,
+   "category": "activities",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-09-25",
+   "official_contact": {
+    "url": "https://www.accmuseum.org",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/nodes/agua-caliente-cultural-museum/",
+    "name": "AICV node record"
+   },
+   "description": "The Agua Caliente Cultural Museum is the 48,000-sq-ft official museum of the Agua Caliente Band of Cahuilla Indians in downtown Palm Springs, anchor of the second-largest Native American cultural center in the U.S., and the first Native American museum in the Smithsonian Affiliations Program.",
+   "facts": [],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "agua-caliente-resort-casino-spa-rancho-mirage-rancho-mirage",
+   "name": "Agua Caliente Resort Casino Spa Rancho Mirage",
+   "city": "Rancho Mirage",
+   "address": "32-250 Bob Hope Drive, Rancho Mirage, CA",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.aguacalientecasinos.com/resort/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/agua-caliente-resort-casino-spa-rancho-mirage",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Casino resort",
+    "About 340 rooms",
+    "Event or meeting space on site",
+    "Spa",
+    "Pools",
+    "Restaurant",
+    "Bar",
+    "Casino"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "best-western-date-tree-hotel-indio",
+   "name": "Best Western Date Tree Hotel",
+   "city": "Indio",
+   "address": "81909 Indio Blvd, Indio, CA 92201",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.bestwestern.com/en_US/book/hotels-in-indio/best-western-date-tree-hotel/propertyCode.05215.html",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Event or meeting space on site",
+    "Pool (Olympic-sized heated)",
+    "Hot tub",
+    "Barbecue area",
+    "Meeting space",
+    "Business services"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "best-western-plus-palm-desert-resort-palm-desert",
+   "name": "Best Western Plus Palm Desert Resort",
+   "city": "Palm Desert",
+   "address": "74695 Highway 111, Palm Desert, CA 92260",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.bestwestern.com/en_US/book/hotels-in-palm-desert/best-western-plus-palm-desert-resort/propertyCode.05625.html",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Outdoor pool",
+    "Hot tub",
+    "Fitness center",
+    "Tennis courts",
+    "Free breakfast"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "big-rock-pub-indio",
+   "name": "Big Rock Pub",
+   "city": "Indio",
+   "address": "79940 Westward Ho Dr, Indio, CA 92201",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.bigrockpub.com/",
+    "phone": "(760) 200-9844"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/big-rock-pub",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "Tripadvisor"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Gastropub, American",
+    "Official site mentions private events (read October 31, 2026)",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "big-wheel-tours-palm-desert",
+   "name": "Big Wheel Tours",
+   "city": "Palm Desert",
+   "address": "74200 Highway 111, Palm Desert, CA 92260",
+   "category": "activities",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://bwbtours.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/big-wheel-tours",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Access: reservation",
+    "SUV/off-road (Jeep/Hummer-style) tours",
+    "Joshua Tree National Park excursions",
+    "San Andreas Fault tours",
+    "Bicycle tours (Earthquake Canyon Express, Indian Canyon Bike and Hike, Celebrity Bike Tour"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "comfort-suites-palm-desert-i-10-palm-desert",
+   "name": "Comfort Suites Palm Desert I-10",
+   "city": "Palm Desert",
+   "address": "39585 Washington St, Palm Desert, CA 92211",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.choicehotels.com/california/palm-desert/comfort-suites-hotels/ca619",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "About 72 rooms",
+    "Outdoor heated pool",
+    "Hot tub",
+    "Fitness room",
+    "Free breakfast",
+    "Free WiFi"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "cork-tree-california-cuisine-palm-desert",
+   "name": "Cork Tree California Cuisine",
+   "city": "Palm Desert",
+   "address": "74950 Country Club Dr",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://thecorktree.com",
+    "phone": "(760) 779-0123"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/cork-tree-california-cuisine",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "OpenTable",
+     "TripAdvisor"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "California American",
+    "Census recorded group dining; confirm with the restaurant",
+    "Group capacity noted: 30",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "courtyard-by-marriott-palm-desert-palm-desert",
+   "name": "Courtyard by Marriott Palm Desert",
+   "city": "Palm Desert",
+   "address": "74895 Frank Sinatra Drive, Palm Desert, CA 92211",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Event or meeting space on site",
+    "Outdoor heated pool",
+    "Hot tub",
+    "24-hour fitness center",
+    "Restaurant (The Bistro)",
+    "Starbucks coffee"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "covered-wagon-tours-indio",
+   "name": "Covered Wagon Tours",
+   "city": "Indio",
+   "address": "Mailing address only shown: P.O. Box 1106, La Quinta, CA 92247. Physical tour departure/site is in the Coachella Valley Preserve area near Thousand Palms, CA; site does not display a physical street address. Not truly in Indio — appears to be marketed toward Indio/Coachella-area visitors and resorts.",
+   "category": "activities",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://coveredwagontours.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/covered-wagon-tours",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: reservation",
+    "Mule-drawn covered wagon tours through desert oasis preserve",
+    "Naturalist-guided eco-tour (plants, wildlife, geology, San Andreas Fault)",
+    "Chuckwagon BBQ dinner (smoked brisket, tri-tip, BBQ chicken)",
+    "Live country/western music"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "days-inn-by-wyndham-indio-indio",
+   "name": "Days Inn by Wyndham Indio",
+   "city": "Indio",
+   "address": "43505 Monroe St, Indio, CA 92201-2026",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.wyndhamhotels.com/days-inn/indio-california/days-inn-indio/overview",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "About 62 rooms",
+    "Event or meeting space on site",
+    "Outdoor pool",
+    "Hot tub",
+    "Free breakfast",
+    "Free wifi",
+    "Pet-friendly"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-island-country-club-rancho-mirage",
+   "name": "Desert Island Country Club",
+   "city": "Rancho Mirage",
+   "address": "71-777 Frank Sinatra Drive, Rancho Mirage, CA 92270",
+   "category": "venues",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://di71.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/desert-island-country-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Private event/wedding venue",
+    "Event or meeting space on site",
+    "Golf (championship course)",
+    "Restaurant (9 1/2 Bar & Kitchen, The Penney)",
+    "Bar/lounge (The Parlour)",
+    "Art gallery (Northern Gallery)",
+    "Pro shop"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-white-house-indio",
+   "name": "Desert White House",
+   "city": "Indio",
+   "address": "80125 Ave 49, Indio, CA 92201",
+   "category": "venues",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://desertwhitehouse.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Private event/wedding venue",
+    "About 6 rooms",
+    "Event or meeting space on site",
+    "Event capacity noted: 50 guests (events); 16+ overnight guests",
+    "Pool",
+    "Spa",
+    "Putting green",
+    "Fire pit",
+    "Gourmet kitchen"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-willow-golf-resort-palm-desert",
+   "name": "Desert Willow Golf Resort",
+   "city": "Palm Desert",
+   "address": "38-995 Desert Willow Drive, Palm Desert, CA 92260",
+   "category": "golf",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.desertwillow.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-willow-golf-resort-firecliff-course",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: public",
+    "18 holes, par 72, 7,056 yards",
+    "Mini Verde Bermudagrass greens (recently renovated)",
+    "100+ bunkers",
+    "Driving range and short-game practice area"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "dune-room-indio",
+   "name": "Dune Room",
+   "city": "Indio",
+   "address": "82707 Miles Ave, Indio, CA 92201",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://duneroomindio.com/",
+    "phone": "(760) 289-4007"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/dune-room",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "Google"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Cafe, bagels, coffee, live music venue",
+    "Official site mentions private events (read October 31, 2026)",
+    "Group capacity noted: 250",
+    "Walk-in"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eldorado-polo-club-indio",
+   "name": "Eldorado Polo Club",
+   "city": "Indio",
+   "address": "50950 Madison St, Indio, CA 92201",
+   "category": "activities",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.eldoradopoloclub.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/eldorado-polo-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: reservation",
+    "Multiple polo fields (Fields 1-4)",
+    "Clubhouse",
+    "The Cantina restaurant/dining venue",
+    "Learn to Play Polo instruction program"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "embassy-suites-by-hilton-la-quinta-hotel-spa-la-quinta",
+   "name": "Embassy Suites by Hilton La Quinta Hotel & Spa",
+   "city": "La Quinta",
+   "address": "50-777 Santa Rosa Plaza, La Quinta, CA 92253",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.hilton.com/en/hotels/laqcaes-embassy-suites-la-quinta-hotel-and-spa/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Event or meeting space on site",
+    "Spa",
+    "Pools (2 pool areas)",
+    "Restaurant",
+    "Fitness center/gym",
+    "Business center"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "embassy-suites-by-hilton-palm-desert-palm-desert",
+   "name": "Embassy Suites by Hilton Palm Desert",
+   "city": "Palm Desert",
+   "address": "74-700 Highway 111, Palm Desert, CA 92260",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.hilton.com/en/hotels/plmdres-embassy-suites-palm-desert/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "About 198 rooms",
+    "Pool",
+    "Whirlpool",
+    "Tennis",
+    "Pickleball",
+    "Restaurant"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "empire-polo-club-indio",
+   "name": "Empire Polo Club",
+   "city": "Indio",
+   "address": "81-800 Ave. 51, Indio, CA 92201",
+   "category": "venues",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://empirepoloclubevents.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/empire-polo-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Private event/wedding venue",
+    "Event or meeting space on site",
+    "Event capacity noted: 15 to 90,000+ guests depending on space (spans ~1,000 acres)",
+    "Event space",
+    "Gardens/fountains",
+    "Victorian gazebos",
+    "Indoor pavilion",
+    "Enclosed superstructure"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "fairfield-inn-suites-palm-desert-coachella-valley-palm-desert",
+   "name": "Fairfield Inn & Suites Palm Desert Coachella Valley",
+   "city": "Palm Desert",
+   "address": "74-764 Technology Drive, Palm Desert, CA 92211",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Outdoor pool",
+    "24-hour fitness center",
+    "Free breakfast buffet (gluten-free options)",
+    "In-room WiFi",
+    "Free parking"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "fantasy-springs-resort-casino-indio",
+   "name": "Fantasy Springs Resort Casino",
+   "city": "Indio",
+   "address": "84-245 Indio Springs Pkwy, Indio, CA 92203",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.fantasyspringsresort.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Casino resort",
+    "About 250 rooms",
+    "Event or meeting space on site",
+    "Event capacity noted: 100,000 sq ft Special Events Center (attendee capacity not stated)",
+    "Casino",
+    "Golf",
+    "Pool",
+    "Spa/jacuzzi",
+    "Bowling"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "frederick-loewe-estate-palm-springs",
+   "name": "Frederick Loewe Estate",
+   "city": "Palm Springs",
+   "address": null,
+   "category": "stay",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-10-07",
+   "official_contact": {
+    "url": "https://frederickloeweestate.com/contact/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/plan-team-retreat/",
+    "name": "AICV team retreat research"
+   },
+   "description": null,
+   "facts": [
+    "Operator offers executive retreats and corporate events.",
+    "Four bedrooms, two king beds, four queen beds and two single sleeper sofas are published.",
+    "Dining room seats 14; this is a dining capacity, not a verified strategy meeting layout."
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "fresh-agave-mexican-bar-grill-palm-desert",
+   "name": "Fresh Agave Mexican Bar & Grill",
+   "city": "Palm Desert",
+   "address": "73325 Hwy 111",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://freshagave.com",
+    "phone": "760-836-9028"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/fresh-agave-mexican-bar-grill",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "TripAdvisor",
+     "BrandSite"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Mexican",
+    "Official site mentions group reservations (read October 31, 2026)",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "grand-hyatt-indian-wells-resort-villas-indian-wells",
+   "name": "Grand Hyatt Indian Wells Resort & Villas",
+   "city": "Indian Wells",
+   "address": "44600 Indian Wells Lane, Indian Wells, CA 92210",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.hyattindianwells.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Event or meeting space on site",
+    "Spa (Agua Serena Spa)",
+    "Nine pools",
+    "Water park (HyTides, waterslides + lazy river)",
+    "Tennis courts",
+    "Pickleball courts"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "grapefruit-basil-indian-wells",
+   "name": "Grapefruit Basil",
+   "city": "Indian Wells",
+   "address": "45000 Indian Wells Ln, Indian Wells, CA 92210",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.grapefruitbasil.com/",
+    "phone": "(442) 305-4520"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/grapefruit-basil",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "Tripadvisor",
+     "Google"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Modern Californian, locally sourced, New American",
+    "Official site mentions private events (read October 31, 2026)",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "hampton-inn-suites-indio-indio",
+   "name": "Hampton Inn & Suites Indio",
+   "city": "Indio",
+   "address": "42261 Spectrum St, Indio, CA 92203",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.hilton.com/en/hotels/laxidhx-hampton-suites-indio/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "About 93 rooms",
+    "Event or meeting space on site",
+    "Pool (heated outdoor)",
+    "Whirlpool",
+    "Fitness center (24-hour)",
+    "Free hot breakfast",
+    "Meeting/event space (large meeting room)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "hampton-inn-suites-palm-desert-palm-desert",
+   "name": "Hampton Inn & Suites Palm Desert",
+   "city": "Palm Desert",
+   "address": "74900 Gerald Ford Drive, Palm Desert, CA 92211",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.hilton.com/en/hotels/plmhshx-hampton-suites-palm-desert/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Outdoor pool",
+    "Jacuzzi",
+    "24-hour gym/fitness center",
+    "Complimentary hot breakfast",
+    "Complimentary high-speed internet/wifi"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "holiday-inn-express-suites-indio-coachella-valley-indio",
+   "name": "Holiday Inn Express & Suites Indio - Coachella Valley",
+   "city": "Indio",
+   "address": "84054 Indio Springs Dr, Indio, CA",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/indio/uddca/hoteldetail",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "About 89 rooms",
+    "Heated outdoor pool",
+    "Fitness center",
+    "Free breakfast",
+    "Guest laundry",
+    "Business center"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "holiday-inn-express-suites-palm-desert-millennium-palm-desert",
+   "name": "Holiday Inn Express & Suites Palm Desert - Millennium",
+   "city": "Palm Desert",
+   "address": "74777 Technology Drive, Palm Desert, CA",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/palm-desert/pspgf/hoteldetail",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Outdoor heated pool",
+    "Outdoor spa/hot tub",
+    "24-hour gym/fitness center",
+    "Complimentary hot breakfast",
+    "Free WiFi"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "holiday-inn-express-suites-rancho-mirage-palm-springs-area-rancho-mirage",
+   "name": "Holiday Inn Express & Suites Rancho Mirage - Palm Springs Area",
+   "city": "Rancho Mirage",
+   "address": "71730 Highway 111, Rancho Mirage, CA 92270",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/rancho-mirage/plmrm/hoteldetail",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Outdoor pool",
+    "Fitness center",
+    "Free breakfast",
+    "Free Wi-Fi",
+    "Free parking"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "holiday-inn-express-palm-desert-palm-desert",
+   "name": "Holiday Inn Express Palm Desert",
+   "city": "Palm Desert",
+   "address": "74675 Hwy 111, Palm Desert, CA 92260",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.ihg.com/holidayinnexpress/hotels/us/en/palm-desert/plmca/hoteldetail",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Outdoor pool",
+    "Fitness center",
+    "Free breakfast",
+    "Pet-friendly",
+    "Free parking"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "hotel-paseo-autograph-collection-palm-desert",
+   "name": "Hotel Paseo, Autograph Collection",
+   "city": "Palm Desert",
+   "address": "45-400 Larkspur Lane, Palm Desert, CA 92260",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/ctdak-hotel-paseo-autograph-collection/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "About 150 rooms",
+    "Event or meeting space on site",
+    "Event capacity noted: 300 guests",
+    "Spa (Hudson Day Spa with sauna and cold plunge)",
+    "Pool (Lemon Drop Pool Bar)",
+    "Restaurant (Larkspur Grill)",
+    "Bar",
+    "Event space"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "il-forno-trattoria-toscana-country-club-indian-wells",
+   "name": "Il Forno Trattoria (Toscana Country Club)",
+   "city": "Indian Wells",
+   "address": "76009 Via Club Villa, Indian Wells, CA 92210",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.toscanacc.com/indian-wells-private-club/indian-wells-dining",
+    "phone": "(760) 404-1587"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/il-forno-trattoria-toscana-country-club",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Google"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Italian, fine dining trattoria",
+    "Official site mentions private events (read October 31, 2026)",
+    "Group capacity noted: 300",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "indian-palms-country-club-resort-indio",
+   "name": "Indian Palms Country Club + Resort",
+   "city": "Indio",
+   "address": "48630 Monroe St, Indio, CA 92201",
+   "category": "golf",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.indianpalms.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-palms-country-club-resort",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: public",
+    "27 holes (three 9-hole courses: Mountain, Royal, Indian nines)",
+    "Double-ended driving range",
+    "Two practice putting greens",
+    "Short game practice areas"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "indian-wells-golf-resort-indian-wells",
+   "name": "Indian Wells Golf Resort",
+   "city": "Indian Wells",
+   "address": "44-500 Indian Wells Ln, Indian Wells, CA 92210",
+   "category": "golf",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.indianwellsgolfresort.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-wells-golf-resort-celebrity-course",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Access: public",
+    "18 holes, par 72 (Celebrity Course)",
+    "36-hole resort (Celebrity + Players courses)",
+    "Designed by Clive Clark",
+    "Driving range with rental clubs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "indian-wells-resort-hotel-indian-wells",
+   "name": "Indian Wells Resort Hotel",
+   "city": "Indian Wells",
+   "address": "76-661 Highway 111, Indian Wells, CA 92210",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.indianwellsresort.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/indian-wells-resort-hotel",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Boutique & lifestyle hotel/inn",
+    "About 155 rooms",
+    "Event or meeting space on site",
+    "Golf",
+    "Tennis",
+    "Pool",
+    "Hot spa/whirlpool",
+    "Restaurant"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "jillian-s-palm-desert",
+   "name": "Jillian's",
+   "city": "Palm Desert",
+   "address": "74155 El Paseo",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://jilliansfinedining.com",
+    "phone": "760-776-8242"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/jillians",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "TripAdvisor",
+     "DiscoverPD"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Continental",
+    "Official site mentions private rooms (read October 31, 2026)",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "jw-marriott-desert-springs-resort-spa-palm-desert",
+   "name": "JW Marriott Desert Springs Resort & Spa",
+   "city": "Palm Desert",
+   "address": "74-855 Country Club Drive, Palm Desert, CA 92260",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/ctdca-jw-marriott-desert-springs-resort-and-spa/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "About 884 rooms",
+    "Event or meeting space on site",
+    "Spa",
+    "Golf (2 courses)",
+    "Tennis",
+    "Pools (5 resort pools)",
+    "Restaurant (6 on-site)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "kestrel-a-richard-blais-kitchen-lounge-indian-wells",
+   "name": "Kestrel – A Richard Blais Kitchen + Lounge",
+   "city": "Indian Wells",
+   "address": "44500 Indian Wells Ln, Indian Wells, CA 92210",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.kestrel.kitchen/",
+    "phone": "(760) 346-4653"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/kestrel-a-richard-blais-kitchen-lounge",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "Tripadvisor",
+     "OpenTable"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "American, California-modern, steakhouse, coastal",
+    "Official site mentions private event (read October 31, 2026)",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "kiki-s-la-quinta",
+   "name": "Kiki's",
+   "city": "La Quinta",
+   "address": "46660 Washington Street, Suite 8, La Quinta, CA 92253",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://kikislaquinta.com",
+    "phone": "(760) 777-8008"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/kikis",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "TripAdvisor",
+     "OpenTable",
+     "Play in La Quinta",
+     "Visit Greater Palm Springs"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Modern Italian, cocktail bar",
+    "Official site mentions group reservations (read October 31, 2026)",
+    "Reservations: both"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-cucina-toscana-country-club-indian-wells",
+   "name": "La Cucina (Toscana Country Club)",
+   "city": "Indian Wells",
+   "address": "76009 Via Club Villa, Indian Wells, CA 92210",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.toscanacc.com/indian-wells-private-club/indian-wells-dining",
+    "phone": "(760) 404-1444"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-cucina-toscana-country-club",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Tripadvisor"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Italian, casual dining, breakfast/lunch/dinner",
+    "Official site mentions private events (read October 31, 2026)",
+    "Group capacity noted: 300",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-brewing-co-old-town-taproom-la-quinta",
+   "name": "La Quinta Brewing Co. (Old Town Taproom)",
+   "city": "La Quinta",
+   "address": "Old Town La Quinta, CA 92253",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://laquintabrewing.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-quinta-brewing-co-old-town-taproom",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Locale Magazine",
+     "City of La Quinta (playinlaquinta.com)"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Brewery taproom",
+    "Official site mentions private event (read October 31, 2026)",
+    "Walk-in"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-brewing-co-taproom-palm-desert",
+   "name": "La Quinta Brewing Co. Taproom",
+   "city": "Palm Desert",
+   "address": "74714 Technology Dr",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.laquintabrewing.com",
+    "phone": "(760) 200-2597"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/la-quinta-brewing-co-taproom",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Chamber",
+     "VisitGPS"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "brewery taproom",
+    "Official site mentions private event (read October 31, 2026)",
+    "Walk-in"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-resort-club-golf-la-quinta",
+   "name": "La Quinta Resort & Club Golf",
+   "city": "La Quinta",
+   "address": "49-499 Eisenhower Drive, La Quinta, CA 92253",
+   "category": "golf",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://laquintaresort.com/golf/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/la-quinta-resort-club-golf-citrus-mountain-dunes-courses",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: resort guest",
+    "18-hole championship courses (Mountain, Dunes; Citrus is separate members-only)",
+    "Course designers: Pete Dye (Mountain, Dunes, Citrus), Greg Norman, Jack Nicklaus (other re",
+    "PGA WEST Golf Academy / lessons",
+    "Clubhouse dining"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-resort-club-curio-collection-by-hilton-la-quinta",
+   "name": "La Quinta Resort & Club, Curio Collection by Hilton",
+   "city": "La Quinta",
+   "address": "49-499 Eisenhower Drive, La Quinta, CA 92253",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://laquintaresort.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Event or meeting space on site",
+    "Event capacity noted: 190,000+ sq ft of indoor/outdoor event space (no max guest count stated)",
+    "Spa",
+    "Golf (5 courses)",
+    "Tennis",
+    "Pickleball",
+    "Pools (42 pools, 53 hot spas)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "legacy-villas-at-la-quinta-la-quinta",
+   "name": "Legacy Villas at La Quinta",
+   "city": "La Quinta",
+   "address": "48871 Legacy Dr, La Quinta, CA 92253",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://legacyvillas.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Event or meeting space on site",
+    "12 pools (incl. 2 lap pools)",
+    "11 hot spas",
+    "15 fountains",
+    "Fitness center",
+    "Clubhouse"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "lg-s-prime-steakhouse-la-quinta",
+   "name": "LG's Prime Steakhouse",
+   "city": "La Quinta",
+   "address": "78525 Highway 111, Suite 100, La Quinta, CA 92253",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://lgsprimesteakhouse.com/",
+    "phone": "(760) 771-9911"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-food-dining-coachella-valley/",
+    "name": "AICV dining census",
+    "underlying": [
+     "TripAdvisor",
+     "Yelp",
+     "OpenTable",
+     "La Quinta Fairways Directory"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Steakhouse, seafood",
+    "Official site mentions private parties (read October 31, 2026)",
+    "Group capacity noted: 150",
+    "Reservations: both"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "mario-s-italian-cafe-palm-desert",
+   "name": "Mario's Italian Cafe",
+   "city": "Palm Desert",
+   "address": "73155 Hwy 111",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": null,
+    "phone": "(760) 341-1130"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-food-dining-coachella-valley/",
+    "name": "AICV dining census",
+    "underlying": [
+     "Chamber",
+     "Slice"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "pizza Italian",
+    "Census recorded group dining; confirm with the restaurant",
+    "Group capacity noted: 80"
+   ],
+   "site_check": null
+  },
+  {
+   "id": "marriott-s-shadow-ridge-i-the-villages-palm-desert",
+   "name": "Marriott's Shadow Ridge I - The Villages",
+   "city": "Palm Desert",
+   "address": "9003 Shadow Ridge Road, Palm Desert, CA",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/ctdsr-marriotts-shadow-ridge-i-the-villages/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Golf (18-hole championship course)",
+    "Pools (4 outdoor pools)",
+    "Water playground/waterslide",
+    "Tennis",
+    "Fitness center"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "marriott-s-shadow-ridge-ii-the-enclaves-palm-desert",
+   "name": "Marriott's Shadow Ridge II - The Enclaves",
+   "city": "Palm Desert",
+   "address": "9003 Shadow Ridge Rd, Palm Desert, CA 92211",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/ctdst-marriotts-shadow-ridge-ii-the-enclaves/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Golf (18-hole championship course, Shadow Ridge Golf Club)",
+    "Multiple outdoor pools",
+    "Whirlpool spas",
+    "Waterslide",
+    "Children's pool"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "mccallum-theatre-palm-desert",
+   "name": "McCallum Theatre",
+   "city": "Palm Desert",
+   "address": null,
+   "category": "activities",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-09-25",
+   "official_contact": {
+    "url": "https://www.mccallumtheatre.org",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/nodes/mccallum-theatre/",
+    "name": "AICV node record"
+   },
+   "description": "McCallum Theatre is the Coachella Valley's only professional performing arts presenting house—1,127 seats in Palm Desert offering Broadway, classical music, jazz, and dance each season.",
+   "facts": [],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "mimmo-s-italian-restaurant-bar-palm-desert",
+   "name": "Mimmo's Italian Restaurant & Bar",
+   "city": "Palm Desert",
+   "address": "73540 Hwy 111 Ste 4",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.mimmospd.com",
+    "phone": "760-346-9712"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/mimmos-italian-restaurant-bar",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "TripAdvisor",
+     "DiscoverPD",
+     "Google"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Italian",
+    "Census recorded group dining; confirm with the restaurant",
+    "Group capacity noted: 35",
+    "Reservations: both"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "mod-palm-desert-palm-desert",
+   "name": "Mod Palm Desert",
+   "city": "Palm Desert",
+   "address": "73758 Shadow Mountain Drive, Palm Desert, CA",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.modpalmdesert.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/mod-palm-desert",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Boutique & lifestyle hotel/inn",
+    "About 15 rooms",
+    "Event or meeting space on site",
+    "Pool",
+    "Hot tub",
+    "Full kitchens (in-room)",
+    "Spa services",
+    "Free WiFi"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "mojave-resort-palm-desert",
+   "name": "Mojave Resort",
+   "city": "Palm Desert",
+   "address": "73721 Shadow Mountain Drive, Palm Desert, CA 92260",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.mojaveresort.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/mojave-resort",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Boutique & lifestyle hotel/inn",
+    "About 25 rooms",
+    "Event or meeting space on site",
+    "Pool (saltwater)",
+    "Hot tub spa",
+    "Lobby bar",
+    "Minibar in rooms",
+    "Bicycles"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "motel-6-indio-ca-palm-springs-indio",
+   "name": "Motel 6 Indio, CA - Palm Springs",
+   "city": "Indio",
+   "address": "82195 Indio Boulevard, Indio, CA 92201",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.motel6.com/property/motel-indio-california-us-293637/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "About 138 rooms",
+    "Pool",
+    "Free wifi",
+    "Free parking",
+    "Pet-friendly (Motel 6 chain-standard, unconfirmed on this listing)",
+    "24-hour front desk"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "motel-6-rancho-mirage-palm-springs-area-rancho-mirage",
+   "name": "Motel 6 Rancho Mirage (Palm Springs area)",
+   "city": "Rancho Mirage",
+   "address": "69570 CA-111, Rancho Mirage, CA 92270",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.motel6.com/property/motel-rancho-mirage-california-us-294712/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Pool",
+    "Hot tub",
+    "Free wifi",
+    "Free parking",
+    "24-hour front desk"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "old-town-la-quinta-la-quinta",
+   "name": "Old Town La Quinta",
+   "city": "La Quinta",
+   "address": null,
+   "category": "activities",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-09-25",
+   "official_contact": {
+    "url": "https://www.oldtownlaquinta.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/nodes/old-town-la-quinta/",
+    "name": "AICV node record"
+   },
+   "description": "Old Town La Quinta is the valley's most walkable village core—a pedestrian-oriented mixed-use district of boutique retail, restaurants, galleries, and civic space anchored by the La Quinta Museum along Calle Estado.",
+   "facts": [],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "omni-rancho-las-palmas-resort-spa-rancho-mirage",
+   "name": "Omni Rancho Las Palmas Resort & Spa",
+   "city": "Rancho Mirage",
+   "address": "41000 Bob Hope Drive, Rancho Mirage, CA 92270",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.omnihotels.com/hotels/palm-springs-rancho-las-palmas",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Event or meeting space on site",
+    "Spa",
+    "Golf (27 holes)",
+    "Tennis (25 courts)",
+    "Pools (4)",
+    "Waterpark"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "palm-springs-aerial-tramway-palm-springs",
+   "name": "Palm Springs Aerial Tramway",
+   "city": "Palm Springs",
+   "address": null,
+   "category": "activities",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-09-25",
+   "official_contact": {
+    "url": "https://www.pstramway.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/nodes/aerial-tram/",
+    "name": "AICV node record"
+   },
+   "description": "The Palm Springs Aerial Tramway is the world's largest rotating tram car, transporting 80 passengers from the desert floor at 2,643 ft to Mt. San Jacinto wilderness at 8,516 ft in 10 minutes—Palm Springs' most iconic single attraction and an unmatched group activity.",
+   "facts": [],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "palm-springs-international-airport-palm-springs",
+   "name": "Palm Springs International Airport",
+   "city": "Palm Springs",
+   "address": null,
+   "category": "getting-here",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-09-25",
+   "official_contact": {
+    "url": "https://www.flypsp.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/nodes/psp-airport/",
+    "name": "AICV node record"
+   },
+   "description": "Palm Springs International Airport (PSP) is the Coachella Valley's primary commercial gateway, handling 3.3M+ annual passengers (2025) on 8 carriers with nonstop routes to major U.S. cities, 7 to 44 minutes by car from valley destinations.",
+   "facts": [],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "red-jeep-tours-desert-adventures-palm-desert",
+   "name": "Red Jeep Tours (Desert Adventures)",
+   "city": "Palm Desert",
+   "address": "74-794 Lennon Place, Suite B, Palm Desert, CA 92260",
+   "category": "activities",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.red-jeep.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/red-jeep-tours-desert-adventures",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: reservation",
+    "San Andreas Fault Jeep Tour",
+    "Painted Canyon Jeep & Hiking Tour (Mecca Hills)",
+    "Indian Canyons guided walking/hiking tour",
+    "Joshua Tree National Park excursions"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "renaissance-esmeralda-resort-spa-indian-wells-indian-wells",
+   "name": "Renaissance Esmeralda Resort & Spa, Indian Wells",
+   "city": "Indian Wells",
+   "address": "44400 Indian Wells Lane, Indian Wells, CA 92210",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/pspsr-renaissance-esmeralda-resort-and-spa-indian-wells/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Event or meeting space on site",
+    "Event capacity noted: 213,000 sq ft of event space",
+    "Spa",
+    "Golf",
+    "Tennis",
+    "Pool",
+    "Restaurant"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "residence-inn-by-marriott-palm-desert-palm-desert",
+   "name": "Residence Inn by Marriott Palm Desert",
+   "city": "Palm Desert",
+   "address": "38305 Cook Street, Palm Desert, CA 92211",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "About 130 rooms",
+    "In-suite kitchens",
+    "Outdoor pool",
+    "Tennis courts",
+    "Free breakfast",
+    "Free WiFi"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "residence-inn-la-quinta-la-quinta",
+   "name": "Residence Inn La Quinta",
+   "city": "La Quinta",
+   "address": "79675 Highway 111, La Quinta, CA 92253",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/psprq-residence-inn-la-quinta/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Pool",
+    "Putting green (golf-adjacent, not a golf course)",
+    "BBQ area",
+    "Complimentary breakfast",
+    "EV charging stations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "rosemary-hifi-indio",
+   "name": "Rosemary HiFi",
+   "city": "Indio",
+   "address": "45120 Oasis St, Indio, CA 92201",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.rosemaryhifi.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/rosemary-hifi",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "Google"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Beer and wine bar, cafe",
+    "Census recorded group dining; confirm with the restaurant",
+    "Group capacity noted: 49",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "sands-hotel-and-spa-indian-wells",
+   "name": "Sands Hotel and Spa",
+   "city": "Indian Wells",
+   "address": "44-985 Province Way, Indian Wells, CA 92210",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://sandshotelandspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/sands-hotel-and-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Boutique & lifestyle hotel/inn",
+    "About 46 rooms",
+    "Event or meeting space on site",
+    "Spa",
+    "Pool",
+    "Restaurant",
+    "Bar",
+    "Event space"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "shadow-mountain-resort-club-palm-desert",
+   "name": "Shadow Mountain Resort & Club",
+   "city": "Palm Desert",
+   "address": "45750 San Luis Rey Ave, Palm Desert, CA 92260",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://shadowmountainresort.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/shadow-mountain-resort-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Boutique & lifestyle hotel/inn",
+    "About 125 rooms",
+    "Tennis (16 courts, Desert Tennis Academy)",
+    "Pools (Figure-8 pool + 4 smaller pools)",
+    "Spas/hot tubs",
+    "Fitness room",
+    "Business center"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "signature-inn-indio-i-10-coachella-valley-indio",
+   "name": "Signature Inn Indio I-10 Coachella Valley",
+   "city": "Indio",
+   "address": "84096 Indio Springs Dr, Indio, CA 92203",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.sonesta.com/signature-inn/ca/indio/signature-inn-indio-i-10",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Event or meeting space on site",
+    "Hot breakfast",
+    "Outdoor pool",
+    "Hot tub",
+    "Fitness center",
+    "Business center"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "silverrock-resort-la-quinta",
+   "name": "SilverRock Resort",
+   "city": "La Quinta",
+   "address": "79179 Ahmanson Lane, La Quinta, CA 92253",
+   "category": "golf",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.silverrock.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/silverrock-resort-arnold-palmer-classic-course",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: public",
+    "18 holes, 7,239 yards",
+    "Arnold Palmer design",
+    "200 acres with native bunkers and water features",
+    "Driving range"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "sunnylands-center-gardens-rancho-mirage",
+   "name": "Sunnylands Center & Gardens",
+   "city": "Rancho Mirage",
+   "address": "37977 Bob Hope Drive, Rancho Mirage, CA 92270",
+   "category": "activities",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://sunnylands.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/sunnylands-center-gardens",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: public",
+    "Free admission to Center & Gardens",
+    "9-acre gardens with 70+ species of native/arid-adapted plants",
+    "Five self-guided audio walks (1.25 miles of garden paths)",
+    "Guided tours of the historic Annenberg estate (separate ticketed house tours)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "super-8-by-wyndham-indio-indio",
+   "name": "Super 8 by Wyndham Indio",
+   "city": "Indio",
+   "address": "81753 Highway 111, Indio, CA 92201",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.wyndhamhotels.com/super-8/indio-california/super-8-indio/overview",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Event or meeting space on site",
+    "Free wifi",
+    "Free parking (cars, buses, trucks, RVs)",
+    "Outdoor pool",
+    "Courtyard/barbecue area",
+    "Free light breakfast"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "terra-lago-golf-club-indio",
+   "name": "Terra Lago Golf Club",
+   "city": "Indio",
+   "address": "84000 Terra Lago Parkway, Indio, CA 92203",
+   "category": "golf",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://golfterralago.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/terra-lago-golf-club-north-south-courses",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: public",
+    "36 holes (North Course + South Course)",
+    "North Course designed by Brian Curley and Lee E. Schmidt",
+    "Island green par-3 hole",
+    "Driving range"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-cafe-at-shields-date-garden-indio",
+   "name": "The Cafe at Shields Date Garden",
+   "city": "Indio",
+   "address": "80225 US Hwy 111, Indio, CA 92201",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://cafe.shieldsdategarden.com/",
+    "phone": "(760) 775-0902"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-cafe-at-shields-date-garden",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "Tripadvisor",
+     "Google"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "American, cafe, breakfast",
+    "Official site mentions private event (read October 31, 2026)",
+    "Group capacity noted: 35"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-chateau-at-lake-la-quinta-la-quinta",
+   "name": "The Chateau at Lake La Quinta",
+   "city": "La Quinta",
+   "address": "78-120 Caleo Bay, La Quinta, CA 92253",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://thechateau.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-chateau-at-lake-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Boutique & lifestyle hotel/inn",
+    "Event or meeting space on site",
+    "Restaurant (Melange, lakeside dining)",
+    "Bar (lobby bar)",
+    "Event space",
+    "Weddings",
+    "Hot tub"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-grill-on-main-la-quinta",
+   "name": "The Grill on Main",
+   "city": "La Quinta",
+   "address": "78065 Main Street, Suite 106, La Quinta, CA 92253",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://thegrillonmainlq.com",
+    "phone": "(760) 777-7773"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-grill-on-main",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "TripAdvisor",
+     "Wanderlog",
+     "Play in La Quinta"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "American, seafood",
+    "Official site mentions private events (read October 31, 2026)",
+    "Reservations: both"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-inn-at-deep-canyon-palm-desert",
+   "name": "The Inn at Deep Canyon",
+   "city": "Palm Desert",
+   "address": "74-470 Abronia Trail, Palm Desert, CA 92260",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.inn-adc.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-inn-at-deep-canyon",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Boutique & lifestyle hotel/inn",
+    "Event or meeting space on site",
+    "Heated saltwater pool",
+    "Hot tub",
+    "Mini golf",
+    "Gas BBQ grill",
+    "Continental breakfast"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-living-desert-zoo-and-gardens-palm-desert",
+   "name": "The Living Desert Zoo and Gardens",
+   "city": "Palm Desert",
+   "address": "47900 Portola Ave, Palm Desert, CA 92260",
+   "category": "activities",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.livingdesert.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/the-living-desert-zoo-and-gardens",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Private event/wedding venue",
+    "Event or meeting space on site",
+    "Event capacity noted: up to 1,000 guests (District Commissioner's House, 150-1,000); other venues rang",
+    "Event space",
+    "Outdoor ceremony/reception sites",
+    "Meeting/conference (corporate mixers, teambuilding)",
+    "Catering-compatible venues (ramadas)",
+    "Zoo/garden grounds and animal exhibits"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-parker-palm-springs-palm-springs",
+   "name": "The Parker Palm Springs",
+   "city": "Palm Springs",
+   "address": null,
+   "category": "stay",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-09-25",
+   "official_contact": {
+    "url": "https://www.parkerpalmsprings.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/nodes/parker-palm-springs/",
+    "name": "AICV node record"
+   },
+   "description": "The Parker Palm Springs is a design-led resort in Palm Springs with executive-retreat and estate-buyout inquiry pathways. Confirm the named working layout, room block, total quote and contractual exclusivity with the official events team.",
+   "facts": [],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-penney-at-di71-desert-island-rancho-mirage",
+   "name": "The Penney (at DI71 / Desert Island)",
+   "city": "Rancho Mirage",
+   "address": "71777 Frank Sinatra Dr, Rancho Mirage, CA 92270",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.di71.com",
+    "phone": "(760) 548-2100"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-food-dining-coachella-valley/",
+    "name": "AICV dining census",
+    "underlying": [
+     "Tripadvisor",
+     "City of Rancho Mirage culinary directory"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Californian",
+    "Official site mentions private event (read October 31, 2026)",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-ritz-carlton-rancho-mirage-rancho-mirage",
+   "name": "The Ritz-Carlton, Rancho Mirage",
+   "city": "Rancho Mirage",
+   "address": "68900 Frank Sinatra Drive, Rancho Mirage, CA 92270",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "About 244 rooms",
+    "Event or meeting space on site",
+    "Spa (25,000 sq ft, 16 treatment rooms)",
+    "3 pools",
+    "23 fire pits",
+    "Restaurant (Edge Steakhouse)",
+    "Restaurant/bar (State Fare Bar & Kitchen)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-terrace-restaurant-at-desert-willow-palm-desert",
+   "name": "The Terrace Restaurant at Desert Willow",
+   "city": "Palm Desert",
+   "address": "38995 Desert Willow Dr",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.desertwillow.com/terracerestaurant/",
+    "phone": "(760) 346-7060"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/the-terrace-restaurant-at-desert-willow",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "TripAdvisor",
+     "official site"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "California American",
+    "Official site mentions private events (read October 31, 2026)",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-westin-desert-willow-villas-palm-desert-palm-desert",
+   "name": "The Westin Desert Willow Villas, Palm Desert",
+   "city": "Palm Desert",
+   "address": "75 Willow Ridge, Palm Desert, CA 92260",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/pspwd-the-westin-desert-willow-villas-palm-desert/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Pools (three, incl. kiddie pool)",
+    "159-foot waterslide",
+    "Whirlpool spa",
+    "Cabanas",
+    "24-hour fitness studio"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "the-westin-rancho-mirage-golf-resort-spa-rancho-mirage",
+   "name": "The Westin Rancho Mirage Golf Resort & Spa",
+   "city": "Rancho Mirage",
+   "address": "71333 Dinah Shore Drive, Rancho Mirage, CA 92270",
+   "category": "golf",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/pspwi-the-westin-rancho-mirage-golf-resort-and-spa/overview/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/the-westin-rancho-mirage-golf-resort-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "Event or meeting space on site",
+    "Event capacity noted: 129,000 sq. ft. of indoor and outdoor event space",
+    "Spa",
+    "Golf",
+    "Tennis",
+    "Pools",
+    "Restaurant"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "tia-carmen-indian-wells",
+   "name": "Tia Carmen",
+   "city": "Indian Wells",
+   "address": "44600 Indian Wells Ln, Indian Wells, CA 92210",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.tiacarmenindianwells.com/",
+    "phone": "(760) 776-1234"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-food-dining-coachella-valley/",
+    "name": "AICV dining census",
+    "underlying": [
+     "Yelp",
+     "Tripadvisor",
+     "OpenTable"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "Southwestern, Latin, breakfast and dinner",
+    "Census recorded group dining; confirm with the restaurant",
+    "Group capacity noted: 155",
+    "Takes reservations"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "tommy-bahama-miramonte-resort-spa-indian-wells",
+   "name": "Tommy Bahama Miramonte Resort & Spa",
+   "city": "Indian Wells",
+   "address": "45000 Indian Wells Lane, Indian Wells, CA 92210",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.tommybahamamiramonte.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury & resort hotel",
+    "About 215 rooms",
+    "Event or meeting space on site",
+    "Event capacity noted: up to 200 guests; 35,000+ sq ft flexible indoor/outdoor space; five wedding venu",
+    "Spa (Spa Rosa)",
+    "Golf (adjacent Indian Wells Golf Resort)",
+    "Tennis",
+    "Pools",
+    "Cabanas"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "trilogy-at-the-polo-club-2-palms-event-center-indio",
+   "name": "Trilogy at The Polo Club (2 Palms Event Center)",
+   "city": "Indio",
+   "address": "51750 Polo Club Drive, Indio, CA 92201",
+   "category": "venues",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.mytrilogylife.com/polo/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/trilogy-at-the-polo-club-2-palms-event-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Private event/wedding venue",
+    "Event or meeting space on site",
+    "Event space",
+    "Restaurant (June Hill's Table)",
+    "Pools",
+    "Fitness/wellness facilities",
+    "Outdoor recreation"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "two-bunch-palms-resort-spa-desert-hot-springs",
+   "name": "Two Bunch Palms Resort & Spa",
+   "city": "Desert Hot Springs",
+   "address": "67425 Two Bunch Palms Trail, Desert Hot Springs, CA",
+   "category": "stay",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://twobunchpalms.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/hospitality/two-bunch-palms-resort-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Destination wellness/retreat center",
+    "About 67 rooms",
+    "Event or meeting space on site",
+    "Spa",
+    "Mineral springs",
+    "Pools",
+    "Restaurant",
+    "Bar"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "venueten-casa-de-lujo-estate-lujo-villa-bermuda-dunes",
+   "name": "VenueTEN (Casa de Lujo Estate + Lujo Villa)",
+   "city": "Bermuda Dunes",
+   "address": null,
+   "category": "stay",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-10-07",
+   "official_contact": {
+    "url": "https://venueten.com/contact",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/plan-team-retreat/",
+    "name": "AICV team retreat research"
+   },
+   "description": null,
+   "facts": [
+    "Corporate retreat pathway describes exclusive property use.",
+    "Full two-residence lodging footprint has 12 bedrooms and published occupancy of 40.",
+    "Great Room is a named 5,000-square-foot gathering area; no working layout capacity is publ"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "wallaby-s-west-la-quinta",
+   "name": "Wallaby's West",
+   "city": "La Quinta",
+   "address": "81405 Kingston Heath, La Quinta, CA 92253",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.pgawest.com/our-story/copy-wallabys-west",
+    "phone": "(760) 564-3905"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-food-dining-coachella-valley/",
+    "name": "AICV dining census",
+    "underlying": [
+     "Yelp",
+     "TripAdvisor",
+     "Play in La Quinta",
+     "Visit Greater Palm Springs"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "American, golf clubhouse grill",
+    "Census recorded group dining; confirm with the restaurant",
+    "Group capacity noted: 200"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "wildest-restaurant-bar-palm-desert",
+   "name": "Wildest Restaurant & Bar",
+   "city": "Palm Desert",
+   "address": "72990 El Paseo Ste 3",
+   "category": "dining",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-11",
+   "official_contact": {
+    "url": "https://www.wildestrestaurant.com",
+    "phone": "(760) 636-0441"
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/food-dining/wildest-restaurant-bar",
+    "name": "AICV Agent Preview record",
+    "underlying": [
+     "Yelp",
+     "OpenTable",
+     "palmdesert.com"
+    ]
+   },
+   "description": null,
+   "facts": [
+    "New American",
+    "Official site mentions private dining (read October 31, 2026)",
+    "Reservations: both"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "woodspring-suites-indio-coachella-valley-indio",
+   "name": "WoodSpring Suites Indio - Coachella Valley",
+   "city": "Indio",
+   "address": "42525 Jackson St, Indio, CA 92203",
+   "category": "stay",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.woodspring.com/extended-stay-hotels/locations/california/indio/woodspring-suites-indio-coachella-valley",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-hospitality-retreat-venues-coachella-valley/",
+    "name": "AICV hospitality census"
+   },
+   "description": null,
+   "facts": [
+    "Select-service/economy hotel",
+    "Full kitchen (microwave, 2-burner cooktop, fridge/freezer)",
+    "Free WiFi",
+    "Free parking",
+    "Fitness center",
+    "Laundry facilities"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  }
+ ],
+ "held_for_qualification": {
+  "needs_qualification": 81,
+  "restaurant: no firm group evidence": 34,
+  "address not confirmed": 3,
+  "source conflict: municipal and lodging-capacity contradictions, see retreat-options.json": 1,
+  "address outside the listed city": 1,
+  "not clearly a business a founder would ask about": 1,
+  "official site failed 2026-10-31": 1,
+  "source conflict: two census rows disagree on group dining; one says catering only": 1
+ }
+}

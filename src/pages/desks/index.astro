@@ -1,0 +1,67 @@
+---
+import Base from '../../layouts/Base.astro';
+import Footer from '../../components/Footer.astro';
+import meta from '../../data/desks/desks.json';
+import overlay from '../../data/desks/overlay.json';
+import { assembleDesk, applyOverlay, formatDate } from '../../../scripts/desks.mjs';
+
+const files = import.meta.glob('../../data/desks/*.entries.json', { eager: true });
+const desks = meta.desks.map(d => {
+  const path = `../../data/desks/${d.slug}.entries.json`;
+  return { ...d, data: assembleDesk(meta, d.slug, applyOverlay(d.slug, files[path].entries, overlay)) };
+});
+const total = desks.reduce((sum, d) => sum + d.data.counts.records, 0);
+const count = label => desks.reduce((sum, d) => sum + d.data.counts[label], 0);
+const canonical = 'https://aicoachellavalley.com/desks/';
+const description = 'Three AICV desks of labeled, dated and sourced records for visiting and relocating founders in Rancho Mirage, Palm Desert, Indian Wells, La Quinta and Indio.';
+const latest = desks.map(d => d.data.latest_observation).sort().at(-1);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'AICV desks',
+  description,
+  url: canonical,
+  dateModified: latest,
+  publisher: { '@id': 'https://aicoachellavalley.com/#organization' },
+};
+---
+
+<Base title="Desks | AI Coachella Valley" description={description} canonicalUrl={canonical} schema={schema}>
+  <nav class="dx-nav" aria-label="Main navigation">
+    <a class="dx-brand" href="/">AICV <span>AI Coachella Valley</span></a>
+    <a href="/connect/">For assistants →</a>
+  </nav>
+  <main class="dx-wrap">
+    <h1>Three desks, one network</h1>
+    <p class="dx-lede">{description}</p>
+    <p class="dx-count">{total} maintained records, of up to {meta.network_cap.toLocaleString('en-US')}. Participation is separate: {count('submitted')} businesses enrolled, {count('verified')} verified by the business. Latest check {formatDate(latest)}.</p>
+    <div class="dx-grid">
+      {desks.map(d => (
+        <a class="dx-card" href={`/desks/${d.slug}/`}>
+          <h2>{d.title}</h2>
+          <p>{d.scope}</p>
+          <p class="dx-n">{d.data.counts.records} records →</p>
+        </a>
+      ))}
+    </div>
+    <p>{meta.coverage.rule} <a href="/desks/join/">Check eligibility</a>.</p>
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  .dx-nav { display: flex; justify-content: space-between; gap: 16px; padding: 16px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); background: var(--pine-dark); }
+  .dx-nav a { color: var(--snow); text-decoration: none; font-size: 0.95rem; }
+  .dx-brand { font-family: 'Syne', sans-serif; font-weight: 800; }
+  .dx-brand span { font-family: 'DM Sans', sans-serif; font-weight: 400; opacity: 0.75; margin-left: 6px; }
+  .dx-wrap { width: min(1080px, 100%); margin: 0 auto; padding: 40px max(16px, env(safe-area-inset-right, 0px)) 72px max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: 20px; }
+  .dx-wrap h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.08; }
+  .dx-lede { max-width: 62ch; font-size: 1.1rem; }
+  .dx-count { font-size: 0.92rem; font-variant-numeric: tabular-nums; color: var(--pine-light); }
+  .dx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; }
+  .dx-card { display: flex; flex-direction: column; gap: 8px; padding: 20px; background: var(--sand-light); border: 1px solid var(--sand-dark); border-radius: 4px; color: var(--pine-dark); text-decoration: none; }
+  .dx-card:hover { border-color: var(--pine-light); }
+  .dx-card h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.25rem; }
+  .dx-n { margin-top: auto; font-weight: 500; color: var(--pine-light); }
+  .dx-wrap > p a { color: var(--pine-light); }
+</style>

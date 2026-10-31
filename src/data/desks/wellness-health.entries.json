@@ -1,0 +1,3832 @@
+{
+ "entries": [
+  {
+   "id": "acqpoint-acupuncture-wellness-indio",
+   "name": "AcQPoint Acupuncture & Wellness",
+   "city": "Indio",
+   "address": "45190 Club Drive, Indian Wells, CA 92210",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://acqpoint.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/acqpoint-acupuncture-wellness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Acupuncture",
+    "Traditional Chinese Medicine",
+    "Chinese herbal medicine",
+    "Medicinal herbs / freeze-dried herbal formulations and tea pills",
+    "Tinctures",
+    "Serves: General wellness clientele — \"individuals of all ages and health levels,\" treati"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "anthony-g-bassanelli-md-pc-palm-desert",
+   "name": "Anthony G. Bassanelli, MD, PC",
+   "city": "Palm Desert",
+   "address": "44-530 San Pablo Ave, Suite 202, Palm Desert, CA 92260",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://bassanellimd.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/anthony-g-bassanelli-md-pc",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Expert witness testimony",
+    "Chart reviews",
+    "Independent medical evaluations",
+    "Capacity assessments",
+    "Conservatorship evaluations",
+    "Serves: Adults and geriatric patients; forensic/civil litigation contexts"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "artmed-aesthetics-wellness-palm-desert",
+   "name": "ARTMED Aesthetics & Wellness",
+   "city": "Palm Desert",
+   "address": "73140 Hwy 111 Suite #2, Palm Desert, CA 92260",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.theartmed.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/artmed-aesthetics-wellness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Neurotoxin injections (Botox)",
+    "IV therapy",
+    "RF micro-needling",
+    "Laser hair removal / laser treatments",
+    "Facial treatments"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "beneath-the-surface-therapy-la-quinta",
+   "name": "Beneath the Surface Therapy",
+   "city": "La Quinta",
+   "address": "78150 Calle Tampico, Suite 200I, La Quinta, CA 92253",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.beneaththesurfacetherapy.net/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/beneath-the-surface-therapy",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "EMDR (Eye Movement Desensitization and Reprocessing) therapy",
+    "Trauma-informed depth-oriented therapy",
+    "EMDR intensives",
+    "Clinical consultation for other clinicians",
+    "Serves: trauma-focused for adults, incl. complex trauma/PTSD, sexual abuse and military "
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "bliss-chakra-spa-palm-desert",
+   "name": "Bliss Chakra Spa",
+   "city": "Palm Desert",
+   "address": "73896 El Paseo Dr, Suite R-12, Palm Desert, CA 92260",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://blisschakraspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/bliss-chakra-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Massage therapy (Abhyanga, Reiki, Heaven & Earth)",
+    "Facials",
+    "Ayurvedic consultations",
+    "Sound healing/sound baths",
+    "Yoga",
+    "Serves: holistic/Ayurvedic wellness clientele seeking mind-body-spirit balance"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "body-solutions-personal-fitness-and-wellness-studio-palm-desert",
+   "name": "Body Solutions Personal Fitness and Wellness Studio",
+   "city": "Palm Desert",
+   "address": "71743 Highway 111 Suite B, Rancho Mirage, CA 92270",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.bodysolutionspd.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/body-solutions-personal-fitness-and-wellness-studio",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Personal training (60-minute one-on-one sessions with body analysis and nutrition coaching",
+    "Group training (small group, max 6 members)",
+    "Online/virtual live-streamed training",
+    "Workplace wellness programs",
+    "Nutritional therapy and meal plans",
+    "Serves: breast cancer survivors, corporate/workplace wellness, general fitness clients ("
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "bodywork-esthetics-wellness-center-la-quinta",
+   "name": "Bodywork & Esthetics Wellness Center",
+   "city": "La Quinta",
+   "address": "78-150 Calle Tampico, Suite 207C, La Quinta, CA 92253",
+   "category": "recovery",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://bodyworkestheticscenter.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/bodywork-esthetics-wellness-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Massage therapy (holistic, athletic, therapeutic, lymphatic drainage, post-surgical, oncol",
+    "Esthetics/facials (custom facials, dermaplaning, G.M. Collin treatments)",
+    "Waxing (body and facial)",
+    "Fascial Stretch Therapy (FST)",
+    "In-home massage and event services",
+    "Serves: athletes, post-surgery patients, and cancer survivors (oncology massage)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "bonakdar-aesthetics-palm-desert",
+   "name": "Bonakdar Aesthetics",
+   "city": "Palm Desert",
+   "address": "36943 Cook St, Ste 104, Palm Desert, CA 92211",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.bonakdaraesthetics.com/palm-desert/medspa/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/bonakdar-aesthetics",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Botox/neurotoxin injections",
+    "Dermal fillers",
+    "Kybella",
+    "Sculptra",
+    "PDO threads",
+    "Serves: Discerning Palm Desert/Southern California med spa clientele (no specific demogr"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "braincare-rancho-mirage-rancho-mirage",
+   "name": "BrainCare Rancho Mirage",
+   "city": "Rancho Mirage",
+   "address": "72301 Country Club Dr #105, Rancho Mirage, CA 92270",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://braincareranchomirage.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/braincare-rancho-mirage",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "MeRT (Magnetic e-Resonance Therapy)",
+    "TMS (Transcranial Magnetic Stimulation)",
+    "Autism spectrum disorder treatment",
+    "Depression / treatment-resistant depression treatment",
+    "PTSD treatment",
+    "Serves: Neurological/mental health patients across Coachella Valley; accepts TRICARE (mi"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "california-wellness-institute-rancho-mirage",
+   "name": "California Wellness Institute",
+   "city": "Rancho Mirage",
+   "address": "39935 Vista Del Sol, STE 204, Rancho Mirage, CA 92270",
+   "category": "recovery",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://cawellnessinstitute.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/california-wellness-institute",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Urological care",
+    "Sexual wellness (male/female enhancement)",
+    "Aesthetic procedures (skin resurfacing, hair removal, body contouring)",
+    "Regenerative therapies (stem cell, PRP)",
+    "Hormone replacement/optimization",
+    "Serves: Gender-specific men's and women's services; LGBTQ+ friendly; private concierge m"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "capstone-fitness-la-quinta",
+   "name": "Capstone Fitness",
+   "city": "La Quinta",
+   "address": "44025 Jefferson Street, Suite 104, La Quinta, CA 92253",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.capstonefitness.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/capstone-fitness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Personal training (one-on-one)",
+    "Group fitness/boot camp classes",
+    "CUT by Capstone program",
+    "Corrective golf fitness instruction (TPI)",
+    "Nutrition consultation",
+    "Serves: General fitness clients, golfers seeking performance improvement, and individual"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "care-esthetics-la-quinta-la-quinta",
+   "name": "CARE Esthetics La Quinta",
+   "city": "La Quinta",
+   "address": "78138 Calle Tampico, Suite #100, La Quinta, CA 92253",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://care-estheticslaquinta.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/care-esthetics-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Botox",
+    "Dermal fillers",
+    "Microneedling",
+    "CO2 laser",
+    "RF microneedling",
+    "Serves: general aesthetic and longevity/anti-aging patients (men and women)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "chakra-esthetics-spa-palm-desert",
+   "name": "Chakra Esthetics Spa",
+   "city": "Palm Desert",
+   "address": "73200 El Paseo, Suite 2A, Palm Desert, CA 92260",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://chakraesthetics.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/chakra-esthetics-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Holistic/quantum beauty facials",
+    "Massage therapy (incl. hot stone)",
+    "Sound healing/sound bath integration",
+    "Treatments for menopause, aging, rosacea, sensitive skin/eczema, barrier repair, pigmentat",
+    "Serves: Perimenopausal/mature adult skin focus; also offers professional esthetician tra"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "chiropilates-palm-desert",
+   "name": "ChiroPilates",
+   "city": "Palm Desert",
+   "address": "73010 El Paseo, Suite 2B, Palm Desert, CA 92260",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.chiropilates.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/chiropilates",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Group Reformer Pilates classes",
+    "Private Pilates sessions",
+    "Chiropractic care",
+    "Massage therapy",
+    "Personal training"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "christina-granillo-therapy-cg-desert-therapy-palm-desert",
+   "name": "Christina Granillo Therapy (CG Desert Therapy)",
+   "city": "Palm Desert",
+   "address": "73-550 Alessandro Drive, Suite 200, Palm Desert, CA 92260",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.cgdeserttherapy.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/christina-granillo-therapy-cg-desert-therapy",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "EMDR (Eye Movement Desensitization and Reprocessing) therapy",
+    "Parts Work Therapy/Internal Family Systems",
+    "Individual adult counseling",
+    "Family therapy/counseling",
+    "Couples counseling",
+    "Serves: Adults, couples, families, children & adolescents (general practice, no single n"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "coachella-valley-chiropractic-palm-desert",
+   "name": "Coachella Valley Chiropractic",
+   "city": "Palm Desert",
+   "address": "41865 Boardwalk, Suite 111, Palm Desert, CA 92211",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.coachellavalleychiropractic.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/coachella-valley-chiropractic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Spinal and extremity chiropractic adjustments (Diversified, Activator, Drop Table, Pelvic ",
+    "Kinesiology taping",
+    "Manual release technique",
+    "Cupping",
+    "HawkGrips instrument-assisted soft tissue mobilization (IASTM)",
+    "Serves: sports injury / general community practice"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "coachella-valley-direct-primary-care-cvdpc-rancho-mirage",
+   "name": "Coachella Valley Direct Primary Care (CVDPC)",
+   "city": "Rancho Mirage",
+   "address": "71780 San Jacinto Dr # H1, Rancho Mirage, CA 92270",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://coachellavalleydpc.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/coachella-valley-direct-primary-care-cvdpc",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Unlimited primary care visits",
+    "Same-day or next-day appointments",
+    "Telemedicine/virtual visits",
+    "Chronic disease management",
+    "Preventative care and wellness plans",
+    "Serves: busy Coachella Valley families (\"Frustration-Free Healthcare for the Whole Famil"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "coachella-valley-direct-primary-care-cvdpc-palm-desert-palm-desert",
+   "name": "Coachella Valley Direct Primary Care (CVDPC) - Palm Desert",
+   "city": "Palm Desert",
+   "address": "71780 San Jacinto Dr # H1, Rancho Mirage, CA 92270",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://coachellavalleydpc.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/coachella-valley-direct-primary-care-cvdpc-palm-desert",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Unlimited primary care visits",
+    "Telemedicine/virtual visits",
+    "Chronic disease management",
+    "Preventative care and wellness plans",
+    "Discounted labs, medications, and imaging",
+    "Serves: family-focused membership (\"designed for busy Coachella Valley families\")"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "columbia-center-for-integrative-medicine-palm-desert",
+   "name": "Columbia Center for Integrative Medicine",
+   "city": "Palm Desert",
+   "address": "74075 El Paseo Dr. #B2, Palm Desert, CA 92260",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://ccimhealth.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/columbia-center-for-integrative-medicine",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "GI detox and restoration",
+    "Hormone/endocrinology services",
+    "Brain chemistry testing",
+    "Disease reversal programs (kidney stones, diabetes, gallstones)",
+    "Joint restoration/prolotherapy",
+    "Serves: patients with chronic disease seeking integrative/holistic treatment"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "contour-dermatology-cosmetic-surgery-center-la-quinta-clinic-la-quinta",
+   "name": "Contour Dermatology & Cosmetic Surgery Center - La Quinta Clinic",
+   "city": "La Quinta",
+   "address": "46080 Jefferson St, La Quinta, CA 92253",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://contourderm.com/la-quinta-clinic/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/contour-dermatology-cosmetic-surgery-center-la-quinta-clinic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Medical dermatology (skin cancer, inflammatory disorders, acne)",
+    "Cosmetic treatments (Botox, fillers, CoolSculpting, hair restoration)",
+    "Plastic surgery (tummy tuck, breast augmentation, liposuction)",
+    "Laser treatments (resurfacing, hair removal, vein treatment, tattoo removal, PicoWay, XTRA"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "contour-dermatology-and-cosmetic-surgery-center-rancho-mirage",
+   "name": "Contour Dermatology and Cosmetic Surgery Center",
+   "city": "Rancho Mirage",
+   "address": "42600 Mirage Rd, Rancho Mirage, CA 92270",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://contourderm.com/contact-us/rancho-mirage-clinic/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/contour-dermatology-and-cosmetic-surgery-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Medical dermatology (acne, eczema, skin cancer, psoriasis, scars)",
+    "Cosmetic procedures (Botox, fillers, laser treatments)",
+    "Body contouring / liposuction",
+    "Breast augmentation",
+    "Tattoo removal",
+    "Serves: General dermatology and cosmetic surgery patients; upscale/luxury clientele cons"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "cosmetic-surgery-institute-medispa-division-palm-desert",
+   "name": "Cosmetic Surgery Institute MediSpa Division",
+   "city": "Palm Desert",
+   "address": "73710 Alessandro Dr, Suite A1, Palm Desert, CA 92260",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://csipd.com/medi-spa/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/cosmetic-surgery-institute-medispa-division",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Botox/Dysport injectables",
+    "Dermal fillers",
+    "PDO threads",
+    "Semaglutide (weight loss)",
+    "Laser hair removal",
+    "Serves: general aesthetic/wellness clientele across Coachella Valley; also runs communit"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-glow-medical-aesthetics-and-wellness-palm-desert",
+   "name": "Desert Glow Medical Aesthetics and Wellness",
+   "city": "Palm Desert",
+   "address": "73241 CA-111 Suite 5A, Palm Desert, CA 92260",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://desertglowspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/desert-glow-medical-aesthetics-and-wellness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Botox",
+    "Dermal fillers",
+    "PDO threads",
+    "Microneedling / RF microneedling",
+    "Chemical peels",
+    "Serves: general aesthetic and anti-aging/weight-loss clients"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-integrative-wellness-palm-desert",
+   "name": "Desert Integrative Wellness",
+   "city": "Palm Desert",
+   "address": "45190 Club Drive, Indian Wells, CA 92210",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://desertintegrativewellness.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/desert-integrative-wellness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Light System (EESystem) sessions - immersive or private",
+    "Neuro-Regulation Intensives with Dr. Olson",
+    "Guided skill-based wellness groups (women's, grief)",
+    "Weekly drop-in groups (regulation, boundaries, communication, conflict navigation, burnout",
+    "Space rental to select providers",
+    "Serves: general wellness seekers experiencing fatigue, overwhelm, or emotional strain; e"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-marriage-family-counseling-la-quinta",
+   "name": "Desert Marriage & Family Counseling",
+   "city": "La Quinta",
+   "address": "43585 Monterey Ave #1, Palm Desert, CA 92260",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://desertmarriagefamily.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/desert-marriage-family-counseling",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Marriage/couples therapy",
+    "Family counseling",
+    "Individual therapy",
+    "Teen and child counseling",
+    "LGBTQ+ counseling",
+    "Serves: Individuals, couples, and families across the Coachella Valley (9 cities includi"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-med-aesthetics-indian-wells",
+   "name": "Desert Med Aesthetics",
+   "city": "Indian Wells",
+   "address": "45-200 Club Drive, Suite A, Indian Wells, CA 92210",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.desertmedaesthetics.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-wellness-healthcare-coachella-valley/",
+    "name": "AICV wellness and healthcare census"
+   },
+   "description": null,
+   "facts": [
+    "Injectables (Botox, Juvéderm, Radiesse, Sculptra)",
+    "Laser treatments (hair removal, skin resurfacing)",
+    "Microneedling",
+    "CoolSculpting / body contouring",
+    "Chemical peels",
+    "Serves: men and women of all ages and skin types"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-oasis-healthcare-indio-immediate-care-indio",
+   "name": "Desert Oasis Healthcare - Indio Immediate Care",
+   "city": "Indio",
+   "address": "81880 Dr. Carreon Blvd, Ste C-108, Indio, CA 92201",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.mydohc.com/locations/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/desert-oasis-healthcare-indio-immediate-care",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Immediate/urgent care for minor illnesses and injuries",
+    "Walk-in care 7 days a week",
+    "Scheduled appointments",
+    "Serves: unknown"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-oasis-healthcare-palm-desert-palm-desert",
+   "name": "Desert Oasis Healthcare - Palm Desert",
+   "city": "Palm Desert",
+   "address": "72605 Highway 111, Palm Desert, CA 92260",
+   "category": "hospitals",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.mydohc.com/locations/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/desert-oasis-healthcare-palm-desert",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Immediate/urgent care for minor illnesses and injuries",
+    "Primary care physicians",
+    "24/7 Nurse Helpline",
+    "Serves: unknown"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-psychiatric-associates-richard-torban-palm-desert",
+   "name": "Desert Psychiatric Associates (Richard Torban)",
+   "city": "Palm Desert",
+   "address": "73255 El Paseo, Suite 11, Palm Desert, CA 92260",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://desertpsych.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/desert-psychiatric-associates-richard-torban",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Psychiatric evaluations",
+    "Medication management",
+    "Psychotherapy",
+    "Trauma-informed care",
+    "Crisis stabilization",
+    "Serves: Adolescents (ages 6+), adults, and older adults"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-serenity-float-spa-palm-desert",
+   "name": "Desert Serenity Float & Spa",
+   "city": "Palm Desert",
+   "address": "73712 Alessandro Drive, Suite B1, Palm Desert, CA 92260",
+   "category": "recovery",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://desertserenityfloat.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/desert-serenity-float-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Floatation therapy",
+    "Swedish massage",
+    "Deep tissue massage",
+    "Hot stone massage",
+    "Prenatal massage",
+    "Serves: general wellness, with couples and prenatal offerings"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-wellness-psychiatry-rancho-mirage",
+   "name": "Desert Wellness Psychiatry",
+   "city": "Rancho Mirage",
+   "address": "35800 Bob Hope Dr, Suite 210, Rancho Mirage, CA 92270",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.desertwellnesspsychiatry.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/desert-wellness-psychiatry",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "General adult psychiatry",
+    "Women's mental health (pre-conception, pregnancy, postpartum)",
+    "Anxiety, OCD, depression, bipolar disorder treatment",
+    "Sleep difficulties",
+    "ADHD",
+    "Serves: Adults, including athletes/high-performing individuals; women's mental health fo"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "donya-medical-and-beauty-spa-rancho-mirage",
+   "name": "Donya Medical and Beauty Spa",
+   "city": "Rancho Mirage",
+   "address": "71-935 Hwy 111, Rancho Mirage, CA 92270",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://donyaspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/donya-medical-and-beauty-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Body Sculpting",
+    "Facial Rejuvenation",
+    "Bio-identical Hormone Replacement",
+    "IPL Photorejuvenation",
+    "Vitamin/IV Infusion"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "dr-quardt-medical-spa-dr-q-medical-spa-rancho-mirage",
+   "name": "Dr. Quardt Medical Spa (Dr. Q Medical Spa)",
+   "city": "Rancho Mirage",
+   "address": "70-017 Highway 111, Suite #1, Rancho Mirage, CA 92270",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://drqmedicalspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/dr-quardt-medical-spa-dr-q-medical-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Injectables (Botox, dermal fillers, Kybella, Jeuveau)",
+    "Laser resurfacing/laser treatments",
+    "RF microneedling",
+    "CoolSculpting body contouring",
+    "Skin rejuvenation packages (\"Re-Q-Venation\")",
+    "Serves: unknown"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "east-west-medicine-dr-yani-lu-rancho-mirage",
+   "name": "East-West Medicine (Dr. Yani Lu)",
+   "city": "Rancho Mirage",
+   "address": "41750 Rancho Las Palmas Dr, Suite P1, Rancho Mirage, CA 92270",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.dryanilu.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/east-west-medicine-dr-yani-lu",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Family Medicine",
+    "Medical Acupuncture",
+    "Traditional Chinese Medicine",
+    "Functional Medicine",
+    "Weight Loss programs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eisenhower-behavioral-health-rancho-mirage",
+   "name": "Eisenhower Behavioral Health",
+   "city": "Rancho Mirage",
+   "address": "39000 Bob Hope Drive, Suite 216, Rancho Mirage, CA 92270",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://eisenhowerhealth.org/services/behavioral-health/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/eisenhower-behavioral-health",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Psychiatric evaluation and medication management",
+    "Individual and group therapy",
+    "Transcranial Magnetic Stimulation (TMS)",
+    "Senior Adult Intensive Outpatient Program (IOP)",
+    "Serves: Adults with mild to moderate mental health symptoms; senior adults (dedicated IO"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eisenhower-george-julia-argyros-health-center-la-quinta",
+   "name": "Eisenhower George & Julia Argyros Health Center",
+   "city": "La Quinta",
+   "address": "45280 Seeley Dr, La Quinta, CA 92253",
+   "category": "hospitals",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://eisenhowerhealth.org/locations/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/eisenhower-george-julia-argyros-health-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Primary care/family medicine",
+    "Urgent care",
+    "Imaging (X-ray, MRI, CT)",
+    "Lab services",
+    "Radiation oncology",
+    "Serves: general community outpatient care (Coachella Valley east end residents)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eisenhower-health-center-palm-desert-alessandro-palm-desert",
+   "name": "Eisenhower Health Center (Palm Desert - Alessandro)",
+   "city": "Palm Desert",
+   "address": "74020 Alessandro Road, Palm Desert, CA 92260",
+   "category": "hospitals",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://eisenhowerhealth.org/locations/?action=detail&dataRef=187",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/eisenhower-health-center-palm-desert-alessandro",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "General health center services (specific service list behind a 'Services' tab not fully re",
+    "Primary care (per broader Eisenhower Health network)",
+    "Serves: unknown"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eisenhower-health-center-palm-desert-wildcat-palm-desert",
+   "name": "Eisenhower Health Center (Palm Desert - Wildcat)",
+   "city": "Palm Desert",
+   "address": "78120 Wildcat Dr, Palm Desert, CA 92211",
+   "category": "hospitals",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://eisenhowerhealth.org/locations/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/eisenhower-health-center-palm-desert-wildcat",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Primary care (Eisenhower Primary Care)",
+    "Eisenhower Primary Care 365 (concierge-style continuous care)",
+    "Serves: general/family primary care patients"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eisenhower-health-rancho-mirage-medical-center-main-hospital-campus-rancho-mirage",
+   "name": "Eisenhower Health – Rancho Mirage Medical Center (main hospital campus)",
+   "city": "Rancho Mirage",
+   "address": "39000 Bob Hope Dr, Rancho Mirage, CA 92270",
+   "category": "hospitals",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://eisenhowerhealth.org",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/eisenhower-health-rancho-mirage-medical-center-main-hospital-campus",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Emergency care",
+    "Cardiology",
+    "Oncology",
+    "Orthopedics",
+    "Neurosurgery",
+    "Serves: General acute-care hospital serving the Coachella Valley community; includes Bar"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eisenhower-urgent-care-la-quinta-la-quinta",
+   "name": "Eisenhower Urgent Care - La Quinta",
+   "city": "La Quinta",
+   "address": "45280 Seeley Drive, First Floor, La Quinta, CA 92253-6834",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://eisenhowerhealth.org/services/urgent-care/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/eisenhower-urgent-care-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Walk-in urgent care for common illnesses/injuries",
+    "Onsite laboratory (urinalysis, influenza screening, pregnancy testing, glucose monitoring)",
+    "Onsite radiology for fracture and sprain diagnosis",
+    "Telehealth visits (for adults 18+, select conditions)",
+    "Serves: general public, walk-in basis; patients without a primary care physician needing"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eisenhower-urgent-care-rancho-mirage-rancho-mirage",
+   "name": "Eisenhower Urgent Care - Rancho Mirage",
+   "city": "Rancho Mirage",
+   "address": "72780 Country Club Dr, Ste B203/203B, Rancho Mirage, CA 92270",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://eisenhowerhealth.org/services/urgent-care/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/eisenhower-urgent-care-rancho-mirage",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Walk-in urgent care (non-emergent)",
+    "Onsite laboratory (urinalysis, influenza screening, pregnancy testing, glucose monitoring)",
+    "Onsite radiology (fracture and sprain diagnosis)",
+    "Telehealth/video visits (California adults only, limited conditions)",
+    "Routine vaccinations",
+    "Serves: General adult walk-in patients; telehealth limited to California residents"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eko-plastic-surgery-medi-spa-palm-desert",
+   "name": "Eko Plastic Surgery Medi-Spa",
+   "city": "Palm Desert",
+   "address": "44651 Village Court, Suite 104, Palm Desert, CA 92260",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.ekoplasticsurgery.com/medical-spa-cosmetic-services-palm-desert/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/eko-plastic-surgery-medi-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Facials (hydrating facial)",
+    "Dermal fillers (Botox, Juvederm, Kybella)",
+    "Acne treatments",
+    "Lip injections",
+    "Liquid facelift",
+    "Serves: Coachella Valley residents (general medi-spa/plastic surgery patients, men and w"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "esthetics-by-lynn-palm-desert",
+   "name": "Esthetics by Lynn",
+   "city": "Palm Desert",
+   "address": "72-624 El Paseo, Suite B1, Studio 5, Palm Desert, CA 92260",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://estheticsbylynn.skincaretherapy.info/about-esthetics-by-lynn-facials-in-palm-desert-california",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/esthetics-by-lynn",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Custom facials",
+    "Organic facials",
+    "Sculpting facials (microcurrent)",
+    "Massage",
+    "Lash services",
+    "Serves: general clientele seeking facials/anti-aging, acneic, and sensitized skin treatm"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "ethos-modern-medicine-la-quinta",
+   "name": "Ethos Modern Medicine",
+   "city": "La Quinta",
+   "address": "79180 Corporate Center Dr Ste 102, La Quinta, CA 92253",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://ethosmodernmedicine.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/ethos-modern-medicine",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Direct primary care (unlimited office visits)",
+    "Physicals and wellness education",
+    "Pediatric care",
+    "Chronic disease management",
+    "Osteopathic manipulation",
+    "Serves: General population across pediatric (6mo-18yrs), adult (19-49), and senior (50+)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "face-body-spa-palm-desert",
+   "name": "Face & Body Spa",
+   "city": "Palm Desert",
+   "address": "73993 Hwy 111, Palm Desert, CA 92260",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://desertspa.co/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/face-body-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Therapeutic massage",
+    "Skin care / facials",
+    "Waxing",
+    "Day spa treatments"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "fantasy-springs-resort-casino-spa-indio",
+   "name": "Fantasy Springs Resort Casino Spa",
+   "city": "Indio",
+   "address": "84-245 Indio Springs Pkwy, Indio, CA 92203",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.fantasyspringsresort.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/fantasy-springs-resort-casino-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Outdoor pool with spa tub (hot tub)",
+    "Poolside food and beverage service",
+    "Serves: resort/hotel guests and casino visitors"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "fit-in-42-la-quinta",
+   "name": "Fit in 42",
+   "city": "La Quinta",
+   "address": "79410 CA-111 #112, La Quinta, CA 92253",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://fitin42.com/locations/personal-training-gym-la-quinta/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/fit-in-42",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Semi-private personal training",
+    "42 Strong strength training classes",
+    "42 Combat cardio kickboxing",
+    "HIIT workouts",
+    "Stretch therapy",
+    "Serves: General fitness/weight loss clients, including GLP-1 medication users and season"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "fusion-fitness-palm-desert",
+   "name": "Fusion Fitness",
+   "city": "Palm Desert",
+   "address": "72-624 El Paseo, Unit A1, Palm Desert, CA 92260",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://ilovefusionfitness.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/fusion-fitness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Semi-private personal training",
+    "Large group bootcamp classes",
+    "Yoga",
+    "Stretch therapy",
+    "30/30 Program (30 min training + 30 min stretch therapy)",
+    "Serves: predominantly women 40+ (90-92% female, average client age 52)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "gamble-chiropractic-palm-desert",
+   "name": "Gamble Chiropractic",
+   "city": "Palm Desert",
+   "address": "77564 Country Club Drive, Building B #320, Palm Desert, CA 92211",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://gamblechiro.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/gamble-chiropractic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Chiropractic care (Activator Method, Diversified Technique)",
+    "Massage therapy",
+    "Soft tissue therapy (ART, myofascial release)",
+    "Cold laser therapy",
+    "Electrical stimulation",
+    "Serves: General wellness, sports injuries, motor vehicle accident, and worker's compensa"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "garden-of-eden-day-spa-palm-desert",
+   "name": "Garden Of Eden Day Spa",
+   "city": "Palm Desert",
+   "address": "74040 El Paseo Dr #C, Palm Desert, CA 92260",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.gardenof-edendayspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/garden-of-eden-day-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Foot reflexology massage",
+    "Asian body massage",
+    "Acupressure and reflexology",
+    "Hot stone therapy",
+    "Aromatherapy",
+    "Serves: general wellness clientele (professionals, athletes, seniors)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "gather-yoga-wellness-la-quinta",
+   "name": "Gather Yoga + Wellness",
+   "city": "La Quinta",
+   "address": "78010 Main Street, Suite 201, La Quinta, CA 92253",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.gatherlaquinta.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/gather-yoga-wellness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Yoga classes",
+    "Mat Pilates",
+    "Barre",
+    "Strength and mobility training",
+    "Breathwork",
+    "Serves: community-focused studio welcoming beginners and experienced practitioners; trau"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "indio-spa-indio",
+   "name": "Indio Spa",
+   "city": "Indio",
+   "address": "42-151 WorldMark Way, Indio, CA 92203",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.indiospa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/indio-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Massage therapy (including couples massage)",
+    "Customized facials",
+    "Body treatments/exfoliations and wraps",
+    "Spa packages",
+    "Private spa events/parties",
+    "Serves: couples and small group private events (2-10 people)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "infinity-pilates-palm-desert",
+   "name": "Infinity Pilates",
+   "city": "Palm Desert",
+   "address": "77760 Country Club Drive, Suite G, Palm Desert, CA 92211",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.infinity-pilates.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/infinity-pilates",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Private Pilates reformer sessions",
+    "Duet sessions",
+    "Virtual/Zoom sessions",
+    "CoreAlign classes",
+    "Konnector sessions",
+    "Serves: movement therapy / postural alignment / injury recovery / athletes"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "kalologie-med-spa-at-indian-wells-indian-wells",
+   "name": "Kalologie Med Spa at Indian Wells",
+   "city": "Indian Wells",
+   "address": "44600 Indian Wells Lane, Indian Wells, CA 92210",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://kalologie.com/our-locations/kalologie-at-indian-wells",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/kalologie-med-spa-at-indian-wells",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Botox",
+    "Dysport",
+    "Jeuveau",
+    "Juvederm/dermal fillers",
+    "IV Therapy",
+    "Serves: resort guests and locals (day-use med spa within a resort spa)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "karma-doctors-associates-rancho-mirage",
+   "name": "Karma Doctors & Associates",
+   "city": "Rancho Mirage",
+   "address": "35400 Bob Hope Dr. Suite 206-A, Rancho Mirage, CA 92270",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://karmadocs.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/karma-doctors-associates",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Transcranial Magnetic Stimulation (TMS) therapy",
+    "Medication management",
+    "Psychiatric evaluations",
+    "Treatment for depression, anxiety, PTSD, ADHD, bipolar disorder, OCD",
+    "Integrative wellness/medicine approach",
+    "Serves: general adult psychiatric patients (including treatment-resistant depression cas"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "kinetix-health-performance-center-palm-desert",
+   "name": "Kinetix Health & Performance Center",
+   "city": "Palm Desert",
+   "address": "77804 Wildcat Dr, Palm Desert, CA 92211",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://kinetixcenter.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-wellness-healthcare-coachella-valley/",
+    "name": "AICV wellness and healthcare census"
+   },
+   "description": null,
+   "facts": [
+    "Personal and group fitness training",
+    "Sport-specific training (golf, tennis, football, hockey)",
+    "Youth training programs and camps",
+    "Nutrition and lifestyle coaching",
+    "Massage therapy and medical massage",
+    "Serves: athletes (amateur to professional), youth athletes, seniors, golf enthusiasts"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "kl-fitness-performance-palm-desert",
+   "name": "KL Fitness & Performance",
+   "city": "Palm Desert",
+   "address": "75153 Merle Dr, Unit/Ste I, Palm Desert, CA 92211",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.klfitstudio.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/kl-fitness-performance",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "One-on-one private training",
+    "Small group strength training classes",
+    "Youth strength and conditioning program",
+    "Nutritional coaching",
+    "Online coaching (workout and nutrition plans)",
+    "Serves: general fitness clients including student-athletes and youth"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-med-spa-la-quinta",
+   "name": "La Quinta Med Spa",
+   "city": "La Quinta",
+   "address": "47-350 Washington Street #103, La Quinta, CA 92253",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://laquintamedspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/la-quinta-med-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Botox/Dysport/Juvederm/Sculptra/Restylane/Upneeq injectables",
+    "Laser hair removal",
+    "Fractional CO2 laser",
+    "Laser vein treatment",
+    "Laser tattoo removal",
+    "Serves: anti-aging and aesthetic enhancement, general adult clientele"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-pilates-la-quinta",
+   "name": "La Quinta Pilates",
+   "city": "La Quinta",
+   "address": "78065 Main St suite 203, La Quinta, CA 92253",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://laquintapilates.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/la-quinta-pilates",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Reformer Pilates group classes",
+    "Private instruction sessions",
+    "Duo sessions",
+    "Small group classes (wunda chair, reformer, tower equipment)",
+    "Serves: general fitness clientele focused on mind-body integration"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-salon-day-spa-la-quinta",
+   "name": "La Quinta Salon & Day Spa",
+   "city": "La Quinta",
+   "address": "50855 Washington Street, Suite 2E, La Quinta, CA 92253",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.laquintahairsalonanddayspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/la-quinta-salon-day-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Hair cutting",
+    "Hair styling",
+    "Hair coloring",
+    "Facials",
+    "Massage",
+    "Serves: general salon and spa clientele, no specialized programs stated"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-wellness-center-la-quinta",
+   "name": "La Quinta Wellness Center",
+   "city": "La Quinta",
+   "address": "78450 Avenida La Fonda, La Quinta, CA 92253",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.playinlaquinta.com/see-do/health-fitness/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/la-quinta-wellness-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Fitness equipment (cardio, strength, flexibility)",
+    "Yoga Flow",
+    "Gentle Yoga",
+    "Mat Pilates",
+    "Tai Chi Yang",
+    "Serves: general public / seniors (expansion of La Quinta Senior Center)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "lingfinity-spa-by-enna-rancho-mirage",
+   "name": "Lingfinity Spa by Enna",
+   "city": "Rancho Mirage",
+   "address": "71680 Highway 111, Suite E, Rancho Mirage, CA 92270",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.lingfinityspabyenna.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/lingfinity-spa-by-enna",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Deep tissue massage",
+    "Myofascial release therapy",
+    "Relaxation therapy",
+    "Couples massage",
+    "Acupressure",
+    "Serves: general massage/pain-relief clients, some referenced under chiropractic care"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "live-well-clinic-la-quinta",
+   "name": "Live Well Clinic",
+   "city": "La Quinta",
+   "address": "78900 Avenue 47, Ste 102, La Quinta, CA 92253",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.livewellclinic.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/live-well-clinic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Naturopathic primary care (adults)",
+    "Naturopathic family medicine / pediatrics",
+    "Integrative cancer care",
+    "Integrative functional medicine",
+    "Regenerative stem cell therapy / PRP / Prolotherapy",
+    "Serves: adults, families, and cancer patients; athletic/sports nutrition also offered"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "mirage-medical-spa-la-quinta",
+   "name": "Mirage Medical Spa",
+   "city": "La Quinta",
+   "address": "47020 Washington St, La Quinta, CA 92253",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://miragemedicalspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/mirage-medical-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Botulinum toxin treatments (Botox)",
+    "Dermal fillers",
+    "Sculptra",
+    "Microneedling",
+    "Microneedling with PRF"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "oasis-glow-aesthetics-rancho-mirage",
+   "name": "Oasis Glow Aesthetics",
+   "city": "Rancho Mirage",
+   "address": "36101 Bob Hope Drive, Suite B-3, Unit 104, Rancho Mirage, CA 92270",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.oasisglowaesthetics.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/oasis-glow-aesthetics",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Botox and neurotoxin alternatives (Daxxify, Xeomin, Jeuveau, Dysport, Letybo)",
+    "Dermal fillers (Sculptra, Radiesse)",
+    "Laser services (hair removal, IPL, CO2 resurfacing via HELIX by Cartessa, tattoo removal)",
+    "Chemical peels",
+    "Microdermabrasion",
+    "Serves: general aesthetic clients seeking personalized treatment (no specific niche popu"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "oshita-counseling-la-quinta",
+   "name": "Oshita Counseling",
+   "city": "La Quinta",
+   "address": "78401 Highway 111, Suite V, La Quinta, CA 92253",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://oshitacounseling.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/oshita-counseling",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Individual therapy",
+    "Couples therapy (currently full/waitlist)",
+    "Anxiety and depression support",
+    "Dating and relationship readiness counseling",
+    "Anger management",
+    "Serves: Individuals and couples navigating relationship challenges, anxiety, depression,"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "palm-desert-chiropractic-palm-desert",
+   "name": "Palm Desert Chiropractic",
+   "city": "Palm Desert",
+   "address": "72171 CA-111, Suite 102A, Palm Desert, CA 92260",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.palmdesertchiropractor.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/palm-desert-chiropractic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Chiropractic care for back pain, neck pain, headaches, herniated disc, sciatica, scoliosis",
+    "Auto accident, sports, and work injury treatment",
+    "Extremity care (shoulder, knee, carpal tunnel)",
+    "Pediatric and pregnancy (Webster technique) chiropractic",
+    "Family wellness care",
+    "Serves: Family chiropractic care (adults, pregnancy, and pediatric patients)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "palm-desert-pilates-palm-desert",
+   "name": "Palm Desert Pilates",
+   "city": "Palm Desert",
+   "address": "42080 State Street Suite B, Palm Desert, CA 92211",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://palmdesertpilates.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/palm-desert-pilates",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Pilates instruction (equipment-based, classical/traditional method)",
+    "Private classes",
+    "Small group classes (max 5)",
+    "Teacher training program",
+    "Serves: general adult clientele; teacher training program for aspiring instructors"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "palm-desert-urgent-care-manzoor-kazi-md-palm-desert",
+   "name": "Palm Desert Urgent Care (Manzoor Kazi, MD)",
+   "city": "Palm Desert",
+   "address": "72757 Fred Waring Dr, Suite 1, Palm Desert, CA 92260",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.palmdeserturgentcaremd.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/palm-desert-urgent-care-manzoor-kazi-md",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Urgent care",
+    "Physical exams",
+    "Blood work / labs",
+    "STD testing",
+    "COVID-19 care",
+    "Serves: adults 20+ in Palm Desert and Riverside County"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "path-pilates-yoga-palm-desert",
+   "name": "PATH Pilates & Yoga",
+   "city": "Palm Desert",
+   "address": "73712 Alessandro Dr, Ste B-2, Palm Desert, CA 92260",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.pathpilatesyoga.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/path-pilates-yoga",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Reformer Pilates classes",
+    "Springboard classes",
+    "Barre classes",
+    "Private Pilates sessions",
+    "Master Instructor private sessions",
+    "Serves: all ages, body types, and experience levels (small group classes capped at 6)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "pga-west-fitness-club-citrus-club-sports-club-la-quinta",
+   "name": "PGA West Fitness Club (Citrus Club / Sports Club)",
+   "city": "La Quinta",
+   "address": "55-955 PGA Blvd, La Quinta, CA",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.pgawest.com/pga-west-membership/fitness",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/pga-west-fitness-club-citrus-club-sports-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Fitness center/gym equipment",
+    "TRX classes",
+    "Yoga",
+    "Pilates",
+    "Circuit Training",
+    "Serves: PGA West club members (private membership tiers: Citrus Social, Citrus Sport)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "precision-wellness-rancho-mirage",
+   "name": "Precision Wellness",
+   "city": "Rancho Mirage",
+   "address": "72780 Country Club Dr, Suite 400, Rancho Mirage, CA 92270",
+   "category": "recovery",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://precision-wellness.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/precision-wellness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Semaglutide/GLP-1 weight loss programs",
+    "Testosterone replacement therapy and hormone optimization",
+    "NAD+ programs",
+    "Body by BTL technologies (EXOMIND, EMSELLA, EMSCULPT, EMFACE, EMTONE, EXION, EMFEMME)",
+    "SoftWave tissue regeneration",
+    "Serves: men over 40 / weight-loss seekers / chronic pain patients (celebrity-endorsed bo"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "prism-medical-rancho-mirage",
+   "name": "Prism Medical",
+   "city": "Rancho Mirage",
+   "address": "41608 Indian Trail #2, Rancho Mirage, CA 92270",
+   "category": "recovery",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://prismpsp.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/prism-medical",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Naturopathic/integrative medicine",
+    "Weight loss programs (Semaglutide, Tirzepatide, UnCraveRx implantable anti-craving pellet)",
+    "Continuous glucose monitoring",
+    "Hormone therapy (thyroid, women's hormones, men's testosterone)",
+    "Regenerative injection therapy / prolotherapy / PRP",
+    "Serves: general wellness patients seeking hormone therapy and medically assisted weight "
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "pure-perfection-med-spa-rancho-mirage",
+   "name": "Pure Perfection Med Spa",
+   "city": "Rancho Mirage",
+   "address": "72780 Country Club Drive, Suite 304, Rancho Mirage, CA 92270",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://pureperfectionmedspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/pure-perfection-med-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Botox/Dysport",
+    "Dermal fillers",
+    "Kybella",
+    "Sclerotherapy/vein removal",
+    "Collagen stimulators",
+    "Serves: clients seeking subtle aesthetic enhancements in Palm Desert/Palm Springs area"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "purfit-athletic-palm-desert",
+   "name": "PurFit Athletic",
+   "city": "Palm Desert",
+   "address": "72840 Highway 111, Palm Desert, CA 92260",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://purfitathletic.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/purfit-athletic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Strength equipment / weight training",
+    "Cardio machines",
+    "Group exercise classes (indoor cycling, yoga, boot camp)",
+    "Personal training",
+    "Cryotherapy",
+    "Serves: general fitness / athletic training, personalized one-on-one coaching"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "r-r-kurzawa-medical-corporation-concierge-doctor-indian-wells",
+   "name": "R. R. Kurzawa Medical Corporation - Concierge Doctor",
+   "city": "Indian Wells",
+   "address": "74785 Highway 111, Suite 101, Indian Wells, CA 92210",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://rrkurzawamd.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/r-r-kurzawa-medical-corporation-concierge-doctor",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Concierge primary care",
+    "Family medicine",
+    "Internal medicine",
+    "Home visit / in-home doctor services",
+    "Hospital visits",
+    "Serves: Individuals and families seeking direct physician access and personalized care i"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "renewal-oasis-behavioral-health-palm-desert",
+   "name": "Renewal Oasis Behavioral Health",
+   "city": "Palm Desert",
+   "address": "40861 Terazza Dr, Palm Desert, CA 92260",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://renewalbh.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/renewal-oasis-behavioral-health",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Residential treatment",
+    "Partial Hospitalization Program (PHP)",
+    "Intensive Outpatient Program (IOP)",
+    "Outpatient treatment",
+    "Transitional living",
+    "Serves: General mental health treatment (anxiety, bipolar, BPD, depression, PTSD, OCD, m"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "replenish-360-palm-desert",
+   "name": "Replenish 360",
+   "city": "Palm Desert",
+   "address": "73700 Dinah Shore Dr. Suite 107, Palm Desert, CA 92211",
+   "category": "recovery",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.yourcprmd.com/replenish360/coachella-valley-iv-hydration-therapy/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/replenish-360",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "IV hydration therapy",
+    "Vitamin and antioxidant supplementation/NAD+ therapy",
+    "Micronutrient therapy",
+    "Massage therapy",
+    "A la carte remedies (B12 shots, anti-nausea, etc.)",
+    "Serves: festival-goers (Coachella/Stagecoach), athletes, and event/party guests"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "resilience-coaching-and-counseling-palm-desert",
+   "name": "Resilience Coaching and Counseling",
+   "city": "Palm Desert",
+   "address": "77564 Country Club Dr #201, Palm Desert, CA 92211",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.resiliencecounselingpd.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/resilience-coaching-and-counseling",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Individual counseling",
+    "Teen & child counseling",
+    "Family counseling",
+    "Couples counseling",
+    "Coaching",
+    "Serves: adults, teens, children, couples, and families (bilingual services in Spanish an"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "restore-hyper-wellness-palm-desert",
+   "name": "Restore Hyper Wellness",
+   "city": "Palm Desert",
+   "address": "73-567 Highway 111, Suite G-1, Palm Desert, CA 92260",
+   "category": "recovery",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.restore.com/locations/ca-palm-desert-ca156",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/restore-hyper-wellness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Cryotherapy",
+    "Red light therapy",
+    "Infrared sauna",
+    "Compression therapy",
+    "IV drip therapy (standard, NAD+, Niagen/NR)",
+    "Serves: general wellness/recovery consumers"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "richardson-family-chiropractic-indian-wells",
+   "name": "Richardson Family Chiropractic",
+   "city": "Indian Wells",
+   "address": "45240 Club Dr, Indian Wells, CA 92210",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.richardsonfamilychiropractic.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/richardson-family-chiropractic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Diversified chiropractic spinal adjustments/manipulation (Diversified Technique, Activator",
+    "Electrical muscle stimulation",
+    "Therapeutic exercise and equipment",
+    "Custom foot orthotics",
+    "Nutritional supplements and vitamins",
+    "Serves: general family practice, all ages; also treats auto accident, sports injury, and"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "rowi-teen-parent-wellness-center-palm-desert",
+   "name": "ROWI Teen & Parent Wellness Center",
+   "city": "Palm Desert",
+   "address": "72855 Fred Waring Dr, Suite A4, Palm Desert, CA 92260",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://rowiteen.com/locations/palm-desert/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/rowi-teen-parent-wellness-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "ROWI RESET (Partial Hospitalization Program - PHP)",
+    "ROWI GROWTH (Intensive Outpatient Program - IOP)",
+    "ROWI EDGE (integrative/holistic treatment program)",
+    "Individual therapy",
+    "Family therapy",
+    "Serves: teens ages 12-17 (also offers separate ROWI KIDS programs for ages 8-12)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "s-e-skin-la-quinta",
+   "name": "S.E. SKIN",
+   "city": "La Quinta",
+   "address": "79440 Corporate Center Dr, STE 117, La Quinta, CA 92253",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.seskinlq.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/s-e-skin",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Customized facials",
+    "Airbrush spray tans",
+    "Body waxing",
+    "Brow and lash enhancements",
+    "Bridal packages",
+    "Serves: clients from La Quinta, Indio, Indian Wells, and Coachella Valley with dry deser"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "sensei-porcupine-creek-spa-rancho-mirage",
+   "name": "Sensei Porcupine Creek Spa",
+   "city": "Rancho Mirage",
+   "address": "42765 Dunes View Road, Rancho Mirage, CA 92270",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://sensei.com/retreats/porcupine-creek/resort/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/sensei-porcupine-creek-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Spa treatments (including Thermal Body Mapping)",
+    "Yoga classes",
+    "Fitness training",
+    "Golf",
+    "Tennis",
+    "Serves: Adults-only luxury resort guests (16+ with adult); wellness and sports performan"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "signaturemd-ronald-b-bush-md-palm-desert",
+   "name": "SignatureMD - Ronald B. Bush, MD",
+   "city": "Palm Desert",
+   "address": "44300 Monterey Ave., Suite B, Palm Desert, CA 92260",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://signaturemd.com/concierge-doctors/ronald-b-bush-md-palm-desert-ca/about-ronald-bush-md/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/signaturemd-ronald-b-bush-md",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Concierge internal medicine membership",
+    "Annual physical/executive health exam",
+    "Preventative care",
+    "Smart Lipo",
+    "Titan Tissue Tightening",
+    "Serves: Concierge membership patients (SignatureMD network)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "skin-bar-the-experience-palm-desert",
+   "name": "Skin Bar The Experience",
+   "city": "Palm Desert",
+   "address": "72880 Fred Waring Drive, Suite D-16, Palm Desert, CA 92260",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://skinbarexperience.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/skin-bar-the-experience",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Customized facials",
+    "Chemical peels",
+    "Aqua Facial (aquafacial)",
+    "24 karat gold facials",
+    "Microdermabrasion",
+    "Serves: SkinScriptions membership program; also hosts girls'/bachelorette spa parties an"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "skinceptional-medi-spa-la-quinta",
+   "name": "Skinceptional Medi Spa",
+   "city": "La Quinta",
+   "address": "78370 Hwy 111, Suite 160, La Quinta, CA 92253",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://skinceptionalmedispa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/skinceptional-medi-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Injectables (Botox, Dysport, fillers, Sculptra)",
+    "Collagen stimulators/PRP",
+    "Functional medicine / hormone therapy",
+    "Medical weight loss",
+    "Lights & lasers (IPL)",
+    "Serves: anti-aging / natural beauty enhancement clientele"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "skinceuticals-skinlab-by-cosmetic-surgery-institute-palm-desert",
+   "name": "SkinCeuticals SkinLab by Cosmetic Surgery Institute",
+   "city": "Palm Desert",
+   "address": "73560 El Paseo, Suite E, Palm Desert, CA 92260",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.skinlabcsipd.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/skinceuticals-skinlab-by-cosmetic-surgery-institute",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Signature facials and chemical peels",
+    "Injectables (Botox, dermal fillers, Sculptra, Restylane, Juvederm)",
+    "Laser skin rejuvenation (IPL, BBL)",
+    "Laser hair removal",
+    "Microneedling with radiofrequency (Morpheus8)",
+    "Serves: General aesthetic clientele; \"SkinVIP\" membership program"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "southwest-counseling-center-indian-wells",
+   "name": "Southwest Counseling Center",
+   "city": "Indian Wells",
+   "address": "44175 Washington St, Indian Wells, CA 92210-6801",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://southwestchurchcounseling.clientsecure.me/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/southwest-counseling-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Individual counseling",
+    "Couples counseling",
+    "Teen and child counseling",
+    "Group counseling",
+    "Video/telehealth consultations",
+    "Serves: faith-integrated (Christian) counseling for individuals, couples, teens and chil"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "spa-esmeralda-indian-wells",
+   "name": "Spa Esmeralda",
+   "city": "Indian Wells",
+   "address": "44400 Indian Wells Lane, Indian Wells, CA 92210",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.marriott.com/en-us/hotels/pspsr-renaissance-esmeralda-resort-and-spa-indian-wells/spa/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/spa-esmeralda",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Massage",
+    "Facials",
+    "Body scrubs",
+    "Outdoor couple's massage/garden treatments",
+    "Serves: resort guests and spa clients"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "spa-hibiscus-la-quinta",
+   "name": "Spa Hibiscus",
+   "city": "La Quinta",
+   "address": "50-777 Santa Rosa Plaza, La Quinta, CA 92253",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://hibiscus.spa-services.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/spa-hibiscus",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Hot stone massage",
+    "Deep tissue massage",
+    "Signature massages",
+    "Body wraps",
+    "Soaks",
+    "Serves: hotel guests and visitors (resort/hotel spa)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "spa-la-quinta-la-quinta",
+   "name": "Spa La Quinta",
+   "city": "La Quinta",
+   "address": "49-499 Eisenhower Drive, La Quinta, CA 92253",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.laquintaresort.com/health-and-fitness/spa-la-quinta/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/spa-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Massages",
+    "Body wraps and exfoliations",
+    "Facials",
+    "Salon services (manicures, pedicures, hair, makeup)",
+    "Stretch therapy",
+    "Serves: general resort/spa guests, plus prenatal, youth, and couples offerings"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "spa-las-palmas-omni-rancho-las-palmas-resort-spa-rancho-mirage",
+   "name": "Spa Las Palmas (Omni Rancho Las Palmas Resort & Spa)",
+   "city": "Rancho Mirage",
+   "address": "41000 Bob Hope Drive, Rancho Mirage, CA 92270",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.omnihotels.com/hotels/palm-springs-rancho-las-palmas/spa/body-treatments",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/spa-las-palmas-omni-rancho-las-palmas-resort-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Massage (hot stone)",
+    "Body treatments",
+    "Body scrubs",
+    "Salon services",
+    "Fitness center",
+    "Serves: resort guests (European-style destination spa)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "spa-rosa-indian-wells",
+   "name": "Spa Rosa",
+   "city": "Indian Wells",
+   "address": "45000 Indian Wells Lane, Indian Wells, CA 92210",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.tommybahamamiramonte.com/spa-rosa/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/spa-rosa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Massage (Lomi Lomi, Deep Tissue, Volcanic Stone, CBD-infused, prenatal)",
+    "Facials (Seabreeze Renewal, Paradise Bloom, Oxygen, Vitamin Sea Power)",
+    "Body rituals/scrubs and wraps (Island Polish, Citrus Scrub, Balancing Wrap)",
+    "Signature spa packages (Perfect Escape, Botanical CBD Journey, Day Long Escape)",
+    "Spa facilities: eucalyptus steam rooms, hydrotherapy jacuzzi, saltwater pool",
+    "Serves: general wellness, with men's (\"Marlin Man\") and prenatal (\"Rosa Nurture for Moth"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "strong-republic-personal-training-palm-desert",
+   "name": "Strong Republic Personal Training",
+   "city": "Palm Desert",
+   "address": "77780 Country Club Dr, Suite A1, Palm Desert, CA 92211",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://strongrepublicpersonaltraining.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/strong-republic-personal-training",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Semi-private personal training (groups of 3-6)",
+    "Strength training for adults 40+",
+    "Stretch therapy",
+    "Nutrition coaching (Strong Elite Nutrition)",
+    "Golf fitness programs",
+    "Serves: adults over 40, with notable focus on women over 50"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "studio-m-hair-day-spa-la-quinta",
+   "name": "Studio M Hair & Day Spa",
+   "city": "La Quinta",
+   "address": "50680 Eisenhower Dr, Ste 1, La Quinta, CA 92253",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://studiomhairanddayspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/studio-m-hair-day-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Hair (cuts, color, extensions)",
+    "Facials (Rezenerate technology)",
+    "Waxing",
+    "Massage",
+    "Nails/manicure-pedicure (shellac)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "swanson-mma-palm-desert",
+   "name": "Swanson MMA",
+   "city": "Palm Desert",
+   "address": "77804 Wildcat Dr, Palm Desert, CA 92211",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.swansonmma.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/family-schooling/swanson-mma",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Kickboxing",
+    "Brazilian Jiu-Jitsu",
+    "MMA training",
+    "Private/semi-private sessions",
+    "Kids & teens training",
+    "Serves: all ages and fitness levels, with dedicated kids/teens youth self-defense progra"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "sy-kaplan-va-clinic-palm-desert-va-clinic-palm-desert",
+   "name": "Sy Kaplan VA Clinic (Palm Desert VA Clinic)",
+   "city": "Palm Desert",
+   "address": "72700 Dinah Shore Drive, Suite 200, Palm Desert, CA 92211-9329",
+   "category": "hospitals",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.va.gov/loma-linda-health-care/locations/sy-kaplan-va-clinic/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/sy-kaplan-va-clinic-palm-desert-va-clinic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Primary care",
+    "Mental health care (individual and group therapy for PTSD, depression, anxiety, trauma, bi",
+    "Audiology and speech pathology",
+    "Laboratory and pathology testing",
+    "Pharmacy services",
+    "Serves: Veterans and authorized caregivers"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-chiropractic-studio-la-quinta",
+   "name": "The Chiropractic Studio",
+   "city": "La Quinta",
+   "address": "78450 HWY-111 #2, La Quinta, CA 92253",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "http://www.thechiropracticstudio.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/the-chiropractic-studio",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Chiropractic care/adjustments",
+    "Massage therapy (30/60/90 min)",
+    "Prenatal massage",
+    "Lymphatic massage",
+    "Stretch massage",
+    "Serves: General/family chiropractic patients including personal injury cases and prenata"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-coral-spa-of-trilogy-at-la-quinta-la-quinta",
+   "name": "The Coral Spa of Trilogy at La Quinta",
+   "city": "La Quinta",
+   "address": "60-750 Trilogy Pkwy, La Quinta, CA 92253",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.mytrilogylaquinta.com/coral-spa/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/the-coral-spa-of-trilogy-at-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Facials",
+    "Deep tissue massage",
+    "Hot stone massage",
+    "Swedish massage",
+    "Therapeutic massage",
+    "Serves: open to the public, located within Trilogy at La Quinta 55+ active adult communi"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-plastic-surgery-institute-med-spa-rancho-mirage",
+   "name": "The Plastic Surgery Institute Med Spa",
+   "city": "Rancho Mirage",
+   "address": "71-949 Highway 111, Suite 300, Rancho Mirage, CA 92270",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.plasticsurgeryranchomirage.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/the-plastic-surgery-institute-med-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Botox/Dysport injectables",
+    "Dermal fillers (Juvederm, Restylane, Radiesse, Belotero, Voluma, Sculptra, Bellafill)",
+    "Kybella",
+    "PRP hair restoration",
+    "Laser hair removal",
+    "Serves: General cosmetic/med spa patients, including out-of-town/destination surgery pat"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-refinery-wellness-palm-desert",
+   "name": "The Refinery Wellness",
+   "city": "Palm Desert",
+   "address": "73255 El Paseo, Suite 18, Palm Desert, CA 92260",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://therefinerywellness.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/the-refinery-wellness",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Individual therapy",
+    "Couples therapy",
+    "Family therapy",
+    "Group therapy",
+    "EMDR",
+    "Serves: Broad-based: children, adolescents, adults, families, LGBTQIA+ individuals"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-ritz-carlton-rancho-mirage-spa-rancho-mirage",
+   "name": "The Ritz-Carlton Rancho Mirage Spa",
+   "city": "Rancho Mirage",
+   "address": "68900 Frank Sinatra Drive, Rancho Mirage, CA 92270",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/spa/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/the-ritz-carlton-rancho-mirage-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Body scrubs",
+    "Body wraps",
+    "Couples massages",
+    "Facials",
+    "Manicures/pedicures",
+    "Serves: hotel guests and day-pass visitors; locals receive discounts with ID"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-spine-and-sport-clinic-palm-desert",
+   "name": "The Spine and Sport Clinic",
+   "city": "Palm Desert",
+   "address": "72-405 Unit A Parkview Dr, Palm Desert, CA 92260",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.thespineandsportclinic.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/the-spine-and-sport-clinic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Chiropractic adjustments",
+    "Laser therapy",
+    "Ultrasound treatment",
+    "Muscle stimulation",
+    "Acupuncture",
+    "Serves: athletes (golf, pickleball, bowling, tennis) and families"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-studio-on-el-paseo-palm-desert",
+   "name": "The Studio on El Paseo",
+   "city": "Palm Desert",
+   "address": "73-725 El Paseo, Palm Desert, CA 92260",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://thestudio-onelpaseo.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/the-studio-on-el-paseo",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Private yoga sessions",
+    "Private Pilates sessions",
+    "Elevated movement classes (vinyasa, yin, restorative)",
+    "Curated art installations",
+    "Corporate wellness events",
+    "Serves: corporate wellness, group fitness, retreats & celebrations (serves Palm Desert, "
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "thrive-fitness-studio-palm-desert",
+   "name": "Thrive Fitness Studio",
+   "city": "Palm Desert",
+   "address": "77750 Country Club Drive, Suite F, Palm Desert, CA 92211",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.thriveforeverfit.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/thrive-fitness-studio",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "One-on-one personal training",
+    "Small group classes",
+    "HIIT",
+    "TRX",
+    "Rower training",
+    "Serves: general fitness clients, with sport-specific programs for tennis and golf athlet"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "thrive-functional-wellness-center-la-quinta",
+   "name": "Thrive Functional Wellness Center",
+   "city": "La Quinta",
+   "address": "78370 Highway 111, Suite 285, La Quinta, CA 92253",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://thrivefunctionalwellness.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/thrive-functional-wellness-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Chiropractic care",
+    "Functional medicine wellness programs",
+    "High-power laser therapy",
+    "Spinal decompression",
+    "Neuropathy solutions/treatment",
+    "Serves: Chronic condition sufferers seeking holistic care (hormonal imbalance, thyroid/a"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "toltec-therapy-la-quinta",
+   "name": "Toltec Therapy",
+   "city": "La Quinta",
+   "address": "78115 Calle Estado #201, La Quinta, CA 92253",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.toltectherapy.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/toltec-therapy",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Anxiety therapy",
+    "Depression therapy",
+    "Grief counseling",
+    "Couples therapy",
+    "Trauma therapy",
+    "Serves: Adults and couples"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "top-spa-massage-rancho-mirage",
+   "name": "Top Spa Massage",
+   "city": "Rancho Mirage",
+   "address": "34151 Monterey Ave Ste 104, Rancho Mirage, CA 92270",
+   "category": "spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://top-spa.com-place.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/top-spa-massage",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Massage (Light Pressure Shiatsu)",
+    "Deep Tissue Swedish Massage",
+    "Oil Style Scented Traditional Massage",
+    "Hot Stone Traditional Massage",
+    "Foot Massage",
+    "Serves: unknown"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "total-care-work-injury-clinic-indio",
+   "name": "Total Care Work Injury Clinic",
+   "city": "Indio",
+   "address": "81-719 Dr. Carreon Blvd, Suite H, Indio, CA 92201",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.totalcarewic.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/total-care-work-injury-clinic",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Occupational therapy",
+    "Physical therapy",
+    "Orthopedic care",
+    "Acupuncture",
+    "X-ray services",
+    "Serves: workers' compensation patients / occupational injury care"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "true-you-medical-palm-desert",
+   "name": "True You Medical",
+   "city": "Palm Desert",
+   "address": "44200 Monterey Ave, Ste B, Palm Desert, CA 92260",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://trueyoumedical.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/true-you-medical",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Naturopathic and functional medicine",
+    "Bio-identical hormone therapy / hormonal balance treatment",
+    "Chronic pain management",
+    "Regenerative injection therapies (PRP joint therapy)",
+    "IV nutrient therapy",
+    "Serves: Complex hormonal and chronic pain/disease cases; weight loss and wellness reset "
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "ty-healing-center-indio",
+   "name": "Ty Healing Center",
+   "city": "Indio",
+   "address": "78341 Highway 111, La Quinta, CA 92253",
+   "category": "integrative",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.tyhealingacu.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/ty-healing-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Acupuncture for musculoskeletal pain (neck, shoulder, back, sciatica)",
+    "Treatment for gynecological disorders",
+    "Treatment for digestive disorders",
+    "Stress and tension relief",
+    "Immune system support",
+    "Serves: general patient base, no specific program stated"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "universal-martial-arts-center-palm-desert-palm-desert",
+   "name": "Universal Martial Arts Center - Palm Desert",
+   "city": "Palm Desert",
+   "address": "41625 Eclectic St, Ste F1, Palm Desert, CA 92260",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://universalmartialartspd.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/family-schooling/universal-martial-arts-center-palm-desert",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Kids Martial Arts",
+    "Krav Maga",
+    "Fitness Kickboxing",
+    "BootCamp",
+    "Serves: all ages (kids and adults)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "universal-training-center-indio",
+   "name": "Universal Training Center",
+   "city": "Indio",
+   "address": "82855 Market Street A400, Indio, CA 92201",
+   "category": "fitness",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.universaltrainingcenter.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/universal-training-center",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Strength training (squat racks, deadlift platforms, bench press, Olympic bars)",
+    "Cardio equipment (treadmills, StairMasters, assault bikes, rowers, skiers)",
+    "Functional training (gymnastics rings, climbing rope, sleds, sandbags)",
+    "Group fitness classes (U-Fit program)",
+    "Personal training",
+    "Serves: general community/all fitness levels"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "valley-medical-spa-indio",
+   "name": "Valley Medical Spa",
+   "city": "Indio",
+   "address": "80495 US HWY 111 Suite C, Indio, CA 92201",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.valleymedicalspa.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/valley-medical-spa",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Dysport/Jeuveau (neuromodulator injectables)",
+    "Juvederm and Restylane dermal fillers",
+    "Hydrafacial",
+    "TruSculpt ID (body contouring)",
+    "Secret RF (microneedling/skin resurfacing)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "vip-urgent-care-indio-indio",
+   "name": "VIP Urgent Care - Indio",
+   "city": "Indio",
+   "address": "81930 Hwy 111, Indio, CA 92201",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.vipurgentcares.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/vip-urgent-care-indio",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Acute illness & injury treatment",
+    "Digital X-rays",
+    "EKG",
+    "Lab testing",
+    "Physicals",
+    "Serves: general urgent care patients (community-wide)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "vip-urgent-care-palm-desert-palm-desert",
+   "name": "VIP Urgent Care - Palm Desert",
+   "city": "Palm Desert",
+   "address": "72-630 Fred Waring Dr, Palm Desert, CA 92260",
+   "category": "care",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://vipurgentcares.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/vip-urgent-care-palm-desert",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Acute illness and injury treatment",
+    "X-rays/digital imaging",
+    "EKG",
+    "Lab testing",
+    "Physicals",
+    "Serves: general urgent care patients (no specific niche program stated)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "volunteers-in-medicine-coachella-valley-indio",
+   "name": "Volunteers In Medicine - Coachella Valley",
+   "city": "Indio",
+   "address": "82915 Avenue 48, Indio, CA 92201",
+   "category": "hospitals",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://cvvim.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/volunteers-in-medicine-coachella-valley",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Primary/chronic disease care (hypertension, diabetes, arthritis)",
+    "Acute care (colds, flu)",
+    "Preventative medicine",
+    "Diet/nutrition counseling",
+    "Emotional/behavioral health",
+    "Serves: uninsured, medically underserved Coachella Valley adult residents"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "west-dermatology-rancho-mirage-rancho-mirage",
+   "name": "West Dermatology - Rancho Mirage",
+   "city": "Rancho Mirage",
+   "address": "72785 Frank Sinatra Drive, Suite 101, Rancho Mirage, CA 92270",
+   "category": "med-spas",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://www.westdermatology.com/location/rancho-mirage/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/west-dermatology-rancho-mirage",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Medical Dermatology",
+    "Surgical Dermatology",
+    "Cosmetic Dermatology (Botox, fillers, lasers, microneedling)",
+    "Research Studies/Clinical Trials",
+    "Serves: general dermatology patients; clinical research study participants"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "william-rose-ph-d-clinical-psychology-rancho-mirage",
+   "name": "William Rose, Ph.D. Clinical Psychology",
+   "city": "Rancho Mirage",
+   "address": "71-650 Sahara Road, Suite 3, Rancho Mirage, CA 92270",
+   "category": "counseling",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-06",
+   "official_contact": {
+    "url": "https://rosepsy.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/william-rose-ph-d-clinical-psychology",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Individual therapy",
+    "Couples counseling",
+    "Family therapy",
+    "Depression and anxiety treatment",
+    "Trauma and PTSD therapy",
+    "Serves: General adult/couples/family clientele across greater Palm Springs area"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  }
+ ],
+ "held_for_qualification": {
+  "needs_qualification": 17,
+  "address not confirmed": 3,
+  "addiction treatment: held for a ruling": 1,
+  "official link is a third party": 1,
+  "address outside the listed city": 1
+ }
+}

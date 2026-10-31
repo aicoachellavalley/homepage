@@ -1,0 +1,186 @@
+---
+import Base from '../../layouts/Base.astro';
+import Footer from '../../components/Footer.astro';
+import meta from '../../data/desks/desks.json';
+import overlay from '../../data/desks/overlay.json';
+import { applyOverlay, assembleDesk, formatDate, hostname } from '../../../scripts/desks.mjs';
+
+export function getStaticPaths() {
+  const files = import.meta.glob('../../data/desks/*.entries.json', { eager: true });
+  return Object.entries(files).map(([path, mod]) => ({
+    params: { desk: path.split('/').pop().replace('.entries.json', '') },
+    props: { entries: mod.entries },
+  }));
+}
+
+const data = assembleDesk(meta, Astro.params.desk, applyOverlay(Astro.params.desk, Astro.props.entries, overlay));
+const entries = data.entries;
+const config = meta.desks.find(d => d.slug === Astro.params.desk);
+const canonical = data.desk.url;
+const cities = [...new Set(entries.map(e => e.city))].sort();
+const sections = data.desk.categories
+  .map(c => ({ ...c, entries: entries.filter(e => e.category === c.id) }))
+  .filter(s => s.entries.length);
+const coverageCities = [...meta.coverage.primary, ...meta.coverage.secondary];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `${config.title} desk`,
+  description: config.description,
+  url: canonical,
+  dateModified: data.latest_observation,
+  publisher: { '@id': 'https://aicoachellavalley.com/#organization' },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: entries.length,
+    itemListElement: entries.map((e, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: e.name,
+      ...(e.official_contact.url ? { url: e.official_contact.url } : {}),
+    })),
+  },
+};
+---
+
+<Base title={`${config.title} Desk | AI Coachella Valley`} description={config.description} canonicalUrl={canonical} schema={schema}>
+  <nav class="desk-nav" aria-label="Main navigation">
+    <a class="desk-brand" href="/">AICV <span>AI Coachella Valley</span></a>
+    <a href="/connect/">For assistants →</a>
+  </nav>
+  <header class="desk-hero">
+    <div class="desk-wrap">
+      <p class="desk-eyebrow">{config.title} desk</p>
+      <h1>{config.headline}</h1>
+      <p class="desk-lede">{config.description}</p>
+      <p class="desk-count">{data.counts.records} maintained records. Participation: {data.counts.submitted} enrolled, {data.counts.verified} verified by the business</p>
+    </div>
+  </header>
+
+  <main class="desk-wrap desk-main">
+    <section class="desk-terms" aria-labelledby="coverage-title">
+      <div>
+        <h2 id="coverage-title">What this desk covers</h2>
+        <p>{config.scope} Coverage is {coverageCities.join(', ')}. {meta.coverage.anchors_only} It does not actively cover {meta.coverage.not_covered.slice(0, 4).join(', ')} or other communities.</p>
+        <p>{meta.coverage.rule} AICV maintains up to {meta.network_cap.toLocaleString('en-US')} records across its desks.</p>
+      </div>
+      <div>
+        <h2>How to read a record</h2>
+        <p><strong>Observed by AICV</strong> means public facts AICV recorded on the date shown. The business has not confirmed them, and a business may have changed since.</p>
+        <p><strong>Submitted information, identity unconfirmed</strong> means someone submitted it for the business, and AICV has not confirmed who. It never replaces a sourced field. <strong>Verified by the business</strong> means the owner approved the record and an ownership check cleared.</p>
+        <p>AICV checks official websites on a schedule to see whether they answer and whether they changed. Those checks do not update hours, addresses, services or capacities, so each fact keeps the date it was recorded.</p>
+        <p>AICV does not check live availability, quote prices, take bookings or take payments. Contact each business through its official site or phone number.</p>
+        <p>Your business here, or missing? <a href="/desks/join/">Check eligibility</a> or open your record to suggest a correction. <a href="/terms/#desks">How records work</a>.</p>
+      </div>
+    </section>
+
+    <div class="desk-filter">
+      <label for="desk-city">Show city</label>
+      <select id="desk-city">
+        <option value="">All cities</option>
+        {cities.map(c => <option value={c}>{c}</option>)}
+      </select>
+      <span id="desk-shown" role="status"></span>
+    </div>
+
+    {sections.map(section => (
+      <section class="desk-section" data-section aria-labelledby={`s-${section.id}`}>
+        <h2 id={`s-${section.id}`}>{section.title} <span data-section-count>{section.entries.length}</span></h2>
+        <div class="desk-list">
+          {section.entries.map(e => (
+            <article class="desk-entry" id={e.id} data-city={e.city}>
+              <div class="desk-entry-head">
+                <h3><a href={`/desks/${config.slug}/${e.id}/`}>{e.name}</a></h3>
+                <p class="desk-where">{e.address || e.city}{e.anchor ? ' · Regional anchor' : ''}</p>
+              </div>
+              <p class="desk-label"><span>{e.label_text}</span> <time datetime={e.observed_date}>{formatDate(e.observed_date)}</time></p>
+              {e.note && <p class="desk-desc"><strong>{e.note}</strong></p>}
+              {e.description && <p class="desk-desc">{e.description}</p>}
+              {e.submitted_information && <p class="desk-desc"><em>Also on file: {e.submitted_information.label.toLowerCase()}. See the record.</em></p>}
+              {e.facts.length > 0 && <ul class="desk-facts">{e.facts.map(f => <li>{f}</li>)}</ul>}
+              <p class="desk-contact">
+                {e.official_contact.url && <a href={e.official_contact.url} rel="nofollow noopener">{hostname(e.official_contact.url)} →</a>}
+                {e.official_contact.phone && <span>{e.official_contact.phone}</span>}
+              </p>
+              <p class="desk-source">
+                Source: <a href={e.source.url}>{e.source.name}</a>{e.source.underlying ? `, drawing on ${e.source.underlying.join(', ')}` : ''}.
+                {e.site_check?.result === 'blocked' && <> Official site blocked AICV's check on {formatDate(e.site_check.date)}.</>}
+                {e.site_check?.result === 'answered' && <> Official site answered on {formatDate(e.site_check.date)}.</>}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="desk-more" aria-labelledby="more-title">
+      <h2 id="more-title">Keep going</h2>
+      <ul>
+        {config.related.map(r => <li><a href={r.url}>{r.label}</a></li>)}
+        <li><a href={`/desks/${config.slug}.json`}>All records as JSON</a></li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</Base>
+
+<script>
+  const select = document.getElementById('desk-city');
+  const shown = document.getElementById('desk-shown');
+  const apply = () => {
+    let total = 0;
+    document.querySelectorAll('[data-section]').forEach(section => {
+      let visible = 0;
+      section.querySelectorAll('[data-city]').forEach(entry => {
+        const match = !select.value || entry.dataset.city === select.value;
+        entry.hidden = !match;
+        if (match) visible += 1;
+      });
+      section.hidden = visible === 0;
+      section.querySelector('[data-section-count]').textContent = visible;
+      total += visible;
+    });
+    shown.textContent = `${total} shown`;
+  };
+  select.addEventListener('change', apply);
+</script>
+
+<style>
+  .desk-wrap { width: min(1080px, 100%); margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
+  .desk-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); background: var(--pine-dark); }
+  .desk-nav a { color: var(--snow); text-decoration: none; font-size: 0.95rem; }
+  .desk-brand { font-family: 'Syne', sans-serif; font-weight: 800; }
+  .desk-brand span { font-family: 'DM Sans', sans-serif; font-weight: 400; opacity: 0.75; margin-left: 6px; }
+  .desk-hero { background: var(--pine-dark); color: var(--snow); padding-block: 40px 56px; }
+  .desk-eyebrow { color: var(--volt); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .desk-hero h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem, 5.5vw, 3.4rem); line-height: 1.08; margin-block: 12px 16px; max-width: 18ch; text-wrap: balance; }
+  .desk-lede { max-width: 62ch; font-size: 1.1rem; opacity: 0.9; }
+  .desk-count { margin-top: 20px; font-size: 0.9rem; font-variant-numeric: tabular-nums; color: var(--pine-tint); }
+  .desk-main { display: grid; gap: 40px; padding-block: 40px 72px; }
+  .desk-terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 32px; }
+  .desk-terms > div { display: grid; gap: 10px; align-content: start; min-width: 0; }
+  .desk-terms h2, .desk-section h2, .desk-more h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.2; }
+  .desk-terms a, .desk-more a, .desk-source a, .desk-contact a { color: var(--pine-light); }
+  .desk-filter { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-block: 12px; border-block: 1px solid var(--sand-dark); }
+  .desk-filter label { font-weight: 500; }
+  .desk-filter select { font: inherit; padding: 6px 10px; border: 1px solid var(--sand-dark); border-radius: 4px; background: var(--sand-light); color: var(--pine-dark); }
+  #desk-shown { font-size: 0.9rem; color: var(--pine-light); }
+  .desk-section { display: grid; gap: 16px; }
+  .desk-section h2 span { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.95rem; color: var(--pine-light); margin-left: 4px; }
+  .desk-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 16px; }
+  .desk-entry { display: flex; flex-direction: column; gap: 8px; padding: 16px; background: var(--sand-light); border: 1px solid var(--sand-dark); border-radius: 4px; min-width: 0; overflow-wrap: anywhere; }
+  .desk-entry[hidden], .desk-section[hidden] { display: none; }
+  .desk-entry h3 { font-size: 1.05rem; font-weight: 500; line-height: 1.3; }
+  .desk-entry h3 a { color: inherit; text-decoration: none; }
+  .desk-entry h3 a:hover { text-decoration: underline; }
+  .desk-where { font-size: 0.87rem; color: var(--pine-light); }
+  .desk-label { font-size: 0.82rem; }
+  .desk-label span { background: var(--pine-mist); color: var(--pine-dark); padding: 2px 8px; border-radius: 3px; font-weight: 500; margin-right: 4px; }
+  .desk-desc, .desk-facts { font-size: 0.9rem; }
+  .desk-facts { padding-left: 18px; display: grid; gap: 2px; }
+  .desk-contact { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.92rem; font-weight: 500; margin-top: auto; padding-top: 4px; }
+  .desk-source { font-size: 0.78rem; color: #4d5f54; }
+  .desk-more { display: grid; gap: 10px; }
+  .desk-more ul { padding-left: 18px; display: grid; gap: 4px; }
+  @media (prefers-reduced-motion: no-preference) { .desk-entry { transition: border-color 120ms ease; } .desk-entry:hover { border-color: var(--pine-light); } }
+</style>

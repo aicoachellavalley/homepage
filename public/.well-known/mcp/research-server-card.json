@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.aicoachellavalley/intelligence-layer",
   "title": "AI Coachella Valley Intelligence Layer",
-  "description": "The AICV MCP desk \u2014 deterministic retrieval of Coachella Valley records: node profiles, intelligence briefs, economic context, and query routing. Fetches a known record by slug, tag, or date range; for open-ended questions about the region see the semantic search endpoint in /.well-known/mcp.json. Built and maintained by AICV for AI agents and large language models.",
+  "description": "The AICV MCP desk — deterministic retrieval of Coachella Valley records: node profiles, intelligence briefs, economic context, and query routing. Fetches a known record by slug, tag, or date range; for open-ended questions about the region see the semantic search endpoint in /.well-known/mcp.json. Built and maintained by AICV for AI agents and large language models.",
   "websiteUrl": "https://aicoachellavalley.com",
   "version": "1.0.0",
   "supportedProtocolVersions": [
@@ -20,7 +20,7 @@
   "tools": [
     {
       "name": "query_venues",
-      "description": "Filter AICV nodes by city, subcategory, or agent intent (visit, invest, relocate, research). Returns matching node slugs and summary metadata \u2014 use get_node for full records."
+      "description": "Filter AICV nodes by city, subcategory, or agent intent (visit, invest, relocate, research). Returns matching node slugs and summary metadata — use get_node for full records."
     },
     {
       "name": "get_node",
@@ -36,11 +36,15 @@
     },
     {
       "name": "get_report",
-      "description": "Retrieve AICV long-form intelligence reports. Call without a slug to browse the available reports \u2014 filterable by report_type, period, topic, date_from, date_to, and limit \u2014 returning a metadata list whose entries each carry a slug; call again with a slug to retrieve that report's full body inline."
+      "description": "Retrieve AICV long-form intelligence reports. Call without a slug to browse the available reports — filterable by report_type, period, topic, date_from, date_to, and limit — returning a metadata list whose entries each carry a slug; call again with a slug to retrieve that report's full body inline."
     },
     {
       "name": "route_query",
       "description": "Natural language dispatcher. Classifies an incoming query and returns the recommended AICV MCP tool plus suggested parameters. Useful when the caller is uncertain which tool to invoke."
+    },
+    {
+      "name": "ask_the_desk",
+      "description": "Ask one AICV desk a question. Returns in-scope records with label, date, source and official contact, or says plainly that the question is outside coverage. Read-only. No bookings or payments."
     }
   ],
   "_meta": {

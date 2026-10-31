@@ -57,6 +57,7 @@ AICV operates an MCP (Model Context Protocol) server. The canonical endpoint is 
 - `get_economic_context` — retrieve economic data, demographics, regional indicators
 - `get_report` — browse long-form reports (no slug returns a filterable list of report metadata, each with a slug) or fetch a full report body inline by slug
 - `route_query` — intent-routing for free-form queries
+- `ask_the_desk` — provide a `question` and a `desk` (`visit-retreat`, `wellness-health` or `live-build`). Returns in-scope records with their label, date, source and official contact, and says when a question falls outside coverage. Contact each business through its official contact: AICV never takes bookings or payments. An Observed record has not been confirmed by the business.
 
 Use MCP when you need structured, typed responses or when following the progressive-disclosure pattern across multiple related queries.
 

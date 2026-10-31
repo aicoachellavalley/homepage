@@ -1,0 +1,139 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Footer from '../../../components/Footer.astro';
+import meta from '../../../data/desks/desks.json';
+import overlay from '../../../data/desks/overlay.json';
+import pricing from '../../../data/pricing.json';
+import { applyOverlay, assembleDesk, desksApiBase, formatDate, hostname, turnstileSiteKey } from '../../../../scripts/desks.mjs';
+
+export function getStaticPaths() {
+  const files = import.meta.glob('../../../data/desks/*.entries.json', { eager: true });
+  return Object.entries(files).flatMap(([path, mod]) => {
+    const desk = path.split('/').pop().replace('.entries.json', '');
+    const data = assembleDesk(meta, desk, applyOverlay(desk, mod.entries, overlay));
+    return data.entries.map(entry => ({ params: { desk, record: entry.id }, props: { entry, deskTitle: data.desk.title } }));
+  });
+}
+
+const { entry: e, deskTitle } = Astro.props;
+const canonical = e.profile_url;
+const description = `${e.name}, ${e.city}: ${e.label_text} on ${formatDate(e.observed_date)}, with source and official contact. Part of the AICV ${deskTitle} desk.`;
+const siteKey = turnstileSiteKey(meta);
+const buy = `${pricing.tiers[1].url}?client_reference_id=${encodeURIComponent(e.purchase_ref)}`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `${e.name} — AICV ${deskTitle} desk`,
+  description,
+  url: canonical,
+  dateModified: e.site_check?.date && e.site_check.date > e.observed_date ? e.site_check.date : e.observed_date,
+  publisher: { '@id': 'https://aicoachellavalley.com/#organization' },
+};
+---
+
+<Base title={`${e.name} | AICV ${deskTitle} Desk`} description={description} canonicalUrl={canonical} schema={schema}>
+  <nav class="rec-nav" aria-label="Main navigation">
+    <a class="rec-brand" href="/">AICV <span>AI Coachella Valley</span></a>
+    <a href={`/desks/${Astro.params.desk}/`}>{deskTitle} desk →</a>
+  </nav>
+  <main class="rec-wrap">
+    <h1>{e.name}</h1>
+    <p class="rec-where">{e.address || e.city}{e.anchor ? ' · Regional anchor' : ''}</p>
+    <p class="rec-label"><span>{e.label_text}</span> <time datetime={e.observed_date}>{formatDate(e.observed_date)}</time></p>
+    {e.note && <p><strong>{e.note}</strong></p>}
+    {e.description && <p>{e.description}</p>}
+    {e.facts.length > 0 && <ul>{e.facts.map(f => <li>{f}</li>)}</ul>}
+    <p class="rec-contact">
+      {e.official_contact.url && <a href={e.official_contact.url} rel="nofollow noopener">{hostname(e.official_contact.url)} →</a>}
+      {e.official_contact.phone && <span>{e.official_contact.phone}</span>}
+    </p>
+    <p class="rec-source">
+      Source: <a href={e.source.url}>{e.source.name}</a>.
+      {e.site_check?.result === 'blocked' && <> Official site blocked AICV's check on {formatDate(e.site_check.date)}.</>}
+      {e.site_check?.result === 'answered' && <> Official site answered AICV's check on {formatDate(e.site_check.date)}.</>}
+      AICV's website checks do not update the facts above.
+    </p>
+
+    {e.submitted_information && (
+      <section class="rec-submitted" aria-labelledby="submitted-title">
+        <h2 id="submitted-title">{e.submitted_information.label}</h2>
+        <p>Someone submitted this for the business on {formatDate(e.submitted_information.date)}. AICV has not confirmed who, so it does not replace anything above.</p>
+        <dl>{Object.entries(e.submitted_information.fields).map(([k, v]) => <><dt>{k}</dt><dd>{v}</dd></>)}</dl>
+      </section>
+    )}
+
+    <section class="rec-owner" aria-labelledby="owner-title">
+      <h2 id="owner-title">Is this your business?</h2>
+      <h3>Suggest a correction, free</h3>
+      <p>It shows beside the record, labeled as unconfirmed, until the owner verifies it.</p>
+      {siteKey ? (
+        <form id="correct-form" data-api={desksApiBase()} data-record={e.id} data-desk={Astro.params.desk}>
+          <label for="c-phone">Phone <input id="c-phone" name="phone" maxlength="30" /></label>
+          <label for="c-hours">Hours <input id="c-hours" name="hours" maxlength="120" /></label>
+          <label for="c-website">Website <input id="c-website" name="website" type="url" maxlength="300" placeholder="https://" /></label>
+          <label for="c-about">About <textarea id="c-about" name="about" maxlength="240" rows="2"></textarea></label>
+          <label for="c-email">Your email, never published <input id="c-email" name="contact_email" type="email" required maxlength="160" /></label>
+          <div class="cf-turnstile" data-sitekey={siteKey}></div>
+          <button type="submit">Send correction</button>
+        </form>
+      ) : <p>Corrections open soon.</p>}
+      <p id="correct-result" role="status" aria-live="polite"></p>
+
+      <h3>Agent Ready, $500 one-time</h3>
+      <p>Review and approve your record. An automatic DNS check can then label it Verified by the business, and the desk answers from it. Paying alone never changes the label. Your place on the desk stays free either way.</p>
+      {!e.has_measured_review && <p><strong>Before you buy:</strong> AICV has not yet measured this business's website, so this purchase includes control of the record but no private agent-readiness review.</p>}
+      <p><a class="rec-buy" href={buy}>Get Agent Ready — $500</a></p>
+    </section>
+  </main>
+  <Footer />
+</Base>
+{siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  const form = document.getElementById('correct-form');
+  const result = document.getElementById('correct-result');
+  form?.addEventListener('submit', async event => {
+    event.preventDefault();
+    result.textContent = 'Sending…';
+    const value = name => form.elements[name].value;
+    try {
+      const res = await fetch(`${form.dataset.api}/api/desks/correction`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          record_id: form.dataset.record, desk: form.dataset.desk, contact_email: value('contact_email'),
+          fields: { phone: value('phone'), hours: value('hours'), website: value('website'), about: value('about') },
+          turnstile: form.querySelector('[name="cf-turnstile-response"]')?.value,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      result.textContent = data.note || data.error || 'Please try again.';
+    } catch {
+      result.textContent = 'Your correction could not be sent. Please try again.';
+    }
+  });
+</script>
+
+<style>
+  .rec-nav { display: flex; justify-content: space-between; gap: 16px; padding: 16px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); background: var(--pine-dark); }
+  .rec-nav a { color: var(--snow); text-decoration: none; font-size: 0.95rem; }
+  .rec-brand { font-family: 'Syne', sans-serif; font-weight: 800; }
+  .rec-brand span { font-family: 'DM Sans', sans-serif; font-weight: 400; opacity: 0.75; margin-left: 6px; }
+  .rec-wrap { width: min(680px, 100%); margin: 0 auto; padding: 40px max(16px, env(safe-area-inset-right, 0px)) 72px max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: 14px; overflow-wrap: anywhere; }
+  .rec-wrap h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.12; }
+  .rec-wrap h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.25rem; }
+  .rec-wrap h3 { font-weight: 500; font-size: 1.05rem; margin-top: 8px; }
+  .rec-wrap ul { padding-left: 18px; display: grid; gap: 2px; }
+  .rec-wrap a { color: var(--pine-light); }
+  .rec-where { color: var(--pine-light); }
+  .rec-label span { background: var(--pine-mist); padding: 2px 8px; border-radius: 3px; font-weight: 500; margin-right: 4px; font-size: 0.85rem; }
+  .rec-contact { display: flex; flex-wrap: wrap; gap: 4px 14px; font-weight: 500; }
+  .rec-source { font-size: 0.82rem; color: #4d5f54; }
+  .rec-submitted { display: grid; gap: 8px; padding: 16px; border: 1px dashed var(--pine-light); border-radius: 4px; }
+  .rec-submitted dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; font-size: 0.92rem; }
+  .rec-submitted dt { font-weight: 500; text-transform: capitalize; }
+  .rec-owner { display: grid; gap: 10px; margin-top: 16px; padding-top: 20px; border-top: 1px solid var(--sand-dark); }
+  .rec-owner form { display: grid; gap: 10px; }
+  .rec-owner label { display: grid; gap: 4px; font-weight: 500; font-size: 0.92rem; }
+  .rec-owner input, .rec-owner textarea { font: inherit; font-weight: 400; padding: 9px; border: 1px solid var(--sand-dark); border-radius: 4px; background: var(--sand-light); color: var(--pine-dark); width: 100%; }
+  .rec-owner button, .rec-buy { font: inherit; font-weight: 500; padding: 11px 16px; background: var(--pine); color: var(--snow) !important; border: 0; border-radius: 4px; cursor: pointer; justify-self: start; text-decoration: none; display: inline-block; }
+</style>

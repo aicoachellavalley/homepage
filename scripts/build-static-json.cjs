@@ -517,7 +517,7 @@ function generateLlmsFullTxt() {
         `# Agent Ready Members`,
         ``,
         `Businesses that have activated a page on the AICV Network. Facts on these pages carry`,
-        `provenance in each page's data island: measured by AICV, or supplied by the business.`,
+        `provenance in each page's data island: measured by AICV, or submitted for the business, identity unconfirmed unless the record says verified.`,
         `Two classes, and the distinction is machine-readable on every page as \`status\`:`,
         ...(attested.length ? [
           ``,
@@ -634,6 +634,12 @@ async function submitToIndexNow(urls) {
    * NOT wired to CI or to a NODE_ENV guess: Cloudflare's build must keep
    * pinging, and inferring intent from the environment is how a real deploy
    * ends up silently unindexed. Opt out explicitly or not at all. */
+  // Only a production build announces itself. A preview branch must not, and a
+  // local build needs the flag below.
+  if (process.env.CF_PAGES_BRANCH && process.env.CF_PAGES_BRANCH !== 'main') {
+    console.log(`IndexNow: skipped on preview branch — ${urls.length} URLs not submitted`);
+    return;
+  }
   if (process.env.AICV_NO_INDEXNOW === '1') {
     console.log(`IndexNow: skipped (AICV_NO_INDEXNOW=1) — ${urls.length} URLs not submitted`);
     return;

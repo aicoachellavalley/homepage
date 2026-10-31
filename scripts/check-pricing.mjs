@@ -10,6 +10,12 @@ const pricing = JSON.parse(readFileSync(new URL('../src/data/pricing.json', impo
 const gar = readFileSync(new URL('../src/pages/get-agent-ready.astro', import.meta.url), 'utf8');
 const errs = [];
 
+// Retired offers must not return on any surface that describes what AICV sells.
+for (const f of ['get-agent-ready.astro', 'about.astro', 'minimum-viable-agent.astro', 'llms.txt.ts', 'terms.astro']) {
+  const text = readFileSync(new URL(`../src/pages/${f}`, import.meta.url), 'utf8');
+  if (/Agent Ready (?:Business|Premium)|Business and Premium|\$(?:2,500|10,000|1,000|5,000)\b/.test(text)) errs.push(`${f} still names a retired tier or its price`);
+}
+
 // JSON-LD offer prices must match the source's numeric fields.
 const expected = new Set();
 for (const t of pricing.tiers) {

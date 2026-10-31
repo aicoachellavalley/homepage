@@ -1,0 +1,3644 @@
+{
+ "entries": [
+  {
+   "id": "action-property-management-palm-desert",
+   "name": "Action Property Management",
+   "city": "Palm Desert",
+   "address": "74-710 Highway 111, Suite 102, Palm Desert, CA",
+   "category": "hoa",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.actionlife.com/cities/coachella-valley",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/action-property-management",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "HOA management",
+    "Community association management",
+    "Accounting",
+    "CC&R enforcement",
+    "Serves: Palm Springs, Desert Hot Springs, Cathedral City, Rancho Mirage, Palm Desert"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "agape-home-inspection-palm-desert",
+   "name": "Agape Home Inspection",
+   "city": "Palm Desert",
+   "address": "42215 Washington St Suite A #262, Palm Desert, CA 92211",
+   "category": "inspectors",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "http://www.agapeworkers.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/agape-home-inspection",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Roof inspection",
+    "Mold testing",
+    "Foundation inspection",
+    "Indoor air quality testing",
+    "Serves: Palm Desert, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "albert-management-palm-desert",
+   "name": "Albert Management",
+   "city": "Palm Desert",
+   "address": "41-865 Boardwalk Avenue, Suite 101, Palm Desert, CA 92211",
+   "category": "hoa",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.albertmgt.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/albert-management",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Community association management",
+    "HOA management",
+    "Commercial building management",
+    "Custom HOA websites and apps",
+    "Serves: Coachella Valley, Palm Desert, Lake La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "america-s-legal-document-services-americaslds-palm-desert",
+   "name": "America's Legal Document Services (AmericasLDS)",
+   "city": "Palm Desert",
+   "address": "73616 Highway 111, Palm Desert, CA 92260",
+   "category": "support",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.americaslds.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Notary services",
+    "Mobile notary",
+    "Legal document preparation (family law: divorce, paternity, motions/RFOs, marital settleme",
+    "Legal document preparation (estate planning: powers of attorney, health care directives, w",
+    "Access: appointment or booking"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "andalusia-country-club-la-quinta",
+   "name": "Andalusia Country Club",
+   "city": "La Quinta",
+   "address": "59195 Marbella, La Quinta, CA 92253",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://andalusiacc.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/andalusia-country-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: private member",
+    "18 holes",
+    "Rees Jones-designed championship course (7,521 yards, slope 143)",
+    "No tee times required / walk-on play",
+    "13,000 sq ft golf clubhouse"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "associa-desert-resort-management-palm-desert",
+   "name": "Associa Desert Resort Management",
+   "city": "Palm Desert",
+   "address": "42635 Melanie Place, Suite 103, Palm Desert, CA 92211",
+   "category": "hoa",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.drminternet.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/associa-desert-resort-management",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Community association management",
+    "HOA management",
+    "Condo management",
+    "Professional maintenance",
+    "Serves: Coachella Valley, Banning, Big Bear, Hemet"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "bighorn-golf-club-palm-desert",
+   "name": "Bighorn Golf Club",
+   "city": "Palm Desert",
+   "address": "255 Palowet Drive, Palm Desert, CA 92260",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.bighorngolf.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/bighorn-golf-club-mountains-course",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: private member",
+    "18 holes (Mountains Course)",
+    "Arthur Hills course design",
+    "Second 18-hole Canyons Course (Tom Fazio design)",
+    "Golf Learning Center / Golf Academy (Dale Abraham, Top 100 Teacher) with video swing analy"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "bionic-properties-indio",
+   "name": "Bionic Properties",
+   "city": "Indio",
+   "address": "52400 Day Star, La Quinta, CA 92253",
+   "category": "property",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://bionicproperties.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/bionic-properties",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Vacation rentals",
+    "STR management",
+    "Booking management",
+    "Property design",
+    "Serves: Indio, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "boulevard-workspace-indio",
+   "name": "Boulevard Workspace",
+   "city": "Indio",
+   "address": "81161 Indio Blvd, Indio, CA 92201",
+   "category": "coworking",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.blvdworkspace.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Private office rental",
+    "Conference room rental (hourly)",
+    "Meeting/event space rental (800 sq ft, up to 100 people)",
+    "Mail handling",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "choice-one-mortgage-la-quinta",
+   "name": "Choice One Mortgage",
+   "city": "La Quinta",
+   "address": "78015 Main Street, Suite 201, La Quinta, CA 92253",
+   "category": "mortgage",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.choice1mortgage.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-home-realestate-coachella-valley/",
+    "name": "AICV home and real estate census"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Purchase loans",
+    "Refinancing",
+    "Reverse mortgages",
+    "Non-QM loans",
+    "Serves: La Quinta, Palm Desert, Indian Wells, Rancho Mirage, Palm Springs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "coachella-valley-property-management-coachellavalleypropertymanagement-site-palm-desert",
+   "name": "Coachella Valley Property Management (coachellavalleypropertymanagement.site)",
+   "city": "Palm Desert",
+   "address": "77824 Wildcat Dr Suite 205, Palm Desert, CA 92211",
+   "category": "property",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://coachellavalleypropertymanagement.site/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coachella-valley-property-management-coachellavalleypropertymanagement-site",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Vacation rental / STR management",
+    "Full-service short-term rental management",
+    "Revenue optimization",
+    "Multi-platform marketing (Airbnb, VRBO, Booking.com)",
+    "Serves: Palm Desert, Palm Springs, Rancho Mirage, Indian Wells, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "coachella-valley-small-business-development-center-sbdc-indio",
+   "name": "Coachella Valley Small Business Development Center (SBDC)",
+   "city": "Indio",
+   "address": "44199 Monroe Street Suite B, Indio, CA 92201",
+   "category": "support",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.californiasbdc.org/centers/coachella-valley-sbdc/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Business counselling / one-on-one advising",
+    "Workshops and training",
+    "Financing and capital-access assistance",
+    "Referrals to resources",
+    "Access: appointment or booking"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "coachella-valley-women-s-business-center-cvwbc-palm-desert",
+   "name": "Coachella Valley Women's Business Center (CVWBC)",
+   "city": "Palm Desert",
+   "address": "37023 Cook St Ste 102, Palm Desert, CA 92211",
+   "category": "support",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.cvwbc.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Business counseling (one-on-one)",
+    "Training workshops (business planning, marketing, sales, finance, operations)",
+    "Consulting services for business growth/refinement",
+    "Financial literacy training (e.g. QuickBooks)",
+    "Access: appointment or booking"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "coldwell-banker-realty-indian-wells-la-quinta-indian-wells",
+   "name": "Coldwell Banker Realty – Indian Wells/La Quinta",
+   "city": "Indian Wells",
+   "address": "45000 Club Dr, Indian Wells, CA 92210",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.coldwellbankerhomes.com/ca/indian-wells/office/indian-wells-la-quinta/oid_5341/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/coldwell-banker-realty-indian-wells-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Golf/country-club",
+    "Resort living",
+    "Global Luxury",
+    "Serves: Indian Wells, La Quinta, Palm Desert, Palm Springs, Rancho Mirage"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "college-of-the-desert-palm-desert",
+   "name": "College of the Desert",
+   "city": "Palm Desert",
+   "address": "43-500 Monterey Ave, Palm Desert, CA 92260",
+   "category": "university",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.collegeofthedesert.edu/students/cwsc/default.php",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Career counseling",
+    "Resume and cover letter assistance",
+    "Interview coaching",
+    "Job search support",
+    "Access: appointment or booking"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "college-of-the-desert-indio-campus-indio",
+   "name": "College of the Desert - Indio Campus",
+   "city": "Indio",
+   "address": "45-524 Oasis St., Indio, CA 92201",
+   "category": "university",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.collegeofthedesert.edu/students/locations/indio/default.php",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Enrollment & registration assistance",
+    "Counseling services",
+    "Financial aid assistance (application support)",
+    "ESL (English as a Second Language) registration",
+    "Access: open to public"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "creation-station-makerspace-la-quinta-public-library-la-quinta",
+   "name": "Creation Station Makerspace (La Quinta Public Library)",
+   "city": "La Quinta",
+   "address": "78-275 Calle Tampico, La Quinta, CA",
+   "category": "maker",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.laquintaca.gov/our-city/city-departments/community-resources/creation-station-makerspace",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "3D printing",
+    "Laser cutting",
+    "CAD (computer-aided design)",
+    "Electronics components and soldering",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "csusb-palm-desert-campus-palm-desert",
+   "name": "CSUSB Palm Desert Campus",
+   "city": "Palm Desert",
+   "address": "37500 Cook Street, Palm Desert, CA 92211",
+   "category": "university",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.csusb.edu/pdc",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Bachelor's degree programs",
+    "Graduate degree programs",
+    "Campus events and community programming",
+    "Student support services",
+    "Access: application or cohort"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "csusb-palm-desert-entrepreneurial-resource-center-erc-palm-desert",
+   "name": "CSUSB Palm Desert Entrepreneurial Resource Center (ERC)",
+   "city": "Palm Desert",
+   "address": "37023 Cook St, Ste 102, Palm Desert, CA 92211",
+   "category": "support",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://pderc.org",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Business counseling and training",
+    "Licensing and permitting assistance",
+    "Legal references",
+    "Access-to-capital information/referrals",
+    "Access: open to public"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-adventist-academy-palm-desert",
+   "name": "Desert Adventist Academy",
+   "city": "Palm Desert",
+   "address": "74200 Country Club Dr., Suite #2, Palm Desert, CA 92260",
+   "category": "schools",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://desertschoolca.adventistschoolconnect.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/family-schooling/desert-adventist-academy",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Grades or ages: TK–8",
+    "Affiliation: Seventh-day Adventist"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-elite-home-inspections-palm-desert",
+   "name": "Desert Elite Home Inspections",
+   "city": "Palm Desert",
+   "address": "Palm Desert, CA 92260",
+   "category": "inspectors",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.desertelitehomeinspections.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-home-realestate-coachella-valley/",
+    "name": "AICV home and real estate census"
+   },
+   "description": null,
+   "facts": [
+    "Buyer inspections",
+    "Pre-listing inspections",
+    "New construction",
+    "Property maintenance inspections",
+    "Serves: Palm Springs, Cathedral City, Rancho Mirage, Palm Desert, Indian Wells"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-horizons-country-club-indian-wells",
+   "name": "Desert Horizons Country Club",
+   "city": "Indian Wells",
+   "address": "44900 Desert Horizons Dr, Indian Wells, CA 92210",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://deserthorizons.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/desert-horizons-country-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: private member",
+    "18-hole championship golf course (Ted Robinson design)",
+    "Clubhouse (40,000 sq ft, remodeled)",
+    "Fitness & wellness center",
+    "Courts pavilion"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-luxury-estates-palm-desert",
+   "name": "Desert Luxury Estates",
+   "city": "Palm Desert",
+   "address": "73350 El Paseo, Suite 101, Palm Desert, CA 92260",
+   "category": "property",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://desertluxuryestates.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-luxury-estates",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Luxury vacation rentals",
+    "STR/short-term rental management",
+    "Concierge guest services",
+    "Property marketing",
+    "Serves: Palm Springs, Palm Desert, Rancho Mirage, Indian Wells, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-management-rancho-mirage",
+   "name": "Desert Management",
+   "city": "Rancho Mirage",
+   "address": "42-427 Rancho Mirage Lane, Rancho Mirage, CA 92270",
+   "category": "hoa",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://desertmanagement.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-management",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "HOA management",
+    "Administrative services",
+    "Accounting services",
+    "Financial services",
+    "Serves: Rancho Mirage, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desert-rental-properties-rancho-mirage",
+   "name": "Desert Rental Properties",
+   "city": "Rancho Mirage",
+   "address": "72000 Magnesia Falls Dr., Suite #4, Rancho Mirage, CA 92270",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.desertrentalproperties.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desert-rental-properties",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Full-service property management",
+    "Long-term residential rentals",
+    "Property leasing",
+    "Rental property maintenance",
+    "Serves: Rancho Mirage, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "desertspec-llc-palm-desert",
+   "name": "DesertSpec LLC",
+   "city": "Palm Desert",
+   "address": "74478 Highway 111 #181, Palm Desert, CA 92260",
+   "category": "inspectors",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://desertspec.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/desertspec-llc",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Home inspections",
+    "Structural evaluation",
+    "Systems inspection",
+    "Buyer inspections",
+    "Serves: Indian Wells, La Quinta, Palm Desert, Palm Springs, Rancho Mirage"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "dove-s-landing-school-palm-desert",
+   "name": "Dove's Landing School",
+   "city": "Palm Desert",
+   "address": "78-206 Varner Road, STE D#247, Palm Desert, CA 92211",
+   "category": "schools",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.doveslandingschool.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/family-schooling/doves-landing-school",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Grades or ages: K–12",
+    "Affiliation: Methodist (per GreatSchools aggregator; not stated on own si"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "dw-associates-diane-williams-associates-palm-desert",
+   "name": "DW & Associates (Diane Williams & Associates)",
+   "city": "Palm Desert",
+   "address": "76-375 Country Club Dr, Palm Desert, CA 92211",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://dianewilliamsandassociates.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/dw-associates-diane-williams-associates",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Golf/country-club",
+    "Residential",
+    "Condo",
+    "Serves: Palm Desert, Indian Wells, Rancho Mirage, La Quinta, Palm Springs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "eldorado-country-club-indian-wells",
+   "name": "Eldorado Country Club",
+   "city": "Indian Wells",
+   "address": "46000 Fairway Dr, Indian Wells, CA 92210",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.eldoradocc.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/eldorado-country-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Access: private member",
+    "18-hole golf course",
+    "Fitness center",
+    "Pool",
+    "Tennis facility"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "equity-union-real-estate-rancho-mirage",
+   "name": "Equity Union Real Estate",
+   "city": "Rancho Mirage",
+   "address": "70-115 Highway 111, Rancho Mirage, CA 92270",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://equityunion.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/equity-union-real-estate",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Golf/country-club",
+    "On-site community sales",
+    "REO/foreclosure",
+    "Serves: Rancho Mirage, Palm Springs, Palm Desert, La Quinta, Calabasas"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "equity-union-real-estate-la-quinta-la-quinta",
+   "name": "Equity Union Real Estate – La Quinta",
+   "city": "La Quinta",
+   "address": "47-060 Washington St, Suite 5101, La Quinta, CA 92253",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://equityunion.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/equity-union-real-estate-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Commercial sales",
+    "Relocation",
+    "REO/foreclosure",
+    "Serves: La Quinta, Palm Desert, Palm Springs, Rancho Mirage, Calabasas"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "equity-union-palm-desert-palm-desert",
+   "name": "Equity Union – Palm Desert",
+   "city": "Palm Desert",
+   "address": "44-495 Town Center Way Suite B, Palm Desert, CA 92260",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://equityunion.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/equity-union-palm-desert",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Residential sales",
+    "Luxury real estate",
+    "Commercial sales",
+    "Relocation services",
+    "Serves: Palm Desert, Palm Springs, La Quinta, Rancho Mirage, Encino"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "excellence-real-estate-socal-properties-indio",
+   "name": "Excellence Real Estate SoCal Properties",
+   "city": "Indio",
+   "address": "47-159 Youngs Lane, Indio, CA 92201",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.socalpropertiesre.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-home-realestate-coachella-valley/",
+    "name": "AICV home and real estate census"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Residential",
+    "Mobile homes",
+    "Land",
+    "Residential income properties",
+    "Serves: Indio, Coachella, La Quinta, Palm Desert, Cathedral City"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "fairway-independent-mortgage-corporation-palm-desert",
+   "name": "Fairway Independent Mortgage Corporation",
+   "city": "Palm Desert",
+   "address": "74710 Highway 111, Suite 127, Palm Desert, CA 92260",
+   "category": "mortgage",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.fairway.com/branch/palm-desert-ca-74710-92260-395",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/fairway-independent-mortgage-corporation",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Conventional",
+    "FHA",
+    "VA",
+    "Jumbo",
+    "Serves: Palm Desert"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "first-capital-mortgage-inc-indio",
+   "name": "First Capital Mortgage Inc.",
+   "city": "Indio",
+   "address": "81713 Highway 111, Suite B2, Indio, CA 92201",
+   "category": "mortgage",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://firstcapitalmortgageinc.com/indio-ca-office/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/first-capital-mortgage-inc-2",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "FHA loans",
+    "VA loans",
+    "Jumbo loans",
+    "USDA loans",
+    "Serves: Indio, CA, Modesto, CA, Reno, NV"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "first-west-financial-corporation-la-quinta",
+   "name": "First West Financial Corporation",
+   "city": "La Quinta",
+   "address": "74967 Sheryl Ave, Palm Desert, CA 92260",
+   "category": "mortgage",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://firstwestfinancial.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/first-west-financial-corporation",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Home purchase",
+    "Refinancing",
+    "FHA loans",
+    "Conventional loans",
+    "Serves: Palm Desert, Palm Springs, Indian Wells, Indio, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "firstservice-residential-palm-desert",
+   "name": "FirstService Residential",
+   "city": "Palm Desert",
+   "address": "43-100 Cook Street, Suite 103, Palm Desert, CA 92211",
+   "category": "hoa",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.fsresidential.com/california/offices/palm-desert/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/firstservice-residential",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Master-planned communities",
+    "Single-family HOA",
+    "Townhome/condominium",
+    "Active adult communities",
+    "Serves: Palm Desert, Indio, Palm Springs, La Quinta, Desert Hot Springs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "flagstar-home-lending-palm-desert",
+   "name": "Flagstar Home Lending",
+   "city": "Palm Desert",
+   "address": "74-710 Highway 111, Suite 102, Palm Desert, CA 92260",
+   "category": "mortgage",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.flagstar.com/palm-desert-california-home-loan-mortgage-lender-43851.html",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/flagstar-home-lending",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Home purchase loans",
+    "Refinance",
+    "New construction",
+    "Serves: Palm Desert"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "foresite-escrow-inc-palm-desert",
+   "name": "Foresite Escrow, Inc.",
+   "city": "Palm Desert",
+   "address": "41995 Boardwalk, Suite G-2, Palm Desert, CA 92211",
+   "category": "title",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://foresitescrow.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/foresite-escrow-inc",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Residential purchases",
+    "Commercial purchases",
+    "1031 exchange",
+    "Manufactured/mobile homes",
+    "Serves: Palm Desert, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "fusion-workplaces-palm-desert",
+   "name": "Fusion Workplaces",
+   "city": "Palm Desert",
+   "address": "74-710 Highway 111, Suite 102, Palm Desert, CA 92260",
+   "category": "coworking",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Coworking / hot desk space",
+    "Private offices",
+    "Day offices",
+    "Virtual office & mailing address",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "good-business-awards-firstbank-one-valley-foundation-coachella-valley-firebirds-palm-desert",
+   "name": "Good Business Awards (FirstBank / One Valley Foundation / Coachella Valley Firebirds)",
+   "city": "Palm Desert",
+   "address": "75702 Varner Road, Palm Desert, CA 92211",
+   "category": "capital",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://onevalleyfoundation.org",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Grants to 501(c)(3) nonprofits",
+    "Community programs",
+    "Education programs (literacy, leadership, workforce pathways)",
+    "Well-being initiatives (mental health, housing, food resources)",
+    "Access: open to public"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "grand-luxury-properties-indian-wells",
+   "name": "Grand Luxury Properties",
+   "city": "Indian Wells",
+   "address": "76938 Tomahawk Run, Indian Wells, CA 92210",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://grandluxuryproperties.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/grand-luxury-properties",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Golf/country-club",
+    "Buyer representation",
+    "Seller representation",
+    "Serves: Indian Wells, La Quinta, Palm Desert, Rancho Mirage, Palm Springs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "greater-coachella-valley-chamber-of-commerce-indio",
+   "name": "Greater Coachella Valley Chamber of Commerce",
+   "city": "Indio",
+   "address": "45-149 Smurr St., Ste. A & B, Indio, CA 92201",
+   "category": "civic",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://gcvcc.org",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Networking events",
+    "Business/educational seminars",
+    "Legislative advocacy",
+    "Ribbon cutting & grand opening events",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "guaranteed-rate-affinity-rate-palm-desert",
+   "name": "Guaranteed Rate Affinity / Rate",
+   "city": "Palm Desert",
+   "address": "72605 Highway 111, Suite B1, Palm Desert, CA 92260",
+   "category": "mortgage",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.grarate.com/branches/ca/palm-desert/72605-highway-111",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/guaranteed-rate-affinity-rate",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Jumbo loans",
+    "FHA loans",
+    "VA home loans",
+    "Adjustable rate mortgages",
+    "Serves: Palm Desert"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "helios-vacation-rentals-la-quinta",
+   "name": "Helios Vacation Rentals",
+   "city": "La Quinta",
+   "address": "79-405 US HWY 111 #9-393, La Quinta, CA 92253",
+   "category": "property",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://heliosvacations.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/helios-vacation-rentals",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Luxury vacation rentals",
+    "STR / short-term rental management",
+    "White glove concierge service",
+    "Dedicated house managers",
+    "Serves: La Quinta, Palm Springs, Indio, Coachella, Bermuda Dunes"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "home-sweet-home-inspections-palm-desert",
+   "name": "Home Sweet Home Inspections",
+   "city": "Palm Desert",
+   "address": "P.O. Box 73927, Palm Desert, CA 92255",
+   "category": "inspectors",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.homesweethomeinspections.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-home-realestate-coachella-valley/",
+    "name": "AICV home and real estate census"
+   },
+   "description": null,
+   "facts": [
+    "Home inspections",
+    "Commercial property inspections",
+    "Pre-listing inspections",
+    "Pool and spa inspections",
+    "Serves: Coachella Valley, Palm Desert, Palm Springs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "homespek-llc-home-inspections-termite-palm-desert",
+   "name": "HomeSpek LLC Home Inspections & Termite",
+   "city": "Palm Desert",
+   "address": "74710 Highway 111, Ste 102, Palm Desert, CA 92260",
+   "category": "inspectors",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://homespek760.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/homespek-llc-home-inspections-termite",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Home inspections",
+    "Termite inspections",
+    "Termite repair",
+    "Subterranean termite treatment",
+    "Serves: Palm Desert, Palm Springs, Cathedral City, Indio, Coachella"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "indian-springs-real-estate-indio",
+   "name": "Indian Springs Real Estate",
+   "city": "Indio",
+   "address": "79940 Westward Ho Drive, Indio, CA 92201",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.indianspringsrealestate.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-home-realestate-coachella-valley/",
+    "name": "AICV home and real estate census"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Golf/country-club",
+    "Luxury",
+    "Vacation rentals",
+    "Residential resale",
+    "Serves: Indio, La Quinta, Palm Desert, Palm Springs, Trilogy La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "indian-wells-country-club-indian-wells",
+   "name": "Indian Wells Country Club",
+   "city": "Indian Wells",
+   "address": "46000 Club Dr, Indian Wells, CA 92210",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://indianwellsclub.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/indian-wells-country-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Access: private member",
+    "36 holes (Classic Course + Cove Course)",
+    "Course designers: Harry & David Rainville (Classic); Eddie Sussalla & Ted Robinson Sr. (Co",
+    "70,000 sq ft clubhouse",
+    "3 dining venues (Curci's Grille, Desi's Deck, The Cove)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "indian-wells-economic-development-indian-wells",
+   "name": "Indian Wells Economic Development",
+   "city": "Indian Wells",
+   "address": "44-950 Eldorado Drive, Indian Wells, CA 92210",
+   "category": "civic",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.cityofindianwells.org/city-hall/departments/economic-development-2",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Business / doing-business guidance",
+    "Entitlement and application process information",
+    "Economic reports (via CVEP partnership)",
+    "Commercial opportunity site listings (lease/sale)",
+    "Access: open to public"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "indian-wells-escrow-corporation-indian-wells",
+   "name": "Indian Wells Escrow Corporation",
+   "city": "Indian Wells",
+   "address": "74909 Highway 111, Indian Wells, CA 92210",
+   "category": "title",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://indianwellsescrow.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/indian-wells-escrow-corporation",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Residential purchase",
+    "Manufactured homes",
+    "Probate",
+    "New construction",
+    "Serves: Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "indian-wells-tennis-garden-indian-wells",
+   "name": "Indian Wells Tennis Garden",
+   "city": "Indian Wells",
+   "address": "78-200 Miles Avenue, Indian Wells, CA 92210",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://indianwellstennisgarden.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-outdoors-recreation-coachella-valley/",
+    "name": "AICV outdoors census"
+   },
+   "description": null,
+   "facts": [
+    "Access: private member",
+    "29 courts including Stadium 1 (16,000-seat)",
+    "Fitness center with group classes",
+    "Nobu Indian Wells restaurant",
+    "Pro shop"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "indio-economic-development-indio",
+   "name": "Indio Economic Development",
+   "city": "Indio",
+   "address": "100 Civic Center Mall, Indio, CA 92201",
+   "category": "civic",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.indio.org/departments/economic-development",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Business counseling / consulting (via SBDC)",
+    "Mentoring",
+    "Business plan assistance",
+    "Grants (storefront façade/interior improvement)",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "inspx-home-solutions-llc-rancho-mirage",
+   "name": "INSPX Home Solutions LLC",
+   "city": "Rancho Mirage",
+   "address": "41618 Morningside Ct, Rancho Mirage, CA 92270",
+   "category": "inspectors",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.paulinspx.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/inspx-home-solutions-llc",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Certified Master Inspector (CMI)",
+    "Residential inspections",
+    "Commercial inspections",
+    "Manufactured/mobile home inspections",
+    "Serves: Palm Springs, Cathedral City, Rancho Mirage, Palm Desert, Indian Wells"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "ironwood-country-club-palm-desert",
+   "name": "Ironwood Country Club",
+   "city": "Palm Desert",
+   "address": "73735 Irontree Drive, Palm Desert, CA 92260",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.ironwoodcountryclub.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/ironwood-country-club-south-course",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: private member",
+    "36 holes total (South and North 18-hole championship courses)",
+    "South Course: eight tee options, ~7,268 yards from longest tees, par 72",
+    "North Course: par-71, shotmaker's course, 4,566-6,212 yards",
+    "9 USTA/ATP/WTA-standard tennis courts"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "itrip-palm-desert-palm-desert-vacation-properties-palm-desert",
+   "name": "iTrip Palm Desert (Palm Desert Vacation Properties)",
+   "city": "Palm Desert",
+   "address": "44489 Town Center Way Suite D #443, Palm Desert, CA 92260",
+   "category": "property",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://palmdesert.itrip.co/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/itrip-palm-desert-palm-desert-vacation-properties",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Vacation rentals",
+    "Short-term rental management",
+    "Dynamic pricing",
+    "Revenue optimization",
+    "Serves: Palm Desert, Rancho Mirage, Palm Springs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "jelmberg-team-kw-coachella-valley-palm-desert",
+   "name": "Jelmberg Team (KW Coachella Valley)",
+   "city": "Palm Desert",
+   "address": "39575 Washington Street, Suite 105, Palm Desert, CA 92211",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.kwcoachellavalley.com/lp/jelmberg-team/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/jelmberg-team-kw-coachella-valley",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury estates",
+    "Residential home sales",
+    "Investment properties",
+    "Top 1% sales volume",
+    "Serves: Palm Desert, Indio, La Quinta, Indian Wells, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "keller-williams-coachella-valley-indian-wells",
+   "name": "Keller Williams Coachella Valley",
+   "city": "Indian Wells",
+   "address": "74-980 Hwy 111, Indian Wells, CA 92210",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.kwcoachellavalley.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-coachella-valley",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Mid-century modern",
+    "Residential sales",
+    "Home valuation",
+    "Serves: Palm Springs, Cathedral City, Rancho Mirage, Palm Desert, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "keller-williams-coachella-valley-palm-desert",
+   "name": "Keller Williams Coachella Valley",
+   "city": "Palm Desert",
+   "address": "39575 Washington Street, Suite 105, Palm Desert, CA 92211",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.kwcoachellavalley.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-coachella-valley-2",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Mid-century modern",
+    "Rental listings",
+    "Serves: Palm Springs, Cathedral City, Rancho Mirage, Palm Desert, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "keller-williams-realty-la-quinta-la-quinta",
+   "name": "Keller Williams Realty – La Quinta",
+   "city": "La Quinta",
+   "address": "47100 Washington St, Suite 101, La Quinta, CA 92253",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.kwcoachellavalley.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/keller-williams-realty-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Residential sales",
+    "Luxury properties",
+    "Mid-century modern",
+    "Home valuations",
+    "Serves: Palm Springs, Cathedral City, Rancho Mirage, Palm Desert, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-economic-development-la-quinta",
+   "name": "La Quinta Economic Development",
+   "city": "La Quinta",
+   "address": "78-495 Calle Tampico, La Quinta, CA 92253",
+   "category": "civic",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://econdev.laquintaca.gov",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Business license & permit processing (The Hub)",
+    "Commercial property / site search",
+    "Business directory listing",
+    "Negotiated incentive agreements (e.g., sales tax sharing, per AB 562 reporting)",
+    "Access: open to public"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "la-quinta-resort-leasing-la-quinta",
+   "name": "La Quinta Resort Leasing",
+   "city": "La Quinta",
+   "address": "50-905 Avenida Bermudas, La Quinta, CA 92253",
+   "category": "property",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.laquintaresortleasing.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/la-quinta-resort-leasing",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Luxury vacation rentals",
+    "Short-term rental (STR) management",
+    "Private pool homes",
+    "Golf/country-club communities",
+    "Serves: La Quinta, Greater Palm Springs, PGA West"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "law-offices-of-jerry-j-goldstein-palm-desert",
+   "name": "Law Offices of Jerry J. Goldstein",
+   "city": "Palm Desert",
+   "address": "77-711 Flora Rd, Suite 109, Palm Desert, CA 92211",
+   "category": "support",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.smallbizlaw.net/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Business entity formation (corporation, LLC, partnership, nonprofit)",
+    "Business planning & organization",
+    "Mergers & acquisitions / raising capital counsel",
+    "Contract drafting & negotiation (vendor, customer, employment, partnership/shareholder agr",
+    "Access: appointment or booking"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "ltv-private-equity-inc-indian-wells",
+   "name": "LTV Private Equity, Inc.",
+   "city": "Indian Wells",
+   "address": "75280 US Highway 111, Indian Wells, CA 92210",
+   "category": "capital",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://ltvfund.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Hard money / private real estate loans",
+    "Construction, land, commercial, and single-family lending",
+    "1st and 2nd trust deeds and discount notes",
+    "In-house loan servicing through payoff, including year-end 1099",
+    "Access: application or cohort"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "luxury-leasing-vacation-rentals-la-quinta",
+   "name": "Luxury Leasing Vacation Rentals",
+   "city": "La Quinta",
+   "address": "78080 Calle Estado, Suite 201, La Quinta, CA 92253",
+   "category": "property",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.luxuryleasinginc.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/luxury-leasing-vacation-rentals",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury vacation rentals",
+    "Golf/country-club communities",
+    "Vacation rentals",
+    "Snowbird/seasonal",
+    "Serves: La Quinta, Rancho Mirage, Indio, Palm Desert, Palm Springs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "mgr-property-management-rancho-mirage",
+   "name": "MGR Property Management",
+   "city": "Rancho Mirage",
+   "address": "72000 Magnesia Falls Dr, Ste 3, Rancho Mirage, CA 92270",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.mgrrealestate.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-home-realestate-coachella-valley/",
+    "name": "AICV home and real estate census"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Residential",
+    "Multi-family",
+    "Commercial",
+    "HOA/POA management",
+    "Serves: Rancho Mirage, Palm Springs, Palm Desert, Desert Hot Springs, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "mission-hills-country-club-rancho-mirage",
+   "name": "Mission Hills Country Club",
+   "city": "Rancho Mirage",
+   "address": "34600 Mission Hills Dr, Rancho Mirage, CA 92270",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.invitedclubs.com/clubs/mission-hills-country-club/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-outdoors-recreation-coachella-valley/",
+    "name": "AICV outdoors census"
+   },
+   "description": null,
+   "facts": [
+    "Access: private member",
+    "54 holes across 3 courses (Dinah Shore Tournament Course, Arnold Palmer Signature Course, ",
+    "49 tennis courts (grass, clay, hard surfaces)",
+    "20 pickleball courts",
+    "Spa and salon"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "ml-mortgage-la-quinta",
+   "name": "ML Mortgage",
+   "city": "La Quinta",
+   "address": "78401 Highway 111, Suite S, La Quinta, CA 92253",
+   "category": "mortgage",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.mlmortgage.net/la-quinta/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/ml-mortgage",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "FHA loans",
+    "VA loans",
+    "USDA loans",
+    "Conventional loans",
+    "Serves: La Quinta, Coachella Valley, California statewide, 23+ states"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "my-desert-realty-inc-indio",
+   "name": "My Desert Realty Inc.",
+   "city": "Indio",
+   "address": "82545 Showcase Parkway, Suite 102, Indio, CA 92203",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://lidiarealestate.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/my-desert-realty-inc",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Buying",
+    "Selling",
+    "Rentals",
+    "Home valuation",
+    "Serves: Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "new-venture-escrow-rancho-mirage",
+   "name": "New Venture Escrow",
+   "city": "Rancho Mirage",
+   "address": "72120 Magnesia Falls Dr Suite 1, Rancho Mirage, CA 92270",
+   "category": "title",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://newventureescrow.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/new-venture-escrow",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Proprietary technology platform (VentureTrac)",
+    "Seller's Protection Plan (E&O coverage)",
+    "Global Specialty Escrows",
+    "Buy Before You Sell",
+    "Serves: San Diego, Carlsbad, Chula Vista, Laguna Niguel, Temecula"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "obsidian-group-team-under-exp-realty-of-southern-california-indio",
+   "name": "Obsidian Group (team under eXp Realty of Southern California)",
+   "city": "Indio",
+   "address": "42727 Saint Lucia St, Indio, CA 92203",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.obsidianregroup.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/obsidian-group-team-under-exp-realty-of-southern-california",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Buying",
+    "Selling",
+    "Investment",
+    "Market analytics",
+    "Serves: Palm Springs, La Quinta, Coachella, Bermuda Dunes, Cathedral City"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "old-town-artisan-studios-la-quinta",
+   "name": "Old Town Artisan Studios",
+   "city": "La Quinta",
+   "address": "78046 Calle Barcelona, La Quinta, CA 92253",
+   "category": "maker",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://oldtownartisanstudios.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/family-schooling/old-town-artisan-studios",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Art classes (pottery, ceramics, felting, and other media)",
+    "Workshops",
+    "Private instruction",
+    "Independent studio use",
+    "Access: open to public"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "omni-real-estate-group-rancho-mirage",
+   "name": "OMNI Real Estate Group",
+   "city": "Rancho Mirage",
+   "address": "71740 Highway 111, Unit 3 & 4, Rancho Mirage, CA 92270",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://omni-re.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/omni-real-estate-group",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Golf/country-club",
+    "Residential buy/sell",
+    "White glove service",
+    "Serves: Rancho Mirage, Palm Desert, Palm Springs, Indian Wells, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "onefuture-coachella-valley-palm-desert",
+   "name": "OneFuture Coachella Valley",
+   "city": "Palm Desert",
+   "address": "41550 Eclectic Street, Suite 204 D, Palm Desert, CA 92260",
+   "category": "university",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.onefuturecv.org",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "College and career counseling",
+    "Scholarships and financial aid",
+    "Internship and job placement support",
+    "Behavioral health career pathway",
+    "Access: application or cohort"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "our-lady-of-perpetual-help-catholic-school-indio",
+   "name": "Our Lady of Perpetual Help Catholic School",
+   "city": "Indio",
+   "address": "82470 Bliss Ave, Indio, CA 92201",
+   "category": "schools",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://olphschoolindio.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/family-schooling/our-lady-of-perpetual-help-catholic-school",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Grades or ages: Preschool–Grade 8",
+    "Affiliation: Catholic"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "palm-desert-area-chamber-of-commerce-palm-desert",
+   "name": "Palm Desert Area Chamber of Commerce",
+   "city": "Palm Desert",
+   "address": "72559 Hwy 111, Palm Desert, CA 92260",
+   "category": "civic",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://pdacc.org",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Networking events",
+    "Referral connections",
+    "Business directory listing / member spotlights",
+    "Ribbon cuttings for new/expanding businesses",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "palm-desert-escrow-inc-palm-desert",
+   "name": "Palm Desert Escrow, Inc.",
+   "city": "Palm Desert",
+   "address": "74041 CA-111, Palm Desert, CA 92260",
+   "category": "title",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.palmdesertescrow.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/palm-desert-escrow-inc",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Real estate escrow",
+    "New home sales",
+    "Short sales",
+    "Probate",
+    "Serves: Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "palm-valley-school-rancho-mirage",
+   "name": "Palm Valley School",
+   "city": "Rancho Mirage",
+   "address": "35525 Da Vall Dr, Rancho Mirage, CA 92270",
+   "category": "schools",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.pvs.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/family-schooling/palm-valley-school",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Grades or ages: toddler–grade 12 (Preschool ages 2–5, K–12)",
+    "Affiliation: secular/none — explicitly \"non-religious\""
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "powerstone-property-management-indian-wells",
+   "name": "Powerstone Property Management",
+   "city": "Indian Wells",
+   "address": "74770 Highway 111, Suite 103, Indian Wells, CA 92210",
+   "category": "hoa",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.powerstonepm.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/powerstone-property-management",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "HOA management",
+    "Master planned communities",
+    "Condominium communities",
+    "Single family communities",
+    "Serves: Indian Wells, Coachella Valley, Palm Springs area, Inland Empire, San Diego County"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "premier-community-association-management-pcam-palm-desert",
+   "name": "Premier Community Association Management (PCAM)",
+   "city": "Palm Desert",
+   "address": "40004 Cook Street, Suite 5, Palm Desert, CA 92211",
+   "category": "hoa",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://buckreynoldscorporation.com/pcam/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/premier-community-association-management-pcam",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "HOA management",
+    "Community association management",
+    "Financial reporting",
+    "Board management software",
+    "Serves: Palm Desert, Southern California, Arizona"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "premier-properties-of-the-desert-la-quinta",
+   "name": "Premier Properties of the Desert",
+   "city": "La Quinta",
+   "address": "78115 Calle Estado, Suite 104, La Quinta, CA 92253",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.premierpropertiesofthedesert.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/premier-properties-of-the-desert",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Golf/country-club",
+    "Vacation rentals",
+    "Buyer representation",
+    "Serves: La Quinta, Indian Wells, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "prominent-escrow-services-inc-indian-wells",
+   "name": "Prominent Escrow Services, Inc.",
+   "city": "Indian Wells",
+   "address": "74785 Highway 111, Suite 203, Indian Wells, CA 92210",
+   "category": "title",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.prominentescrow.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/prominent-escrow-services-inc",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "REO/foreclosure",
+    "Resale",
+    "Refinance",
+    "HUD",
+    "Serves: Indian Wells, Newport Beach, Costa Mesa, Brea, Palm Springs"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "rancho-mirage-chamber-of-commerce-rancho-mirage",
+   "name": "Rancho Mirage Chamber of Commerce",
+   "city": "Rancho Mirage",
+   "address": "71905 Highway 111, Rancho Mirage, CA 92270",
+   "category": "civic",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://ranchomiragechamber.org",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Networking events and mixers",
+    "Business advocacy and government affairs representation",
+    "Ribbon-cutting ceremonies",
+    "Business directory listing",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "re-max-consultants-la-quinta-la-quinta",
+   "name": "RE/MAX Consultants – La Quinta",
+   "city": "La Quinta",
+   "address": "47170 Washington St, La Quinta, CA 92253",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.remax.com/real-estate-offices/laquinta-ca-92253-remaxconsultants-id60041207.html",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/re-max-consultants-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Serves: La Quinta, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "real-estate-rancho-mirage-rancho-mirage",
+   "name": "Real Estate Rancho Mirage",
+   "city": "Rancho Mirage",
+   "address": "70-115 Highway 111, Rancho Mirage, CA 92270",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.realestateranchomirage.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/real-estate-rancho-mirage",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Golf/country-club",
+    "Luxury",
+    "55+ adult communities",
+    "Mid-century modern",
+    "Serves: Rancho Mirage, Palm Desert, Palm Springs, Indian Wells, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "realmanage-palm-desert",
+   "name": "RealManage",
+   "city": "Palm Desert",
+   "address": "74-710 Highway 111, Suite 102, Palm Desert, CA 92260",
+   "category": "hoa",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://realmanage.com/locations/california/coachella-valley/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/realmanage",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "HOA management",
+    "Condominium management",
+    "Townhome management",
+    "Construction services",
+    "Serves: Palm Desert, Palm Springs, La Quinta, Rancho Mirage, Indio"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "realty-executives-desert-lifestyles-la-quinta",
+   "name": "Realty Executives Desert Lifestyles",
+   "city": "La Quinta",
+   "address": "78065 Main St, Suite 107, La Quinta, CA 92253",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.realtyexecutives.com/offices/realty-executives-desert-lifestyles-la-quinta/2707",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/realty-executives-desert-lifestyles",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Golf/country-club",
+    "Luxury",
+    "Resort communities",
+    "Serves: La Quinta, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "regus-palm-springs-palm-springs",
+   "name": "Regus Palm Springs",
+   "city": "Palm Springs",
+   "address": "750 N Palm Canyon Dr, Palm Springs, CA 92262",
+   "category": "coworking",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.regus.com/en/us/6794",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Private offices",
+    "Coworking desks / hot desk",
+    "Day offices",
+    "Meeting rooms",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "riverside-county-office-of-education-school-of-career-education-indio",
+   "name": "Riverside County Office of Education - School of Career Education",
+   "city": "Indio",
+   "address": "47-336 Oasis Street, Indio, CA 92201",
+   "category": "university",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.rcoe.us/programs/school-of-career-education/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Vocational certificate training — Pharmacy Technician confirmed taught on-site at the Indi",
+    "SCE-wide certificate catalog also lists Dental Assistant, IT Help Desk Professional, Medic",
+    "Financial aid / FAFSA counseling and processing",
+    "Admissions and enrollment support via a dedicated Indio-based Admissions Technician and Re",
+    "Access: application or cohort"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "roadrunner-makers-college-of-the-desert-palm-desert",
+   "name": "Roadrunner Makers (College of the Desert)",
+   "city": "Palm Desert",
+   "address": "43-500 Monterey Ave, Palm Desert, CA 92260",
+   "category": "maker",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.collegeofthedesert.edu/students/acad-prog/applied-science-business/makerspace/default.php",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "3D printing",
+    "Laser engraving/cutting",
+    "Vinyl printing and cutting",
+    "T-shirt heat press",
+    "Access: application or cohort"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "royale-vacation-rentals-la-quinta",
+   "name": "Royale Vacation Rentals",
+   "city": "La Quinta",
+   "address": "78080 Calle Estado, Suite 101, La Quinta, CA 92253",
+   "category": "property",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.royalevacationrentals.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/royale-vacation-rentals",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Luxury vacation rentals",
+    "Vacation rental / STR management",
+    "Private pools",
+    "Golf/country-club (PGA West)",
+    "Serves: La Quinta, Indian Wells, Palm Desert, Indio, Rancho Mirage"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "sacred-heart-school-palm-desert",
+   "name": "Sacred Heart School",
+   "city": "Palm Desert",
+   "address": "43775 Deep Canyon Rd, Palm Desert, CA 92260",
+   "category": "schools",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://school.sacredheartpalmdesert.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/family-schooling/sacred-heart-school",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Grades or ages: Preschool–8th grade",
+    "Affiliation: Catholic"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "seabreeze-management-company-palm-desert",
+   "name": "Seabreeze Management Company",
+   "city": "Palm Desert",
+   "address": "36945 Cook Street, Suite 104, Palm Desert, CA 92211",
+   "category": "hoa",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://seabreezemgmt.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/seabreeze-management-company",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "HOA management",
+    "Community association management",
+    "DRE consulting",
+    "New development",
+    "Serves: Coachella Valley, Bay Area, Central Coast, Inland Empire, Las Vegas"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "tamarisk-country-club-rancho-mirage",
+   "name": "Tamarisk Country Club",
+   "city": "Rancho Mirage",
+   "address": "70-240 Frank Sinatra Dr, Rancho Mirage, CA 92270",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.tamariskcc.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tamarisk-country-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Access: private member",
+    "18 holes",
+    "Clubhouse dining (formal and casual dining rooms)",
+    "Membership (Join/tour booking)",
+    "Members-only portal"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-club-at-morningside-rancho-mirage",
+   "name": "The Club at Morningside",
+   "city": "Rancho Mirage",
+   "address": "39033 Morningside Dr, Rancho Mirage, CA 92264",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.clubatmorningside.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-club-at-morningside",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Access: private member",
+    "18-hole Jack Nicklaus Signature Golf Course",
+    "Par 72, 6,851 yards",
+    "20 acres of illuminated lakes (in play on 14 of 18 holes)",
+    "51,000 sq ft clubhouse"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-downs-team-rancho-mirage",
+   "name": "The Downs Team",
+   "city": "Rancho Mirage",
+   "address": "72605 CA-111, Suite B2, Palm Desert, CA 92260",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://thedownsteam.net",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-downs-team",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Golf/country-club",
+    "Snowbird/seasonal",
+    "Residential leasing",
+    "Serves: Rancho Mirage, Palm Desert, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-hideaway-golf-club-la-quinta",
+   "name": "The Hideaway Golf Club",
+   "city": "La Quinta",
+   "address": "80-440 Hideaway Club Ct, La Quinta, CA 92253",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://hideawaygolfclub.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-hideaway-golf-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: private member",
+    "Two 18-hole championship courses (Clive Clark course and Pete Dye course)",
+    "Spanish-style clubhouse with multiple dining venues and outdoor veranda",
+    "Chef-driven dining with sommelier wine pairings",
+    "600-acre desert and mountain setting"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-hive-coworking-palm-springs",
+   "name": "The Hive Coworking",
+   "city": "Palm Springs",
+   "address": "1801 E Tahquitz Canyon Way, Suite 100, Palm Springs, CA 92262",
+   "category": "coworking",
+   "anchor": true,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.thehivecoworking.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Hot desk / drop-in desk",
+    "Dedicated desk",
+    "Private office",
+    "Team/company suite",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-la-quinta-country-club-la-quinta",
+   "name": "The La Quinta Country Club",
+   "city": "La Quinta",
+   "address": "77-750 Avenue 50, La Quinta, CA 92253",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.lqcc.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/the-la-quinta-country-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Access: private member",
+    "18-hole golf course",
+    "35,000+ sq ft clubhouse (rebuilt 2009, expanded 2023)",
+    "Full dining (indoor fireside + terrace)",
+    "Wellness/fitness facility"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-munselle-group-palm-desert",
+   "name": "The Munselle Group",
+   "city": "Palm Desert",
+   "address": "73545 El Paseo, Suite 2504, Palm Desert, CA 92260",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://themunsellegroup.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/the-munselle-group",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Golf/country-club",
+    "Condos",
+    "1031 exchange",
+    "Serves: Palm Desert, Palm Springs, Rancho Mirage, Indian Wells, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-syndicate-palm-desert",
+   "name": "The Syndicate",
+   "city": "Palm Desert",
+   "address": "74399 Highway 111, Palm Desert, CA 92260",
+   "category": "coworking",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.syndicatepd.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Hot desk / day pass desk",
+    "Private executive office",
+    "Virtual office with mailing address",
+    "Conference room rental",
+    "Access: appointment or booking"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "the-vintage-club-indian-wells",
+   "name": "The Vintage Club",
+   "city": "Indian Wells",
+   "address": "75-005 Vintage Drive West, Indian Wells, CA 92210",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.thevintageclub.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-home-realestate-coachella-valley/",
+    "name": "AICV home and real estate census"
+   },
+   "description": null,
+   "facts": [
+    "Luxury",
+    "Golf/country-club",
+    "Gated community",
+    "Custom homes",
+    "Serves: Indian Wells"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "thunderbird-country-club-rancho-mirage",
+   "name": "Thunderbird Country Club",
+   "city": "Rancho Mirage",
+   "address": "70-737 Country Club Dr, Rancho Mirage, CA 92270",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.thunderbirdcc.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/thunderbird-country-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Access: private member",
+    "18-hole golf course",
+    "Tennis and pickleball (separate Racquets Club location)",
+    "Clubhouse dining/culinary program",
+    "Wellness facilities"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "toscana-country-club-indian-wells",
+   "name": "Toscana Country Club",
+   "city": "Indian Wells",
+   "address": "76009 Via Club Villa, Indian Wells, CA 92210",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.toscanacc.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/toscana-country-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Access: private member",
+    "36 holes (two 18-hole courses, North and South)",
+    "Jack Nicklaus Signature Golf design",
+    "Bill Harmon Performance Center (golf instruction, junior programs)",
+    "Golf shop/pro shop"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "tradition-golf-club-la-quinta",
+   "name": "Tradition Golf Club",
+   "city": "La Quinta",
+   "address": "78505 Old Avenue 52, La Quinta, CA 92253",
+   "category": "clubs",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-07",
+   "official_contact": {
+    "url": "https://www.discovertradition.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/outdoors-recreation/tradition-golf-club",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Access: private member",
+    "18-hole championship course",
+    "9-hole par-3 course",
+    "Designed by Arnold Palmer (with Ed Seay)",
+    "Driving range/practice facilities"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "u-s-small-business-administration-coachella-valley-satellite-office-palm-desert",
+   "name": "U.S. Small Business Administration – Coachella Valley Satellite Office",
+   "city": "Palm Desert",
+   "address": "73733 Fred Waring Dr., Suite 211, Palm Desert, CA 92260",
+   "category": "support",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.sba.gov/district/orange-county-inland-empire",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Funding programs",
+    "Business counseling",
+    "Federal contracting certifications",
+    "Disaster recovery assistance"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "ucr-palm-desert-center-palm-desert",
+   "name": "UCR Palm Desert Center",
+   "city": "Palm Desert",
+   "address": "75080 Frank Sinatra Drive, Palm Desert, CA 92211",
+   "category": "university",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://palmdesert.ucr.edu",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Degree programs (Low-Residency MFA in Creative Writing)",
+    "Certificate programs (UC Riverside Extension)",
+    "Public lectures and events",
+    "Lifelong learning membership program (OLLI)",
+    "Access: open to public"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "uptown-escrow-services-la-quinta",
+   "name": "Uptown Escrow Services",
+   "city": "La Quinta",
+   "address": "78370 Highway 111, Suite 290, La Quinta, CA 92253",
+   "category": "title",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.uptownescrow.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-home-realestate-coachella-valley/",
+    "name": "AICV home and real estate census"
+   },
+   "description": null,
+   "facts": [
+    "Residential resales",
+    "Refinances",
+    "1031 exchanges",
+    "FSBO",
+    "Serves: La Quinta, Palm Desert, Palm Springs, Indian Wells, Rancho Mirage"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "utopia-management-palm-desert",
+   "name": "Utopia Management",
+   "city": "Palm Desert",
+   "address": "72875 Fred Waring Dr, Ste B, Palm Desert, CA 92260",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://utopiamanagement.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/utopia-management",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Residential",
+    "Condos",
+    "Apartments",
+    "Commercial",
+    "Serves: Palm Desert, Palm Springs, Riverside, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "vanmar-executive-suites-palm-desert",
+   "name": "Vanmar Executive Suites",
+   "city": "Palm Desert",
+   "address": "77-711 Flora Road, Palm Desert, CA 92211",
+   "category": "coworking",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-07-29",
+   "official_contact": {
+    "url": "https://www.vanmarsuites.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/reports/agent-mapped-founder-infrastructure-coachella-valley/",
+    "name": "AICV founder infrastructure census"
+   },
+   "description": null,
+   "facts": [
+    "Private furnished office",
+    "Virtual mailing address",
+    "Receptionist and mail/package handling",
+    "Conference room rental",
+    "Access: membership"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "vanmar-lending-palm-desert",
+   "name": "Vanmar Lending",
+   "city": "Palm Desert",
+   "address": "77824 Wildcat Dr, Palm Desert, CA 92211",
+   "category": "mortgage",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.vanmarlending.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/vanmar-lending",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "FHA loans",
+    "VA financing",
+    "USDA loans",
+    "Conventional loans",
+    "Serves: Palm Desert, Coachella Valley, Reno NV"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "vare-properties-la-quinta",
+   "name": "VARE Properties",
+   "city": "La Quinta",
+   "address": "78140 Calle Tampico Unit #103, La Quinta, CA 92253",
+   "category": "property",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.vareproperties.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/vare-properties",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Vacation rental management",
+    "STR / short-term rental management",
+    "Full-service property management",
+    "Luxury rentals",
+    "Serves: La Quinta, Indio, Palm Springs, Coachella"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "wfg-national-title-company-la-quinta",
+   "name": "WFG National Title Company",
+   "city": "La Quinta",
+   "address": "43576 Washington St Suite 120, La Quinta, CA 92253",
+   "category": "title",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://wfgtitle.com/la-quinta-office/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/wfg-national-title-company",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Title insurance",
+    "Escrow services",
+    "Residential transactions",
+    "Commercial services",
+    "Serves: Palm Springs, Hesperia, Murrieta, San Bernardino, Yucca Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "blocked"
+   }
+  },
+  {
+   "id": "windermere-real-estate-desert-properties-la-quinta-la-quinta",
+   "name": "Windermere Real Estate Desert Properties – La Quinta",
+   "city": "La Quinta",
+   "address": "78-100 Main Street, La Quinta, CA 92253",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.windermere.com/directory/offices/la-quinta-2",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/windermere-real-estate-desert-properties-la-quinta",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Serves: La Quinta, Coachella Valley"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "wonderland-escrow-la-quinta",
+   "name": "Wonderland Escrow",
+   "city": "La Quinta",
+   "address": "47050 Washington Street, Suite 4202, La Quinta, CA 92253",
+   "category": "title",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://wonderlandescrow.com/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/wonderland-escrow",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Escrow services",
+    "Home purchases",
+    "Earnest money deposit handling",
+    "Title report review",
+    "Serves: Coachella Valley, La Quinta, Rancho Mirage, Los Angeles, Santa Clarita"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "xavier-college-preparatory-high-school-palm-desert",
+   "name": "Xavier College Preparatory High School",
+   "city": "Palm Desert",
+   "address": "34200 Cook St, Palm Desert, CA 92211",
+   "category": "schools",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.xavierprep.org/",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/family-schooling/xavier-college-preparatory-high-school",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Grades or ages: grades 9–12",
+    "Affiliation: Catholic (Jesuit)"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  },
+  {
+   "id": "zwemmer-realty-group-indian-wells",
+   "name": "Zwemmer Realty Group",
+   "city": "Indian Wells",
+   "address": "75486 Augusta Dr, Indian Wells, CA 92210",
+   "category": "brokers",
+   "anchor": false,
+   "label": "observed",
+   "label_text": "Observed by AICV",
+   "observed_date": "2026-06-12",
+   "official_contact": {
+    "url": "https://www.zwemmerrealty.com",
+    "phone": null
+   },
+   "source": {
+    "url": "https://aicoachellavalley.com/agent-preview/home-real-estate/zwemmer-realty-group",
+    "name": "AICV Agent Preview record"
+   },
+   "description": null,
+   "facts": [
+    "Official site lists this address (read October 31, 2026)",
+    "Luxury",
+    "Golf/country-club",
+    "Desert lifestyle",
+    "Serves: Indian Wells, Palm Desert, Palm Springs, Rancho Mirage, La Quinta"
+   ],
+   "site_check": {
+    "date": "2026-10-31",
+    "result": "answered"
+   }
+  }
+ ],
+ "held_for_qualification": {
+  "needs_qualification": 87,
+  "address not confirmed": 1,
+  "not clearly a business a founder would ask about": 1
+ }
+}

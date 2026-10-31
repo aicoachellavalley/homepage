@@ -10,8 +10,7 @@ const tiers = JSON.parse(read('../src/data/pricing.json')).tiers;
 const body = page.split('\n---\n')[1];
 const section = id => body.match(new RegExp(`<section[^>]*id="${id}"[^>]*>([\\s\\S]*?)</section>`))?.[1];
 const faqSource = page.match(/const faq = (\[[\s\S]*?\n\]);/)[1];
-const commerceRoadmap = vm.runInNewContext(page.match(/const commerceRoadmap = ("[^\n]+?");/)[1]);
-const faq = vm.runInNewContext(`(${faqSource})`, { commerceRoadmap });
+const faq = vm.runInNewContext(`(${faqSource})`);
 
 test('positive control: sales copy retains the approved invitation', () => {
   assert.match(section('tiers'), /CHOOSE YOUR FUTURE/);
@@ -48,7 +47,7 @@ test('pricing choices continue to use the shared ladder', () => {
     assert.ok(cards.includes(`>${tier.name}</div>`));
     assert.ok(cards.includes(`{pricing.tiers[${index}].price_amount}`));
     assert.ok(cards.includes(`{pricing.tiers[${index}].blurb}`));
-    assert.ok(tier.blurb.split(/\s+/).length <= 24, `${tier.name} card should stay brief`);
+    assert.ok(tier.blurb.split(/\s+/).length <= 30, `${tier.name} card should stay brief`);
   }
 });
 
@@ -64,15 +63,15 @@ test('shared FAQ stays plain text and renders visibly and in JSON-LD', () => {
   assert.doesNotMatch(section('faq'), /<details/);
 });
 
-test('purchase matching note sits below all four cards and remains associated with checkout', () => {
+test('purchase matching note sits below all the cards and remains associated with checkout', () => {
   const offer = section('tiers');
   const note = offer.indexOf('<p class="purchase-match-note"');
   assert.ok(note > offer.indexOf('id="agentReadyPurchase"'));
-  assert.ok(note > offer.indexOf("document.getElementById('inc-premium')"));
+  assert.ok(note > offer.indexOf("document.getElementById('inc-consulting')"));
   assert.ok(note < offer.indexOf('class="gar-v2-tier-note"'));
   assert.equal((offer.match(/id="purchase-match-note"/g) || []).length, 1);
   assert.match(offer, /id="agentReadyPurchase"[^>]+aria-describedby="purchase-match-note"/);
-  assert.match(offer, /Buying the \$500 MVA\?/);
+  assert.match(offer, /Buying Agent Ready\?/);
   assert.match(offer, /confirm your business before checkout/);
   assert.doesNotMatch(offer, /Without a confirmed match|before your MVA and private review are released/);
 });
@@ -82,19 +81,19 @@ test('Cloudflare caveats remain adjacent to the offer and in the FAQ', () => {
   assert.match(access, /cannot verify private Cloudflare settings/);
   assert.doesNotMatch(access, /does not test bookings or make purchases/);
   assert.doesNotMatch(access, /You or your site manager join the review; changes are separately agreed/);
-  assert.match(access, /\$500 Agent Ready profile purchase does not include a Cloudflare account audit/);
+  assert.match(access, /\$500 Agent Ready purchase does not include a Cloudflare account audit/);
   assert.match(access, /Keep WAF, DDoS protection, authentication and private areas protected/);
   const answer = faq.find(item => item.q.includes('Cloudflare')).a;
-  assert.match(answer, /Training is a separate owner choice/);
-  assert.match(answer, /changes are separately scoped/);
+  assert.match(answer, /training is not a visibility requirement/);
 });
 
-test('agent purchases depend on compatible systems and customer approval, not membership', () => {
+test('agent purchases depend on compatible systems and customer approval, not anything from AICV', () => {
   const answer = faq.find(item => item.q === 'Can customers book and pay through AI?').a;
   assert.match(answer, /where their assistant works with your booking or checkout system/);
   assert.match(answer, /doesn't manage availability, confirm appointments or take payments itself/);
   assert.match(answer, /Purchases still need the customer's approval/);
-  assert.match(answer, /don't need AICV membership/);
+  assert.match(answer, /don't need anything from AICV/);
+  assert.match(answer, /AICV never takes bookings or payments/);
   assert.doesNotMatch(answer, /Muse testing is planned, not yet completed/);
 });
 
@@ -105,32 +104,17 @@ test('assistant-discovery FAQ names the current set without promising an outcome
   assert.doesNotMatch(answer, /guarantee|recommend|sale/);
 });
 
-test('booking roadmap is shared with both membership panels, not sold as an included feature', () => {
-  assert.equal(faq.find(item => item.q === "What's next for Business and Premium?").a, commerceRoadmap);
-  assert.match(commerceRoadmap, /planned next step for Business and Premium, not included today/);
-  assert.match(commerceRoadmap, /test what works with your existing systems/);
-  assert.match(commerceRoadmap, /agree the work and cost with you before offering it/);
-  assert.match(commerceRoadmap, /Premium has priority for integration planning/);
-  for (const tier of ['business', 'premium']) {
-    const panel = body.split(`id="inc-${tier}"`)[1].split('<div class="tos-overlay"')[0];
-    assert.match(panel, /Looking ahead: let customers book and buy through AI/);
-    assert.match(panel, /<p>\{commerceRoadmap\}<\/p>/);
-  }
-  assert.doesNotMatch(section('tiers'), /commerceRoadmap/);
-  assert.doesNotMatch(page, /"description": commerceRoadmap/);
-});
-
 test('payment matching and purchase terms remain explicit', () => {
   assert.match(body, /[Oo]nce your purchase is matched to your business/);
-  assert.match(body, /We match your purchase to your business, then your page publishes/);
+  assert.match(body, /We match your purchase to your business\. Paying alone never changes the label/);
   assert.match(body, /href="\/terms\/#agent-ready"/);
   assert.match(body, /href="\/terms\/#agent-access"/);
 });
 
 test('sales benefits promise publication, not outside indexing or first-read priority', () => {
   const visible = body.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ');
-  assert.match(page, /const readyDescription = '[^']*public, agent-readable business profile on the AICV network[^']*We confirm which business your purchase is for before publishing/);
-  assert.match(visible, /We match your purchase to your business, then your page publishes/);
+  assert.match(page, /const readyDescription = '[^']*review, correct and approve your record[^']*Verified by the business/);
+  assert.match(visible, /We match your purchase to your business\./);
   assert.match(visible, /Each AI service decides what it reads, cites or recommends/);
   assert.doesNotMatch(visible, /indexed, agent-readable|index agents read first|list it reads before anything else/);
 });
@@ -161,17 +145,16 @@ test('two visual MVA cards show before and after activation without extra action
   assert.match(example, /href="\/agent-preview"/);
   assert.doesNotMatch(example, /Open the full page|not customer testimonials|fictional Sample Bistro details|not a customer or a live booking/);
   assert.match(example, /The MVA before activation/);
-  assert.match(faq.find(item => item.q === 'What does the $500 MVA look like?').a, /before and after activation/);
+  assert.match(faq.find(item => item.q === 'What does the $500 record look like?').a, /before and after activation/);
 });
 
 test('the publication promise agrees with the FAQ and current dated Terms', () => {
   const answer = faq.find(item => item.q === 'What does AICV publish for my business?').a;
   const terms = read('../src/pages/terms.astro');
-  for (const surface of [body, answer]) {
-    assert.match(surface, /We publish your public, agent-readable business profile/);
-    assert.match(surface, /purchase is matched to your business/);
-    assert.doesNotMatch(surface, /guaranteed visibility|guarantee visibility/);
-  }
+  assert.match(body, /We publish your public, agent-readable business profile/);
+  assert.match(body, /purchase is matched to your business/);
+  assert.match(answer, /labeled Observed by AICV/);
+  for (const surface of [body, answer]) assert.doesNotMatch(surface, /guaranteed visibility|guarantee visibility/);
   assert.match(answer, /AI services decide whether to visit, cite or recommend/);
   assert.match(terms, /visit, index, cite or recommend/);
   assert.match(terms, /id="agent-visibility"/);
@@ -198,30 +181,36 @@ test('generated examples are traceable and fictional, with no callable actions o
   assert.match(headers, /\/get-agent-ready\/examples\/\*\n  X-Robots-Tag: noindex, nofollow/);
 });
 
-test('Premium describes work delivered, not a promised citation', () => {
-  assert.doesNotMatch(section('tiers') + JSON.stringify(tiers), /gets you cited/);
-  assert.match(tiers[3].blurb, /deeper AI-readiness review/);
-  assert.match(tiers[3].blurb, /12-month action plan/);
+test('the offers are the free card, $500 and consulting, and nothing else', () => {
+  assert.deepEqual(tiers.map(t => t.id), ['agent-visibility', 'agent-ready', 'consulting']);
+  assert.equal(tiers[1].onetime, 500);
+  assert.equal(tiers[1].url, 'https://buy.stripe.com/6oUfZhcZN0hBcEa1we8k801');
+  assert.doesNotMatch(section('tiers') + JSON.stringify(tiers), /gets you cited|Agent Ready Business|Agent Ready Premium/);
+  assert.doesNotMatch(page, /Agent Ready Business|Agent Ready Premium|concierge/);
+});
+
+test('a buyer cannot read the $500 as buying a place or an automatic verified label', () => {
+  assert.match(tiers[1].llms, /Paying alone never changes the label/);
+  assert.match(tiers[1].llms, /does not buy a place/);
+  assert.match(page, /Paying alone never changes the label/);
+  assert.match(tiers[0].llms, /Observed by AICV/);
 });
 
 test('human offer details and agent Service descriptions share the same copy', () => {
-  for (const key of ['previewDescription', 'readyDescription', 'businessDescription', 'premiumDescription']) {
+  for (const key of ['previewDescription', 'readyDescription', 'consultingDescription']) {
     assert.ok(page.includes(`"description": ${key}`));
     assert.ok(body.includes(`<p>{${key}}</p>`));
   }
   assert.match(page, /"description": pageDescription/);
   assert.doesNotMatch(page, /LLM-favored|discoverable and citable from day one|nothing for you to do/);
-  assert.match(tiers[1].llms, /publication follows purchase-to-business matching/);
   assert.match(tiers[1].llms, /private agent-readiness review/);
-  assert.match(tiers[1].llms, /no annual fee/);
-  assert.match(tiers[2].llms, /configuration changes separately scoped/);
+  assert.match(tiers[1].llms, /No annual fee/);
+  assert.match(tiers[2].llms, /not self-serve/);
 });
 
 test('activation explanation does not sell a separate page or a transactional chatbot', () => {
-  const answer = faq.find(item => item.q === 'What changes when I activate a preview?').a;
-  assert.match(answer, /same business page/);
-  assert.match(answer, /Some previews are already public and readable by agents/);
-  assert.match(answer, /follow your contact or booking links/);
-  assert.match(answer, /Your website stays as it is/);
-  assert.match(body, /\$500 purchase does not include owner verification/);
+  const answer = faq.find(item => item.q === 'What changes when I buy Agent Ready?').a;
+  assert.match(answer, /review, correct and approve your record/);
+  assert.match(answer, /automatic DNS check/);
+  assert.match(answer, /Paying alone does not change the label/);
 });

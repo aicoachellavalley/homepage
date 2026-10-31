@@ -94,8 +94,8 @@ test('network error still re-enables form', async () => {
   assert.equal(h.element('aioErr').textContent, 'offline');
 });
 test('merchant scope stays explicit and free tool no longer advertises a score', () => {
-  assert.match(page, /owner-assisted SAT review/);
-  assert.match(page, /\$500 Agent Ready profile purchase does not include a Cloudflare account audit/);
+  assert.doesNotMatch(page, /owner-assisted SAT review/);
+  assert.match(page, /\$500 Agent Ready purchase does not include a Cloudflare account audit/);
   assert.doesNotMatch(page.match(/tooldescription="[^"]*"/)[0], /returns an agent-readiness score/);
   assert.match(page, /id="agent-access"/);
 });

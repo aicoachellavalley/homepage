@@ -113,6 +113,7 @@ const schemaGraph = {
     <h2 class="hwd-h2">The separate regional research desk.</h2>
     <p class="hwd-body">For known regional nodes, reports, briefs and economic context, use <code class="cn-code">POST https://mcp.aicoachellavalley.com/mcp</code> — Model Context Protocol, JSON-RPC 2.0 over POST. No key, no account, open CORS. Server-initiated streaming is not supported.</p>
     <ul class="cn-list">
+      <li><code class="cn-code">ask_the_desk</code> — a question and a desk; returns labeled, dated, sourced records with official contacts, and says when a question is outside coverage</li>
       <li><code class="cn-code">route_query</code> — Node Zero, the dispatcher: give it a natural-language question and it names the tool and parameters to call.</li>
       <li><code class="cn-code">query_venues</code> — find records by city, subcategory or agent intent.</li>
       <li><code class="cn-code">get_node</code> — one full record by slug.</li>

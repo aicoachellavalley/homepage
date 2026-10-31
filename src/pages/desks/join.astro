@@ -1,0 +1,154 @@
+---
+import Base from '../../layouts/Base.astro';
+import Footer from '../../components/Footer.astro';
+import meta from '../../data/desks/desks.json';
+import { desksApiBase, turnstileSiteKey } from '../../../scripts/desks.mjs';
+
+const canonical = 'https://aicoachellavalley.com/desks/join/';
+const description = 'Check whether your Coachella Valley business is eligible for a free place on an AICV desk, then apply or join the waitlist. A place is never sold.';
+const cities = [...meta.coverage.primary, ...meta.coverage.secondary];
+const siteKey = turnstileSiteKey(meta);
+const api = desksApiBase();
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Check eligibility for an AICV desk',
+  description,
+  url: canonical,
+  publisher: { '@id': 'https://aicoachellavalley.com/#organization' },
+};
+---
+
+<Base title="Check Eligibility | AI Coachella Valley" description={description} canonicalUrl={canonical} schema={schema}>
+  <nav class="join-nav" aria-label="Main navigation">
+    <a class="join-brand" href="/">AICV <span>AI Coachella Valley</span></a>
+    <a href="/get-agent-ready/">Offers →</a>
+  </nav>
+  <main class="join-wrap">
+    <p class="join-eyebrow">A place is free and never sold</p>
+    <h1>Check your business</h1>
+    <p class="join-lede">{meta.coverage.rule} This takes a minute and needs no call.</p>
+
+    <form id="join-form" class="join-form" data-api={api}>
+      <label for="j-name">Business name <input id="j-name" name="name" required maxlength="120" autocomplete="organization" /></label>
+      <label for="j-city">City
+        <select id="j-city" name="city" required>
+          <option value="">Choose a city</option>
+          {cities.map(c => <option value={c}>{c}</option>)}
+          <option value="Other">Somewhere else</option>
+        </select>
+      </label>
+      <label for="j-desk">Desk
+        <select id="j-desk" name="desk" required>
+          <option value="">Choose a desk</option>
+          {meta.desks.map(d => <option value={d.slug}>{d.title}</option>)}
+        </select>
+      </label>
+      <label for="j-url">Official website <input id="j-url" name="official_url" type="url" maxlength="300" placeholder="https://" /></label>
+      <label for="j-phone">Business phone <input id="j-phone" name="phone" type="tel" maxlength="30" /></label>
+      <label class="join-check" for="j-open"><input id="j-open" name="open" type="checkbox" /> This business is open and operating</label>
+      <button type="submit" id="join-check-btn">Check eligibility</button>
+    </form>
+    <p id="join-result" class="join-result" role="status" aria-live="polite"></p>
+
+    <section id="join-apply" class="join-apply" hidden aria-labelledby="apply-title">
+      <h2 id="apply-title"></h2>
+      {siteKey ? (
+        <form id="apply-form" class="join-form">
+          <label for="j-email">Email for this record <input id="j-email" type="email" required maxlength="160" autocomplete="email" /></label>
+          <div class="cf-turnstile" data-sitekey={siteKey}></div>
+          <button type="submit" id="join-apply-btn">Submit</button>
+          <p class="join-note">We keep what you submit to run your record or waitlist place. It is free. See <a href="/terms/#desks">how records work</a>.</p>
+        </form>
+      ) : (
+        <p>Applications open soon. Nothing has been saved.</p>
+      )}
+    </section>
+
+    <section class="join-more">
+      <h2>Already have a place?</h2>
+      <p><a href="/get-agent-ready/">Agent Ready</a> lets you review, correct and approve your record. For anything larger, <a href="https://calendar.app.google/AHgC8z8rGoYZ1Eju5">book a conversation with Sat</a> about consulting.</p>
+    </section>
+  </main>
+  <Footer />
+</Base>
+{siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  const form = document.getElementById('join-form');
+  const result = document.getElementById('join-result');
+  const apply = document.getElementById('join-apply');
+  const applyTitle = document.getElementById('apply-title');
+  const applyForm = document.getElementById('apply-form');
+  const values = () => ({
+    name: form.name.value, city: form.city.value, desk: form.desk.value,
+    official_url: form.official_url.value, phone: form.phone.value, open: form.open.checked,
+  });
+  const post = async (path, body) => {
+    const res = await fetch(`${form.dataset.api}${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    return { ok: res.ok, data: await res.json().catch(() => ({})) };
+  };
+  const show = text => { result.textContent = text; };
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    apply.hidden = true;
+    show('Checking…');
+    try {
+      const { ok, data } = await post('/api/desks/eligibility', values());
+      if (!ok) {
+        show('The check could not run. Nothing was saved. Please try again.');
+      } else if (data.status === 'existing') {
+        show(data.note);
+        result.append(' ', Object.assign(document.createElement('a'), { href: data.record_url, textContent: 'Open your record' }));
+      } else if (data.status === 'eligible') {
+        show('Eligible. A place is free.');
+        applyTitle.textContent = 'Apply for your free place';
+        apply.hidden = false;
+      } else if (data.status === 'waitlist') {
+        show(data.reasons?.[0]?.text || 'This business can join the waitlist.');
+        applyTitle.textContent = 'Join the waitlist';
+        apply.hidden = false;
+      } else {
+        show((data.reasons || []).map(r => r.text).join(' ') || 'Check the form and try again.');
+      }
+    } catch {
+      show('The check could not run. Nothing was saved. Please try again.');
+    }
+  });
+  applyForm?.addEventListener('submit', async event => {
+    event.preventDefault();
+    show('Submitting…');
+    try {
+      const turnstile = applyForm.querySelector('[name="cf-turnstile-response"]')?.value;
+      const { data } = await post('/api/desks/apply', { ...values(), contact_email: document.getElementById('j-email').value, turnstile });
+      if (data.status === 'existing') {
+        show(data.note); apply.hidden = true;
+        result.append(' ', Object.assign(document.createElement('a'), { href: data.record_url, textContent: 'Open your record' }));
+      } else if (data.status === 'listed') { show(data.note); apply.hidden = true; }
+      else if (data.status === 'waitlist') { show(`${data.reason || ''} You are on the waitlist. ${data.note || ''}`.trim()); apply.hidden = true; }
+      else show(data.error || data.note || 'Please try again.');
+    } catch {
+      show('Your application could not be sent. Please try again.');
+    }
+  });
+</script>
+
+<style>
+  .join-nav { display: flex; justify-content: space-between; gap: 16px; padding: 16px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); background: var(--pine-dark); }
+  .join-nav a { color: var(--snow); text-decoration: none; font-size: 0.95rem; }
+  .join-brand { font-family: 'Syne', sans-serif; font-weight: 800; }
+  .join-brand span { font-family: 'DM Sans', sans-serif; font-weight: 400; opacity: 0.75; margin-left: 6px; }
+  .join-wrap { width: min(620px, 100%); margin: 0 auto; padding: 40px max(16px, env(safe-area-inset-right, 0px)) 72px max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: 20px; }
+  .join-eyebrow { color: var(--pine-light); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .join-wrap h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; }
+  .join-wrap h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; }
+  .join-form { display: grid; gap: 14px; }
+  .join-form label { display: grid; gap: 4px; font-weight: 500; }
+  .join-form input:not([type='checkbox']), .join-form select { font: inherit; font-weight: 400; padding: 10px; border: 1px solid var(--sand-dark); border-radius: 4px; background: var(--sand-light); color: var(--pine-dark); width: 100%; }
+  .join-check { display: flex !important; gap: 8px; align-items: center; font-weight: 400 !important; }
+  .join-form button { font: inherit; font-weight: 500; padding: 12px 18px; background: var(--pine); color: var(--snow); border: 0; border-radius: 4px; cursor: pointer; justify-self: start; }
+  .join-result { min-height: 1.5em; font-weight: 500; }
+  .join-apply, .join-more { display: grid; gap: 10px; }
+  .join-note { font-size: 0.85rem; }
+  .join-wrap a { color: var(--pine-light); }
+</style>

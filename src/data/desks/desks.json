@@ -1,0 +1,741 @@
+{
+  "$comment": "One record per desk. Page copy, llms.txt, the public JSON and the MCP tool all read this file. A desk with no entries file is not published anywhere.",
+  "network_cap": 1000,
+  "coverage": {
+    "primary": [
+      "Rancho Mirage",
+      "Palm Desert",
+      "Indian Wells"
+    ],
+    "secondary": [
+      "La Quinta",
+      "Indio"
+    ],
+    "anchors_only": "Outside these five cities, AICV keeps only a small set of regional anchors that visitors and relocating founders ask about by name.",
+    "not_covered": [
+      "Palm Springs",
+      "Cathedral City",
+      "Desert Hot Springs",
+      "Coachella",
+      "Thermal",
+      "Thousand Palms",
+      "Bermuda Dunes",
+      "Mecca",
+      "Oasis",
+      "Indio Hills",
+      "Sky Valley",
+      "Joshua Tree",
+      "Yucca Valley"
+    ],
+    "rule": "A record must be open and operating, in scope, fit a desk, and have an official contact. Inclusion is never paid and never depends on buying anything."
+  },
+  "labels": {
+    "observed": {
+      "text": "Observed by AICV",
+      "meaning": "Public facts AICV recorded on the date shown. The business has not confirmed them."
+    },
+    "submitted": {
+      "text": "Submitted information, identity unconfirmed",
+      "meaning": "Someone submitted this for the business. AICV has not confirmed who. It never replaces a sourced field."
+    },
+    "verified": {
+      "text": "Verified by the business",
+      "meaning": "The owner reviewed and approved this record, and the ownership check cleared."
+    }
+  },
+  "not_provided": [
+    "live availability",
+    "current prices or quotes",
+    "bookings or payments",
+    "recommendations or rankings"
+  ],
+  "desks": [
+    {
+      "slug": "visit-retreat",
+      "title": "Visit & Retreat",
+      "headline": "Where a visiting team can stay, meet, eat and get out",
+      "description": "Dated, sourced records of resorts, hotels, venues, group-capable restaurants and activities in Rancho Mirage, Palm Desert, Indian Wells, La Quinta and Indio.",
+      "scope": "Resorts, hotels, venues and retreat planning, plus restaurants where a record shows group or private dining.",
+      "related": [
+        {
+          "label": "Compare retreat options against your requirements",
+          "url": "/plan-team-retreat/"
+        }
+      ],
+      "categories": [
+        {
+          "id": "stay",
+          "title": "Hotels and resorts"
+        },
+        {
+          "id": "venues",
+          "title": "Venues and event spaces"
+        },
+        {
+          "id": "dining",
+          "title": "Restaurants for groups"
+        },
+        {
+          "id": "golf",
+          "title": "Golf"
+        },
+        {
+          "id": "activities",
+          "title": "Activities and attractions"
+        },
+        {
+          "id": "getting-here",
+          "title": "Getting here"
+        }
+      ],
+      "topics": [
+        {
+          "id": "stay",
+          "words": [
+            "hotel",
+            "hotels",
+            "resort",
+            "resorts",
+            "stay",
+            "lodging",
+            "rooms",
+            "accommodation",
+            "accommodations",
+            "overnight",
+            "inn",
+            "villas"
+          ],
+          "categories": [
+            "stay"
+          ]
+        },
+        {
+          "id": "meeting",
+          "words": [
+            "offsite",
+            "off-site",
+            "meeting",
+            "meetings",
+            "conference",
+            "retreat",
+            "retreats",
+            "venue",
+            "venues",
+            "event",
+            "events",
+            "wedding",
+            "ballroom",
+            "workshop"
+          ],
+          "categories": [
+            "venues",
+            "stay"
+          ],
+          "fact_pattern": "event|meeting|conference|venue"
+        },
+        {
+          "id": "dining",
+          "words": [
+            "restaurant",
+            "restaurants",
+            "dinner",
+            "lunch",
+            "breakfast",
+            "brunch",
+            "dining",
+            "eat",
+            "food",
+            "steakhouse",
+            "private dining"
+          ],
+          "categories": [
+            "dining"
+          ]
+        },
+        {
+          "id": "golf",
+          "words": [
+            "golf",
+            "tee",
+            "course",
+            "courses"
+          ],
+          "categories": [
+            "golf"
+          ]
+        },
+        {
+          "id": "activities",
+          "words": [
+            "activity",
+            "activities",
+            "tour",
+            "tours",
+            "hike",
+            "hiking",
+            "outing",
+            "attraction",
+            "attractions",
+            "jeep",
+            "polo",
+            "museum",
+            "tram",
+            "zoo",
+            "garden",
+            "gardens",
+            "shopping",
+            "theater",
+            "theatre",
+            "concert",
+            "concerts",
+            "arena"
+          ],
+          "categories": [
+            "activities"
+          ]
+        },
+        {
+          "id": "getting-here",
+          "words": [
+            "airport",
+            "airports",
+            "fly",
+            "flight",
+            "flights",
+            "plane",
+            "jet"
+          ],
+          "categories": [
+            "getting-here"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "wellness-health",
+      "title": "Wellness & Health",
+      "headline": "Where to find care, recovery and a good spa day",
+      "description": "Dated, sourced records of hospitals, clinics, doctors, spas and wellness providers in Rancho Mirage, Palm Desert, Indian Wells, La Quinta and Indio.",
+      "scope": "Spas, wellness, clinics, hospitals and doctors. These records are not medical advice, and specialist coverage is still thin.",
+      "related": [],
+      "categories": [
+        {
+          "id": "hospitals",
+          "title": "Hospitals and health centers"
+        },
+        {
+          "id": "care",
+          "title": "Primary, concierge and urgent care"
+        },
+        {
+          "id": "counseling",
+          "title": "Counseling and mental health"
+        },
+        {
+          "id": "integrative",
+          "title": "Integrative and chiropractic care"
+        },
+        {
+          "id": "recovery",
+          "title": "Recovery and longevity"
+        },
+        {
+          "id": "spas",
+          "title": "Day spas"
+        },
+        {
+          "id": "med-spas",
+          "title": "Medical spas and aesthetics"
+        },
+        {
+          "id": "fitness",
+          "title": "Fitness and movement"
+        }
+      ],
+      "topics": [
+        {
+          "id": "hospitals",
+          "words": [
+            "hospital",
+            "hospitals",
+            "emergency",
+            "health center",
+            "medical center"
+          ],
+          "categories": [
+            "hospitals"
+          ]
+        },
+        {
+          "id": "care",
+          "words": [
+            "doctor",
+            "doctors",
+            "physician",
+            "primary care",
+            "concierge",
+            "urgent",
+            "clinic",
+            "clinics",
+            "checkup"
+          ],
+          "categories": [
+            "care",
+            "hospitals"
+          ]
+        },
+        {
+          "id": "counseling",
+          "words": [
+            "therapist",
+            "therapy",
+            "counseling",
+            "counselor",
+            "psychologist",
+            "psychiatrist",
+            "mental"
+          ],
+          "categories": [
+            "counseling"
+          ]
+        },
+        {
+          "id": "integrative",
+          "words": [
+            "chiropractor",
+            "chiropractic",
+            "acupuncture",
+            "integrative",
+            "functional medicine"
+          ],
+          "categories": [
+            "integrative"
+          ]
+        },
+        {
+          "id": "recovery",
+          "words": [
+            "recovery",
+            "longevity",
+            "iv",
+            "cryotherapy",
+            "float",
+            "hyperbaric"
+          ],
+          "categories": [
+            "recovery"
+          ]
+        },
+        {
+          "id": "spas",
+          "words": [
+            "spa",
+            "spas",
+            "massage",
+            "facial"
+          ],
+          "categories": [
+            "spas",
+            "med-spas"
+          ]
+        },
+        {
+          "id": "med-spas",
+          "words": [
+            "botox",
+            "aesthetics",
+            "medspa",
+            "med spa",
+            "dermatology",
+            "cosmetic"
+          ],
+          "categories": [
+            "med-spas"
+          ]
+        },
+        {
+          "id": "fitness",
+          "words": [
+            "gym",
+            "gyms",
+            "fitness",
+            "pilates",
+            "yoga",
+            "trainer"
+          ],
+          "categories": [
+            "fitness"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "live-build",
+      "title": "Live & Build",
+      "headline": "What a founder needs to move here and build",
+      "description": "Dated, sourced records of real estate, country clubs, schools, coworking, founder support and higher education in Rancho Mirage, Palm Desert, Indian Wells, La Quinta and Indio.",
+      "scope": "Real estate professionals, country clubs and communities, private schools, coworking, founder networks, the university and the startup ecosystem. AICV does not list individual homes.",
+      "related": [
+        {
+          "label": "Compare workspace and founder-support options",
+          "url": "/choose-workspace/"
+        }
+      ],
+      "categories": [
+        {
+          "id": "brokers",
+          "title": "Real estate brokerages"
+        },
+        {
+          "id": "mortgage",
+          "title": "Mortgage lenders"
+        },
+        {
+          "id": "title",
+          "title": "Title and escrow"
+        },
+        {
+          "id": "inspectors",
+          "title": "Home inspectors"
+        },
+        {
+          "id": "property",
+          "title": "Property management and rentals"
+        },
+        {
+          "id": "hoa",
+          "title": "Community association managers"
+        },
+        {
+          "id": "clubs",
+          "title": "Country clubs"
+        },
+        {
+          "id": "communities",
+          "title": "Communities"
+        },
+        {
+          "id": "schools",
+          "title": "Private schools"
+        },
+        {
+          "id": "coworking",
+          "title": "Coworking and offices"
+        },
+        {
+          "id": "university",
+          "title": "University and college"
+        },
+        {
+          "id": "support",
+          "title": "Founder support"
+        },
+        {
+          "id": "capital",
+          "title": "Capital"
+        },
+        {
+          "id": "community",
+          "title": "Builder communities"
+        },
+        {
+          "id": "maker",
+          "title": "Maker spaces"
+        },
+        {
+          "id": "civic",
+          "title": "City business offices and chambers"
+        }
+      ],
+      "topics": [
+        {
+          "id": "homes",
+          "words": [
+            "home",
+            "homes",
+            "house",
+            "houses",
+            "realtor",
+            "realtors",
+            "broker",
+            "brokers",
+            "real estate",
+            "buy"
+          ],
+          "categories": [
+            "brokers"
+          ]
+        },
+        {
+          "id": "mortgage",
+          "words": [
+            "mortgage",
+            "lender",
+            "lenders",
+            "loan",
+            "loans"
+          ],
+          "categories": [
+            "mortgage"
+          ]
+        },
+        {
+          "id": "closing",
+          "words": [
+            "escrow",
+            "title"
+          ],
+          "categories": [
+            "title"
+          ]
+        },
+        {
+          "id": "inspect",
+          "words": [
+            "inspector",
+            "inspectors",
+            "inspection"
+          ],
+          "categories": [
+            "inspectors"
+          ]
+        },
+        {
+          "id": "rent",
+          "words": [
+            "rent",
+            "rental",
+            "rentals",
+            "lease",
+            "property management",
+            "property manager"
+          ],
+          "categories": [
+            "property"
+          ]
+        },
+        {
+          "id": "hoa",
+          "words": [
+            "hoa",
+            "association"
+          ],
+          "categories": [
+            "hoa"
+          ]
+        },
+        {
+          "id": "clubs",
+          "words": [
+            "club",
+            "clubs",
+            "country club",
+            "golf",
+            "membership",
+            "member"
+          ],
+          "categories": [
+            "clubs"
+          ]
+        },
+        {
+          "id": "communities",
+          "words": [
+            "community",
+            "communities",
+            "neighborhood",
+            "neighborhoods",
+            "gated"
+          ],
+          "categories": [
+            "communities",
+            "clubs"
+          ]
+        },
+        {
+          "id": "schools",
+          "words": [
+            "school",
+            "schools",
+            "k-12",
+            "private school",
+            "prep"
+          ],
+          "categories": [
+            "schools"
+          ]
+        },
+        {
+          "id": "coworking",
+          "words": [
+            "coworking",
+            "co-working",
+            "workspace",
+            "office",
+            "offices",
+            "desk",
+            "desks"
+          ],
+          "categories": [
+            "coworking"
+          ]
+        },
+        {
+          "id": "university",
+          "words": [
+            "university",
+            "college",
+            "campus",
+            "csusb",
+            "ucr",
+            "students",
+            "talent"
+          ],
+          "categories": [
+            "university"
+          ]
+        },
+        {
+          "id": "support",
+          "words": [
+            "startup",
+            "startups",
+            "incubator",
+            "accelerator",
+            "sbdc",
+            "mentor",
+            "mentors",
+            "entrepreneur",
+            "entrepreneurs",
+            "small business"
+          ],
+          "categories": [
+            "support",
+            "community"
+          ]
+        },
+        {
+          "id": "capital",
+          "words": [
+            "investor",
+            "investors",
+            "capital",
+            "funding",
+            "venture",
+            "angel"
+          ],
+          "categories": [
+            "capital"
+          ]
+        },
+        {
+          "id": "community",
+          "words": [
+            "meetup",
+            "meetups",
+            "builders"
+          ],
+          "categories": [
+            "community"
+          ]
+        },
+        {
+          "id": "maker",
+          "words": [
+            "maker",
+            "makerspace",
+            "fabrication"
+          ],
+          "categories": [
+            "maker"
+          ]
+        },
+        {
+          "id": "civic",
+          "words": [
+            "economic development",
+            "chamber",
+            "city hall",
+            "permits",
+            "permit"
+          ],
+          "categories": [
+            "civic"
+          ]
+        }
+      ]
+    }
+  ],
+  "other_desks": [
+    {
+      "slug": "visit-retreat",
+      "title": "Visit & Retreat",
+      "words": [
+        "hotel",
+        "hotels",
+        "resort",
+        "resorts",
+        "offsite",
+        "venue",
+        "venues",
+        "restaurant",
+        "restaurants",
+        "dinner",
+        "retreat",
+        "airport"
+      ]
+    },
+    {
+      "slug": "wellness-health",
+      "title": "Wellness & Health",
+      "words": [
+        "doctor",
+        "doctors",
+        "hospital",
+        "hospitals",
+        "clinic",
+        "clinics",
+        "dentist",
+        "therapist",
+        "urgent",
+        "medical",
+        "physician",
+        "cardiologist",
+        "dermatologist",
+        "pediatrician",
+        "surgeon",
+        "specialist",
+        "dentists",
+        "therapy"
+      ]
+    },
+    {
+      "slug": "live-build",
+      "title": "Live & Build",
+      "words": [
+        "home",
+        "homes",
+        "house",
+        "houses",
+        "realtor",
+        "broker",
+        "mortgage",
+        "neighborhood",
+        "relocate",
+        "relocating",
+        "coworking",
+        "startup",
+        "startups",
+        "founder",
+        "founders",
+        "university",
+        "school",
+        "schools",
+        "investor",
+        "investors",
+        "accelerator"
+      ]
+    }
+  ],
+  "turnstile_site_key": ""
+}
