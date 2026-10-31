@@ -34,7 +34,7 @@ const schema = {
   <main class="dx-wrap">
     <h1>Three desks, one network</h1>
     <p class="dx-lede">{description}</p>
-    <p class="dx-count">{total} maintained records, of up to {meta.network_cap.toLocaleString('en-US')}. Participation is separate: {count('submitted')} businesses enrolled, {count('verified')} verified by the business. Latest check {formatDate(latest)}.</p>
+    <p class="dx-count">{total} maintained records, of up to {meta.network_cap.toLocaleString('en-US')}. Participation is separate: enrolled {count('submitted')}, verified by the business {count('verified')}. Latest check {formatDate(latest)}.</p>
     <div class="dx-grid">
       {desks.map(d => (
         <a class="dx-card" href={`/desks/${d.slug}/`}>
