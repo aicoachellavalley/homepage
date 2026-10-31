@@ -199,3 +199,27 @@ test('structured lodging instructions override text, and genuine day-only reques
   assert.equal(day.requirements.nights, 0);
   assert.equal(day.requirements.rooms, null);
 });
+
+test('exact phrases on their own keep their meaning', async () => {
+  const parker = await call({ query: 'Exclude Parker' });
+  assert.equal(parker.intent, 'team-retreat');
+  assert.ok(parker.results.length > 0);
+  assert.ok(parker.results.every(v => !/parker/i.test(v.name)));
+  assert.ok(parker.exclusions.some(v => /parker/i.test(v.name) && v.reasons.some(r => r.evidence_type === 'caller_requirement')));
+  const sensei = await call({ query: 'alternatives to Sensei' });
+  assert.equal(sensei.intent, 'team-retreat');
+  assert.ok(sensei.results.length > 0);
+  assert.ok(sensei.results.every(v => !/sensei/i.test(v.name)));
+  const rooms = await call({ query: 'We are not sharing rooms', group_size: 16 });
+  assert.equal(rooms.intent, 'team-retreat');
+  assert.equal(rooms.requirements.shared_lodging, false);
+  assert.equal(rooms.requirements.rooms, 16);
+  const stay = await call({ query: 'Two nights with one day of strategy meetings' });
+  assert.equal(stay.intent, 'team-retreat');
+  assert.equal(stay.requirements.nights, 2);
+  assert.equal(stay.requirements.day_only, false);
+  assert.ok(stay.unresolved_constraints.length > 0 || stay.next_questions.length > 0);
+  const other = await call({ query: 'Exclude Starbucks' });
+  assert.equal(other.status, 'no_match');
+  assert.ok(other.limitations.some(l => /leave out/.test(l)));
+});

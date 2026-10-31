@@ -51,6 +51,7 @@ const schema = {
       Source: {sourceHref(e.source.url) ? <a href={sourceHref(e.source.url)}>{e.source.name}</a> : e.source.name}.
       {e.site_check?.result === 'blocked' && <> Official site blocked AICV's check on {formatDate(e.site_check.date)}.</>}
       {e.site_check?.result === 'answered' && <> Official site answered AICV's check on {formatDate(e.site_check.date)}.</>}
+      {e.site_check?.result === 'failed' && <> Official site did not answer AICV's check on {formatDate(e.site_check.date)}.</>}
       AICV's website checks do not update the facts above.
     </p>
 

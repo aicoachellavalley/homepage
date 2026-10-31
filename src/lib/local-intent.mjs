@@ -103,12 +103,16 @@ export function getBusinessPreview(input, catalog) {
 function nodeContext(catalog, slugs, city) {
   return catalog.nodes.filter((n) => slugs.includes(n.slug) && (!city || city === 'Coachella Valley' || n.city === city || n.city === 'Coachella Valley')).map((n) => publicRecord(n));
 }
+const EXCLUSION_CUE = /\b(?:exclude|excluding|avoid|except|alternatives? to|instead of|other than|rather than)\b/;
 function isTeamRetreatQuestion(q) {
   // People describe the job they need done, not necessarily our page label.
   // Keep cafe meetings distinct and avoid treating an office search as a trip.
   if (/\b(coffee|cafe|cafes|matcha)\b/.test(q)) return false;
   if (/\b(retreat|offsite|off site)\b/.test(q)) return true;
   if (/\b(satellite|office|relocat(?:e|ion|ing))\b/.test(q)) return false;
+  // A lodging arrangement, or a stay with meetings, describes a retreat on its own.
+  if (/\b(?:(?:not|no|never|without|do not|don t|will not|won t|cannot|can t) (?:be )?shar(?:e|ed|ing)|shar(?:e|ed|ing) rooms?|own rooms?|individual rooms?|single occupancy|double occupancy)\b/.test(q)) return true;
+  if (/\b(night|nights|overnight)\b/.test(q) && /\b(meeting|meetings|strategy|workshop|workshops|working session|working sessions)\b/.test(q)) return true;
   const workingGroup = /\b(team|teams|executive|executives|leadership|board|company|corporate)\b/.test(q);
   const overnightVenue = /\b(night|nights|overnight|stay|stays|resort|resorts|hotel|hotels|room|rooms)\b/.test(q);
   const workingGathering = /\b(working session|working sessions|workshop|workshops|meeting room|meeting rooms|team gathering|team building|reconnect|off property)\b/.test(q)
@@ -129,7 +133,14 @@ export function resolveLocalIntent(input, catalog) {
     if(workspace==='satellite-base' || workspace==='founder-support') result.regional_context=nodeContext(catalog,['palm-desert-economic-development','coachella-valley-economic-development','cook-street-university-row','workforce-talent','innovation-economy','north-palm-desert-development-zone'],city);
     return result;
   }
-  if (input.decision === 'team-retreat' || isTeamRetreatQuestion(q)) {
+  // "Exclude Parker" or "alternatives to Sensei" names a researched venue to leave out,
+  // so it asks for the other venues. Searching those words would return the excluded one.
+  const ruledOut = EXCLUSION_CUE.test(q) && (catalog.retreat?.options ?? []).some(o =>
+    [o.slug, o.name.split(/[,(]/)[0], ...(o.aliases ?? [])].map(normalize).some(a => {
+      const words = a.split(' ').filter(w => !['the', 'palm', 'springs', 'hotel', 'resort'].includes(w) && w.length >= 4);
+      return words.length && words.some(w => new RegExp(`\\b${w}\\b`).test(q));
+    }));
+  if (input.decision === 'team-retreat' || isTeamRetreatQuestion(q) || ruledOut) {
     return resolveRetreat(input, catalog, base, q, city, group);
   }
   if (/\b(satellite|relocat(?:e|ion|ing)|startup|workforce|econom(?:y|ic)|invest|investment|university|universities)\b/.test(q) && !/\b(coffee|cafe|restaurant)\b/.test(q)) {
@@ -138,8 +149,16 @@ export function resolveLocalIntent(input, catalog) {
     base.next_questions = ['What team size, operating needs and time horizon are you evaluating?'];
     return { ...base, status: base.regional_context.length ? 'matches' : 'no_match', intent: /satellite/.test(q) ? 'satellite-base' : 'regional-research' };
   }
-  const search = searchBusinessPreviews({ query, ...(city ? { city } : {}), limit: input.limit ?? 6 }, catalog);
-  base.results = search.results;
+  // Anything else the caller rules out comes off the search and off the results.
+  const leftOut = EXCLUSION_CUE.test(q) ? normalize(query.replace(/^.*?\b(?:exclude|excluding|avoid|except(?: for)?|alternatives? to|instead of|other than|rather than)\b/i, '')) : '';
+  const wanted = leftOut ? query.replace(/\b(?:exclude|excluding|avoid|except(?: for)?|alternatives? to|instead of|other than|rather than)\b.*$/i, '').trim() : query;
+  if (leftOut && !normalize(wanted)) {
+    base.next_questions = ['What kind of place are you looking for instead?'];
+    base.limitations.push(`Your question says what to leave out (${leftOut}), but not what to look for, so nothing was searched.`);
+    return { ...base, status: 'no_match', intent: 'local-business' };
+  }
+  const search = searchBusinessPreviews({ query: wanted, ...(city ? { city } : {}), limit: input.limit ?? 6 }, catalog);
+  base.results = leftOut ? search.results.filter(r => !normalize(r.name || '').includes(leftOut)) : search.results;
   base.limitations.push('The preview search matches recorded names and source text; it is not a complete suitability ranking.');
   if (/\bquiet|privacy|private|near|walking|walkable\b/.test(q)) base.unresolved_constraints.push('Current noise, privacy, distance and seating suitability are not established by this lookup; confirm them for the proposed visit.');
   if (/\b(book|pay|reserve|reservation|purchase|buy)\b/.test(q)) base.unresolved_constraints.push('No booking, payment or reservation has been made. Use the official endpoint after confirming the required details.');

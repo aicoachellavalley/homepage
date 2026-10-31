@@ -106,6 +106,7 @@ const schema = {
                 Source: {sourceHref(e.source.url) ? <a href={sourceHref(e.source.url)}>{e.source.name}</a> : e.source.name}{e.source.underlying ? `, drawing on ${e.source.underlying.join(', ')}` : ''}.
                 {e.site_check?.result === 'blocked' && <> Official site blocked AICV's check on {formatDate(e.site_check.date)}.</>}
                 {e.site_check?.result === 'answered' && <> Official site answered on {formatDate(e.site_check.date)}.</>}
+                {e.site_check?.result === 'failed' && <> Official site did not answer on {formatDate(e.site_check.date)}.</>}
               </p>
             </article>
           ))}
