@@ -25,6 +25,7 @@ src/data/intent-catalog.json
 public/business-previews.json
 public/desks/
 public/offers.json
+public/preview-fixtures/
 
 # Reproducible review package generated from plugins/aicv-regional-intelligence.
 public/aicv-regional-intelligence-plugin.zip

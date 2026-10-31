@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { applyOverlay, assembleDesk, deskProblems } from './desks.mjs';
+import { applyOverlay, assembleDesk, deskProblems, sourceHref } from './desks.mjs';
 
 const read = p => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
 const meta = read('../src/data/desks/desks.json');
@@ -107,4 +107,16 @@ test('every record can reach a purchase, and says so when no review is included'
   assert.ok(desk.entries.some(e => !e.has_measured_review));
   const page = readFileSync(new URL('../src/pages/desks/[desk]/[record].astro', import.meta.url), 'utf8');
   assert.match(page, /no private agent-readiness review/);
+});
+
+test('a preview cannot reach a live payment or a production page by link', () => {
+  const saved = process.env.CF_PAGES_BRANCH;
+  process.env.CF_PAGES_BRANCH = 'three-desks-2026-10';
+  try {
+    assert.match(assembleDesk(meta, 'visit-retreat', entries).entries[0].profile_url, /pages\.dev\/desks\//);
+    assert.equal(sourceHref('https://aicoachellavalley.com/agent-preview/hospitality/x'), null);
+    assert.match(sourceHref('https://aicoachellavalley.com/reports/x/'), /pages\.dev\/reports\/x\//);
+    delete process.env.CF_PAGES_BRANCH;
+    assert.match(assembleDesk(meta, 'visit-retreat', entries).entries[0].profile_url, /^https:\/\/aicoachellavalley\.com\//);
+  } finally { if (saved === undefined) delete process.env.CF_PAGES_BRANCH; else process.env.CF_PAGES_BRANCH = saved; }
 });

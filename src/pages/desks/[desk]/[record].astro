@@ -4,7 +4,7 @@ import Footer from '../../../components/Footer.astro';
 import meta from '../../../data/desks/desks.json';
 import overlay from '../../../data/desks/overlay.json';
 import pricing from '../../../data/pricing.json';
-import { applyOverlay, assembleDesk, desksApiBase, formatDate, hostname, turnstileSiteKey } from '../../../../scripts/desks.mjs';
+import { applyOverlay, assembleDesk, desksApiBase, formatDate, hostname, previewBranch, sourceHref, turnstileSiteKey } from '../../../../scripts/desks.mjs';
 
 export function getStaticPaths() {
   const files = import.meta.glob('../../../data/desks/*.entries.json', { eager: true });
@@ -48,7 +48,7 @@ const schema = {
       {e.official_contact.phone && <span>{e.official_contact.phone}</span>}
     </p>
     <p class="rec-source">
-      Source: <a href={e.source.url}>{e.source.name}</a>.
+      Source: {sourceHref(e.source.url) ? <a href={sourceHref(e.source.url)}>{e.source.name}</a> : e.source.name}.
       {e.site_check?.result === 'blocked' && <> Official site blocked AICV's check on {formatDate(e.site_check.date)}.</>}
       {e.site_check?.result === 'answered' && <> Official site answered AICV's check on {formatDate(e.site_check.date)}.</>}
       AICV's website checks do not update the facts above.
@@ -82,6 +82,7 @@ const schema = {
       <h3>Agent Ready, $500 one-time</h3>
       <p>Review and approve your record. An automatic DNS check can then label it Verified by the business, and the desk answers from it. Paying alone never changes the label. Your place on the desk stays free either way.</p>
       {!e.has_measured_review && <p><strong>Before you buy:</strong> AICV has not yet measured this business's website, so this purchase includes control of the record but no private agent-readiness review.</p>}
+      {previewBranch() && <p><strong>Preview only.</strong> This button opens Stripe test mode. No real charge is possible.</p>}
       <p><a class="rec-buy" href={buy}>Get Agent Ready — $500</a></p>
     </section>
   </main>

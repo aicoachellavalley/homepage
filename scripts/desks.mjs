@@ -90,7 +90,17 @@ export function applyOverlay(slug, entries, overlay = {}) {
 }
 
 // Preview builds talk to the preview service; production uses its own origin.
-const previewBranch = () => { const b = process.env.CF_PAGES_BRANCH; return Boolean(b && b !== 'main'); };
+export const previewBranch = () => { const b = process.env.CF_PAGES_BRANCH; return Boolean(b && b !== 'main'); };
+const PROD_ORIGIN = 'https://aicoachellavalley.com';
+const PREVIEW_ORIGIN = 'https://three-desks-2026-10.aicoachellavalley-homepage.pages.dev';
+export const siteOrigin = () => previewBranch() ? (process.env.PREVIEW_SITE_ORIGIN || PREVIEW_ORIGIN) : PROD_ORIGIN;
+/* Agent Preview pages are served only by production and carry a live buy button, so a
+ * preview names them as a source but never links out to them. */
+export const sourceHref = url => {
+  if (!previewBranch()) return url;
+  if (/\/agent-preview\//.test(url || '')) return null;
+  return String(url || '').replace(PROD_ORIGIN, siteOrigin());
+};
 export const desksApiBase = () => previewBranch() ? (process.env.PREVIEW_DESKS_API || 'https://aicv-desks-preview.sunshinefm.workers.dev') : '';
 // Cloudflare's published always-pass test key, only ever on a preview branch.
 export const turnstileSiteKey = meta => previewBranch() ? '1x00000000000000000000AA' : (meta.turnstile_site_key || '');
@@ -101,14 +111,14 @@ export function assembleDesk(meta, slug, entries) {
   const count = label => entries.filter(e => e.label === label).length;
   const withLinks = entries.map(e => {
     const slug = previewSlug(e);
-    return { ...e, profile_url: `https://aicoachellavalley.com/desks/${desk.slug}/${e.id}/`, purchase_ref: slug || e.id, has_measured_review: Boolean(slug) };
+    return { ...e, profile_url: `${siteOrigin()}/desks/${desk.slug}/${e.id}/`, purchase_ref: slug || e.id, has_measured_review: Boolean(slug) };
   });
   const dates = entries.flatMap(e => [e.observed_date, e.site_check?.date]).filter(Boolean).sort();
   return {
     schema_version: 1,
     desk: {
       slug: desk.slug, title: desk.title, scope: desk.scope,
-      url: `https://aicoachellavalley.com/desks/${desk.slug}/`,
+      url: `${siteOrigin()}/desks/${desk.slug}/`,
       categories: [...desk.categories, { id: 'enrolled', title: 'Enrolled businesses' }], topics: desk.topics,
     },
     coverage: meta.coverage,

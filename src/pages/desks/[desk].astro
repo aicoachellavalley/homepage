@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Footer from '../../components/Footer.astro';
 import meta from '../../data/desks/desks.json';
 import overlay from '../../data/desks/overlay.json';
-import { applyOverlay, assembleDesk, formatDate, hostname } from '../../../scripts/desks.mjs';
+import { applyOverlay, assembleDesk, formatDate, hostname, sourceHref } from '../../../scripts/desks.mjs';
 
 export function getStaticPaths() {
   const files = import.meta.glob('../../data/desks/*.entries.json', { eager: true });
@@ -103,7 +103,7 @@ const schema = {
                 {e.official_contact.phone && <span>{e.official_contact.phone}</span>}
               </p>
               <p class="desk-source">
-                Source: <a href={e.source.url}>{e.source.name}</a>{e.source.underlying ? `, drawing on ${e.source.underlying.join(', ')}` : ''}.
+                Source: {sourceHref(e.source.url) ? <a href={sourceHref(e.source.url)}>{e.source.name}</a> : e.source.name}{e.source.underlying ? `, drawing on ${e.source.underlying.join(', ')}` : ''}.
                 {e.site_check?.result === 'blocked' && <> Official site blocked AICV's check on {formatDate(e.site_check.date)}.</>}
                 {e.site_check?.result === 'answered' && <> Official site answered on {formatDate(e.site_check.date)}.</>}
               </p>

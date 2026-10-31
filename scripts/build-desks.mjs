@@ -2,7 +2,7 @@
 // that lacks a label, date, source or official contact.
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { applyOverlay, assembleDesk, deskProblems } from './desks.mjs';
+import { applyOverlay, assembleDesk, deskProblems, siteOrigin } from './desks.mjs';
 
 const root = new URL('../', import.meta.url).pathname;
 const dataDir = resolve(root, 'src/data/desks');
@@ -19,7 +19,7 @@ for (const file of readdirSync(dataDir).filter(f => f.endsWith('.entries.json'))
   if (problems.length) throw new Error(`Desk ${slug} failed:\n${problems.join('\n')}`);
   const desk = assembleDesk(meta, slug, entries);
   writeFileSync(resolve(outDir, `${slug}.json`), JSON.stringify(desk));
-  index.push({ slug, title: desk.desk.title, url: desk.desk.url, data: `https://aicoachellavalley.com/desks/${slug}.json`, counts: desk.counts });
+  index.push({ slug, title: desk.desk.title, url: desk.desk.url, data: `${siteOrigin()}/desks/${slug}.json`, counts: desk.counts });
 }
 writeFileSync(resolve(outDir, 'index.json'), JSON.stringify({ network_cap: meta.network_cap, coverage: meta.coverage, desks: index }));
 console.log(`Desks written: ${index.map(d => `${d.slug} (${d.counts.records})`).join(', ')}`);

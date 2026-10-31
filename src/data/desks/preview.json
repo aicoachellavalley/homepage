@@ -1,0 +1,9 @@
+{
+  "$comment": "Preview branches only. A production build refuses to ship any of these values (scripts/check-preview-safety.mjs). The Stripe link is test mode.",
+  "site_origin": "https://three-desks-2026-10.aicoachellavalley-homepage.pages.dev",
+  "desks_api": "https://aicv-desks-preview.sunshinefm.workers.dev",
+  "mcp": "https://aicv-mcp-preview.sunshinefm.workers.dev",
+  "activate": "https://aicv-activate-preview.sunshinefm.workers.dev",
+  "stripe_test_link": "https://buy.stripe.com/test_9B63cv4th1lFcEa8YG8k802",
+  "live_stripe_link": "https://buy.stripe.com/6oUfZhcZN0hBcEa1we8k801"
+}
