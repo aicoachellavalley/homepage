@@ -43,15 +43,30 @@ export function applyOverlay(slug, entries, overlay = {}) {
   const claims = overlay.claims || {};
   const submissions = overlay.submissions || {};
   const known = new Set(entries.map(e => e.id));
-  const merged = entries.map(e => {
+  const enrolled = (overlay.supplied || [])
+    .filter(a => a.desk === slug && !known.has(a.record_id))
+    .map(a => ({
+      id: `enrolled-${a.id}`, name: a.name, city: a.city, address: null, category: 'enrolled', anchor: false,
+      label: 'submitted', label_text: SUBMITTED, observed_date: String(a.created_at).slice(0, 10),
+      official_contact: { url: a.official_url, phone: null },
+      source: { url: `${PROD_ORIGIN}/desks/join/`, name: 'Submitted through AICV self-service enrollment. AICV confirmed its own website names this business and city' },
+      description: null, facts: [], site_check: null,
+      ...(a.phone ? { submitted_information: { label: SUBMITTED, date: String(a.created_at).slice(0, 10), fields: { phone: a.phone } } } : {}),
+    }));
+  // Sourced and enrolled records run through one path, so a claim or correction means
+  // the same thing on both.
+  return [...entries, ...enrolled].map(e => {
     const out = { ...e };
     const o = obs[e.id];
     if (o) {
       out.site_check = { date: o.date, result: o.result, changed_since_last_check: Boolean(o.changed) };
       if (o.closed_signal) out.note = 'The official page may say this business has closed. Confirm directly.';
     }
+    const merge = (date, fields) => {
+      out.submitted_information = { label: SUBMITTED, date, fields: { ...(out.submitted_information?.fields || {}), ...fields } };
+    };
     const submission = submissions[e.id];
-    if (submission) out.submitted_information = { label: SUBMITTED, date: submission.date, fields: submission.fields };
+    if (submission) merge(submission.date, submission.fields);
     const claim = claims[previewSlug(e)] || claims[e.id];
     if (claim) {
       const f = claim.owner_facts || {};
@@ -68,25 +83,11 @@ export function applyOverlay(slug, entries, overlay = {}) {
         if (fields.hours) out.facts = [`Hours: ${fields.hours}`, ...out.facts];
         delete out.submitted_information;
       } else if (Object.keys(fields).length) {
-        out.submitted_information = { label: SUBMITTED, date: String(claim.published_at || e.observed_date).slice(0, 10), fields };
+        merge(String(claim.published_at || e.observed_date).slice(0, 10), fields);
       }
     }
     return out;
   });
-  const enrolled = (overlay.supplied || [])
-    .filter(a => a.desk === slug && !known.has(a.record_id))
-    .map(a => {
-      const submitted = submissions[`enrolled-${a.id}`];
-      return {
-        id: `enrolled-${a.id}`, name: a.name, city: a.city, address: null, category: 'enrolled', anchor: false,
-        label: 'submitted', label_text: SUBMITTED, observed_date: String(a.created_at).slice(0, 10),
-        official_contact: { url: a.official_url, phone: null },
-        source: { url: 'https://aicoachellavalley.com/desks/join/', name: 'Submitted through AICV self-service enrollment. AICV confirmed its own website names this business and city' },
-        description: null, facts: [], site_check: null,
-        ...(a.phone || submitted ? { submitted_information: { label: SUBMITTED, date: (submitted?.date || String(a.created_at).slice(0, 10)), fields: { ...(a.phone ? { phone: a.phone } : {}), ...(submitted?.fields || {}) } } } : {}),
-      };
-    });
-  return [...merged, ...enrolled];
 }
 
 // Preview builds talk to the preview service; production uses its own origin.

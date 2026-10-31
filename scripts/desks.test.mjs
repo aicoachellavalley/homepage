@@ -120,3 +120,16 @@ test('a preview cannot reach a live payment or a production page by link', () =>
     assert.match(assembleDesk(meta, 'visit-retreat', entries).entries[0].profile_url, /^https:\/\/aicoachellavalley\.com\//);
   } finally { if (saved === undefined) delete process.env.CF_PAGES_BRANCH; else process.env.CF_PAGES_BRANCH = saved; }
 });
+
+test('an enrolled business takes claims and verification the same way as any record', () => {
+  const app = { id: 'a9', record_id: null, name: 'New Place', city: 'Indio', desk: 'visit-retreat', official_url: 'https://new.example/', phone: null, created_at: '2026-11-01' };
+  const id = 'enrolled-a9';
+  const unconfirmed = applyOverlay('visit-retreat', [], { supplied: [app], claims: { [id]: { attested_date: null, published_at: '2026-11-02', owner_facts: { hours: 'Daily', phone: '760-000-0000' } } }, submissions: { [id]: { date: '2026-11-01', fields: { about: 'Hi' } } } })[0];
+  assert.equal(unconfirmed.label, 'submitted');
+  assert.equal(unconfirmed.official_contact.phone, null);
+  assert.deepEqual(unconfirmed.submitted_information.fields, { about: 'Hi', hours: 'Daily', phone: '760-000-0000' });
+  const verified = applyOverlay('visit-retreat', [], { supplied: [app], claims: { [id]: { attested_date: '2026-11-03', owner_facts: { phone: '760-000-0000' } } } })[0];
+  assert.equal(verified.label, 'verified');
+  assert.equal(verified.official_contact.phone, '760-000-0000');
+  assert.deepEqual(deskProblems([verified]), []);
+});
