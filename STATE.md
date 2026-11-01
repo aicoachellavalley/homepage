@@ -2,6 +2,10 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-11-01 — Three desks LIVE
+
+On Sat's go, `main` advanced to `5e5dcef`. Live: `/desks/`, three desks (331 records), `/desks/join/`, `offers.json`, Terms sections effective November 1, 2026. Business and Premium retired; the $500 price and Stripe link are unchanged. Production Turnstile widget `AICV desks` is set in `src/data/desks/desks.json`. A real waitlist submission passed Turnstile on the live site, and the test row was removed. Overlay comes from `aicv-desks` at build; the deploy hook `aicv-desks daily` was fired once and built. The Visibility tool stays off until Gate 4. Run record: playbook `data/workflow-runs/three-desks-2026-10/`.
+
 ## 2026-10-08 — AUTHORIZED RELEASE PREPARATION: PR #2 and PR #3
 
 Sat explicitly authorized merging the reviewed retreat and workspace changes.
