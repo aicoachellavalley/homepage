@@ -2,6 +2,18 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-11-01 — APPROVED RELEASE: remove stale homepage Latest Briefs
+
+Prepared from origin/main `ee07677` in isolated branch
+`codex/remove-homepage-latest-briefs`. Removed the Latest Briefs cards,
+their unused data slice and exclusive styles. The briefs archive and current
+AICV News subscriber band remain. Updated the existing layout-order check
+to use the remaining News band. All 196 tests and the full build, including
+ownership, entity, amendments, node-content, structure and preview-safety
+checks, pass with IndexNow and the live desk overlay disabled for local
+verification. Sat approved publication. Release through origin/main; live
+verification follows the Cloudflare build.
+
 ## 2026-11-01 — Three desks LIVE
 
 On Sat's go, `main` advanced to `5e5dcef`. Live: `/desks/`, three desks (331 records), `/desks/join/`, `offers.json`, Terms sections effective November 1, 2026. Business and Premium retired; the $500 price and Stripe link are unchanged. Production Turnstile widget `AICV desks` is set in `src/data/desks/desks.json`. A real waitlist submission passed Turnstile on the live site, and the test row was removed. Overlay comes from `aicv-desks` at build; the deploy hook `aicv-desks daily` was fired once and built. The Visibility tool stays off until Gate 4. Run record: playbook `data/workflow-runs/three-desks-2026-10/`.

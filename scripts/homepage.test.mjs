@@ -26,7 +26,9 @@ test('illustrative questions are not presented as customer testimonials or guara
 });
 
 test('human reading path leads to the service explanation, not a payment action', () => {
-  assert.ok(page.indexOf('id="what-agents-use"') < page.indexOf('<!-- ─── LATEST BRIEFS'));
+  const serviceExplanation = page.indexOf('id="what-agents-use"');
+  const newsBand = page.indexOf('<!-- ─── LATEST FROM AICV NEWS');
+  assert.ok(serviceExplanation >= 0 && newsBand > serviceExplanation);
   assert.match(section, /href="\/get-agent-ready\/"/);
   assert.match(section, /Explore Get Agent Ready/);
   assert.match(section, /start with the free check/);

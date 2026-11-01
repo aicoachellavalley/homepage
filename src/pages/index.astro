@@ -49,7 +49,6 @@ const stat = (n) => n.toLocaleString('en-US');
 // vocabulary, and Reports are the original-research signal).
 
 const briefCount = briefsData.length;
-const latestBriefs = briefsData.slice(0, 3);
 // SUBSCRIBER BAND (founder ruling 2026-09-14): aicv.news is the origin, this
 // site pulls from it. Three newest pieces across News, Views and Field Notes,
 // outbound. Empty on feed failure — the section then does not render at all.
@@ -432,25 +431,6 @@ const personSchema = {
     </div>
   </div>
 </section>
-
-<!-- ─── LATEST BRIEFS ─── -->
-<div class="briefs-strip-wrap">
-  <section class="briefs-strip-section">
-    <div class="briefs-strip-header-row">
-      <div class="briefs-strip-label">Latest Briefs</div>
-      <a href="/briefs/" class="briefs-strip-viewall">View all briefs →</a>
-    </div>
-    <div class="briefs-strip-grid">
-      {latestBriefs.map((brief) => (
-        <a href={`/briefs/${brief.slug}/`} class="briefs-strip-card">
-          <div class="briefs-strip-date">{brief.date}</div>
-          <div class="briefs-strip-title">{brief.title}</div>
-          <p class="briefs-strip-desc">{brief.description}</p>
-        </a>
-      ))}
-    </div>
-  </section>
-</div>
 
 <!-- ─── LATEST FROM AICV NEWS — a subscriber band; canonical stays at aicv.news ─── -->
 {aicvNews.length > 0 && (
@@ -921,10 +901,6 @@ const personSchema = {
   }
   .sunshine-handoff-link:hover { color: var(--volt); }
 
-  /* ─── LATEST BRIEFS STRIP ─── */
-  .briefs-strip-wrap {
-    background: var(--pine-mist);
-  }
   /* Latest from AICV News — the subscriber band (2026-09-14). Reuses the
      briefs-strip card system so the two strips read as one family; the
      ground differs so a reader sees these are outbound, not ours. */
@@ -934,11 +910,6 @@ const personSchema = {
   .news-band-sub a { color: var(--pine); }
   .news-band-more { display: block; margin-top: auto; padding-top: 0.75rem; font-size: 0.8rem; color: var(--pine); opacity: 0.7; letter-spacing: 0.02em; }
   @media (max-width: 720px) { .news-band-section { padding: 3.5rem 1.5rem; } }
-  .briefs-strip-section {
-    padding: 4rem 3rem;
-    max-width: 1060px;
-    margin: 0 auto;
-  }
   .briefs-strip-header-row {
     display: flex;
     align-items: baseline;
@@ -1009,7 +980,6 @@ const personSchema = {
   }
   @media (max-width: 768px) {
     .briefs-strip-grid { grid-template-columns: 1fr; }
-    .briefs-strip-section { padding: 3.5rem 1.5rem; }
   }
 
   /* ─── INTELLIGENCE LAYER BLOCK ─── */
@@ -1793,7 +1763,7 @@ const personSchema = {
   /* One shared alignment rail. The old nested padding made an 80%-wide
      section contain a half-width text column. Keep gutters at the outer edge. */
   .hero-inner, .stats-inner, .path-hierarchy, .intel-what-section,
-  .briefs-strip-section, .news-band-section, .agent-use-section, .partners-section {
+  .news-band-section, .agent-use-section, .partners-section {
     width: min(80%, 90rem);
     max-width: none;
     margin-inline: auto;
@@ -1809,7 +1779,7 @@ const personSchema = {
     nav { padding: 1rem 1.5rem; }
     .nav-right { gap: 1rem; }
     .hero-inner, .stats-inner, .path-hierarchy, .intel-what-section,
-    .briefs-strip-section, .news-band-section, .agent-use-section, .partners-section { width: calc(100% - 3rem); padding-inline: 0; }
+    .news-band-section, .agent-use-section, .partners-section { width: calc(100% - 3rem); padding-inline: 0; }
     .hero-inner { padding-block: 3rem 2.25rem; }
     .hero-headline { font-size: clamp(2rem, 6vw, 3.4rem); }
     .hero-headline br { display: none; }
