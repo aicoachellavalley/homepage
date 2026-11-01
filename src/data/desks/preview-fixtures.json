@@ -1,6 +1,6 @@
 {
   "$comment": "Fictional businesses, preview branch only. prepare-preview.mjs writes these to /preview-fixtures/. A null removes the page, which tests a failed check.",
-  "fictional-cafe.txt": "AICV Fixture Cafe (fictional). We have permanently closed. Palm Desert, California.",
+  "fictional-cafe.txt": "AICV Fixture Cafe (fictional). A made-up business used only to test the AICV preview. Palm Desert, California. Open daily.",
   "fictional-lodge.txt": "AICV Fixture Lodge (fictional). A made-up business used only to test the AICV preview. La Quinta, California.",
   "fictional-spa.txt": "AICV Fixture Spa (fictional). A made-up business used only to test the AICV preview. Indio, California."
 }
