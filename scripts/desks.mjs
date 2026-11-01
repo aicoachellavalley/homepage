@@ -59,7 +59,7 @@ export function applyOverlay(slug, entries, overlay = {}) {
     const out = { ...e };
     const o = obs[e.id];
     if (o) {
-      out.site_check = { date: o.date, result: o.result, changed_since_last_check: Boolean(o.changed) };
+      out.site_check = { date: o.date, result: o.result, changed_since_last_check: Boolean(o.changed), ...(o.last_changed_at ? { page_last_changed: String(o.last_changed_at).slice(0, 10) } : {}) };
       if (o.closed_signal) out.note = 'The official page may say this business has closed. Confirm directly.';
     }
     const merge = (date, fields) => {
