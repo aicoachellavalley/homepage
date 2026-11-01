@@ -40,7 +40,7 @@
     },
     "verified": {
       "text": "Verified by the business",
-      "meaning": "The owner reviewed and approved this record, and the ownership check cleared."
+      "meaning": "A DNS check confirmed control of the business's domain, and the record was approved from there. The business remains responsible for the facts it supplies."
     }
   },
   "not_provided": [

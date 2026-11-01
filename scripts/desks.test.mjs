@@ -133,3 +133,12 @@ test('an enrolled business takes claims and verification the same way as any rec
   assert.equal(verified.official_contact.phone, '760-000-0000');
   assert.deepEqual(deskProblems([verified]), []);
 });
+
+test('verification is described as domain control, and the facts stay the business responsibility', () => {
+  assert.match(meta.labels.verified.meaning, /control of the business's domain/);
+  assert.match(meta.labels.verified.meaning, /responsible for the facts/);
+  const pricing = read('../src/data/pricing.json');
+  assert.match(pricing.tiers[1].llms, /confirms control of the business domain/);
+  assert.match(pricing.tiers[1].llms, /remain the responsibility of the business/);
+  assert.doesNotMatch(JSON.stringify(meta) + JSON.stringify(pricing), /ownership check/i);
+});

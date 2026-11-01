@@ -39,7 +39,7 @@ const canonicalUrl = 'https://aicoachellavalley.com/get-agent-ready/';
 // Human-facing details and machine-readable Service descriptions share the
 // same text. Short card copy comes from pricing.json, alongside the prices.
 const previewDescription = "A record of public facts about your business, observed by AICV, for businesses with a place on a desk. It is labeled Observed by AICV with the date recorded, and AICV checks your official website on a schedule. Those checks do not update the facts. It is free and never depends on buying anything. Separately, the free check on this page reads one public web page, with no signup and nothing stored.";
-const readyDescription = 'You review, correct and approve your record. Once an automatic DNS check shows you control your domain, it is labeled Verified by the business, gets the full profile, and the desk answers questions about your business from it. Includes a private review of what to improve where AICV has measured your website. Pay once, with no annual fee.';
+const readyDescription = 'You review, correct and approve your record. Once an automatic DNS check confirms you control your domain, it is labeled Verified by the business, and you remain responsible for the facts you supply. It gets the full profile, and the desk answers questions about your business from it. Includes a private review of what to improve where AICV has measured your website. Pay once, with no annual fee.';
 const consultingDescription = 'Everything beyond your record: substantial AI work for your business, scoped together in a conversation with Sat. There is no public price and it is not self-serve.';
 
 /* FAQ — ONE ARRAY, TWO SURFACES (2026-09-14). Rendered as the visible
@@ -62,7 +62,7 @@ const faq = [
   },
   {
     q: "What changes when I buy Agent Ready?",
-    a: "You review, correct and approve your record. Your changes show beside the record as submitted information, identity unconfirmed. Once an automatic DNS check shows you control your domain, the record is labeled Verified by the business, gets the full profile, and the desk answers from it. Paying alone does not change the label. You also get a private review of what to improve.",
+    a: "You review, correct and approve your record. Your changes show beside the record as submitted information, identity unconfirmed. Once an automatic DNS check confirms you control your domain, the record is labeled Verified by the business, gets the full profile, and the desk answers from it. The check confirms control of the domain, not your facts, which remain your responsibility. Paying alone does not change the label. You also get a private review of what to improve.",
   },
   {
     q: "Does buying get my business onto a desk?",
@@ -74,7 +74,7 @@ const faq = [
   },
   {
     q: "Does AICV touch our website?",
-    a: "No rebuild or plugin. Your record lives on AICV and links to your website. The ownership check uses one DNS record that you or your site manager adds, and you can remove it after it clears.",
+    a: "No rebuild or plugin. Your record lives on AICV and links to your website. The domain check uses one DNS record that you or your site manager adds, and you can remove it after it clears.",
   },
   {
     q: "What does the $500 record look like?",
@@ -572,7 +572,7 @@ const schemaGraph = {
       <p>{readyDescription}</p>
       <ul>
         <li><strong>Your record, reviewed by you</strong> — correct and approve its facts, description, hours, phone and booking link. Your changes show beside the record, labeled identity unconfirmed, until the ownership check clears.</li>
-        <li><strong>Verified by the business</strong> — one DNS record proves you control your domain. The check is automatic. After it clears, the label changes and the desk answers from your record.</li>
+        <li><strong>Verified by the business</strong> — one DNS record confirms you control your domain. It does not check your facts, which remain your responsibility. The check is automatic. After it clears, the label changes and the desk answers from your record.</li>
         <li><strong>Your private agent-readiness review</strong> — what agents can read on your website, what's missing and what to improve. Never published. Included where AICV has measured your website; your record page says so before you buy.</li>
       </ul>
       <p>We match your purchase to your business. Paying alone never changes the label. If you skip the DNS check, your changes stay labeled identity unconfirmed and do not replace the record.</p>
