@@ -1,0 +1,185 @@
+{
+  "scope": "Targeted source and action-link review; not a comprehensive remeasurement or full node reverification",
+  "receipts": [
+    {
+      "requested_url": "https://flypsp.com/airline-baggage/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://flypsp.com/airline-baggage/",
+      "title": "PSP Airlines and Destinations: Nonstop Flights",
+      "scrape_id": "01a18d69-9bf7-714e-82d8-e3e3bf39b4c9"
+    },
+    {
+      "requested_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://sensei.com/retreats/porcupine-creek/group-inquiries/",
+      "title": "Special Events and Group Retreats at Sensei Porcupine Creek",
+      "scrape_id": "01a18d67-fc62-711a-9b00-2cd6dc3d898e"
+    },
+    {
+      "requested_url": "https://www.liveworkgps.com/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.visitgreaterpalmsprings.com/economic-development/",
+      "title": "Greater Palm Springs Economic Growth | Innovation & Opportunity",
+      "scrape_id": "01a18d69-ae70-774f-8e6b-9f4f7a7d0989"
+    },
+    {
+      "requested_url": "https://www.palmdesert.gov/businesses/economic-development",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.palmdesert.gov/businesses/economic-development",
+      "title": "\n\t\n    Economic Development | City of Palm Desert\n\n",
+      "scrape_id": "01a18d67-fc70-715c-802d-273522dfb440"
+    },
+    {
+      "requested_url": "https://www.desertfoundation.org/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.desertfoundation.org/",
+      "title": "Desert Community Foundation: Coachella Valley’s Nonprofit Hub",
+      "scrape_id": "01a18d67-fc0d-7119-acae-e53d50894534"
+    },
+    {
+      "requested_url": "https://www.cvgivingday.org/p/about",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.cvgivingday.org/p/about",
+      "title": "About CV Giving Day | CV Giving Day",
+      "scrape_id": "01a18d67-fbc4-7653-b75b-09a41a990f7c"
+    },
+    {
+      "requested_url": "https://www.cvgivingday.org/p/registration",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.cvgivingday.org/p/registration",
+      "title": "Nonprofit Registration 2027 | CV Giving Day",
+      "scrape_id": "01a18d69-0e00-7349-85d4-c85793156a98"
+    },
+    {
+      "requested_url": "https://www.pderc.org/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://rlce.csusb.edu/pderc",
+      "title": "Homepage",
+      "scrape_id": "01a18d69-0e3c-7309-9f6b-12cda0702a84"
+    },
+    {
+      "requested_url": "https://www.thehivecoworking.com/memberships",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.thehivecoworking.com/memberships",
+      "title": "Coworking Memberships | The Hive Coworking Palm Springs",
+      "scrape_id": "01a18d69-0e3a-706f-915c-1b4acf4a3189"
+    },
+    {
+      "requested_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.fusionworkplaces.com/locations/palm-desert-ca/",
+      "title": "Fusion Workplaces Palm Desert | Flexible Office Solutions",
+      "scrape_id": "01a18d69-0e3e-77ef-bc22-3512f3a8ac31"
+    },
+    {
+      "requested_url": "https://members.thehivecoworking.com/login",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://members.thehivecoworking.com/login",
+      "title": "The Hive Coworking",
+      "scrape_id": "01a18d6a-03d3-73e6-8d1c-f95698e24ee9"
+    },
+    {
+      "requested_url": "https://84095palmd.yardikube.com/kubecc/content/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://84095palmd.yardikube.com/kubecc/content/#/app/listing",
+      "title": "Prospect Portal",
+      "scrape_id": "01a18d6a-03df-7638-b32c-347f504a9614"
+    },
+    {
+      "requested_url": "https://www.regus.com/en/us/6794",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.regus.com/en/us/6794",
+      "title": "Office Space, Coworking & Meeting Rooms at 750 N Palm Canyon Dr (92262) | Regus",
+      "scrape_id": "01a18d6a-03ad-7656-92f1-05885c85d260"
+    },
+    {
+      "requested_url": "https://cvwbc.org/business-counseling/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://cvwbc.org/business-counseling/",
+      "title": "Free 1-on-1 Business Counseling | CVWBC Palm Desert",
+      "scrape_id": "01a18d6a-03cd-70b8-8ceb-3778d80ed7d7"
+    },
+    {
+      "requested_url": "https://calendly.com/cvwbc-info",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://calendly.com/cvwbc-info",
+      "title": "\nCalendly - CVWBC\n",
+      "scrape_id": "01a18d6a-03ee-76f4-af41-09e4825f4afb"
+    },
+    {
+      "requested_url": "https://ociesmallbusiness.org/schedule-an-appointment/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://ociesmallbusiness.org/schedule-an-appointment/",
+      "title": "Schedule an Appointment - OCIE SBDC",
+      "scrape_id": "01a18d6a-03c2-77f9-b5aa-89a33d9eefcd"
+    },
+    {
+      "requested_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.indio.org/departments/economic-development/indio-business-connect",
+      "title": "\n\t\n    Indio Business Connect | Indio, CA\n\n",
+      "scrape_id": "01a18d6a-03de-73ce-a0e2-03f7db1764d1"
+    },
+    {
+      "requested_url": "https://www.palmdesert.gov/businesses/start-a-business",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.palmdesert.gov/businesses/start-a-business",
+      "title": "\n\t\n    Start  or Grow a Business in Palm Desert | City of Palm Desert\n\n",
+      "scrape_id": "01a18d6a-03d5-7349-8f3f-485718a029a6"
+    },
+    {
+      "requested_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.ritzcarlton.com/en/hotels/pspps-the-ritz-carlton-rancho-mirage/events/",
+      "title": "Events & Weddings | The Ritz-Carlton, Rancho Mirage",
+      "scrape_id": "01a18d6b-c3d8-705b-9d23-9ba010dd38f4"
+    },
+    {
+      "requested_url": "https://www.hyattindianwells.com/gather/meetings",
+      "checked_on": "2026-10-30",
+      "method": "Firecrawl live fetch, maxAge 0; content read, no forms submitted",
+      "status": 200,
+      "final_url": "https://www.hyattindianwells.com/gather/meetings",
+      "title": "Meetings | Grand Hyatt Indian Wells Resort & Villas",
+      "scrape_id": "01a18d6b-c388-7175-b23d-1dec8e8b61f3"
+    }
+  ]
+}
