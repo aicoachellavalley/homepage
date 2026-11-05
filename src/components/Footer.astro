@@ -11,10 +11,9 @@
  *   variant="compact"    bottom bar only. Nine routes.
  *   <slot />             page-specific line in the bottom bar
  *                        (nodes/[slug] renders "Last reviewed: <date>" there).
- *   <slot name="links"/> page-specific trailing nav item. Used ONLY by the
- *                        four pages carrying the TOS modal, whose trigger this
- *                        is; canon requires it and the nav must not otherwise
- *                        vary per page.
+ *   <slot name="links"/> page-specific trailing nav item. Used ONLY by
+ *                        get-agent-ready, for its tool-terms popup trigger;
+ *                        the nav must not otherwise vary per page.
  *
  * ── THE OWNERSHIP STATEMENT IS LOAD-BEARING ────────────────────────────────
  * "A product and service of SunshineFM LLC" is the ONLY visible ownership
@@ -56,18 +55,15 @@ const { variant = 'compact', links = [] } = Astro.props;
 /** Canonical link set. Same on every page, self-links included — a footer that
  *  changes shape per page is how the six drifted apart in the first place.
  *
- *  TERMS OF USE IS DELIBERATELY ABSENT (founder ruling 2026-08-10, option C).
- *  Two Terms documents exist and they disagree: the in-page modal says
- *  SunshineFM LLC six times and names DCF once; /terms/ says DCF three times,
- *  names SunshineFM zero, carries fiscal-sponsorship language canon forbids on
- *  .com, and still uses the retired "Agent-Readiness Review" vocabulary.
- *  Linking /terms/ site-wide would route all fifteen pages at the one page
- *  carrying the forbidden framing. Terms consolidation is its own pass; until
- *  it lands the footer nav carries no Terms link at all.
+ *  TERMS OF USE links to /terms/ on every page (2026-11-05). It was absent from
+ *  2026-08-10 (option C) because /terms/ then named the Desert Community
+ *  Foundation; that clause is gone, so the reason is gone. The old footer
+ *  "Terms of Use" was a popup trigger (href="#") that opened the free-tool
+ *  terms only, never the purchase terms, and was invisible to agents.
  *
- *  The four pages with the TOS modal keep their trigger through <slot />,
- *  because playbook CLAUDE.md:537 makes the modal mandatory wherever the
- *  Agent Preview widget is embedded and the footer link was its ONLY trigger. */
+ *  get-agent-ready.astro keeps its tool-scoped popup, because playbook
+ *  CLAUDE.md makes the modal mandatory wherever the Agent Preview widget is
+ *  embedded; it adds an "Agent Preview Terms" trigger through <slot name="links">. */
 const NAV = [
   { href: '/nodes/',            label: 'Intelligence Network' },
   { href: '/briefs/',           label: 'Briefs' },
@@ -77,6 +73,7 @@ const NAV = [
   { href: '/about/',            label: 'About' },
   { href: '/contact/',          label: 'Contact' },
   { href: '/privacy/',          label: 'Privacy' },
+  { href: '/terms/',            label: 'Terms of Use' },
 ];
 const nav = links.length ? links : NAV;
 

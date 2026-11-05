@@ -157,46 +157,7 @@ const schemaGraph = {
 
 <!-- ─── FOOTER ─── -->
 
-<Footer variant="full">
-  <a slot="links" href="#" onclick="document.getElementById('tosModal').classList.add('on');return false;">Terms of Use</a>
-</Footer>
-
-<!-- ─── TERMS OF USE MODAL ─── -->
-<div class="tos-overlay" id="tosModal" onclick="if(event.target===this)this.classList.remove('on')">
-  <div class="tos-panel">
-    <button class="tos-close" onclick="document.getElementById('tosModal').classList.remove('on')" aria-label="Close">✕</button>
-    <div class="tos-header">
-      <div class="tos-label">AI Coachella Valley</div>
-      <h2 class="tos-title">AICV Terms of Use</h2>
-      <div class="tos-date">Last updated: April 27, 2026</div>
-    </div>
-    <div class="tos-body">
-      <p>The AICV Agent Preview is a free, experimental diagnostic provided by AI Coachella Valley, a product and service of SunshineFM LLC, operating in Riverside County, California.</p>
-      <h3>No Account. No Cost. No Data Stored.</h3>
-      <p>This tool requires no registration, login, or payment. URLs you submit are processed in real time and are not stored, logged, or retained by AICV. We do not collect personal information through this tool.</p>
-      <h3>How It Works</h3>
-      <p>Your submitted URL is passed to a third-party AI model (Anthropic Claude) via a Cloudflare Worker. Results are generated automatically and returned directly to your browser. AICV does not retain your query or output after your session ends.</p>
-      <h3>For Informational, Experimental, and Entertainment Purposes Only</h3>
-      <p>Results produced by this tool are AI-generated and provided strictly for informational, experimental, and entertainment purposes. They do not constitute professional SEO, legal, technical, marketing, or business advice of any kind. AICV makes no representations or warranties — express or implied — regarding the accuracy, completeness, reliability, or fitness of results for any particular purpose. Always verify findings independently and consult qualified professionals before making decisions based on tool output.</p>
-      <h3>No Legal Recourse</h3>
-      <p>By using this site, you acknowledge that AICV, the Desert Community Foundation, and their respective officers, volunteers, and affiliates shall not be liable for any decisions made, actions taken, or outcomes arising from your use of or reliance on site content. Use is entirely at your own risk.</p>
-      <h3>Acceptable Use</h3>
-      <p>Only submit URLs you own or have permission to analyze. Do not use automated tools to submit queries in bulk. Do not attempt to exploit, reverse engineer, or abuse the service.</p>
-      <h3>Changes</h3>
-      <p>We may update this site and these terms at any time without notice. Continued use constitutes acceptance of any changes.</p>
-      <h3>Governing Law</h3>
-      <p>These terms are governed by the laws of the State of California. Any disputes shall be resolved in Riverside County, California.</p>
-      <h3>Contact</h3>
-      <p>Questions? Reach us at <a href="mailto:sat@aicv.co">sat@aicv.co</a></p>
-    </div>
-  </div>
-</div>
-
-<script>
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') document.getElementById('tosModal').classList.remove('on');
-  });
-</script>
+<Footer variant="full" />
 
 <style is:global>
   /* ─── NAV ─── */

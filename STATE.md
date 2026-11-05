@@ -2,6 +2,26 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-11-05 — Terms trust fix SHIPPED (Sat's go)
+
+A visitor flagged that the terms named the Desert Community Foundation, the
+footer Terms link "went nowhere", and the free-tool terms said
+"entertainment" and "no legal recourse" beside the $500 terms. Sat ruled the
+DCF sponsorship agreement does NOT require DCF in .com terms, so the clause
+parked for counsel since August is resolved:
+
+- Liability clause (terms.astro, get-agent-ready popup) now names "SunshineFM
+  LLC, which operates AICV, and its officers, employees, and affiliates".
+  Heading "No Legal Recourse" is now "Limitation of Liability"; "entertainment"
+  is dropped; the free-check section says it does not limit the Agent Ready
+  terms. Free-check section dated November 5, 2026.
+- Footer.astro carries a real `/terms/` "Terms of Use" link on every page
+  (647 footers). The href="#" popup is removed from index, connect,
+  how-we-do-this and minimum-viable-agent (none embeds the tool).
+  get-agent-ready keeps its tool popup, relabeled "Agent Preview Terms".
+- Build and every postbuild gate pass; clicked through on a local copy.
+- terms.astro still uses the "Agent-Readiness Review" name for the free check.
+
 ## 2026-11-01 — APPROVED RELEASE: remove stale homepage Latest Briefs
 
 Prepared from origin/main `ee07677` in isolated branch
