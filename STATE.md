@@ -2,7 +2,7 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
-## 2026-11-06 — CV Giving Day node corrected (branch, NOT pushed)
+## 2026-11-06 — CV Giving Day node corrected and LIVE (Sat's go)
 
 Branch `cv-giving-day-2027` from origin/main `44e9d17`. `/nodes/cv-giving-day/`
 now carries the 2027 dates (registration Nov 3 to Feb 23, early giving Feb 2,
@@ -15,7 +15,9 @@ cvgiving.org and desertfoundation.org on 2026-11-06. New `src/data/node-events.j
 gives a node a valid Event (dates, online location, organizer); only
 cv-giving-day is listed, other event nodes are unchanged. `last_updated` stays
 2026-09-25 until the live page is verified; `last_modified` is 2026-11-06.
-196 tests and every postbuild gate pass (IndexNow off locally).
+196 tests and every postbuild gate pass (IndexNow off locally). Pushed as
+0cdb8f3; live page, nodes.json, llms-full.txt and nodes/cv-giving-day.json
+confirmed over repeated reads, then `last_updated` moved to 2026-11-06.
 
 ## 2026-11-05 — Terms trust fix SHIPPED (Sat's go)
 
