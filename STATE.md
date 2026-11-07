@@ -2,6 +2,21 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-11-06 — CV Giving Day node corrected (branch, NOT pushed)
+
+Branch `cv-giving-day-2027` from origin/main `44e9d17`. `/nodes/cv-giving-day/`
+now carries the 2027 dates (registration Nov 3 to Feb 23, early giving Feb 2,
+Community Night Feb 3, CV Giving Day March 2, 12:00 a.m. to 11:59 p.m. Pacific),
+DCF as founder, California Bank & Trust as Founding Sponsor, yearly counts and
+totals, Mightycause's 6.0% + $0.30 fee, and the two AICV/DCF pilots stated as
+in development or testing, never operational. Mary Panesar's direct contact is
+replaced by cvgivingday@desertfoundation.org. Facts read from cvgivingday.org,
+cvgiving.org and desertfoundation.org on 2026-11-06. New `src/data/node-events.json`
+gives a node a valid Event (dates, online location, organizer); only
+cv-giving-day is listed, other event nodes are unchanged. `last_updated` stays
+2026-09-25 until the live page is verified; `last_modified` is 2026-11-06.
+196 tests and every postbuild gate pass (IndexNow off locally).
+
 ## 2026-11-05 — Terms trust fix SHIPPED (Sat's go)
 
 A visitor flagged that the terms named the Desert Community Foundation, the

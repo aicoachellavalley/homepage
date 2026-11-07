@@ -1,0 +1,20 @@
+{
+  "_comment": "Schema.org Event data for event nodes, keyed by node slug. Kept out of node frontmatter because scripts/build-static-json.cjs parses frontmatter line by line and would flatten nested keys into the node record. Only list an occurrence whose date, time and organizer are confirmed by a primary source; the template emits nothing for a slug not listed here.",
+  "cv-giving-day": {
+    "name": "CV Giving Day 2027",
+    "startDate": "2027-03-02T00:00:00-08:00",
+    "endDate": "2027-03-02T23:59:59-08:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "url": "https://www.cvgivingday.org/",
+    "organizer": { "name": "Desert Community Foundation", "url": "https://www.desertfoundation.org" },
+    "sponsor": { "name": "California Bank & Trust", "url": "https://www.calbanktrust.com" },
+    "sources": [
+      "https://www.cvgivingday.org/p/registration",
+      "https://www.cvgivingday.org/p/about",
+      "https://www.cvgiving.org/results/",
+      "https://www.cvgiving.org/faq/",
+      "https://www.desertfoundation.org/cvgivingday"
+    ]
+  }
+}

@@ -3,6 +3,7 @@ import Footer from '../../components/Footer.astro';
 import OmitBodyTitle from '../../components/OmitBodyTitle.astro';
 import { getCollection, render } from 'astro:content';
 import { countedSetDate, nodeDateModified } from '../../../scripts/content-dates.cjs';
+import nodeEvents from '../../data/node-events.json';
 
 export async function getStaticPaths() {
   const entries = await getCollection('nodes');
@@ -86,6 +87,43 @@ const schemaJson = {
     'url': 'https://aicoachellavalley.com'
   }
 };
+
+// An event node with a confirmed occurrence in src/data/node-events.json gets
+// a valid Event (dates, online location, organizer) about which this page is
+// the AICV record. Other nodes keep the block above unchanged.
+const nodeEvent = (nodeEvents as Record<string, any>)[slug];
+const org = (o: { name: string; url: string }) => ({ '@type': 'Organization', name: o.name, url: o.url });
+const pageSchema = nodeEvent ? {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': canonicalUrl,
+      'url': canonicalUrl,
+      'name': pageTitle,
+      'description': description,
+      ...(last_updated ? { 'lastReviewed': last_updated } : {}),
+      ...(dateModified ? { 'dateModified': dateModified } : {}),
+      'about': { '@id': `${canonicalUrl}#event` },
+      'isBasedOn': nodeEvent.sources,
+      'publisher': schemaJson.publisher,
+    },
+    {
+      '@type': 'Event',
+      '@id': `${canonicalUrl}#event`,
+      'name': nodeEvent.name,
+      'description': description,
+      'startDate': nodeEvent.startDate,
+      'endDate': nodeEvent.endDate,
+      'eventStatus': nodeEvent.eventStatus,
+      'eventAttendanceMode': nodeEvent.eventAttendanceMode,
+      'location': { '@type': 'VirtualLocation', 'url': nodeEvent.url },
+      'url': nodeEvent.url,
+      'organizer': org(nodeEvent.organizer),
+      ...(nodeEvent.sponsor ? { 'sponsor': org(nodeEvent.sponsor) } : {}),
+    },
+  ],
+} : schemaJson;
 ---
 
 <!DOCTYPE html>
@@ -101,7 +139,7 @@ const schemaJson = {
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalUrl} />
 
-  <script type="application/ld+json" set:html={JSON.stringify(schemaJson, null, 2)} />
+  <script type="application/ld+json" set:html={JSON.stringify(pageSchema, null, 2)} />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
