@@ -70,8 +70,22 @@ console.log(`sync-previews-manifest: ${n} manifest(s) derived from the mva build
  * to the self-serve group, which under-sells the attested tiers on the surface
  * agents read first. Additive on purpose: `slugs` stays the contract, so
  * resolveMembers()'s hard-fail guard is untouched. */
-const snapPath = resolve(srcDir, '../../previews/claims-snapshot.json');
-if (existsSync(snapPath)) {
+/* PATH FIX (2026-11-17). srcDir is mva/previews/dist/_manifest, so two levels
+ * up is mva/previews/ — the snapshot's own directory. From 2026-08-19 this read
+ * '../../previews/claims-snapshot.json', which resolves to
+ * mva/previews/previews/…, a file that never exists. The else branch below then
+ * logged a quiet note and kept the committed member list, so the list never
+ * refreshed. Harmless only because there were zero claims throughout. */
+const snapPath = resolve(srcDir, '../../claims-snapshot.json');
+if (!existsSync(snapPath)) {
+  /* Reaching here means a sibling mva checkout EXISTS (the no-checkout case
+   * exited above) and its tracked snapshot is missing. That is a broken path or
+   * a broken checkout, never "no members", so stop instead of passing quietly.
+   * The quiet pass is what hid the wrong path above for three months. */
+  console.error(`  claims-snapshot.json not found at ${snapPath} — refusing to keep a member list that cannot be checked`);
+  process.exit(1);
+}
+{
   const snap = JSON.parse(readFileSync(snapPath, 'utf8'));
   if (!Array.isArray(snap.d1)) {
     console.error(`  claims-snapshot.json has no d1[] — refusing to sync the member list`);
@@ -96,6 +110,4 @@ if (existsSync(snapPath)) {
   }, null, 2) + '\n');
   const att = Object.values(tiers).filter((t) => t !== 'agent-ready').length;
   console.log(`sync-previews-manifest: ${slugs.length} member(s) from claims-snapshot ${String(snap.generated).slice(0, 10)} — ${att} attested, ${slugs.length - att} self-serve`);
-} else {
-  console.log(`sync-previews-manifest: no claims-snapshot.json beside mva — member list left as committed`);
 }
