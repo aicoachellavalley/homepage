@@ -3,7 +3,7 @@
  "segment": "food-dining",
  "generated": "2026-07-15",
  "count": 441,
- "indexable": 407,
+ "indexable": 406,
  "sitemap": "https://aicoachellavalley.com/agent-preview/sitemap-previews-food-dining.xml",
  "entries": [
   {
@@ -1243,7 +1243,7 @@
    "name": "Jackalope Ranch",
    "city": "Indio",
    "url": "https://aicoachellavalley.com/agent-preview/food-dining/jackalope-ranch",
-   "indexable": true
+   "indexable": false
   },
   {
    "slug": "jade-at-agua-caliente-the-district",
