@@ -31,7 +31,7 @@ export function validateInput(input, tool = 'resolve_local_intent') {
   return input;
 }
 const LIMITATIONS = [
-  'This is a read-only lookup of dated records, not live availability, prices or booking execution.',
+  'This is a read-only lookup of source records, not live availability, prices or booking execution.',
   'Preview inclusion and research selection are independent of whether a business pays AICV.',
   'A retrieved record is evidence to evaluate, not proof of present access, suitability or a guaranteed recommendation.',
 ];
@@ -64,8 +64,15 @@ export function searchBusinessPreviews(input, catalog) {
   const tokens = terms(query, city);
   const coffee = /\b(coffee|cafe|cafes|matcha)\b/.test(normalize(query));
   const q = normalize(query);
-  const searchable = [...catalog.previews.filter(o=>!(catalog.workspace?.options??[]).some(w=>w.id===o.id)),...(catalog.workspace?.options??[]).map(o=>(catalog.researched_entities??[]).find(r=>r.id===o.id)??o)];
+  const held = catalog.previews.filter((r) => r.publication_status === 'under_review');
+  const heldIds = new Set(held.map((r) => r.id));
+  const exactHold = held.find((r) => (!input.segment || r.segment === input.segment) && new RegExp(`(?:^| )${normalize(r.name)}(?: |$)`).test(q));
+  const searchable = [...catalog.previews.filter(o=>!heldIds.has(o.id) && !(catalog.workspace?.options??[]).some(w=>w.id===o.id)),...(catalog.workspace?.options??[]).filter(o=>!heldIds.has(o.id)).map(o=>(catalog.researched_entities??[]).find(r=>r.id===o.id)??o)];
   const namedAnywhere = searchable.filter((r) => normalize(r.name).length > 4 && q.includes(normalize(r.name)));
+  if (exactHold && !namedAnywhere.length && !/\b(compare|versus|vs|alternatives?|other options?)\b/.test(q)) {
+    return { status: 'under_review', count: 0, total_matches: 0, city,
+      results: [], under_review: [publicRecord(exactHold)], catalog: catalog.source_counts, limitations: LIMITATIONS };
+  }
   const candidates = searchable.filter((r) => (!city || city === 'Coachella Valley' || normalize(r.city) === normalize(city)) && (!input.segment || r.segment === input.segment));
   if (city && city !== 'Coachella Valley' && namedAnywhere.length && namedAnywhere.every((r) => normalize(r.city) !== normalize(city))) {
     return { status: 'no_match', count: 0, total_matches: 0, city, results: [], catalog: catalog.source_counts,
@@ -92,12 +99,14 @@ export function searchBusinessPreviews(input, catalog) {
   const matched = highest >= 120 ? ranked.filter(({ score }) => score >= 100) : ranked;
   const results = matched.slice(0, input.limit ?? 6).map(({ r }) => publicRecord(r));
   return { status: results.length ? 'matches' : 'no_match', count: results.length,
-    total_matches: matched.length, city, results, catalog: catalog.source_counts,
+    total_matches: matched.length, city, results, ...(exactHold ? { under_review: [publicRecord(exactHold)] } : {}), catalog: catalog.source_counts,
     limitations: LIMITATIONS };
 }
 export function getBusinessPreview(input, catalog) {
   validateInput(input, 'get_business_preview');
-  const record = (catalog.researched_entities ?? []).find((r) => r.id === input.id) ?? catalog.previews.find((r) => r.id === input.id) ?? catalog.nodes.find((r) => r.id === input.id);
+  const preview = catalog.previews.find((r) => r.id === input.id);
+  if (preview?.publication_status === 'under_review') return { status: 'under_review', record: publicRecord(preview), limitations: LIMITATIONS };
+  const record = (catalog.researched_entities ?? []).find((r) => r.id === input.id) ?? preview ?? catalog.nodes.find((r) => r.id === input.id);
   return { status: record ? 'found' : 'not_found', ...(record ? { record: publicRecord(record) } : {}), limitations: LIMITATIONS };
 }
 function nodeContext(catalog, slugs, city) {
@@ -158,6 +167,7 @@ export function resolveLocalIntent(input, catalog) {
     return { ...base, status: 'no_match', intent: 'local-business' };
   }
   const search = searchBusinessPreviews({ query: wanted, ...(city ? { city } : {}), limit: input.limit ?? 6 }, catalog);
+  if (search.status === 'under_review') return { ...base, status: 'under_review', intent: 'local-business', under_review: search.under_review };
   base.results = leftOut ? search.results.filter(r => !normalize(r.name || '').includes(leftOut)) : search.results;
   base.limitations.push('The preview search matches recorded names and source text; it is not a complete suitability ranking.');
   if (/\bquiet|privacy|private|near|walking|walkable\b/.test(q)) base.unresolved_constraints.push('Current noise, privacy, distance and seating suitability are not established by this lookup; confirm them for the proposed visit.');

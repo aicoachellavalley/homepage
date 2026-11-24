@@ -3,7 +3,7 @@
  "segment": "wellness-healthcare",
  "generated": "2026-07-21",
  "count": 386,
- "indexable": 338,
+ "indexable": 337,
  "sitemap": "https://aicoachellavalley.com/agent-preview/sitemap-previews-wellness-healthcare.xml",
  "entries": [
   {
@@ -1761,10 +1761,11 @@
   {
    "slug": "mirage-wellness-centers",
    "name": "Mirage Wellness Centers",
-   "city": "Rancho Mirage",
+   "city": null,
    "url": "https://aicoachellavalley.com/agent-preview/wellness-healthcare/mirage-wellness-centers",
-   "indexable": true,
-   "measurement_date": "2026-07-21"
+   "indexable": false,
+   "measurement_date": null,
+   "publication_status": "under_review"
   },
   {
    "slug": "movement-bottega",

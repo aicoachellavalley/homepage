@@ -48,7 +48,7 @@ for (const [label, args] of cases) test(`synthetic MCP benchmark: ${label}`, asy
     assert.deepEqual(r.field_evidence, source.field_evidence);
     assert.equal(r.fit_assessment_type, 'judgment');
     assert.ok(r.unknowns.some((u) => /availability.*quote|quote.*availability/.test(u)));
-    assert.ok(r.official_actions.every((a) => /^https:\/\//.test(a.url) && a.checked_at === source.source_checked_at));
+    assert.ok(r.official_actions.every((a) => /^https:\/\//.test(a.url) && a.checked_at === source.action_checked_at));
     assert.equal(r.node_last_updated, source.node_last_updated ?? null);
     assert.equal(r.price, undefined); assert.equal(r.available, undefined);
   }
