@@ -12,7 +12,8 @@ const schema = {
   name: 'Plan a team retreat in the Coachella Valley',
   description,
   url: canonical,
-  datePublished: pageDates['/plan-team-retreat/'],
+  // First production release, homepage PR #1 (ece99a1572), not the draft or latest review.
+  datePublished: '2026-10-07',
   dateModified: pageDates['/plan-team-retreat/'],
   publisher: { '@id': 'https://aicoachellavalley.com/#organization' },
 };
@@ -76,7 +77,7 @@ const schema = {
             <ul>{option.constraints.map(constraint => <li>{constraint}</li>)}</ul>
             <div class="option-sources">
               <p>Primary sources checked: <time datetime={option.source_checked_at}>{option.source_checked_at || 'See individual source dates'}</time></p>
-              {option.primary_sources.map(source => <a href={source.url}>{source.label}{source.checked_at ? ` · ${source.checked_at}` : ''} ↗</a>)}
+              {option.primary_sources.map(source => 'historical' in source && source.historical ? <span>{source.label} · {source.checked_at} (historical source, no longer online)</span> : <a href={source.url}>{source.label}{source.checked_at ? ` · ${source.checked_at}` : ''} ↗</a>)}
               {option.node_source && <a href={option.node_source}>AICV research record · {option.node_last_updated} →</a>}
             </div>
             <div class="option-actions">

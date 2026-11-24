@@ -2960,22 +2960,29 @@
       ],
       "primary_sources": [
         {
-          "label": "Corporate retreat pathway",
+          "label": "Original corporate retreat evidence",
           "url": "https://oldpolo.com/corporate",
           "checked_at": "2026-10-07",
-          "quality": "Official operator"
+          "quality": "Official operator",
+          "historical": true
         },
         {
           "label": "Published policies and conflicting lodging/city",
           "url": "https://oldpolo.com/faqs",
           "checked_at": "2026-10-07",
           "quality": "Official operator"
+        },
+        {
+          "label": "Current corporate retreat inquiry pathway",
+          "url": "https://corporate.oldpolo.com/",
+          "checked_at": "2026-11-24",
+          "quality": "Official operator"
         }
       ],
       "source_checked_at": "2026-10-07",
       "node_source": null,
       "node_last_updated": null,
-      "action_url": "https://oldpolo.com/corporate",
+      "action_url": "https://corporate.oldpolo.com/#wlc-ope-inquiry",
       "action_label": "Official retreat inquiry",
       "action_kind": "inquiry",
       "phone": "+1 (877) 920-0952",
@@ -3090,11 +3097,11 @@
           "quality": "Official operator page; a published claim, not independent inspection or a quote."
         },
         "action_url": {
-          "value": "https://oldpolo.com/corporate",
-          "source_url": "https://oldpolo.com/corporate",
-          "checked_at": "2026-10-07",
+          "value": "https://corporate.oldpolo.com/#wlc-ope-inquiry",
+          "source_url": "https://corporate.oldpolo.com/",
+          "checked_at": "2026-11-24",
           "evidence_type": "published_fact",
-          "quality": "Official operator page; a published claim, not independent inspection or a quote."
+          "quality": "Official operator inquiry link; the published form is not a quote, booking or availability check."
         },
         "identity": {
           "evidence_type": "published_fact",
@@ -3176,10 +3183,10 @@
         "recorded_city": "Indio",
         "note": "Historical publication reference; not a fresh venue inspection."
       },
-      "action_checked_at": "2026-10-07",
-      "action_source_url": "https://oldpolo.com/corporate",
+      "action_checked_at": "2026-11-24",
+      "action_source_url": "https://corporate.oldpolo.com/",
       "record_type": "researched-retreat-option",
-      "source_url": "https://oldpolo.com/corporate",
+      "source_url": "https://corporate.oldpolo.com/",
       "aliases": [
         "Old Polo",
         "The Old Polo Estate"
@@ -4151,7 +4158,7 @@
     },
     {
       "slug": "they-improv-palm-springs",
-      "name": "THEY improv \u2014 Palm Springs service area",
+      "name": "THEY improv — Palm Springs service area",
       "city": null,
       "service_type": "facilitation",
       "tags": [
@@ -4280,11 +4287,11 @@
       ],
       "fit": "Separate provider to help fulfill a retreat need; venue permission and an individual proposal are required.",
       "facts": [
-        "Private group San Andreas Fault programs publish 15\u2013100 guests; double rounds can serve up to 150.",
+        "Private group San Andreas Fault programs publish 15–100 guests; double rounds can serve up to 150.",
         "Published per-Jeep occupancy is seven; photo-riddle team-building add-on is offered."
       ],
       "constraints": [
-        "Morning tours September\u2013June; afternoon tours late September\u2013early May and discouraged above forecast 105\u00b0F.",
+        "Morning tours September–June; afternoon tours late September–early May and discouraged above forecast 105°F.",
         "Advance reservations are required; signed contract/50% deposit and per-Jeep billing apply.",
         "Mobility accommodations are described; wheelchair boarding and each attendee's access needs require confirmation.",
         "Pickup scope and fees differ by city. Confirm current pricing, cancellation policy, heat plan and venue itinerary."
@@ -4329,7 +4336,7 @@
         },
         "offering": {
           "value": [
-            "Private group San Andreas Fault programs publish 15\u2013100 guests; double rounds can serve up to 150.",
+            "Private group San Andreas Fault programs publish 15–100 guests; double rounds can serve up to 150.",
             "Published per-Jeep occupancy is seven; photo-riddle team-building add-on is offered."
           ],
           "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
@@ -4345,7 +4352,7 @@
           "quality": "Official operator page; a published claim, not independent inspection or a quote."
         },
         "group_capacity": {
-          "value": "15\u2013100; up to 150 via double rounds",
+          "value": "15–100; up to 150 via double rounds",
           "source_url": "https://www.red-jeep.com/san-andreas-fault/group-san-andreas-fault-jeep-tour/",
           "checked_at": "2026-10-07",
           "evidence_type": "published_fact",

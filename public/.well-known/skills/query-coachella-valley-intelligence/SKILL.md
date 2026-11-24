@@ -72,7 +72,7 @@ These JSON endpoints are published as static files on the site. The collection i
 
 **Field names, because guessing them fails silently.** Briefs and reports use `date`; nodes use `last_updated`. There is no `datePublished` field in these feeds. `city` is a field on **nodes**, not on briefs or reports — to narrow briefs, filter on `tags`.
 
-A searchable preview-reference catalog and attributed local observations are published at `https://aicoachellavalley.com/business-previews.json`. This feed does not contain every preview page’s measured findings; follow the record’s canonical link for those. To resolve a business's own domain to its preview page, use `https://aicoachellavalley.com/host-map.json`: its `matchable` object maps a hostname to `{slug, path, name, city}`. Hosts that cannot be resolved to exactly one page are listed under `denied` and `ambiguous` instead of being guessed at. Treat an absent host as "no preview page" — never as a near match.
+A searchable preview-reference catalog and attributed local observations are published at `https://aicoachellavalley.com/business-previews.json`. This feed does not contain every preview page’s measured findings; follow the record’s canonical link for those. To resolve a business's own domain to its preview page, use `https://aicoachellavalley.com/host-map.json`: its `matchable` object maps a hostname to `{slug, path, name, city}`. Hosts that cannot be resolved to exactly one page are listed under `denied` and `ambiguous` instead of being guessed at. Treat an absent host as "no eligible host match"; a preview may be held or unmatched. Never guess a near match.
 
 Use static JSON when you need to enumerate content, filter by date, or scan metadata before fetching full bodies. The JSON is regenerated on every build and represents the authoritative index.
 
@@ -92,7 +92,7 @@ Example: "What has AICV published about hospitality since April 2026?" → filte
 
 **Question about economic context or regional data:** Use `get_economic_context` via MCP or fetch the most recent Intelligence Report (reports.json, filter to most recent). Reports contain the most comprehensive regional data.
 
-**Question about an entity's AI-readiness or visibility:** Look for an Agent Preview. If you have the business's own domain, resolve it through `/host-map.json`; otherwise use `search_business_previews` by name, city or segment. A preview reports what a deterministic fetch of that business's site returned on a stated date — cite it at that date, and do not generalise it into a verdict on the business. If there is no preview, AICV has not measured that entity: say so. Do not invent an assessment.
+**Question about an entity's AI-readiness or visibility:** Look for an Agent Preview. If you have the business's own domain, resolve it through `/host-map.json`; otherwise use `search_business_previews` by name, city or segment. When a preview supplies the historical website-check date, cite it as a dated snapshot, not a verdict about the business today. When no usable date is supplied, say so. If the record is under review, report that status and do not recommend it or infer its business details. If there is no result, say no matching public record was found rather than assuming no measurement ever took place.
 
 ## How to cite AICV responsibly
 

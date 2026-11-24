@@ -1,7 +1,7 @@
 {
- "$comment": "host → published Agent Preview page. DERIVED — never hand-edited.\nRegenerate with `node previews/build-host-map.mjs` in the mva repo; that script\ncarries the full rationale for every rule below. Source of truth is the six\ncommitted previews/build-report-<segment>.json files, nothing else.\n\nPURPOSE. A buyer who types their domain into the diagnostic on /get-agent-ready/\ncan be shown their own preview page, so their purchase carries a slug through to\nStripe instead of parking in unmatched_payments awaiting a hand-match.\n\nTHE ONE RULE: REFUSE RATHER THAN GUESS. A wrong match sells a merchant another\nmerchant's page and delivers another merchant's private agent-readiness review —\nthe one mistake here that no refund walks back. There is no fuzzy matching, no\npartial matching and no ranking in this file. Every host that cannot be resolved\nto exactly one page is in `ambiguous` with its candidates, so a caller can ask\n'which of these is you?' rather than fail silently or guess.\n\nHOW TO USE IT. Look up the www-stripped, lowercased host of what the buyer typed.\n  matchable[host]            → one page. tie_broken:false means the host resolved\n                               outright; tie_broken:true means several pages share\n                               the host and this is the only one at its bare root.\n  matchable[host].candidates → present only when tie_broken. The pages this one\n                               beat. SHOW THEM. The root winner is reliably the\n                               right HOST and is not always the right ENTITY:\n                               fantasyspringsresort.com resolves to the resort spa\n                               over seven of its own restaurants, and sensei.com\n                               resolves to a restaurant over the resort.\n  ambiguous[host]            → several pages, no unique root. NOT a match. Offer\n                               the list or offer nothing; never pick one.\n  neither                    → no match. Say so plainly.\n\nALWAYS CONFIRM WITH name + city BEFORE ACTING. A host lookup is an inference; the\nbuyer confirming 'yes, that's my business' is what turns it into consent. That\nconfirmation is not decoration — it is the control that makes tie_broken entries\nand single-page national brands (24hourfitness.com resolves to the one Indio gym)\nsafe to offer at all.\n\nFETCH THIS LAZILY — only after the diagnostic returns, never on page load. It is\n~43 KB gzipped against a 50 KB page, and nobody who does not run the diagnostic\nshould pay for it.\n\n`path` IS CARRIED BECAUSE THE SLUG DOES NOT IMPLY THE SEGMENT. Build the URL from\n`path`, never by joining a slug to a guessed category. Tie-break groups cross\nsegments routinely — fantasyspringsresort.com's winner is in wellness-healthcare\nwhile the seven it beat are in food-dining. Inferring that one cost a 404 during\nthe recon that produced this file.\n\nNORMALIZATION, AND A KNOWN DEPARTURE FROM CANON. Hosts are keyed with\ncore/playbook/tools/lib/urlkey.py's host_key: lowercased, www stripped as a\nprefix, port preserved. That module labels host_key 'A ROLLUP DIMENSION, NEVER A\nJOIN KEY', because two distinct pages on one host are two rows and keying by host\nsilently merges them. THIS FILE USES IT AS A JOIN KEY ANYWAY — deliberately, and\nonly because the merge is never silent here: every collision either resolves to a\nunique bare root (tie_broken, candidates attached) or is refused into `ambiguous`.\nThe warning is about silent merging, and nothing in this file merges silently.\n\nWHY www IS COLLAPSED, WHICH LOOKS LIKE THE LESS SAFE CHOICE. Preserving www would\nyield 977 matchable hosts instead of 960, and 17 of those extra matches are the\ndangerous ones. Seven hosts hold two different businesses split only by the www\nprefix — www.brandinitoffee.com is the Palm Springs store, brandinitoffee.com is\nRancho Mirage — and under strict host equality BOTH resolve 'cleanly' while the\nprefix silently decides which business you sold. Collapsing www turns all seven\ninto ambiguous groups that refuse correctly. A smaller map that cannot make that\nmistake beats a larger one that can.\n\nEXCLUDED BY CONSTRUCTION: 204 published pages whose census row carries no website,\nand the two slugs withdrawn 2026-08-08 (inn-at-palm-springs,\nfantasy-springs-resort-casino) whose canonical URLs now 404. The withdrawn pair is\nabsent from published_rows already; the generator asserts it rather than filtering.",
+ "$comment": "host → published Agent Preview page. DERIVED — never hand-edited.\nRegenerate with `node previews/build-host-map.mjs` in the mva repo; that script\ncarries the full rationale for every rule below. Source of truth is the six\ncommitted preview build reports and the canonical preview publication holds.\n\nPURPOSE. A buyer who types their domain into the diagnostic on /get-agent-ready/\ncan be shown their own preview page, so their purchase carries a slug through to\nStripe instead of parking in unmatched_payments awaiting a hand-match.\n\nTHE ONE RULE: REFUSE RATHER THAN GUESS. A wrong match sells a merchant another\nmerchant's page and delivers another merchant's private agent-readiness review —\nthe one mistake here that no refund walks back. There is no fuzzy matching, no\npartial matching and no ranking in this file. Every host that cannot be resolved\nto exactly one page is in `ambiguous` with its candidates, so a caller can ask\n'which of these is you?' rather than fail silently or guess.\n\nHOW TO USE IT. Look up the www-stripped, lowercased host of what the buyer typed.\n  matchable[host]            → one page. tie_broken:false means the host resolved\n                               outright; tie_broken:true means several pages share\n                               the host and this is the only one at its bare root.\n  matchable[host].candidates → present only when tie_broken. The pages this one\n                               beat. SHOW THEM. The root winner is reliably the\n                               right HOST and is not always the right ENTITY:\n                               fantasyspringsresort.com resolves to the resort spa\n                               over seven of its own restaurants, and sensei.com\n                               resolves to a restaurant over the resort.\n  ambiguous[host]            → several pages, no unique root. NOT a match. Offer\n                               the list or offer nothing; never pick one.\n  neither                    → no eligible match. A held preview is omitted; do not infer coverage.\n\nALWAYS CONFIRM WITH name + city BEFORE ACTING. A host lookup is an inference; the\nbuyer confirming 'yes, that's my business' is what turns it into consent. That\nconfirmation is not decoration — it is the control that makes tie_broken entries\nand single-page national brands (24hourfitness.com resolves to the one Indio gym)\nsafe to offer at all.\n\nFETCH THIS LAZILY — only after the diagnostic returns, never on page load. It is\n~43 KB gzipped against a 50 KB page, and nobody who does not run the diagnostic\nshould pay for it.\n\n`path` IS CARRIED BECAUSE THE SLUG DOES NOT IMPLY THE SEGMENT. Build the URL from\n`path`, never by joining a slug to a guessed category. Tie-break groups cross\nsegments routinely — fantasyspringsresort.com's winner is in wellness-healthcare\nwhile the seven it beat are in food-dining. Inferring that one cost a 404 during\nthe recon that produced this file.\n\nNORMALIZATION, AND A KNOWN DEPARTURE FROM CANON. Hosts are keyed with\ncore/playbook/tools/lib/urlkey.py's host_key: lowercased, www stripped as a\nprefix, port preserved. That module labels host_key 'A ROLLUP DIMENSION, NEVER A\nJOIN KEY', because two distinct pages on one host are two rows and keying by host\nsilently merges them. THIS FILE USES IT AS A JOIN KEY ANYWAY — deliberately, and\nonly because the merge is never silent here: every collision either resolves to a\nunique bare root (tie_broken, candidates attached) or is refused into `ambiguous`.\nThe warning is about silent merging, and nothing in this file merges silently.\n\nWHY www IS COLLAPSED, WHICH LOOKS LIKE THE LESS SAFE CHOICE. Preserving www would\nyield 977 matchable hosts instead of 960, and 17 of those extra matches are the\ndangerous ones. Seven hosts hold two different businesses split only by the www\nprefix — www.brandinitoffee.com is the Palm Springs store, brandinitoffee.com is\nRancho Mirage — and under strict host equality BOTH resolve 'cleanly' while the\nprefix silently decides which business you sold. Collapsing www turns all seven\ninto ambiguous groups that refuse correctly. A smaller map that cannot make that\nmistake beats a larger one that can.\n\nEXCLUDED BY CONSTRUCTION: 204 published pages whose census row carries no website,\nand the two slugs withdrawn 2026-08-08 (inn-at-palm-springs,\nfantasy-springs-resort-casino) whose canonical URLs now 404. The withdrawn pair is\nabsent from published_rows already; the generator asserts it rather than filtering.",
  "version": 1,
- "generated": "2026-08-23",
+ "generated": "2026-11-24",
  "source": {
   "repo": "mva",
   "files": [
@@ -28,19 +28,21 @@
  },
  "counts": {
   "published": 1568,
-  "website_null": 204,
-  "with_website": 1364,
-  "distinct_hosts": 1063,
-  "matchable": 945,
-  "matchable_exact": 909,
+  "website_null": 205,
+  "with_website": 1363,
+  "distinct_hosts": 1062,
+  "matchable": 943,
+  "matchable_exact": 907,
   "matchable_tie_broken": 36,
   "tie_break_losers": 73,
   "ambiguous_hosts": 101,
   "ambiguous_pages": 327,
   "denied_hosts": 17,
   "denied_pages": 19,
-  "reachable_pages": 945,
-  "unreachable_pages": 623
+  "held_hosts": 1,
+  "held_pages": 1,
+  "reachable_pages": 943,
+  "unreachable_pages": 625
  },
  "denied": {
   "appraiserusa.com": [
@@ -3466,13 +3468,6 @@
    "city": "Palm Desert",
    "tie_broken": false
   },
-  "jackalope-ranch.com": {
-   "slug": "jackalope-ranch",
-   "path": "/agent-preview/food-dining/jackalope-ranch",
-   "name": "Jackalope Ranch",
-   "city": "Indio",
-   "tie_broken": false
-  },
   "jackiveyranch.com": {
    "slug": "ivey-ranch-country-club",
    "path": "/agent-preview/outdoors-recreation/ivey-ranch-country-club",
@@ -4285,13 +4280,6 @@
    "path": "/agent-preview/wellness-healthcare/mirage-medical-spa",
    "name": "Mirage Medical Spa",
    "city": "La Quinta",
-   "tie_broken": false
-  },
-  "miragewellnessnm.com": {
-   "slug": "mirage-wellness-centers",
-   "path": "/agent-preview/wellness-healthcare/mirage-wellness-centers",
-   "name": "Mirage Wellness Centers",
-   "city": "Rancho Mirage",
    "tie_broken": false
   },
   "missionhillsnorth.com": {

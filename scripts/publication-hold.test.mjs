@@ -1,0 +1,73 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import test from 'node:test';
+import { searchBusinessPreviews, getBusinessPreview, resolveLocalIntent } from '../src/lib/local-intent.mjs';
+import { TOOLS } from '../src/lib/mcp-handler.mjs';
+const read = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
+const catalog = read('../src/data/intent-catalog.json');
+const exported = read('../public/business-previews.json');
+const hostMap = read('../public/host-map.json');
+const id = 'wellness-healthcare/mirage-wellness-centers';
+const name = 'Mirage Wellness Centers';
+const included = '360 Sports (Agua Caliente Rancho Mirage)';
+
+test('a held record stays in the archive with no public location, date, evidence or action', () => {
+  assert.equal(exported.source_counts.published_previews, 1568);
+  assert.equal(exported.records.length, 1577);
+  assert.equal(new Set(exported.records.map(x => x.id)).size, 1577);
+  const row = exported.records.find(x => x.id === id);
+  const got = getBusinessPreview({ id }, catalog);
+  assert.equal(got.status, 'under_review');
+  assert.deepEqual(got.record, row);
+  assert.equal(row.city, null);
+  assert.equal(row.measurement_date, null);
+  assert.equal(row.indexable, false);
+  assert.equal(row.manifest_generated_at, undefined);
+  assert.equal(row.publication_verified_at, undefined);
+  assert.deepEqual(row.official_actions, []);
+  assert.ok(!Object.values(hostMap.matchable).some(r => r.path === new URL(row.preview_url).pathname));
+  assert.ok(!('miragewellnessnm.com' in hostMap.matchable));
+  assert.ok(!('miragewellnessnm.com' in hostMap.ambiguous));
+  assert.ok(!('miragewellnessnm.com' in hostMap.denied));
+  assert.match(exported.source_dates_note, /under-review/);
+  assert.doesNotMatch(exported.source_dates_note, /demo/);
+  assert.match(exported.local_observations_date_note, /Only the 9 additional local observations.*2026-09-01.*2026-09-30/);
+});
+
+test('only the hold is suppressed; exact, broad and mixed queries remain safe', () => {
+  const exact = searchBusinessPreviews({ query: name, city: 'Rancho Mirage', segment: 'wellness-healthcare' }, catalog);
+  assert.equal(exact.status, 'under_review');
+  assert.deepEqual(exact.results, []);
+  assert.equal(exact.under_review[0].id, id);
+  const decision = resolveLocalIntent({ query: 'Is Mirage Wellness Centers open?' }, catalog);
+  assert.equal(decision.status, 'under_review');
+  assert.deepEqual(decision.results, []);
+  assert.equal(decision.under_review[0].measurement_date, null);
+  const broad = searchBusinessPreviews({ query: 'wellness', city: 'Rancho Mirage', segment: 'wellness-healthcare', limit: 20 }, catalog);
+  assert.ok(!broad.results.some(x => x.id === id));
+  assert.ok(broad.results.length > 0);
+  const compare = searchBusinessPreviews({ query: `Compare ${name} and ${included}`, city: 'Rancho Mirage' }, catalog);
+  assert.equal(compare.status, 'matches');
+  assert.equal(compare.under_review[0].id, id);
+  assert.ok(compare.results.some(x => x.name === included));
+  const normal = getBusinessPreview({ id:'hospitality/the-good-house' }, catalog);
+  assert.equal(normal.status, 'found');
+  assert.equal(normal.record.measurement_date, '2026-07-21');
+  const undated = getBusinessPreview({ id:'home-real-estate/agape-home-inspection' }, catalog);
+  assert.equal(undated.status, 'found');
+  assert.equal(undated.record.measurement_date, null);
+  assert.doesNotMatch(undated.record.summary, /^Dated /);
+});
+
+test('Local Decision tool metadata and Old Polo expose only the verified action date', () => {
+  assert.match(TOOLS.find(x => x.name === 'get_business_preview').description, /under_review/);
+  assert.doesNotMatch(TOOLS.find(x => x.name === 'get_business_preview').description, /one dated/);
+  assert.match(TOOLS.find(x => x.name === 'search_business_previews').description, /can be unknown/);
+  const polo = getBusinessPreview({ id:'hospitality/the-old-polo-estate' }, catalog).record;
+  assert.equal(polo.source_checked_at,'2026-10-07');
+  assert.equal(polo.field_evidence.corporate_page_city.checked_at,'2026-10-07');
+  assert.equal(polo.city,null);
+  assert.equal(polo.guest_capacity,null);
+  assert.deepEqual(polo.official_actions.map(a=>[a.url,a.source_url,a.checked_at]),[['https://corporate.oldpolo.com/#wlc-ope-inquiry','https://corporate.oldpolo.com/','2026-11-24']]);
+  assert.ok(polo.primary_sources.some(s=>s.historical && s.checked_at==='2026-10-07'));
+});

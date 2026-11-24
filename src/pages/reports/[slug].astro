@@ -401,7 +401,7 @@ const reportSchema = {
       </p>
       <ul class="report-previews-list">
         {previewManifest.entries.map((e: any) => (
-          <li><a href={e.url}>{e.name}</a>{e.city ? <span class="report-previews-city"> · {e.city}</span> : null}</li>
+          <li><a href={e.url}>{e.name}</a>{e.city ? <span class="report-previews-city"> · {e.city}</span> : null}{e.publication_status === "under_review" && <span class="report-previews-city"> · under review</span>}</li>
         ))}
       </ul>
     </section>

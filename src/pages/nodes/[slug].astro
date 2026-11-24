@@ -26,6 +26,8 @@ const countsDate = countedSetDate(
 );
 const dateModified = nodeDateModified(entry.data, entry.body, countsDate);
 const updatedAfterReview = dateModified && last_updated && dateModified > last_updated ? dateModified : '';
+const reviewedAt = Date.parse(`${last_updated ?? ""}T00:00:00Z`);
+const reviewExpired = Number.isFinite(reviewedAt) && Math.floor((Date.now() - reviewedAt) / 86400000) > 90;
 
 const canonicalUrl = `https://aicoachellavalley.com/nodes/${slug}/`;
 const pageTitle    = `${title} — AICV Intelligence Node`;
@@ -301,6 +303,7 @@ const pageSchema = nodeEvent ? {
   </header>
 
   <div class="page-wrap">
+    {reviewExpired && <p role="note"><strong>Review overdue.</strong> Last reviewed <time datetime={last_updated}>{last_updated}</time>. This research is historical; confirm current details with the original sources.</p>}
     <div class="node-body">
       <Content components={{ h1: OmitBodyTitle }} />
     </div>

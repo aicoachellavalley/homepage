@@ -27,6 +27,18 @@ const previews = deployed.segments.flatMap((segment) => {
   if (manifest.count !== manifest.entries.length) throw new Error(`Manifest count mismatch: ${segment}`);
   return manifest.entries.map((entry) => {
     const measurement = entry.measurement_date;
+    if (entry.publication_status === 'under_review') {
+      if (entry.indexable !== false || measurement !== null || entry.city !== null) throw new Error(`Unsafe held preview metadata: ${segment}/${entry.slug}`);
+      return {
+        id: `${segment}/${entry.slug}`, name: entry.name, city: null, segment,
+        record_type: 'business-preview', source_url: entry.url, preview_url: entry.url,
+        publication_status: 'under_review', indexable: false, measurement_date: null,
+        measurement_date_note: 'Under review; no public website measurement is available.',
+        summary: 'Preview under review. Business identity and source details are not confirmed.',
+        constraints: ['Do not recommend this record or treat it as a verified business fact.'], official_actions: [],
+      };
+    }
+    if (entry.publication_status != null) throw new Error(`Unknown preview publication status: ${segment}/${entry.slug}`);
     if (measurement != null && !validDate(measurement)) throw new Error(`Invalid preview measurement date: ${segment}/${entry.slug}`);
     return {
       id: `${segment}/${entry.slug}`, name: entry.name, city: entry.city, segment,
@@ -37,7 +49,7 @@ const previews = deployed.segments.flatMap((segment) => {
         : measurement === null ? 'No usable dated website measurement for this record; consult the canonical preview.'
         : 'Older manifest has no per-entity inspection date; consult the canonical preview. Any manifest date refers to the census wave, not this business.') + ' Website checks are not automatically repeated; confirm current details with the business.',
       publication_verified_at: deployed.verified_at,
-      summary: `Dated ${manifest.domain} preview. Open the source for recorded findings, if any, and publication status.`,
+      summary: `${measurement ? "Dated " : ""}${manifest.domain} preview. Open the source for recorded findings, if any, and publication status.`,
       constraints: ['This manifest supplies identity and a preview link; it does not attest business facts, current access or availability.'],
       official_actions: [],
     };
@@ -90,7 +102,8 @@ const catalog = {
   source_counts: { published_previews: previews.length, additional_local_observations: local.length,
     regional_nodes: nodes.length, researched_retreat_venues: retreat.options.length,
     retreat_supporting_services: retreat.services.length, qualified_workspace_options:workspace.options.length, total_lookup_records: uniqueIds.size },
-  source_dates_note: observations.date_note,
+  source_dates_note: 'A date applies to the field and record it labels. For business previews, measurement_date is the historical website check, when known; census-wave generation or publication verification are not website checks. An under-review preview has no public measurement.',
+  local_observations_date_note: `Only the ${local.length} additional local observations: ${observations.snapshot_date} is the source snapshot date from the Agent-Ready Palm Desert demo; ${observations.imported_at} is when they were imported, not when the facts were rechecked. Demo fit scores were not imported.`,
   previews: [...previews, ...local], nodes, researched_entities: researched,
   retreat, workspace,
 };
@@ -101,6 +114,7 @@ writeFileSync(resolve(root, 'src/data/intent-catalog.json'), JSON.stringify(cata
 // The downloadable catalog excludes research bodies; /mcp uses the same source.
 writeFileSync(resolve(root, 'public/business-previews.json'), JSON.stringify({
   scope: catalog.scope, source_counts: catalog.source_counts, source_dates_note: catalog.source_dates_note,
+  local_observations_date_note: catalog.local_observations_date_note,
   records: catalog.previews,
   researched_entities: researched,
 }) + '\n');
