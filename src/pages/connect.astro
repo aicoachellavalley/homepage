@@ -131,7 +131,7 @@ const schemaGraph = {
     <div class="hwd-eyebrow">Freshness</div>
     <h2 class="hwd-h2">Regional nodes: a rolling 30-day review target.</h2>
     <p class="hwd-body">We update regional nodes on an ongoing basis and target a source review every 30 days. This describes our editorial review cycle; it does not refresh a record automatically. Source-check dates move only when the underlying sources are actually checked.</p>
-    <p class="hwd-body">The existing {WINDOW_DAYS}-day verification expiry remains a backstop in the node feed and connector. Nodes carry <code class="cn-code">freshness</code> and <code class="cn-code">verified_until</code> so an assistant can assess the date. Reports and business previews retain their own publication and measurement dates; they are not covered by a monthly node-review promise.</p>
+    <p class="hwd-body">The existing {WINDOW_DAYS}-day verification expiry remains a backstop in the node feed and connector. Nodes carry <code class="cn-code">freshness</code> and <code class="cn-code">verified_until</code> so an assistant can assess the date. Business previews are historical snapshots. Use their original website-check date where available, not the census-wave or publication-verification date. An unknown or missing website-check date does not inherit a regional-node review date. Neither business previews nor reports are covered by the monthly node-review target.</p>
   </div>
 </section>
 

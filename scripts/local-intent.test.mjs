@@ -13,10 +13,13 @@ test('catalog exposes all deployed previews, attributed observations and regiona
   assert.equal(catalog.source_counts.regional_nodes, 79);
   assert.equal(catalog.previews.filter((r) => r.segment === 'local-observation').length, 9);
   const preview = catalog.previews.find((r) => r.record_type === 'business-preview');
-  assert.equal(preview.measurement_date, null);
+  const manifest = JSON.parse(readFileSync(new URL(`../src/data/previews/previews-index-${preview.segment}.json`, import.meta.url)));
+  const source = manifest.entries.find((entry) => `${preview.segment}/${entry.slug}` === preview.id);
+  assert.equal(preview.measurement_date, source.measurement_date ?? null);
   assert.match(preview.manifest_generated_at, /^\d{4}-\d{2}-\d{2}$/);
   assert.equal(preview.publication_verified_at, '2026-08-19');
-  assert.match(preview.measurement_date_note, /no per-entity inspection date/);
+  assert.match(preview.measurement_date_note, source.measurement_date ? /historical website check/i : /no usable|no per-entity/i);
+  assert.equal('measurement_date' in catalog.nodes[0], false);
   const rutina = getBusinessPreview({ id: 'local/rutina-coffee' }, catalog).record;
   assert.equal(rutina.source_checked_at, '2026-09-01');
   assert.equal(rutina.provenance.imported_at, '2026-09-30');
@@ -174,4 +177,47 @@ test('transaction requests return an explicit no-execution boundary', () => {
   const result = resolveLocalIntent({ query: 'Book Rutina Coffee Palm Desert for a private meeting' }, catalog);
   assert.match(result.unresolved_constraints.join(' '), /No booking, payment or reservation has been made/);
   assert.match(result.limitations.join(' '), /not live availability/);
+});
+
+test('MCP search and exact get agree on the canonical historical preview; other records do not inherit its date', async () => {
+  const call = async (name, args) => (await (await handleMcp(request(rpc('tools/call', { name, arguments: args })), catalog)).json()).result.structuredContent;
+  const id = 'home-real-estate/bionic-properties';
+  const { results } = await call('search_business_previews', { query: 'Bionic Properties', segment: 'home-real-estate' });
+  const { record } = await call('get_business_preview', { id });
+  const report = JSON.parse(readFileSync(new URL('../src/data/previews/previews-index-home-real-estate.json', import.meta.url)));
+  const source = report.entries.find(e => e.slug === 'bionic-properties');
+  assert.equal(results[0].id, id);
+  assert.deepEqual(results[0], record);
+  assert.equal(record.measurement_date, source.measurement_date ?? null);
+  if ('measurement_date' in source) assert.equal(record.measurement_date, '2026-07-17');
+  assert.equal(record.preview_url, source.url);
+  assert.match(record.measurement_date_note, /not automatically repeated/);
+  for (const unrelated of ['node/node-zero', 'local/rutina-coffee']) {
+    const result = await call('get_business_preview', { id: unrelated });
+    assert.equal(result.status, 'found');
+    assert.equal('measurement_date' in result.record, false);
+    assert.notEqual(result.record.source_checked_at, '2026-07-17');
+  }
+});
+
+test('MCP decision fixtures retain ordered retreat and workspace options, handoffs and unknown availability', async () => {
+  const decide = async (args) => (await (await handleMcp(request(rpc('tools/call', { name: 'resolve_local_intent', arguments: args })), catalog)).json()).result.structuredContent;
+  const retreat = await decide({query:'Plan a November leadership retreat for 16 people near Palm Springs.',group_size:16,rooms:16,nights:2,budget:'$25,000 total'});
+  assert.equal(retreat.status,'needs_details');
+  assert.deepEqual(retreat.results.map(r=>r.id), ['retreat/courtyard-palm-desert','retreat/courtyard-palm-springs','retreat/fairfield-palm-desert','retreat/residence-inn-palm-desert']);
+  assert.deepEqual(retreat.results.flatMap(r=>r.official_actions.map(a=>a.url)), [
+    'https://www.marriott.com/en-us/hotels/ctdcy-courtyard-palm-desert/events/',
+    'https://www.marriott.com/en-us/hotels/pspch-courtyard-palm-springs/events/',
+    'https://www.marriott.com/en-us/hotels/ctdpd-fairfield-inn-and-suites-palm-desert-coachella-valley/events/',
+    'https://www.marriott.com/en-us/hotels/ctdri-residence-inn-palm-desert/events/',
+  ]);
+  assert.ok(retreat.results.every(r=>r.unknowns.some(u=>/exact-date availability/i.test(u))));
+  const workspace = await decide({query:'Find a coworking day pass near Palm Springs for one person.',decision:'workspace',workspace_type:'coworking',workspace_access:'day-pass',group_size:1,required_action:'official_handoff'});
+  assert.equal(workspace.status,'needs_details');
+  assert.deepEqual(workspace.results.map(r=>r.id), ['workspace/regus-750-n-palm-canyon','workspace/the-hive-coworking']);
+  assert.deepEqual(workspace.results.map(r=>r.official_actions.map(a=>a.url)), [
+    ['https://www.regus.com/en/us/6794','https://www.regus.com/en/us/6794'],
+    ['https://www.thehivecoworking.com/memberships','https://members.thehivecoworking.com/login'],
+  ]);
+  assert.ok(workspace.results.every(r=>r.availability.value===null && r.availability.evidence_type==='unknown'));
 });
