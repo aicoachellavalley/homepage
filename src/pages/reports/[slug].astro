@@ -5,6 +5,7 @@ import { getCollection, render } from 'astro:content';
 import org from '../../data/org.json';
 import { reportCopyDate, reportDateModified } from '../../../scripts/report-dates.cjs';
 import reportPreviewMap from '../../data/report-preview-map.json';
+import reportEvidence from '../../data/report-evidence-notes.json';
 const previewManifests = import.meta.glob('../../data/previews/previews-index-*.json', { eager: true });
 
 export async function getStaticPaths() {
@@ -33,6 +34,8 @@ const { title, description, date, period, report_type, tags, sections, canonical
 const slug = entry.id.replace(/\.mdx$/, '');
 const dateModified = reportDateModified(slug, entry.data);
 const copyDate = reportCopyDate(slug);
+const evidenceNote = (reportEvidence as Record<string, { summary: string, links?: { href: string, label: string }[] }>)[slug];
+const datedPreviews = previewManifest?.entries.filter((p: any) => p.measurement_date).length ?? 0;
 
 // This first-person report ends with Sat's signed author biography. The other
 // reports are institutionally bylined and include AI-assisted synthesis; do not
@@ -350,10 +353,10 @@ const reportSchema = {
       {period && <span class="badge badge-period">{period}</span>}
     </div>
     <h1 class="report-title">{title}</h1>
-    <p class="report-date">Published {formattedDate}</p>
+    <p class="report-date">Published <time datetime={date}>{formattedDate}</time></p>
     <p class="report-byline">By <a href={signedBySat ? '/about/#team' : '/about/'}>{author.name}</a></p>
     <p class="report-summary">{description}</p>
-    {copyDate && <p class="report-revision">Copy edited {fmtDate(copyDate)}; research dates are unchanged.</p>}
+    {copyDate && <p class="report-revision">Copy edited <time datetime={copyDate}>{fmtDate(copyDate)}</time>; research dates are unchanged.</p>}
     {dateModified !== date && dateModified !== copyDate && <p class="report-revision">Updated {fmtDate(dateModified)}; see the dated correction below.</p>}
     {tags && tags.length > 0 && (
       <div class="tag-row">
@@ -380,6 +383,10 @@ const reportSchema = {
     {correction && correction.length > 0 && correction.map((c: { date: string; summary: string }) => (
       <p class="correction-note">{c.summary}</p>
     ))}
+    {evidenceNote && <aside class="correction-note" aria-label="Research dates and scope">
+      <strong>Research dates and scope.</strong> {evidenceNote.summary}
+      {(evidenceNote.links ?? []).map((l) => <span> <a href={l.href}>{l.label}</a>.</span>)}
+    </aside>}
     <Content components={{ h1: OmitBodyTitle }} />
   </div>
 
@@ -387,12 +394,10 @@ const reportSchema = {
     <section class="report-previews">
       <h2 class="report-previews-h">Agent Preview pages from this census</h2>
       <p class="report-previews-p">
-        AICV publishes an Agent Preview page for each business in this category
-        whose own website could be measured — <strong>{previewManifest.count} pages</strong> so far.
-        That is deliberately fewer than the census counts: a census row exists for
-        every entity found, while a preview page requires a reachable site of its
-        own to read. Each page records what an AI agent can and cannot read there,
-        on the date it was measured.
+        This category links to <strong>{previewManifest.count} historical preview records</strong>.
+        {datedPreviews} have a dated website check, including checks where access was blocked.
+        The other {previewManifest.count - datedPreviews} have no usable dated website measurement.
+        These are published preview counts, not the census denominator. Confirm current details with the business.
       </p>
       <ul class="report-previews-list">
         {previewManifest.entries.map((e: any) => (

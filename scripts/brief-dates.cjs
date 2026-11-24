@@ -46,4 +46,9 @@ function briefIsAmended(fm) {
   return briefDateModified(fm) !== ((fm && fm.date) || '');
 }
 
-module.exports = { briefDateModified, briefIsAmended, amendmentDates };
+/** Latest original publication in an archive, never an amendment or build date. */
+function latestBriefPublicationDate(records) {
+  return records.map((r) => r.date).filter((value) => typeof value === 'string').sort().at(-1) || '';
+}
+
+module.exports = { briefDateModified, briefIsAmended, amendmentDates, latestBriefPublicationDate };

@@ -292,9 +292,9 @@ const briefSchema = {
 
   <header class="site-header">
     <div class="inner">
-      <p class="brief-date">{formattedDate}</p>
+      <p class="brief-date">Published <time datetime={date}>{formattedDate}</time></p>
       {isAmended && (
-        <p class="brief-updated">Updated {formattedModified}</p>
+        <p class="brief-updated">Amended <time datetime={dateModified}>{formattedModified}</time></p>
       )}
       <h1 class="brief-title">{title}</h1>
       <p class="brief-byline">By <a href="/about/">AI Coachella Valley</a></p>

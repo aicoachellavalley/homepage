@@ -14,7 +14,10 @@ const total = desks.reduce((sum, d) => sum + d.data.counts.records, 0);
 const count = label => desks.reduce((sum, d) => sum + d.data.counts[label], 0);
 const canonical = 'https://aicoachellavalley.com/desks/';
 const description = 'Three AICV desks of labeled, dated and sourced records for visiting and relocating founders in Rancho Mirage, Palm Desert, Indian Wells, La Quinta and Indio.';
+const entries = desks.flatMap(d => d.data.entries);
 const latest = desks.map(d => d.data.latest_observation).sort().at(-1);
+const lastFact = entries.map(e => e.observed_date).filter(Boolean).sort().at(-1);
+const lastWebsite = entries.map(e => e.site_check?.date).filter(Boolean).sort().at(-1);
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -34,7 +37,11 @@ const schema = {
   <main class="dx-wrap">
     <h1>Three desks, one network</h1>
     <p class="dx-lede">{description}</p>
-    <p class="dx-count">{total} maintained records, of up to {meta.network_cap.toLocaleString('en-US')}. Participation is separate: enrolled {count('submitted')}, verified by the business {count('verified')}. Latest check {formatDate(latest)}.</p>
+    <p class="dx-count">{total} maintained records, of up to {meta.network_cap.toLocaleString('en-US')}. Participation is separate: enrolled {count('submitted')}, verified by the business {count('verified')}. </p>
+    <p class="dx-count">
+      {lastFact && <>Most recent recorded facts: <time datetime={lastFact}>{formatDate(lastFact)}</time>. </>}
+      {lastWebsite && <>Most recent automated website check: <time datetime={lastWebsite}>{formatDate(lastWebsite)}</time>. Website checks do not update recorded facts.</>}
+    </p>
     <div class="dx-grid">
       {desks.map(d => (
         <a class="dx-card" href={`/desks/${d.slug}/`}>

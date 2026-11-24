@@ -9,13 +9,16 @@ test('homepage connects the four founder decisions to local businesses in visibl
   assert.ok(section);
   assert.match(section, /aria-labelledby="agent-use-title"/);
   assert.match(section, /id="agent-use-title"/);
-  for (const title of ['Team Retreat', 'Satellite Base', 'Relocate the Startup', 'Build, Invest, and Belong']) {
+  for (const title of ['Team Retreat', 'Satellite Base', 'Research a Startup Move', 'Build, Invest, and Belong']) {
     assert.ok(section.includes(`<h3>${title}</h3>`));
   }
   assert.equal([...section.matchAll(/class="agent-use-scenario"/g)].length, 4);
   assert.equal([...section.matchAll(/class="agent-use-relevance"/g)].length, 4);
   assert.equal([...section.matchAll(/class="agent-use-cta"/g)].length, 4);
   assert.match(section, /<ol class="agent-use-scenarios">/);
+  assert.match(section, /href="\/choose-workspace\/">Compare workspaces for a satellite base/);
+  assert.match(section, /href="\/nodes\/coachella-valley-intelligence-index\/">Start with regional research/);
+  assert.match(section, /not a relocation service/);
   assert.doesNotMatch(section, /<script|<details|<iframe|\shidden(?:\s|=|>)|role="tab/);
 });
 
