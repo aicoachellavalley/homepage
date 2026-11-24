@@ -1,0 +1,38 @@
+{
+  "agent-mapped-food-dining-coachella-valley": {
+    "summary": "The original census describes the market as identified June 11, 2026; this report was published June 12. The July 6 follow-up replaced the earlier crawler-block figures for working sites, not the full census. A separate July remeasurement covered a subset of working dining and hospitality sites and prompted record repairs. Neither establishes current operations.",
+    "links": [
+      {"href":"/briefs/2026-07-06-agent-readability-remeasured/","label":"Read the July 6 working-site follow-up"},
+      {"href":"/reports/measured-twice-coachella-valley-agent-layer-remeasurement/","label":"Read the later dining and hospitality subset"}
+    ]
+  },
+  "agent-mapped-home-realestate-coachella-valley": {
+    "summary": "The census describes the businesses as identified June 12, 2026. The July 6 follow-up replaced earlier crawler-block figures for working sites, not the full census. Food and Dining V2, described here as forthcoming, was published June 12.",
+    "links": [
+      {"href":"/briefs/2026-07-06-agent-readability-remeasured/","label":"Read the July 6 working-site follow-up"},
+      {"href":"/reports/agent-mapped-food-dining-coachella-valley/","label":"Read the published Food and Dining report"}
+    ]
+  },
+  "agent-mapped-family-schooling-coachella-valley": {
+    "summary": "The census describes the organizations as identified June 12, 2026 and was published June 14. The July 6 follow-up replaced earlier crawler-block figures for working sites, not the full census.",
+    "links": [{"href":"/briefs/2026-07-06-agent-readability-remeasured/","label":"Read the July 6 working-site follow-up"}]
+  },
+  "agent-mapped-talent-workforce-coachella-valley": {
+    "summary": "The census describes the businesses as identified June 14, 2026. The July 6 follow-up replaced earlier crawler-block figures for working sites. The August 28 deduplication and denominator correction was not a website remeasurement.",
+    "links": [{"href":"/briefs/2026-07-06-agent-readability-remeasured/","label":"Read the July 6 working-site follow-up"}]
+  },
+  "agent-mapped-wellness-healthcare-coachella-valley": {
+    "summary": "This is the original July 2026 wellness and healthcare measurement, not part of the separate July 6 working-site follow-up of the four earlier category censuses."
+  },
+  "agent-mapped-hospitality-retreat-venues-coachella-valley": {
+    "summary": "This is the original July 2026 lodging and retreat census. Later July work remeasured a subset of working dining and hospitality sites, not the full category census.",
+    "links": [{"href":"/reports/measured-twice-coachella-valley-agent-layer-remeasurement/","label":"Read the later dining and hospitality subset"}]
+  },
+  "agent-mapped-outdoors-recreation-coachella-valley": {
+    "summary": "This is the original July 2026 recreation census. It mapped 319 facilities and examined 114 in depth; those were two levels of the same study, not a later remeasurement."
+  },
+  "agent-mapped-founder-infrastructure-coachella-valley": {
+    "summary": "This is a July 2026 research pass on founder infrastructure, not a complete category census or an up-to-date list of offices available today.",
+    "links": [{"href":"/choose-workspace/","label":"Compare workspace and founder-support options with official handoffs"}]
+  }
+}

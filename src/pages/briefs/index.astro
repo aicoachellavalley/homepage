@@ -2,6 +2,7 @@
 import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { latestBriefPublicationDate } from '../../../scripts/brief-dates.cjs';
 
 const pageTitle    = 'Intelligence Briefs — AI Coachella Valley';
 const canonicalUrl = 'https://aicoachellavalley.com/briefs/';
@@ -34,6 +35,8 @@ function shortDate(date: string): string {
 }
 
 const allBriefs = await getCollection('briefs');
+const publishedThrough = latestBriefPublicationDate(allBriefs.map((brief) => brief.data));
+const archiveDate = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
 
 const pageDescription = `${allBriefs.length} timestamped intelligence briefs tracking AI economy signals across the Coachella Valley.`;
 
@@ -83,6 +86,7 @@ const sortedMonths = Object.keys(byMonth).sort((a, b) => b.localeCompare(a));
     <div class="page-eyebrow">AI Coachella Valley · Intelligence Network</div>
     <h1 class="page-title">Intelligence Briefs</h1>
     <p class="page-desc">{allBriefs.length} dated briefs on AI developments and what they mean for the Coachella Valley. Each brief explains the signal, its local context, and its sources.</p>
+    {publishedThrough && <p class="page-desc">This archive includes briefs published through <time datetime={publishedThrough}>{archiveDate.format(new Date(publishedThrough))}</time>. Later amendments are marked separately. For current coverage, see <a class="archive-link" href="https://aicv.news/">AICV News</a>.</p>}
   </div>
 </header>
 
@@ -100,7 +104,7 @@ const sortedMonths = Object.keys(byMonth).sort((a, b) => b.localeCompare(a));
             return (
               <li class="brief-item">
                 <div class="brief-top">
-                  <span class="brief-date">{shortDate(date)}</span>
+                  <time class="brief-date" datetime={date}>{shortDate(date)}</time>
                   <a href={`/briefs/${slug}/`} class="brief-title">{title}</a>
                 </div>
                 {description && <p class="brief-desc">{description}</p>}
@@ -118,6 +122,7 @@ const sortedMonths = Object.keys(byMonth).sort((a, b) => b.localeCompare(a));
 <Footer variant="compact" />
 
 <style is:global>
+  .archive-link { color: var(--sand-light); text-decoration: underline; text-underline-offset: .15em; }
   /* ─── NAV ─── */
   nav {
     display: flex;

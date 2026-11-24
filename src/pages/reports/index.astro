@@ -10,6 +10,9 @@ const reports = allReports
   .filter((r) => r.data.status === 'published')
   .sort((a, b) => (a.data.date > b.data.date ? -1 : 1));
 
+const latestQuarter = reports.find((r) => r.data.report_type === 'state-of-ai');
+const publicationDate = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
+
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -51,7 +54,8 @@ const pageSchema = {
   <div class="page-header-inner">
     <div class="page-eyebrow">AI Coachella Valley · Research &amp; Intelligence Reports</div>
     <h1 class="page-title">Reports</h1>
-    <p class="page-desc">Research on how AI is changing the valley and what agents can learn about local businesses. State of AI reports follow a quarterly editorial cadence, published after the quarter closes and sources are reviewed. Category reports and remeasurements publish when the research is ready; their findings describe the measurement dates and populations stated in each report.</p>
+    <p class="page-desc">Research on how AI is changing the valley and what agents can learn about local businesses. State of AI reports follow a quarterly editorial cadence, published after the quarter closes and sources are reviewed. Category reports and remeasurements publish when the research is ready; their findings describe the measurement dates and populations stated in each report. A publication or copy-edit date is not a new measurement.</p>
+    {latestQuarter && <p class="page-desc">Latest published quarterly report: <a class="archive-link" href={`/reports/${latestQuarter.id.replace(/\.mdx$/, '')}/`}>{latestQuarter.data.period}</a>, published <time datetime={latestQuarter.data.date}>{publicationDate.format(new Date(latestQuarter.data.date))}</time>.</p>}
   </div>
 </header>
 
@@ -69,7 +73,7 @@ const pageSchema = {
             <div class="report-meta">
               {report_type && <span class="badge badge-type">{report_type}</span>}
               {period      && <span class="badge badge-period">{period}</span>}
-              <span class="report-date">{date}</span>
+              <time class="report-date" datetime={date}>Published {date}</time>
             </div>
             <h2 class="report-heading"><a href={`/reports/${slug}/`} class="report-title">{title}</a></h2>
             {description && <p class="report-desc">{description}</p>}
@@ -85,6 +89,7 @@ const pageSchema = {
 <Footer variant="compact" />
 
 <style is:global>
+  .archive-link { color: var(--sand-light); text-decoration: underline; text-underline-offset: .15em; }
   /* ─── NAV ─── */
   nav {
     display: flex;

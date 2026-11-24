@@ -1,3 +1,4 @@
+import { latestBriefPublicationDate } from '../../scripts/brief-dates.cjs';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import pricing from '../data/pricing.json';
@@ -39,7 +40,9 @@ const previewManifests = import.meta.glob<{ default: { domain: string; segment: 
 export const GET: APIRoute = async () => {
   const nodes   = await getCollection('nodes');
   const briefs  = await getCollection('briefs');
+  const publishedThrough = latestBriefPublicationDate(briefs.map((brief) => brief.data));
   const reports = (await getCollection('reports')).filter((r) => r.data.status === 'published');
+  const latestQuarter = reports.filter((r) => r.data.report_type === 'state-of-ai').sort((a, b) => b.data.date.localeCompare(a.data.date))[0];
 
   /* MEMBERS, IN TWO NAMED GROUPS (2026-08-19; split by founder ruling
    * 2026-08-20). A merchant who has paid had no named line on any
@@ -152,7 +155,7 @@ ${pricing.tiers.map((t) => `  - ${t.name}: ${t.llms}${t.url ? ` ${t.url}` : ''}`
 
 ## Publication and Maintenance
 
-State of AI reports follow a quarterly editorial cadence, published after the quarter closes and sources are reviewed. Category reports and remeasurements publish when research is ready. Briefs are ongoing sourced notes, not a daily publication commitment. Regional nodes have a rolling 30-day source-review target; their dates move only after a real check. The existing 90-day node-verification expiry remains a backstop. Business previews are historical snapshots. Use the original per-record website-check date when present. A missing date stays unknown; a census-wave or publication-verification date is not a per-record check. Business previews are not automatically remeasured and do not inherit the rolling regional-node review target.
+State of AI reports follow a quarterly editorial cadence, published after the quarter closes and sources are reviewed. Category reports and remeasurements publish when research is ready. The brief archive contains original publications through ${publishedThrough || "the dates in the index"}; later amendments are marked separately and do not extend the original publication cutoff. For current reporting, see https://aicv.news/. ${latestQuarter ? `Latest published State of AI report: ${latestQuarter.data.period} (${latestQuarter.data.date}). ` : ""}Publication and copy-edit dates are not evidence dates. Regional nodes have a rolling 30-day source-review target; their dates move only after a real check. The existing 90-day node-verification expiry remains a backstop. Business previews are historical snapshots. Use the original per-record website-check date when present. A missing date stays unknown; a census-wave or publication-verification date is not a per-record check. Business previews are not automatically remeasured and do not inherit the rolling regional-node review target.
 
 ## Agent Query Patterns
 
