@@ -17,20 +17,31 @@ const workspace = read('src/data/workspace-options.json');
 import { validateWorkspaceContract } from './workspace-contract.mjs';
 const counts = read('src/data/stats.json').counts;
 const origin = 'https://aicoachellavalley.com';
+const validDate = (value) => {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const parsed = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(parsed.valueOf()) && parsed.toISOString().slice(0, 10) === value;
+};
 const previews = deployed.segments.flatMap((segment) => {
   const manifest = read(`src/data/previews/previews-index-${segment}.json`);
   if (manifest.count !== manifest.entries.length) throw new Error(`Manifest count mismatch: ${segment}`);
-  return manifest.entries.map((entry) => ({
-    id: `${segment}/${entry.slug}`, name: entry.name, city: entry.city, segment,
-    record_type: 'business-preview', source_url: entry.url, preview_url: entry.url,
-    indexable: entry.indexable, manifest_generated_at: manifest.generated,
-    measurement_date: null,
-    measurement_date_note: 'Read the original measurement date and findings at the canonical preview. This manifest contains no per-entity inspection date.',
-    publication_verified_at: deployed.verified_at,
-    summary: `Dated ${manifest.domain} preview. Open the source for its measured findings and current publication status.`,
-    constraints: ['This manifest supplies identity and a preview link; it does not attest business facts, current access or availability.'],
-    official_actions: [],
-  }));
+  return manifest.entries.map((entry) => {
+    const measurement = entry.measurement_date;
+    if (measurement != null && !validDate(measurement)) throw new Error(`Invalid preview measurement date: ${segment}/${entry.slug}`);
+    return {
+      id: `${segment}/${entry.slug}`, name: entry.name, city: entry.city, segment,
+      record_type: 'business-preview', source_url: entry.url, preview_url: entry.url,
+      indexable: entry.indexable, manifest_generated_at: manifest.generated,
+      measurement_date: measurement ?? null,
+      measurement_date_note: (measurement ? 'Historical website check from the original AICV preview source, not a current reading.'
+        : measurement === null ? 'No usable dated website measurement for this record; consult the canonical preview.'
+        : 'Older manifest has no per-entity inspection date; consult the canonical preview. Any manifest date refers to the census wave, not this business.') + ' Website checks are not automatically repeated; confirm current details with the business.',
+      publication_verified_at: deployed.verified_at,
+      summary: `Dated ${manifest.domain} preview. Open the source for recorded findings, if any, and publication status.`,
+      constraints: ['This manifest supplies identity and a preview link; it does not attest business facts, current access or availability.'],
+      official_actions: [],
+    };
+  });
 });
 // All source records remain in the attributed snapshot; only non-node entries
 // are added here. Existing canonical nodes are derived below from current MDX.
