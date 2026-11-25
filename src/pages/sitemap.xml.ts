@@ -64,6 +64,7 @@ export const GET: APIRoute = async () => {
     deskJoin,
     ...deskRecords,
     { url: 'https://aicoachellavalley.com/get-agent-ready/',       changefreq: 'monthly', priority: '0.9', lastmod: garLastmod },
+    { url: 'https://aicoachellavalley.com/chatgpt-business-hub/',     changefreq: 'monthly', priority: '0.7', lastmod: pd['/chatgpt-business-hub/'] },
     { url: 'https://aicoachellavalley.com/minimum-viable-agent/',  changefreq: 'monthly', priority: '0.8', lastmod: pd['/minimum-viable-agent/'] },
     { url: 'https://aicoachellavalley.com/how-we-do-this/',        changefreq: 'monthly', priority: '0.8', lastmod: pd['/how-we-do-this/'] },
     { url: 'https://aicoachellavalley.com/connect/',               changefreq: 'monthly', priority: '0.8', lastmod: pd['/connect/'] },
