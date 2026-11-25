@@ -52,10 +52,10 @@ const schema = {
     <header class="bh-hero">
       <div class="bh-wrap bh-hero-grid">
         <div>
-          <p class="bh-eyebrow">AICV EXPLAINS · NOVEMBER 25, 2026</p>
+          <p class="bh-eyebrow">AICV EXPLAINS</p>
           <h1>A new way to review your organization's information in ChatGPT.</h1>
           <p class="bh-lede">OpenAI introduced ChatGPT Business Hub on November 10. It offers eligible organizations a way to claim a listing, verify their connection to it, and request updates to their information in ChatGPT.</p>
-          <p class="bh-hero-note">Here's an introduction to this new feature.</p>
+          <p class="bh-hero-note">You can explore Business Hub yourself, or ask AICV to help review your organization’s information.</p>
           <a class="bh-hero-link" href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">Read OpenAI's announcement <span aria-hidden="true">↗</span></a>
         </div>
         <aside class="bh-context" aria-label="At a glance">
@@ -82,6 +82,23 @@ const schema = {
       </div>
     </section>
 
+    <section class="bh-section bh-section-choice" aria-labelledby="next-steps">
+      <div class="bh-wrap">
+        <p class="bh-kicker">TWO WAYS TO GET STARTED</p>
+        <h2 id="next-steps">Do it yourself, or let us help.</h2>
+        <p class="bh-intro">OpenAI's Business Hub is available to explore directly. AICV's audit and review is entirely optional.</p>
+        <div class="bh-actions">
+          <a class="bh-action-primary" href="https://chatgpt.com/business-hub" target="_blank" rel="noopener noreferrer">
+            <span><strong>I'll do it myself</strong><small>Go straight to ChatGPT Business Hub and check whether your organization is eligible to claim a listing</small></span><span aria-hidden="true">↗</span>
+          </a>
+          <a class="bh-action-secondary" href="#aicv-approach">
+            <span><strong>I'd like AICV's help</strong><small>See what's included in our $500 one-time audit, recommendations and initial claim assistance</small></span><span aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <p class="bh-small">Don't have a ChatGPT account? <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Start at ChatGPT</a>. Account creation alone does not establish Business Hub eligibility.</p>
+      </div>
+    </section>
+
     <section class="bh-section bh-section-soft" aria-labelledby="aicv-approach">
       <div class="bh-wrap bh-two-col">
         <div>
@@ -103,29 +120,11 @@ const schema = {
           </div>
           <div class="bh-price-row">
             <div><span class="bh-price">$500</span><span class="bh-price-unit">one-time</span></div>
-            <p>No ongoing subscription to AICV is required for this service.</p>
           </div>
-          <a class="bh-request-btn" href="mailto:sat@aicv.co?subject=Request%20an%20AICV%20Business%20Hub%20Audit%20%26%20Review&amp;body=Hi%20AICV%2C%0A%0AI%27d%20like%20to%20request%20the%20%24500%20one-time%20audit%20and%20review.%0A%0AOrganization%3A%20%0AWebsite%3A%20%0AContact%3A%20%0A">Request an audit &amp; review <span aria-hidden="true">↗</span></a>
-          <p class="bh-request-note">This opens an email request; no payment is collected here. We'll confirm the scope before starting.</p>
+          <a class="bh-request-btn" href="mailto:sat@aicv.co?subject=Request%20an%20AICV%20Business%20Hub%20Audit%20%26%20Review&amp;body=Hi%20AICV%2C%0A%0AI%27d%20like%20to%20request%20the%20%24500%20one-time%20audit%20and%20review.%0A%0AOrganization%3A%20%0AWebsite%3A%20%0AContact%3A%20%0A">Request the $500 audit &amp; review <span aria-hidden="true">↗</span></a>
+          <p class="bh-request-note">Email us your organization name and website to get started. We’ll reply with the scope and next steps.</p>
           <p class="bh-caveat">If OpenAI offers a claim, an authorized representative may need to complete identity verification or approve proposed details. OpenAI determines eligibility and approval. If claiming isn't available, you'll still receive the audit and recommendations.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="bh-section" aria-labelledby="next-steps">
-      <div class="bh-wrap">
-        <p class="bh-kicker">YOUR NEXT STEP, IF YOU WANT ONE</p>
-        <h2 id="next-steps">Explore the official information.</h2>
-        <p class="bh-intro">There's nothing you need to do today. These links go directly to OpenAI, so you can look at the feature for yourself.</p>
-        <div class="bh-actions">
-          <a class="bh-action-primary" href="https://chatgpt.com/business-hub" target="_blank" rel="noopener noreferrer">
-            <span><strong>Open ChatGPT Business Hub</strong><small>For anyone who already has a ChatGPT account</small></span><span aria-hidden="true">↗</span>
-          </a>
-          <a class="bh-action-secondary" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">
-            <span><strong>New to ChatGPT?</strong><small>Visit ChatGPT to create an account if you decide to explore</small></span><span aria-hidden="true">↗</span>
-          </a>
-        </div>
-        <p class="bh-small">An account does not establish eligibility. Claiming and verification are handled by OpenAI, not AICV.</p>
       </div>
     </section>
 
@@ -191,6 +190,7 @@ const schema = {
   .bh-rule { height:1px; background:rgba(255,255,255,.15); margin:22px 0; }
   .bh-section { padding:clamp(66px,8vw,108px) 0; }
   .bh-section-soft { background:var(--pine-mist); }
+  .bh-section-choice { background:var(--sand); }
   .bh-section-faq { background:#f0f0e9; }
   .bh-kicker { color:var(--pine-light); margin-bottom:18px; }
   h2 { font-size:clamp(1.75rem,3.5vw,2.65rem); font-weight:700; line-height:1.2; max-width:22ch; margin-bottom:24px; color:var(--pine-dark); }
@@ -216,7 +216,7 @@ const schema = {
 
   .bh-intro { margin-bottom:30px; }
   .bh-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-  .bh-actions a { display:flex; align-items:center; justify-content:space-between; gap:20px; text-decoration:none; padding:25px; min-height:134px; border:1px solid var(--pine-dark); transition:transform .15s ease,background .15s ease; }
+  .bh-actions a { display:flex; align-items:center; justify-content:space-between; gap:20px; text-decoration:none; padding:25px; min-height:144px; border:1px solid var(--pine-dark); transition:transform .15s ease,background .15s ease; }
   .bh-actions a:hover { transform:translateY(-2px); }
   .bh-action-primary { background:var(--pine-dark); color:#fff; }
   .bh-action-primary:hover { background:var(--pine); }
@@ -225,7 +225,8 @@ const schema = {
   .bh-actions strong { display:block; font-family:'Syne',sans-serif; font-size:1.08rem; line-height:1.3; }
   .bh-actions small { display:block; font-size:.83rem; line-height:1.55; opacity:.73; margin-top:9px; }
   .bh-actions a > span:last-child { align-self:flex-start; font-size:1.2rem; }
-  .bh-small { color:#61736b; font-size:.8rem; margin-top:16px; }
+  .bh-small { color:#61736b; font-size:.85rem; margin-top:18px; }
+  .bh-small a { color:var(--pine); text-underline-offset:3px; }
   .bh-faq { border-top:1px solid #c9d5cd; margin-top:36px; }
   details { border-bottom:1px solid #c9d5cd; padding:19px 0; }
   summary { cursor:pointer; color:var(--pine-dark); font-family:'Syne',sans-serif; font-weight:600; font-size:1.01rem; padding:6px 30px 6px 0; position:relative; }
