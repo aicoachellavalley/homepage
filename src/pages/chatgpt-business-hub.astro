@@ -1,0 +1,257 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import pageDates from '../data/page-dates.json';
+
+const canonicalUrl = 'https://aicoachellavalley.com/chatgpt-business-hub/';
+const title = 'ChatGPT Business Hub: What Organizations Should Know | AICV';
+const description = 'OpenAI has introduced Business Hub. Learn what it changes, what remains uncertain for nonprofits, and how AICV can help review your organization’s information.';
+const published = pageDates['/chatgpt-business-hub/'];
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': canonicalUrl + '#webpage',
+      url: canonicalUrl,
+      name: title,
+      description,
+      datePublished: published,
+      dateModified: published,
+      inLanguage: 'en-US',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://aicoachellavalley.com/#website' },
+      about: { '@type': 'Thing', name: 'ChatGPT Business Hub' },
+      publisher: { '@type': 'Organization', '@id': 'https://aicoachellavalley.com/#organization' }
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': canonicalUrl + '#breadcrumbs',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://aicoachellavalley.com/' },
+        { '@type': 'ListItem', position: 2, name: 'ChatGPT Business Hub', item: canonicalUrl }
+      ]
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} canonicalUrl={canonicalUrl} schema={schema}>
+  <nav class="bh-nav" aria-label="Primary navigation">
+    <a href="/" class="bh-brand" aria-label="AICV homepage">
+      <span class="bh-mark">AICV</span>
+      <span class="bh-brand-type"><strong>AI Coachella Valley</strong><small>Intelligence Network · Coachella Valley</small></span>
+    </a>
+    <div class="bh-nav-links">
+      <a href="/about/">About</a>
+      <a href="/briefs/">Briefs</a>
+      <a href="/get-agent-ready/">Get Agent Ready</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="bh-hero">
+      <div class="bh-wrap bh-hero-grid">
+        <div>
+          <p class="bh-eyebrow">AICV EXPLAINS</p>
+          <h1>A new way to review your organization's information in ChatGPT.</h1>
+          <p class="bh-lede">OpenAI introduced ChatGPT Business Hub on November 10. It offers eligible organizations a way to claim a listing, verify their connection to it, and request updates to their information in ChatGPT.</p>
+          <p class="bh-hero-note">You can explore Business Hub yourself, or ask AICV to help review your organization’s information.</p>
+          <a class="bh-hero-link" href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">Read OpenAI's announcement <span aria-hidden="true">↗</span></a>
+        </div>
+        <aside class="bh-context" aria-label="At a glance">
+          <p class="bh-aside-label">AT A GLANCE</p>
+          <p class="bh-aside-head">What has changed?</p>
+          <p>OpenAI now provides a place for eligible organizations to manage some of their information in ChatGPT.</p>
+          <div class="bh-rule"></div>
+          <p class="bh-aside-head">What hasn't changed?</p>
+          <p>ChatGPT may still draw on other public sources. Claiming does not guarantee a recommendation or placement.</p>
+          <div class="bh-rule"></div>
+          <p class="bh-aside-head">What about nonprofits?</p>
+          <p>Eligibility depends on OpenAI's requirements. We are not assuming every nonprofit can claim a listing.</p>
+        </aside>
+      </div>
+    </header>
+
+    <section class="bh-section" aria-labelledby="what-it-means">
+      <div class="bh-wrap bh-prose">
+        <p class="bh-kicker">IN PLAIN LANGUAGE</p>
+        <h2 id="what-it-means">Why this is worth knowing about</h2>
+        <p>People use ChatGPT to learn about places, organizations, and services. Details such as a name, website, location, programs, and contact information can shape what someone finds.</p>
+        <p>Business Hub provides a way for eligible organizations to review a listing and propose changes after verification. It is separate from your existing website and separate from purchasing a ChatGPT Business subscription.</p>
+        <p>For a community foundation, nonprofit, or small business, a sensible first step is simply to see whether the available information is current and whether OpenAI supports claiming that type of organization.</p>
+      </div>
+    </section>
+
+    <section class="bh-section bh-section-choice" aria-labelledby="next-steps">
+      <div class="bh-wrap">
+        <p class="bh-kicker">TWO WAYS TO GET STARTED</p>
+        <h2 id="next-steps">Do it yourself, or let us help.</h2>
+        <p class="bh-intro">OpenAI's Business Hub is available to explore directly. AICV's audit and review is entirely optional.</p>
+        <div class="bh-actions">
+          <a class="bh-action-primary" href="https://chatgpt.com/business-hub" target="_blank" rel="noopener noreferrer">
+            <span><strong>I'll do it myself</strong><small>Go straight to ChatGPT Business Hub and check whether your organization is eligible to claim a listing</small></span><span aria-hidden="true">↗</span>
+          </a>
+          <a class="bh-action-secondary" href="#aicv-approach">
+            <span><strong>I'd like AICV's help</strong><small>See what's included in our $500 one-time audit, recommendations and initial claim assistance</small></span><span aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <p class="bh-small">Don't have a ChatGPT account? <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Start at ChatGPT</a>. Account creation alone does not establish Business Hub eligibility.</p>
+      </div>
+    </section>
+
+    <section class="bh-section bh-section-soft" aria-labelledby="aicv-approach">
+      <div class="bh-wrap bh-two-col">
+        <div>
+          <p class="bh-kicker">AICV AUDIT &amp; REVIEW</p>
+          <h2 id="aicv-approach">Let's make sure your organization's information is accurate and up to date.</h2>
+          <p class="bh-side-note">A practical, one-time review for nonprofits and businesses—without another dashboard or project to manage.</p>
+        </div>
+        <div class="bh-detail">
+          <p class="bh-emphasis">AICV will conduct a focused audit of your organization's public information, prepare suggested updates, and help coordinate the Business Hub process where available.</p>
+          <p>We'll share what we find, explain our recommendations, and keep every step transparent as we go.</p>
+          <div class="bh-includes">
+            <p class="bh-includes-heading">Your audit and review includes:</p>
+            <ul>
+              <li>A review of your organization's name, mission, programs, website, location, and public contact details</li>
+              <li>A written summary of findings, discrepancies, and recommended updates</li>
+              <li>Prepared profile language and coordination of an initial Business Hub claim or update, if eligible</li>
+              <li>A final summary of what was submitted, completed, or remains outstanding</li>
+            </ul>
+          </div>
+          <div class="bh-price-row">
+            <div><span class="bh-price">$500</span><span class="bh-price-unit">one-time</span></div>
+          </div>
+          <a class="bh-request-btn" href="mailto:sat@aicv.co?subject=Request%20an%20AICV%20Business%20Hub%20Audit%20%26%20Review&amp;body=Hi%20AICV%2C%0A%0AI%27d%20like%20to%20request%20the%20%24500%20one-time%20audit%20and%20review.%0A%0AOrganization%3A%20%0AWebsite%3A%20%0AContact%3A%20%0A">Request the $500 audit &amp; review <span aria-hidden="true">↗</span></a>
+          <p class="bh-request-note">Email us your organization name and website to get started. We’ll reply with the scope and next steps.</p>
+          <p class="bh-caveat">If OpenAI offers a claim, an authorized representative may need to complete identity verification or approve proposed details. OpenAI determines eligibility and approval. If claiming isn't available, you'll still receive the audit and recommendations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bh-section bh-section-faq" aria-labelledby="questions">
+      <div class="bh-wrap">
+        <p class="bh-kicker">A FEW COMMON QUESTIONS</p>
+        <h2 id="questions">What to know before you begin</h2>
+        <div class="bh-faq">
+          <details>
+            <summary>Can a nonprofit claim its listing?</summary>
+            <p>That depends on OpenAI's eligibility and verification checks. We won't assume an organization qualifies until Business Hub makes the available options clear.</p>
+          </details>
+          <details>
+            <summary>Does claiming make ChatGPT recommend us?</summary>
+            <p>No. A verified listing may help an organization maintain information it submits through Business Hub, but it does not guarantee that ChatGPT will mention or recommend it. Other public sources may still be used.</p>
+          </details>
+          <details>
+            <summary>Will our team need to do the work?</summary>
+            <p>AICV can research public information, document discrepancies, draft suggested changes, and coordinate the steps. An authorized representative may need to verify the organization's connection to a listing and approve information before it is submitted.</p>
+          </details>
+          <details>
+            <summary>Is this the same as AICV's Get Agent Ready program?</summary>
+            <p>No. Business Hub is an OpenAI feature. <a href="/get-agent-ready/">Get Agent Ready</a> is AICV's separate service for publishing an agent-readable business profile on AICV's own network.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bh-source">
+      <div class="bh-wrap">
+        <p><strong>Source and scope.</strong> This page summarizes OpenAI's <a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">November 10 announcement</a> and <a href="https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt" target="_blank" rel="noopener noreferrer">Business Hub setup instructions</a>. Availability can change during the beta. AICV is an independent service of SunshineFM LLC, not affiliated with OpenAI. Last reviewed November 25, 2026.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer variant="full" />
+</Base>
+
+<style>
+  .bh-nav { background:var(--gunmetal); color:var(--sand); display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px clamp(20px,4vw,56px); }
+  .bh-brand { display:flex; align-items:center; gap:12px; color:var(--sand); text-decoration:none; }
+  .bh-mark { background:var(--volt); color:var(--pine-dark); padding:10px 8px; font-family:'Syne',sans-serif; font-size:12px; font-weight:800; letter-spacing:.02em; }
+  .bh-brand-type { display:flex; flex-direction:column; line-height:1.15; gap:4px; }
+  .bh-brand-type strong { font-family:'Syne',sans-serif; font-size:.92rem; }
+  .bh-brand-type small { font-size:.59rem; font-weight:300; color:rgba(250,250,247,.56); letter-spacing:.055em; text-transform:uppercase; }
+  .bh-nav-links { display:flex; gap:26px; align-items:center; }
+  .bh-nav-links a { color:var(--sand); font-size:.79rem; text-decoration:none; }
+  .bh-nav-links a:hover,.bh-nav-links a:focus-visible { color:var(--volt); }
+  .bh-wrap { width:min(1090px,calc(100% - 48px)); margin:0 auto; }
+  .bh-hero { background:var(--pine-dark); color:var(--sand); padding:clamp(64px,8vw,114px) 0 80px; }
+  .bh-hero-grid { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(275px,.8fr); gap:clamp(38px,6vw,90px); align-items:center; }
+  .bh-eyebrow,.bh-kicker,.bh-aside-label { font-size:.68rem; letter-spacing:.16em; font-weight:700; text-transform:uppercase; }
+  .bh-eyebrow { color:var(--volt); margin-bottom:24px; }
+  h1,h2,.bh-aside-head { font-family:'Syne',sans-serif; letter-spacing:-.035em; }
+  h1 { font-size:clamp(2.6rem,5.8vw,4.75rem); line-height:1.09; font-weight:700; max-width:14ch; margin:0 0 28px; }
+  .bh-lede { font-size:clamp(1.06rem,1.8vw,1.23rem); line-height:1.72; max-width:58ch; color:rgba(250,250,247,.85); }
+  .bh-hero-note { color:rgba(250,250,247,.66); max-width:60ch; font-size:.91rem; margin-top:24px; }
+  .bh-hero-link { display:inline-flex; align-items:center; gap:12px; font-size:.91rem; font-weight:700; color:var(--volt); text-underline-offset:5px; margin-top:32px; }
+  .bh-context { background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.18); border-top:3px solid var(--volt); padding:30px; }
+  .bh-aside-label { color:var(--volt); margin-bottom:27px; }
+  .bh-aside-head { font-size:1.04rem; font-weight:700; margin-bottom:8px; letter-spacing:-.015em; color:#fff; }
+  .bh-context p:not(.bh-aside-label):not(.bh-aside-head) { font-size:.87rem; color:rgba(250,250,247,.7); line-height:1.7; }
+  .bh-rule { height:1px; background:rgba(255,255,255,.15); margin:22px 0; }
+  .bh-section { padding:clamp(66px,8vw,108px) 0; }
+  .bh-section-soft { background:var(--pine-mist); }
+  .bh-section-choice { background:var(--sand); }
+  .bh-section-faq { background:#f0f0e9; }
+  .bh-kicker { color:var(--pine-light); margin-bottom:18px; }
+  h2 { font-size:clamp(1.75rem,3.5vw,2.65rem); font-weight:700; line-height:1.2; max-width:22ch; margin-bottom:24px; color:var(--pine-dark); }
+  .bh-prose { max-width:790px; margin:0 auto; }
+  .bh-prose p:not(.bh-kicker),.bh-detail p,.bh-intro { max-width:66ch; font-size:1.02rem; line-height:1.85; color:#30443b; }
+  .bh-prose p + p { margin-top:17px; }
+  .bh-two-col { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.12fr); gap:clamp(36px,7vw,92px); }
+  .bh-detail .bh-emphasis { color:var(--pine-dark); font-size:1.2rem; font-weight:500; line-height:1.72; }
+  .bh-detail p + p { margin-top:21px; }
+  .bh-side-note { color:#4c6558; font-size:1.02rem; line-height:1.85; max-width:35ch; }
+  .bh-includes { margin:26px 0 22px; padding:23px 25px; background:rgba(255,255,255,.58); border-left:3px solid var(--pine); }
+  .bh-includes-heading { font-weight:700; color:var(--pine-dark)!important; margin:0 0 10px!important; }
+  .bh-includes ul { padding-left:21px; color:#30443b; font-size:.94rem; line-height:1.7; }
+  .bh-includes li + li { margin-top:8px; }
+  .bh-price-row { display:flex; gap:20px; align-items:center; flex-wrap:wrap; border-top:1px solid rgba(27,67,50,.2); padding-top:22px; margin-top:22px; }
+  .bh-price { color:var(--pine-dark); font-family:'Syne',sans-serif; font-size:2.7rem; line-height:1.1; font-weight:800; letter-spacing:-.06em; }
+  .bh-price-unit { color:var(--pine); display:inline-block; font-size:.85rem; font-weight:700; margin-left:10px; }
+  .bh-price-row p { flex:1 1 180px; color:#4c6558; font-size:.87rem; line-height:1.6; }
+  .bh-request-btn { display:flex; justify-content:space-between; align-items:center; gap:18px; background:var(--pine-dark); color:#fff; font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; padding:18px 23px; text-decoration:none; margin-top:22px; }
+  .bh-request-btn:hover, .bh-request-btn:focus-visible { background:var(--pine); }
+  .bh-detail .bh-request-note { margin-top:9px; color:#526a60; font-size:.79rem; line-height:1.55; }
+  .bh-detail .bh-caveat { margin-top:20px; color:#526a60; font-size:.83rem; line-height:1.7; }
+
+  .bh-intro { margin-bottom:30px; }
+  .bh-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+  .bh-actions a { display:flex; align-items:center; justify-content:space-between; gap:20px; text-decoration:none; padding:25px; min-height:144px; border:1px solid var(--pine-dark); transition:transform .15s ease,background .15s ease; }
+  .bh-actions a:hover { transform:translateY(-2px); }
+  .bh-action-primary { background:var(--pine-dark); color:#fff; }
+  .bh-action-primary:hover { background:var(--pine); }
+  .bh-action-secondary { color:var(--pine-dark); background:#fff; }
+  .bh-action-secondary:hover { background:var(--pine-mist); }
+  .bh-actions strong { display:block; font-family:'Syne',sans-serif; font-size:1.08rem; line-height:1.3; }
+  .bh-actions small { display:block; font-size:.83rem; line-height:1.55; opacity:.73; margin-top:9px; }
+  .bh-actions a > span:last-child { align-self:flex-start; font-size:1.2rem; }
+  .bh-small { color:#61736b; font-size:.85rem; margin-top:18px; }
+  .bh-small a { color:var(--pine); text-underline-offset:3px; }
+  .bh-faq { border-top:1px solid #c9d5cd; margin-top:36px; }
+  details { border-bottom:1px solid #c9d5cd; padding:19px 0; }
+  summary { cursor:pointer; color:var(--pine-dark); font-family:'Syne',sans-serif; font-weight:600; font-size:1.01rem; padding:6px 30px 6px 0; position:relative; }
+  summary::marker { color:var(--pine-light); }
+  details p { color:#30443b; max-width:74ch; line-height:1.8; padding:14px 0 6px; font-size:.96rem; }
+  details a { color:var(--pine); text-underline-offset:3px; }
+  .bh-source { background:#e7ebe4; padding:28px 0 2px; }
+  .bh-source p { max-width:90ch; color:#50665a; font-size:.78rem; line-height:1.8; }
+  .bh-source a { color:var(--pine); text-underline-offset:3px; }
+  :global(footer) { margin-top:0; }
+  @media (max-width:800px) {
+    .bh-hero-grid,.bh-two-col { grid-template-columns:1fr; }
+    .bh-context { max-width:620px; }
+    .bh-nav-links { gap:15px; }
+    .bh-actions { grid-template-columns:1fr; }
+    h1 { max-width:17ch; }
+  }
+  @media (max-width:550px) {
+    .bh-wrap { width:calc(100% - 36px); }
+    .bh-nav { flex-wrap:wrap; padding:15px 18px; gap:16px; }
+    .bh-nav-links { width:100%; justify-content:space-between; gap:10px; }
+    .bh-nav-links a { font-size:.71rem; }
+    .bh-hero { padding:52px 0 60px; }
+    .bh-context { padding:24px; }
+    .bh-actions a { padding:20px; min-height:112px; }
+  }
+  @media (prefers-reduced-motion:reduce) { .bh-actions a { transition:none; } }
+</style>
