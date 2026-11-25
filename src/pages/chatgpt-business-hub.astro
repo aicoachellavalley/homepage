@@ -55,7 +55,7 @@ const schema = {
           <p class="bh-eyebrow">AICV EXPLAINS · NOVEMBER 25, 2026</p>
           <h1>A new way to review your organization's information in ChatGPT.</h1>
           <p class="bh-lede">OpenAI introduced ChatGPT Business Hub on November 10. It offers eligible organizations a way to claim a listing, verify their connection to it, and request updates to their information in ChatGPT.</p>
-          <p class="bh-hero-note">This is an introduction to the new feature, not a request to sign up or start another project.</p>
+          <p class="bh-hero-note">Here's an introduction to this new feature.</p>
           <a class="bh-hero-link" href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener noreferrer">Read OpenAI's announcement <span aria-hidden="true">↗</span></a>
         </div>
         <aside class="bh-context" aria-label="At a glance">
@@ -85,13 +85,29 @@ const schema = {
     <section class="bh-section bh-section-soft" aria-labelledby="aicv-approach">
       <div class="bh-wrap bh-two-col">
         <div>
-          <p class="bh-kicker">HOW WE CAN HELP</p>
-          <h2 id="aicv-approach">A practical review, without adding another project to your day.</h2>
+          <p class="bh-kicker">AICV AUDIT &amp; REVIEW</p>
+          <h2 id="aicv-approach">Let's make sure your organization's information is accurate and up to date.</h2>
+          <p class="bh-side-note">A practical, one-time review for nonprofits and businesses—without another dashboard or project to manage.</p>
         </div>
         <div class="bh-detail">
-          <p class="bh-emphasis">AICV will conduct a quick audit of your organization's information, prepare suggested updates, and help coordinate the entire process. We'll share our findings, explain our recommendations, and keep you informed with complete transparency every step of the way.</p>
-          <p>If an OpenAI claim is available, a representative of your organization may still need to complete verification and approve proposed details. We'll make clear which parts AICV can prepare and which require your involvement.</p>
-          <a class="bh-text-link" href="mailto:sat@aicv.co?subject=Question%20about%20ChatGPT%20Business%20Hub">Ask AICV about your organization <span aria-hidden="true">↗</span></a>
+          <p class="bh-emphasis">AICV will conduct a focused audit of your organization's public information, prepare suggested updates, and help coordinate the Business Hub process where available.</p>
+          <p>We'll share what we find, explain our recommendations, and keep every step transparent as we go.</p>
+          <div class="bh-includes">
+            <p class="bh-includes-heading">Your audit and review includes:</p>
+            <ul>
+              <li>A review of your organization's name, mission, programs, website, location, and public contact details</li>
+              <li>A written summary of findings, discrepancies, and recommended updates</li>
+              <li>Prepared profile language and coordination of an initial Business Hub claim or update, if eligible</li>
+              <li>A final summary of what was submitted, completed, or remains outstanding</li>
+            </ul>
+          </div>
+          <div class="bh-price-row">
+            <div><span class="bh-price">$500</span><span class="bh-price-unit">one-time</span></div>
+            <p>No ongoing subscription to AICV is required for this service.</p>
+          </div>
+          <a class="bh-request-btn" href="mailto:sat@aicv.co?subject=Request%20an%20AICV%20Business%20Hub%20Audit%20%26%20Review&amp;body=Hi%20AICV%2C%0A%0AI%27d%20like%20to%20request%20the%20%24500%20one-time%20audit%20and%20review.%0A%0AOrganization%3A%20%0AWebsite%3A%20%0AContact%3A%20%0A">Request an audit &amp; review <span aria-hidden="true">↗</span></a>
+          <p class="bh-request-note">This opens an email request; no payment is collected here. We'll confirm the scope before starting.</p>
+          <p class="bh-caveat">If OpenAI offers a claim, an authorized representative may need to complete identity verification or approve proposed details. OpenAI determines eligibility and approval. If claiming isn't available, you'll still receive the audit and recommendations.</p>
         </div>
       </div>
     </section>
@@ -184,7 +200,20 @@ const schema = {
   .bh-two-col { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.12fr); gap:clamp(36px,7vw,92px); }
   .bh-detail .bh-emphasis { color:var(--pine-dark); font-size:1.2rem; font-weight:500; line-height:1.72; }
   .bh-detail p + p { margin-top:21px; }
-  .bh-text-link { display:inline-block; color:var(--pine-dark); font-size:.95rem; font-weight:700; margin-top:30px; text-underline-offset:5px; }
+  .bh-side-note { color:#4c6558; font-size:1.02rem; line-height:1.85; max-width:35ch; }
+  .bh-includes { margin:26px 0 22px; padding:23px 25px; background:rgba(255,255,255,.58); border-left:3px solid var(--pine); }
+  .bh-includes-heading { font-weight:700; color:var(--pine-dark)!important; margin:0 0 10px!important; }
+  .bh-includes ul { padding-left:21px; color:#30443b; font-size:.94rem; line-height:1.7; }
+  .bh-includes li + li { margin-top:8px; }
+  .bh-price-row { display:flex; gap:20px; align-items:center; flex-wrap:wrap; border-top:1px solid rgba(27,67,50,.2); padding-top:22px; margin-top:22px; }
+  .bh-price { color:var(--pine-dark); font-family:'Syne',sans-serif; font-size:2.7rem; line-height:1.1; font-weight:800; letter-spacing:-.06em; }
+  .bh-price-unit { color:var(--pine); display:inline-block; font-size:.85rem; font-weight:700; margin-left:10px; }
+  .bh-price-row p { flex:1 1 180px; color:#4c6558; font-size:.87rem; line-height:1.6; }
+  .bh-request-btn { display:flex; justify-content:space-between; align-items:center; gap:18px; background:var(--pine-dark); color:#fff; font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; padding:18px 23px; text-decoration:none; margin-top:22px; }
+  .bh-request-btn:hover, .bh-request-btn:focus-visible { background:var(--pine); }
+  .bh-detail .bh-request-note { margin-top:9px; color:#526a60; font-size:.79rem; line-height:1.55; }
+  .bh-detail .bh-caveat { margin-top:20px; color:#526a60; font-size:.83rem; line-height:1.7; }
+
   .bh-intro { margin-bottom:30px; }
   .bh-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
   .bh-actions a { display:flex; align-items:center; justify-content:space-between; gap:20px; text-decoration:none; padding:25px; min-height:134px; border:1px solid var(--pine-dark); transition:transform .15s ease,background .15s ease; }
