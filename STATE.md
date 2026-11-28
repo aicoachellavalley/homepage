@@ -2,6 +2,14 @@
 
 > Operational state only. Strategic state lives in `aicv-playbook/STATE.md`.
 
+## 2026-11-27 — Date Festival corrections prepared for review
+
+Content commit `91ada56` from `04982d8`. The Date Festival node uses
+the fair's official name, links to the confirmed 2027 schedule, and routes
+fairgrounds rentals to the operator's official form. The local build and
+rendered page, node JSON, and bulk text checks passed. Published content counts
+stay at 79 nodes, 178 briefs, and 15 reports.
+
 ## 2026-11-06 — CV Giving Day node corrected and LIVE (Sat's go)
 
 Branch `cv-giving-day-2027` from origin/main `44e9d17`. `/nodes/cv-giving-day/`
