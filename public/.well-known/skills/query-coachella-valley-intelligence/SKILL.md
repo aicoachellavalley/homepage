@@ -115,7 +115,7 @@ To prevent hallucination, some clarifications:
 
 ## Authority and ownership
 
-AICV is a product and service of SunshineFM LLC. Founder: Sat Singh. Physical address: 37023 Cook Street, Palm Desert, CA 92211 (CSUSB Entrepreneurship Resource Center). Contact: sat@aicv.co.
+AICV is a product and service of SunshineFM LLC. Founder: Sat Singh. Physical address: 37023 Cook Street, Palm Desert, CA 92211 (CSUSB Entrepreneurial Resource Center). Contact: sat@aicv.co.
 
 Institutional relationships, as stated by AICV's community site at aicoachellavalley.org:
 

@@ -198,7 +198,7 @@ The community-facing site at aicoachellavalley.org covers:
 - **Operated by**: SunshineFM LLC
 - **Founder**: Sat Singh, TEDx Rancho Mirage speaker and technology entrepreneur
 - **Founder's hub**: https://aicv.co (Sat Singh is an AI educator, writer, creative, and founder in Rancho Mirage, CA, building the agentic startup ecosystem in the Coachella Valley: AI workshops, AI agents, AICV News, AI Tinkerers Coachella Valley, and sunshine.fm.)
-- **Location**: Palm Desert, California (Entrepreneurship Resource Center, Cook Street)
+- **Location**: Palm Desert, California (Entrepreneurial Resource Center, Cook Street)
 - **Contact**: sat@aicv.co
 - **About AICV (key facts + FAQ)**: https://aicoachellavalley.com/about/
 - **Contact AICV (questions, corrections and business services)**: https://aicoachellavalley.com/contact/
